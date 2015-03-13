@@ -1,0 +1,83 @@
+#perfil {
+    margin-left: 10%;
+    margin-top: 25px;
+    width: 80%;
+    height: 85%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+/*    background-color: #000;*/
+}
+
+#perfil-leftside {
+    height: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#perfil-avatar {
+    height: 45%;
+    background: transparent url("../img/avatars/1.png") no-repeat;
+    background-position: bottom;
+    background-size: 90%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#perfil-btns {
+    height: 55%;
+    background-color: #05A679;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#perfil-contenido {
+    height: 100%;
+    background-color: #0C7A52;
+    padding: 0px !important;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#avatar-name {
+    text-align: center;
+    height: 15%;
+    background: #0C7A52 url("../img/avatar-nick.png") no-repeat;
+    background-position: center;
+    background-size: 90% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    
+}
+
+.col-md-3 {
+    padding: 0px !important;
+}
+
+.award-unlocked > .award-logo {
+    width: 100%;
+    height: 85%;
+}
+
+.award-unlocked > .award-name {
+    width: 100%;
+    height: 15%;
+}
+
+.award {
+/*    margin: 5px;*/
+/*    margin: 2px;*/
+    height: 275px;
+    background-color: #0A895F;
+}
+
+.award-locked > .award-logo {
+    height: 100%;
+}
+
+.award-locked > .award-name {
+    display: none;
+}
+
+.award.award-locked {
+    background:  #09714e;
+}

@@ -1,0 +1,49 @@
+/*
+Copyright (c) 2015 Blink
+All Rights Reserved
+ 
+This product is protected by copyright and distributed under
+licenses restricting copying, distribution, and decompilation.
+
+Gerardo López | Iván Graciano | Renato Andres
+*/
+
+/*Tipografias*/
+@font-face {
+    font-family: junction-bold;
+    src: url(../fonts/Junction-bold.otf);
+}
+@font-face {
+    font-family: junction-light;
+    src: url(../fonts/Junction-light.otf);
+}
+@font-face {
+    font-family: junction-regular;
+    src: url(../fonts/Junction-regular.otf);
+}
+.junction-bold{
+    font-family: junction-bold;
+}
+.junction-light{
+    font-family: junction-light;
+}
+.junction-regular{
+    font-family: junction-regular;
+}
+/*/#Tipografias*/
+html , body{
+    width: 100% !important;
+    height: 100% !important;
+}
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+    background: rgba(93, 134, 175, 0.83);
+    
+}
+#subm {
+    padding-bottom: 20px;
+}
+.full{
+    padding: 0px !important;
+    margin: 0px !important;
+}

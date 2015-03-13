@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "BebasNeueBold";
+    src: url("../fonts/BEBAS.ttf");
+}
+.objects {
+    background-color: #22313F;
+    height: 800px;
+}
+
+.arena {
+    background-color: #22313F;
+    height: 800px;
+    z-index: -10;
+}
+
+.titulo {
+    font-family: "BebasNeueBold";
+    font-size: 2em;
+    color: #ECECEC;
+    margin: 2%;
+}
+
+.htmlMain {
+    cursor: pointer;
+    height: auto;
+    text-align: center;
+    margin: 3%;
+}
+.htmlMain > p{
+    font-family: "BebasNeueBold";
+    font-size: 1.5em;
+    color: #6C7A89;
+}
+
+
+.HTMLgenerator {
+    padding: 0;
+    z-index: -100;
+}
+
+.yellow {
+    background-color:#F7CA18;
+}
+.green {
+    background-color:#D64541;
+}
+.playground {
+    height: 85%;
+    border: solid 0.3em #5a6776;
+     background-color: #22313F;
+    overflow: scroll;
+}
+.htmlParts {
+    cursor: pointer;
+    height: auto;
+    text-align: center;
+    margin: 3%;
+}
+.htmlParts > p{
+     font-family: "BebasNeueBold";
+    font-size: 1.2em;
+    color: #2d2e2f;
+}
+.htmlPartsAtriSty {
+    cursor: pointer;
+    height: auto;
+    text-align: center;
+    margin: 3%;
+}
+.htmlPartsAtriSty > p{
+     font-family: "BebasNeueBold";
+    font-size: 1.2em;
+    color: #2d2e2f;
+}
+.withauto {
+    width: auto;
+}
+
+.result {
+    background-color: #fff;
+    height: 600px;
+}
+.result > p{
+    color: #414141;
+}
+.arriba { 
+    border-width: 2px;
+    border-style: dotted;
+    border-color: #A36491;
+    
+}
+.arriba2 { 
+    border-width: 2px;
+    border-style: solid;
+    border-color: #A36491;
+    
+}
+.orange {
+    background-color: #EB9532;
+}
+
+.royal {
+    background-color: #87D37C;
+}
