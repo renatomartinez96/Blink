@@ -83,18 +83,27 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div class="panel-heading">
                                         <h2 class="junction-bold">Información</h2>
                                     </div>
+                                    <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
-                                        <label class="left"><h3>Usuario</h3></label> 
-                                            <label class="right"><h4><?=$user?></h4></label><br>
-                                        <label class="left"><h3>Nombre</h3></label><br>
-                                            <label class="right"><h4>Nombre</h4></label><br>
-                                        <label class="left"><h3>Fecha de nacimiento</h3></label><br>
+                                        <label><h3>Usuario</h3></label> 
+                                            <br><label><h4><?=$user?></h4></label><br>
+                                        
+                                        <label><h3>Nombre</h3></label><br>
+                                            <br><label><h4><?=$nombres.$apellidos?></h4></label><br>
+                                        
+                                        <label><h3>Fecha de nacimiento</h3></label><br>
+                                            <br><label><h4><?=$nacimiento?></h4></label><br>
+                                        
                                         <label><h3>Descripcion</h3></label><br>
-                                        <label class="left"><h3>Correo Electronico</h3></label><br>
-                                        <label class="left"><h3>Tipo de usuario</h3></label><br>
+                                            <br><label><h4><?=$descripcion?></h4></label><br>
                                         
+                                        <label><h3>Correo Electronico</h3></label><br>
+                                            <br><label><h4><?=$correo?></h4></label><br>
                                         
+                                        <label><h3>Tipo de usuario</h3></label><br>
+                                            <br><label><h4><?=$tipo?></h4></label><br>
                                     </div>
+                                    <!--/#Informacion del usuario-->
                                 </div>
                             </div>
                         </div>
