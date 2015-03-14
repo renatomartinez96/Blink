@@ -23,7 +23,6 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo);
         $stmt->fetch();
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +71,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                             </div>
                                             <div class="panel-body full">
                                                 <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Cursos</button>
+                                                <button class="btn form-control btn-success">Información</button>
+                                                <button class="btn form-control btn-success">Información</button>
+                                                <button class="btn form-control btn-success">Información</button>
+                                                <button class="btn form-control btn-success">Información</button>
                                             </div>
                                         </div>
                                     </center>
@@ -85,23 +87,23 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
-                                        <label><h3>Usuario</h3></label> 
-                                            <br><label><h4><?=$user?></h4></label><br>
+                                        <label><h3 class="junction-regular">Usuario</h3></label>
+                                            <label class="pull-right"><h4><?=$user?></h4></label><br>
                                         
-                                        <label><h3>Nombre</h3></label><br>
-                                            <br><label><h4><?=$nombres.$apellidos?></h4></label><br>
+                                        <label><h3 class="junction-regular">Nombre</h3></label>
+                                            <label class="pull-right"><h4><?=$nombres." ".$apellidos?></h4></label><br>
                                         
-                                        <label><h3>Fecha de nacimiento</h3></label><br>
-                                            <br><label><h4><?=$nacimiento?></h4></label><br>
+                                        <label><h3 class="junction-regular">Fecha de nacimiento</h3></label>
+                                            <label class="pull-right"><h4><?=$nacimiento?></h4></label><br>
                                         
-                                        <label><h3>Descripcion</h3></label><br>
-                                            <br><label><h4><?=$descripcion?></h4></label><br>
+                                        <label><h3 class="junction-regular">Descripcion</h3></label><br>
+                                            <label class="pull-right"><h4><?=$descripcion?></h4></label><br>
                                         
-                                        <label><h3>Correo Electronico</h3></label><br>
-                                            <br><label><h4><?=$correo?></h4></label><br>
+                                        <label><h3 class="junction-regular">Correo Electronico</h3></label>
+                                            <label class="pull-right"><h4><?=$correo?></h4></label><br>
                                         
-                                        <label><h3>Tipo de usuario</h3></label><br>
-                                            <br><label><h4><?=$tipo?></h4></label><br>
+                                        <label><h3 class="junction-regular">Tipo de usuario</h3></label>
+                                            <label class="pull-right"><h4><?=$tipo?></h4></label><br>
                                     </div>
                                     <!--/#Informacion del usuario-->
                                 </div>
