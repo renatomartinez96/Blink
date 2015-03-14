@@ -84,12 +84,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <h2 class="junction-bold">Información</h2>
                                     </div>
                                     <div class="panel-body tablist">
-                                        <label><h3>Usuario</h3></label><label><h4>Usuario</h4></label><br>
-                                        <label><h3>Nombre</h3></label><br>
-                                        <label><h3>Fecha de nacimiento</h3></label><br>
+                                        <label class="left"><h3>Usuario</h3></label> 
+                                            <label class="right"><h4><?=$user?></h4></label><br>
+                                        <label class="left"><h3>Nombre</h3></label><br>
+                                            <label class="right"><h4>Nombre</h4></label><br>
+                                        <label class="left"><h3>Fecha de nacimiento</h3></label><br>
                                         <label><h3>Descripcion</h3></label><br>
-                                        <label><h3>Correo Electronico</h3></label><br>
-                                        <label><h3>Tipo de usuario</h3></label><br>
+                                        <label class="left"><h3>Correo Electronico</h3></label><br>
+                                        <label class="left"><h3>Tipo de usuario</h3></label><br>
                                         
                                         
                                     </div>
