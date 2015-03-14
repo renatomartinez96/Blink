@@ -53,7 +53,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     echo "<center>
                             <h1 class='junction-bold'>Blink</h1>
                             <h3 class='junction-light'>Elige un avatar</h3>
-                            <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es neceario la eleccion de un avatar el cual se utilizara como imagen de perfil de tu cuenta.</h4>
+                            <h4 class='junction'>Bienvenidx a Blink, para continuar con el proceso de registro, es neceario la eleccion de un avatar el cual se utilizara como imagen de perfil de tu cuenta.</h4>
                             <br><br>
                         </center>";
                     for($i = 1; $i <= 10; $i++){
