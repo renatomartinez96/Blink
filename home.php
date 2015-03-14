@@ -31,13 +31,9 @@ Gerardo López | Iván Nolasco | Renato Andres
 <html lang="en">
 	<head>
 		<!--Core CSS-->
-		<?php 
-<<<<<<< HEAD
-            $titulodelapagina = "¡Bienvenido a BLink!";
-=======
+		<?php
             // Titulo de esta página:
-            $titulodelapagina = "BLink - ¡A muy bien!";
->>>>>>> origin/master
+            $titulodelapagina = "¡Bienvenido a BLink!";
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
@@ -121,13 +117,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                 lel <a href="assets/includes/logout.php">Salir</a>
             </p>
         <?php else : ?>
->>>>>>> origin/master
             <p>
                 <span class="error">No estas registrado para entrar a esta página.</span> Por favor <a href="index.php">inicia sesión</a>.
             </p>
-<<<<<<< HEAD
         <?php } ?>
-=======
         <?php endif; ?>
                     <!--/#Content-->
 					</div>
@@ -135,15 +128,10 @@ Gerardo López | Iván Nolasco | Renato Andres
 			</div>
 			<!--/#Page Content -->
 		</div>
->>>>>>> origin/master
 		<!--Main js-->
 		<?php 
 			include 'main_js.php';
 		?>
 		<!--/#Main js-->
 	</body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> origin/master
