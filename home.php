@@ -37,8 +37,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
-
-<<<<<<< HEAD
 	</head>
 	<body>
 		<?php 
@@ -82,56 +80,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                             fopen($nombre."/index.html", "a+");
                         }
                     }
-                }else{
+                }
+                else
+                {
                     header("location:student/index.php");
                 }
+            }
             ?>
-        <?php }else{ ?>
-=======
-		<!--Custom CSS-->
-		<link href="assets/css/sidebar.css" rel="stylesheet">
-		<!--/#Custom CSS-->
-    </head>
-    <body>
-		<!--Topbar -->
-		<?php 
-			include 'nav/topbar.php';
-		?>
-		<!--/#Topbar -->
-		<div id="wrapper">
-			<!--Sidebar -->
-			<?php 
-				include 'nav/sidebar.php';
-			?>
-			<!--/#Sidebar -->
-			
-			<!--Page Content -->
-			<div id="page-content-wrapper">
-				<div class="container-fluid">
-					<div class="row">
-					<!--Content-->
-                        
-        <?php if (login_check($mysqli) == true) : ?>
-            <p>Bienvenido <?php echo htmlentities($_SESSION['username']); ?>!</p>
-            <p>
-                lel <a href="assets/includes/logout.php">Salir</a>
-            </p>
-        <?php else : ?>
-            <p>
-                <span class="error">No estas registrado para entrar a esta página.</span> Por favor <a href="index.php">inicia sesión</a>.
-            </p>
-        <?php } ?>
-        <?php endif; ?>
-                    <!--/#Content-->
-					</div>
-				</div>
-			</div>
-			<!--/#Page Content -->
-		</div>
-		<!--Main js-->
-		<?php 
-			include 'main_js.php';
-		?>
-		<!--/#Main js-->
 	</body>
 </html>
