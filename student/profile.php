@@ -73,8 +73,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 <button class="btn form-control btn-success">Información</button>
                                                 <button class="btn form-control btn-success">Información</button>
                                                 <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
                                             </div>
                                         </div>
                                     </center>
