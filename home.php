@@ -56,12 +56,18 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es neceario la eleccion de un avatar el cual se utilizara como imagen de perfil de tu cuenta.</h4>
                             <br><br>
                         </center>";
-                    for($i = 1; $i <= 10; $i++){
-                        echo "<div class='col-xs-3 col-md-2'>
-                                <a href='?avatar=".$i."' onclick=\"return confirm('¿Esta seguro que desea seleccionar este avatar?')\" class='thumbnail'>
+                    for($i = 1; $i <= 21; $i++){
+                        echo "<div class='col-xs-1 col-md-1'>
+                                <a href='?avatar=".$i."' onclick=\"return confirm('¿Esta seguro que desea seleccionar este avatar?')\" class='thumbnail' style='padding:0px;'>
                                     <img  src='assets/img/avatares/".$i.".png'>
                                 </a>
                             </div>";
+                        $e = $i + 21;
+                        echo "<div class='col-xs-1 col-md-1'>
+                                <a href='?avatar=".$e."' onclick=\"return confirm('¿Esta seguro que desea seleccionar este avatar?')\" class='thumbnail' style='padding:0px;'>
+                                    <img  src='assets/img/avatares/".$e.".png'>
+                                </a>
+                        </div>";
                     }
                     if (isset($_GET['avatar'])) {
                         $avatar =  $_GET['avatar'];
