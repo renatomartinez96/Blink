@@ -32,16 +32,17 @@ $(document).ready(function() {
                      $('.textinp').on('input', function() {
                      var valor = $(this).val();
                      var IdObjetoTexto = $(this).parent().parent().attr('id');
+                     var IdObjetoTextoATR = $(this).parent().parent().parent().attr('id');
                     if (idAtributoactual == "3") {
                         var addou = WebObjecsArray[IdObjetosupperior];
                         var numerouno = addou.indexOf("$");
                         var nombre = addou.substr(0,numerouno);
-                        $("#A"+IddeInserssionAtriSty).attr(nombre, valor);
+                        $("#A"+IdObjetoTextoATR).attr(nombre, valor);
                     }else if (idAtributoactual == "4") {
                         var addou = WebObjecsArray[IdObjetosupperior];
                         var numerouno = addou.indexOf("$");
                         var nombre = addou.substr(0,numerouno);
-                        $("#A"+IddeInserssionAtriSty).css(nombre, valor);
+                        $("#A"+IdObjetoTextoATR).css(nombre, valor);
                     }else {
                         $("#A"+IdObjetoTexto).text(valor);
                     }
