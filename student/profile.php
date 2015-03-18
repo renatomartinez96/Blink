@@ -22,6 +22,18 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo);
         $stmt->fetch();
+        switch($tipo)
+        {
+            case 1:
+                $tip = 'Administrador';
+            break;
+            case 2:
+                $tip = 'Profesor';
+            break;
+            case 3:
+                $tip = 'Estudiante';
+            break;
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -37,6 +49,21 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Custom CSS-->
             <link href="../assets/css/sidebar.css" rel="stylesheet">
             <link href="../assets/css/perfil.css" rel="stylesheet">
+            <style>
+                ::-webkit-scrollbar {
+                    width: 15px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    border-radius: 0px;
+                    background: #000;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    border-radius: 0px;
+                    background: black;
+                }
+            </style>
 		<!--/#Custom CSS-->
 
 	</head>
@@ -73,8 +100,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 <button class="btn form-control btn-success">Información</button>
                                                 <button class="btn form-control btn-success">Información</button>
                                                 <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
                                             </div>
                                         </div>
                                     </center>
@@ -83,27 +108,27 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-9 full jumbotron">
                                 <div class="panel panel-primary full">
                                     <div class="panel-heading">
-                                        <h2 class="junction-bold">Información</h2>
+                                        <h3 class="junction-bold">Información</h3>
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
-                                        <label><h3 class="junction-regular">Usuario</h3></label>
-                                            <label class="pull-right"><h4><?=$user?></h4></label><br>
-                                        
-                                        <label><h3 class="junction-regular">Nombre</h3></label>
+                                        <label><h4 class="junction-regular">Nombre</h4></label>
                                             <label class="pull-right"><h4><?=$nombres." ".$apellidos?></h4></label><br>
                                         
-                                        <label><h3 class="junction-regular">Fecha de nacimiento</h3></label>
-                                            <label class="pull-right"><h4><?=$nacimiento?></h4></label><br>
+                                        <label><h4 class="junction-regular">Usuario</h4></label>
+                                            <label class="pull-right"><h4><?=$user?></h4></label><br>
                                         
-                                        <label><h3 class="junction-regular">Descripcion</h3></label><br>
-                                            <label class="pull-right"><h4><?=$descripcion?></h4></label><br>
-                                        
-                                        <label><h3 class="junction-regular">Correo Electronico</h3></label>
+                                        <label><h4 class="junction-regular">Correo Electronico</h4></label>
                                             <label class="pull-right"><h4><?=$correo?></h4></label><br>
                                         
-                                        <label><h3 class="junction-regular">Tipo de usuario</h3></label>
-                                            <label class="pull-right"><h4><?=$tipo?></h4></label><br>
+                                        <label><h4 class="junction-regular">Fecha de nacimiento</h4></label>
+                                            <label class="pull-right"><h4><?=$nacimiento?></h4></label><br>
+                                        
+                                        <label><h4 class="junction-regular">Descripcion</h4></label><br>
+                                            <label class="pull-right"><h4><?=$descripcion?></h4></label><br>
+                                        
+                                        <label><h4 class="junction-regular">Tipo de usuario</h4></label>
+                                            <label class="pull-right"><h4><?=$tip?></h4></label><br>
                                     </div>
                                     <!--/#Informacion del usuario-->
                                 </div>
