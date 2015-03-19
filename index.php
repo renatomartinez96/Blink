@@ -82,7 +82,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         }
         if (login_check($mysqli) == true) 
         {
-            header('location:atuents/home.php');
+            header('location:student/profile.php');
         } 
         else 
         {

@@ -47,3 +47,9 @@ html , body{
     padding: 0px !important;
     margin: 0px !important;
 }
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
