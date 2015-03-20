@@ -92,10 +92,10 @@ Gerardo López | Iván Nolasco | Renato Andres
         <br>
         <form action="assets/includes/login_proceso.php" method="post" name="login_form">
             <div class="form-group">
-                <p class="col-md-4" for="email">Email: </p><div class="col-md-8"><input type="text" name="email" id="email" placeholder="Email" class="form-control input-sm" required/></div> <br>
+                <p class="col-md-4" for="email">Email: </p><div class="col-md-8"><input type="text" name="email" id="email" placeholder="Correo/Email" class="form-control input-sm" required/></div> <br>
             </div>
             <div class="form-group">
-                <p class="col-md-4" for="password">Contraseña: </p><div class="col-md-8"><input type="password" name="password" placeholder="Contraseña" id="password"  class="form-control input-sm" required/></div><br>
+                <p class="col-md-4" for="password">Contraseña: </p><div class="col-md-8"><input type="password" name="password" placeholder="Contraseña/Password" id="password"  class="form-control input-sm" required/></div><br>
             </div>
             <div class="form-group">
                 <div class="col-md-12"><input type="button" value="¡Entrar al sitio!" class="btn btn-success btn-block" onclick="formhash(this.form, this.form.password);" /><br> </div>
