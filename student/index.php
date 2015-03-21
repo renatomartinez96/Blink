@@ -79,7 +79,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="panel-heading ">
                                     <h3 class="panel-title"><strong class="junction-light">Result</strong></h3>
                                 </div>
-                                <div class="panel-body full">
+                                <div class="panel-body full" style="background:#fff">
                                     <iframe src="../users/<?=$user?>/index.html" class="full col-sm-12 resultc"></iframe>
                                 </div>
                             </div>
@@ -98,22 +98,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Main js-->
         <!--Editor js-->
         <script src="../assets/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-            <script>
-                var editor = ace.edit("editor");
-                editor.setTheme("ace/theme/monokai");
-                editor.getSession().setMode("ace/mode/html");
-                editor.getSession().on('change', function(){
-                $('.yourSite').html(editor.getSession().getValue());
-                });
-            </script> 
-            <script>
-            var editor = ace.edit("editor2");
-                editor.setTheme("ace/theme/monokai");
-                editor.getSession().setMode("ace/mode/css");
-                editor.getSession().on('change', function(){
-                $('.yourSite').html(editor.getSession().getValue());
-                });
-            </script> 
 		<!--/#Editor js-->
 	</body>
 </html>
