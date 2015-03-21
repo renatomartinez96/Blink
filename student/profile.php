@@ -108,26 +108,26 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-9 full jumbotron">
                                 <div class="panel panel-primary full">
                                     <div class="panel-heading">
-                                        <h3 class="junction-bold">Información</h3>
+                                        <h3 class="junction-bold"><?=$lang['profile-1']?></h3>
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
-                                        <label><h4 class="junction-regular">Nombre</h4></label>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-2']?></h4></label>
                                             <label class="pull-right"><h4><?=$nombres." ".$apellidos?></h4></label><br>
                                         
-                                        <label><h4 class="junction-regular">Usuario</h4></label>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-3']?></h4></label>
                                             <label class="pull-right"><h4><?=$user?></h4></label><br>
                                         
-                                        <label><h4 class="junction-regular">Correo Electronico</h4></label>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-4']?></h4></label>
                                             <label class="pull-right"><h4><?=$correo?></h4></label><br>
                                         
-                                        <label><h4 class="junction-regular">Fecha de nacimiento</h4></label>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-5']?></h4></label>
                                             <label class="pull-right"><h4><?=$nacimiento?></h4></label><br>
                                         
-                                        <label><h4 class="junction-regular">Descripcion</h4></label><br>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-6']?></h4></label><br>
                                             <label class="pull-right"><h4><?=$descripcion?></h4></label><br>
                                         
-                                        <label><h4 class="junction-regular">Tipo de usuario</h4></label>
+                                        <label><h4 class="junction-regular"><?=$lang['profile-7']?></h4></label>
                                             <label class="pull-right"><h4><?=$tip?></h4></label><br>
                                     </div>
                                     <!--/#Informacion del usuario-->
