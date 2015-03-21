@@ -3,75 +3,45 @@
 <script async src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script async src="../assets/js/angular.min.js"></script>
 <script>
-	$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-			$("#avatar").toggleClass("toggled");
-			$(".sidebar-nav").toggleClass("toggled");
-			$(".textos").toggleClass("toggled");
-	});
+	$("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
 </script>
 <script>
-//Valida que en un campo solo se puedan ingresar letras
-//Sintaxis html= onkeypress="txtletras()"
-function txtletras() {
-    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
-        event.returnValue = false;
-}
-//Valida que en un campo solo se puedan ingresar letras
-//Sintaxis html= onkeypress="txtnumeros()"
-function txtnumeros() {
-    if ((event.keyCode < 48) || (event.keyCode > 57)){ 
-        event.returnValue = false;
-        
-    }
-}
-//Mascaras de entrada para campos tipo text
-
-//Patron para fecha espaÃ±ol con formato aaaa-mm-dd
-var patron = new Array(4,2,2)
-//Patron para fecha ingles con formato mm-dd-aaaa
-var patroning = new Array(2,2,4)
-//Patron para telefono con formato ####-####
-var patron2 = new Array(4,4)
-//Patron para dui con formato ########-#
-var patron3 = new Array(8,1)
-//Patron para hora con formato ##:##
-var patron4 = new Array(2,2)
-function mascara(d,sep,pat,nums){
-    if(d.valant != d.value){
-        val = d.value
-        largo = val.length
-        val = val.split(sep)
-        val2 = ''
-        for(r=0;r<val.length;r++){
-            val2 += val[r]	
-        }
-        if(nums){
-            for(z=0;z<val2.length;z++){
-                if(isNaN(val2.charAt(z))){
-                    letra = new RegExp(val2.charAt(z),"g")
-		            val2 = val2.replace(letra,"")
-		        }
-            }
-        }
-        val = ''
-        val3 = new Array()
-        for(s=0; s<pat.length; s++){
-            val3[s] = val2.substring(0,pat[s])
-		    val2 = val2.substr(pat[s])
-        }
-        for(q=0;q<val3.length; q++){
-            if(q ==0){
-		      val = val3[q]
-            }else{
-                if(val3[q] != ""){
-                    val += sep + val3[q]
+    $(document).ready(function(){
+        var user = "<?=$user?>";
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/pastel_on_dark");
+        editor.getSession().setMode("ace/mode/html");
+        editor.getSession().on('change', function(){
+            var dataString = editor.getSession().getValue()
+            var send = {"codigo" : dataString,
+                        "usuario" : user};
+            $.ajax({
+                type: "POST",
+                url: "htmlup.php",
+                data: send,
+                success: function(data) {
+                    $("#resul").append(data);
                 }
-            }
-        }
-            d.value = val
-            d.valant = val
-    }
-}
+            });
+        });
+        var editor1 = ace.edit("editor2");
+        editor1.setTheme("ace/theme/pastel_on_dark");
+        editor1.getSession().setMode("ace/mode/css");
+        editor1.getSession().on('change', function(){
+            var dataStringCss = editor1.getSession().getValue()
+            var sendcss = {"codigo" : dataStringCss,
+                        "usuario" : user};
+            $.ajax({
+                type: "POST",
+                url: "cssup.php",
+                data: sendcss,
+                success: function(data) {
+                    $("#resul").append(data);
+                }
+            });
+        });
+    });
+</script>
+<script>
+function txtletras(){(32!=event.keyCode&&event.keyCode<65||event.keyCode>90&&event.keyCode<97||event.keyCode>122)&&(event.returnValue=!1)}function txtnumeros(){(event.keyCode<48||event.keyCode>57)&&(event.returnValue=!1)}function mascara(e,a,l,v){if(e.valant!=e.value){for(val=e.value,largo=val.length,val=val.split(a),val2="",r=0;r<val.length;r++)val2+=val[r];if(v)for(z=0;z<val2.length;z++)isNaN(val2.charAt(z))&&(letra=new RegExp(val2.charAt(z),"g"),val2=val2.replace(letra,""));for(val="",val3=new Array,s=0;s<l.length;s++)val3[s]=val2.substring(0,l[s]),val2=val2.substr(l[s]);for(q=0;q<val3.length;q++)0==q?val=val3[q]:""!=val3[q]&&(val+=a+val3[q]);e.value=val,e.valant=val}}var patron=new Array(4,2,2);
 </script>
