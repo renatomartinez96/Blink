@@ -28,10 +28,11 @@ $lang = array(
 //      Pantalla de perfil
         "profile-1" => "Informacion",
         "profile-2" => "Nombre",
-        "profile-3" => "Correo Electronico",
-        "profile-4" => "Fecha de nacimiento",
-        "profile-5" => "Descripcion",
-        "profile-6" => "Tipo de usuario",
+        "profile-3" => "Usuario",
+        "profile-4" => "Correo Electronico",
+        "profile-5" => "Fecha de nacimiento",
+        "profile-6" => "Descripcion",
+        "profile-7" => "Tipo de usuario",
 //   /# Pantalla de perfil
 // /# estudiante
 //----------------------------------------------
