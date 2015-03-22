@@ -16,23 +16,58 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo  FROM usuarios_tb WHERE usuario = ?")) {
+    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) {
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo);
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
         $stmt->fetch();
-        switch($tipo)
+        if ($lang == 'esp') 
+        {   
+            include '../assets/lang/esp.php';
+            switch($tipo)
+            {
+                case 1:
+                    $tip = 'Administrador';
+                break;
+                case 2:
+                    $tip = 'Profesor';
+                break;
+                case 3:
+                    $tip = 'Estudiante';
+                break;
+            }
+        }
+        elseif($lang == 'ing')
         {
-            case 1:
-                $tip = 'Administrador';
-            break;
-            case 2:
-                $tip = 'Profesor';
-            break;
-            case 3:
-                $tip = 'Estudiante';
-            break;
+            include '../assets/lang/ing.php';
+            switch($tipo)
+            {
+                case 1:
+                    $tip = 'Administrator';
+                break;
+                case 2:
+                    $tip = 'Teacher';
+                break;
+                case 3:
+                    $tip = 'Student';
+                break;
+            }
+        }
+        else{
+            include '../assets/lang/esp.php';
+            switch($tipo)
+            {
+                case 1:
+                    $tip = 'Administrador';
+                break;
+                case 2:
+                    $tip = 'Profesor';
+                break;
+                case 3:
+                    $tip = 'Estudiante';
+                break;
+            }
         }
     }
 ?>
@@ -108,7 +143,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-9 full jumbotron">
                                 <div class="panel panel-primary full">
                                     <div class="panel-heading">
-                                        <h3 class="junction-bold"><?=$lang['profile-1']?></h3>
+                                        <h3 class="junction-bold"><?=$lang['profile-1']?> <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button></h3>
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
