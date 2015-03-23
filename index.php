@@ -1,13 +1,28 @@
 <?php
 include_once 'assets/includes/db_conexion.php';
 include_once 'assets/includes/funciones.php';
- 
+
+if(isset($_GET["lang"]))
+{
+    if($_GET["lang"]=="en")
+    {
+        include "assets/lang/ivan-en.php";
+    }
+    else
+    {
+        include "assets/lang/ivan-es.php";
+    }
+}
+else
+{
+    include "assets/lang/ivan-es.php";
+}
 sec_session_start();
  
 if (login_check($mysqli) == true) {
-    $logged = 'Ya iniciaste sesión ._.';
+    $logged = "Ya iniciaste sesión ._.";
 } else {
-    $logged = 'No has iniciado sesión';
+    $logged = $lang["nosession"];
 }
 ?>
 <!--
@@ -28,7 +43,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "¡Bienvenido a BLink!";
+            $titulodelapagina = $lang["welcomeblink"];
 			include 'main_css.php';
 		?>
         <!--/#Core CSS-->
@@ -75,6 +90,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     </video>
     <div class="well centeringthis">
         <h1 class="junction-bold text-center">BLink</h1>
+        <?=$lang["yonoespik"]?>
         <?php
         if (isset($_GET['error'])) 
         {
@@ -92,17 +108,17 @@ Gerardo López | Iván Nolasco | Renato Andres
         <br>
         <form action="assets/includes/login_proceso.php" method="post" name="login_form">
             <div class="form-group">
-                <p class="col-md-4" for="email">Email: </p><div class="col-md-8"><input type="text" name="email" id="email" placeholder="Email" class="form-control input-sm" required/></div> <br>
+                <p class="col-md-4" for="email"><?=$lang["emailname"]?>: </p><div class="col-md-8"><input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control input-sm" required/></div> <br>
             </div>
             <div class="form-group">
-                <p class="col-md-4" for="password">Contraseña: </p><div class="col-md-8"><input type="password" name="password" placeholder="Contraseña" id="password"  class="form-control input-sm" required/></div><br>
+                <p class="col-md-4" for="password"><?=$lang['contra']?>: </p><div class="col-md-8"><input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password"  class="form-control input-sm" required/></div><br>
             </div>
             <div class="form-group">
-                <div class="col-md-12"><input type="button" value="¡Entrar al sitio!" class="btn btn-success btn-block" onclick="formhash(this.form, this.form.password);" /><br> </div>
+                <div class="col-md-12"><input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success btn-block" onclick="formhash(this.form, this.form.password);" /><br> </div>
             </div>
         </form>
         
-        <p class="text-center"><a href='registrarse.php' class='btn btn-info'>¿No tienes cuenta? ¡Registrate aquí!</a></p>
+        <p class="text-center"><a href='registrarse.php' class='btn btn-info'><?=$lang['sincuenta']?></a></p>
         
     </div>
 </body>
