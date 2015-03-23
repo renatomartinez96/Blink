@@ -53,7 +53,7 @@ $lang = array(
         "lel" => "The to&ntilde;ito :D",
         "nosession" => "You are not logged in",
         "welcomeblink" => "Welcome to BLink!",
-        "yonoespik" => "<p class='text-center'><strong><a href='index.php'><i class='fa fa-language'></i> ¡¿Qu&eacute; es esto?! Yo no espiko ingl&eacute;s</a></strong></p>",
+        "yonoespik" => "<p class='text-center'><strong><a href='index.php'><i class='fa fa-language'></i> ¡¿Qu&eacute; es esto?! Yo no hablo ingl&eacute;s</a></strong></p>",
         "emailname" => "Email",
         "emailexample" => "example@mail.com",
         "contra" => "Password",
