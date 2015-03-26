@@ -22,11 +22,11 @@ function sec_session_start() {
 }
 
 function login($email, $password, $mysqli) {
-    if ($stmt = $mysqli->prepare("SELECT idusuario, usuario, contra, salt FROM usuarios_tb WHERE correo = ?")) {
+    if ($stmt = $mysqli->prepare("SELECT idusuario, usuario, contra, salt, tipo FROM usuarios_tb WHERE correo = ?")) {
         $stmt->bind_param('s', $email);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($user_id, $username, $db_password, $salt);
+        $stmt->bind_result($user_id, $username, $db_password, $salt, $tipo);
         $stmt->fetch();
  
         
@@ -39,10 +39,9 @@ function login($email, $password, $mysqli) {
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
                     $user_id = preg_replace("/[^0-9]+/", "", $user_id);
                     $_SESSION['user_id'] = $user_id;
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", 
-                                                                "", 
-                                                                $username);
+                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
                     $_SESSION['username'] = $username;
+                    $_SESSION['tipo'] = $tipo;
                     $_SESSION['login_string'] = hash('sha512', 
                               $password . $user_browser);
                     // Login successful.

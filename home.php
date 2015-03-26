@@ -89,7 +89,19 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
                 else
                 {
-                    header("location:student/index.php");
+                    switch($_SESSION['tipo'])
+                    {
+                        case 1:
+                            header("location:admin/index.php");
+                        break;
+                        case 2:
+                            header("location:teacher/index.php");   
+                        break;
+                        case 3:
+                            header("location:student/index.php");
+                        break;
+                    }
+                    
                 }
             }
             ?>
