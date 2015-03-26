@@ -1,0 +1,19 @@
+.results {
+    height: auto;
+    padding-top: 2%;
+}
+.loading > i {
+    color: #bf5a16;
+}
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 20%;
+}
+.tituloxxx {
+    text-align: center;
+    padding-top: 1%;
+}
+.loadLessons{
+    margin: 1%;
+}
