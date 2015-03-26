@@ -15,7 +15,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,12 +46,22 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
 			
 			<!--Page Content -->
-			
+            
+                <div class="tituloxxx"><h1 class="junction-bold ">CREATED COURSES</h1></div>
+			     <div class="col-xs-12 results">
+            
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 loading">
+                        <i class="fa fa-cog fa-spin fa-5x"></i>
+                    </div>
 			<!--/#Page Content -->
 		</div>
 		<!--Main js-->
 		<?php 
 			include 'main_js.php';
+        }else {
+            header("location:index.php");
+        }
 		?>
 		
 	</body>
