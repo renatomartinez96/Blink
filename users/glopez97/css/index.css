@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 #nav > li{
     background:#000;
     color:#fff444;
 }
 
+=======
+#nav{
+    background:#fff666;
+}
+li{
+    color:#fff;
+}
+>>>>>>> origin/master
