@@ -9,6 +9,18 @@
                     $('#modalDesc').modal('toggle');
                     $( ".saveDescription" ).click(function() {
                         var value = $(".valueDescription").val();
+                            $.ajax({
+                              method: "POST",
+                              url: "ajax/syncro.php",
+                              data: { description: value},
+                              beforeSend: function() {
+                                $(".loading").css('display','block');
+                              },
+                              success: function(data) {
+                                $(".loading").css('display','none');
+                              }
+                          });
+                          
                         $(".valueDescription").val("");
                         $('#modalDesc').modal('hide');
                     });
@@ -23,6 +35,7 @@
                         getParameterTres();
                         inputText();
                         addDescr();
+                        momentoTo++;
                         IdObjetoCreadoUnico--;
                         
                 }

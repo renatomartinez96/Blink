@@ -32,6 +32,16 @@
                         <div id="12" class="col-xs-3 htmlMain royal withauto"><p>WIDTH</p></div>
                         <div id="13" class="col-xs-3 htmlMain royal withauto"><p>HEIGHT</p></div>
                     </div>
+                <div class="row">
+                <p class="titulo">TOOLS</p>
+                        
+                    </div>
+                <div class="row">
+                    <div class="loading">
+                        <div class="col-xs-3"><p class="titulo">saving</p></div>
+                        <div class="col-xs-3" style="margin-top:2%;"><i class="fa fa-circle-o-notch fa-spin fa-1x titulo"></i></div>
+                    </div>
+                </div>
             </div>
             <div class="col-xs-11 result">
                 <p class="titulo">Your Website</p>
