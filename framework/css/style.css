@@ -102,3 +102,19 @@
 .royal {
     background-color: #87D37C;
 }
+
+.valueDescription {
+    width: 100%;
+}
+.loading {
+    display: none;
+}
+.loading > div > i {
+    color:#F7CA18;
+    font-size: 1.5em;
+    
+}
+.loading > div > p {
+    color:#F7CA18;
+    font-size: 1.5em;
+}
