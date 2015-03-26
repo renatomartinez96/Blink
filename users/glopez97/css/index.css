@@ -1,5 +1,6 @@
-.nav{
-    display:inline-block;
-    text-decoration:none;
+#nav{
     background:#fff666;
+}
+li{
+    color:#fff;
 }
