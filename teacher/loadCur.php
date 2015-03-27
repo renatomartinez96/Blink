@@ -1,6 +1,6 @@
 <?php 
-    include_once '../assets/includes/db_conexion.php';
-    include_once '../assets/includes/funciones.php';
+    include '../assets/includes/db_conexion.php';
+    include '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
@@ -10,8 +10,14 @@
         $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion);
-        $string = "<div class='tituloxxx'><h1 class='junction-bold '>CREATED COURSES</h1></div>";
-        $string .= "<div><a class='btn btn-success botoncrear'>Create course</a></div>";
+        $string = "<div class=' tituloxxx'><h1 class='junction-bold '>CREATED COURSES</h1></div>";
+        $string .= "<div class='col-xs-11'>
+                    <ul class='breadcrumb'>
+                      <li class='active'>".$_SESSION['username']."</li>
+                      
+                    </ul>
+                </div>
+                <div class='col-xs-1'><a class='btn btn-success botoncrear'>Create course</a></div>";
         while ($stmt->fetch()) {
              $string .= "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
                     <h1>".$nombre."</h1>
