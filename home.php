@@ -1,14 +1,3 @@
-<!--
-
-Copyright (c) 2015 Blink
-All Rights Reserved
- 
-This product is protected by copyright and distributed under
-licenses restricting copying, distribution, and decompilation.
-
-Gerardo López | Iván Nolasco | Renato Andres
-
--->
 <?php
 include_once 'assets/includes/db_conexion.php';
 include_once 'assets/includes/funciones.php';
