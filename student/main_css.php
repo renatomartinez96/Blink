@@ -36,4 +36,7 @@
     .thumbnail{
         background:#2B3E50;
     }
+    body{
+        background-color:#2B3E50 !important;
+    }
 </style>

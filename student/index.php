@@ -15,7 +15,16 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    {
+        $stmt->bind_param('s', $user);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->fetch();
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +32,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
-			include 'main_css.php';
+			require 'main_css.php';
 		?>
 		<!--/#Core CSS-->
 
@@ -52,38 +61,149 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
-                        <div class="col-sm-7 full">
-                            <div class="panel panel-success full">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><strong class="junction-light">HTML</strong>(HyperText Markup Language)</h3>
-                                </div>
-                                <div class="panel-body full">
-                                    <pre id="editor"><?php echo htmlentities(file_get_contents("../users/".$user."/index.html")); ?></pre>
-                                </div>
+                        <div class="jumbotron col-xs-12" style="margin-bottom:0px !important;">
+                            <div class="video_container">
+                                <video  autoplay loop muted="" class="full fillWidth">
+                                    <source src="../assets/video/profile.mp4" type="video/mp4">
+                                </video>
                             </div>
-
+                            <div class="col-md-12">
+                                <h1 class="junction-bold"><?=$nombres." ".$apellidos?></h1>
+                                <h3 class="junction-regular"><?=$_SESSION['username']?></h3>
+                                <p class="junction-light"><?=$descripcion?></p>
+                                <p>
+                                    <a class="btn btn-default btn-lg" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a>
+                                    <a class="btn btn-face btn-lg">Facebook</a>
+                                    <a class="btn btn-twit btn-lg">Twitter</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="col-sm-5 full">
-                            <div class="panel panel-success full">
-                                <div class="panel-heading ">
-                                    <h3 class="panel-title"><strong class="junction-light">CSS</strong>(Cascading Style Sheets)</h3>
-                                </div>
-                                <div class="panel-body full">
-                                    <pre id="editor2"><?php echo htmlentities(file_get_contents("../users/".$user."/css/index.css")); ?></pre>
+                        <div class="col-xs-12 full">
+                            <br>
+                            <div class="col-md-10 ">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Courses Feed</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <!--Cursos-->
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/2.jpg" style="border-radius:50%;">
+                                                <div class="caption">
+                                                    <h3>Basic html tags</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>
+                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/3.jpg" style="border-radius:50%;">
+                                                <div class="caption">
+                                                    <h3>Basic html tags</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>
+                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/4.jpg" style="border-radius:50%;">
+                                                <div class="caption">
+                                                    <h3>Basic html tags</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>
+                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/1.jpg" style="border-radius:50%;">
+                                                <div class="caption">
+                                                    <h3>Basic html tags</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>
+                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/#Cursos-->
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="col-sm-12 full">
-                            <div class="panel panel-success full">
-                                <div class="panel-heading ">
-                                    <h3 class="panel-title"><strong class="junction-light">Result </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Update"></h3>
-                                </div>
-                                <div class="panel-body full" style="background:#fff">
-                                    <iframe src="../users/<?=$user?>/index.html" class="full col-sm-12 resultc" id="resultc"></iframe>
+                            <div class="col-md-2">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Teachers</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <!--Teachers-->
+                                        <div class="row">
+                                              <div class="col-xs-12">
+                                                    <div class="thumbnail">
+                                                        <img src="../assets/img/avatares/8.png" class="col-xs-12">
+                                                        <div class="caption">
+                                                            <center>
+                                                                <h3>Teacher</h3>
+                                                                <p>
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus.
+                                                                </p>
+                                                                <h4>Html</h4>
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                                                </div>
+                                                                <h4>Css</h4>
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                                                                </div>
+                                                                <p>
+                                                                    <a href="#" class="btn btn-primary" role="button">Suscribe</a> 
+                                                                    <a href="#" class="btn btn-default" role="button">View</a>
+                                                                </p>
+                                                            </center>
+                                                        </div>
+                                                    </div>
+                                              </div>
+                                        </div>
+                                        <div class="row">
+                                              <div class="col-xs-12">
+                                                    <div class="thumbnail">
+                                                        <img src="../assets/img/avatares/35.png" class="col-xs-12">
+                                                        <div class="caption">
+                                                            <center>
+                                                                <h3>Teacher 2</h3>
+                                                                <p>
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus.
+                                                                </p>
+                                                                <h4>Html</h4>
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-info" style="width: 70%"></div>
+                                                                </div>
+                                                                <h4>Css</h4>
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" style="width: 80%"></div>
+                                                                </div>
+                                                                <p>
+                                                                    <a href="#" class="btn btn-primary" role="button">Suscribe</a> 
+                                                                    <a href="#" class="btn btn-default" role="button">View</a>
+                                                                </p>
+                                                            </center>
+                                                        </div>
+                                                    </div>
+                                              </div>
+                                        </div>
+                                        <!--/#Teachers-->
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
 					<!--/#Content-->
 					</div>
@@ -96,8 +216,5 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_js.php';
 		?>
 		<!--/#Main js-->
-        <!--Editor js-->
-        <script src="../assets/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-		<!--/#Editor js-->
 	</body>
 </html>
