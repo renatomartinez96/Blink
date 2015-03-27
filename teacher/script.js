@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    function loadCursos() {
+    $(".results").html("");
     $.ajax({
           method: "POST",
           url: "loadCur.php",
@@ -11,6 +13,8 @@ $(document).ready(function() {
             event();
           }
     });
+    }
+    loadCursos();
     function event() {
         $(".loadLessons").click(function() {
             var idcursi = $(this).attr('id');
@@ -25,8 +29,15 @@ $(document).ready(function() {
                   success: function(data) {
                     $(".loading").css('display','none');
                     $(".results").html(data);
+                      event();
                   }
             });
         });
+         $(".botoncrear").click(function() {
+            $('#modalDesc').modal('toggle');
+         });
+        $(".backhome").click(function() {
+            loadCursos();
+         });
     }
 });

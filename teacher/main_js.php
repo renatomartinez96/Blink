@@ -1,7 +1,7 @@
-<script async src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script async src="../assets/js/jquery.js" type="text/javascript"></script>
 <script async src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script async src="../assets/js/angular.min.js"></script>
+<script async src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script async src="script.js" type="text/javascript"></script>
 <script>
 	$("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});

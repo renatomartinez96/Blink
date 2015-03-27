@@ -11,7 +11,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,13 +55,13 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Add description</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add course</h4>
                       </div>
                       <div class="modal-body">
-                        <textarea class="valueDescription"></textarea>
+                            
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary saveDescription">Save changes</button>
+                        <button type="button" class="btn btn-primary saveDescription">Create course</button>
                       </div>
                     </div>
                   </div>
@@ -71,9 +71,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 		<!--Main js-->
 		<?php 
 			include 'main_js.php';
-        }else {
-            header("location:index.php");
-        }
+        
 		?>
 		
 	</body>
