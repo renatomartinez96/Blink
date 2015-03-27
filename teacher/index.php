@@ -15,7 +15,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
 			include 'main_css.php';
+            include 'main_js.php';
 		?>
 		<!--/#Core CSS-->
 
@@ -46,12 +47,26 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
 			
 			<!--Page Content -->
-			
+            
+<<<<<<< HEAD
+                <div class="tituloxxx"><h1 class="junction-bold ">CREATED COURSES</h1></div>
+=======
+                <div><a class="btn btn-success botoncrear">Create course</a></div>
+>>>>>>> origin/Tutor
+			     <div class="col-xs-12 results">
+            
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 loading">
+                        <i class="fa fa-cog fa-spin fa-5x"></i>
+                    </div>
 			<!--/#Page Content -->
 		</div>
 		<!--Main js-->
 		<?php 
 			include 'main_js.php';
+        }else {
+            header("location:index.php");
+        }
 		?>
 		
 	</body>
