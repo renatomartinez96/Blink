@@ -1,21 +1,17 @@
 <!--
-
 Copyright (c) 2015 Blink
 All Rights Reserved
  
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
-
 Gerardo López | Iván Nolasco | Renato Andres
-
 -->
 <?php
-
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +20,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
 			include 'main_css.php';
+            include 'main_js.php';
 		?>
 		<!--/#Core CSS-->
 
@@ -46,12 +43,37 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
 			
 			<!--Page Content -->
-			
+            
+                
+			     <div class="col-xs-12 results">
+            
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 loading">
+                        <i class="fa fa-cog fa-spin fa-5x"></i>
+                    </div>
+                <div class="modal fade" id="modalDesc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Add description</h4>
+                      </div>
+                      <div class="modal-body">
+                        <textarea class="valueDescription"></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary saveDescription">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
 			<!--/#Page Content -->
 		</div>
 		<!--Main js-->
 		<?php 
 			include 'main_js.php';
+        }else {
+            header("location:index.php");
+        }
 		?>
 		
 	</body>
