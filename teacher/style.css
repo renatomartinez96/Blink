@@ -1,10 +1,7 @@
+
 .results {
     height: auto;
-<<<<<<< HEAD
-    padding-top: 2%;
-=======
     padding-top: 0%;
->>>>>>> origin/Tutor
 }
 .loading > i {
     color: #bf5a16;
@@ -16,19 +13,13 @@
 }
 .tituloxxx {
     text-align: center;
-<<<<<<< HEAD
-=======
     padding-bottom: 1%;
->>>>>>> origin/Tutor
     padding-top: 1%;
 }
 .loadLessons{
     margin: 1%;
-<<<<<<< HEAD
-=======
 }
 .botoncrear {
     margin: 1%;
     text-align: left;
->>>>>>> origin/Tutor
 }
