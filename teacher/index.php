@@ -44,13 +44,28 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 			
 			<!--Page Content -->
             
-                <div><a class="btn btn-success botoncrear">Create course</a></div>
+                
 			     <div class="col-xs-12 results">
             
                 </div>
                 <div class="col-xs-6 col-xs-offset-3 loading">
                         <i class="fa fa-cog fa-spin fa-5x"></i>
                     </div>
+                <div class="modal fade" id="modalDesc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Add description</h4>
+                      </div>
+                      <div class="modal-body">
+                        <textarea class="valueDescription"></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary saveDescription">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
 			<!--/#Page Content -->
 		</div>
 		<!--Main js-->

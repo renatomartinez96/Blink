@@ -11,6 +11,7 @@
         $stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion);
         $string = "<div class='tituloxxx'><h1 class='junction-bold '>CREATED COURSES</h1></div>";
+        $string .= "<div><a class='btn btn-success botoncrear'>Create course</a></div>";
         while ($stmt->fetch()) {
              $string .= "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
                     <h1>".$nombre."</h1>
