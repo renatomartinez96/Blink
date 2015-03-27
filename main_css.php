@@ -8,22 +8,3 @@
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/sidebar.css" rel="stylesheet">
-<style>
-    .video_container {
-        position: absolute;
-    }
-    .video_container {
-        top:0%;
-        left:0%;
-        height:100%;
-        width:100%;
-        overflow: hidden;
-    }
-    video {
-        position:absolute;
-        z-index:0;
-    }
-    video.fillWidth {
-        width: 100%;
-    }
-</style>

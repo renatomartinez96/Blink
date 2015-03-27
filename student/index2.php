@@ -32,7 +32,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
-			include 'main_css.php';
+			require 'main_css.php';
 		?>
 		<!--/#Core CSS-->
 
@@ -40,25 +40,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<link href="../assets/css/sidebar.css" rel="stylesheet">
         <link href="../assets/css/perfil.css" rel="stylesheet">
         <link href="../assets/css/editor.css" rel="stylesheet">
-        <style>
-                .video_container {
-                    position: absolute;
-                }
-                .video_container {
-                    top:0%;
-                    left:0%;
-                    height:100%;
-                    width:100%;
-                    overflow: hidden;
-                }
-                video {
-                    position:absolute;
-                    z-index:0;
-                }
-                video.fillWidth {
-                    width: 100%;
-                }
-        </style>
 		<!--/#Custom CSS-->
 
 	</head>
@@ -80,20 +61,52 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
-                        <div class="jumbotron col-xs-12" style="margin-bottom:0px !important; padding: 48px 0px 0px 30px;">
+                        <div class="jumbotron col-xs-12" style="margin-bottom:0px !important;">
                             <div class="video_container">
-                                <video  autoplay loop muted class="full fillWidth">
+                                <video  autoplay loop muted="" class="full fillWidth">
                                     <source src="../assets/video/profile.mp4" type="video/mp4">
                                 </video>
                             </div>
-                            <div class="col-md-9">
-                                <h1><?=$nombres." ".$apellidos?></h1>
-                                <h3><?=$_SESSION['username']?></h3>
-                                  <p><?=$descripcion?></p>
-                                  <p><a class="btn btn-primary btn-lg">Personal page</a></p>
+                            <div class="col-md-12">
+                                <h1 class="junction-bold"><?=$nombres." ".$apellidos?></h1>
+                                <h3 class="junction-regular"><?=$_SESSION['username']?></h3>
+                                <p class="junction-light"><?=$descripcion?></p>
+                                <p>
+                                    <a class="btn btn-default btn-lg"><Strong><?=$_SESSION['username']?></Strong>'s page</a>
+                                    <a class="btn btn-face btn-lg">Facebook</a>
+                                    <a class="btn btn-twit btn-lg">Twitter</a>
+                                </p>
                             </div>
-                            <div class="col-md-3" >
-                                <img class="col-xs-12 full" src="../assets/img/avatares/<?=$avatar?>.png">
+                        </div>
+                        <div class="col-xs-12 full">
+                            <div class="col-md-9 full">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Courses Feed</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/2.jpg" alt="...">
+                                                <div class="caption">
+                                                    <h3>Thumbnail label</h3>
+                                                    <p>...</p>
+                                                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 full">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Teachers</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Panel content
+                                    </div>
+                                </div>
                             </div>
                         </div>
 					<!--/#Content-->
