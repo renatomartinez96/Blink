@@ -24,6 +24,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
 			include 'main_css.php';
+            include 'main_js.php';
 		?>
 		<!--/#Core CSS-->
 
@@ -47,7 +48,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 			
 			<!--Page Content -->
             
-                <div class="tituloxxx"><h1 class="junction-bold ">CREATED COURSES</h1></div>
+                <div><a class="btn btn-success botoncrear">Create course</a></div>
 			     <div class="col-xs-12 results">
             
                 </div>
