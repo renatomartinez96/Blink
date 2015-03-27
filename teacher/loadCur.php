@@ -10,14 +10,10 @@
         $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion);
-<<<<<<< HEAD
-        while ($stmt->fetch()) {
-            echo "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
-=======
         $string = "<div class='tituloxxx'><h1 class='junction-bold '>CREATED COURSES</h1></div>";
+        $string .= "<div><a class='btn btn-success botoncrear'>Create course</a></div>";
         while ($stmt->fetch()) {
              $string .= "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
->>>>>>> origin/Tutor
                     <h1>".$nombre."</h1>
                     <p>".$descripcion."</p>
                     <a id='".$idcurso."' class='btn btn-primary loadLessons'>View lessons</a>
@@ -25,8 +21,5 @@
                     <a class='btn btn-success'><i class='fa fa fa-pencil'></i></a>
                 </div></div>";
         }
-<<<<<<< HEAD
-=======
         echo $string;
->>>>>>> origin/Tutor
 ?>
