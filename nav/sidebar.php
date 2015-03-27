@@ -14,13 +14,10 @@
             <a href='profile.php'><img class='toggled' src='../assets/img/avatares/<?=$avatar?>.png' id='avatar'></a>
         </li>
         <li>
-        	<a class="iconos" href="#"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Inicio</b></a>
+        	<a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Home</b></a>
         </li>
         <li>
-        	<a class="iconos" href="#"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Profesores</b></a>
-        </li>
-        <li>
-        	<a class="iconos" href="#"><i class="fa fa-user fa-2x"></i><b class="textos toggled" href="#"> Perfil</b></a>
+        	<a class="iconos" href="index.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Page</b></a>
         </li>
 	</ul>
 </div>
