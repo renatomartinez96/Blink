@@ -1,16 +1,12 @@
 <!--
-
 Copyright (c) 2015 Blink
 All Rights Reserved
  
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
-
 Gerardo López | Iván Nolasco | Renato Andres
-
 -->
 <?php
-
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
     sec_session_start();
@@ -48,11 +44,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 2) {
 			
 			<!--Page Content -->
             
-<<<<<<< HEAD
-                <div class="tituloxxx"><h1 class="junction-bold ">CREATED COURSES</h1></div>
-=======
                 <div><a class="btn btn-success botoncrear">Create course</a></div>
->>>>>>> origin/Tutor
 			     <div class="col-xs-12 results">
             
                 </div>
