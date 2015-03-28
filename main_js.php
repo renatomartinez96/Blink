@@ -25,18 +25,7 @@ function txtnumeros() {
         
     }
 }
-//Mascaras de entrada para campos tipo text
-
-//Patron para fecha espaÃ±ol con formato aaaa-mm-dd
 var patron = new Array(4,2,2)
-//Patron para fecha ingles con formato mm-dd-aaaa
-var patroning = new Array(2,2,4)
-//Patron para telefono con formato ####-####
-var patron2 = new Array(4,4)
-//Patron para dui con formato ########-#
-var patron3 = new Array(8,1)
-//Patron para hora con formato ##:##
-var patron4 = new Array(2,2)
 function mascara(d,sep,pat,nums){
     if(d.valant != d.value){
         val = d.value

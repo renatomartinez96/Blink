@@ -47,13 +47,13 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </center>";
                     for($i = 1; $i <= 21; $i++){
                         echo "<div class='col-xs-1 col-md-1'>
-                                <a href='?avatar=".$i."' onclick=\"return confirm('¿Esta seguro que desea seleccionar este avatar?')\" class='thumbnail' style='padding:0px;'>
+                                <a onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){window.location.href='?avatar=".$i."'}})\" class='thumbnail' style='padding:0px;'>
                                     <img  src='assets/img/avatares/".$i.".png'>
                                 </a>
                             </div>";
                         $e = $i + 21;
                         echo "<div class='col-xs-1 col-md-1'>
-                                <a href='?avatar=".$e."' onclick=\"return confirm('¿Esta seguro que desea seleccionar este avatar?')\" class='thumbnail' style='padding:0px;'>
+                                <a onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){window.location.href='?avatar=".$e."'}})\" class='thumbnail' style='padding:0px;'>
                                     <img  src='assets/img/avatares/".$e.".png'>
                                 </a>
                         </div>";
@@ -94,5 +94,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             }
             ?>
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
 	</body>
 </html>
