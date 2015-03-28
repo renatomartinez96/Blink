@@ -20,7 +20,7 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
      // Check each field has a value
     if (name.value == '' || last.value == '' || uid.value == '' || email.value == '' || password.value == '' || conf.value == '' || date.value == '') 
     {
-        bootbox.dialog({
+        bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",
             message: "<center><h5 class='junction-regular'>You must provide all information requested Please try again</h5></center>",
         });
@@ -32,7 +32,7 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
  
     re = /^\w+$/; 
     if(!re.test(form.username.value)) { 
-        bootbox.dialog({
+        bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",
             message: "<center><h5 class='junction-regular'>Username must contain only letters, numbers and underscores. Please try again</h5></center>",
         });
@@ -44,7 +44,7 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
     // The check is duplicated below, but this is included to give more
     // specific guidance to the user
     if (password.value.length < 6) {
-        bootbox.dialog({
+        bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",
             message: "<center><h5 class='junction-regular'>Passwords must be at least 6 characters long. Please try again</h5></center>",
         });
@@ -66,7 +66,7 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
  
     // Check password and confirmation are the same
     if (password.value != conf.value) {
-        bootbox.dialog({
+        bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",
             message: "<center><h5 class='junction-regular'>Your password and confirmation do not match. Please try again</h5></center>",
         });
@@ -74,7 +74,7 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
         return false;
     }
     if (date.value.length < 10) {
-        bootbox.dialog({
+        bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",
             message: "<center><h5 class='junction-regular'>The date is not valid</h5></center>",
         });
