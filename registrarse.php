@@ -165,8 +165,8 @@ require 'assets/includes/funciones.php';
             <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
             <script type="text/JavaScript" src="assets/js/forms.js"></script>
         <!-- /#Registration js -->
-        <script async src="assets/js/jquery.js" type="text/javascript"></script>
-        <script async src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script async src="assets/js/bootbox.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.js" type="text/javascript"></script>
+        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
 	</body>
 </html>
