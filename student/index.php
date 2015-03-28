@@ -68,9 +68,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </video>
                             </div>
                             <div class="col-md-12">
-                                <h1 class="junction-bold"><?=$nombres." ".$apellidos?></h1>
+                                <h2 class="junction-bold"><?=$nombres." ".$apellidos?></h1>
                                 <h3 class="junction-regular"><?=$_SESSION['username']?></h3>
-                                <p class="junction-light"><?=$descripcion?></p>
+                                <h4 class="junction-light"><?=$descripcion?></h4>
                                 <p>
                                     <a class="btn btn-default btn-lg" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a>
                                     <a class="btn btn-face btn-lg">Facebook</a>
@@ -89,10 +89,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <!--Cursos-->
                                         <div class="col-sm-6 col-md-3">
                                             <div class="thumbnail">
-                                                <img src="../assets/img/trofeos/2.jpg" style="border-radius:50%;">
+                                                <img src="../assets/img/trofeos/2.jpg" style="border-radius:50%;width:80%;">
                                                 <div class="caption">
                                                     <h3>Basic html tags</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. 
+                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="thumbnail">
+                                                <img src="../assets/img/trofeos/3.jpg" style="border-radius:50%;width:80%;">
+                                                <div class="caption">
+                                                    <h3>Basic html tags</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. </p>
                                                     <p>
                                                         <a href="#" class="btn btn-success form-control" role="button">Start</a> 
                                                     </p>
@@ -101,10 +112,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="thumbnail">
-                                                <img src="../assets/img/trofeos/3.jpg" style="border-radius:50%;">
+                                                <img src="../assets/img/trofeos/4.jpg" style="border-radius:50%;width:80%;">
                                                 <div class="caption">
                                                     <h3>Basic html tags</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. </p>
                                                     <p>
                                                         <a href="#" class="btn btn-success form-control" role="button">Start</a> 
                                                     </p>
@@ -113,22 +124,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="thumbnail">
-                                                <img src="../assets/img/trofeos/4.jpg" style="border-radius:50%;">
+                                                <img src="../assets/img/trofeos/1.jpg" style="border-radius:50%;width:80%;">
                                                 <div class="caption">
                                                     <h3>Basic html tags</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
-                                                    <p>
-                                                        <a href="#" class="btn btn-success form-control" role="button">Start</a> 
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <div class="thumbnail">
-                                                <img src="../assets/img/trofeos/1.jpg" style="border-radius:50%;">
-                                                <div class="caption">
-                                                    <h3>Basic html tags</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. Praesent purus ante, tincidunt quis suscipit et, blandit ac arcu. Integer quis arcu lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget arcu metus. Suspendisse ex tellus, pretium ac urna vitae, tincidunt pretium sem. Curabitur porta dolor in fringilla semper.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dui sit amet nulla porttitor porta pharetra ac urna. Vestibulum a mollis nibh, vel luctus sem. Integer sagittis viverra maximus. Quisque a felis molestie lectus dictum cursus. Proin fringilla nibh odio, a consequat mi lobortis nec. Maecenas iaculis eros in sagittis vehicula. Donec eu nunc ipsum. </p>
                                                     <p>
                                                         <a href="#" class="btn btn-success form-control" role="button">Start</a> 
                                                     </p>

@@ -99,7 +99,9 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
                 
 
         }
-        header('Location: ./registro_exitoso.php');
+        echo "<script>alert('Registration successful!')</script>";
+        header('Location: ./index.php');
+        
     }
 }
 ?>
