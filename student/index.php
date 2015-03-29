@@ -72,9 +72,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <h3 class="junction-regular"><?=$_SESSION['username']?></h3>
                                 <h4 class="junction-light"><?=$descripcion?></h4>
                                 <p>
-                                    <a class="btn btn-default btn-lg" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a>
-                                    <a class="btn btn-face btn-lg">Facebook</a>
-                                    <a class="btn btn-twit btn-lg">Twitter</a>
+                                    <a class="btn btn-default btn-lg" target="_blank" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a>
+                                    <a class="btn btn-face btn-lg" target="_blank">Facebook</a>
+                                    <a class="btn btn-twit btn-lg" target="_blank">Twitter</a>
                                 </p>
                             </div>
                         </div>
