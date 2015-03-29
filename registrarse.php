@@ -49,13 +49,7 @@ require 'assets/includes/funciones.php';
                 position:relative;
                 overflow:visible;
             }
-            .bg{
-                position: absolute;
-              left: 0;
-              right: 0;
-              top: 0;
-              bottom: 0;
-              z-index: -1;
+            body{
                 
                 background: #2B3E50 url('assets/img/registro-bg1.jpg') repeat;
                 z-index:-1;
