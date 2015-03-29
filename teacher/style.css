@@ -26,3 +26,6 @@
 .backhome {
     cursor: pointer;
 }
+.marginObje > input {
+    margin-top: 1%;
+}

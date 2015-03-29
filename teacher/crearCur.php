@@ -3,11 +3,13 @@
     $tipo = $_POST['tipo'];
     $user = $_POST['usuario'];
     $userid = $_POST['usuarioid'];
-    $i = 0;
-        $stmt = $mysqli->prepare("SELECT idcurso,nombre,descripcion FROM curso WHERE idprofesor = ?");
-        $stmt->bind_param('i', $userid);
+    $nombre= $_POST['nombre'];
+    $descrip = $_POST['descrip'];
+
+        $stmt = $mysqli->prepare("INSERT INTO curso (idprofesor, nombre, descripcion) VALUES(?, ?, ?)");
+        $stmt->bind_param('iss', $userid,$nombre,$descrip);
         $stmt->execute();
-        $stmt->store_result();
+        /*$stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion);
         $string = "<div class=' tituloxxx'><h1 class='junction-bold '>CREATED COURSES</h1></div>";
         $string .= "<div class='col-xs-11'>
@@ -26,5 +28,5 @@
                     <a class='btn btn-success'><i class='fa fa fa-pencil'></i></a>
                 </div></div>";
         }
-        echo $string;
+        echo $string;*/
 ?>

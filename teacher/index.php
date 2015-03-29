@@ -11,7 +11,8 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+    $userid = $_SESSION['user_id'];
+    $tipo = $_SESSION['tipo'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             $titulodelapagina = "¡Bienvenido $user!";
 			include 'main_css.php';
             include 'main_js.php';
-		?>
+        ?>
+        
 		<!--/#Core CSS-->
 
 		<!--Custom CSS-->
@@ -58,10 +60,13 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <h4 class="modal-title" id="myModalLabel">Add course</h4>
                       </div>
                       <div class="modal-body">
-                            
+                          <h4>Name:</h4>
+                         <input class="form-control nameCur" type="text" placeholder="Name">
+                          <h4>Description:</h4>
+                          <textarea class="form-control descripCur" placeholder="Description"></textarea>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary saveDescription">Create course</button>
+                        <button type="button" class="btn btn-primary createCou">Create course</button>
                       </div>
                     </div>
                   </div>
@@ -73,6 +78,11 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_js.php';
         
 		?>
-		
+	<script>
+        <?php     
+            include 'script.php';
+		?>
+        </script>	
 	</body>
+    
 </html>

@@ -1,10 +1,9 @@
 <?php
      if(isset($_POST['idcurso'])){
         include_once '../assets/includes/db_conexion.php';
-        include_once '../assets/includes/funciones.php';
-        sec_session_start();
-        $user = $_SESSION['user_id'];
-        $tipo = $_SESSION['tipo'];
+        $tipo = $_POST['tipo'];
+        $user = $_POST['usuario'];
+        $userid = $_POST['usuarioid'];
         $idCurso = $_POST['idcurso'];
             $stmt = $mysqli->prepare("SELECT idleccion,nombre,descripcion,teoria FROM leccion WHERE idcurso = ?");
             $stmt->bind_param('i', $idCurso);
@@ -14,7 +13,7 @@
          $string = "<div class='tituloxxx'><h1 class='junction-bold '>CREATED LESSONS</h1></div>";
             $string .= "<div class='col-xs-11'>
                     <ul class='breadcrumb'>
-                      <li class='backhome'><a>".$_SESSION['username']."</a></li>
+                      <li class='backhome'><a>".$user."</a></li>
                       <li class='active'>lessons</li>
                     </ul>
                 </div>
