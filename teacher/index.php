@@ -71,6 +71,26 @@ Gerardo López | Iván Nolasco | Renato Andres
                     </div>
                   </div>
             </div>
+            <div class="modal fade" id="modalLes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Add lesson</h4>
+                      </div>
+                      <div class="modal-body">
+                          <h4>Name:</h4>
+                         <input class="form-control nameCur5" type="text" placeholder="Name">
+                          <h4>Description:</h4>
+                          <textarea class="form-control descripCur5" placeholder="Description"></textarea>
+                          <h4>Theoretical introduction:</h4>
+                          <textarea class="form-control TeoCur" placeholder="Theoretical introduction"></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary createLes">Create lesson</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
 			<!--/#Page Content -->
 		</div>
 		<!--Main js-->

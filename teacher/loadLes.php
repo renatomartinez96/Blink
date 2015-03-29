@@ -17,7 +17,7 @@
                       <li class='active'>lessons</li>
                     </ul>
                 </div>
-                <div class='col-xs-1'><a class='btn btn-success botoncrear'>New lesson</a></div>";
+                <div class='col-xs-1'><a id='".$idCurso."' class='btn btn-success botoncrearLe'>New lesson</a></div>";
             
             while ($stmt->fetch()) {
                 $string .=  "<div class='col-xs-12 cursos'><div class='alert alert-dismissible alert-info'>
