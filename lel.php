@@ -1,1 +1,1 @@
-<?php echo "lel"; ?>
+<?php echo md5(substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15).'gerardo'); ?>
