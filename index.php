@@ -119,7 +119,38 @@ Gerardo López | Iván Nolasco | Renato Andres
         </form>
         
         <p class="text-center"><a href='registrarse.php' class='btn btn-info'><?=$lang['sincuenta']?></a></p>
+        <p class="text-center"><a id="token" class='btn btn-primary'>Activa tu cuenta aqui</a></p>
         
     </div>
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            $("#token").click(function(){
+                bootbox.prompt({
+                    title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+                    placeholder: "Inserte un Token",
+                    closeButton: false,
+                    callback: function(result) {
+                        if (result == '') {  
+                            bootbox.alert({
+                                closeButton: false,
+                                title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+                                message: "<center><h5 class='junction-regular'>Es necesario ingresar un valor</h5></center>",
+                            });
+                        } else {
+                            bootbox.alert({
+                                closeButton: false,
+                                title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+                                message: "<center><h5 class='junction-regular'>Holi</h5></center>",
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    
+    </script>
 </body>
 </html>
