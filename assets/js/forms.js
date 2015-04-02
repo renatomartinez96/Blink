@@ -99,3 +99,49 @@ function regformhash(form, name, last, uid, email, password, conf, date) {
     form.submit();
     return true;
 }
+function chgpassform(form,user,password,rpassword){
+    if (password.value == '' || rpassword.value == '' || user.value == '') 
+    {
+        bootbox.alert({
+            title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+            message: "<center><h5 class='junction-regular'>You must provide all information requested Please try again</h5></center>",
+        });
+//        alert("You must provide all information requested Please try again");
+        return false;
+    }
+    if (password.value.length < 6) {
+        bootbox.alert({
+            title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+            message: "<center><h5 class='junction-regular'>Passwords must be at least 6 characters long. Please try again</h5></center>",
+        });
+        form.password.focus();
+        return false;
+    }
+ 
+    // At least one number, one lowercase and one uppercase letter 
+    // At least six characters 
+ 
+    var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 
+    if (!re.test(password.value)) {
+        bootbox.alert({
+            title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+            message: "<center><h5 class='junction-regular'>Passwords must contain at least one number , one lowercase and uppercase. Please try again</h5></center>",
+        });
+        return false;
+    }
+ 
+    // Check password and confirmation are the same
+    if (password.value != rpassword.value) {
+        bootbox.alert({
+            title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+            message: "<center><h5 class='junction-regular'>Your password and confirmation do not match. Please try again</h5></center>",
+        });
+        form.password.focus();
+        return false;
+    }
+    password.value = "";
+    rpassword.value = ""; 
+    form.submit();
+    return true;
+
+}
