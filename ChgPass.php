@@ -38,10 +38,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                     $stmt->execute();
                         
                 }
-                else
-                {
-                    echo "neles pastele";
-                }
             }
         }
         else
@@ -80,8 +76,17 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </div>
                 <div class="form-group col-md-6 col-md-offset-3">
                     <label for="pass" class="col-lg-2 control-label">Contraseña</label>
-                      <div class="col-lg-10">
+                        <div class="col-lg-10">
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+                            <span class="help-block">
+                                Passwords must be at least 6 characters long
+                                Passwords must contain
+                                    <ul>
+                                        <li>At least one uppercase letter (A..Z)</li>
+                                        <li>At least one lower case letter (a..z)</li>
+                                        <li>At least one number (0..9)</li>
+                                    </ul>
+                            </span>
                       </div>
                 </div>
                 <div class="form-group col-md-6 col-md-offset-3">
