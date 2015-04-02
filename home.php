@@ -47,7 +47,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             {
                                 $stmt = $mysqli->prepare("UPDATE usuarios_tb SET estado = ?, token = ? WHERE usuario = ?");
                                 $estad = 1;
-                                $tkn = '';
+                                $tkn = null;
                                 $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
                                 $stmt->execute();
                                 header('Location: home.php');

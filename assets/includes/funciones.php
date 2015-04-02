@@ -63,8 +63,8 @@ function checkbrute($user_id, $mysqli) {
     $now = time(); 
     $valid_attempts = $now - (2 * 60 * 60);
  
-    if ($stmt = $mysqli->prepare("SELECT hora FROM intentos WHERE idusuario = ? AND hora > '$valid_attempts'")) {
-        $stmt->bind_param('i', $user_id);
+    if ($stmt = $mysqli->prepare("SELECT hora FROM intentos WHERE idusuario = ? AND hora > ?")) {
+        $stmt->bind_param('is', $user_id, $valid_attempts);
         $stmt->execute();
         $stmt->store_result();
         if ($stmt->num_rows > 5) {

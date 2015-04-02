@@ -139,6 +139,14 @@ function chgpassform(form,user,password,rpassword){
         form.password.focus();
         return false;
     }
+     var p = document.createElement("input");
+ 
+    // Add the new element to our form. 
+    form.appendChild(p);
+    p.name = "p";
+    p.type = "hidden";
+    p.value = hex_sha512(password.value);
+    
     password.value = "";
     rpassword.value = ""; 
     form.submit();

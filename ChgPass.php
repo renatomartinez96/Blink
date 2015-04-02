@@ -17,27 +17,24 @@ Gerardo López | Iván Nolasco | Renato Andres
         $t = $_GET['t'];
         $tkn = substr($t,0,32);
         $usr = substr($t,32);
-        $stmt = $mysqli->prepare("SELECT token, usuario, salt FROM usuarios_tb WHERE token =  ?");
+        $stmt = $mysqli->prepare("SELECT token, usuario FROM usuarios_tb WHERE token =  ?");
         $stmt->bind_param('s', $tkn);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($tokn, $user, $salt);
+        $stmt->bind_result($tokn, $user);
         $stmt->fetch();
         if ($stmt->num_rows == 1)
         {
-            echo $tkn."<br>";
-            echo $usr."<br>";
-            echo $salt."<br>";
-            echo hash('sha512', 'hola' . $salt)."<br>";
-            if (isset($_POST['user'],$_POST['pass'],$_POST['rpass'])) 
+            if (isset($_POST['user'],$_POST['pass'],$_POST['rpass'],$_POST['p'])) 
             {
                 if (md5($_POST['user']) == $usr) 
                 {
                     
-                    $stmt = $mysqli->prepare("UPDATE usuarios_tb SET contra = ?, token = ? WHERE token = ? AND usuario = ?");
-                    $contra = hash('sha512', $_POST['pass'] . $salt);
-                    $ntoken = '';
-                    $stmt->bind_param('ssss',$contra,$ntoken,$tkn,$_POST['user']);
+                    $stmt = $mysqli->prepare("UPDATE usuarios_tb SET contra = ?, salt = ?, token = ? WHERE token = ? AND usuario = ?");
+                    $random_salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
+                    $password = hash('sha512', $_POST['p'] . $random_salt);
+                    $ntoken = null;
+                    $stmt->bind_param('sssss',$password,$random_salt,$ntoken,$tkn,$_POST['user']);
                     $stmt->execute();
                         
                 }
