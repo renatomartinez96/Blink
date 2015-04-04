@@ -11,6 +11,10 @@
 <style>
     .video_container {
         position: absolute;
+        z-index:-1;
+    }
+    .bodypanel{
+        z-index:55;
     }
     .video_container {
         top:0%;
@@ -38,5 +42,14 @@
     }
     body{
         background-color:#2B3E50 !important;
+    }
+    .course{
+        min-height:150px;
+    }
+    .course > div.head{
+        height:105px;
+    }
+    .course > div.body{
+        height:45px;
     }
 </style>
