@@ -21,9 +21,12 @@
              $string .= "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
                     <h1>".$nombre."</h1>
                     <p>".$descripcion."</p>
-                    <a id='".$idcurso."' class='btn btn-primary loadLessons'>View lessons</a>
+                    <form action='../framework/lesson.php' method='post'>
+                    <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-primary loadLessons'>View lessons</button>
+                   
                     <a class='btn btn-danger'><i class='fa fa-trash-o'></i></a>
                     <a class='btn btn-success'><i class='fa fa fa-pencil'></i></a>
+                     </form>
                 </div></div>";
         }
         echo $string;

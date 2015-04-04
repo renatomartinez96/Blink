@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-11 result">
+            <div class="col-xs-12 result">
                 <p class="titulo">Your Website</p>
                 <div class="yourSite"></div>
             </div>
