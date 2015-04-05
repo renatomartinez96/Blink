@@ -1,6 +1,6 @@
 <?php
-    include_once '../assets/includes/db_conexion.php';
-    include_once '../assets/includes/funciones.php';
+    include '../assets/includes/db_conexion.php';
+    include '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
@@ -33,15 +33,7 @@
 			<!--Page Content -->
             <div class="col-xs-12 results">
             <?php 
-                $seguardo = false;
-				include 'php/loadLes.php';
-                include 'php/crearLes.php';
-                
-			?>
-             <?php 
-                if ($seguardo) {
-                    include 'indexDoce.php';
-                }
+                    include 'indexStud.php';
             ?>    
             </div>
              
@@ -50,10 +42,8 @@
             
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
-            var cursososo = "<?php echo $idleccion?>";
-            var cursososo22 = "<?php echo $idCurso?>";
-        </script>
-           <?php include "app/headjs.php"?>  
+        </script>  
+        <?php include "app/headjs.php"?>  
 	</body>
     
 </html>
