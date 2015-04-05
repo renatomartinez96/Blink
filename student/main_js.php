@@ -7,6 +7,23 @@
 </script>
 <script>
     $(document).ready(function(){
+        $( "#SearchString" ).on('input',function() {
+            var searchString = $("#SearchString").val();
+            var SearchResult = document.getElementById('SearchResult');
+            var send = {"search" : searchString};
+            $.ajax({
+                type: "POST",
+                url: "search.php",
+                data: send,
+                success: function(response) {
+                    SearchResult.innerHTML = response;
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
         var user = "<?=$user?>";
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/pastel_on_dark");

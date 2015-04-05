@@ -78,10 +78,9 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<!--Content-->
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
+                                <i class="fa fa-cog fa-2x" style="position:absolute; bottom:5px; left:5px;"></i>
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
-                                    <nav class="navbar usrnav">
                                         <div class="container-fluid full">
-                                            <div class="collapse navbar-collapse full" id="bs-example-navbar-collapse-1">
                                                 <ul class="nav navbar-nav">
                                                     <li> <a class="btn btn-success" target="_blank" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a></li>
                                                     <li><a class="btn btn-face" target="_blank">Facebook</a></li>
@@ -89,16 +88,17 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 </ul>
 
                                                 <ul class="nav navbar-nav navbar-right">
-                                                    <form class="navbar-form navbar-left" role="search">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Search">
+                                                    <form class="navbar-form navbar-left" role="search" id="search">
+                                                        <div class="form-group full">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-user fa-2x"></i></span>
+                                                                <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                                            </div>
                                                         </div>
-                                                        <button type="submit" class="btn btn-default">Submit</button>
+                                                        <div class="list-group" style="position:absolute;" id="SearchResult"></div>
                                                     </form>
                                                 </ul>
-                                            </div>
                                         </div>
-                                    </nav>
                                 
                                     <img src="../assets/img/avatares/<?=$avatar?>.png" style="border-radius:50%;width:15%;background: rgba(255, 255, 255, 0.4);">
                                     <h2 class="junction-bold"><?=$nombres?></h2>
@@ -151,5 +151,8 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_js.php';
 		?>
 		<!--/#Main js-->
+        <script>
+            
+        </script>
 	</body>
 </html>
