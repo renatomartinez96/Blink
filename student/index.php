@@ -43,7 +43,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         <style>
             #usrpanel{
                 background: #191837 url(../assets/img/profile1.jpg) fixed;
-                color:#000;
+                color:#fff;
                 background-position: bottom left;
                 background-size:100%;
             }
@@ -108,8 +108,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
                         <div class="col-xs-12 full">
-                            <br>
-                            <div class="col-md-10">
+                            <div class="col-md-12 full">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Courses Feed</h3>
@@ -127,17 +126,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <div class="panel panel-info">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Teachers</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <!--Teachers-->
-                                        
-                                        <!--/#Teachers-->
-                                    </div>
-                                </div>
                             </div>
                         </div>
 					<!--/#Content-->
