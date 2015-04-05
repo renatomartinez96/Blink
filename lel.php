@@ -1,1 +1,1 @@
-<?php echo md5('glopez97'); ?>
+<?php echo str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"); ?>
