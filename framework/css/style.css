@@ -10,7 +10,6 @@
 .arena {
     background-color: #22313F;
     height: 800px;
-    z-index: -10;
 }
 
 .titulo {
@@ -35,7 +34,6 @@
 
 .HTMLgenerator {
     padding: 0;
-    z-index: -100;
 }
 
 .yellow {

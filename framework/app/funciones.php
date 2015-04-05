@@ -1,5 +1,6 @@
 
      function inputText() {
+                     $('.textinp').off( "click");
                      $('.textinp').on('input', function() {
                      var valor = $(this).val();
                      var IdObjetoTexto = $(this).parent().parent().attr('id');
@@ -20,7 +21,9 @@
                 });   
                 }
             function getParameterTres() {
-                    $( ".htmlPartsAtriSty" ).mouseenter(function() {
+                    $('.htmlPartsAtriSty').off( "mouseenter");
+                    $('.htmlPartsAtriSty').off( "mouseleave");
+                    $( ".htmlPartsAtriSty" ).on('mouseenter',function() {
                          var IddeInserssionAtriStytemp = "";
                          IddeInserssionAtriStytemp = $(this).attr('id');
                          var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
@@ -32,12 +35,14 @@
                          $(this).addClass("arriba");
                     
                      })
-                    .mouseleave(function() {
+                    .on('mouseleave',function() {
                         $(this).removeClass("arriba");
                     });
                 } 
                 function getParameterDos() {
-                    $( ".htmlParts" ).mouseenter(function() {
+//                    $('.htmlParts').off( "mouseenter");
+//                    $('.htmlParts').off( "mouseleave");
+                    $( ".htmlParts" ).on('mouseenter',function() {
                          IddeInserssionAtriSty = $(this).attr('id');
                         IddeInserssiondos = IddeInserssionAtriSty;
                          var tipoindex = IddeInserssionAtriSty.indexOf("T");
@@ -49,17 +54,19 @@
                          $(this).addClass("arriba2");
                     
                      })
-                    .mouseleave(function() {
+                    .on('mouseleave',function() {
                         $(this).removeClass("arriba2");
                     });
                 }
                 function getParameter() {
-                    $( ".uno" ).mouseenter(function() {
+                    $('.uno').off( "mouseenter");
+                    $('.uno').off( "mouseleave");
+                    $( ".uno" ).on('mouseenter',function() {
                          IddeInserssion = $(this).attr('id');
                          $(this).addClass("arriba");
                     
                      })
-                    .mouseleave(function() {
+                    .on('mouseleave',function() {
                         $(this).removeClass("arriba");
                     });
                 }
