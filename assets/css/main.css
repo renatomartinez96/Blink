@@ -53,3 +53,7 @@ html , body{
 .right{
     float: right;
 }
+.navbar-brand{
+    padding: 0px !important;
+    height: auto !important;
+}
