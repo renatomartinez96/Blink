@@ -71,11 +71,11 @@ if(isset($_GET["id"]))
                 $query2 = "UPDATE usuarios_tb SET estado = 1 WHERE idusuario='$id'";
                 if ($query2 = mysqli_query($mysqli, $query2)) 
                 {
-                    die("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> OK:</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Inactive</strong>. <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> Perfect!</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Active</strong>. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> In the data <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
                 }
             }
             elseif($est == 1)
@@ -83,23 +83,27 @@ if(isset($_GET["id"]))
                 $query3 = "UPDATE usuarios_tb SET estado = 0 WHERE idusuario='$id'";
                 if ($query3 = mysqli_query($mysqli, $query3)) 
                 {
-                    die ("<div class='alert alert-success'><strong><i class='fa fa-check'></i> Perfect:</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Active</strong>. <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die ("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> OK!</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Inactive</strong>. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> In the data <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
                 }
             }
         }
         else
         {
-            echo "There is not data to work";
+            echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown error has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
         }
     }
     else
     {
-        echo "ERROR";
+        echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> The received data do not match with any registered user ID. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
     }
+}
+else
+{
+    echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> There is not data to work. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
 }
 ?>
                         </div>

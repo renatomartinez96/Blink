@@ -165,14 +165,14 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["estado"])
         {
             case 0;
-            $text2 = "<i class='fa fa-check'></i> Active";
-            $tbclass = "";
-            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Deactivate</a>";
-            break;
-            case 1;
             $text2 = "<i class='fa fa-user-times'></i> Inactive";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='isabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
+            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Activate</a>";
+            break;
+            case 1;
+            $text2 = "<i class='fa fa-check'></i> Active";
+            $tbclass = "";
+            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Deactivate</a>";
             break;
         }
         echo "<tr ".$tbclass."><td>".$row["idusuario"]."</td>";

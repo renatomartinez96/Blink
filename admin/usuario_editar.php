@@ -114,7 +114,7 @@ if(isset($_GET["id"]))
             <label>ID</label><input type="text" name = "id" class="form-control" value="<?=$row['idusuario']?>" readonly>
             <label>Name</label><input type="text" name = "nombre" class="form-control" value="<?=$row['nombres']?>" required>
             <label>Lastname</label><input type="text" name = "apellido" class="form-control" value="<?=$row['apellidos']?>"  required>
-            <label>Birthday (YYYY-MM-DD)</label><input type="fecha" name = "nacimiento" class="form-control" value="<?=$row['nacimiento']?>"  required>
+            <label>Birthday (YYYY-MM-DD)</label><input type="fecha" name = "nacimiento" class="form-control" onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" value="<?=$row['nacimiento']?>"  required>
         </div>
         <div class="col-md-6">
             <label>Username</label><input type="text" name = "usuario" class="form-control" value="<?=$row['usuario']?>"  required>
