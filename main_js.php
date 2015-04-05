@@ -10,6 +10,12 @@
 			$(".textos").toggleClass("toggled");
 	});
 </script>
+<!-- WOW ;) -->
+<script src="assets/js/wow.js"></script>
+<script>
+ new WOW().init();
+</script>
+<!-- / WOW ;) -->
 <script>
 //Valida que en un campo solo se puedan ingresar letras
 //Sintaxis html= onkeypress="txtletras()"
