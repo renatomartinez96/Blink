@@ -73,37 +73,6 @@ Gerardo López | Iván Nolasco | Renato Andres
             z-index: -1 !important;
             filter: grayscale(50%) blur(10px) !important;
         }
-        /*video#bgvid 
-        { 
-            position: fixed; right: 0; bottom: 0;
-            min-width: 100vw; min-height: 100vh;
-            width: auto; height: auto; z-index: -100;
-            background-size: cover;
-            z-index: -1;
-            filter: grayscale(50%) blur(10px);
-        }
-        div.estawea
-            {
-            background-color: #ffffff;
-            } 
-        @media (min-width: 768px) {
-            div.centeringthis
-            {
-            z-index: 1;
-            margin-top: 10%;
-            margin-right: 30%;
-            margin-left: 30%;
-            } 
-        }
-        @media (max-width: 768px) {
-            div.centeringthis
-            {
-            z-index: 1;
-            margin-top: 15%px;
-            margin-right: 5px;
-            margin-left: 5px;
-            }
-        }*/
     </style>
     <div id="container">
     <video  loop="loop" id="bgvid">
