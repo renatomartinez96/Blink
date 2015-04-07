@@ -19,5 +19,8 @@
         <li>
         	<a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Page</b></a>
         </li>
+        <li>
+        	<a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Teachers</b></a>
+        </li>
 	</ul>
 </div>

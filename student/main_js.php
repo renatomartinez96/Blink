@@ -20,6 +20,19 @@
                 }
             });
         });
+        $( "#SearchStringT" ).on('input',function() {
+            var SearchStringT = $("#SearchStringT").val();
+            var SearchResult = document.getElementById('SearchResult');
+            var send = {"searcht" : SearchStringT};
+            $.ajax({
+                type: "POST",
+                url: "searcht.php",
+                data: send,
+                success: function(response) {
+                    SearchResult.innerHTML = response;
+                }
+            });
+        });
     });
 </script>
 <script>
