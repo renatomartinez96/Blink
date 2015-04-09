@@ -50,40 +50,103 @@ Gerardo López | Iván Nolasco | Renato Andres
         
 		<!--Custom CSS-->
 		<link href="assets/css/sidebar.css" rel="stylesheet">
+        <style type="text/css">
+            
+        </style>
 		<!--/#Custom CSS-->
         <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
         <script type="text/JavaScript" src="assets/js/forms.js"></script>
 	</head>         
 <body>
     <style type="text/css">
-        #container {
-            position: relative !important;
-            overflow: hidden !important;
+        html, body{
+            width: 100%;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
+        .alto{
+            height: 50px;
+            padding-top: 5px;
+            bottom: 0px; 
+            position: relative; !important
+        }
+        .bajo{
+            height: 50px;
+            padding-top: 5px;
+        }
+        .tigres{
+            margin-left: 15px; !important
+            margin-right: 5px; !important
+        }
+        .nomargenplz{
+            margin: 0; !important
+            padding: 0; !important
+        }
+        .textoslide{
+            padding-top: 80px; !important
+            text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+        }
+        .banner { 
+            margin-left: 0px;
+            position: relative; 
+            overflow: auto;
+            width: 100%; !important
+        }
+        .banner li { 
+            padding: 0px;
+            list-style: none;
+        }
+        .banner ul{
+            width: 400%; !important
+        }
+        .banner ul li { 
+            float: left;
+            padding: 4.5%;
+        }
+    </style>    
+    <!--Nav -->
+    <nav class="navbar navbar-inverse alto navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Box Link</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/brand1.png" class="img-responsive tigres" alt="Box Link :)" width="100"></a>
+        </div>
 
-        #container .content {
-            position: absolute !important;
-            top: 10% !important;
-            left: 30% !important;
-            width: 550px !important;
-            height: 440px !important;
-        }
-        video#bgvid 
-        {
-            z-index: -1 !important;
-            filter: grayscale(50%) blur(10px) !important;
-        }
-    </style>
-    <div id="container">
-    <video  loop="loop" id="bgvid">
-	   <source  src="assets/video/1080.webm" type="video/webm">
-        <source  src="assets/video/1080.mp4" type="video/mp4">
-    </video>
-    
-    <!--<div class="well centeringthis">-->
-    <div class="well content">
-        <h1 class="junction-bold text-center">BLink</h1>
-        <?=$lang["yonoespik"]?>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">How works?</a></li>
+            <li><a href="#">Social :v</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" action="assets/includes/login_proceso.php" method="post" name="login_form">
+            <div class="form-group">
+                <!--<label class="control-label" for="email">Tu correo</label>-->
+              <input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control input-sm" required>
+            </div>
+            <div class="form-group">
+                <!--<label class="control-label" for="password">Tu contraseña</label>-->
+              <input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password" class="form-control input-sm" required>
+            </div>
+            <input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success btn-sm" onclick="formhash(this.form, this.form.password);" />
+            <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btn-sm' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
+            <a href='registrarse.php' class='btn btn-info btn-sm'>No tengo cuenta</a>
+            </form>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/Nav -->
+        <?//=$lang["yonoespik"]?>
         <?php
         if (isset($_GET['error'])) 
         {
@@ -95,23 +158,9 @@ Gerardo López | Iván Nolasco | Renato Andres
         } 
         else 
         {
-            echo "<h4 class='junction text-center'> " . $logged . "</h4>";
+            //echo "<h4 class='junction text-center'> " . $logged . "</h4>";
         }
-        ?> 
-        <br>
-        <form action="assets/includes/login_proceso.php" method="post" name="login_form">
-            <div class="form-group">
-                <p class="col-md-4" for="email"><?=$lang["emailname"]?>: </p><div class="col-md-8"><input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control input-sm" required/></div> <br>
-            </div>
-            <div class="form-group">
-                <p class="col-md-4" for="password"><?=$lang['contra']?>: </p><div class="col-md-8"><input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password"  class="form-control input-sm" required/></div><br>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12"><input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success btn-block" onclick="formhash(this.form, this.form.password);" /><br> </div>
-            </div>
-        </form>
-        <p class="text-center"><a href='registrarse.php' class='btn btn-info'><?=$lang['sincuenta']?></a></p>
-        <p class="text-center"><a id="token" class='btn btn-primary' data-toggle="modal" data-target="#myModal">Olvide mi contraseña</a></p>
+        ?>
         <?php
             if (isset($_GET['t'])) 
             {
@@ -123,54 +172,42 @@ Gerardo López | Iván Nolasco | Renato Andres
                 $stmt->bind_result($tokn, $usr);
                 $stmt->fetch();
                 if ($stmt->num_rows == 1){
-                    Header("Location: ChgPass.php?t=".$tokn.md5($usr));
+                    header("Location: ChgPass.php?t=".$tokn.md5($usr));
                 }else{
-                    Header("Location: ./"); 
+                    header("Location: ./"); 
                 }
             }
         ?>
-    </div>
+    
+    <div class="nomargenplz container-fluid">
+        <div class=" row">
+            <div class="banner">
+                <ul>
+                    <li style="background-image: url('https://download.unsplash.com/reserve/3wBPUcDrR9KaduD3PvkY_DSC_0915.JPG');">
+                        <h1 class="junction-bold textoslide" >Bienvenido a Box Link</h1>
+                        <p class="junction-regular">Donde aprender diseño Web es una experiencia divertida y dinamica</p>
+                    </li>
+                    
+                    <li style="background-image: url('http://static.pexels.com/wp-content/uploads/2014/06/camera-desk-earphone-915.jpg');">
+                        <h1 class="junction-bold textoslide">HTML5 y CSS3</h1>
+                        <p class="junction-regular">Enseñandote lo último en front-end, lo más fresco a ofrecer ;)</p>
+                    </li>
+                    
+                    <li style="background-image: url('https://download.unsplash.com/reserve/wi9yf7kTQxCNeY72cCY6_Images%20of%20Jenny%20Lace%20Plasticity%20Publish%20(4%20of%2025).jpg');">
+                        <h1 class="junction-bold textoslide">¡Tan fácil para todos!</h1>
+                        <p class="junction-regular">Te invitamos a leer nuestra <a href="#" class="btn btn-info btn-xs">sección de información</a> y así conoscas el método de enseñanza más revolucionario del mundo</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     
-    <div class="col-md-12 jumbotron">
-        <h2 class="junction-bold text-center text-primary">What is Blink?</h2>
-        <div class="col-md-2" style="position: relative; left: 0; top: 0;">
-            <img src="http://vignette1.wikia.nocookie.net/eswikia/images/f/f0/HTML5-logo.png/revision/latest?cb=20120709105013" class="img-responsive wow bounceInDown" style="position: relative; top: 0; left: 0;" width="200">
-        </div>
-        <div class="col-md-8">
-            <p class="junction-light text-justify">Blink is a project designed for every person who wants learn Web design! We are a great community of students and teachers, that work together to share our knowledge of HTML5 and CSS3. This platform have a special method to teach you Front-End, we use block in the start of the courses, and you need to overcome your levels of learning, its like a game! What are you waiting for? Create your account now :). <a href="#" class="btn btn-primary">Other formal stuff</a><a></a></p>
-        </div >
-        <div class="col-md-2" style="position: relative; left: 0; top: 0;"><img src="http://www.endertechnology.com/wp-content/uploads/2014/11/logo-css31.png" class="img-responsive wow bounceInDown" style="position: absolute; top: 0px; left: 0px;" width="250"></div>
-    </div>
-    <div class="col-md-12 jumbotron">
-        <div class="col-md-12">
-            <h2 class="junction-bold text-center text-success">How Blink works?</h2>
-            <p class="junction-light">Then enrolling in your first course of a <strong>teacher</strong>, you start learning with block, and you build a Web site with these blocks (yes, like the Legos!), but when you upgrade your level you will are ready to work the code...</p>
-            <br>
-            <p class="junction-light text-center"><strong>La animación palams here :v</strong></p>
-        </div>
-        <!--
-        <div class="col-md-12" style="position: relative; left: 30px; top: 0; ">
-            <img src="http://3.bp.blogspot.com/-f0NsmUHz2kM/T8GUGoydNpI/AAAAAAAAAfg/KnEkgnFPzpc/s1600/smiley.png" class="img-responsive wow slideInLeft" width="500" style="position: absolute; top: 0px; left: 0px;" data-wow-delay="1s">
-            <img src="http://vignette1.wikia.nocookie.net/lego/images/1/13/Icono_Expandir.png/revision/latest?cb=20110317142517&path-prefix=es" class="img-responsive wow bounceInDown" width="500" style="position: absolute; top: 0px; left: 500px;" data-wow-delay="2s">
-        </div>
-        -->
-    </div>
-    <div class="col-md-12 jumbotron" >
-        <div class="col-md-5" style="position: relative; left: 70px; top: 0;">
-            <img src="assets/img/avatares/2.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 0px;" data-wow-delay="1s">
-            <img src="assets/img/avatares/10.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 80px;" data-wow-delay="1s">
-            <img src="assets/img/avatares/40.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 160px;" data-wow-delay="1s">
-            <img src="assets/img/avatares/14.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 245px;" data-wow-delay="1s">
-            <img src="assets/img/avatares/33.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 322px;" data-wow-delay="1s">
-            <img src="assets/img/avatares/12.png" class="img-responsive wow fadeInUp" width="150" style="position: absolute; top: 0px; left: 410px;" data-wow-delay="1s">
-        </div>
-        <div class="col-md-7" style="position: relative; left: 30px; top: 0;">
-            <h2 class="junction-regular text-center text-info">Our teachers team comes form everywhere!</h2>
-            <p class="junction-light text-center">And you can apply, and by a teacher too ;) <a href="#" class="btn btn-info">Learn more</a></p>
+    <div class="container-fluid">
+        <div class="row"> 
+            <h1 class="junction-bold text-center">How Box Link works?</h1>
+            
         </div>
     </div>
-        
     <script src="assets/js/jquery.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
@@ -201,6 +238,12 @@ Gerardo López | Iván Nolasco | Renato Andres
             </div>
         </div>
     </div>
+    <!-- Slide -->
+    <script>
+        $(function() {
+            $('.banner').unslider();
+        });
+    </script>
     <script>
         $(document).ready(function(){
             function validateEmail($email) {
@@ -239,6 +282,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         
     
     </script>
+    <script src="assets/js/unslider.js"></script>
     <?php include "main_js.php"; ?>
 </body>
 </html>
