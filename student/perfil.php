@@ -53,7 +53,10 @@ Gerardo López | Iván Nolasco | Renato Andres
             margin-bottom:0px;
 
         }
-
+        .portfolio-item {
+            margin-bottom: 25px;
+            margin-top:15px;
+        }
     </style>
     <!--/#Custom CSS-->
 
@@ -117,6 +120,33 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div> 
+                        <div class="col-xs-12">
+                            <!-- Projects Row -->
+                                <div class="col-md-4 col-lg-3 well portfolio-item">
+                                    <a href="#">
+                                        <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.png" alt="">
+                                    </a>
+                                    <div class="col-xs-12">
+                                        <h3>
+                                            <a href="#" class="junction-regular">Project Name</a>
+                                        </h3>
+                                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laciniLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia eget ipsum sit amet sollicitudin. Maecenas ultrices rhoncus nisi nec egestas. Nam accumsan diam id dolor rutrum faucibus. Cr</p>
+                                        <input type="button" value="Ver curso" class="btn btn-success form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3 well portfolio-item">
+                                    <a href="#">
+                                        <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.png" alt="">
+                                    </a>
+                                    <div class="col-xs-12">
+                                        <h3>
+                                            <a href="#" class="junction-regular">Project Name</a>
+                                        </h3>
+                                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laciniLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia eget ipsum sit amet sollicitudin. Maecenas ultrices rhoncus nisi nec egestas. Nam accumsan diam id dolor rutrum faucibus. Cr</p>
+                                        <input type="button" value="Ver curso" class="btn btn-success form-control">
+                                    </div>
+                                </div>
+                        </div>
 <?php
         }
         else
