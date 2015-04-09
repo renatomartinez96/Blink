@@ -34,7 +34,7 @@
 
 .HTMLgenerator {
     padding: 0;
-    margin-top: -1%;
+    margin-top:;
 }
 
 .yellow {
@@ -78,6 +78,8 @@
 .result {
     background-color: #fff;
     height: 600px;
+    color: black;
+    font-family: sans-serif;
 }
 .result > p{
     color: #414141;
@@ -124,6 +126,20 @@
 }
 .panel-body > .htmlParts {
     margin: 0 !important;
+}
+#changeSize > .col-xs-3 {
+    width: 15%;
+}
+.greenini {
+    background-color: #5cb85c !important;
+}
+.redini {
+    background-color: #D9534F !important;
+}
+.tools {
+    background-color: transparent;
+    margin-bottom: 1%;
+    color: #485563;
 }
 .animated { 
     -webkit-animation-duration: 0.5s; 

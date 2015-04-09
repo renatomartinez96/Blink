@@ -5,17 +5,21 @@
                 include "app/funciones.php";
             ?>
                 function sincro() {
-                console.log(momentoTo+" "+lessonG);
+                var blockes = $(".playground").html();
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
-                              data: { momento:momentoTo,leccion:lessonG},
+                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes},
+                              dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');
                               },
                               success: function(data) {
                                 $(".loading").css('display','none');
-                                 $(".msgCl ").html(data);
+                                $(".msgCl ").html(data.stringhome);
+                                if(data.correcto == "false") {
+                                    momentoTo--;
+                                }  
                               }
                           });
             }

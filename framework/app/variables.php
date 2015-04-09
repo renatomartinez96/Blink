@@ -11,9 +11,9 @@ var IdObjeto = "";
         var IdObjetosupperior = "";
         var porpiedadCSSCreada = "";
         var momentoTo = 0;
-        var WebObjecsArray = ["div$0","h1$1","p$1","b$2","div$2","a$2","img$1","href$3","src$3","name$3","background-color$4","margin$4","width$4","height$4"];
-        var WebBlocksArray = ["<div id='' class='col-xs-2 htmlParts yellow uno'><p>BODY</p></div>",
-                              "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>HEADER</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
+        var WebObjecsArray = ["div$0","h1$1","p$1","b$2","div$2","a$2","img$1","href$3","src$3","name$3","background-color$4","margin$4","width$4","height$4","del$5"];
+        var WebBlocksArray = ["<div id='' class='col-xs-3 htmlParts yellow uno'><p>BODY</p></div>",
+                              "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>TITLE</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
                               "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>PARAGRAPH</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
                                "<div id='' class='col-xs-3 htmlParts green withauto uno'><p>BOLD</p></div>",
                                 "<div id='' class='col-xs-3 htmlParts green withauto uno'><p>DIVITION</p></div>",

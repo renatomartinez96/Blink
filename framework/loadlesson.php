@@ -6,6 +6,14 @@
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
     if(isset($_GET['l'])){
+    $stmt = $mysqli->prepare("SELECT teoria FROM leccion WHERE idleccion = ?");
+    $stmt->bind_param('s', $_GET['l']);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($teoria);
+    $stmt->fetch();
+    if($stmt->num_rows == 1){
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,12 +49,34 @@
              
 
 		</div>
-            
+       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Teoric Introduction</h4>
+              </div>
+              <div class="modal-body">
+                <p><?=$teoria?></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php include "app/headjsSDos.php";?>
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
             var lessonG = "<?php echo $_GET['l'] ?>";
+            $('#myModal').modal('show');
         </script>  
-        <?php include "app/headjsSDos.php"; }?>  
+        
+    <?php 
+    }else {
+        echo "no existe";
+    }
+    }?>  
 	</body>
     
 </html>
