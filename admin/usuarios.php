@@ -115,10 +115,7 @@ else
                         <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Volver</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                        Clasificar la lista por: 
-                        <span class="caret"></span>
-                        </button>
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Clasificar la lista por: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=1">Administradores</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=2">Profesores</a></li>
@@ -126,7 +123,7 @@ else
                             <li role="presentation" class="divider"></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">Todos los usuarios</a></li>
                         </ul>
-                        </div>
+                        </div><br>
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
@@ -167,12 +164,12 @@ if ($result = mysqli_query($mysqli, $query))
             case 0;
             $text2 = "<i class='fa fa-user-times'></i> Inactive";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Activate</a>";
+            $text3 = "<a href='usuario_reporte.php?id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Activate</a>";
             break;
             case 1;
             $text2 = "<i class='fa fa-check'></i> Active";
             $tbclass = "";
-            $text3 = "<a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Deactivate</a>";
+            $text3 = "<a href='usuario_reporte.php?id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Deactivate</a>";
             break;
         }
         echo "<tr ".$tbclass."><td>".$row["idusuario"]."</td>";
