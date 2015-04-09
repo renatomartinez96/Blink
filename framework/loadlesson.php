@@ -5,6 +5,7 @@
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
+    if(isset($_GET['l'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,7 @@
         ?>
 			<!--Page Content -->
             <div class="col-xs-12 results">
+            <div class="msgCl"></div>
             <?php 
                     include 'indexStud.php';
             ?>    
@@ -42,8 +44,9 @@
             
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
+            var lessonG = "<?php echo $_GET['l'] ?>";
         </script>  
-        <?php include "app/headjs.php"?>  
+        <?php include "app/headjsSDos.php"; }?>  
 	</body>
     
 </html>

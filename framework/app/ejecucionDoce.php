@@ -6,7 +6,8 @@
                 //exclusivo docente
                 function addDescr() {
                     $('#modalDesc').modal('toggle');
-                    $( ".saveDescription" ).click(function() {
+                    $( ".saveDescription" ).off('click');
+                    $( ".saveDescription" ).on('click',function() {
                         var value = $(".valueDescription").val();
                         var resul = $(".yourSite").html();
                         var blockes = $(".playground").html();
