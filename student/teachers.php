@@ -59,9 +59,25 @@ Gerardo López | Iván Nolasco | Renato Andres
 	</head>
 	<body>
         <!--Topbar -->
-		<?php 
-			include '../nav/topbar.php';
-		?>
+        <div class="col-sm-12">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-header">
+                    <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle" style="float:left;margin-top:2px;margin-bottom:2px; margin-right:5px;border-radius:0px;margin-left:5px;"><i class="fa fa-bars fa-2x"></i></a>
+                    <a class="navbar-brand"><img src="../assets/img/brand1.png"</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left" style="margin-top:7px;">
+                        <li><a href="#subs">Mis profesores</a></li>
+                        <li><a href="#teach">Profesores</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a style="margin-right: 25px; margin-top: 6px;" href="../assets/includes/logout.php" role="button">logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 		<!--/#Topbar -->
 		<div id="wrapper" class="toggled">
 			<!--Sidebar -->
@@ -87,19 +103,111 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12">
-                        <?php
-                            $stmt = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."'");
-                            if ($stmt->num_rows > 0)
-                            {
-                                echo "<h1>si estas subscrito a profesores</h1>";
-                            }
-                            else
-                            {
-                                echo "<h1>No estas subscrito a ningun profesor</h1>";
-                            }
-                        ?>
-                        </div>
+                        <!--Subscripciones-->
+                        <section id="subs" name="subs">
+                            <div class="col-xs-12 full">
+                                <div class="panel panel-success full">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Subscripciones</h3>
+                                    </div>
+                                    <div class="panel-body" onload="loadteachers()" id="subsc">
+                                         <?php
+                                            $stmt = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."'");
+                                            if ($stmt->num_rows > 0)
+                                            {
+                                                while($row = $stmt->fetch_assoc())
+                                                {
+                                                    if($stmt1 = $mysqli->prepare("SELECT usuario, avatar, nombres, apellidos, descripcion, correo  FROM usuarios_tb WHERE idusuario = ?")) 
+                                                    {
+                                                        $stmt1->bind_param('s', $row['idDocente']);
+                                                        $stmt1->execute(); 
+                                                        $stmt1->store_result();
+                                                        $stmt1->bind_result($user1,$avatart,$nombrest,$apellidost,$descripciont,$correot);
+                                                        $stmt1->fetch();
+                                                        echo "
+                                                        <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
+                                                            <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
+                                                                <img src='../assets/img/avatares/".$avatart.".png' class='img-rounded'>
+                                                            </div>
+                                                            <div class='col-xs-8'>
+                                                                <h3>".$nombrest."</h3>
+                                                                <button type='button' class='btn btn-danger form-control input-sm' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\">Desinscribir</button>
+                                                                <a href='./perfil.php?u=".$user1."'><button type='button' class='btn input-sm btn-info form-control'>Perfil</button></a>
+                                                            </div>
+                                                        </div>
+                                                        ";
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo "<h1>No estas subscrito a ningun profesor</h1>";
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--/#Subscripciones-->
+                        <!--Profesores-->
+                        <section id="teach" name="teach">
+                             <div class="col-xs-12 full">
+                                <div class="panel panel-success full">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Profesores</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <?php
+                                            if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb WHERE tipo = 2 "))
+                                            {
+                                                while($row2 = $stmt2->fetch_assoc()){
+                                                    $stmt3 = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."' AND idDocente = '".$row2['idusuario']."'");
+                                                    $num = $stmt3->num_rows;
+                                                    if ($num > 0)
+                                                    {
+                                                        echo "
+                                                            <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
+                                                                <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
+                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-rounded'>
+                                                                    <div class='caption full'>
+                                                                        <button type='button' class='btn btn-danger form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\">Desinscribir</button>
+                                                                        <a href='./perfil.php?u=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class='col-xs-8'>
+                                                                    <h3>".$row2['nombres']."</h3>
+                                                                    <h5 class='text-justify'>".$row2['descripcion']."</h5>
+                                                                </div>
+                                                            </div>
+                                                            ";
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "
+                                                            <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
+                                                                <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
+                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-rounded'>
+                                                                    <div class='caption full'>
+                                                                        <button type='button' class='btn btn-success form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\">Inscribir</button>
+                                                                        <a href='./perfil.php?u=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class='col-xs-8'>
+                                                                    <h3>".$row2['nombres']."</h3>
+                                                                    <h5 class='text-justify'>".$row2['descripcion']."</h5>
+                                                                </div>
+                                                            </div>
+                                                            ";
+                                                    }
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                 </div>
+                            </div>
+                        </section>
+                        
+                        <!--/#Profesores-->
 					<!--/#Content-->
 					</div>
 				</div>
@@ -111,8 +219,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_js.php';
 		?>
 		<!--/#Main js-->
-        <script>
-            
-        </script>
+        <script src="./assets/ajax/index.js"></script>
+        <script src="../assets/js/bootbox.min.js"></script>
 	</body>
 </html>

@@ -41,7 +41,7 @@
         background:#2B3E50;
     }
     body{
-        background-color:#2B3E50 !important;
+        background-color:#2b3e50 !important;
     }
     .course{
         min-height:150px;
