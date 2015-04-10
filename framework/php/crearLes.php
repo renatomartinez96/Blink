@@ -14,7 +14,7 @@
         $stmt->store_result();
         $stmt->bind_result($idleccion,$nombree);
         while ($stmt->fetch()) {
-            $nombre = "../courses/".$idCurso;
+            $nombre = "../courses";
             if(fopen($nombre."/".$idleccion.".txt", "a+")) {
                 $seguardo = true;
             }

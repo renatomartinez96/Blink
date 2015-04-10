@@ -34,6 +34,7 @@
 
 .HTMLgenerator {
     padding: 0;
+    margin-top:;
 }
 
 .yellow {
@@ -77,6 +78,8 @@
 .result {
     background-color: #fff;
     height: 600px;
+    color: black;
+    font-family: sans-serif;
 }
 .result > p{
     color: #414141;
@@ -115,4 +118,65 @@
 .loading > div > p {
     color:#F7CA18;
     font-size: 1.5em;
+}
+.pista {
+    text-decoration: none;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.panel-body > .htmlParts {
+    margin: 0 !important;
+}
+#changeSize > .col-xs-3 {
+    width: 15%;
+}
+.greenini {
+    background-color: #5cb85c !important;
+}
+.redini {
+    background-color: #D9534F !important;
+}
+.tools {
+    background-color: transparent;
+    margin-bottom: 1%;
+    color: #485563;
+}
+.trshIt {
+    z-index: 10;
+    margin: 0;
+}
+.animated { 
+    -webkit-animation-duration: 0.5s; 
+    animation-duration: 0.5s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: ease-in-out; 
+    animation-timing-function: ease-in-out; 
+} 
+
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.fadeInDown { 
+    -webkit-animation-name: fadeInDown; 
+    animation-name: fadeInDown; 
 }

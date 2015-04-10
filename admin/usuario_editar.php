@@ -34,6 +34,9 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Core CSS-->
 	</head>
 	<body>
+        <?php 
+            require 'main_js.php';
+        ?>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
@@ -179,18 +182,18 @@ if(isset($_GET["id"]))
 else
 {
     ?>
-        <div class="alert alert-danger">
+        <!--<div class="alert alert-danger">
         <strong>ERROR:</strong> There is not data to work. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
-        </div>
-        <!--<script>
-            bootbox.alert({
-            title: "<center><h2 class='junction-bold text-danger'>ERROR:</h2></center>",
-            message: "<center><h5 class='junction-regular'>There is not data to work.</h5></center>",
-        });
-        return false;
-        </script>-->
+        </div>-->
+        <script>
+            $(document).ready(function(){
+                bootbox.alert({
+            title: "<h2 class='junction-bold text-center text-danger'>ERROR:</h2>",
+            message: "<center><h5 class='junction-regular'>There is not data to work. <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</h5></center>"
+                });
+            });
+        </script>
     <?php
-    //echo "<p class='text-danger'>ERROR: There is not data to work.</p>";
 }
 ?>
             </div>
@@ -198,11 +201,8 @@ else
         </div>
         </div>
         <!--Main js-->
-        <?php 
-            include 'main_js.php';
-        ?>
-		<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
+        
 		<!--/#Main js-->
+
 	</body>
 </html>

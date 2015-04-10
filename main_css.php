@@ -8,6 +8,9 @@
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/sidebar.css" rel="stylesheet">
+<!-- Slide -->
+<link href="assets/css/responsiveslides-themes.css" rel="stylesheet">
+<!-- /Slide -->
 <!-- WOW! ;) -->
 <link rel="stylesheet" href="assets/css/animate.css">
 <!-- / WOW! ;) -->

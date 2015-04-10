@@ -32,6 +32,8 @@
         <?php 
             include "app/graphic.php";
         ?>
+        
+        
     </body>
 
 </html>

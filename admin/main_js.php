@@ -1,5 +1,6 @@
-<script async src="../assets/js/jquery.js" type="text/javascript"></script>
-<script async src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/jquery.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootbox.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script>
 	$("#menu-toggle").click(function(e) {
