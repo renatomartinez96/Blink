@@ -125,16 +125,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         $stmt1->bind_result($user1,$avatart,$nombrest,$apellidost,$descripciont,$correot);
                                                         $stmt1->fetch();
                                                         echo "
-                                                        <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
-                                                            <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
-                                                                <img src='../assets/img/avatares/".$avatart.".png' class='img-rounded'>
-                                                            </div>
-                                                            <div class='col-xs-8'>
-                                                                <h3>".$nombrest."</h3>
-                                                                <button type='button' class='btn btn-danger form-control input-sm' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\">Desinscribir</button>
-                                                                <a href='./perfil.php?u=".$user1."'><button type='button' class='btn input-sm btn-info form-control'>Perfil</button></a>
-                                                            </div>
-                                                        </div>
+                                                            <div class='col-sm-6'> 
+                                                                 <div class='col-md-5'> 
+                                                                     <a href='#'> 
+                                                                        <img class='img-responsive' src='../assets/img/avatares/".$avatart.".png' alt=''> 
+                                                                     </a> 
+                                                                 </div> 
+                                                                 <div class='col-md-7'> 
+                                                                     <h3>".$nombrest."</h3> 
+                                                                     <h4>".$user1."</h4> 
+                                                                     <p>".$correot."</p> 
+                                                                     <p>".$descripciont."</p> 
+                                                                     <a class='btn btn-primary'>Profile <span class='glyphicon glyphicon-chevron-right'></span></a> 
+                                                                 </div> 
+                                                             </div> 
                                                         ";
                                                     }
                                                 }
@@ -144,6 +148,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 echo "<h1>No estas subscrito a ningun profesor</h1>";
                                             }
                                         ?>
+ 
+
                                     </div>
                                 </div>
                             </div>

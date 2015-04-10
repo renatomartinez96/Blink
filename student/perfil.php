@@ -61,7 +61,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     <!--/#Custom CSS-->
 
 </head>
-<body>
+<body style="background:#D8D8D8  !important;">
     <!--Topbar -->
     <?php 
         include '../nav/topbar.php';
@@ -120,33 +120,46 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div> 
-                        <div class="col-xs-12">
-                            <!-- Projects Row -->
-                                <div class="col-md-4 col-lg-3 well portfolio-item">
-                                    <a href="#">
-                                        <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.png" alt="">
-                                    </a>
-                                    <div class="col-xs-12">
-                                        <h3>
-                                            <a href="#" class="junction-regular">Project Name</a>
-                                        </h3>
-                                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laciniLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia eget ipsum sit amet sollicitudin. Maecenas ultrices rhoncus nisi nec egestas. Nam accumsan diam id dolor rutrum faucibus. Cr</p>
-                                        <input type="button" value="Ver curso" class="btn btn-success form-control">
-                                    </div>
+                         <div class="col-xs-12 full">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Courses</h3>
                                 </div>
-                                <div class="col-md-4 col-lg-3 well portfolio-item">
-                                    <a href="#">
-                                        <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.png" alt="">
-                                    </a>
-                                    <div class="col-xs-12">
-                                        <h3>
-                                            <a href="#" class="junction-regular">Project Name</a>
-                                        </h3>
-                                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laciniLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia eget ipsum sit amet sollicitudin. Maecenas ultrices rhoncus nisi nec egestas. Nam accumsan diam id dolor rutrum faucibus. Cr</p>
-                                        <input type="button" value="Ver curso" class="btn btn-success form-control">
-                                    </div>
-                                </div>
+                            </div>
                         </div>
+                        <div class="col-xs-12 full">
+                             <div class="container" style="margin-bottom:15px;">
+                                 <div class="col-xs-12 well full">
+                                    <div class="col-md-5 full"> 
+                                         <a href="#"> 
+                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt=""> 
+                                         </a> 
+                                     </div> 
+                                     <div class="col-md-7"> 
+                                         <h3>Project One</h3> 
+                                         <h4>Subheading</h4> 
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p> 
+                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                     </div>
+                                </div>
+                             </div>
+                            <div class="container" style="margin-bottom:15px;">
+                                 <div class="col-xs-12 well full">
+                                    <div class="col-md-5 full"> 
+                                         <a href="#"> 
+                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt=""> 
+                                         </a> 
+                                     </div> 
+                                     <div class="col-md-7"> 
+                                         <h3>Project One</h3> 
+                                         <h4>Subheading</h4> 
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p> 
+                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                     </div>
+                                </div>
+                             </div> 
+                        </div>
+                            
 <?php
         }
         else
