@@ -128,15 +128,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                             <div class='col-sm-6'> 
                                                                  <div class='col-md-5'> 
                                                                      <a href='#'> 
-                                                                        <img class='img-responsive' src='../assets/img/avatares/".$avatart.".png' alt=''> 
+                                                                        <img class='img-responsive img-thumbnail' src='../assets/img/avatares/".$avatart.".png' alt=''> 
                                                                      </a> 
                                                                  </div> 
                                                                  <div class='col-md-7'> 
-                                                                     <h3>".$nombrest."</h3> 
-                                                                     <h4>".$user1."</h4> 
+                                                                     <h3 class='junction-bold'>".$nombrest."</h3> 
+                                                                     <h4 class='junction-bold'>".$user1."</h4> 
                                                                      <p>".$correot."</p> 
-                                                                     <p>".$descripciont."</p> 
-                                                                     <a class='btn btn-primary'>Profile <span class='glyphicon glyphicon-chevron-right'></span></a> 
+                                                                     <p class='text-justify'>".$descripciont."</p> 
+                                                                     <a  href='./perfil.php?t=".$user1."'><button class='btn btn-primary'>Profile <span class='glyphicon glyphicon-chevron-right'></span></button></a> 
+                                                                     <button type='button' class='btn btn-danger' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\">Unsuscribe</button>
                                                                  </div> 
                                                              </div> 
                                                         ";
@@ -176,8 +177,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                 <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
                                                                     <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-rounded'>
                                                                     <div class='caption full'>
-                                                                        <button type='button' class='btn btn-danger form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\">Desinscribir</button>
-                                                                        <a href='./perfil.php?u=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
+                                                                        <button type='button' class='btn btn-danger form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\">Unsuscribe</button>
+                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Profile</button></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class='col-xs-8'>
@@ -192,10 +193,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         echo "
                                                             <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
                                                                 <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
-                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-rounded'>
+                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-thumbnail'>
                                                                     <div class='caption full'>
-                                                                        <button type='button' class='btn btn-success form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\">Inscribir</button>
-                                                                        <a href='./perfil.php?u=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
+                                                                        <button type='button' class='btn btn-success form-control' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\">Suscribe</button>
+                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Profile</button></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class='col-xs-8'>
