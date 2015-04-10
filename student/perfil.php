@@ -83,14 +83,16 @@ Gerardo López | Iván Nolasco | Renato Andres
     if (isset($_GET['u'])) 
     {
         $u = $_GET['u'];
-        $stmt1 = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, usuario  FROM usuarios_tb WHERE usuario = ?");
+        $stmt1 = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, usuario, tipo  FROM usuarios_tb WHERE usuario = ?");
         $stmt1->bind_param('s', $u);
         $stmt1->execute(); 
         $stmt1->store_result();
-        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1);
+        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
+            if ($tipo1 == '3') 
+            {
 ?>
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
@@ -160,7 +162,101 @@ Gerardo López | Iván Nolasco | Renato Andres
                              </div> 
                         </div>
                             
-<?php
+<?php       
+                }
+                else
+                {
+                    Header('Location: ./');
+                }
+        }
+        else
+        {
+        ?>
+                        <div class="col-xs-12" style="margin-top:50px;">
+                            <div class="container">
+                                <div class="jumbotron text-center">
+                                    <img src="../assets/img/404.png" style="width:45%;"><br>
+                                    <div class="form-group full text-center">
+                                            <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                    </div>
+                                    <div class="list-group" id="SearchResult"></div>
+                                </div>
+                            </div>
+                        </div>
+        <?php
+        }
+    }
+    elseif(isset($_GET['t']))
+    {
+        $t = $_GET['t'];
+        $stmt1 = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, usuario, tipo  FROM usuarios_tb WHERE usuario = ?");
+        $stmt1->bind_param('s', $t);
+        $stmt1->execute(); 
+        $stmt1->store_result();
+        $stmt1->bind_result($id1,$avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1);
+        $stmt1->fetch();
+        if($stmt1->num_rows == 1)
+        {
+            if ($tipo1 == '2') 
+            {
+?>
+                        <div class="panel col-xs-12 full">
+                            <div class="panel-heading full" style="border-bottom: 0px;">
+                                <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
+                                    <img src="../assets/img/avatares/<?=$avatar1?>.png" style="border-radius:50%;width:15%;background: rgba(255, 255, 255, 0.4);">
+                                    <h2 class="junction-bold"><?=$nombres1?></h2>
+                                    <h3 class="junction-bold"><?=$usuario1?></h3>
+                                    <h4 class="junction-light container"><?=$descripcion1?></h4>
+                                    <a class="btn btn-success input-lg" target="_blank" href="../users/<?=$usuario1?>/index.html"><Strong><?=$usuario1?></Strong>'s page</a>
+                                </div>
+                            </div>
+                        </div> 
+                         <div class="col-xs-12 full">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Courses</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$id1."' ");
+                            if ($stmt2->num_rows > 0) 
+                            {
+                                while($row = $stmt2->fetch_assoc()){
+                                    echo "
+                                        <div class='col-xs-12 full'>
+                                            <div class='container' style='margin-bottom:15px;'>
+                                                <div class='col-xs-12 well full'>
+                                                    <div class='col-md-5 full'> 
+                                                         <a href='#'> 
+                                                            <img class='img-responsive bg-primary' src='../assets/img/trofeos/1.jpg' alt=''> 
+                                                         </a> 
+                                                     </div> 
+                                                     <div class='col-md-7'> 
+                                                         <h3>".$row['nombre']."</h3> 
+                                                         <h4>".$nombres1."</h4> 
+                                                         <p>".$row['descripcion']."</p> 
+                                                         <a class='btn btn-info' href='#'>View Lessons <span class='glyphicon glyphicon-chevron-right'></span></a> 
+                                                     </div>
+                                                </div>
+                                             </div>
+                                        </div>
+                                    ";
+                                }
+                            }
+                            else
+                            {
+                                echo "This teacher dont have any courses";
+                            }
+                        ?>
+                        
+                            
+<?php       
+                }
+                else
+                {
+                    Header('Location: ./');
+                }
         }
         else
         {
