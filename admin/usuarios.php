@@ -50,6 +50,12 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Core CSS-->
 	</head>
 	<body>
+        <style>
+            .yeahmrwhite
+            {
+                background-color: #0f1017; !important
+            }
+        </style>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
@@ -67,7 +73,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<div class="row">
 <?php
 $titulo = "";
-if(isset($_GET["tipo"]))
+/*if(isset($_GET["tipo"]))
 {
     $usutipo = $_GET["tipo"];
     switch($usutipo){
@@ -86,63 +92,63 @@ if(isset($_GET["tipo"]))
     }
 }
 else
-{
+{ */
     if(isset($_GET["type"]))
     {
         $usutipo2 = $_GET["type"];
         switch($usutipo2){
         case 1;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 1";
-        $titulo = "List of a";
+        $titulo = "List of Administrators of Blink";
         break;
         case 2;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 2";
-        $titulo = "Lissgknfkgndkf";
+        $titulo = "List of Teachers of Box Link";
         break;
         case 3;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 3";
-        $titulo = "aroougnd frj worl";
+        $titulo = "List of Students of Box Link";
         break;
         }
     }
     else
     {
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb";
-        $titulo = "Listado de todos los usuarios de Blink";
+        $titulo = "List of all users of Box Link";
     }
-}
+//}
 ?>
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Volver</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Back</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <div class="btn-group" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Clasificar la lista por: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Sort the list by... <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=2">Profesores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?type=1">Administrators</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?type=2">Teachers</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?type=3">Students</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">All users</a></li>
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Print reports: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Profesores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administrators</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Teachers</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Students</a></li>
                             <li role="presentation" class="divider"></li>
                             <li role="presentation" class="dropdown-header">Per status</li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1">Active</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=0">Inactive</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">All users</a></li>
                         </ul>
                         </div>
                         </div>
                         <br>
-                        <div class="well">
+                        <div class="well yeahmrwhite">
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
