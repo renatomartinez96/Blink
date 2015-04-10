@@ -141,6 +141,10 @@
     margin-bottom: 1%;
     color: #485563;
 }
+.trshIt {
+    z-index: 10;
+    margin: 0;
+}
 .animated { 
     -webkit-animation-duration: 0.5s; 
     animation-duration: 0.5s; 

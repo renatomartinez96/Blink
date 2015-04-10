@@ -2,8 +2,8 @@
             
             <div class="col-xs-10 arena">
                 <p class="titulo">Workspace</p>
-                <div class="col-xs-12 tools" style="display:none;">
-                    <i id="14" class="fa fa-trash-o fa-2x htmlMain"></i>
+                <div class="col-xs-12 tools">
+                    <i id="14" class="fa fa-trash-o fa-2x htmlMain trshIt"></i>
                 </div>
                 <div class="col-xs-12 playground"></div>
             </div>

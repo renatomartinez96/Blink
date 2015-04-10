@@ -60,7 +60,7 @@
             }else {
                  $correcto = "false";
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
-                                <strong>Upppss!</strong>I thinck there´s a problem with your Website </a>.
+                                <strong>Upppss!</strong>There´s a problem with your Website </a>.
                               </div>";
             }
             }else {

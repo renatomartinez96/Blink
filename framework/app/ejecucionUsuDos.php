@@ -19,7 +19,8 @@
                                 $(".msgCl ").html(data.stringhome);
                                 if(data.correcto == "false") {
                                     momentoTo--;
-                                }  
+                                }
+                                
                               }
                           });
             }

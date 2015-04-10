@@ -73,11 +73,15 @@
             
         //funciones costantes
             function deletete() {
-                $(IdObjetosupperior).delete();
+                $("#"+IddeInserssionAtriSty).remove();
+                 $("#A"+IddeInserssionAtriSty).remove();
+                momentoTo = momentoTo - 2;
+               
             }
         $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
              IdObjeto = $(this).attr('id');
       }, });
+        
         
                  
                 
@@ -155,7 +159,7 @@
                                createCSS(nombre);
                              break;
                         case "5":
-                               //deletete();
+                               deletete();
                              break;
                     }
                     
