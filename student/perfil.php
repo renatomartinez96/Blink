@@ -16,12 +16,12 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
     {
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->bind_result($idusuario,$avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
         $stmt->fetch();
         
     }
@@ -236,7 +236,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                          <h3>".$row['nombre']."</h3> 
                                                          <h4>".$nombres1."</h4> 
                                                          <p>".$row['descripcion']."</p> 
-                                                         <a class='btn btn-info' href='#'>View Lessons <span class='glyphicon glyphicon-chevron-right'></span></a> 
+                                                         <a href='#'><button class='btn btn-success' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribecurso(".$row['idcurso'].",".$idusuario.")}})\">Suscribe<span class='glyphicon glyphicon-chevron-right'></span></button></a> 
                                                      </div>
                                                 </div>
                                              </div>
@@ -291,8 +291,6 @@ Gerardo López | Iván Nolasco | Renato Andres
             include 'main_js.php';
         ?>
         <!--/#Main js-->
-        <script>
-
-        </script>
+        <script src="assets/ajax/index.js"></script>
     </body>
 </html>

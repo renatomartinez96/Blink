@@ -16,12 +16,12 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
     {
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->bind_result($idusuario, $avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
         $stmt->fetch();
         
     }
@@ -115,13 +115,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <div class="panel-body">
                                         <!--Cursos-->
-                                            <div class="col-lg-4 course">
-                                                <div class="col-xs-8 full course">
-                                                    <div class="head"></div>
-                                                    <div class="body"></div>
-                                                </div>
-                                                <div class="col-xs-4 full course" style="background: cyan;"></div>
-                                            </div>
+                                            <?php
+                                                $stmt = $mysqli->query("SELECT * FROM `curso-estudiante` INNER JOIN `curso` ON curso-estudiante.idcurso = curso.idcurso  WHERE idestudiante = '".$idusuario."'");
+                                            ?>
                                         <!--/#Cursos-->
                                     </div>
                                 </div>

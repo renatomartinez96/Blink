@@ -1,3 +1,14 @@
+<!--
+
+Copyright (c) 2015 Blink
+All Rights Reserved
+ 
+This product is protected by copyright and distributed under
+licenses restricting copying, distribution, and decompilation.
+
+Gerardo López | Iván Nolasco | Renato Andres
+
+-->
 <?php
 include_once 'assets/includes/db_conexion.php';
 include_once 'assets/includes/funciones.php';
@@ -25,17 +36,7 @@ if (login_check($mysqli) == true) {
     $logged = $lang["nosession"];
 }
 ?>
-<!--
 
-Copyright (c) 2015 Blink
-All Rights Reserved
- 
-This product is protected by copyright and distributed under
-licenses restricting copying, distribution, and decompilation.
-
-Gerardo López | Iván Nolasco | Renato Andres
-
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,16 +63,17 @@ Gerardo López | Iván Nolasco | Renato Andres
         html, body{
             width: 100%;
             height: 100%;
-            -webkit-font-smoothing: antialiased;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+            overflow-x: hidden;
+            background:#192B3C @important;
+        }
+        .navbar-inverse {
+            background-color: #E06B26;
         }
         .alto{
             height: 50px;
             padding-top: 5px;
             bottom: 0px; 
-            position: relative; !important
+            
         }
         .bajo{
             height: 50px;
@@ -89,78 +91,160 @@ Gerardo López | Iván Nolasco | Renato Andres
             padding-top: 80px; !important
             text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
         }
-        .banner { 
-            margin-left: 0px;
-            position: relative; 
-            overflow: auto;
-            width: 100%; !important
+        #banner {
+            background: url(assets/img/banner/1.jpg) no-repeat fixed;
+            padding-top:20px;
+            text-align:center;
+            background-size: 100%;
+            background-position: left center;
+            height: 100vh;
+            width: 100vw;
+
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
-        .banner li { 
-            padding: 0px;
-            list-style: none;
+        #quote{
+            margin-bottom:0px !important;
+            background:#2B3E4F !important;
         }
-        .banner ul{
-            width: 400%; !important
+        .hero-feature {
+            margin-bottom: 30px;
         }
-        .banner ul li { 
-            float: left;
-            padding: 4.5%;
+        #logo{
+            background: url(assets/img/bl.png) no-repeat fixed;
+            background-size:15%;
+            background-position:bottom center;
+            height:100vh;
         }
     </style>    
     <!--Nav -->
     <nav class="navbar navbar-inverse alto navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Box Link</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="assets/img/brand1.png" class="img-responsive tigres" alt="Box Link :)" width="100"></a>
-        </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Box Link</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="assets/img/brand1.png" class="img-responsive tigres" alt="Box Link :)" width="100"></a>
+            </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Info</a></li>
-            <li><a href="#">How works?</a></li>
-            <li><a href="#">Social :v</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <form class="navbar-form navbar-left" action="assets/includes/login_proceso.php" method="post" name="login_form">
-            <div class="form-group">
-                <!--<label class="control-label" for="email">Tu correo</label>-->
-              <input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control input-sm" required>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Info</a></li>
+                    <li><a href="#">How works?</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" action="assets/includes/login_proceso.php" method="post" name="login_form">
+                        <div class="form-group">
+                            <!--<label class="control-label" for="email">Tu correo</label>-->
+                            <input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control input-sm" required>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="control-label" for="password">Tu contraseña</label>-->
+                            <input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password" class="form-control input-sm" required>
+                        </div>
+                        <input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success btn-sm" onclick="formhash(this.form, this.form.password);" />
+                        <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btn-sm' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
+                        <a href='registrarse.php' class='btn btn-info btn-sm'>No tengo cuenta</a>
+                    </form>
+                </ul>
             </div>
-            <div class="form-group">
-                <!--<label class="control-label" for="password">Tu contraseña</label>-->
-              <input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password" class="form-control input-sm" required>
-            </div>
-            <input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success btn-sm" onclick="formhash(this.form, this.form.password);" />
-            <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btn-sm' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
-            <a href='registrarse.php' class='btn btn-info btn-sm'>No tengo cuenta</a>
-            </form>
-          </ul>
         </div>
-      </div>
     </nav>
     <!--/Nav -->
-        <?//=$lang["yonoespik"]?>
-        <?php
-        if (isset($_GET['error'])) 
-        {
-            echo "<p class='text-danger text-center'>¡Ups! Ocurrió un error al iniciar sesión, <a href='index.php'>intentalo de nuevo</a>.</p>";
-        }
-        if (login_check($mysqli) == true) 
-        {
-            header('location:student/profile.php');
-        } 
-        else 
-        {
-            //echo "<h4 class='junction text-center'> " . $logged . "</h4>";
-        }
-        ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="banner">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 full" id="">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="jumbotron" id="quote">
+                                <div class="container text-center">
+                                    <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                    <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
+                                    <input type="button" class="btn btn-primary btn-lg" value="About">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="jumbotron" id="quote">
+                                <div class="container text-center">
+                                    <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                    <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
+                                    <input type="button" class="btn btn-primary btn-lg" value="About">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="jumbotron" id="quote">
+                                <div class="container text-center">
+                                    <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                    <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
+                                    <input type="button" class="btn btn-primary btn-lg" value="About">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+<!--
+            <div class="col-xs-6 text-center">
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+            </div>
+            <div id="logo" class="col-xs-6"></div>
+            <div class="col-xs-6 text-center">
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+            </div>
+-->
+        </div>
+    </div>
         <?php
             if (isset($_GET['t'])) 
             {
@@ -178,36 +262,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             }
         ?>
-    
-    <div class="nomargenplz container-fluid">
-        <div class=" row">
-            <div class="banner">
-                <ul>
-                    <li style="background-image: url('https://download.unsplash.com/reserve/3wBPUcDrR9KaduD3PvkY_DSC_0915.JPG');">
-                        <h1 class="junction-bold textoslide" >Bienvenido a Box Link</h1>
-                        <p class="junction-regular">Donde aprender diseño Web es una experiencia divertida y dinamica</p>
-                    </li>
-                    
-                    <li style="background-image: url('http://static.pexels.com/wp-content/uploads/2014/06/camera-desk-earphone-915.jpg');">
-                        <h1 class="junction-bold textoslide">HTML5 y CSS3</h1>
-                        <p class="junction-regular">Enseñandote lo último en front-end, lo más fresco a ofrecer ;)</p>
-                    </li>
-                    
-                    <li style="background-image: url('https://download.unsplash.com/reserve/wi9yf7kTQxCNeY72cCY6_Images%20of%20Jenny%20Lace%20Plasticity%20Publish%20(4%20of%2025).jpg');">
-                        <h1 class="junction-bold textoslide">¡Tan fácil para todos!</h1>
-                        <p class="junction-regular">Te invitamos a leer nuestra <a href="#" class="btn btn-info btn-xs">sección de información</a> y así conoscas el método de enseñanza más revolucionario del mundo</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container-fluid">
-        <div class="row"> 
-            <h1 class="junction-bold text-center">How Box Link works?</h1>
-            
-        </div>
-    </div>
     <script src="assets/js/jquery.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
@@ -238,12 +292,6 @@ Gerardo López | Iván Nolasco | Renato Andres
             </div>
         </div>
     </div>
-    <!-- Slide -->
-    <script>
-        $(function() {
-            $('.banner').unslider();
-        });
-    </script>
     <script>
         $(document).ready(function(){
             function validateEmail($email) {
