@@ -1,5 +1,28 @@
-<script async src="assets/js/jquery.js" type="text/javascript"></script>
-<script async src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/bootbox.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.easing.min.js"></script>
+<script>
+//jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($(".navbar").offset().top > 50) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+});
+
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+</script>
 <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script>
 	$("#menu-toggle").click(function(e) {
@@ -10,12 +33,42 @@
 			$(".textos").toggleClass("toggled");
 	});
 </script>
-<!-- WOW ;) -->
-<script src="assets/js/wow.js"></script>
 <script>
- new WOW().init();
-</script>
-<!-- / WOW ;) -->
+        $(document).ready(function(){
+            function validateEmail($email) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                return emailReg.test( $email );
+            }
+            $("#submtoken").click(function(){
+                if($("#mail").val() == ''){
+                    bootbox.alert({
+                        title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                        message: "<center><h5 class='junction-light'>You must provide your email paddress</h5></center>",
+                    });
+                }else{
+                    if(validateEmail($("#mail").val())) { 
+                        var send = {"email" : $("#mail").val()};
+                        $.ajax({
+                            type: "POST",
+                            url: "mailpass.php",
+                            data: send,
+                            success: function(response) {
+                                bootbox.alert({
+                                    title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                                    message: "<center><h5 class='junction-light'>"+response+"</h5></center>",
+                                });
+                            }
+                        });
+                    }else{
+                        bootbox.alert({
+                            title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                            message: "<center><h5 class='junction-light'>You must provide a real Email address</h5></center>",
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 <script>
 //Valida que en un campo solo se puedan ingresar letras
 //Sintaxis html= onkeypress="txtletras()"

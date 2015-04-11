@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
     	<div class="navbar-header">
         	<a href="#menu-toggle" class="btn btn-primary" id="menu-toggle" style="float:left;margin-top:2px;margin-bottom:2px; margin-right:5px;border-radius:0px;margin-left:5px;"><i class="fa fa-bars fa-2x"></i></a>
-            <a class="navbar-brand" href="#"><img src="../assets/img/brand1.png"</a>
+            <a class="navbar-brand" href="#"><img src="../assets/img/brand1.png"></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">

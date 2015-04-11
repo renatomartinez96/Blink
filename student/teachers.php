@@ -94,8 +94,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
-                                    <h2 class="junction-bold">Maestros</h2>
-                                    <h4 class="junction-light">En esta seccion puedes buscar y suscribirte a una gran cantidad de profesores los cuales te guiaran en el aprendizaje de los lenguajes HTML5 Y CSS3 que esperas para empezar a disfrutar de esta nueva experiencia</h4>
+                                    <h2 class="junction-bold">Teachers</h2>
+                                    <h4 class="junction-light">In this section you can search and subscribe has a lot of which teachers will guide thee on the learning languages ​​HTML5 CSS3 That you expect Y to start this new experience of enjoying</h4>
                                     <center><div class="form-group full text-center" style="width:50%;">
                                         <input type="text" class="form-control" placeholder="Search" autocomplete="off" id="SearchStringT"> 
                                         <div class="list-group" id="SearchResult"></div>

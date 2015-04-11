@@ -13,10 +13,10 @@ if (isset($_POST['email']))
         $stmt1 = $mysqli->prepare("UPDATE usuarios_tb SET token = ? WHERE usuario = ?");
         $stmt1->bind_param('ss', $token, $usuario);
         if($stmt1->execute()){
-            echo "Hemos enviado un correo a <strong>".$mail."</strong>. Por favor verificarlo lo mas pronto posible para reestablecer tu contraseña";
+            echo "Box Link have sent you an email. Please verifay your inbox at <strong>".$mail."</strong>.";
         }
     }else{
-        echo "Correo no encontrado, por favor verifica la direccion ingresada o registrate en Blink";
+        echo "Email not found. Please try again or register at Box Link";
     }
 }
 ?>

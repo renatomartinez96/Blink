@@ -8,9 +8,48 @@
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/sidebar.css" rel="stylesheet">
-<!-- Slide -->
-<link href="assets/css/responsiveslides-themes.css" rel="stylesheet">
-<!-- /Slide -->
-<!-- WOW! ;) -->
-<link rel="stylesheet" href="assets/css/animate.css">
-<!-- / WOW! ;) -->
+    <link href="assets/css/scrolling-nav.css" rel="stylesheet">
+<style type="text/css">
+    html, body{
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        background:#192B3C @important;
+    }
+    .navbar-inverse {
+        background-color: #E06B26;
+    }
+    #quote{
+        margin-bottom:0px !important;
+        background:rgb(78, 93, 108) !important;
+    }
+    .hero-feature {
+        margin-bottom: 30px;
+    }
+    #logo{
+        background: url(assets/img/bl.png) no-repeat fixed;
+        background-size:15%;
+        background-position:bottom center;
+        height:100vh;
+    }
+    .bgvideo {
+    /*    -webkit-filter: grayscale(0.5);*/
+        display: block;
+        max-width: 100%;
+        z-index: -100;
+        overflow: none;
+    }
+
+    .logotipo {
+        margin-top: 0px;
+        width: 100%;
+        position: absolute;
+    }
+    #video-background {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        margin-left: -15px;
+        z-index: -90;
+    }
+</style>

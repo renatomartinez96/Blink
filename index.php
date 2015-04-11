@@ -69,50 +69,9 @@ if (login_check($mysqli) == true) {
         .navbar-inverse {
             background-color: #E06B26;
         }
-        .alto{
-            height: 50px;
-            padding-top: 5px;
-            bottom: 0px; 
-            
-        }
-        .bajo{
-            height: 50px;
-            padding-top: 5px;
-        }
-        .tigres{
-            margin-left: 15px; !important
-            margin-right: 5px; !important
-        }
-        .nomargenplz{
-            margin: 0; !important
-            padding: 0; !important
-        }
-        .textoslide{
-            padding-top: 80px; !important
-            text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-        }
-        #banner {
-            background: url(assets/img/banner/1.jpg) no-repeat fixed;
-            padding-top:20px;
-            text-align:center;
-            background-size: 100%;
-            background-position: left center;
-            height: 100vh;
-            width: 100vw;
-
-            -webkit-background-size: 100%;
-            -moz-background-size: 100%;
-            -o-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
         #quote{
             margin-bottom:0px !important;
-            background:#2B3E4F !important;
+            background:rgb(78, 93, 108) !important;
         }
         .hero-feature {
             margin-bottom: 30px;
@@ -122,6 +81,26 @@ if (login_check($mysqli) == true) {
             background-size:15%;
             background-position:bottom center;
             height:100vh;
+        }
+        .bgvideo {
+        /*    -webkit-filter: grayscale(0.5);*/
+            display: block;
+            max-width: 100%;
+            z-index: -100;
+            overflow: none;
+        }
+
+        .logotipo {
+            margin-top: 0px;
+            width: 100%;
+            position: absolute;
+        }
+        #video-background {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            margin-left: -15px;
+            z-index: -90;
         }
     </style>    
     <!--Nav -->
@@ -139,9 +118,7 @@ if (login_check($mysqli) == true) {
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Info</a></li>
-                    <li><a href="#">How works?</a></li>
+                    <li class="active"><a href="#">Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left" action="assets/includes/login_proceso.php" method="post" name="login_form">
@@ -163,12 +140,14 @@ if (login_check($mysqli) == true) {
     </nav>
     <!--/Nav -->
     <div class="container-fluid">
-        <div class="row">
-            <div id="banner">
-            </div>
+        <div class="row" id="banner">
+            <img src="assets/img/banner/1.png" class="logotipo">
+            <video autoplay loop muted class="bgvideo" id="bgvideo">
+                <source class="videocool" src="assets/video/1080.webm" type="video/webm">
+            </video>
         </div>
         <div class="row">
-            <div class="col-xs-12 full" id="">
+            <div class="col-xs-12 full" style="background:rgb(78, 93, 108);">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
@@ -204,45 +183,39 @@ if (login_check($mysqli) == true) {
             </div>
         </div>
         <div class="row">
-<!--
-            <div class="col-xs-6 text-center">
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-            </div>
-            <div id="logo" class="col-xs-6"></div>
-            <div class="col-xs-6 text-center">
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-                    <h1>hola</h1>
-            </div>
--->
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
+            <h1>Hola</h1>
         </div>
     </div>
         <?php
@@ -270,24 +243,24 @@ if (login_check($mysqli) == true) {
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <center><h2 id="myModalLabel" class='modal-title junction-bold'>Blink</h2></center>
+                    <center><h2 id="myModalLabel" class='modal-title junction-bold'>Box Link</h2></center>
                 </div>
                 <div class="modal-body">
                     <form class='text-center'>
-                        <p>Para poder reestablecer tu contraseña necesitamos que nos brindes tu direccion de correo electronico que tienes registrado con Blink. Te haremos llegar un correo con la informacion necesaria para la transsaccion</p>
+                        <p>To reset your password we need your email address that you have registered with Blink . We will send you an email with the necessary information for the transsaccion</p>
                         <div class='form-group'>
-                            <label class='col-lg-3 control-label' for='mail'>Correo Electronico</label>
+                            <label class='col-lg-3 control-label' for='mail'>Email</label>
                             <div class='col-lg-9'>
                                 <input type='text' name='mail' maxlength='32' id='mail' placeholder='Correo Electronico' class='form-control input-sm'/> 
                             </div>
                         </div>
                         <br>
                         <br>
-                        <input type='button' id='submtoken' class='btn btn-success form-control' value='Enviar'>
+                        <input type='button' id='submtoken' class='btn btn-success form-control' value='Send'>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <h6 class="junction-light"><strong>Blink 2015</strong> todos los derechos reservados</h6>
+                    <h6 class="junction-light"><strong>Box Link 2015</strong> All right reserved</h6>
                 </div>
             </div>
         </div>
@@ -301,8 +274,8 @@ if (login_check($mysqli) == true) {
             $("#submtoken").click(function(){
                 if($("#mail").val() == ''){
                     bootbox.alert({
-                        title: "<center><h2 class='junction-bold'>Blink</h2></center>",
-                        message: "<center><h5 class='junction-light'>Para poder continuar debe ingresar su correo electronico</h5></center>",
+                        title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                        message: "<center><h5 class='junction-light'>You must provide your email paddress</h5></center>",
                     });
                 }else{
                     if(validateEmail($("#mail").val())) { 
@@ -313,15 +286,15 @@ if (login_check($mysqli) == true) {
                             data: send,
                             success: function(response) {
                                 bootbox.alert({
-                                    title: "<center><h2 class='junction-bold'>Blink</h2></center>",
+                                    title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
                                     message: "<center><h5 class='junction-light'>"+response+"</h5></center>",
                                 });
                             }
                         });
                     }else{
                         bootbox.alert({
-                            title: "<center><h2 class='junction-bold'>Blink</h2></center>",
-                            message: "<center><h5 class='junction-light'>Para poder continuar debe ingresar una direccion de correo electronico valida</h5></center>",
+                            title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                            message: "<center><h5 class='junction-light'>You must provide a real Email address</h5></center>",
                         });
                     }
                 }

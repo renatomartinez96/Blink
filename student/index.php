@@ -119,6 +119,50 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 $stmt = $mysqli->query("SELECT * FROM `curso-estudiante` INNER JOIN `curso` ON curso-estudiante.idcurso = curso.idcurso  WHERE idestudiante = '".$idusuario."'");
                                             ?>
                                         <!--/#Cursos-->
+                                        <div class='well col-sm-12'> 
+                                             <div class='col-md-2 full'> 
+                                                 <div class='' href='#'> 
+                                                    <img class='img-responsive' src='../assets/img/avatares/15.png' alt=''> 
+                                                    <div class='caption'>
+                                                        <button class="btn btn-success form-control">Profile</button>
+                                                    </div>
+                                                 </div> 
+                                             </div> 
+                                             <div class='col-md-10 full'>
+                                                 <div class="col-xs-6 full">
+                                                    <div class="panel panel-success">  
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title">Information</h3>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <h2 class="junction-bold full">Nombre</h2>
+                                                            <h3 class="full">Usuario</h3>
+                                                            <p class="text-justify">jhdgjshdgajsdgjagdjahgsdjhgjsdhgajshgdjahsgdjahgsjdhgasjdgjahsgdjahgsdjhagsjdhgajshdgajshgdjahsgdjahgsjdhgajshdgjashgdj</p>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                                 <div class="col-xs-6 full">
+                                                    <div class="panel panel-success">  
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title">Lessons</h3>
+                                                        </div>
+                                                        <div class="panel-body full">
+                                                            <div class="list-group">
+                                                                <a href="#" class="list-group-item">
+                                                                    Cras justo odio
+                                                                </a>
+                                                                <a href="#" class="list-group-item">
+                                                                    Dapibus ac facilisis in
+                                                                </a>
+                                                                <a href="#" class="list-group-item">
+                                                                    Morbi leo risus
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                             </div> 
+                                         </div> 
                                     </div>
                                 </div>
                             </div>
