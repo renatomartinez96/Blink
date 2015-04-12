@@ -1,14 +1,16 @@
 <div class="col-xs-12 HTMLgenerator">
             
             <div class="col-xs-10 arena">
+                
                 <p class="titulo">Workspace</p>
                 <div class="col-xs-12 tools">
-                    <i id="14" class="fa fa-trash-o fa-2x htmlMain trshIt"></i>
+<!--                    <i id="14" class="fa fa-trash-o fa-2x htmlMain trshIt"></i>-->
                 </div>
                 <div class="col-xs-12 playground"></div>
             </div>
             <div class="col-xs-2 objects">
                 <div class="row">
+               
                 <p class="titulo">HTML objects</p>
                     
                         <div id="0" class="col-xs-3 htmlMain yellow withauto"><p>BODY</p></div>
