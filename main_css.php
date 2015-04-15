@@ -8,12 +8,11 @@
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/sidebar.css" rel="stylesheet">
-    <link href="assets/css/scrolling-nav.css" rel="stylesheet">
+<link href="assets/css/scrolling-nav.css" rel="stylesheet">
 <style type="text/css">
     html, body{
-        width: 100%;
+        width: 100vw;
         height: 100%;
-        overflow-x: hidden;
         background:#192B3C @important;
     }
     .navbar-inverse {
@@ -33,23 +32,9 @@
         height:100vh;
     }
     .bgvideo {
-    /*    -webkit-filter: grayscale(0.5);*/
-        display: block;
+        -webkit-filter: grayscale(0.5);
         max-width: 100%;
-        z-index: -100;
-        overflow: none;
-    }
-
-    .logotipo {
-        margin-top: 0px;
-        width: 100%;
-        position: absolute;
-    }
-    #video-background {
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        margin-left: -15px;
-        z-index: -90;
+        max-height: 100%;
+        margin-top:0px;
     }
 </style>
