@@ -143,7 +143,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-9 full jumbotron">
                                 <div class="panel panel-primary full">
                                     <div class="panel-heading">
-                                        <h3 class="junction-bold"><?=$lang['profile-1']?> <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button></h3>
+                                        <h3 class="junction-bold"><?=$lang['profile-1']?></h3>
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">

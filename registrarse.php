@@ -79,8 +79,8 @@ require 'assets/includes/funciones.php';
             <!--Content-->
                 <div class="jumbotron">
                     <center style="color:#fff;">
-                        <h1 class="junction-bold" style="margin-top: 0px;">Blink</h1>
-                        <h3 class="junction-light" style="margin-top: 0px;margin-bottom: 0px;">Teaching the web</h3>
+                        <h1 class="junction-bold" style="margin-top: 0px;">Box Link</h1>
+                        <h3 class="junction-light" style="margin-top: 0px;margin-bottom: 0px;">"Teaching the web"</h3>
                     </center>
                 </div>
                 <div class="container">
@@ -88,60 +88,60 @@ require 'assets/includes/funciones.php';
                         <div class="col-sm-6 well bs-component"> 
                             <fieldset>
                                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="registration_form" id="form" class="form-horizontal">
-                                    <center><legend><h3 class="junction-regular">User registration</h3></legend></center>
+                                    <center><legend><h3 class="junction-regular">Registro de usuarios</h3></legend></center>
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="name">Name</label>
+                                        <label class="col-lg-2 control-label" for="name">Nombre</label>
                                         <div class="col-lg-10">
                                             <input type='text' name='name' id='name' placeholder='Name' class='form-control input-sm'/>            
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="last">Lastname</label>
+                                        <label class="col-lg-2 control-label" for="last">Apellido</label>
                                         <div class="col-lg-10">
                                             <input type='text' name='last' id='last' placeholder='Lastname' class='form-control input-sm'/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="username">User</label>
+                                        <label class="col-lg-2 control-label" for="username">Usuario</label>
                                         <div class="col-lg-10">
                                             <input type='text' name='username' id='username' placeholder='User' class='form-control input-sm'/>
-                                            <span class="help-block">Usernames may contain only digits, upper and lower case letters and underscores</span>
+                                            <span class="help-block">Los usuarios solo pueden tener numeros, letras mayusculas y letras minusculas</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="email">Email</label>
+                                        <label class="col-lg-2 control-label" for="email">Correo</label>
                                         <div class="col-lg-10">
                                             <input type="text" name="email" id="email" placeholder='Email' class='form-control input-sm'/>                                        
-                                            <span class="help-block">Emails must have a valid email format</span>
+                                            <span class="help-block">Ingresar una direccion de correo valida</span>
                                         </div>
                                     </div>
                                     <div class="form-group" id="pass">
-                                        <label class="col-lg-2 control-label" for="password">Password</label>
+                                        <label class="col-lg-2 control-label" for="password">Contraseña</label>
                                         <div class="col-lg-10">
                                             <input type="password" name="password" id="password" placeholder='Password' class='form-control input-sm'/>                                       
                                             <span class="help-block">
-                                                Passwords must be at least 6 characters long
-                                                Passwords must contain
+                                                Por lo menos 6 caracteres de longitud
+                                                Las contraseñas deben contenes
                                                     <ul>
-                                                        <li>At least one uppercase letter (A..Z)</li>
-                                                        <li>At least one lower case letter (a..z)</li>
-                                                        <li>At least one number (0..9)</li>
+                                                        <li>Al menos un caracter en mayusculas (A..Z)</li>
+                                                        <li>Al menos un caracter en minusculas (a..z)</li>
+                                                        <li>Al menos un caracter numerico (0..9)</li>
                                                     </ul>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="form-group" id="rpass">
-                                        <label class="col-lg-2 control-label" for="confirmpwd">Confirmation</label>
+                                        <label class="col-lg-2 control-label" for="confirmpwd">Repetir contraseña</label>
                                         <div class="col-lg-10">
                                             <input type="password" name="confirmpwd" id="confirmpwd" placeholder='Confirmation password' class='form-control input-sm'/>                                        
-                                            <span class="help-block">Your password and confirmation must match exactly</span>
+                                            <span class="help-block">Tu contraseña y la de confirmacion deben de coincidir perfectamente</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="datenac">Birth day</label>
+                                        <label class="col-lg-2 control-label" for="datenac">Nacimiento</label>
                                         <div class="col-lg-10">
                                             <input type='text' name='datenac' id='datenac' onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" class='form-control input-sm'/>
-                                            <span class="help-block">Birth day must have a valid date format (yyyy-mm-dd)</span>
+                                            <span class="help-block">La fecha de nacimiento debe de tener un formato valido (aaaa-mm-dd)</span>
                                         </div>
                                     </div>
                                     <?php
@@ -149,7 +149,7 @@ require 'assets/includes/funciones.php';
                                             echo $error_msg;
                                         }
                                     ?>
-                                    <input type="button" value="Sign up" class="btn btn-success pull-left" id="subm" onclick="return regformhash(
+                                    <input type="button" value="Enviar" class="btn btn-success pull-left" id="subm" onclick="return regformhash(
                                                                                                                         this.form,
                                                                                                                         this.form.name,
                                                                                                                         this.form.last,
@@ -158,7 +158,7 @@ require 'assets/includes/funciones.php';
                                                                                                                         this.form.password,
                                                                                                                         this.form.confirmpwd,
                                                                                                                         this.form.datenac);" /> 
-                                    <a href="index.php" class="pull-right">Login</a>
+                                    <a href="index.php" class="pull-right">Inicio de sesion</a>
                                 </form>
                             </fieldset>
                         </div>

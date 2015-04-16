@@ -53,7 +53,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                 margin-bottom:0px;
                 
             }
-
+            .lecciones{
+                min-height:175px;
+                overflow:scroll;
+                overflow-x:hidden;
+                margin-bottom:0px;
+            }
+            .transparent{
+                background-color:transparent !important;
+            }
         </style>
 		<!--/#Custom CSS-->
 
@@ -111,9 +119,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-md-12 full">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
-                                            <h3 class="panel-title">Courses Feed</h3>
+                                            <h3 class="panel-title">Cursos</h3>
                                     </div>
-                                    <div class="panel-body transparent">
+                                    <div style="margin-top:15px;">
                                         <!--Cursos-->
                                             <?php
                                                 $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr
@@ -133,42 +141,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         if ($result1 > 0) 
                                                         {
                                                             echo"
-                                                                    <div class='col-lg-4 col-md-6 full'>
-                                                                        <div class='panel panel-info'>
-                                                                            <div class='panel-heading'>
-                                                                                <div class='row'>
-                                                                                    <div class='col-xs-3'>
-                                                                                        <i class='fa fa-trophy fa-5x'></i>
-                                                                                    </div>
-                                                                                    <div class='col-xs-9 text-right'>
-                                                                                        <div><h2>".$row['nombre']."</h2></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class='panel-body full'>";
-                                                                while($row1 = $stmt1->fetch_assoc())
-                                                                {  
-                                                                  echo "<ul class='nav nav-pills nav-stacked full'>
-                                                                            <li><a href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a></li>
-                                                                        </ul>";
-                                                                }
-                                                              echo "
-                                                                            </div>
-                                                                            <a href='#'>
-                                                                                <div class='panel-footer'>
-                                                                                    <span class='pull-left'>View Details</span>
-                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                    <div class='clearfix'></div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                            ";
-                                                        }
-                                                        else
-                                                        {
-                                                            echo"
-                                                                    <div class='col-lg-4 col-md-6 full'>
+                                                                    <div class='col-lg-4 col-md-6 '>
                                                                         <div class='panel panel-info'>
                                                                             <div class='panel-heading'>
                                                                                 <div class='row'>
@@ -181,6 +154,43 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                                 </div>
                                                                             </div>
                                                                             <div class='panel-body full'>
+                                                                                <div class='list-group lecciones'>";
+                                                                while($row1 = $stmt1->fetch_assoc())
+                                                                {  
+                                                                  echo "
+                                                                                    <a class='list-group-item' href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a>
+                                                                        ";
+                                                                }
+                                                              echo "
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href='#'>
+                                                                                <div class='panel-footer'>
+                                                                                    <span class='pull-left'>Ver detalles</span>
+                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                                                                    <div class='clearfix'></div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                            ";
+                                                        }
+                                                        else
+                                                        {
+                                                            echo"
+                                                                    <div class='col-lg-4 col-md-6 '>
+                                                                        <div class='panel panel-info'>
+                                                                            <div class='panel-heading'>
+                                                                                <div class='row'>
+                                                                                    <div class='col-xs-3'>
+                                                                                        <i class='fa fa-trophy fa-5x'></i>
+                                                                                    </div>
+                                                                                    <div class='col-xs-9 text-right'>
+                                                                                        <div><h2>".$row['nombre']."</h2></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class='panel-body full lecciones'>
                                                                                 <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
                                                                                     <button type='button' class='close' data-dismiss='alert'>x</button>
                                                                                     <strong>no se encontraron lecciones disponibles</strong>
@@ -188,7 +198,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                             </div>
                                                                             <a href='#'>
                                                                                 <div class='panel-footer'>
-                                                                                    <span class='pull-left'>View Details</span>
+                                                                                    <span class='pull-left'>Ver detalles</span>
                                                                                     <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
                                                                                     <div class='clearfix'></div>
                                                                                 </div>

@@ -66,37 +66,39 @@ Gerardo López | Iván Nolasco | Renato Andres
         <div class='container text-center' id='formtoken'>
             <form class='text-center' action='ChgPass.php?t=<?=$t?>' method='post'>
                 <h1 class='junction-bold'>Box Link</h1>
-                <h3 class='junction-light'>Password reset</h3>
-                <h4 class='junction'>To carry out the restoration of the password is necessary to fill the form below.</h4>
+                <h3 class='junction-light'>Reestablecer contraseña</h3>
+                <h4 class='junction'>Para llevar a cabo la restauracion de su contraseña es necesario que llene el siguiente formulario.</h4>
                 <div class="form-group col-md-6 col-md-offset-3">
-                    <label for="user" class="col-lg-2 control-label">Username</label>
+                    <label for="user" class="col-lg-2 control-label">Usuario</label>
                       <div class="col-lg-10">
                             <input type="text" class="form-control" id="user" name="user" placeholder="Usuario">
                       </div>
                 </div>
                 <div class="form-group col-md-6 col-md-offset-3">
-                    <label for="pass" class="col-lg-2 control-label">Password</label>
+                    <label for="pass" class="col-lg-2 control-label">Contraseña</label>
                         <div class="col-lg-10">
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
                             <span class="help-block">
-                                Passwords must be at least 6 characters long
-                                Passwords must contain
+                                Por lo menos 6 caracteres de longitud
+                                Las contraseñas deben contenes
                                     <ul>
-                                        <li>At least one uppercase letter (A..Z)</li>
-                                        <li>At least one lower case letter (a..z)</li>
-                                        <li>At least one number (0..9)</li>
+                                        <li>Al menos un caracter en mayusculas (A..Z)</li>
+                                        <li>Al menos un caracter en minusculas (a..z)</li>
+                                        <li>Al menos un caracter numerico (0..9)</li>
                                     </ul>
                             </span>
                       </div>
                 </div>
                 <div class="form-group col-md-6 col-md-offset-3">
-                    <label for="rpass" class="col-lg-2 control-label">Reset Password</label>
+                    <label for="rpass" class="col-lg-2 control-label">Repetir contraseña</label>
                       <div class="col-lg-10">
                             <input type="password" class="form-control" id="rpass" name="rpass" placeholder="Repetir contraseña">
                       </div>
                 </div>
                 <input type="buton" class="btn btn-success col-md-6 col-md-offset-3" value="Enviar" onclick="return chgpassform(this.form,this.form.user,this.form.pass,this.form.rpass)">
+                <a href="./" class="col-md-12"><h3>Salir</h3></a>
             </form>
+            
         </div>
     <!-- Registration js -->
         <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
