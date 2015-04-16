@@ -1,5 +1,0 @@
-1^^^agregamos el body^^^<div id="TTT" class="col-xs-3 htmlParts yellow uno"><p>BODY</p></div>
-^^^<div id="AB-1T0O0"></div>$$$2^^^agregamos un titulo y le ingresamos HOLA MUNDO^^^<div id="TTT" class="col-xs-3 htmlParts yellow uno"><p>BODY</p><div id="TTT" class="col-xs-3 htmlParts green withauto dos"><p>TITLE</p><div class="form-group" id="TTT"><input type="text" class="form-control textinp"></div></div></div>
-^^^<div id="AB-1T0O0"><h1 id="AB-2T1O1"></h1></div>$$$3^^^agregamos color de fondo y le ingresamos green
-^^^<div id="TTT" class="col-xs-3 htmlParts yellow uno"><p>BODY</p><div id="TTT" class="col-xs-3 htmlParts green withauto dos"><p>TITLE</p><div class="form-group" id="TTT"><input type="text" class="form-control textinp"></div><div id="TTT" class="col-xs-3 htmlPartsAtriSty royal withauto dos"><p>BGCOLOR</p><div class="form-group" id="TTT"><input type="text" class="form-control textinp"></div></div></div></div>
-^^^<div id="AB-1T0O0"><h1 id="AB-2T1O1">Hola mundo</h1></div>$$$

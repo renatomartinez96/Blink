@@ -70,8 +70,107 @@
                         $(this).removeClass("arriba");
                     });
                 }
-            
+        //estras
+$(".showPreview").click(function() {
+     var w = window.open();
+    var resul = $(".yourSite").html();
+    $(w.document.body).html(resul);
+});
+$(".restard").click(function() {
+    $(".playground").html("");
+    $(".yourSite").html(""); 
+    momentoTo = 0;
+    sincro();
+});
+$(".createHTML").click(function() {
+     var resul = $(".yourSite").html();
+    $.ajax({
+                              method: "POST",
+                              url: "ajax/createHTML.php",
+                              data: {resultado:resul,id:<?php echo $userid?>},
+                              beforeSend: function() {
+                                $(".loading").css('display','block');
+                              },
+                              success: function(data) {
+                                $(".loading").css('display','none');
+                                //$(".playground ").html(data);
+                                   window.open('/Blink/framework/php/download.php');
+                              }
+                          });
+});
+
+
+        function search(valor) {
+                var count=0,notfound=0;
+                 
+                 $(".HTMltags div").each(function(){
+                     count++;
+                    if ($(this).text().search(new RegExp(valor, "i")) < 0) {
+                        $(this).fadeOut();
+                         notfound++;   
+                } else {
+                        $(this).show();
+                        
+                }
+                
+                });
+             if(count == notfound){
+                   $(".noexiste").delay( 800 ).show(); 
+                }else {
+                    $(".noexiste").fadeOut(10);
+                }
+            }
+
+            $('.searchHTML').on('input', function() {
+                var valor = $(this).val();
+                search(valor); 
+            });
+            $(".clean").click(function() {
+                $('.searchHTML').val("");
+                var valor = "";
+                search(valor);
+            });
+            function deletete() {
+                $("#"+IddeInserssionAtriSty).remove();
+                 $("#A"+IddeInserssionAtriSty).remove();
+                momentoTo = momentoTo - 2;
+               
+            }
+        //extras
         //funciones costantes
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+            function search(valor) {
+                var count=0,notfound=0;
+                 
+                 $(".HTMltags div").each(function(){
+                     count++;
+                    if ($(this).text().search(new RegExp(valor, "i")) < 0) {
+                        $(this).fadeOut();
+                         notfound++;   
+                } else {
+                        $(this).show();
+                        
+                }
+                
+                });
+             if(count == notfound){
+                   $(".noexiste").delay( 800 ).show(); 
+                }else {
+                    $(".noexiste").fadeOut(10);
+                }
+            }
+
+            $('.searchHTML').on('input', function() {
+                var valor = $(this).val();
+                search(valor); 
+            });
+            $(".clean").click(function() {
+                $('.searchHTML').val("");
+                var valor = "";
+                search(valor);
+            });
             function deletete() {
                 $("#"+IddeInserssionAtriSty).remove();
                  $("#A"+IddeInserssionAtriSty).remove();

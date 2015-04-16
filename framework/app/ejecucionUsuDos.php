@@ -8,7 +8,7 @@
                 var blockes = $(".playground").html();
                 var resul = $(".yourSite").html();
                 var addedclass = $(resul).find("*").empty();
-                  console.log(addedclass);
+                 
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",

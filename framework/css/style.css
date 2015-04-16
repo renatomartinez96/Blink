@@ -3,51 +3,67 @@
     src: url("../fonts/BEBAS.ttf");
 }
 .objects {
-    background-color: #22313F;
-    height: 800px;
+    min-height: 800px;
+    text-align: center;
 }
 
 .arena {
-    background-color: #22313F;
-    height: 800px;
+    min-height: 800px;
+    
 }
-
+.withauto {
+    width: auto;
+}
+.yourSite {
+    color: black;
+    font-family:serif;
+}
 .titulo {
     font-family: "BebasNeueBold";
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ECECEC;
     margin: 2%;
 }
-
+.padcero {
+    padding:0;
+}
 .htmlMain {
     cursor: pointer;
     height: auto;
     text-align: center;
     margin: 3%;
+    overflow: hidden;
+    z-index: 10;
 }
 .htmlMain > p{
     font-family: "BebasNeueBold";
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #6C7A89;
 }
 
-
+.noexiste {
+    display: none;
+}
 .HTMLgenerator {
     padding: 0;
     margin-top:;
 }
-
+.input-group > .input-group-addon {
+    background-color: #df691a;
+}
 .yellow {
     background-color:#F7CA18;
 }
 .green {
     background-color:#D64541;
 }
+.divide {
+    margin-left: 20%;
+}
 .playground {
-    height: 85%;
-    border: solid 0.3em #5a6776;
-     background-color: #22313F;
-    overflow: scroll;
+    height: 68vh;
+/*    border: 2px solid #df691a;*/
+    overflow-y: scroll;
 }
 .htmlParts {
     cursor: pointer;
@@ -71,9 +87,7 @@
     font-size: 1.2em;
     color: #2d2e2f;
 }
-.withauto {
-    width: auto;
-}
+
 
 .result {
     background-color: #fff;
@@ -179,4 +193,27 @@
 .fadeInDown { 
     -webkit-animation-name: fadeInDown; 
     animation-name: fadeInDown; 
+}
+
+/*MEDIA QUERY*/
+@media (min-width: 1199px) and (max-width: 1770px) {
+    .col-lg-2{
+        width: 25%;
+    }
+    .col-lg-10{
+        width: 75%;
+    }
+    .divide {
+        margin-left: 30%;
+    }
+    .htmlParts > p{
+        font-size: 1.1em;   
+    }
+    .htmlPartsAtriSty > p{
+        font-size: 1.1em;   
+    }
+    .htmlMain > p{
+        font-size: 1.2em;   
+    }
+    
 }
