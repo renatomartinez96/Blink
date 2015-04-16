@@ -13,16 +13,6 @@ Gerardo López | Iván Nolasco | Renato Andres
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
-$avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
-    {
-        $stmt->bind_param('s', $user);
-        $stmt->execute(); 
-        $stmt->store_result();
-        $stmt->bind_result($idusuario, $avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
-        $stmt->fetch();
-        
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,109 +71,6 @@ $avatar = '';
                     </div>
                   </div>
             </div>
-            <!-- IMPRIMIENDO CURSOS -->
-            <div class="col-xs-12 full">
-                            <div class="col-md-12 full">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                            <h3 class="panel-title">Courses Feed</h3>
-                                    </div>
-                                    <div class="panel-body transparent">
-                                        <!--Cursos-->
-                                            <?php
-                                                $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr
-                                                                        FROM `curso` 
-                                                                        WHERE curso.idprofesor = '".$idusuario."'");
-                                                $result = $stmt->num_rows;
-                                                if ($result > 0) 
-                                                {
-                                                    while($row = $stmt->fetch_assoc())
-                                                    {
-                                                        $stmt1 = $mysqli->query("SELECT idleccion, nombre 
-                                                                                 FROM `leccion` 
-                                                                                 WHERE idcurso = '".$row['id']."'");
-                                                        $result1 = $stmt1->num_rows;
-                                                        if ($result1 > 0) 
-                                                        {
-                                                            echo"
-                                                                    <div class='col-lg-4 col-md-6 full'>
-                                                                        <div class='panel panel-info'>
-                                                                            <div class='panel-heading'>
-                                                                                <div class='row'>
-                                                                                    <div class='col-xs-3'>
-                                                                                        <i class='fa fa-trophy fa-5x'></i>
-                                                                                    </div>
-                                                                                    <div class='col-xs-9 text-right'>
-                                                                                        <div><h2>".$row['nombre']."</h2></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class='panel-body full'>";
-                                                                while($row1 = $stmt1->fetch_assoc())
-                                                                {  
-                                                                  echo "<ul class='nav nav-pills nav-stacked full'>
-                                                                            <li><a href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a></li>
-                                                                        </ul>";
-                                                                }
-                                                              echo "
-                                                                            </div>
-                                                                            <a href='#'>
-                                                                                <div class='panel-footer'>
-                                                                                    <span class='pull-left'>View Details</span>
-                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                    <div class='clearfix'></div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                            ";
-                                                        }
-                                                        else
-                                                        {
-                                                            echo"
-                                                                    <div class='col-lg-4 col-md-6 full'>
-                                                                        <div class='panel panel-info'>
-                                                                            <div class='panel-heading'>
-                                                                                <div class='row'>
-                                                                                    <div class='col-xs-3'>
-                                                                                        <i class='fa fa-trophy fa-5x'></i>
-                                                                                    </div>
-                                                                                    <div class='col-xs-9 text-right'>
-                                                                                        <div><h2>".$row['nombre']."</h2></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class='panel-body full'>
-                                                                                <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
-                                                                                    <button type='button' class='close' data-dismiss='alert'>x</button>
-                                                                                    <strong>no se encontraron lecciones disponibles</strong>
-                                                                                </div>
-                                                                            </div>
-                                                                            <a href='#'>
-                                                                                <div class='panel-footer'>
-                                                                                    <span class='pull-left'>View Details</span>
-                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                    <div class='clearfix'></div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                ";
-                                                        }
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    echo "no se han encontrado resultados";
-                                                }
-                                            ?>
-                                        <!--/#Cursos-->
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-            <!-- /IMPRIMIENDO CURSOS -->
            
 			<!--/#Page Content -->
 		</div>
