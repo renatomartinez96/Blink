@@ -17,10 +17,13 @@
 //        ADMIN
         ?>
             <li>
+                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Inicio</b></a>
             </li>
             <li>
+                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Herramientas</b></a>
             </li>
             <li>
+                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Configuracion</b></a>
             </li>
         <?php
         break;
@@ -28,6 +31,7 @@
 //        TEACHER
         ?>
             <li>
+                <a class="iconos" href="index.php"><i class="fa fa-puzzle-piece fa-2x"></i><b class="textos toggled" href="#"> Cursos</b></a>
             </li>
         <?php
         break;
@@ -35,10 +39,13 @@
 //        STUDENT
         ?>
             <li>
+                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Inicio</b></a>
             </li>
             <li>
+                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Pagina propia</b></a>
             </li>
             <li>
+                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Tutores</b></a>
             </li>
         <?php
         break;
