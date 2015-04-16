@@ -16,9 +16,11 @@
                     header('Pragma: public');
                     header('Content-Length: ' . filesize($file));
                     readfile($file);
+                    unlink($file);
                     exit;
-            fclose($file);
-            unlink($file);
+            
+            
+
 //            echo "<script>
 //                    window.close();
 //                </script>";
