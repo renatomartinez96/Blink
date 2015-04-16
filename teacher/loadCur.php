@@ -18,15 +18,24 @@
                 </div>
                 <div class='col-xs-1'><a class='btn btn-success botoncrear'>Create course</a></div>";
         while ($stmt->fetch()) {
-             $string .= "<div class='col-xs-4 cursos'><div class='alert alert-dismissible alert-info'>
-                    <h1>".$nombre."</h1>
-                    <p>".$descripcion."</p>
+             $string .= "<div class='col-xs-4 cursos'><div class='panel-heading'>
+                                                                                <div class='row'>
+                                                                                    <div class='col-xs-3'>
+                                                                                        <i class='fa fa-trophy fa-5x'></i>
+                                                                                    </div>
+                                                                                    <div class='col-xs-9 text-right'>
+                                                                                        <div><h2>".$nombre."</h2></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class='panel-body full'>
+                                                                                <ul class='nav nav-pills nav-stacked full'>
+                                                                            <li>
                     <form action='../framework/lesson.php' method='post'>
                     <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-primary loadLessons'>View lessons</button>
                    
                     <a class='btn btn-danger'><i class='fa fa-trash-o'></i></a>
                     <a class='btn btn-success'><i class='fa fa fa-pencil'></i></a>
-                     </form>
+                     </form></li></ul></div>
                 </div></div>";
         }
         echo $string;
