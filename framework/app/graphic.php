@@ -57,7 +57,7 @@
           <div class="panel-heading">
              <ul class="nav nav-pills">
               <li class="active clean"><a href="#html" data-toggle="tab" aria-expanded="true">HTML</a></li>
-              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATTRIBUTES</a></li>
+              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATRIBUTOS</a></li>
               <li class="clean"><a href="#css" data-toggle="tab" aria-expanded="true">CSS</a></li>
             </ul>  
           </div>
@@ -66,7 +66,7 @@
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
                     <div class="form-group">
-                          <p class="titulo">HTML objects</p>
+                          <p class="titulo">objetos HTML</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -82,11 +82,11 @@
                         <div id="5" class="col-xs-5 htmlMain green "><p>LINK</p></div>
                         <div id="6" class="col-xs-5 htmlMain green "><p>IMAGE</p></div>
                        </div>
-                      <label class='noexiste'>No results found</label>
+                      <label class='noexiste'>No se encontraron resultados</label>
                   </div>
                   <div class="tab-pane fade" id="atr">
                       <div class="form-group">
-                          <p class="titulo">Attributes</p>
+                          <p class="titulo">ATRIBUTOS</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -98,7 +98,7 @@
                         <div id="8" class="col-xs-5 htmlMain orange "><p>SRC</p></div>
                         <div id="9" class="col-xs-5 htmlMain orange "><p>NAME</p></div>
                       </div>
-                      <label class='noexiste'>No results found</label>
+                      <label class='noexiste'>No se encontraron resultados</label>
                   </div>
                  <div class="tab-pane fade" id="css">
                      
@@ -119,7 +119,7 @@
                          <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
                          <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
                      </div>
-                     <label class='noexiste'>No results found</label>
+                     <label class='noexiste'>No se encontraron resultados</label>
                  </div>
                 </div>
             </div>
@@ -129,14 +129,14 @@
         <div class="panel panel-default arena">
           <div class="panel-heading">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
-              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
+              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">AREA DE TRABAJO</a></li>
+              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">VISTA PREVIA</a></li>
                 <div class="divide">
-                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="New window preview"><i class="fa fa-share"></i></button>
-                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Restart lesson"><i class="fa fa-repeat"></i></button>
-                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Download HTML"><i class="fa fa-bolt"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Move"><i class="fa fa-arrows"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fa fa-trash-o htmlMain"></i></button>
+                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Vista en nueva pestaña"><i class="fa fa-share"></i></button>
+                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
+                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Descargar HTML"><i class="fa fa-bolt"></i></button>
+                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover"><i class="fa fa-arrows"></i></button>
+                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i class="fa fa-trash-o htmlMain"></i></button>
                 </div>
             </ul>
             

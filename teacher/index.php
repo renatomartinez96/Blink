@@ -57,16 +57,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Add course</h4>
+                        <h4 class="modal-title" id="myModalLabel">Agregar curso</h4>
                       </div>
                       <div class="modal-body">
-                          <h4>Name:</h4>
+                          <h4>Nombre:</h4>
                          <input class="form-control nameCur" type="text" placeholder="Name">
-                          <h4>Description:</h4>
+                          <h4>Descripción:</h4>
                           <textarea class="form-control descripCur" placeholder="Description"></textarea>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary createCou">Create course</button>
+                        <button type="button" class="btn btn-primary createCou">Crear curso</button>
                       </div>
                     </div>
                   </div>

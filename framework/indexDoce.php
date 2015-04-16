@@ -2,7 +2,7 @@
 <html lang="en">
 
     <body>
-        <h4>Lesson name:<?php echo $nombree ?></h4>
+        <h4>Nombre de la lección:<?php echo $nombree ?></h4>
         <?php 
             include "app/graphic.php";
         ?>
@@ -10,13 +10,13 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Add description</h4>
+                        <h4 class="modal-title" id="myModalLabel">Agregar descripción</h4>
                       </div>
                       <div class="modal-body">
                         <textarea class="valueDescription"></textarea>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary saveDescription">Save changes</button>
+                        <button type="button" class="btn btn-primary saveDescription">Guardar</button>
                       </div>
                     </div>
                   </div>
