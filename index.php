@@ -225,7 +225,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                             <div class="modal-body">
                                 <form class='text-center'>
-                                    <p>To reset your password we need your email address that you have registered with Blink . We will send you an email with the necessary information for the transsaccion</p>
+                                    <p>Para reestablecer la contraseña es necesario que ingreses tu correo registrado en la plataforma, te haremos llegar un correo con la informacion necesaria para la transaccion</p>
                                     <div class='form-group'>
                                         <label class='col-lg-3 control-label' for='mail'>Email</label>
                                         <div class='col-lg-9'>
@@ -280,7 +280,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     if($("#mail").val() == ''){
                         bootbox.alert({
                             title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                            message: "<center><h5 class='junction-light'>You must provide your email paddress</h5></center>",
+                            message: "<center><h5 class='junction-light'>Debes de introducir tu direccion de correo</h5></center>",
                         });
                     }else{
                         if(validateEmail($("#mail").val())) { 
@@ -299,7 +299,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         }else{
                             bootbox.alert({
                                 title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                                message: "<center><h5 class='junction-light'>You must provide a real Email address</h5></center>",
+                                message: "<center><h5 class='junction-light'>Debes de ingresar un correo valido</h5></center>",
                             });
                         }
                     }
