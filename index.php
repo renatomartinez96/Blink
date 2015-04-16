@@ -96,6 +96,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         </style>    
 	</head>         
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <div id="sitelock_shield_logo" class="fixed_btm" style="z-index:999;bottom:0;position:fixed;_position:absolute;right:0;"><a href="https://www.sitelock.com/verify.php?site=the-box.link" onclick="window.open('https://www.sitelock.com/verify.php?site=the-box.link','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img alt="PCI Compliance and Malware Removal" title="SiteLock" src="//shield.sitelock.com/shield/the-box.link"></a></div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 full">
@@ -125,6 +126,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success  btnnav" onclick="formhash(this.form, this.form.password);" />
                                         <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btnnav' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
                                         <a href='registrarse.php' class='btn btn-info  btnnav'>No tengo cuenta</a>
+                        
                                     </form>
                                 </ul>
                             </div>
