@@ -8,7 +8,7 @@ $user = $_SESSION['username'];
 ?>
 <!--
 
-Copyright (c) 2015 Blink
+Copyright (c) 2015 Box Link
 All Rights Reserved
  
 This product is protected by copyright and distributed under
@@ -24,7 +24,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Administración de Blink";
+            $titulodelapagina = "Editing user data";
 			include 'main_css.php';
 		?>
         <!--Custom css-->
@@ -34,9 +34,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Core CSS-->
 	</head>
 	<body>
-        <?php 
-            require 'main_js.php';
-        ?>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
@@ -53,7 +50,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
 <?php
-if(isset($_POST["enviar"]))
+if(isset($_POST["nombre"]))
 {
     $id = $_POST["id"];
     $nombre = $_POST["nombre"];
@@ -70,15 +67,7 @@ if(isset($_POST["enviar"]))
         <div class="alert alert-success">
         <strong>Perfect!</strong> Data saved. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
         </div>
-        <!--<script>
-            bootbox.alert({
-            title: "<center><h2 class='junction-bold text-success'>Perfect!</h2></center>",
-            message: "<center><h5 class='junction-regular'>Data saved.</h5></center>",
-        });
-        return false;
-        </script>-->
     <?php
-    //die("<p class='text-success'>Perfect! Data saved</p>");
     }
     else
     {
@@ -86,20 +75,12 @@ if(isset($_POST["enviar"]))
         <div class="alert alert-danger">
         <strong>ERROR!</strong> ERROR ERROR ERROR ERROR :v <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
         </div>
-        <!--<script>
-            bootbox.alert({
-            title: "<center><h2 class='junction-bold text-danger'>ERROR:</h2></center>",
-            message: "<center><h5 class='junction-regular'>ERROR ERROR ERROR ERROR :v</h5></center>",
-        });
-        return false;
-        </script>-->
     <?php
-    //die("<p class='text-danger'>ERROR</p>");
     }
 }
-?>
-<?php
-if(isset($_GET["id"]))
+else
+{
+    if(isset($_GET["id"]))
 {
     $c=$_GET["id"];
     $query = "SELECT * FROM usuarios_tb WHERE idusuario = $c";
@@ -112,45 +93,54 @@ if(isset($_GET["id"]))
         ?>
         <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Volver</a></div>
         <h2 class="junction-regular text-center"> Changing the data of: <?=$row["nombres"]?> <?=$row["apellidos"]?></h2>
-        <form method="post" onsubmit="return validar(this)">
+        <form action="usuario_editar.php" method="post" name="form" id="form">
         <div class="col-md-6">
-            <label>ID</label><input type="text" name = "id" class="form-control" value="<?=$row['idusuario']?>" readonly>
-            <label>Name</label><input type="text" name = "nombre" class="form-control" value="<?=$row['nombres']?>" required>
-            <label>Lastname</label><input type="text" name = "apellido" class="form-control" value="<?=$row['apellidos']?>"  required>
-            <label>Birthday (YYYY-MM-DD)</label><input type="fecha" name = "nacimiento" class="form-control" onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" value="<?=$row['nacimiento']?>"  required>
+            <label>ID</label><input type="text" name = "id" id = "id" class="form-control" value="<?=$row['idusuario']?>" readonly>
+            <label>Name</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$row['nombres']?>" >
+            <label>Lastname</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$row['apellidos']?>"  >
+            <label>Birthday (YYYY-MM-DD)</label><input type="fecha" name = "nacimiento" id = "nacimiento" class="form-control" onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" value="<?=$row['nacimiento']?>"  >
         </div>
         <div class="col-md-6">
-            <label>Username</label><input type="text" name = "usuario" class="form-control" value="<?=$row['usuario']?>"  required>
-            <label>Email</label><input type="text" name = "correo" class="form-control" value="<?=$row['correo']?>"  required>
+            <label>Username</label><input type="text" name = "usuario" id = "usuario" class="form-control" value="<?=$row['usuario']?>"  >
+            <label>Email</label><input type="text" name = "correo" id = "correo" class="form-control" value="<?=$row['correo']?>"  >
             <?php
-            $texto = "";
-            switch ($row["tipo"]){
-            case 1;
-            $texto = "Administrator";
-            break;
-            case 2;
-            $texto = "Teacher";
-            break;
-            case 3;
-            $texto = "Student";
-            break;
-            }
+            $tipos = array(
+                1 => "Administrator",
+                2 => "Teacher",
+                3 => "Student",
+            );
             ?>
-            <label>Type of user <strong>(Current: <?=$texto?>)</strong></label><select name="tipo" class="form-control" required><option value="1">Administrator</option><option value="2">Teacher</option><option value="3">Student</option></select>
+            <label>Type of user</label>
+            <select name="tipo" id = "tipo" class="form-control" >
+                <?php
+                foreach ($tipos as $valor=>$toprint) 
+                {
+                    if($valor == $row["tipo"])
+                    {
+                        echo "<option value='".$valor."' selected=selected>".$toprint."</option>";
+                    }
+                    else
+                    {
+                        echo "<option value='".$valor."'>".$toprint."</option>";
+                    }
+                }
+                ?>
+            </select>
             <label>Estatus</label><br><a href="usuario_estado.php?id=<?=$row["idusuario"]?>" target="_blank" class="btn btn-block btn-default"><i class="fa fa-external-link-square"></i> Change status</a>
             </div>
             <div class="col-md-12">
             <br>
-            <input type="submit" name="enviar" value="Save changes" class="btn btn-success btn-block" >
+            <input type="button" name="enviar" value="Save changes" class="btn btn-success btn-block" id="enviar" onclick="return validacion(
+this.form, 
+this.form.id, 
+this.form.nombre, 
+this.form.apellido, 
+this.form.nacimiento, 
+this.form.usuario, 
+this.form.correo, 
+this.form.tipo);" />
             </div>
         </form>
-        <script>
-        function validar(f){
-        f.enviar.value="Por favor, espere";
-        f.enviar.disabled=true;
-        }
-        return true
-        </script>
         <?php
         }
         else
@@ -168,32 +158,19 @@ if(isset($_GET["id"]))
         <div class="alert alert-danger">
         <strong>ERROR:</strong> Does not exist an user that match with the ID received. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
         </div>
-        <!--<script>
-            bootbox.alert({
-            title: "<center><h2 class='junction-bold text-danger'>ERROR:</h2></center>",
-            message: "<center><h5 class='junction-regular'>Does not exist an user that match with the ID received.</h5></center>",
-        });
-        return false;
-        </script>-->
     <?php
-        //echo "<p class='text-danger'>ERROR: Does not exist an user that match with the ID received.</p>";
+        echo "<p class='text-danger'>ERROR: Does not exist an user that match with the ID received ".$id.".</p>";
     }
 }
 else
 {
     ?>
-        <!--<div class="alert alert-danger">
+        <div class="alert alert-danger">
         <strong>ERROR:</strong> There is not data to work. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
-        </div>-->
-        <script>
-            $(document).ready(function(){
-                bootbox.alert({
-            title: "<h2 class='junction-bold text-center text-danger'>ERROR:</h2>",
-            message: "<center><h5 class='junction-regular'>There is not data to work. <a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</h5></center>"
-                });
-            });
-        </script>
+        </div>
     <?php
+}
+
 }
 ?>
             </div>
@@ -201,8 +178,24 @@ else
         </div>
         </div>
         <!--Main js-->
-        
+        <script>
+        function validacion(form, id, nombre, apellido, nacimiento, usuario, correo, tipo)
+        {
+            if(nombre.value == '' || apellido.value == '' || nacimiento.value == '' || usuario.value == '' || correo.value == '' || tipo.value == '')
+            {
+            bootbox.alert({
+            title: "<h2 class='junction-bold text-center'>Box Link</h2>",
+            message: "<h5 class='junction-regular text-center'>ERROR: Please fill all the fielsets!</h5>",
+        });
+            return false;
+            }
+            form.submit();
+            return true;
+        }
+        </script>
+        <?php 
+            require 'main_js.php';
+        ?>
 		<!--/#Main js-->
-
 	</body>
 </html>

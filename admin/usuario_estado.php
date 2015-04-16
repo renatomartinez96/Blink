@@ -10,7 +10,7 @@ $user = $_SESSION['username'];
 ?>
 <!--
 
-Copyright (c) 2015 Blink
+Copyright (c) 2015 Box Link
 All Rights Reserved
  
 This product is protected by copyright and distributed under
@@ -26,7 +26,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Administración de Blink";
+            $titulodelapagina = "Changing user status";
 			include 'main_css.php';
 		?>
         <!--Custom css-->

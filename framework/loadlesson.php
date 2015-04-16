@@ -74,7 +74,7 @@
         
     <?php 
     }else {
-        echo "no existe";
+        echo "does not exist";
     }
     }?>  
 	</body>

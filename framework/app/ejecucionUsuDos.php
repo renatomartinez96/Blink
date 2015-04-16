@@ -6,10 +6,13 @@
             ?>
                 function sincro() {
                 var blockes = $(".playground").html();
+                var resul = $(".yourSite").html();
+                var addedclass = $(resul).find("*").empty();
+                  console.log(addedclass);
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
-                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes},
+                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul},
                               dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');

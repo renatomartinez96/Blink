@@ -1,7 +1,7 @@
 
 <?php
 /*
-Copyright (c) 2015 Blink
+Copyright (c) 2015 Box Link
 All Rights Reserved
  
 This product is protected by copyright and distributed under
@@ -28,7 +28,7 @@ if(isset($_GET["c"]))
         $pdf->AliasNbPages();
         $pdf->AddPage();
         $reporte = $_GET['id'];
-        $query = "SELECT idusuario, usuario, nombres, apellidos, correo, nacimiento, tipo, estado  FROM usuarios_tb WHERE idusuario = $reporte";
+        $query = "SELECT idusuario, usuario, nombres, apellidos, correo, nacimiento, tipo, estado, avatar  FROM usuarios_tb WHERE idusuario = $reporte";
         if ($result = mysqli_query($mysqli, $query)) 
         {
         $checkdata = mysqli_num_rows($result);
@@ -69,6 +69,7 @@ if(isset($_GET["c"]))
                 $correo = $row['4'];
                 $fechanac = $row['5'];
                 $tipo = $row['6'];
+                $avatar = $row['8'];
                 $texto1 = "";
                 switch ($tipo)
                 {
@@ -116,6 +117,9 @@ if(isset($_GET["c"]))
                 $pdf->SetXY($x + 186, $y);
                 $pdf->MultiCell(20, 5, utf8_decode($texto2), 1, 1,'L',0);
                 $pdf->SetXY($x + 211, $y);
+                $pdf->Ln();
+                
+                $pdf->Image("../assets/img/avatares/".$avatar.".png", 10, 100,50,50);
                 $pdf->Ln();
             }
             $pdf->Output();

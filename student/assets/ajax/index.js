@@ -31,5 +31,21 @@ function unsuscribe(docente,usuario){
                 window.location.href = 'teachers.php';
             }
         });
-}       
+}  
+function suscribecurso(curso,usuario){
+    var accion = 'cursosub';
+    var send = {
+                "accion" : accion,
+                "curso" : curso,
+                "usuario" : usuario
+               };
+        $.ajax({
+            type: "POST",
+            url: "assets/ajax/cursos.php",
+            data: send,
+            success: function(response) {
+                window.location.href = './';
+            }
+        });
+}
     

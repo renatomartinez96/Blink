@@ -24,7 +24,7 @@ $user = $_SESSION['username'];
 ?>
 <!--
 
-Copyright (c) 2015 Blink
+Copyright (c) 2015 Box Link
 All Rights Reserved
  
 This product is protected by copyright and distributed under
@@ -40,7 +40,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Administración de Blink";
+            $titulodelapagina = "Administración de Box Link";
 			include 'main_css.php';
 		?>
         <!--Custom css-->
@@ -50,6 +50,12 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Core CSS-->
 	</head>
 	<body>
+        <style>
+            .yeahmrwhite
+            {
+                background-color: #0f1017; !important
+            }
+        </style>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
@@ -67,82 +73,62 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<div class="row">
 <?php
 $titulo = "";
-if(isset($_GET["tipo"]))
-{
-    $usutipo = $_GET["tipo"];
-    switch($usutipo){
-    case 1;
-    $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 1";
-    $titulo = "Listado de administradores de Blink";
-    break;
-    case 2;
-    $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 2";
-    $titulo = "Listado de profesores de Blink";
-    break;
-    case 3;
-    $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 3";
-    $titulo = "Listado de estudiantes de Blink";
-    break;
-    }
-}
-else
-{
-    if(isset($_GET["type"]))
+    if(isset($_GET["t"]))
     {
-        $usutipo2 = $_GET["type"];
+        $usutipo2 = $_GET["t"];
         switch($usutipo2){
         case 1;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 1";
-        $titulo = "List of a";
+        $titulo = "List of Administrators of Box Link";
         break;
         case 2;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 2";
-        $titulo = "Lissgknfkgndkf";
+        $titulo = "List of Teachers of Box Link";
         break;
         case 3;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 3";
-        $titulo = "aroougnd frj worl";
+        $titulo = "List of Students of Box Link";
         break;
         }
     }
     else
     {
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb";
-        $titulo = "Listado de todos los usuarios de Blink";
+        $titulo = "List of all users of Box Link";
     }
-}
+//}
 ?>
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Volver</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Back</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <div class="btn-group" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Clasificar la lista por: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Sort the list by... <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=2">Profesores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?tipo=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=1">Administrators</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=2">Teachers</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=3">Students</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">All users</a></li>
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Print reports: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Profesores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administrators</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Teachers</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Students</a></li>
                             <li role="presentation" class="divider"></li>
                             <li role="presentation" class="dropdown-header">Per status</li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1">Active</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=0">Inactive</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">All users</a></li>
                         </ul>
                         </div>
                         </div>
                         <br>
-                        <div class="well">
+                        <div class="well yeahmrwhite">
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
@@ -183,15 +169,15 @@ if ($result = mysqli_query($mysqli, $query))
             case 0;
             $text2 = "<i class='fa fa-user-times'></i> Inactive";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Activate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
             break;
             case 1;
             $text2 = "<i class='fa fa-check'></i> Active";
             $tbclass = "";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Deactivate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Deactivate</a>";
             break;
         }
-        echo "<tr ".$tbclass."><td>".$row["idusuario"]."</td>";
+        echo "<tr ".$tbclass."><td><strong>".$row["idusuario"]."</strong></td>";
         echo "<td>".$row["usuario"]."</td>";
         echo "<td>".$row["nombres"]."</td>";
         echo "<td>".$row["apellidos"]."</td>";

@@ -1,8 +1,9 @@
 <?php 
-    if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'])) {
+    if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'])) {
              $name = "../../courses/".$_POST['leccion'].".txt";
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
+            $resultado = $_POST['resultado'];
             $fp = fopen($name, 'r');
             $datoss = fread($fp,filesize($name));
             fclose($fp);
@@ -13,6 +14,7 @@
             $homepage = "";
             $correcto = "true";
             $percent = 90;
+            $percentDos = 100;
             if ($moment <= $momentosTotales) {
             
                 if ($moment > 0) {
@@ -24,10 +26,15 @@
                     //$percent = similar_text($value, $bloques);
                     $totalNum = strlen($value);
                     //$homepage .= "<h1>".$percent."</h1>";    
+                  }elseif ($key == 3) {
+                    similar_text($value, $resultado, $percentDos); 
+                    //$percent = similar_text($value, $bloques);
+                    $totalNum = strlen($value);
+                    //$homepage .= "<h1>".$percentDos."</h1>";    
                   }
               }
             }
-                if($percent >= 90) {
+                if($percent >= 90 && $percentDos == 100) {
                     
                 
                 $findvalues = $momentos[$moment];
