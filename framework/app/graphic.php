@@ -116,8 +116,8 @@
                         <div id="12" class="col-xs-5 htmlMain royal "><p>WIDTH</p></div>
                         <div id="13" class="col-xs-5 htmlMain royal "><p>HEIGHT</p></div>
                          <div id="15" class="col-xs-5 htmlMain royal "><p>MARGINRIGHT</p></div>
-                         <div id="15" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
-                         <div id="15" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
+                         <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
+                         <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
                      </div>
                      <label class='noexiste'>No results found</label>
                  </div>
