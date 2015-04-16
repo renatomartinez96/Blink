@@ -1,8 +1,6 @@
 <div id="sidebar-wrapper" style="background-color:#BF5A16;">
 	<ul class="sidebar-nav toggled">
-        <li class="sidebar-brand">
-            <a href='profile.php'><img class='toggled' src='../assets/img/avatares/<?=$avatar?>.png' id='avatar'></a>
-        </li>
+        
 <?php
     $avatar = '';
     if ($stmt = $mysqli->prepare("SELECT tipo, avatar FROM usuarios_tb WHERE usuario = ?")) {
@@ -12,6 +10,11 @@
         $stmt->bind_result($tipo, $avatar);
         $stmt->fetch();
     }
+    ?>
+    <li class="sidebar-brand">
+        <a href='profile.php'><img class='toggled' src='../assets/img/avatares/<?=$avatar?>.png' id='avatar'></a>
+    </li>
+    <?php
     switch($tipo){
         case 1:
 //        ADMIN
