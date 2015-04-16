@@ -63,6 +63,7 @@
     height: auto;
     text-align: center;
     margin: 3%;
+    overflow: hidden;
 }
 .htmlMain > p{
     font-family: "BebasNeueBold";
