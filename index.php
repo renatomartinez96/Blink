@@ -258,13 +258,13 @@ Gerardo López | Iván Nolasco | Renato Andres
                     if ($stmt->num_rows == 1){
                     	echo "
                     	<script>
-                    	    window.location.href = "ChgPass.php?t=$tokn.md5($usr)";
+                    	    window.location.href = 'ChgPass.php?t=".$tokn.md5($usr)."';
                     	</script>
                     	";
                     }else{
                     	echo "
                     	<script>
-                    	    window.location.href = "./";
+                    	    window.location.href = './';
                     	</script>
                     	";
                     }
