@@ -113,56 +113,99 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div class="panel-heading">
                                             <h3 class="panel-title">Courses Feed</h3>
                                     </div>
-                                    <div class="panel-body">
+                                    <div class="panel-body transparent">
                                         <!--Cursos-->
                                             <?php
-                                                $stmt = $mysqli->query("SELECT * FROM `curso-estudiante` INNER JOIN `curso` ON curso-estudiante.idcurso = curso.idcurso  WHERE idestudiante = '".$idusuario."'");
+                                                $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr
+                                                                        FROM `curso` 
+                                                                        INNER JOIN `cursoestudiante` 
+                                                                        ON cursoestudiante.idcurso = curso.idcurso  
+                                                                        WHERE cursoestudiante.idestudiante = '".$idusuario."'");
+                                                $result = $stmt->num_rows;
+                                                if ($result > 0) 
+                                                {
+                                                    while($row = $stmt->fetch_assoc())
+                                                    {
+                                                        $stmt1 = $mysqli->query("SELECT idleccion, nombre 
+                                                                                 FROM `leccion` 
+                                                                                 WHERE idcurso = '".$row['id']."'");
+                                                        $result1 = $stmt1->num_rows;
+                                                        if ($result1 > 0) 
+                                                        {
+                                                            echo"
+                                                                    <div class='col-lg-4 col-md-6 full'>
+                                                                        <div class='panel panel-info'>
+                                                                            <div class='panel-heading'>
+                                                                                <div class='row'>
+                                                                                    <div class='col-xs-3'>
+                                                                                        <i class='fa fa-trophy fa-5x'></i>
+                                                                                    </div>
+                                                                                    <div class='col-xs-9 text-right'>
+                                                                                        <div><h2>".$row['nombre']."</h2></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class='panel-body full'>";
+                                                                while($row1 = $stmt1->fetch_assoc())
+                                                                {  
+                                                                  echo "<ul class='nav nav-pills nav-stacked full'>
+                                                                            <li><a href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a></li>
+                                                                        </ul>";
+                                                                }
+                                                              echo "
+                                                                            </div>
+                                                                            <a href='#'>
+                                                                                <div class='panel-footer'>
+                                                                                    <span class='pull-left'>View Details</span>
+                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                                                                    <div class='clearfix'></div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                            ";
+                                                        }
+                                                        else
+                                                        {
+                                                            echo"
+                                                                    <div class='col-lg-4 col-md-6 full'>
+                                                                        <div class='panel panel-info'>
+                                                                            <div class='panel-heading'>
+                                                                                <div class='row'>
+                                                                                    <div class='col-xs-3'>
+                                                                                        <i class='fa fa-trophy fa-5x'></i>
+                                                                                    </div>
+                                                                                    <div class='col-xs-9 text-right'>
+                                                                                        <div><h2>".$row['nombre']."</h2></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class='panel-body full'>
+                                                                                <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
+                                                                                    <button type='button' class='close' data-dismiss='alert'>x</button>
+                                                                                    <strong>no se encontraron lecciones disponibles</strong>
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href='#'>
+                                                                                <div class='panel-footer'>
+                                                                                    <span class='pull-left'>View Details</span>
+                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                                                                    <div class='clearfix'></div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                ";
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    echo "no se han encontrado resultados";
+                                                }
                                             ?>
                                         <!--/#Cursos-->
-                                        <div class='well col-sm-12'> 
-                                             <div class='col-md-2 full'> 
-                                                 <div class='' href='#'> 
-                                                    <img class='img-responsive' src='../assets/img/avatares/15.png' alt=''> 
-                                                    <div class='caption'>
-                                                        <button class="btn btn-success form-control">Profile</button>
-                                                    </div>
-                                                 </div> 
-                                             </div> 
-                                             <div class='col-md-10 full'>
-                                                 <div class="col-xs-6 full">
-                                                    <div class="panel panel-success">  
-                                                        <div class="panel-heading">
-                                                            <h3 class="panel-title">Information</h3>
-                                                        </div>
-                                                        <div class="panel-body">
-                                                            <h2 class="junction-bold full">Nombre</h2>
-                                                            <h3 class="full">Usuario</h3>
-                                                            <p class="text-justify">jhdgjshdgajsdgjagdjahgsdjhgjsdhgajshgdjahsgdjahgsjdhgasjdgjahsgdjahgsdjhagsjdhgajshdgajshgdjahsgdjahgsjdhgajshdgjashgdj</p>
-                                                        </div>
-                                                    </div>
-                                                 </div>
-                                                 <div class="col-xs-6 full">
-                                                    <div class="panel panel-success">  
-                                                        <div class="panel-heading">
-                                                            <h3 class="panel-title">Lessons</h3>
-                                                        </div>
-                                                        <div class="panel-body full">
-                                                            <div class="list-group">
-                                                                <a href="#" class="list-group-item">
-                                                                    Cras justo odio
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    Dapibus ac facilisis in
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    Morbi leo risus
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                 </div>
-                                             </div> 
-                                         </div> 
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -5,7 +5,7 @@
         $accion = $_POST['accion'];
         $curso = $_POST['curso'];
         $estudiante = $_POST['usuario'];
-        $stmt = $mysqli->query("SELECT * FROM `curso-estudiante` WHERE idestudiante = '".$estudiante."' AND idcurso = '".$curso."'");
+        $stmt = $mysqli->query("SELECT * FROM `cursoestudiante` WHERE idestudiante = '".$estudiante."' AND idcurso = '".$curso."'");
         if ($accion == "cursosub")
         {
             if ($stmt->num_rows > 0) 
@@ -14,7 +14,7 @@
             }
             else
             {
-                if ($mysqli->query("INSERT INTO `curso-estudiante`(`idcurso`, `idestudiante`) VALUES('".$curso."','".$estudiante."')"))
+                if ($mysqli->query("INSERT INTO `cursoestudiante`(`idcurso`, `idestudiante`) VALUES('".$curso."','".$estudiante."')"))
                 {
                     echo "subscrito correctamente";
                 }
@@ -30,7 +30,7 @@
             {
                 if ($stmt->num_rows > 0) 
                 {
-                    $stmt2 = $mysqli->query("DELETE FROM `curso-estudiante` WHERE idestudiante = '".$estudiante."' AND idcurso = '".$curso."'");
+                    $stmt2 = $mysqli->query("DELETE FROM `cursoestudiante` WHERE idestudiante = '".$estudiante."' AND idcurso = '".$curso."'");
                     echo "desubscrito correctamente";
                 }
                 else

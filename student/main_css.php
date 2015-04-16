@@ -52,4 +52,7 @@
     .course > div.body{
         height:45px;
     }
+    .transparent{
+        background-color:transparent !important;
+    }
 </style>
