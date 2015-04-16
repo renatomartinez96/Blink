@@ -140,6 +140,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                                   <a href="usuarios.php" class="btn btn-success"><i class="fa fa-list-ul"></i> Go to the users list</a><br>
                             </div>
                         </div>
+                        <div class="col-md-4 text-center">
+                            <div class="alert alert-info">
+                                <h2 class="panel-title"><i class="fa fa-book"></i> Courses</h2><br>
+                                  <a href="cursos.php" class="btn btn-success"><i class="fa fa-list-ul"></i> Go to the courses list</a><br>
+                            </div>
+                        </div>
                                     </div></div></div></div>
                     </div><!---->
                 </div>
