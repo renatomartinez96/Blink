@@ -26,7 +26,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Changing course status";
+            $titulodelapagina = "Cambiar el estado a un curso";
 			include 'main_css.php';
 		?>
         <!--Custom css-->
@@ -70,11 +70,11 @@ if(isset($_GET["id"]))
                 $query2 = "UPDATE curso SET estado = 1 WHERE idcurso='$id'";
                 if ($query2 = mysqli_query($mysqli, $query2)) 
                 {
-                    die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> Perfect!</strong> The status of the course: &quot;".$nombre."&quot; has been changed to:  <strong>Active</strong>. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>");
+                    die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> ¡Perfecto!</strong> El estado del curso: &quot;".$nombre."&quot; se cambio a:  <strong>Activo</strong>. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> Ha ocurrido un error desconocido, por favor intente de nuevo. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");
                 }
             }
             elseif($est == 1)
@@ -82,27 +82,27 @@ if(isset($_GET["id"]))
                 $query3 = "UPDATE curso SET estado = 0 WHERE idcurso='$id'";
                 if ($query3 = mysqli_query($mysqli, $query3)) 
                 {
-                    die ("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> OK!</strong> The status of the course: &quot;".$nombre."&quot; has been changed to:  <strong>Inactive</strong>. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>");
+                    die ("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> ¡OK!</strong> El estado del curso: &quot;".$nombre."&quot; se cambio a:  <strong>Inactive</strong>. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> Ha ocurrido un error desconocido, por favor intente de nuevo. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");
                 }
             }
         }
         else
         {
-            echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown error has been occurred, please try again later. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>";
+            echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> Ha ocurrido un error desconocido, por favor intente de nuevo. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>";
         }
     }
     else
     {
-        echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> The received data do not match with any registered course ID. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>";
+        echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> The received data do not match with any registered course ID. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>";
     }
 }
 else
 {
-    echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> There is not data to work. <br><a href='cursos.php' class='alert-link'>Back to the list of courses</a>.</div>";
+    echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> No se han recibido datos para trabajar. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>";
 }
 ?>
                         </div>

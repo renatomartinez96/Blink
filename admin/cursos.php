@@ -63,17 +63,17 @@ $titulo = "";
     {
         $teacher = $_GET["p"];
         $query = "SELECT idcurso, idprofesor, nombre, curso.descripcion AS 'cursotext', curso.estado AS 'cursostatus', nombres, apellidos, usuario, correo FROM curso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE idprofesor = $teacher ORDER BY idcurso ";
-        $titulo = "List of courses of teacher";        
+        $titulo = "Lista de cursos de un profesor especifíco";        
     }
     else
     {
         $query = "SELECT idcurso, idprofesor, nombre, curso.descripcion AS 'cursotext', curso.estado AS 'cursostatus', nombres, apellidos, usuario, correo FROM curso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario ORDER BY idcurso";
-        $titulo = "List of courses of Box Link";
+        $titulo = "Lista de cursos de Box Link";
     }
 //}
 ?>
                         
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Back</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Regresar</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <br>
                         <div class="well yeahmrwhite">
@@ -81,11 +81,11 @@ $titulo = "";
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
-                                <th>Teacher</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Opcions</th>
+                                <th>Profesor</th>
+                                <th>Titulo</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,7 +101,7 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["cursostatus"])
         {
             case 0;
-            $text2 = "<i class='fa fa-user-times'></i> Inactive";
+            $text2 = "<i class='fa fa-user-times'></i> Bloqueado";
             $tbclass = "class='text-danger'";
             $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
             break;
