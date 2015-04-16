@@ -139,9 +139,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 <div class="col-xs-12 full" id="about">
                     <div class="container">
                         <div class="jumbotron transparent text-center">
-                            <h1 class="junction-bold aboutitle">About</h1>
+                            <h2 class="junction-bold aboutitle">Acerca de</h2>
                             <hr class="linea"> 
-                            <h3 class="junction-regular aboutbody">Box Link is a didactic learning platform in which those interested in learning design Front-end can acquire the basic skills needed to get started in web design. The method used for teaching Box Link of these terms is by using blocks, the main advantage is that we promote real learning of different languages for web design. This is due to the student does not have the ability to simply just copy the code and other platforms, but the only way to make the lesson will be putting the blocks so that it meets the requirements to pass the lesson.</h3>
+                            <h4 class="junction-light aboutbody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat malesuada, porta neque vel, pellentesque enim. Pellentesque erat erat, fringilla non odio eget, ornare elementum nulla. Cras fringilla risus id pretium cursus. Aenean risus velit, mattis ut pellentesque non, venenatis id turpis. Aliquam id libero vitae nunc congue interdum quis quis tortor. Fusce dictum interdum tempor. Nulla scelerisque nulla in nisi commodo, non accumsan mauris finibus. Sed eu nisi ac massa mattis mattis quis in tortor. Maecenas vel nunc mi.</h4>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="item active">
                                     <div class="jumbotron" id="quote">
                                         <div class="container text-center">
-                                            <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                            <h2 class="text-center junction-regular">Everything you will ever need to start in web design.</h2>
                                             <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
                                             <input type="button" class="btn btn-primary btn-lg" value="About">
                                         </div>
@@ -162,7 +162,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="item">
                                     <div class="jumbotron" id="quote">
                                         <div class="container text-center">
-                                            <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                            <h2 class="text-center junction-regular">Everything you will ever need to start in web design.</h2>
                                             <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
                                             <input type="button" class="btn btn-primary btn-lg" value="About">
                                         </div>
@@ -171,7 +171,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="item">
                                     <div class="jumbotron" id="quote">
                                         <div class="container text-center">
-                                            <h2 class="text-center junction-regular">Everything you’ll ever need to start in web design.</h2>
+                                            <h2 class="text-center junction-regular">Everything you will ever need to start in web design.</h2>
                                             <h5 class="text-center junction-regular">We specialize in building tools for the teaching of the diferents web design languajes like HTML & CSS</h5>
                                             <input type="button" class="btn btn-primary btn-lg" value="About">
                                         </div>
@@ -184,7 +184,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 <div class="col-xs-12 full" id="devs">
                     <div class="container">
                         <div class="jumbotron transparent text-center">
-                            <h1 class="junction-bold aboutitle">Developers</h1>
+                            <h2 class="junction-bold aboutitle">Desarrolladores</h2>
                             <hr class="linea"> 
                         </div>
                             <div class="col-lg-4 col-sm-6 text-center">
@@ -234,11 +234,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <br>
                                     <br>
-                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='Send'>
+                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='Enviar'>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <h6 class="junction-light"><strong>Box Link 2015</strong> All right reserved</h6>
+                                <h6 class="junction-light"><strong>Box Link 2015</strong> Todos los derechos reservados</h6>
                             </div>
                         </div>
                     </div>

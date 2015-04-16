@@ -80,7 +80,6 @@ require 'assets/includes/funciones.php';
                 <div class="jumbotron">
                     <center style="color:#fff;">
                         <h1 class="junction-bold" style="margin-top: 0px;">Box Link</h1>
-                        <h3 class="junction-light" style="margin-top: 0px;margin-bottom: 0px;">"Teaching the web"</h3>
                     </center>
                 </div>
                 <div class="container">

@@ -42,13 +42,13 @@ Gerardo López | Iván Nolasco | Renato Andres
         }
         else
         {
-            Header("Location: ./");
+            regresar();
         }
         
     }
     else
     {
-        Header("Location: ./");
+        regresar();
     }
 ?>
 <!DOCTYPE html>
