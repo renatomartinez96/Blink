@@ -1,8 +1,22 @@
 <?php 
-    if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'])) {
+    if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'],$_POST['ultimoId'])) {
              $name = "../../courses/".$_POST['leccion'].".txt";
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
+            
+        
+            $dom = new DOMDocument();
+            $dom->loadHTML($_POST['resultado']);
+            $dom->removeChild($dom->doctype);
+                $dom->replaceChild($dom->firstChild->firstChild->firstChild, $dom->firstChild);
+            foreach ($dom->getElementsById($_POST['ultimoId']) as $item) {
+                //substr($dom->saveXML($dom->getElementsByTagName('div')->item(0)), 5, -6)
+                $item->setAttribute('id', 'TTT');
+                
+                $convertedHTML = $dom->saveHTML();
+            }
+            
+            
             $resultado = $_POST['resultado'];
             $fp = fopen($name, 'r');
             $datoss = fread($fp,filesize($name));

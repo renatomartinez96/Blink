@@ -7,12 +7,14 @@
                 function sincro() {
                 var blockes = $(".playground").html();
                 var resul = $(".yourSite").html();
-                var addedclass = $(resul).find("*").empty();
-                 
+//                var addedclass = $(resul).find("*").empty();
+                var acho = historial.length;
+                var ultimoId = historial[acho - 1];
+                console.log(ultimoId);
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
-                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul},
+                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul,ultimoId:ultimoId},
                               dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');

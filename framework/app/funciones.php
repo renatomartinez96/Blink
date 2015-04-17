@@ -193,6 +193,7 @@ $(".createHTML").click(function() {
                     var bloqueString = WebBlocksArray[IdObjeto];
                     var numerotres = bloqueString.indexOf("id=''");
                     var Bloque = bloqueString.substr(0, numerotres+4) +"B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto+ bloqueString.substr(numerotres+4);
+                    historial.push("B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto);
                     BloqueCreado = Bloque;
                     $("#"+IddeInserssiondos).append(BloqueCreado);
                 }
@@ -202,6 +203,7 @@ $(".createHTML").click(function() {
                     var bloqueString = WebBlocksArray[IdObjeto];
                     var numerotres = bloqueString.indexOf("id=''");
                     var Bloque = bloqueString.substr(0, numerotres+4) +"B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto+ bloqueString.substr(numerotres+4);
+                    historial.push("B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto);
                     BloqueCreado = Bloque;
                     $("#"+IddeInserssiondos).append(BloqueCreado);
                 }
@@ -225,6 +227,7 @@ $(".createHTML").click(function() {
                     var bloqueString = WebBlocksArray[IdObjeto];
                     var numerotres = bloqueString.indexOf("id=''");
                     var Bloque = bloqueString.substr(0, numerotres+4) +"B"+ IdObjetoCreadoUnico +"T"+tipodeObjeto + "O"+IdObjeto+ bloqueString.substr(numerotres+4);
+                    historial.push("B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto);
                     BloqueCreado = Bloque;
                     EtiquetaCreada = etiqueta;
                 }
