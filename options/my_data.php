@@ -63,14 +63,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <h1 class="junction-bold text-center">Editar mi perfil</h1>
                         <form action="usuario_editar.php" method="post" name="form" id="form">
                             <div class="col-md-6">
-                            <label>Tema de editor de codigo</label><select name="tema" class="form-control">
-                                <option value="1" id="a">LEL</option>
-                                <option value="2" id="a">dfgsdfgs</option>
-                                <option value="3" id="a">fuck the system</option>
+                            <label>Tema de editor de codigo <?=$idsea?></label><select id="a" name="tema" class="form-control" onchange="showImage()">
+                                <option value="1" >LEL</option>
+                                <option value="2" >dfgsdfgs</option>
+                                <option value="3" >fuck the system</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
-                                
+                            <div class="col-md-6" id="reni">
+                                <?="aceeditor"?>
                             </div>
                         </form>
 					<!--/#Content-->
@@ -82,8 +82,10 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Main js-->
         <script>
         function showImage() {
-        var img = document.getElementById('a');
-        img.style.display = 'block';
+        var val = document.getElementById('a').value;
+        document.getElementById('reni').style.background = "url(../assets/img/avatares/"+val+".png)";
+        document.getElementById('reni').style.height = "200px";
+//        document.getElementById("reni").innerHTML=val;
         }
         </script>
 		<?php 
