@@ -8,9 +8,7 @@
                 var blockes = $(".playground").html();
                 var resul = $(".yourSite").html();
 //                var addedclass = $(resul).find("*").empty();
-                var acho = historial.length;
-                var ultimoId = historial[acho - 1];
-                console.log(ultimoId);
+                var ultimoId = JSON.stringify(historial);
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
@@ -25,7 +23,7 @@
                                 if(data.correcto == "false") {
                                     momentoTo--;
                                 }
-                                
+                                console.log(data.newresult);
                               }
                           });
             }
