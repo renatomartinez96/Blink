@@ -80,7 +80,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<div class="row">
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
-                                <i class="fa fa-cog fa-2x" style="position:absolute; bottom:5px; left:5px;"></i>
+                                <a href="../options/my_data.php"><i class="fa fa-cog fa-2x" style="position:absolute; bottom:5px; left:5px;"></i></a>
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
                                         <div class="container-fluid full">
                                                 <ul class="nav navbar-nav">
