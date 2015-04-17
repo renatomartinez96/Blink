@@ -13,7 +13,7 @@ if (isset($_POST['email'], $_POST['p'])) {
         header('Location: ../../home.php');
     } else {
         // fallo el inicio de sesion
-        header('Location: ../index.php?error=1');
+        header('Location: ../../index.php');
     }
 } else {
     //Las varianles por metodo Post no son recibidas

@@ -50,7 +50,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 $tkn = null;
                                 $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
                                 $stmt->execute();
-                                header('Location: home.php');
+                                echo "
+                                <script>
+                                    window.location.href = 'home.php';
+                                </script>
+                                ";
                             }
                             else
                             {
@@ -173,13 +177,25 @@ Gerardo López | Iván Nolasco | Renato Andres
                     switch($_SESSION['tipo'])
                     {
                         case 1:
-                            header("location:admin/index.php");
+                            echo "
+                            <script>
+                                window.location.href = 'admin/index.php';
+                            </script>
+                            ";
                         break;
                         case 2:
-                            header("location:teacher/index.php");   
+                            echo "
+                            <script>
+                                window.location.href = 'teacher/index.php';
+                            </script>
+                            ";   
                         break;
                         case 3:
-                            header("location:student/index.php");
+                            echo "
+                            <script>
+                                window.location.href = 'student/index.php';
+                            </script>
+                            ";
                         break;
                     }
                     
