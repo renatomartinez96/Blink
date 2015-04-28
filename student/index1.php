@@ -72,7 +72,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <pre id="editor2"><?php echo htmlentities(file_get_contents("../users/".$user."/css/index.css")); ?></pre>
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-sm-12 full">
                             <div class="panel panel-success full">
@@ -83,8 +82,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <iframe src="../users/<?=$user?>/index.html" class="full col-sm-12 resultc" id="resultc"></iframe>
                                 </div>
                             </div>
-
                         </div>
+                        <div class="panel panel-success full">
+                            <div class="panel-heading ">
+                                <h3 class="panel-title"><strong class="junction-light">Result </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Update"></h3>
+                            </div>
+                            <div class="panel-body full">
+                                <div id="manager"></div>
+                            </div>
+                        </div>
+                        
 					<!--/#Content-->
 					</div>
 				</div>

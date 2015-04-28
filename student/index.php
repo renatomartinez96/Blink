@@ -149,7 +149,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                                         <i class='fa fa-trophy fa-5x'></i>
                                                                                     </div>
                                                                                     <div class='col-xs-9 text-right'>
-                                                                                        <div><h2>".$row['nombre']."</h2></div>
+                                                                                        <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
