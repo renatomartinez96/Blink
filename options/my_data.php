@@ -62,15 +62,21 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<!--Content-->
                         <h1 class="junction-bold text-center">Editar mi perfil</h1>
                         <form action="usuario_editar.php" method="post" name="form" id="form">
-                            <div class="col-md-6">
-                            <label>Tema de editor de codigo <?=$idsea?></label><select id="a" name="tema" class="form-control" onchange="showImage()">
-                                <option value="1" >LEL</option>
-                                <option value="2" >dfgsdfgs</option>
-                                <option value="3" >fuck the system</option>
+                            <div class="col-md-6 panel">
+                            <label>Tema de editor de codigo</label><select id="a" name="themeto" class="form-control" onchange="showImage()">
+                                <option value="1" >Tema 1</option>
+                                <option value="2" >Tema 2</option>
+                                <option value="3" >Tema 3</option>
                                 </select>
+                                <div id="preview" width="100"></div>
                             </div>
-                            <div class="col-md-6" id="reni">
-                                <?="aceeditor"?>
+                            <div class="col-md-6" >
+                            <label>Foto de portada</label><select id="e" name="portada" class="form-control" onchange="showImage()">
+                                <option value="1" >Tema 1</option>
+                                <option value="2" >Tema 2</option>
+                                <option value="3" >Tema 3</option>
+                                </select>
+                                <div id="preview2" width="100"></div>
                             </div>
                         </form>
 					<!--/#Content-->
@@ -83,9 +89,19 @@ Gerardo López | Iván Nolasco | Renato Andres
         <script>
         function showImage() {
         var val = document.getElementById('a').value;
-        document.getElementById('reni').style.background = "url(../assets/img/avatares/"+val+".png)";
-        document.getElementById('reni').style.height = "200px";
-//        document.getElementById("reni").innerHTML=val;
+        var name1 = document.getElementsByTagName("SELECT")[0].getAttribute("name");
+        var type1 = "themeto";
+        var type2 = "portada";
+            if(name1 == type1)
+            {
+                document.getElementById('preview').style.background = "url(../assets/img/avatares/"+val+".png)";
+                document.getElementById('preview').style.height = "200px";   
+            }
+            else if(name1 == type2)
+            {
+                document.getElementById("preview2").innerHTML="asfasfgr";
+            }
+//        document.getElementById("preview").innerHTML=val;
         }
         </script>
 		<?php 
