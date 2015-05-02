@@ -73,6 +73,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                 background:#55ACEE;
                 color:#fff;
             }
+            .btnwithout{
+                border:none;
+                background-color: Transparent;
+            }
             </style>
 			<!--Page Content -->
             <div id="page-content-wrapper">
@@ -80,7 +84,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 					<div class="row">
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
-                                <a href="../options/my_data.php"><i class="fa fa-cog fa-2x" style="position:absolute; bottom:5px; left:5px;"></i></a>
+                                <button type="button" data-toggle="modal" data-target="#myModal" class="btnwithout" style="position:absolute; bottom:5px; left:5px;"><i class="fa fa-cog fa-2x" ></i></button>
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
                                         <div class="container-fluid full">
                                                 <ul class="nav navbar-nav">
@@ -109,6 +113,46 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
+                        <!-- Modal de personalización -->
+                        <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
+                              </div>
+                              <div class="modal-body">
+                                    <form action="lel.php" method="post" name="form" id="form">
+                                        <div class="col-md-12 well">
+                                            <div class="col-md-8">
+                                                <div class="col-md-4">
+                                                    <img class="img-responsive" src="../assets/img/userbanner/1.jpg" >
+                                                    <img class="img-responsive" src="../assets/img/userbanner/2.jpg" >
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img class="img-responsive" src="../assets/img/userbanner/3.jpg" >
+                                                    <img class="img-responsive" src="../assets/img/userbanner/4.jpg" >
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img class="img-responsive" src="../assets/img/userbanner/2.jpg" >
+                                                    <img class="img-responsive" src="../assets/img/userbanner/3.jpg" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" id="bannerchange">
+                                                <img class="img-responsive" src="../assets/img/userbanner/1.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 well"></div>
+                                    </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /Modal de personalización -->
                         <div class="col-xs-12 full">
                             <div class="col-md-12 full">
                                 <div class="panel panel-success">
@@ -152,7 +196,9 @@ Gerardo López | Iván Nolasco | Renato Andres
             </div>
         </div>
         <!--Main js-->
-		
+		<?php
+            include 'main_js.php';
+        ?>
 		<!--/#Main js-->
 	</body>
 </html>
