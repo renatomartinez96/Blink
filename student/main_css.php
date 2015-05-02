@@ -8,6 +8,7 @@
 <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets/css/sidebar.css" rel="stylesheet">
+<link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 <style>
     .video_container {
         position: absolute;

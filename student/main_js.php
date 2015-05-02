@@ -2,7 +2,7 @@
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../assets/js/bootbox.min.js" type="text/javascript"></script>
 <script src="../assets/js/jquery-ui.js"></script>
-
+<script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
 	$("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
 </script>
