@@ -3,7 +3,8 @@
             <?php
                 include "app/variables.php";
                 include "app/funciones.php";
-            ?>
+            ?>  
+               
                 function sincro() {
                 var blockes = $(".playground").html();
                 var resul = $(".yourSite").html();
@@ -12,7 +13,7 @@
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
-                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul,ultimoId:ultimoId},
+                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul,ultimoId:ultimoId,estado:estadoLec},
                               dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');
@@ -23,7 +24,6 @@
                                 if(data.correcto == "false") {
                                     momentoTo--;
                                 }
-                                console.log(data.newresult);
                               }
                           });
             }

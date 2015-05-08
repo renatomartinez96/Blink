@@ -1,22 +1,23 @@
 <?php 
     if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'],$_POST['ultimoId'])) {
+       
              $name = "../../courses/".$_POST['leccion'].".txt";
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
             $historial = json_decode(stripslashes($_POST['ultimoId']));
-        
-            $dom = new DOMDocument();
-            $dom->loadHTML($_POST['resultado']);
-//            $dom->removeChild($dom->doctype);
-//                $dom->replaceChild($dom->firstChild->firstChild->firstChild, $dom->firstChild);
-//            foreach ($historial as $value) {
-//                foreach ($dom->getElementsById($value) as $item) {
-//                    //substr($dom->saveXML($dom->getElementsByTagName('div')->item(0)), 5, -6)
-//                    $item->setAttribute('id', 'jojojo');
-//                }
-//             }
-            $resultado = $dom->saveHTML();
-//            $resultado = $_POST['resultado'];
+//            algoritmo de correccion 2.0
+//            $dom = new DOMDocument();
+//            $dom->loadHTML($_POST['resultado']);
+////            $dom->removeChild($dom->doctype);
+////                $dom->replaceChild($dom->firstChild->firstChild->firstChild, $dom->firstChild);
+////            foreach ($historial as $value) {
+////                foreach ($dom->getElementsById($value) as $item) {
+////                    //substr($dom->saveXML($dom->getElementsByTagName('div')->item(0)), 5, -6)
+////                    $item->setAttribute('id', 'jojojo');
+////                }
+////             }
+//            $resultado = $dom->saveHTML();
+           $resultado = $_POST['resultado'];
             $fp = fopen($name, 'r');
             $datoss = fread($fp,filesize($name));
             fclose($fp);
@@ -89,7 +90,7 @@
                               </div>";
 
                 }
-                //echo $homepage;
+                
                 echo json_encode(array("stringhome"=>$homepage,"correcto"=>$correcto,"newresult"=>$resultado));
         }
     

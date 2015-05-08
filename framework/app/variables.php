@@ -1,5 +1,5 @@
 
-var IdObjeto = "";
+        var IdObjeto = "";
         var BloqueCreado = "";
         var EtiquetaCreada = "";
         var IddeInserssion = "";
@@ -12,6 +12,8 @@ var IdObjeto = "";
         var porpiedadCSSCreada = "";
         var momentoTo = 0;
         var historial = [];
+        var estadoLec = 0;
+        var fechaInicioD = ""; 
         var WebObjecsArray = ["div$0","h1$1","p$1","b$2","div$2","a$2","img$1","href$3","src$3","name$3","background-color$4","margin-left$4","width$4","height$4","del$5","margin-right$4","color$4","font-size$4"];
         var WebBlocksArray = ["<div id='' class='col-xs-3 col-lg-2 htmlParts yellow uno'><p>BODY</p></div>",
                               "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>TITLE</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
