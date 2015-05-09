@@ -77,6 +77,19 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border:none;
                 background-color: Transparent;
             }
+            /* Radio Button */
+            
+             input[type=radio] { display:none; } /* to hide the checkbox itself */
+            input[type=radio] + label:before {
+            font-family: 'FontAwesome';
+            display: inline-block;
+            }
+
+            input[type=radio] + label:before { content: "\f096"; } /* unchecked icon */
+            input[type=radio] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+            input[type=radio]:checked + label:before { content: "\f0c8"; } /* checked icon */
+            input[type=radio]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
             </style>
 			<!--Page Content -->
             <div id="page-content-wrapper">
@@ -129,10 +142,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     <p class="text-center"><strong>Vista previa</strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
-                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)" >
-                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)">
-                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)">
-                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)">
+                                                    <!--dfnejfwnjfnw CALIFORNIA-->
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><label> afsdf</label><img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
                                                 </div>
                                         </div>
                                         <div class="col-md-12 well"></div>
@@ -190,10 +204,15 @@ Gerardo López | Iván Nolasco | Renato Andres
         </div>
         <!--Main js-->
         <script>
-            function showPrev(xlel)
+            function showPrev(insertimg, checkimg)
             {   
-                //var val = document.getElementsById('1').getAttribute("alt");
-                document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+xlel+".png)";
+                document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+insertimg+".png)";
+                document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
+                document.getElementById("bannerchangeb").style.height = "601x";
+            }
+            function changePrev(checkimg)
+            {   
+                document.getElementById(checkimg).className = "fa fa-square";
             }
         </script>
 		<?php
