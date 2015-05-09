@@ -124,23 +124,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                               <div class="modal-body">
                                     <form action="lel.php" method="post" name="form" id="form">
                                         <div class="col-md-12 well">
-                                            <div class="col-md-8">
-                                                <div class="col-md-4">
-                                                    <img class="img-responsive" src="../assets/img/userbanner/1.jpg" >
-                                                    <img class="img-responsive" src="../assets/img/userbanner/2.jpg" >
+                                                <div class="col-md-12" id="bannerchangeb" >
+                                                    <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
+                                                    <p class="text-center"><strong>Vista previa</strong></p>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <img class="img-responsive" src="../assets/img/userbanner/3.jpg" >
-                                                    <img class="img-responsive" src="../assets/img/userbanner/4.jpg" >
+                                                <div class="col-md-12 full">
+                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)" >
+                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)">
+                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)">
+                                                    <img class="img-responsive col-md-3" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)">
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <img class="img-responsive" src="../assets/img/userbanner/2.jpg" >
-                                                    <img class="img-responsive" src="../assets/img/userbanner/3.jpg" >
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4" id="bannerchange">
-                                                <img class="img-responsive" src="../assets/img/userbanner/1.jpg">
-                                            </div>
                                         </div>
                                         <div class="col-md-12 well"></div>
                                     </form>
@@ -196,6 +189,13 @@ Gerardo López | Iván Nolasco | Renato Andres
             </div>
         </div>
         <!--Main js-->
+        <script>
+            function showPrev(xlel)
+            {   
+                //var val = document.getElementsById('1').getAttribute("alt");
+                document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+xlel+".png)";
+            }
+        </script>
 		<?php
             include 'main_js.php';
         ?>

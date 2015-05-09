@@ -110,3 +110,4 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Main js-->
 	</body>
 </html>
+style="background-image: url('../assets/img/userbanner/1.png'); background-size: 200% 100%; height: 75px;"
