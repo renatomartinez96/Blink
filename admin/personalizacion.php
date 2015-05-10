@@ -4,16 +4,23 @@ include_once '../assets/includes/funciones.php';
  
 sec_session_start();
 include 'auto.php';
-$banner = $_GET["banner"];
-$userid = $_GET["id"];
-
-$query = "INSERT INTO user_config VALUES ('', '$userid', '', '$banner') ";
-if ($query = mysqli_query($mysqli, $query2)) 
+if(isset($_POST["banselect"]) && isset($_POST["banselect"]))
 {
-    echo "lel";
+    $banner = $_POST["banselect"];
+    $userid = $_POST["userid"];
+
+    $query = "INSERT INTO user_config VALUES ('', '$userid', '', '$banner') ";
+    if ($query = mysqli_query($mysqli, $query)) 
+    {
+        echo "lel";
+    }
+    else
+    {
+        echo "lelakfsdfbsdfb";
+    }
 }
 else
 {
-    echo "lelakfsdfbsdfb";
+
 }
 ?>

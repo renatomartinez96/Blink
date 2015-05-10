@@ -130,34 +130,41 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <!-- Modal de personalización -->
                         <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
-                              <form action="" method="post" name="form" id="form">
+                              <form action="personalizacion.php" method="post" name="form" id="form">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
                               </div>
                               <div class="modal-body">
-                                  <div class="col-md-12" id="mensaje">
-                                  </div>
                                         <div class="col-md-12 well">
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
                                                     <p class="text-center"><strong>Vista previa</strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
-                                                    <!--dfnejfwnjfnw CALIFORNIA-->
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="1" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="2" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="3" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="4" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
+                                                    <input type="hidden" value="" name="banselect" id="banselect" >
+                                                    <div class="col-md-2" id="idban1">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
+                                                    <div class="col-md-2" id="idban2">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
+                                                    <div class="col-md-2" id="idban3">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
+                                                    <div class="col-md-2" id="idban4">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
+                                                    <div class="col-md-2" id="idban5">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/5.png" onmouseover="showPrev(5)"></div>
+                                                    <div class="col-md-2" id="idban6">
+                                                        <img class="img-responsive" src="../assets/img/userbanner/6.png" onmouseover="showPrev(6)"></div>
+                                                    <p id="mensaje"></p>
                                                 </div>
                                         </div>
                                     
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-<!--                                <input type="button" class="btn btn-primary" name="b1" value="Guardar" onclick="savechanges()">-->
+                                <input type="submit" class="btn btn-success" name="b1" value="Guardar">
                               </div>
                             </div>
                             </form>
@@ -208,11 +215,22 @@ Gerardo López | Iván Nolasco | Renato Andres
         </div>
         <!--Main js-->
         <script>
-        function showPrev(insertimg, checkimg)
+        function showPrev(insertimg)
         {   
             document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+insertimg+".png)";
             document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
             document.getElementById("bannerchangeb").style.height = "601x";
+            document.getElementById("banselect").setAttribute("value", insertimg); 
+            for (i = 1; i < 7; i++) {
+                if(i == insertimg)
+                {
+                    document.getElementById("idban"+insertimg).style.border = "2px solid #ffffff";
+                }
+                else
+                {
+                    document.getElementById("idban"+i).removeAttribute("style");
+                }
+            } 
         }
 //        function savechanges()
 //        {
