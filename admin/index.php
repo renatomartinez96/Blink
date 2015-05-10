@@ -4,12 +4,12 @@
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang, idusuario  FROM usuarios_tb WHERE usuario = ?")) 
     {
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang, $idusuario);
         $stmt->fetch();
         
     }
@@ -77,19 +77,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border:none;
                 background-color: Transparent;
             }
-            /* Radio Button */
+            /* Radio Button
             
-             input[type=radio] { display:none; } /* to hide the checkbox itself */
+             input[type=radio] { display:none; } to hide the checkbox itself
             input[type=radio] + label:before {
             font-family: 'FontAwesome';
             display: inline-block;
             }
 
-            input[type=radio] + label:before { content: "\f096"; } /* unchecked icon */
-            input[type=radio] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+            input[type=radio] + label:before { content: "\f096"; } unchecked icon
+            input[type=radio] + label:before { letter-spacing: 10px; } space between checkbox and label
 
-            input[type=radio]:checked + label:before { content: "\f0c8"; } /* checked icon */
-            input[type=radio]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+            input[type=radio]:checked + label:before { display: block; content: "\f0c8"; } checked icon
+            input[type=radio]:checked + label:before { display: block; letter-spacing: 5px; } allow space for check mark
+                */
             </style>
 			<!--Page Content -->
             <div id="page-content-wrapper">
@@ -129,13 +130,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <!-- Modal de personalización -->
                         <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
+                              <form action="" method="post" name="form" id="form">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
                               </div>
                               <div class="modal-body">
-                                    <form action="lel.php" method="post" name="form" id="form">
+                                  <div class="col-md-12" id="mensaje">
+                                  </div>
                                         <div class="col-md-12 well">
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
@@ -143,20 +146,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 </div>
                                                 <div class="col-md-12 full">
                                                     <!--dfnejfwnjfnw CALIFORNIA-->
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><label> afsdf</label><img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
-                                                    <div class="col-md-3"><input type="radio" name="bannselect" style="padding-top: 1%; padding-left: 1%; padding-right: 25%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
+                                                    <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="1" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="2" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="3" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
+                                                    <div class="col-md-3"><input type="radio" name="bannselect" value="4" style="padding-top: 3%; padding-left: 20%; position: fixed;"><img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
                                                 </div>
                                         </div>
-                                        <div class="col-md-12 well"></div>
-                                    </form>
+                                    
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+<!--                                <input type="button" class="btn btn-primary" name="b1" value="Guardar" onclick="savechanges()">-->
                               </div>
                             </div>
+                            </form>
                           </div>
                         </div>
                         <!-- /Modal de personalización -->
@@ -204,16 +208,20 @@ Gerardo López | Iván Nolasco | Renato Andres
         </div>
         <!--Main js-->
         <script>
-            function showPrev(insertimg, checkimg)
-            {   
-                document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+insertimg+".png)";
-                document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
-                document.getElementById("bannerchangeb").style.height = "601x";
-            }
-            function changePrev(checkimg)
-            {   
-                document.getElementById(checkimg).className = "fa fa-square";
-            }
+        function showPrev(insertimg, checkimg)
+        {   
+            document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+insertimg+".png)";
+            document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
+            document.getElementById("bannerchangeb").style.height = "601x";
+        }
+//        function savechanges()
+//        {
+//            var xmlhttp = new XMLHttpRequest();
+//            xmlhttp.open("GET", "personalizacion.php?banner="+document.getElementsByTagName("RADIO")[0].getAttribute("value")+"&id="+document.getElementById("userid".value), false;
+//            xmlhttp.send(null);
+//            //lel
+//            document.getElementsById("mensaje").innerHTML=xmlhttp.responseText;
+//        }
         </script>
 		<?php
             include 'main_js.php';
