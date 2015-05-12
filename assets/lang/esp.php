@@ -25,6 +25,8 @@ $lang = array(
 
     
 //  estudiante
+//      Pantalla principal
+//      Pantalla principal
 //      Pantalla de perfil
         "profile-1" => "Informacion",
         "profile-2" => "Nombre",

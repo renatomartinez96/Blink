@@ -93,11 +93,22 @@ Gerardo López | Iván Nolasco | Renato Andres
                 background-size:100%;
                 background-position:top;
             }
+            #cookies{
+                position:fixed;
+                bottom:0 !important;
+                z-index:99999 !important;
+                margin-bottom:0px;
+            }
         </style>    
 	</head>         
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <div class="container-fluid">
             <div class="row">
+                <div class='alert alert-dismissible well col-xs-12' id="cookies" style="">
+                    <button type='button' class='close' data-dismiss='alert'>x</button>
+                    <h5 class="junction-bold">Uso de cookies</h5>
+                    <h6 class="">En <b>Box Link</b> utilizamos cookies propias para personalizar su experiencia de navegacion por el sitio web. Si continúa navegando consideramos que acepta su uso. Puede encontrar más información al respecto en nuestra <a href="">Política de Privacidad</a>.</h6>
+                </div>
                 <div class="col-xs-12 full">
                     <nav class="navbar navbar-inverse navbar-fixed-top transparent">
                         <div class="container">

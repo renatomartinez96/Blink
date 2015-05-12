@@ -175,7 +175,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         echo "
                                                             <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
                                                                 <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
-                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-rounded'>
+                                                                    <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-thumbnail'>
                                                                     <div class='caption full'>
                                                                         <button type='button' class='btn btn-danger form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\">Eliminar suscripcion</button>
                                                                         <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>

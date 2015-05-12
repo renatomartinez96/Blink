@@ -25,36 +25,81 @@ Gerardo López | Iván Nolasco | Renato Andres
             $titulodelapagina = "¡Bienvenido a BLink!";
 			include 'main_css.php';
 		?>
+        <style>
+            body{
+                overflow:hidden;
+            }
+        </style>
 		<!--/#Core CSS-->
 	</head>
 	<body>
 		<?php 
             if (login_check($mysqli) == true) { 
                 $user = $_SESSION['username']; 
-                $stmt = $mysqli->prepare("SELECT log, correo, token, estado FROM usuarios_tb WHERE usuario = ?");
+                $stmt = $mysqli->prepare("SELECT log, correo, token, estado, tipo FROM usuarios_tb WHERE usuario = ?");
                 $stmt->bind_param('s', $user);
                 $stmt->execute();  
                 $stmt->store_result();
-                $stmt->bind_result($log,$correo,$token,$estado);
+                $stmt->bind_result($log,$correo,$token,$estado,$tipo);
                 $stmt->fetch();
                 if ($log == 0) 
                 {
                     if ($estado == 0) 
                     {
-                        if (isset($_POST['token'])) 
-                        {
-                            if ($_POST['token'] == $token) 
+                        if ($tipo == 3) {
+                            if (isset($_POST['token'])) 
                             {
-                                $stmt = $mysqli->prepare("UPDATE usuarios_tb SET estado = ?, token = ? WHERE usuario = ?");
-                                $estad = 1;
-                                $tkn = null;
-                                $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
-                                $stmt->execute();
-                                echo "
-                                <script>
-                                    window.location.href = 'home.php';
-                                </script>
-                                ";
+                                if ($_POST['token'] == $token) 
+                                {
+                                    $stmt = $mysqli->prepare("UPDATE usuarios_tb SET estado = ?, token = ? WHERE usuario = ?");
+                                    $estad = 1;
+                                    $tkn = null;
+                                    $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
+                                    $stmt->execute();
+                                    echo "
+                                    <script>
+                                        window.location.href = 'home.php';
+                                    </script>
+                                    ";
+                                }
+                                else
+                                {
+                                    echo "
+                                        <div class='container text-center' id='formtoken'>
+                                            <form class='text-center' action='home.php' method='post'>
+                                                <h1 class='junction-bold'>Blink</h1>
+                                                <ul class='pagination'>
+                                                    <li class='active'><a>Activacion de cuenta</a></li>
+                                                    <li><a>Avatar</a></li>
+                                                    <li><a>Listo!</a></li>
+                                                </ul>
+                                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>$correo</strong>! Por favor verifica tu correo.</h4>
+                                                <center>
+                                                    <fieldset style='width:50%;'>
+                                                        <legend>Codigo de activacion</legend>
+                                                        <div class='form-group'>
+                                                            <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
+                                                            <div class='col-lg-9'>
+                                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
+                                                        <br>
+                                                        <br>
+                                                        <div class='alert alert-dismissible alert-danger'>
+
+                                                              <button type='button' class='close' data-dismiss='alert'>×</button>
+                                                              <strong>El codigo de activacion es invalido</strong>
+                                                        </div>
+                                                    </fieldset>
+                                                </center>
+                                            </form>
+                                            <br>
+                                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                                        </div>
+                                    ";
+                                }
                             }
                             else
                             {
@@ -79,13 +124,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     </div>
                                                     <br>
                                                     <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
-                                                    <br>
-                                                    <br>
-                                                    <div class='alert alert-dismissible alert-danger'>
-                                                    
-                                                          <button type='button' class='close' data-dismiss='alert'>×</button>
-                                                          <strong>El codigo de activacion es invalido</strong>
-                                                    </div>
                                                 </fieldset>
                                             </center>
                                         </form>
@@ -98,32 +136,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                         else
                         {
                             echo "
-                                <div class='container text-center' id='formtoken'>
-                                    <form class='text-center' action='home.php' method='post'>
-                                        <h1 class='junction-bold'>Blink</h1>
-                                        <ul class='pagination'>
-                                            <li class='active'><a>Activacion de cuenta</a></li>
-                                            <li><a>Avatar</a></li>
-                                            <li><a>Listo!</a></li>
-                                        </ul>
-                                        <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>$correo</strong>! Por favor verifica tu correo.</h4>
-                                        <center>
-                                            <fieldset style='width:50%;'>
-                                                <legend>Codigo de activacion</legend>
-                                                <div class='form-group'>
-                                                    <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
-                                                    <div class='col-lg-9'>
-                                                        <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
-                                            </fieldset>
-                                        </center>
-                                    </form>
-                                    <br>
-                                    <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
-                                </div>
+                                <iframe src='exam.php?u=".$user."&t=".$token."' class='full' style='width:100vw; height:100vh; overflow:hidden;' frameborder='0'></iframe>
+                                
                             ";
                         }
                     }
