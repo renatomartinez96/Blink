@@ -11,17 +11,18 @@ Gerardo López | Iván Nolasco | Renato Andres
 -->
 <?php
 include_once 'assets/includes/db_conexion.php';
+include 'assets/includes/loadQuestion.php';
 ?>
 <!DOCTYPE html>
 <html lang='en'>
-	<head>
-		<!--Core CSS-->
-		<?php
+    <head>
+        <!--Core CSS-->
+        <?php
             // Titulo de esta página:
             $titulodelapagina = ' ';
-			include 'main_css.php';
-		?>
-		<!--/#Core CSS-->
+            include 'main_css.php';
+        ?>
+        <!--/#Core CSS-->
         <!--Custom css-->
             <style>
                 .jumbotron{
@@ -30,10 +31,14 @@ include_once 'assets/includes/db_conexion.php';
                 }
             </style>
         <!--/#Custom css-->
-	</head>
-	<body>
-		<div class='container-fluid'>
+    </head>
+    <body>
+        <div class='container-fluid'>
             <div class='row'>
+            <?php
+            if (isset($_GET['u'], $_GET['t'])) 
+            {
+            ?>
                 <div class='container'>
                     <div class='jumbotron text-center' style='margin-bottom:0px !important;'>
                         <img src='assets/img/brand3.png' style='width:50%;'>
@@ -55,70 +60,25 @@ include_once 'assets/includes/db_conexion.php';
                     </div>
                     <div class='well text-center'>
                         <?php
-                            $num = Array();
-                            reset($num);
-                            for($i=1;$i<=10;$i++) 
-                                {
-                                $num[$i]=rand(1,18);
-                                if($i>1) 
-                                {
-                                   for($x=1; $x<$i; $x++)
-                                   {
-                                     if($num[$i]==$num[$x]) 
-                                     { 
-                                       $i--; 
-                                       break; 
-                                     }
-                                  }
-                                }
-                            }
-                            $p = 1;
-                            foreach($num as $valor) 
-                            {
-                                $ques = $mysqli->prepare("SELECT id, pregunta, opcion1, opcion2, opcion3, opcion4 FROM cuestionario WHERE id = ?");
-                                $ques->bind_param('s', $valor);
-                                $ques->execute(); 
-                                $ques->store_result();
-                                $ques->bind_result($id,$pregunta,$op1,$op2,$op3,$op4);
-                                while($ques->fetch())
-                                {
-                                    echo "<h3 class='text-center'>Pregunta";
-                                    echo $p;
-                                    echo "/30.</h3>";
-                                    echo "<div class='form-group'>";
-                                    echo "<p>";
-                                    echo $pregunta;
-                                    echo "</p>";
-                                    echo "<div class='col-lg-12'><div class='radio'><label><input type='radio' name='";
-                                    echo $id;
-                                    echo "' id='a' value='1'>";
-                                    echo $op1;
-                                    echo "</label></div><div class='radio'><label><input type='radio' name='";
-                                    echo $id;
-                                    echo "' id='b' value='2'>";
-                                    echo $op2;
-                                    echo "</label></div><div class='radio'><label><input type='radio' name='";
-                                    echo $id;
-                                    echo "' id='c' value='3'>";
-                                    echo $op3;
-                                    echo "</label></div><div class='radio'><label><input type='radio' name='";
-                                    echo $id;
-                                    echo "' id='d' value='4'>";
-                                    echo $op4;
-                                    echo "</label></div></div></div>";                              
-                                    $p++;
-                                }
-                            }
+                            loadPreguntas();
                         ?>
                         <input type="submit" value="Terminar" class="btn btn-success">
                     </div>
                 </div>
+            <?php
+            }
+            else
+            {
+//                echo "<img class='img-responsive' src=''>";
+            }
+            ?>
             </div>    
         </div>
-		<!--Main js-->
-		<?php 
-			include 'main_js.php';
-		?>
-		<!--/#Main js-->
-	</body>
+        <!--Main js-->
+        <?php 
+            include 'main_js.php';
+        ?>
+        <!--/#Main js-->
+    </body>
 </html>
+

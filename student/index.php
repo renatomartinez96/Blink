@@ -129,89 +129,91 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                         INNER JOIN `cursoestudiante` 
                                                                         ON cursoestudiante.idcurso = curso.idcurso  
                                                                         WHERE cursoestudiante.idestudiante = '".$idusuario."'");
-                                                $result = $stmt->num_rows;
-                                                if ($result > 0) 
+                                                if($result = $stmt->num_rows)
                                                 {
-                                                    while($row = $stmt->fetch_assoc())
+                                                    if ($result > 0) 
                                                     {
-                                                        $stmt1 = $mysqli->query("SELECT idleccion, nombre 
-                                                                                 FROM `leccion` 
-                                                                                 WHERE idcurso = '".$row['id']."'");
-                                                        $result1 = $stmt1->num_rows;
-                                                        if ($result1 > 0) 
+                                                        while($row = $stmt->fetch_assoc())
                                                         {
-                                                            echo"
-                                                                    <div class='col-lg-4 col-md-6 '>
-                                                                        <div class='panel panel-info'>
-                                                                            <div class='panel-heading'>
-                                                                                <div class='row'>
-                                                                                    <div class='col-xs-3'>
-                                                                                        <i class='fa fa-trophy fa-5x'></i>
-                                                                                    </div>
-                                                                                    <div class='col-xs-9 text-right'>
-                                                                                        <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
+                                                            $stmt1 = $mysqli->query("SELECT idleccion, nombre 
+                                                                                     FROM `leccion` 
+                                                                                     WHERE idcurso = '".$row['id']."'");
+                                                            $result1 = $stmt1->num_rows;
+                                                            if ($result1 > 0) 
+                                                            {
+                                                                echo"
+                                                                        <div class='col-lg-4 col-md-6 '>
+                                                                            <div class='panel panel-info'>
+                                                                                <div class='panel-heading'>
+                                                                                    <div class='row'>
+                                                                                        <div class='col-xs-3'>
+                                                                                            <i class='fa fa-trophy fa-5x'></i>
+                                                                                        </div>
+                                                                                        <div class='col-xs-9 text-right'>
+                                                                                            <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class='panel-body full'>
-                                                                                <div class='list-group lecciones'>";
-                                                                while($row1 = $stmt1->fetch_assoc())
-                                                                {  
+                                                                                <div class='panel-body full'>
+                                                                                    <div class='list-group lecciones'>";
+                                                                    while($row1 = $stmt1->fetch_assoc())
+                                                                    {  
+                                                                      echo "
+                                                                                        <a class='list-group-item' href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a>
+                                                                            ";
+                                                                    }
                                                                   echo "
-                                                                                    <a class='list-group-item' href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a>
-                                                                        ";
-                                                                }
-                                                              echo "
-                                                                                </div>
-                                                                            </div>
-                                                                            <a href='#'>
-                                                                                <div class='panel-footer'>
-                                                                                    <span class='pull-left'>Ver detalles</span>
-                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                    <div class='clearfix'></div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                            ";
-                                                        }
-                                                        else
-                                                        {
-                                                            echo"
-                                                                    <div class='col-lg-4 col-md-6 '>
-                                                                        <div class='panel panel-info'>
-                                                                            <div class='panel-heading'>
-                                                                                <div class='row'>
-                                                                                    <div class='col-xs-3'>
-                                                                                        <i class='fa fa-trophy fa-5x'></i>
-                                                                                    </div>
-                                                                                    <div class='col-xs-9 text-right'>
-                                                                                        <div><h2>".$row['nombre']."</h2></div>
                                                                                     </div>
                                                                                 </div>
+                                                                                <a href='#'>
+                                                                                    <div class='panel-footer'>
+                                                                                        <span class='pull-left'>Ver detalles</span>
+                                                                                        <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                                                                        <div class='clearfix'></div>
+                                                                                    </div>
+                                                                                </a>
                                                                             </div>
-                                                                            <div class='panel-body full lecciones'>
-                                                                                <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
-                                                                                    <button type='button' class='close' data-dismiss='alert'>x</button>
-                                                                                    <strong>no se encontraron lecciones disponibles</strong>
-                                                                                </div>
-                                                                            </div>
-                                                                            <a href='#'>
-                                                                                <div class='panel-footer'>
-                                                                                    <span class='pull-left'>Ver detalles</span>
-                                                                                    <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                    <div class='clearfix'></div>
-                                                                                </div>
-                                                                            </a>
                                                                         </div>
-                                                                    </div>
                                                                 ";
+                                                            }
+                                                            else
+                                                            {
+                                                                echo"
+                                                                        <div class='col-lg-4 col-md-6 '>
+                                                                            <div class='panel panel-info'>
+                                                                                <div class='panel-heading'>
+                                                                                    <div class='row'>
+                                                                                        <div class='col-xs-3'>
+                                                                                            <i class='fa fa-trophy fa-5x'></i>
+                                                                                        </div>
+                                                                                        <div class='col-xs-9 text-right'>
+                                                                                            <div><h2>".$row['nombre']."</h2></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class='panel-body full lecciones'>
+                                                                                    <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
+                                                                                        <button type='button' class='close' data-dismiss='alert'>x</button>
+                                                                                        <strong>no se encontraron lecciones disponibles</strong>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <a href='#'>
+                                                                                    <div class='panel-footer'>
+                                                                                        <span class='pull-left'>Ver detalles</span>
+                                                                                        <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
+                                                                                        <div class='clearfix'></div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    ";
+                                                            }
                                                         }
                                                     }
-                                                }
-                                                else
-                                                {
-                                                    echo "no se han encontrado resultados";
+                                                    else
+                                                    {
+                                                        echo "no se han encontrado resultados";
+                                                    }
                                                 }
                                             ?>
                                         <!--/#Cursos-->
