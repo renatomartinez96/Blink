@@ -131,7 +131,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <!-- Modal de personalización -->
                         <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
-                              <form action="personalizacion.php" method="post" name="form" id="form">
+                              <form action="personalizacion.php" method="post">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -144,8 +144,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     <p class="text-center"><strong>Vista previa</strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
-                                                    <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
-                                                    <input type="hidden" value="" name="banselect" id="banselect" >
+                                                    <input type="hidden" value="<?=$user?>" name="userid" id="userid" >
+                                                    <input type="hidden" name="banselect" id="banselect" >
                                                     <div class="col-md-2 full" id="idban1">
                                                         <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
                                                     <div class="col-md-2 full" id="idban2">
@@ -222,7 +222,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
             document.getElementById("bannerchangeb").style.height = "601x";
             document.getElementById("banselect").setAttribute("value", insertimg); 
-            for (i = 1; i < 7; i++) {
+            for (i = 1; i < 7; i++) 
+            {
                 if(i == insertimg)
                 {
                     document.getElementById("idban"+insertimg).style.border = "2px solid #ffffff";
