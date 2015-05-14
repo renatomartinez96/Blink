@@ -39,6 +39,7 @@ if(isset($_POST['action'],$_POST['hora'],$_POST['leccion'],$_POST['usuario']) &&
                     $stmt->bind_param('iidsss',$_POST['usuario'],$_POST['leccion'],$nota,$_POST['hora'],$dateFinishString,$resta);
                     $stmt->execute();
                 }
+                echo $fechaInicio->diff($dateFinish)->format("%i:%s");;
                 
         }else {
                 $stmt = $mysqli->prepare("SELECT idleccion FROM `leccion` WHERE idleccion = ? && idUsuario = ?");

@@ -159,6 +159,21 @@
     z-index: 10;
     margin: 0;
 }
+.backCute {
+    background-color: #1D9DDE;
+}
+.muybien {
+    font-size: 6em;
+}
+.muybien2 {
+    font-size: 3.5em;
+}
+.muybien3 {
+    font-size: 4em;
+}
+.centertest {
+    text-align: center;
+}
 .animated { 
     -webkit-animation-duration: 0.5s; 
     animation-duration: 0.5s; 
@@ -167,7 +182,14 @@
     -webkit-animation-timing-function: ease-in-out; 
     animation-timing-function: ease-in-out; 
 } 
-
+.animatedDos { 
+    -webkit-animation-duration: 1.2s; 
+    animation-duration: 1.2s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: ease-in-out; 
+    animation-timing-function: ease-in-out; 
+} 
 @-webkit-keyframes fadeInDown { 
     0% { 
         opacity: 0; 
@@ -190,11 +212,52 @@
     } 
 } 
 
+
 .fadeInDown { 
     -webkit-animation-name: fadeInDown; 
     animation-name: fadeInDown; 
 }
+@-webkit-keyframes winner { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(800px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateX(0); 
+    } 
+} 
 
+@keyframes winner { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(800px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    } 
+} 
+
+
+.fadeInDownDos { 
+    -webkit-animation-name: winner; 
+    animation-name: winner; 
+}
+.showResult {
+    width: 6vw;
+    border-radius: 50%;
+    
+    
+}
+
+.winner {
+    width: 100%;
+}
+.contentWin {
+    height: 60vh;
+    overflow: hidden;
+}
 /*MEDIA QUERY*/
 @media (min-width: 1199px) and (max-width: 1770px) {
     .col-lg-2{

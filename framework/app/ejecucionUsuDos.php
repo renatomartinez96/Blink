@@ -34,7 +34,11 @@
                               success: function(data) {
                                 $(".loading").css('display','none'); 
                                 //$(".msgCl ").html(data);
-                                  
+                                  $('#myModal2').on('show.bs.modal', function (e) {
+                                        $('.winner').addClass("fadeInDownDos");
+                                    });
+                                  $(".centertest").append("<h1 class='muybien2'>"+data+"</h1><h1 class='muybien3'>¡Muy bien!</h1>");
+                                     $('#myModal2').modal('show');
                               }
                           });
                 }

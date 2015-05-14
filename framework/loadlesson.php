@@ -6,11 +6,19 @@
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
     if(isset($_GET['l'])){
-    $stmt = $mysqli->prepare("SELECT teoria FROM leccion WHERE idleccion = ?");
+     $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT avatar FROM usuarios_tb WHERE usuario = ?")) {
+        $stmt->bind_param('s', $user);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar);
+        $stmt->fetch();
+    }
+    $stmt = $mysqli->prepare("SELECT teoria,nombre FROM leccion WHERE idleccion = ?");
     $stmt->bind_param('s', $_GET['l']);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($teoria);
+    $stmt->bind_result($teoria,$nombre);
     $stmt->fetch();
     if($stmt->num_rows == 1){
     
@@ -65,13 +73,42 @@
             </div>
           </div>
         </div>
-       
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg backCute">
+            <div class="modal-content">
+              <div class="modal-header backCute">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><?=$nombre?></h4>
+              </div>
+              <div class="col-xs-12 contentWin" style="padding-right:0px;">
+                  
+                      <div class="col-xs-5 centertest">
+                        <img class='showResult' src='../assets/img/avatares/<?=$avatar?>.png'>
+                        
+                      </div>
+                  
+                    
+                  
+                      <div class="col-xs-7" style="padding-right:0px;">
+                        <img class="winner animatedDos" src="../assets/img/win.png">
+                      </div>
+                 
+              </div>
+              <div class="modal-footer backCute">
+                <a href="../student/index.php"><button type="button" class="btn btn-default" >Aceptar</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
         <?php include "app/headjsSDos.php";?>
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
             var lessonG = "<?php echo $_GET['l'] ?>";
             var idUserPHP = "<?php echo $userid ?>";
+            
             $('#myModal').modal('show');
+        
+             
         </script>  
         
     <?php 
