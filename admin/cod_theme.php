@@ -96,21 +96,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                             <input type="hidden" value="student" name="folderloc" id="folderloc" >
                             <div class="col-md-2 full" id="idtheme1">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(1)" style="cursor: pointer;">Tema 1<!-- <small>Pastel on dark</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(1)" style="cursor: pointer;">Tema 1<br><small>Pastel on dark</small></h3></div>
                             <div class="col-md-2 full" id="idtheme2">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(2)" style="cursor: pointer;">Tema 2<!-- <small>Chaos</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(2)" style="cursor: pointer;">Tema 2<br><small>Chaos</small></h3></div>
                             <div class="col-md-2 full" id="idtheme3">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(3)" style="cursor: pointer;">Tema 3<!-- <small>Solarized on dark</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(3)" style="cursor: pointer;">Tema 3<br><small>Solarized on dark</small></h3></div>
                             <div class="col-md-2 full" id="idtheme4">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(4)" style="cursor: pointer;">Tema 4<!-- <small>Kuroir</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(4)" style="cursor: pointer;">Tema 4<br><small>Kuroir</small></h3></div>
                             <div class="col-md-2 full" id="idtheme5">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(5)" style="cursor: pointer;">Tema 5<!-- <small>Textmate</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(5)" style="cursor: pointer;">Tema 5<br><small>Textmate</small></h3></div>
                             <div class="col-md-2 full" id="idtheme6">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(6)" style="cursor: pointer;">Tema 6<!-- <small>X Code</small>--></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(6)" style="cursor: pointer;">Tema 6<br><small>X Code</small></h3></div>
                             <br>
                             <div class="col-md-12 text-center">
                                 <br>
-                            <input type="submit" class="btn btn-success btn-lg" name="b1" value="Cambiar tema">
+                            <input type="submit" class="btn btn-success btn-lg" name="b1" id="b1" value="Cambiar tema" disabled>
                             </div>
                             </form>
                         </div>
@@ -160,7 +160,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             }
 //            editor1.setTheme("ace/theme/chaos");
             document.getElementById("themeselect").setAttribute("value", inserttheme); 
-            for (i = 1; i < 7; i++) {
+            for (i = 1; i < 7; i++) 
+            {
                 if(i == inserttheme)
                 {
                     document.getElementById("idtheme"+inserttheme).style.border = "2px solid #ffffff";
@@ -170,6 +171,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     document.getElementById("idtheme"+i).removeAttribute("style");
                 }
             } 
+            document.getElementById("b1").removeAttribute("disabled");
         }
         </script>
         <script src="../assets/ace/ace.js" type="text/javascript" charset="utf-8"></script>

@@ -169,7 +169,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <input type="submit" class="btn btn-success" name="b1" value="Guardar">
+                                <input type="submit" class="btn btn-success" name="b1" id="b1" value="Guardar" disabled>
                               </div>
                             </div>
                             </form>
@@ -236,7 +236,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                 {
                     document.getElementById("idban"+i).removeAttribute("style");
                 }
-            } 
+            }
+            document.getElementById("b1").removeAttribute("disabled");
         }
 //            $("#act").click(function(){
 //                $('#resultc')[0].contentWindow.location.reload(true);
