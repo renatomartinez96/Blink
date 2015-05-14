@@ -35,6 +35,11 @@ Gerardo López | Iván Nolasco | Renato Andres
 
 	</head>
 	<body>
+        <style>
+        body {
+            background: #fff;
+        }
+        </style>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
