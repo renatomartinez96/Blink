@@ -3,17 +3,20 @@
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
+    $elidespecial = $_SESSION['user_id'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang, idusuario  FROM usuarios_tb WHERE usuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
     {
-        $stmt->bind_param('s', $user);
+        $stmt->bind_param('s', $elidespecial);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang, $idusuario);
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
         
     }
+    include "auto.php";
 ?>
+
 <!--
 
 Copyright (c) 2015 Box Link
@@ -55,7 +58,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
             <style>
             #usrpanel{
-                background: #191837 url(../assets/img/profile1.jpg) fixed;
+                background: #191837 url(../assets/img/userbanner/<?=$bannero?>.png) fixed;
                 color:#fff;
                 background-position: bottom left;
                 background-size:100%;
@@ -123,18 +126,18 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <img src="../assets/img/avatares/<?=$avatar?>.png" style="border-radius:50%;width:15%;background: rgba(255, 255, 255, 0.4);">
                                     <h2 class="junction-bold"><?=$nombres?></h2>
                                     <h3 class="junction-bold"><?=$_SESSION['username']?></h3>
-                                    <h4 class="junction-light"><?=$descripcion." - Administrator"?></h4>
+                                    <h4 class="junction-light"><?=$descripcion?></h4>
                                 </div>
                             </div>
                         </div>
                         <!-- Modal de personalización -->
                         <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
-                              <form action="personalizacion.php" method="post" name="form" id="form">
+                              <form action="../assets/includes/personalizacion.php" method="post" name="form" id="form">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
+                                <h4 class="modal-title junction-bold text-center" id="myModalLabel">Cambiar mi banner</h4>
                               </div>
                               <div class="modal-body">
                                                 <div class="col-md-12" id="bannerchangeb" >
@@ -144,6 +147,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 <div class="col-md-12 full">
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                                                     <input type="hidden" value="" name="banselect" id="banselect" >
+                                                    <input type="hidden" value="admin" name="folderloc" id="folderloc" >
                                                     <div class="col-md-2 full" id="idban1">
                                                         <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
                                                     <div class="col-md-2 full" id="idban2">
@@ -158,7 +162,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         <img class="img-responsive" src="../assets/img/userbanner/6.png" onmouseover="showPrev(6)"></div>
                                                 </div>
                                   <br>
-                                  <p>Editar otra info...</p>
+                                  <br>
+                                  <br>
+                                  <p class="junction-light text-center">Para editar tu información personal debes ir <a href="my_data.php">aquí</a></p>
                                     
                               </div>
                               <div class="modal-footer">
@@ -232,6 +238,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             } 
         }
+//            $("#act").click(function(){
+//                $('#resultc')[0].contentWindow.location.reload(true);
+//                var dataString = editor.getSession().getValue()
+//                var send = {"codigo" : dataString,
+//                            "usuario" : user};
+//                $.ajax({
+//                    type: "POST",
+//                    url: "personalizacion.php",
+//                    data: send,
+//                    success: function(data) {
+//                        $("#resul").append(data);
+//                    }
+//                });
+//            });
         </script>
 		<?php
             include 'main_js.php';

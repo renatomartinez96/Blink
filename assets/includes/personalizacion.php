@@ -1,13 +1,14 @@
 <?php
-include_once '../assets/includes/db_conexion.php';
-include_once '../assets/includes/funciones.php';
+include_once 'db_conexion.php';
+include_once 'funciones.php';
  
 sec_session_start();
 include 'auto.php';
-if(isset($_POST["userid"]) && isset($_POST["banselect"]))
+if(isset($_POST["userid"]) && isset($_POST["banselect"]) && isset($_POST["folderloc"]))
 {
     $banner = $_POST["banselect"];
     $userid = $_POST["userid"];
+    $folderloc = $_POST["folderloc"];
 
     $query1 = "SELECT * FROM user_config WHERE iduser = $userid";
     if ($query1 = mysqli_query($mysqli, $query1)) 
@@ -18,7 +19,7 @@ if(isset($_POST["userid"]) && isset($_POST["banselect"]))
             $query2 = "UPDATE user_config SET banner='$banner' WHERE iduser = '$userid'";
             if ($query2 = mysqli_query($mysqli, $query2)) 
             {
-                header("location: index.php");
+                header("location: ../../".$folderloc."/index.php");
             }
             else
             {
@@ -30,7 +31,7 @@ if(isset($_POST["userid"]) && isset($_POST["banselect"]))
             $query3 = "INSERT INTO user_config VALUES ('', '$userid', '', '$banner') ";
             if ($query3 = mysqli_query($mysqli, $query3)) 
             {
-                header("location: index.php");
+                header("location: ../../".$folderloc."/index.php");
             }
             else
             {
