@@ -137,7 +137,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
                               </div>
                               <div class="modal-body">
-                                        <div class="col-md-12 well">
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
                                                     <p class="text-center"><strong>Vista previa</strong></p>
@@ -145,21 +144,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 <div class="col-md-12 full">
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                                                     <input type="hidden" value="" name="banselect" id="banselect" >
-                                                    <div class="col-md-2" id="idban1">
+                                                    <div class="col-md-2 full" id="idban1">
                                                         <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
-                                                    <div class="col-md-2" id="idban2">
+                                                    <div class="col-md-2 full" id="idban2">
                                                         <img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
-                                                    <div class="col-md-2" id="idban3">
+                                                    <div class="col-md-2 full" id="idban3">
                                                         <img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
-                                                    <div class="col-md-2" id="idban4">
+                                                    <div class="col-md-2 full" id="idban4">
                                                         <img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
-                                                    <div class="col-md-2" id="idban5">
+                                                    <div class="col-md-2 full" id="idban5">
                                                         <img class="img-responsive" src="../assets/img/userbanner/5.png" onmouseover="showPrev(5)"></div>
-                                                    <div class="col-md-2" id="idban6">
+                                                    <div class="col-md-2 full" id="idban6">
                                                         <img class="img-responsive" src="../assets/img/userbanner/6.png" onmouseover="showPrev(6)"></div>
-                                                    <p id="mensaje"></p>
                                                 </div>
-                                        </div>
+                                  <br>
+                                  <p>Editar otra info...</p>
                                     
                               </div>
                               <div class="modal-footer">
@@ -221,7 +220,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             document.getElementById("bannerchangeb").style.backgroundSize = "100% 150%";
             document.getElementById("bannerchangeb").style.height = "601x";
             document.getElementById("banselect").setAttribute("value", insertimg); 
-            for (i = 1; i < 7; i++) {
+            for (i = 1; i < 7; i++) 
+            {
                 if(i == insertimg)
                 {
                     document.getElementById("idban"+insertimg).style.border = "2px solid #ffffff";
@@ -232,14 +232,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             } 
         }
-//        function savechanges()
-//        {
-//            var xmlhttp = new XMLHttpRequest();
-//            xmlhttp.open("GET", "personalizacion.php?banner="+document.getElementsByTagName("RADIO")[0].getAttribute("value")+"&id="+document.getElementById("userid".value), false;
-//            xmlhttp.send(null);
-//            //lel
-//            document.getElementsById("mensaje").innerHTML=xmlhttp.responseText;
-//        }
         </script>
 		<?php
             include 'main_js.php';
