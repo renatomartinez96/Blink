@@ -4,13 +4,14 @@
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang, idusuario  FROM usuarios_tb WHERE usuario = ?")) 
     {
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang, $idusuario);
         $stmt->fetch();
+        
     }
 ?>
 <!--
@@ -37,7 +38,6 @@ Gerardo López | Iván Nolasco | Renato Andres
         <!--Custom css-->
         <link href="../assets/css/sidebar.css" rel="stylesheet">
         <link href="../assets/css/perfil.css" rel="stylesheet">
-        
         <!--/#Custom css-->
 		<!--/#Core CSS-->
 	</head>
@@ -55,7 +55,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
             <style>
             #usrpanel{
-                background: #191837 url(../assets/img/userbanner/<?=$bannero?>.png) fixed;
+                background: #191837 url(../assets/img/profile1.jpg) fixed;
                 color:#fff;
                 background-position: bottom left;
                 background-size:100%;
@@ -69,8 +69,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             .btn-face{
                 background:#133783;
                 color:#fff;
-            }
-            .btn-twit{
+            }.btn-twit{
                 background:#55ACEE;
                 color:#fff;
             }
@@ -104,7 +103,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class="container-fluid full">
                                                 <ul class="nav navbar-nav">
                                                     <li> <a class="btn btn-success" target="_blank" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a></li>
-                                                    <li><a class="btn btn-face" target="_blank">Facebook <?=$bannero?></a></li>
+                                                    <li><a class="btn btn-face" target="_blank">Facebook</a></li>
                                                     <li><a class="btn btn-twit" target="_blank">Twitter</a></li>
                                                 </ul>
 
@@ -124,7 +123,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <img src="../assets/img/avatares/<?=$avatar?>.png" style="border-radius:50%;width:15%;background: rgba(255, 255, 255, 0.4);">
                                     <h2 class="junction-bold"><?=$nombres?></h2>
                                     <h3 class="junction-bold"><?=$_SESSION['username']?></h3>
-                                    <h4 class="junction-light"><?=$descripcion?></h4>
+                                    <h4 class="junction-light"><?=$descripcion." - Administrator"?></h4>
                                 </div>
                             </div>
                         </div>
@@ -135,33 +134,33 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title text-center" id="myModalLabel">Personalizar mi inicio</h4>
+                                <h4 class="modal-title" id="myModalLabel">Personalizar</h4>
                               </div>
                               <div class="modal-body">
-                                  <h5 class="modal-title text-center">Banner del inicio</h5>
-                                                <div class="col-md-12 full" id="bannerchangeb" >
+                                        <div class="col-md-12 well">
+                                                <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
                                                     <p class="text-center"><strong>Vista previa</strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                                                     <input type="hidden" value="" name="banselect" id="banselect" >
-                                                    <div class="col-md-2 full" id="idban1">
+                                                    <div class="col-md-2" id="idban1">
                                                         <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
-                                                    <div class="col-md-2 full" id="idban2">
+                                                    <div class="col-md-2" id="idban2">
                                                         <img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
-                                                    <div class="col-md-2 full" id="idban3">
+                                                    <div class="col-md-2" id="idban3">
                                                         <img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
-                                                    <div class="col-md-2 full" id="idban4">
+                                                    <div class="col-md-2" id="idban4">
                                                         <img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
-                                                    <div class="col-md-2 full" id="idban5">
+                                                    <div class="col-md-2" id="idban5">
                                                         <img class="img-responsive" src="../assets/img/userbanner/5.png" onmouseover="showPrev(5)"></div>
-                                                    <div class="col-md-2 full" id="idban6">
+                                                    <div class="col-md-2" id="idban6">
                                                         <img class="img-responsive" src="../assets/img/userbanner/6.png" onmouseover="showPrev(6)"></div>
                                                     <p id="mensaje"></p>
                                                 </div>
-                                  <br>
-                                  <p>Sí deseas editar otros datos, debes ver <a href="mydata.php">aquí</a></p>
+                                        </div>
+                                    
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -233,6 +232,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             } 
         }
+//        function savechanges()
+//        {
+//            var xmlhttp = new XMLHttpRequest();
+//            xmlhttp.open("GET", "personalizacion.php?banner="+document.getElementsByTagName("RADIO")[0].getAttribute("value")+"&id="+document.getElementById("userid".value), false;
+//            xmlhttp.send(null);
+//            //lel
+//            document.getElementsById("mensaje").innerHTML=xmlhttp.responseText;
+//        }
         </script>
 		<?php
             include 'main_js.php';
