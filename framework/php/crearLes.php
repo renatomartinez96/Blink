@@ -5,8 +5,8 @@
     $descrip = $_POST['descrip'];
     $teoria= $_POST['teoria'];
     $idCurso = $_POST['createLes'];
-         $stmt = $mysqli->prepare("INSERT INTO leccion (idcurso, nombre, descripcion,teoria) VALUES(?, ?, ?,?)");
-        $stmt->bind_param('isss', $idCurso,$nombre,$descrip,$teoria);
+         $stmt = $mysqli->prepare("INSERT INTO leccion (idcurso, nombre, descripcion,teoria,idUsuario) VALUES(?, ?, ?,?,?)");
+        $stmt->bind_param('isssi', $idCurso,$nombre,$descrip,$teoria,$userid);
         $stmt->execute();
         $stmt = $mysqli->prepare("SELECT idleccion,nombre FROM `leccion`\n"
     . "ORDER BY `leccion`.`idleccion` DESC LIMIT 1");

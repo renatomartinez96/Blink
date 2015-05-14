@@ -26,14 +26,14 @@
                     $.ajax({
                               method: "POST",
                               url: "ajax/registerTime.php",
-                              data: {action:2,hora:currentDate.date},
-                              dataType: 'json',
+                              data: {action:2,hora:currentDate.date,leccion:lessonG,usuario:idUserPHP},
+                              //dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');
                               },
                               success: function(data) {
                                 $(".loading").css('display','none'); 
-                                console.log(data.salio);
+                                //$(".msgCl ").html(data);
                                   
                               }
                           });

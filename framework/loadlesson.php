@@ -65,10 +65,12 @@
             </div>
           </div>
         </div>
+       
         <?php include "app/headjsSDos.php";?>
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
             var lessonG = "<?php echo $_GET['l'] ?>";
+            var idUserPHP = "<?php echo $userid ?>";
             $('#myModal').modal('show');
         </script>  
         
