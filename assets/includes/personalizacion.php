@@ -3,7 +3,7 @@ include_once 'db_conexion.php';
 include_once 'funciones.php';
  
 sec_session_start();
-include 'auto.php';
+
 if(isset($_POST["userid"]) && isset($_POST["banselect"]) && isset($_POST["folderloc"]))
 {
     $banner = $_POST["banselect"];

@@ -13,6 +13,17 @@ Gerardo López | Iván Nolasco | Renato Andres
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
+    $elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tiipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,5 +100,4 @@ Gerardo López | Iván Nolasco | Renato Andres
 
         </script>	
 	</body>
-    
 </html>
