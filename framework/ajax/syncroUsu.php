@@ -26,7 +26,7 @@
             $pista = "";
             $momentosTotales = count($momentos) - 1;
             $homepage = "";
-            $correcto = "true";
+            $correcto = 0; // todo bien
             $percent = 90;
             $percentDos = 100;
             if ($moment <= $momentosTotales) {
@@ -79,12 +79,13 @@
                 $homepage .= "</div>";
                 }
             }else {
-                 $correcto = "false";
+                 $correcto = 1; // la cago
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
                                 <strong>Upppss!</strong>There´s a problem with your Website </a>.
                               </div>";
             }
             }else {
+                $correcto = 2; //termino
                 $homepage .= "<div class='well well-lg greenini animated fadeInDown' style='margin-bottom:0px;'>
                                 <strong>Well done!</strong> You have successfully completed the lesson </a>.
                               </div>";

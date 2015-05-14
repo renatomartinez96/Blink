@@ -47,7 +47,21 @@
              
 
 		</div>
-            
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Ya casi!</h4>
+      </div>
+      <div class="modal-body">
+        Para poder activar la lección tendrás que realizarla, es recomendable hacerlo en un tiempo prudencial.
+      </div>
+      <div class="modal-footer">
+        <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+      </div>
+    </div>
+  </div>
+</div>       
 	<script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
             var cursososo = "<?php echo $idleccion?>";
