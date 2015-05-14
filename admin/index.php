@@ -124,7 +124,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         </div>
                                 
                                     <img src="../assets/img/avatares/<?=$avatar?>.png" style="border-radius:50%;width:15%;background: rgba(255, 255, 255, 0.4);">
-                                    <h2 class="junction-bold"><?=$nombres?></h2>
+                                    <h2 class="junction-bold"><?=$nombres?> <?=$apellidos?></h2>
                                     <h3 class="junction-bold"><?=$_SESSION['username']?></h3>
                                     <h4 class="junction-light"><?=$descripcion?></h4>
                                 </div>
@@ -149,17 +149,17 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     <input type="hidden" value="" name="banselect" id="banselect" >
                                                     <input type="hidden" value="admin" name="folderloc" id="folderloc" >
                                                     <div class="col-md-2 full" id="idban1">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/1.png" onmouseover="showPrev(1)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/1.png" onclick="showPrev(1)"></div>
                                                     <div class="col-md-2 full" id="idban2">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/2.png" onmouseover="showPrev(2)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/2.png" onclick="showPrev(2)"></div>
                                                     <div class="col-md-2 full" id="idban3">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/3.png" onmouseover="showPrev(3)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/3.png" onclick="showPrev(3)"></div>
                                                     <div class="col-md-2 full" id="idban4">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/4.png" onmouseover="showPrev(4)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/4.png" onclick="showPrev(4)"></div>
                                                     <div class="col-md-2 full" id="idban5">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/5.png" onmouseover="showPrev(5)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/5.png" onclick="showPrev(5)"></div>
                                                     <div class="col-md-2 full" id="idban6">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/6.png" onmouseover="showPrev(6)"></div>
+                                                        <img class="img-responsive" src="../assets/img/userbanner/6.png" onclick="showPrev(6)"></div>
                                                 </div>
                                   <br>
                                   <br>
