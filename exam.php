@@ -11,7 +11,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 -->
 <?php
 include_once 'assets/includes/db_conexion.php';
-include 'assets/includes/loadQuestion.php';
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -29,15 +28,36 @@ include 'assets/includes/loadQuestion.php';
                     background: #fff url('assets/img/banner.png') fixed no-repeat;
                     background-position: center top;
                 }
+                .inline{
+                    display: inline;
+                }
+                #cronometro{
+                    position:fixed;
+                    top: 0;
+                    left: 0;
+                    padding:10px;
+                }
             </style>
         <!--/#Custom css-->
     </head>
     <body>
+        
         <div class='container-fluid'>
             <div class='row'>
+            <div class='bg-success text-center' id="cronometro" style="display: none;">
+                <h4>Cronometro</h4>
+                <div id="timer" class="text-center junction-bold">
+                    <h3>
+                        <div id="minute" class="inline">00</div>
+                        <div id="divider" class="inline">:</div>
+                        <div id="second" class="inline">00</div>
+                    </h3>
+                </div>
+            </div>
             <?php
             if (isset($_GET['u'], $_GET['t'])) 
             {
+                $user = $_GET['u'];
             ?>
                 <div class='container'>
                     <div class='jumbotron text-center' style='margin-bottom:0px !important;'>
@@ -55,14 +75,15 @@ include 'assets/includes/loadQuestion.php';
                           <li>Cuando des clic en el boton 'Siguiente pregunta', no podras regresar a la anterior.</li>
                         </ul>  
                     </div>
-                    <div class='well text-center'>
-                        <?=time('HH:MM:SS')?>
-                    </div>
-                    <div class='well text-center'>
+                    
+                    <div class='well text-center' id="">
+                        <input type="button" class="btn btn-success btn-lg" value="Iniciar Examen" id="start">
                         <?php
-                            loadPreguntas();
+//                            $questions = loadPreguntas();
+//                            imprimirPreguntas($questions);
                         ?>
-                        <input type="submit" value="Terminar" class="btn btn-success">
+<!--                        <input type="submit" value="Terminar" class="btn btn-success">-->
+                        <form id="examen"></form>
                     </div>
                 </div>
             <?php
@@ -78,6 +99,45 @@ include 'assets/includes/loadQuestion.php';
         <?php 
             include 'main_js.php';
         ?>
+        <script>
+            $( document ).ready(function() {
+                var tiempo = {
+                    hora: 0,
+                    minuto: 0,
+                    segundo: 0
+                };
+                var tiempo_corriendo = null;
+                var showexam = $("#examen").html();
+                $( "#start" ).click(function() {
+                    $( "#cronometro" ).show();
+                    $( "#start" ).hide();
+                    $.ajax({
+                        type: "POST",
+                        url: "./assets/includes/loadQuestion.php",
+                        data: {"opcion" : 'cargarPreguntas'},
+                        success: function(response) {
+                            $( "#examen" ).html(response);
+                        }
+                    });
+                    setInterval(function(){
+//                  segundos
+                    tiempo.segundo++;
+                    if(tiempo.segundo >= 60)
+                    {
+                        tiempo.segundo = 0;
+                        tiempo.minuto++;
+                    }
+                    if(tiempo.minuto >= 30)
+                        
+                    {
+                        
+                    }
+                    $( "#minute" ).text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
+                    $( "#second" ).text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);
+                    }, 1000);
+                });
+            });
+        </script>
         <!--/#Main js-->
     </body>
 </html>

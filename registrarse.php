@@ -91,13 +91,13 @@ require 'assets/includes/funciones.php';
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="name">Nombre</label>
                                         <div class="col-lg-10">
-                                            <input type='text' name='name' id='name' placeholder='Name' class='form-control input-sm'/>            
+                                            <input type='text' name='name' id='name' placeholder='Name' onkeypress="txtletras()" class='form-control input-sm'/>            
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="last">Apellido</label>
                                         <div class="col-lg-10">
-                                            <input type='text' name='last' id='last' placeholder='Lastname' class='form-control input-sm'/>
+                                            <input type='text' name='last' id='last' placeholder='Lastname' onkeypress="txtletras()" class='form-control input-sm'/>
                                         </div>
                                     </div>
                                     <div class="form-group">
