@@ -127,6 +127,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <h4 class="modal-title junction-bold text-center" id="myModalLabel">Cambiar mi banner</h4>
                               </div>
                               <div class="modal-body">
+                                  <p class="junction-light text-center">Para editar tu información personal debes ir <a href="my_data.php">aquí</a>, si deseas cambiar el tema de tu editor vete <a href="cod_theme.php">aquí</a>.</p>
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
                                                     <p class="text-center"><strong>Vista previa</strong></p>
@@ -151,11 +152,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         }
                                         ?>
                                                 </div>
-                                  <br>
-                                  <br>
-                                  <br>
-                                  <p class="junction-light text-center">Para editar tu información personal debes ir <a href="my_data.php">aquí</a></p>
-                                    
+                                    <p class="junction-light text-center">Selecciona cualquier imagen dándole clic</a></p>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

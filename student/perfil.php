@@ -40,24 +40,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     <link href="../assets/css/sidebar.css" rel="stylesheet">
     <link href="../assets/css/perfil.css" rel="stylesheet">
     <link href="../assets/css/editor.css" rel="stylesheet">
-    <style>
-        #usrpanel{
-            background: #191837 url(../assets/img/profile1.jpg) fixed;
-            color:#fff;
-            background-position: bottom left;
-            background-size:100%;
-        }
-        .usrnav{
-            background-color: transparent  !important;
-            border-color: transparent  !important;
-            margin-bottom:0px;
-
-        }
-        .portfolio-item {
-            margin-bottom: 25px;
-            margin-top:15px;
-        }
-    </style>
+    
     <!--/#Custom CSS-->
 
 </head>
@@ -83,17 +66,35 @@ Gerardo López | Iván Nolasco | Renato Andres
     if (isset($_GET['u'])) 
     {
         $u = $_GET['u'];
-        $stmt1 = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, usuario, tipo  FROM usuarios_tb WHERE usuario = ?");
+        $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
         $stmt1->bind_param('s', $u);
         $stmt1->execute(); 
         $stmt1->store_result();
-        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1);
+        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$banner1, $iduser1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
             if ($tipo1 == '3') 
             {
 ?>
+                    <style>
+        #usrpanel{
+            background: #191837 url(../assets/img/userbanner/<?=$banner1?>.png) fixed;
+            color:#fff;
+            background-position: bottom left;
+            background-size:100%;
+        }
+        .usrnav{
+            background-color: transparent  !important;
+            border-color: transparent  !important;
+            margin-bottom:0px;
+
+        }
+        .portfolio-item {
+            margin-bottom: 25px;
+            margin-top:15px;
+        }
+    </style>
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
@@ -189,17 +190,35 @@ Gerardo López | Iván Nolasco | Renato Andres
     elseif(isset($_GET['t']))
     {
         $t = $_GET['t'];
-        $stmt1 = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, usuario, tipo  FROM usuarios_tb WHERE usuario = ?");
+        $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
         $stmt1->bind_param('s', $t);
         $stmt1->execute(); 
         $stmt1->store_result();
-        $stmt1->bind_result($id1,$avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1);
+        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$banner1, $iduser1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
             if ($tipo1 == '2') 
             {
 ?>
+                    <style>
+        #usrpanel{
+            background: #191837 url(../assets/img/userbanner/<?=$banner1?>.png) fixed;
+            color:#fff;
+            background-position: bottom left;
+            background-size:100%;
+        }
+        .usrnav{
+            background-color: transparent  !important;
+            border-color: transparent  !important;
+            margin-bottom:0px;
+
+        }
+        .portfolio-item {
+            margin-bottom: 25px;
+            margin-top:15px;
+        }
+    </style>
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
@@ -219,7 +238,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
                         <?php
-                            $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$id1."' ");
+                // LA WEAAAA
+                            $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$iduser1."' ");
                             if ($stmt2->num_rows > 0) 
                             {
                                 while($row = $stmt2->fetch_assoc()){
