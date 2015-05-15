@@ -12,9 +12,21 @@ function imprimirPreguntas($preguntas)
         $ques->store_result();
         $ques->bind_result($id,$pregunta,$op1,$op2,$op3,$op4);
         $ques->fetch();
+            echo "<div class='tab-pane fade";
+            if($e == 0){
+                echo " active in";
+            }
+            echo "' id='";
+            echo $e + 1;
+            echo "'>";
             echo "<h3 class='text-center'>Pregunta";
             echo $e + 1;
             echo "/30.</h3>";
+            echo "<input type='hidden' name='p";
+            echo $e + 1;
+            echo "' value='";
+            echo $id;
+            echo "'>";
             echo "<div class='form-group'>";
             echo "<p>";
             echo $pregunta;
@@ -35,9 +47,9 @@ function imprimirPreguntas($preguntas)
             echo $id;
             echo "'  value='4'>";
             echo $op4;
-            echo "</label></div></div></div>"; 
+            echo "</label></div></div></div></div>"; 
     }
-    echo "<input type='submit' value='Terminar' class='btn btn-success'>";
+    echo "<br><br><br><input type='submit' value='Terminar' class='btn btn-success'>";
     
 }
 function loadPreguntas(){
