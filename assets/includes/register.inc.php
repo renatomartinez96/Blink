@@ -91,6 +91,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
         if ($insert_stmt = $mysqli->prepare("INSERT INTO usuarios_tb (nombres, apellidos, nacimiento, usuario, correo, contra, estado, token, tipo, salt, log) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
             $token = md5(substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15).$username);
             $insert_stmt->bind_param('sssssssssss',$name, $last, $date, $username, $email, $password, $estado, $token, $tipo, $random_salt, $log);
+            
             /**
              * This example shows settings to use when sending via Google's Gmail servers.
              */

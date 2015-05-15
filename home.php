@@ -36,11 +36,11 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<?php 
             if (login_check($mysqli) == true) { 
                 $user = $_SESSION['username']; 
-                $stmt = $mysqli->prepare("SELECT log, correo, token, estado, tipo FROM usuarios_tb WHERE usuario = ?");
+                $stmt = $mysqli->prepare("SELECT idusuario, log, correo, token, estado, tipo FROM usuarios_tb WHERE usuario = ?");
                 $stmt->bind_param('s', $user);
                 $stmt->execute();  
                 $stmt->store_result();
-                $stmt->bind_result($log,$correo,$token,$estado,$tipo);
+                $stmt->bind_result($id_usuario,$log,$correo,$token,$estado,$tipo);
                 $stmt->fetch();
                 if ($log == 0) 
                 {
@@ -56,6 +56,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     $tkn = null;
                                     $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
                                     $stmt->execute();
+                                    $user_config = $mysqli->prepare("INSERT INTO `user_config`(`iduser`, `theme`, `banner`) VALUES (?,?,?)");
+                                    $user_config->bind_param('iii',$id_usuario,1,1);
                                     echo "
                                     <script>
                                         window.location.href = 'home.php';
