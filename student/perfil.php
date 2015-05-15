@@ -190,11 +190,11 @@ Gerardo López | Iván Nolasco | Renato Andres
     elseif(isset($_GET['t']))
     {
         $t = $_GET['t'];
-        $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
+        $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
         $stmt1->bind_param('s', $t);
         $stmt1->execute(); 
         $stmt1->store_result();
-        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$banner1, $iduser1);
+        $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$usrid1,$banner1, $iduser1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
@@ -239,7 +239,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                         <?php
                 // LA WEAAAA
-                            $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$iduser1."' ");
+                            $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$usrid1."' ");
                             if ($stmt2->num_rows > 0) 
                             {
                                 while($row = $stmt2->fetch_assoc()){
