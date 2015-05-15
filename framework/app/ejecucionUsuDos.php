@@ -27,7 +27,7 @@
                               method: "POST",
                               url: "ajax/registerTime.php",
                               data: {action:2,hora:currentDate.date,leccion:lessonG,usuario:idUserPHP},
-                              //dataType: 'json',
+                              dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');
                               },
@@ -37,7 +37,11 @@
                                   $('#myModal2').on('show.bs.modal', function (e) {
                                         $('.winner').addClass("fadeInDownDos");
                                     });
-                                  $(".centertest").append("<h1 class='muybien2'>"+data+"</h1><h1 class='muybien3'>¡Muy bien!</h1>");
+                                  if (data.response == 0) {
+                                    $(".centertest").append("<h1 class='muybien2'>"+data.tiempo+"</h1><h1 class='muybien3'>¡Muy bien!</h1>");
+                                  }else if (data.response == 1) {
+                                     $(".contentWin").html(data.string);
+                                  }
                                      $('#myModal2').modal('show');
                               }
                           });

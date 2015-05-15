@@ -39,8 +39,8 @@ if(isset($_POST['action'],$_POST['hora'],$_POST['leccion'],$_POST['usuario']) &&
                     $stmt->bind_param('iidsss',$_POST['usuario'],$_POST['leccion'],$nota,$_POST['hora'],$dateFinishString,$resta);
                     $stmt->execute();
                 }
-                echo $fechaInicio->diff($dateFinish)->format("%i:%s");;
-                
+                //echo $fechaInicio->diff($dateFinish)->format("%i:%s");;
+                echo json_encode(array("tiempo"=>$fechaInicio->diff($dateFinish)->format("%i:%s"),"response"=>0));
         }else {
                 $stmt = $mysqli->prepare("SELECT idleccion FROM `leccion` WHERE idleccion = ? && idUsuario = ?");
                 $stmt->bind_param('ii',$_POST['leccion'],$_POST['usuario']);
@@ -54,6 +54,7 @@ if(isset($_POST['action'],$_POST['hora'],$_POST['leccion'],$_POST['usuario']) &&
                     $stmt = $mysqli->prepare("INSERT INTO `blink_db`.`leccusua` ( `idUsuario`, `idLeccion`, `resultado`, `inicio`, `fin`, `tiempo`) VALUES (?, ?, ?, ?, ?, ?)");
                     $stmt->bind_param('iidsss',$_POST['usuario'],$_POST['leccion'],$nota,$_POST['hora'],$dateFinishString,$resta);
                     $stmt->execute();
+                    echo json_encode(array("string"=>"<h1 class='muybien2'>Activacion Exitosa</h1><h1 class='muybien3'>¡Muy bien!</h1>","response"=>1));
                 }else {
                     echo "la leccion no ha sido activada";
                 }
