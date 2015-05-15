@@ -5,18 +5,7 @@
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
             $historial = json_decode(stripslashes($_POST['ultimoId']));
-//            algoritmo de correccion 2.0
-//            $dom = new DOMDocument();
-//            $dom->loadHTML($_POST['resultado']);
-////            $dom->removeChild($dom->doctype);
-////                $dom->replaceChild($dom->firstChild->firstChild->firstChild, $dom->firstChild);
-////            foreach ($historial as $value) {
-////                foreach ($dom->getElementsById($value) as $item) {
-////                    //substr($dom->saveXML($dom->getElementsByTagName('div')->item(0)), 5, -6)
-////                    $item->setAttribute('id', 'jojojo');
-////                }
-////             }
-//            $resultado = $dom->saveHTML();
+
            $resultado = $_POST['resultado'];
             $fp = fopen($name, 'r');
             $datoss = fread($fp,filesize($name));
@@ -29,26 +18,10 @@
             $correcto = 0; // todo bien
             $percent = 90;
             $percentDos = 100;
+            $loRealizoBien = 0;
+            $lastobject = end($historial);
             if ($moment <= $momentosTotales) {
             
-                if ($moment > 0) {
-            $findvaluesPas = $momentos[$moment - 1];
-            $separadosPas = explode("^^^", $findvaluesPas);
-            foreach ($separadosPas as $key => $value) {
-                if ($key == 2) {
-                    similar_text($value, $bloques, $percent); 
-                    //$percent = similar_text($value, $bloques);
-                    $totalNum = strlen($value);
-                    //$homepage .= "<h1>".$percent."</h1>";    
-                  }elseif ($key == 3) {
-                    similar_text($value, $resultado, $percentDos); 
-                    //$percent = similar_text($value, $bloques);
-                    $totalNum = strlen($value);
-                    //$homepage .= "<h1>".$percentDos."</h1>";    
-                  }
-              }
-            }
-                if($percent >= 90 && $percentDos == 100) {
                     
                 
                 $findvalues = $momentos[$moment];
@@ -76,9 +49,31 @@
                                 </div>";
 
                   }
+                  
+                  
                 $homepage .= "</div>";
+                    
                 }
-            }else {
+                
+                if($moment == 0) {
+                    $momentDos = 0;
+                }else {
+                    $momentDos = $moment -1;
+                }
+                $findvaluesDos = $momentos[$momentDos];
+                $separadosDos = explode("^^^", $findvaluesDos);
+                foreach ($separadosDos as $key => $value) {
+                    if ($moment != 0) {
+                    if ($key == 4) {
+                         if($value == $lastobject) {
+                              $loRealizoBien = 0; 
+                         }else {
+                              $loRealizoBien = 1;
+                         }
+                    }
+                    }
+                }
+            if($loRealizoBien == 1){
                  $correcto = 1; // la cago
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
                                 <strong>Upppss!</strong>There´s a problem with your Website </a>.
@@ -91,8 +86,9 @@
                               </div>";
 
                 }
+        
                 
-                echo json_encode(array("stringhome"=>$homepage,"correcto"=>$correcto,"newresult"=>$resultado));
+                echo json_encode(array("stringhome"=>$homepage,"correcto"=>$correcto,"newresult"=>$lastobject));
         }
     
 ?>

@@ -9,13 +9,15 @@
                     $('#modalDesc').modal('toggle');
                     $( ".saveDescription" ).off('click');
                     $( ".saveDescription" ).on('click',function() {
+                        var ultimoId = historial[historial.length-1];
+                        console.log(ultimoId);
                         var value = $(".valueDescription").val();
                         var resul = $(".yourSite").html();
                         var blockes = $(".playground").html();
                             $.ajax({
                               method: "POST",
                               url: "ajax/syncro.php",
-                              data: { description: value,leccion:cursososo,resultado:resul,bloques:blockes,curso:cursososo22,momento:momentoTo},
+                              data: { description: value,leccion:cursososo,resultado:resul,bloques:blockes,curso:cursososo22,momento:momentoTo,idFinal:ultimoId},
                               beforeSend: function() {
                                 $(".loading").css('display','block');
                               },

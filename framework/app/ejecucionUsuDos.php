@@ -61,9 +61,11 @@
                               },
                               success: function(data) {
                                 $(".loading").css('display','none');
+                                  console.log(data.newresult);
                                 $(".msgCl ").html(data.stringhome);
                                 switch (data.correcto) {
                                     case 1:
+                                        
                                         momentoTo--;
                                         break;
                                     case 2:
