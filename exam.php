@@ -33,8 +33,8 @@ include_once 'assets/includes/db_conexion.php';
                 }
                 #cronometro{
                     position:fixed;
-                    top: 0;
-                    left: 0;
+                    bottom: 0;
+                    right: 0;
                     padding:10px;
                 }
             </style>
@@ -83,7 +83,10 @@ include_once 'assets/includes/db_conexion.php';
 //                            imprimirPreguntas($questions);
                         ?>
 <!--                        <input type="submit" value="Terminar" class="btn btn-success">-->
-                        <form id="examen"></form>
+                        <form id="examen">
+                            <input type="hidden" name="segs" id="segs">
+                            <input type="hidden" name="minu" id="minu">
+                        </form>
                     </div>
                 </div>
             <?php
@@ -99,6 +102,7 @@ include_once 'assets/includes/db_conexion.php';
         <?php 
             include 'main_js.php';
         ?>
+        <!--/#Main js-->
         <script>
             $( document ).ready(function() {
                 var tiempo = {
@@ -116,11 +120,11 @@ include_once 'assets/includes/db_conexion.php';
                         url: "./assets/includes/loadQuestion.php",
                         data: {"opcion" : 'cargarPreguntas'},
                         success: function(response) {
-                            $( "#examen" ).html(response);
+                            $( "#examen" ).append(response);
                         }
                     });
                     setInterval(function(){
-//                  segundos
+        //                  segundos
                     tiempo.segundo++;
                     if(tiempo.segundo >= 60)
                     {
@@ -128,17 +132,18 @@ include_once 'assets/includes/db_conexion.php';
                         tiempo.minuto++;
                     }
                     if(tiempo.minuto >= 30)
-                        
+
                     {
-                        
+
                     }
                     $( "#minute" ).text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
                     $( "#second" ).text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);
+                    $( "#minu" ).text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
+                    $( "#segs" ).text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);
                     }, 1000);
                 });
             });
         </script>
-        <!--/#Main js-->
     </body>
 </html>
 

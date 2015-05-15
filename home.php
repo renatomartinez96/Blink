@@ -40,7 +40,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 $stmt->bind_param('s', $user);
                 $stmt->execute();  
                 $stmt->store_result();
-                $stmt->bind_result($id_usuario,$log,$correo,$token,$estado,$tipo);
+                $stmt->bind_result($id,$log,$correo,$token,$estado,$tipo);
                 $stmt->fetch();
                 if ($log == 0) 
                 {
@@ -56,8 +56,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     $tkn = null;
                                     $stmt->bind_param('sss', $estad, $tkn, $_SESSION['username']);
                                     $stmt->execute();
-                                    $user_config = $mysqli->prepare("INSERT INTO `user_config`(`iduser`, `theme`, `banner`) VALUES (?,?,?)");
-                                    $user_config->bind_param('iii',$id_usuario,1,1);
+                                    $user_config = $mysqli->prepare("INSERT INTO user_config(iduser) VALUES (?)");
+                                    $user_config->bind_param('i',$id);
+                                    $user_config->execute();
                                     echo "
                                     <script>
                                         window.location.href = 'home.php';

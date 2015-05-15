@@ -143,6 +143,18 @@ require 'assets/includes/funciones.php';
                                             <span class="help-block">La fecha de nacimiento debe de tener un formato valido (aaaa-mm-dd)</span>
                                         </div>
                                     </div>
+<!--
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="datenac">Tipo de usuario</label>
+                                        <div class="col-lg-10">
+                                            <select name="tipo" class="form-control input-sm">
+                                                <option value="2">Estudiante</option>
+                                                <option value="3">Docente</option>
+                                            </select>
+                                            <span class="help-block">El docente tendra que hacer una evaluación de conocimientos básicos de HTML y CSS para actuvar su cuenta.</span>
+                                        </div>
+                                    </div>
+-->
                                     <?php
                                         if (!empty($error_msg)) {
                                             echo $error_msg;
