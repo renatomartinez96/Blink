@@ -148,18 +148,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                                                     <input type="hidden" value="" name="banselect" id="banselect" >
                                                     <input type="hidden" value="admin" name="folderloc" id="folderloc" >
-                                                    <div class="col-md-2 full" id="idban1">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/1.png" onclick="showPrev(1)"></div>
-                                                    <div class="col-md-2 full" id="idban2">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/2.png" onclick="showPrev(2)"></div>
-                                                    <div class="col-md-2 full" id="idban3">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/3.png" onclick="showPrev(3)"></div>
-                                                    <div class="col-md-2 full" id="idban4">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/4.png" onclick="showPrev(4)"></div>
-                                                    <div class="col-md-2 full" id="idban5">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/5.png" onclick="showPrev(5)"></div>
-                                                    <div class="col-md-2 full" id="idban6">
-                                                        <img class="img-responsive" src="../assets/img/userbanner/6.png" onclick="showPrev(6)"></div>
+                                        <?php
+                                        for($x=1; $x <= 6; $x++)
+                                        {
+                                            if($x == $bannero)
+                                            {
+                                                echo "<div class='col-md-2 full' id='idban".$x."' style='border: 2px solid #58B95B;'>
+                                                <img class='img-responsive' src='../assets/img/userbanner/".$x.".png' ></div> \n";
+                                            }
+                                            else
+                                            {
+                                                echo "<div class='col-md-2 full' id='idban".$x."'>
+                                                <img class='img-responsive' src='../assets/img/userbanner/".$x.".png' onclick='showPrev(".$x.")'></div> \n";
+                                            }
+                                        }
+                                        ?>
                                                 </div>
                                   <br>
                                   <br>
@@ -234,25 +237,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
                 else
                 {
-                    document.getElementById("idban"+i).removeAttribute("style");
+                    if(i != <?= $bannero?>)
+                    {
+                        document.getElementById("idban"+i).removeAttribute("style");  
+                    }
                 }
             }
             document.getElementById("b1").removeAttribute("disabled");
         }
-//            $("#act").click(function(){
-//                $('#resultc')[0].contentWindow.location.reload(true);
-//                var dataString = editor.getSession().getValue()
-//                var send = {"codigo" : dataString,
-//                            "usuario" : user};
-//                $.ajax({
-//                    type: "POST",
-//                    url: "personalizacion.php",
-//                    data: send,
-//                    success: function(data) {
-//                        $("#resul").append(data);
-//                    }
-//                });
-//            });
+
         </script>
 		<?php
             include 'main_js.php';

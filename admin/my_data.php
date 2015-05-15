@@ -4,6 +4,7 @@
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
+$elidespecial = $_SESSION['user_id'];
     if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang, idusuario  FROM usuarios_tb WHERE usuario = ?")) 
     {
         $stmt->bind_param('s', $user);
@@ -60,9 +61,35 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
+                    <?php
+if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"]))
+{
+    $nuevonombre = $_POST["nombre"];
+    $nuevoapellido = $_POST["apellido"];
+    $nuevodesc = $_POST["desc"];
+    
+    $query2 = "UPDATE usuarios_tb SET nombres='$nuevonombre', apellidos='$nuevoapellido', descripcion='$nuevodesc' WHERE idusuario=$elidespecial";
+    if ($query2 = mysqli_query($mysqli, $query2)) 
+    {
+        ?>
+        <div class="alert alert-success">
+        <strong>Muy bien: </strong>Todo se guardo correctamente, <a href="index.php" class="alert-link">inicio</a>.
+        </div>
+    <?php
+    }
+    else
+    {
+        ?>
+        <div class="alert alert-danger">
+        <strong>ERROR: </strong>En el proceso de guardado, <a href="index.php" class="alert-link">inicio</a>.
+        </div>
+    <?php
+    }
+}
+                    ?>
                     <h2 class="junction-bold text-center">Editar mis datos personales</h2>
                         <p class="junction-light text-center">En este espacio puedes editar toda tu información de tu cuenta. Sí deseas cambiar el tema del editor de código, debes ir <a href="cod_theme.php">aquí</a></p>
-                        <form action="mydata.php" method="post">
+                        <form action="my_data.php" method="post">
                         <div class="col-md-6" >
                             <h3 class="junction-regular text-center">Información pública</h3>
                             <label>Nombres</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" required>        
@@ -72,11 +99,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                         <div class="col-md-6" >
                             <h3 class="junction-regular text-center">Seguridad</h3>
+                            <p>Esta comentado todo chaja :v</p>
+<!--
                             <label>Contraseña actual *</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
                             <label>Contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
                             <label>Repetir contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
                             <br>
                             <small>*Debes llenar el campo de contraseña para poder guardar los cambios.</small>
+-->
                         </div>
                         <div class="col-md-12" >
                             <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar">
