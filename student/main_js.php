@@ -38,6 +38,7 @@
 </script>
 <?php 
 $elidespecial = $_SESSION['user_id'];    
+$temareal = "";
 $query = "SELECT theme FROM user_config WHERE iduser = $elidespecial";
     if ($query = mysqli_query($mysqli, $query)) 
     {
@@ -45,7 +46,7 @@ $query = "SELECT theme FROM user_config WHERE iduser = $elidespecial";
         if($totalderesultados > 0)
         {
             $row = mysqli_fetch_assoc($query);
-            $temareal = "";
+            
             $lel = $row["theme"];
             switch ($lel)
             {
