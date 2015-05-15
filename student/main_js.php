@@ -57,7 +57,7 @@ $query = "SELECT theme FROM user_config WHERE iduser = $elidespecial";
                 $temareal = "chaos";
                 break;
                 case 3;
-                $temareal = "solarized_on_dark";
+                $temareal = "solarized_dark";
                 break;
                 case 4;
                 $temareal = "kuroir";
