@@ -72,18 +72,46 @@ include_once 'assets/includes/db_conexion.php';
                           <li>El examen consta de 30 preguntas de seleccion multiple.</li>
                           <li>La nota minima para pasar el examen es de 8.5/10.</li>
                           <li>Tienes 30 minutos para desarrollar el mismo.</li>
-                          <li>Cuando des clic en el boton 'Siguiente pregunta', no podras regresar a la anterior.</li>
                         </ul>  
                     </div>
-                    
-                    <div class='well text-center' id="">
+                    <div class='well text-center ' id="">
                         <input type="button" class="btn btn-success btn-lg" value="Iniciar Examen" id="start">
-                        <?php
-//                            $questions = loadPreguntas();
-//                            imprimirPreguntas($questions);
-                        ?>
-<!--                        <input type="submit" value="Terminar" class="btn btn-success">-->
                         <form id="examen">
+                            <ul class="pagination pagination-sm " id="quesnums" style="display: none;">
+                              <li class="active"><a href="#1" data-toggle="tab" aria-expanded="true">1</a></li>
+                              <li class=""><a href="#2" data-toggle="tab" aria-expanded="false">2</a></li>
+                              <li class=""><a href="#3" data-toggle="tab" aria-expanded="false">3</a></li>
+                              <li class=""><a href="#4" data-toggle="tab" aria-expanded="false">4</a></li>
+                              <li class=""><a href="#5" data-toggle="tab" aria-expanded="false">5</a></li>
+                              <li class=""><a href="#6" data-toggle="tab" aria-expanded="false">6</a></li>
+                              <li class=""><a href="#7" data-toggle="tab" aria-expanded="false">7</a></li>
+                              <li class=""><a href="#8" data-toggle="tab" aria-expanded="false">8</a></li>
+                              <li class=""><a href="#9" data-toggle="tab" aria-expanded="false">9</a></li>
+                              <li class=""><a href="#10" data-toggle="tab" aria-expanded="false">10</a></li>
+                              <li class=""><a href="#11" data-toggle="tab" aria-expanded="false">11</a></li>
+                              <li class=""><a href="#12" data-toggle="tab" aria-expanded="false">12</a></li>
+                              <li class=""><a href="#13" data-toggle="tab" aria-expanded="false">13</a></li>
+                              <li class=""><a href="#14" data-toggle="tab" aria-expanded="false">14</a></li>
+                              <li class=""><a href="#15" data-toggle="tab" aria-expanded="false">15</a></li>
+                              <li class=""><a href="#16" data-toggle="tab" aria-expanded="false">16</a></li>
+                              <li class=""><a href="#17" data-toggle="tab" aria-expanded="false">17</a></li>
+                              <li class=""><a href="#18" data-toggle="tab" aria-expanded="false">18</a></li>
+                              <li class=""><a href="#19" data-toggle="tab" aria-expanded="false">19</a></li>
+                              <li class=""><a href="#20" data-toggle="tab" aria-expanded="false">20</a></li>
+                              <li class=""><a href="#21" data-toggle="tab" aria-expanded="false">21</a></li>
+                              <li class=""><a href="#22" data-toggle="tab" aria-expanded="false">22</a></li>
+                              <li class=""><a href="#23" data-toggle="tab" aria-expanded="false">23</a></li>
+                              <li class=""><a href="#24" data-toggle="tab" aria-expanded="false">24</a></li>
+                              <li class=""><a href="#25" data-toggle="tab" aria-expanded="false">25</a></li>
+                              <li class=""><a href="#26" data-toggle="tab" aria-expanded="false">26</a></li>
+                              <li class=""><a href="#27" data-toggle="tab" aria-expanded="false">27</a></li>
+                              <li class=""><a href="#28" data-toggle="tab" aria-expanded="false">28</a></li>
+                              <li class=""><a href="#29" data-toggle="tab" aria-expanded="false">29</a></li>
+                              <li class=""><a href="#30" data-toggle="tab" aria-expanded="false">30</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                              
+                            </div>
                             <input type="hidden" name="segs" id="segs">
                             <input type="hidden" name="minu" id="minu">
                         </form>
@@ -115,12 +143,13 @@ include_once 'assets/includes/db_conexion.php';
                 $( "#start" ).click(function() {
                     $( "#cronometro" ).show();
                     $( "#start" ).hide();
+                    $( "#quesnums" ).show();
                     $.ajax({
                         type: "POST",
                         url: "./assets/includes/loadQuestion.php",
                         data: {"opcion" : 'cargarPreguntas'},
                         success: function(response) {
-                            $( "#examen" ).append(response);
+                            $( "#myTabContent" ).append(response);
                         }
                     });
                     setInterval(function(){
