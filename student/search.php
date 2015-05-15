@@ -5,7 +5,7 @@ include_once '../assets/includes/db_conexion.php';
         if (!empty($_POST['search'])) 
         {
             $SearchString = $_POST['search'];
-            $stmt = $mysqli->query("SELECT nombres, correo, usuario FROM usuarios_tb WHERE tipo = '3' AND nombres LIKE '%".$SearchString."%' OR usuario LIKE '%".$SearchString."%' OR apellidos LIKE '%".$SearchString."%' OR correo LIKE '%".$SearchString."%' LIMIT 8");
+            $stmt = $mysqli->query("SELECT nombres, correo, usuario FROM usuarios_tb WHERE tipo = 3 AND nombres LIKE '%".$SearchString."%' OR usuario LIKE '%".$SearchString."%' OR apellidos LIKE '%".$SearchString."%' OR correo LIKE '%".$SearchString."%' LIMIT 8");
             $string = "";
             if ($stmt->num_rows > 0)
             {

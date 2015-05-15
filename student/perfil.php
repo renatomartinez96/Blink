@@ -166,7 +166,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
                 else
                 {
-                    echo "<script>window.location.href = './index.php';</script>";
+                    Header('Location: ./');
                 }
         }
         else
