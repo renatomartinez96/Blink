@@ -8,7 +8,7 @@
             $stmt->bind_result($idleccion,$nombre,$descripcion,$teoria);
             
          $string = "<div class='tituloxxx'><h1 class='junction-bold '>LECCIONES CREADAS</h1></div>";
-            $string .= "<div class='col-xs-11'>
+            $string .= "<div class='col-xs-10'>
                     <ul class='breadcrumb'>
                       <li class='backhome'><a href='../teacher/'>".$user."</a></li>
                       <li class='active'>lección</li>

@@ -10,7 +10,7 @@
         $stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion);
         $string = "<div class=' tituloxxx'><h1 class='junction-bold '>CURSOS CREADOS</h1></div>";
-        $string .= "<div class='col-xs-11'>
+        $string .= "<div class='col-xs-10'>
                     <ul class='breadcrumb'>
                       <li class='active'>".$user."</li>
                       

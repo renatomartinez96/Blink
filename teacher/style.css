@@ -1,4 +1,6 @@
-
+body {
+    overflow-x: hidden;
+}
 .results {
     height: auto;
     padding-top: 0%;
