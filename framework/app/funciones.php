@@ -3,6 +3,7 @@
                      $('.textinp').off( "click");
                      $('.textinp').on('input', function() {
                      var valor = $(this).val();
+                         console.log(valor);
                      var IdObjetoTexto = $(this).parent().parent().attr('id');
                      var IdObjetoTextoATR = $(this).parent().parent().parent().attr('id');
                     if (idAtributoactual == "3") {
@@ -36,13 +37,22 @@
                     
                      })
                     .on('mouseleave',function() {
+                        var IddeInserssionAtriStytemp = "";
+                         IddeInserssionAtriStytemp = $(this).attr('id');
+                         var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
+                        var idIndex = IddeInserssionAtriStytemp.indexOf("O");
+                         var idObjeto = IddeInserssionAtriStytemp.substr(idIndex + 1);
+                         var tipoedito = IddeInserssionAtriStytemp.substr(tipoindex + 1,IddeInserssionAtriStytemp.length - idIndex - idObjeto.length);
+                        idAtributoactual = tipoedito;
+                        IdObjetosupperior = idObjeto;
                         $(this).removeClass("arriba");
                     });
                 } 
                 function getParameterDos() {
-//                    $('.htmlParts').off( "mouseenter");
-//                    $('.htmlParts').off( "mouseleave");
+                  //$('.htmlParts').off( "mouseenter");
+                    //$('.htmlParts').off( "mouseleave");
                     $( ".htmlParts" ).on('mouseenter',function() {
+                        
                          IddeInserssionAtriSty = $(this).attr('id');
                         IddeInserssiondos = IddeInserssionAtriSty;
                          var tipoindex = IddeInserssionAtriSty.indexOf("T");
@@ -55,6 +65,14 @@
                     
                      })
                     .on('mouseleave',function() {
+                        IddeInserssionAtriSty = $(this).attr('id');
+                        IddeInserssiondos = IddeInserssionAtriSty;
+                         var tipoindex = IddeInserssionAtriSty.indexOf("T");
+                        var idIndex = IddeInserssionAtriSty.indexOf("O");
+                         var idObjeto = IddeInserssionAtriSty.substr(idIndex + 1);
+                         var tipoedito = IddeInserssionAtriSty.substr(tipoindex + 1,IddeInserssionAtriSty.length - idIndex - idObjeto.length);
+                        IdObjetosupperior = idObjeto;
+                        idAtributoactual = tipoedito;
                         $(this).removeClass("arriba2");
                     });
                 }
@@ -67,7 +85,9 @@
                     
                      })
                     .on('mouseleave',function() {
+                        IddeInserssion = $(this).attr('id');
                         $(this).removeClass("arriba");
+                        
                     });
                 }
         //estras
@@ -134,6 +154,7 @@ $(".createHTML").click(function() {
                 $("#"+IddeInserssionAtriSty).remove();
                  $("#A"+IddeInserssionAtriSty).remove();
                 momentoTo = momentoTo - 2;
+                console.log(momentoTo);
                
             }
         //extras
@@ -174,8 +195,8 @@ $(".createHTML").click(function() {
             function deletete() {
                 $("#"+IddeInserssionAtriSty).remove();
                  $("#A"+IddeInserssionAtriSty).remove();
-                momentoTo = momentoTo - 2;
-               
+                momentoTo--;
+               sincro();
             }
         $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
              IdObjeto = $(this).attr('id');

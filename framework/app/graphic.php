@@ -136,7 +136,7 @@
                   <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
                   <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Descargar HTML"><i class="fa fa-bolt"></i></button>
                   <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover"><i class="fa fa-arrows"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i class="fa fa-trash-o htmlMain"></i></button>
+                  <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
                 </div>
             </ul>
             

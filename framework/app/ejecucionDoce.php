@@ -10,7 +10,6 @@
                     $( ".saveDescription" ).off('click');
                     $( ".saveDescription" ).on('click',function() {
                         var ultimoId = historial[historial.length-1];
-                        console.log(ultimoId);
                         var value = $(".valueDescription").val();
                         var resul = $(".yourSite").html();
                         var blockes = $(".playground").html();
@@ -34,7 +33,6 @@
                 
               $( ".playground" ).droppable({
                     drop: function( event, ui ) {
-                        console.log(momentoTo);
                         identifie();
                         getParameter();
                         getParameterDos();

@@ -76,6 +76,7 @@
 		</div>
 	   <script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
+           $('.restard').remove();
         </script>  
      
 	</body>

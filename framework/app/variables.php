@@ -14,7 +14,8 @@
         var historial = [];
         var estadoLec = 0;
         var fechaInicioD = ""; 
-        var WebObjecsArray = ["div$0","h1$1","p$1","b$2","div$2","a$2","img$1","href$3","src$3","name$3","background-color$4","margin-left$4","width$4","height$4","del$5","margin-right$4","color$4","font-size$4"];
+        var WebObjecsArray = ["div$0","h1$1","p$1","b$2","div$2","a$2","img$1","href$3","src$3","name$3","background-color$4","margin-left$4","width$4","height$4","del$5","margin-right$4","color$4","font-size$4","delete$5"];
+        //console.log("uno "+WebObjecsArray.length);
         var WebBlocksArray = ["<div id='' class='col-xs-3 col-lg-2 htmlParts yellow uno'><p>BODY</p></div>",
                               "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>TITLE</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
                               "<div id='' class='col-xs-3 htmlParts green withauto dos'><p>PARAGRAPH</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
@@ -32,5 +33,7 @@
                                         "",
                                         "<div id='' class='col-xs-3 htmlPartsAtriSty royal withauto dos'><p>MARGIN-RIGHT</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
                                         "<div id='' class='col-xs-3 htmlPartsAtriSty royal withauto dos'><p>COLOR</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
-                                        "<div id='' class='col-xs-3 htmlPartsAtriSty royal withauto dos'><p>FONT-SIZE</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>"];
+                                        "<div id='' class='col-xs-3 htmlPartsAtriSty royal withauto dos'><p>FONT-SIZE</p><div class='form-group'><input type='text' class='form-control textinp'></div></div>",
+                              ""];
+        //console.log("dos "+WebBlocksArray.length);
         var FinalString = "";
