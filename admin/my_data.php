@@ -87,31 +87,74 @@ if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"])
     }
 }
                     ?>
-                    <h2 class="junction-bold text-center">Editar mis datos personales</h2>
-                        <p class="junction-light text-center">En este espacio puedes editar toda tu información de tu cuenta. Sí deseas cambiar el tema del editor de código, debes ir <a href="cod_theme.php">aquí</a></p>
-                        <form action="my_data.php" method="post">
-                        <div class="col-md-6" >
-                            <h3 class="junction-regular text-center">Información pública</h3>
-                            <label>Nombres</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" required>        
-                            <label>Apellido</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" required>
-                            <label>Descripción</label><textarea name="desc" class="form-control" required><?=$descripcion?></textarea>
-                            <br>
+    <!-- FORMULARIOS DE PERSONALIZACIÓN -->
+    <div role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab">Información pública</a></li>
+            <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab">Seguridad</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- PERSONALIZACIÓN DE DATOS PUBLICOS -->
+            <div role="tabpanel" class="tab-pane active" id="publicdata">
+                <form action="my_data.php" method="post">
+                    <h3 class="junction-regular text-center">Información pública</h3>
+                    <div class="col-md-6" >
+                        <label>Nombres</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" maxlength="50" required>        
+                        <label>Apellidos</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" maxlength="50" required>
+                        <label>Descripción</label><textarea name="desc" class="form-control" maxlength="300" required><?=$descripcion?></textarea>
+                        <br>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="well">
+                            <h4>Recuerda:</h4>
+                            <ul>
+                                <li>Para tus nombres y apellidos solo tienes 50 caracteres disponibles.</li>
+                                <li>Y para tu descripción solo tienes 300 caracteres, así que debes ser lo más consiso posible.</li>
+                            </ul>
                         </div>
-                        <div class="col-md-6" >
-                            <h3 class="junction-regular text-center">Seguridad</h3>
-                            <p>En construcción</p>
-<!--
-                            <label>Contraseña actual *</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
-                            <label>Contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
-                            <label>Repetir contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
-                            <br>
-                            <small>*Debes llenar el campo de contraseña para poder guardar los cambios.</small>
--->
+                    </div>
+                    <div class="col-md-12" >
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mis nuevos datos">
+                    </div>
+                </form>
+            </div>
+            <!-- / PERSONALIZACIÓN DE DATOS PUBLICOS -->
+            <!-- SEGURIDAD -->
+            <div role="tabpanel" class="tab-pane fade" id="security">
+                <form action="my_data.php" method="post">
+                    <h3 class="junction-regular text-center">Seguridad de tu cuenta</h3>
+                    <div class="col-md-6" >
+                        <label>Contraseña actual *</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
+                        <label>Contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
+                        <label>Repetir contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
+                        <br>
+                        <small>*Debes llenar el campo de contraseña para poder guardar los cambios.</small>
+                        <br>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="well">
+                            <h4>Recuerda:</h4>
+                            <p>Recuerda que tu contraseña de tu cuenta de Box Link debe ser segura, así que debe cumplir con estos requisitos:</p>
+                            <ul>
+                                <li>Debe de ser de por lo menos 6 caracteres</li>
+                                <li>Al menos un caracter en mayusculas (A..Z)</li>
+                                <li>Al menos un caracter en minusculas (a..z)</li>
+                                <li>Al menos un caracter numerico (0..9)</li>
+                            </ul>
+                            <p>Además es necesario que escribas tu contraseña actual para realizar los cambios.</p>
                         </div>
-                        <div class="col-md-12" >
-                            <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar">
-                        </div>
-                        </form>
+                    </div>
+                    <div class="col-md-12" >
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mi nueva contraseña">
+                    </div>
+                </form>
+            </div>
+            <!-- / SEGURIDAD -->
+        </div>
+    </div>
+    <!-- / FORMULARIOS DE PERSONALIZACIÓN -->    
 					<!--/#Content-->
 					</div>
 				</div>
