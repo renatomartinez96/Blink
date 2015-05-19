@@ -93,6 +93,7 @@ if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"])
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab">Información pública</a></li>
             <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab">Seguridad</a></li>
+            <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab">Preferencias</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
@@ -152,6 +153,15 @@ if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"])
                 </form>
             </div>
             <!-- / SEGURIDAD -->
+            <!-- PREFERENCIAS -->
+            <div role="tabpanel" class="tab-pane fade" id="pref">
+                <h3 class="junction-regular text-center">Preferencias de imagen</h3>
+                <?php
+                $langx = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+                echo $langx;
+                ?>
+            </div>
+            <!-- / PREFERENCIAS -->
         </div>
     </div>
     <!-- / FORMULARIOS DE PERSONALIZACIÓN -->    
