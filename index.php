@@ -33,7 +33,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     if (login_check($mysqli) == true) {
         $logged = "Ya iniciaste sesión ._.";
     } else {
-        $logged = $lang["nosession"];
+        $logged = $langprint["nosession"];
     }
 ?>
 
@@ -43,7 +43,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = $lang["welcomeblink"];
+            $titulodelapagina = $langprint["welcomeblink"];
 			include 'main_css.php';
 		?>
         <!--/#Core CSS-->
@@ -128,12 +128,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <ul class="nav navbar-nav navbar-right">
                                     <form class="navbar-form navbar-left" action="assets/includes/login_proceso.php" method="post" name="login_form" style="padding-top: 3px;">
                                         <div class="form-group">
-                                            <input type="text" name="email" id="email" placeholder="<?=$lang['emailexample']?>" class="form-control inputnav" autocomplete="off" required>
+                                            <input type="text" name="email" id="email" placeholder="<?=$langprint['emailexample']?>" class="form-control inputnav" autocomplete="off" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" placeholder="<?=$lang['contra']?>" id="password" class="form-control inputnav" autocomplete="off" required>
+                                            <input type="password" name="password" placeholder="<?=$langprint['contra']?>" id="password" class="form-control inputnav" autocomplete="off" required>
                                         </div>
-                                        <input type="button" value="<?=$lang['entrarlog']?>" class="btn btn-success  btnnav" onclick="formhash(this.form, this.form.password);" />
+                                        <input type="button" value="<?=$langprint['entrarlog']?>" class="btn btn-success  btnnav" onclick="formhash(this.form, this.form.password);" />
                                         <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btnnav' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
                                         <a href='registrarse.php' class='btn btn-info  btnnav'>No tengo cuenta</a>
                         

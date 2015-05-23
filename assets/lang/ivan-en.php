@@ -12,15 +12,27 @@ Gerardo López | Iván Graciano | Renato Andres
 
 <?php 
 //Archivo de traduccion en idioma ingles
-$lang = array(
+$langprint = array(
 //----------------------------------------------
-    
-    
-//  Navbar
-//      boton cerrar sesion
-        "navbar-1" => "Logout",
+// GLOBALES
+    // Diferentes textos para botones
+        "btn-cancel" => "Cancel",
+        "btn-save" => "Save",
+    // /# Diferentes textos para botones
+    //----------------------------------------------
+    //   modal de cambio de banner
+        "modal-banner-change-title" => "Change my banner",
+        "modal-banner-change-preview" => "Preview",
+        "modal-banner-change-brief" => "For editing your personal data, you must click <a href='my_data.php'>here</a>, and if you want change your code editor theme, go <a href='cod_theme.php'>here</a>.",
+        "modal-banner-change-tip" => "The Box Link Staff will put other banner soon...",
+    //  /# modal de cambio de banner
+    //----------------------------------------------    
+    //  Navbar
+    //      boton cerrar sesion
+            "navbar-1" => "Logout",
 
-// /# Navbar
+    // /# Navbar
+// /# GLOBALES
 //----------------------------------------------
 
     
@@ -38,7 +50,19 @@ $lang = array(
 
 
 //    administrador
-
+//      index
+    "user-page-link" => "Web site of",
+    "search-input" => "Looking for users, teachers, courses... ?",
+    "admin-friendly-intro" => "Welcome Administrator",
+    "admin-maintenance-users" => "Usuarios",
+    "admin-maintenance-users-new-notification" => "New users:",
+    "admin-maintenance-users-no-notification" => "No new users",
+    "admin-maintenance-users-go-list" => "Go to the users list",
+    "admin-maintenance-users-list" => "List of registered users in Box Link",
+    "admin-maintenance-courses" => "Courses",
+    "admin-maintenance-courses-go-list" => "Go to the courses list",
+    "admin-maintenance-courses-list" => "List of teacher courses in Box Link",
+//      /# index
 // /# administrador
 //----------------------------------------------
 

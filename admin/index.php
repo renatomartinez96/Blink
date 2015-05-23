@@ -15,6 +15,14 @@
         
     }
     include "auto.php";
+    if($lang == "es")
+    {
+        include "../assets/lang/ivan-".$lang.".php";
+    }
+    elseif($lang == "en")
+    {
+        include "../assets/lang/ivan-".$lang.".php";
+    }
 ?>
 
 <!--
@@ -105,7 +113,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
                                         <div class="container-fluid full">
                                                 <ul class="nav navbar-nav">
-                                                    <li> <a class="btn btn-success" target="_blank" href="../users/<?=$user?>/index.html"><Strong><?=$_SESSION['username']?></Strong>'s page</a></li>
+                                                    <li> <a class="btn btn-success" target="_blank" href="../users/<?=$user?>/index.html"><?=$langprint["user-page-link"]?><Strong> <?=$_SESSION['username']?></Strong></a></li>
                                                     <li><a class="btn btn-face" target="_blank">Facebook</a></li>
                                                     <li><a class="btn btn-twit" target="_blank">Twitter</a></li>
                                                 </ul>
@@ -115,7 +123,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         <div class="form-group full">
                                                             <div class="input-group">
                                                                 <span class="input-group-addon"><i class="fa fa-user fa-2x"></i></span>
-                                                                <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                                                <input type="text" class="form-control input-lg" placeholder="<?=$langprint["search-input"]?>" autocomplete="off" id="SearchString"> 
                                                             </div>
                                                         </div>
                                                         <div class="list-group" style="position:absolute;" id="SearchResult"></div>
@@ -137,12 +145,13 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title junction-bold text-center" id="myModalLabel">Cambiar mi banner</h4>
+                                <h4 class="modal-title junction-bold text-center" id="myModalLabel"><?=$langprint["modal-banner-change-title"]?></h4>
                               </div>
                               <div class="modal-body">
+                                  <p class="junction-light text-center"><?=$langprint["modal-banner-change-brief"]?></p>
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
-                                                    <p class="text-center"><strong>Vista previa</strong></p>
+                                                    <p class="text-center"><strong><?=$langprint["modal-banner-change-preview"]?></strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
@@ -165,14 +174,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         ?>
                                                 </div>
                                   <br>
-                                  <br>
-                                  <br>
-                                  <p class="junction-light text-center">Para editar tu información personal debes ir <a href="my_data.php">aquí</a></p>
-                                    
+                                  <p class="junction-light text-center"><?=$langprint["modal-banner-change-tip"]?></p>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <input type="submit" class="btn btn-success" name="b1" id="b1" value="Guardar" disabled>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><?=$langprint["btn-cancel"]?></button>
+                                <input type="submit" class="btn btn-success" name="b1" id="b1" value="<?=$langprint["btn-save"]?>" disabled>
                               </div>
                             </div>
                             </form>
@@ -183,12 +189,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-md-12 full">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
-                                            <h1 class="panel-title junction-regular text-center">Welcome administrator <?=$user?>!</h1>
+                                            <h1 class="panel-title junction-regular text-center"><?=$langprint["admin-friendly-intro"]?> <?=$user?>!</h1>
                                     </div>
                                     <div class="panel-body">
                         <div class="col-md-4 text-center">
                             <div class="alert alert-info">
-                                <h2 class="panel-title"><i class="fa fa-users"></i> Users
+                                <h2 class="panel-title"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
                                   <?php
                                 $stmt = $mysqli->prepare("SELECT log FROM usuarios_tb WHERE log < 1");
                                 $stmt->execute();  
@@ -198,22 +204,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 $row_cnt = $stmt->num_rows;
                                 if($row_cnt > 0)
                                 {
-                                    //while($stmt->fetch($log)){}
-                                        echo "<span class='label label-success'>There are ".$row_cnt." new users!</span>";
+                                        echo "<span class='label label-success'>". $langprint["admin-maintenance-users-new-notification"]." ".$row_cnt. "</span>";
                                 }
                                 else
                                 {
-                                    echo "<span class='label label-default'>There are not new users</span>";
+                                    echo "<span class='label label-default'>". $langprint["admin-maintenance-users-no-notification"]. "</span>";
                                 }
                                 ?>
                                 </h2><br>
-                                  <a href="usuarios.php" class="btn btn-success"><i class="fa fa-list-ul"></i> Go to the users list</a><br>
+                                  <a href="usuarios.php" class="btn btn-success"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-users-go-list"]?></a><br>
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="alert alert-info">
-                                <h2 class="panel-title"><i class="fa fa-book"></i> Courses</h2><br>
-                                  <a href="cursos.php" class="btn btn-success"><i class="fa fa-list-ul"></i> Go to the courses list</a><br>
+                                <h2 class="panel-title"><i class="fa fa-book"></i> <?=$langprint["admin-maintenance-courses"]?></h2><br>
+                                  <a href="cursos.php" class="btn btn-success"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-courses-go-list"]?></a><br>
                             </div>
                         </div>
                                     </div></div></div></div>
