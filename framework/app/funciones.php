@@ -192,12 +192,6 @@ $(".createHTML").click(function() {
                 var valor = "";
                 search(valor);
             });
-            function deletete() {
-                $("#"+IddeInserssionAtriSty).remove();
-                 $("#A"+IddeInserssionAtriSty).remove();
-                momentoTo--;
-               sincro();
-            }
         $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
              IdObjeto = $(this).attr('id');
       }, });

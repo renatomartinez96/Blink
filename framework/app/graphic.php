@@ -81,6 +81,10 @@
                         <div id="4" class="col-xs-5 htmlMain green "><p>DIV</p></div>
                         <div id="5" class="col-xs-5 htmlMain green "><p>LINK</p></div>
                         <div id="6" class="col-xs-5 htmlMain green "><p>IMAGE</p></div>
+                        <div id="19" class="col-xs-5 htmlMain green "><p>TABLE</p></div>
+                        <div id="20" class="col-xs-5 htmlMain green "><p>T ROW</p></div>
+                        <div id="21" class="col-xs-5 htmlMain green "><p>T HEAD</p></div>
+                        <div id="22" class="col-xs-5 htmlMain green "><p>T CELL</p></div>
                        </div>
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>
@@ -118,6 +122,7 @@
                          <div id="15" class="col-xs-5 htmlMain royal "><p>MARGINRIGHT</p></div>
                          <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
                          <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
+                         <div id="23" class="col-xs-5 htmlMain royal "><p>BORDER</p></div>
                      </div>
                      <label class='noexiste'>No se encontraron resultados</label>
                  </div>

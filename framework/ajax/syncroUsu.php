@@ -20,6 +20,25 @@
             $percentDos = 100;
             $loRealizoBien = 0;
             $lastobject = end($historial);
+        
+                if($moment == 0) {
+                    $momentDos = 0;
+                }else {
+                    $momentDos = $moment -1;
+                }
+                $findvaluesDos = $momentos[$momentDos];
+                $separadosDos = explode("^^^", $findvaluesDos);
+                foreach ($separadosDos as $key => $value) {
+                    if ($moment != 0) {
+                    if ($key == 4) {
+                         if($value == $lastobject) {
+                              $loRealizoBien = 0; 
+                         }else {
+                              $loRealizoBien = 1;
+                         }
+                    }
+                    }
+                }
             if ($moment <= $momentosTotales) {
             
                     
@@ -55,24 +74,7 @@
                     
                 }
                 
-                if($moment == 0) {
-                    $momentDos = 0;
-                }else {
-                    $momentDos = $moment -1;
-                }
-                $findvaluesDos = $momentos[$momentDos];
-                $separadosDos = explode("^^^", $findvaluesDos);
-                foreach ($separadosDos as $key => $value) {
-                    if ($moment != 0) {
-                    if ($key == 4) {
-                         if($value == $lastobject) {
-                              $loRealizoBien = 0; 
-                         }else {
-                              $loRealizoBien = 1;
-                         }
-                    }
-                    }
-                }
+                
             if($loRealizoBien == 1){
                  $correcto = 1; // la cago
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
@@ -80,12 +82,19 @@
                               </div>";
             }
             }else {
+                if($loRealizoBien == 0){
                 $correcto = 2; //termino
                 $homepage .= "<div class='well well-lg greenini animated fadeInDown' style='margin-bottom:0px;'>
                                 <strong>Well done!</strong> You have successfully completed the lesson </a>.
                               </div>";
 
+                }else {
+                    $correcto = 1; // la cago
+                $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
+                                <strong>Upppss!</strong>There´s a problem with your Website </a>.
+                              </div>";
                 }
+            }
         
                 
                 echo json_encode(array("stringhome"=>$homepage,"correcto"=>$correcto,"newresult"=>$lastobject));
