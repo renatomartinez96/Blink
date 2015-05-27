@@ -294,7 +294,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             $log = '1';
                             $stmt3->bind_param('sss', $avatar, $log, $_SESSION['username']);
                             $stmt3->execute();  
-                            echo "<script>window.location.href='student/index.php'</script>";
+                            echo "<script>window.location.href='home.php'</script>";
                             $nombre = "users/".$_SESSION['username'];
                             if(!mkdir($nombre, 0777, true)) {
                                 die('Fallo al crear las carpetas...');
