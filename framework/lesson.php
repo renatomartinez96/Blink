@@ -51,13 +51,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Ya casi!</h4>
+        <h4 class="modal-title" id="myModalLabel">Almost finish</h4>
       </div>
       <div class="modal-body">
-        Para poder activar la lección tendrás que realizarla, es recomendable hacerlo en un tiempo prudencial.
+        Pleace complete the lesson to activate it!!
       </div>
       <div class="modal-footer">
-        <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+        <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary">Continue</button></a>
       </div>
     </div>
   </div>

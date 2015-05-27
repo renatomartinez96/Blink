@@ -66,7 +66,7 @@
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
                     <div class="form-group">
-                          <p class="titulo">objetos HTML</p>
+                          <p class="titulo">HTML objects</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -86,7 +86,7 @@
                         <div id="21" class="col-xs-5 htmlMain green "><p>T HEAD</p></div>
                         <div id="22" class="col-xs-5 htmlMain green "><p>T CELL</p></div>
                        </div>
-                      <label class='noexiste'>No se encontraron resultados</label>
+                      <label class='noexiste'>No results were found</label>
                   </div>
                   <div class="tab-pane fade" id="atr">
                       <div class="form-group">
@@ -102,7 +102,7 @@
                         <div id="8" class="col-xs-5 htmlMain orange "><p>SRC</p></div>
                         <div id="9" class="col-xs-5 htmlMain orange "><p>NAME</p></div>
                       </div>
-                      <label class='noexiste'>No se encontraron resultados</label>
+                      <label class='noexiste'>No results were found</label>
                   </div>
                  <div class="tab-pane fade" id="css">
                      
@@ -124,7 +124,7 @@
                          <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
                          <div id="23" class="col-xs-5 htmlMain royal "><p>BORDER</p></div>
                      </div>
-                     <label class='noexiste'>No se encontraron resultados</label>
+                     <label class='noexiste'>No results were found</label>
                  </div>
                 </div>
             </div>
@@ -134,8 +134,8 @@
         <div class="panel panel-default arena">
           <div class="panel-heading">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">AREA DE TRABAJO</a></li>
-              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">VISTA PREVIA</a></li>
+              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
+              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
                 <div class="divide">
                   <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Vista en nueva pestaña"><i class="fa fa-share"></i></button>
                   <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
