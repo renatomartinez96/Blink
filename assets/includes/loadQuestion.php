@@ -33,7 +33,7 @@ function imprimirPreguntas($preguntas)
             echo "</p>";
             echo "<div class='col-lg-12'><div class='radio'><label><input type='radio' name='";
             echo $id;
-            echo "'  value='1'>";
+            echo "'  value='1' checked>";
             echo $op1;
             echo "</label></div><div class='radio'><label><input type='radio' name='";
             echo $id;
