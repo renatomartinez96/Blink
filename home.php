@@ -47,7 +47,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     echo "
                         <div class='container text-center' id='formtoken'>
                             <form class='text-center' action='home.php' method='post'>
-                                <h1 class='junction-bold'>Blink</h1>
+                                <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li class='active'><a>Activacion de cuenta</a></li>
                                     <li><a>Avatar</a></li>
@@ -78,7 +78,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     echo "
                         <div class='container text-center' id='formtoken'>
                             <form class='text-center' action='home.php' method='post'>
-                                <h1 class='junction-bold'>Blink</h1>
+                                <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li class='active'><a>Activacion de cuenta</a></li>
                                     <li><a>Avatar</a></li>
@@ -116,7 +116,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     echo "
                         <div class='container text-center' id='formtoken'>
                             <form class='text-center' action='home.php' method='post'>
-                                <h1 class='junction-bold'>Blink</h1>
+                                <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li><a>Examen</a></li>
                                     <li class='active'><a>Activacion de cuenta</a></li>
@@ -148,7 +148,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     echo "
                         <div class='container text-center' id='formtoken'>
                             <form class='text-center' action='home.php' method='post'>
-                                <h1 class='junction-bold'>Blink</h1>
+                                <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li><a>Examen</a></li>
                                     <li class='active'><a>Activacion de cuenta</a></li>
