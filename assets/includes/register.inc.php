@@ -4,7 +4,7 @@ include_once 'psl-config.php';
  
 $error_msg = "";
  
-if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_POST['last'], $_POST['datenac'], $_POST['confirmpwd'], $_POST['password'])) {
+if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_POST['last'], $_POST['datenac'], $_POST['confirmpwd'], $_POST['password'], $_POST['lang'], $_POST['tipo'])) {
     // Sanitize and validate the data passed in
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $last = filter_input(INPUT_POST, 'last', FILTER_SANITIZE_STRING);
@@ -15,7 +15,8 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
     if ($_POST['confirmpwd'] == $_POST['password']) {
         $password = $_POST['password'];
     }
-    $tipo = '3';
+    $tipo =  $_POST['tipo'];
+    $idioma =  $_POST['lang'];
     $estado = '0';
     $log = '0';
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -88,9 +89,9 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
         $password = hash('sha512', $password . $random_salt);
  
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO usuarios_tb (nombres, apellidos, nacimiento, usuario, correo, contra, estado, token, tipo, salt, log) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO usuarios_tb (nombres, apellidos, nacimiento, usuario, correo, contra, estado, token, tipo, salt, log, lang) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
             $token = md5(substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15).$username);
-            $insert_stmt->bind_param('sssssssssss',$name, $last, $date, $username, $email, $password, $estado, $token, $tipo, $random_salt, $log);
+            $insert_stmt->bind_param('ssssssssssss',$name, $last, $date, $username, $email, $password, $estado, $token, $tipo, $random_salt, $log, $idioma);
             
             /**
              * This example shows settings to use when sending via Google's Gmail servers.

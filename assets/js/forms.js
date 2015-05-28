@@ -16,9 +16,9 @@ function formhash(form, password) {
     form.submit();
 }
  
-function regformhash(form, name, last, uid, email, password, conf, date) {
+function regformhash(form, name, last, uid, email, password, conf, date, lang, tipo) {
      // Check each field has a value
-    if (name.value == '' || last.value == '' || uid.value == '' || email.value == '' || password.value == '' || conf.value == '' || date.value == '') 
+    if (name.value == '' || last.value == '' || uid.value == '' || email.value == '' || password.value == '' || conf.value == '' || date.value == '', lang.value == '', tipo.value == '') 
     {
         bootbox.alert({
             title: "<center><h2 class='junction-bold'>Blink</h2></center>",

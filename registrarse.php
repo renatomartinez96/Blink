@@ -143,18 +143,26 @@ require 'assets/includes/funciones.php';
                                             <span class="help-block">La fecha de nacimiento debe de tener un formato valido (aaaa-mm-dd)</span>
                                         </div>
                                     </div>
-<!--
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="datenac">Idioma</label>
+                                        <div class="col-lg-10">
+                                            <select class="form-control input-sm" name="lang">
+                                                <option value="en">English</option>
+                                                <option value="es">Español</option>
+                                            </select>
+<!--                                            <span class="help-block">La fecha de nacimiento debe de tener un formato valido (aaaa-mm-dd)</span>-->
+                                        </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="datenac">Tipo de usuario</label>
                                         <div class="col-lg-10">
                                             <select name="tipo" class="form-control input-sm">
-                                                <option value="2">Estudiante</option>
-                                                <option value="3">Docente</option>
+                                                <option value="3">Estudiante</option>
+                                                <option value="2">Profesor</option>
                                             </select>
-                                            <span class="help-block">El docente tendra que hacer una evaluación de conocimientos básicos de HTML y CSS para actuvar su cuenta.</span>
+                                            <span class="help-block">El profesor tendra que hacer una evaluación de conocimientos <ins>básicos</ins> de HTML y CSS para actuvar su cuenta.</span>
                                         </div>
                                     </div>
--->
                                     <?php
                                         if (!empty($error_msg)) {
                                             echo $error_msg;
@@ -168,7 +176,9 @@ require 'assets/includes/funciones.php';
                                                                                                                         this.form.email,
                                                                                                                         this.form.password,
                                                                                                                         this.form.confirmpwd,
-                                                                                                                        this.form.datenac);" /> 
+                                                                                                                        this.form.datenac,
+                                                                                                                             this.form.lang,
+                                                                                                                             this.form.tipo);" /> 
                                     <a href="index.php" class="pull-right">Inicio de sesion</a>
                                 </form>
                             </fieldset>
