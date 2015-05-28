@@ -153,9 +153,9 @@ if(isset($_POST["newlang"]))
                 <form action="my_data.php" method="post">
                     <h3 class="junction-regular text-center">Seguridad de tu cuenta</h3>
                     <div class="col-md-6" >
-                        <label><?=$langprint["password-current-field"]?> *</label><input type="password" name = "passo" id = "passo" class="form-control"  required>
-                        <label><?=$langprint["password-new-field"]?></label><input type="password" name = "passn" id = "passn" class="form-control"  required>
-                        <label><?=$langprint["password-repeat-field"]?></label><input type="password" name = "passnr" id = "passnr" class="form-control"  required>
+                        <label><?=$langprint["password-current-field"]?> *</label><input type="password" name = "passo" id = "passo" class="form-control" placeholder="<?=$langprint["password-current-field"]?>"  required>
+                        <label><?=$langprint["password-new-field"]?></label><input type="password" name = "passn" id = "passn" class="form-control" placeholder="<?=$langprint["password-new-field"]?>"  required>
+                        <label><?=$langprint["password-repeat-field"]?></label><input type="password" name = "passnr" id = "passnr" class="form-control" placeholder="<?=$langprint["password-repeat-field"]?>"  required>
                         <br>
                         <small>*<?=$langprint["password-repeat-ins-field"]?></small>
                         <br>
