@@ -62,6 +62,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
                         <h2 class="junction-bold text-center"><?=$langprint["my_data-main-title"]?></h2>
+                        <p class="junction-regular text-center"><?=$langprint["my_data-main-brief"]?></p>
 					<!--Content-->
                     <?php
 if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"]))
@@ -118,9 +119,9 @@ if(isset($_POST["newlang"]))
     <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab"><?=$langprint["tab-public-data"]?></a></li>
-            <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab"><?=$langprint["tab-security"]?></a></li>
-            <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab">Idioma / Language</a></li>
+            <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab"><i class="fa fa-bullhorn"></i> <?=$langprint["tab-public-data"]?></a></li>
+            <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab"><i class="fa fa-lock"></i> <?=$langprint["tab-security"]?></a></li>
+            <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab"><i class="fa fa-language"></i> Idioma / Language</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
@@ -129,10 +130,11 @@ if(isset($_POST["newlang"]))
                 <form action="my_data.php" method="post">
                     <h3 class="junction-regular text-center"><?=$langprint["tab-public-data"]?></h3>
                     <div class="col-md-6" >
-                        <label><?=$langprint["content-p-d-name-field"]?></label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" maxlength="50" required>        
-                        <label><?=$langprint["content-p-d-lastname-field"]?></label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" maxlength="50" required>
-                        <label><?=$langprint["content-p-d-description-field"]?></label><textarea name="desc" class="form-control" maxlength="300"><?=$descripcion?></textarea>
+                        <label><?=$langprint["name-field"]?></label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" maxlength="50" required>        
+                        <label><?=$langprint["lastname-field"]?></label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" maxlength="50" required>
+                        <label><?=$langprint["description-field"]?></label><textarea name="desc" class="form-control" maxlength="300"><?=$descripcion?></textarea>
                         <br>
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="<?=$langprint["btn-save-my-data"]?>">
                     </div>
                     <div class="col-md-6" >
                         <div class="well">
@@ -143,9 +145,6 @@ if(isset($_POST["newlang"]))
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-12" >
-                        <input type="submit" class="btn btn-success btn-block" name="b1" value="<?=$langprint["btn-save-my-data"]?>">
-                    </div>
                 </form>
             </div>
             <!-- / PERSONALIZACIÓN DE DATOS PUBLICOS -->
@@ -154,16 +153,17 @@ if(isset($_POST["newlang"]))
                 <form action="my_data.php" method="post">
                     <h3 class="junction-regular text-center">Seguridad de tu cuenta</h3>
                     <div class="col-md-6" >
-                        <label>Contraseña actual *</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
-                        <label>Contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
-                        <label>Repetir contraseña nueva</label><input type="password" name = "apellido" id = "apellido" class="form-control"  required>
+                        <label><?=$langprint["password-current-field"]?> *</label><input type="password" name = "passo" id = "passo" class="form-control"  required>
+                        <label><?=$langprint["password-new-field"]?></label><input type="password" name = "passn" id = "passn" class="form-control"  required>
+                        <label><?=$langprint["password-repeat-field"]?></label><input type="password" name = "passnr" id = "passnr" class="form-control"  required>
                         <br>
-                        <small>*Debes llenar el campo de contraseña para poder guardar los cambios.</small>
+                        <small>*<?=$langprint["password-repeat-ins-field"]?></small>
                         <br>
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mi nueva contraseña">
                     </div>
                     <div class="col-md-6" >
                         <div class="well">
-                            <h4>Recuerda:</h4>
+                            <h4><?=$langprint["brief-p-d-title"]?>:</h4>
                             <p>Recuerda que tu contraseña de tu cuenta de Box Link debe ser segura, así que debe cumplir con estos requisitos:</p>
                             <ul>
                                 <li>Debe de ser de por lo menos 6 caracteres</li>
@@ -174,15 +174,24 @@ if(isset($_POST["newlang"]))
                             <p>Además es necesario que escribas tu contraseña actual para realizar los cambios.</p>
                         </div>
                     </div>
-                    <div class="col-md-12" >
-                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mi nueva contraseña">
-                    </div>
                 </form>
             </div>
             <!-- / SEGURIDAD -->
             <!-- PREFERENCIAS -->
             <div role="tabpanel" class="tab-pane fade" id="pref">
                 <h3 class="junction-regular text-center">Preferencias de idioma</h3>
+                
+                <div class="col-md-6">
+                <form action="my_data.php" method="post">
+                    <input type="hidden" name="idto" value="<?=$elidespecial?>">
+                    <label>Escoge otro idioma / Choose other language:</label>
+                    <select class="form-control" name="newlang">
+                        <option value="en">Inglés - English</option>
+                        <option value="es">Español - Spanish</option>
+                    </select><br>
+                    <input type="submit" class="btn btn-success btn-block" name="b3" value="Guardar cambios / Save changes">
+                </form>
+                </div>
                 <div class="col-md-6 well">
                 <?php
                 $langx = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
@@ -199,17 +208,6 @@ if(isset($_POST["newlang"]))
                 <h4 class="junction-regular text-center">Idioma / Language</h4>
                     <br>
                 <p class="junction-light text-center">Idioma actual / Current language: <ins><?=$languc?></ins></p>
-                </div>
-                <div class="col-md-6">
-                <form action="my_data.php" method="post">
-                    <input type="hidden" name="idto" value="<?=$elidespecial?>">
-                    <label>Escoge otro idioma / Choose other language:</label>
-                    <select class="form-control" name="newlang">
-                        <option value="en">Inglés - English</option>
-                        <option value="es">Español - Spanish</option>
-                    </select><br>
-                    <input type="submit" class="btn btn-success btn-block" name="b3" value="Guardar cambios / Save changes">
-                </form>
                 </div>
             </div>
             <!-- / PREFERENCIAS -->
