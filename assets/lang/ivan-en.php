@@ -18,6 +18,9 @@ $langprint = array(
     // Diferentes textos para botones
         "btn-cancel" => "Cancel",
         "btn-save" => "Save",
+        "btn-next" => "Next",
+        "btn-save-changes" => "Save changes",
+        "btn-save-my-data" => "Save my data",
     // /# Diferentes textos para botones
     //----------------------------------------------
     //   modal de cambio de banner
@@ -26,7 +29,19 @@ $langprint = array(
         "modal-banner-change-brief" => "For editing your personal data, you must click <a href='my_data.php'>here</a>, and if you want change your code editor theme, go <a href='cod_theme.php'>here</a>.",
         "modal-banner-change-tip" => "The Box Link Staff will put other banner soon...",
     //  /# modal de cambio de banner
-    //----------------------------------------------    
+    //----------------------------------------------  
+    // Formulario de cambio de datos "my_data.php"
+        "tab-public-data" => "Public data",
+        "tab-security" => "Security",
+        "tab-language" => "Language",
+        "content-p-d-name-field" => "Name",
+        "content-p-d-lastname-field" => "Lastname",
+        "content-p-d-description-field" => "Description",
+        "brief-p-d-title" => "Remember",
+        "brief-p-d-li-1" => "You only have a length of 50 characters for your name and your lastname",
+        "brief-p-d-li-2" => "For your description you have a length of 300 characters, please be terse as possible",
+    // /# Formulario de cambio de datos "my_data.php"
+    //----------------------------------------------
     //  Navbar
     //      boton cerrar sesion
             "navbar-1" => "Logout",
