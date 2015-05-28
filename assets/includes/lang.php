@@ -7,4 +7,8 @@ elseif($lang == "en")
 {
     include "../assets/lang/".$lang.".php";
 }
+else
+{
+    include "../assets/lang/es.php";
+}
 ?>
