@@ -167,7 +167,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-md-12 full">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
-                                            <h3 class="panel-title">Cursos</h3>
+                                            <h3 class="panel-title">Courses</h3>
                                     </div>
                                     <div style="margin-top:15px;">
                                         <!--Cursos-->
@@ -242,7 +242,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                                 <div class='panel-body full lecciones'>
                                                                                     <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
                                                                                         <button type='button' class='close' data-dismiss='alert'>x</button>
-                                                                                        <strong>no se encontraron lecciones disponibles</strong>
+                                                                                        <strong>there is no lessons available</strong>
                                                                                     </div>
                                                                                 </div>
                                                                                 <a href='#'>
@@ -260,7 +260,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     }
                                                     else
                                                     {
-                                                        echo "no se han encontrado resultados";
+                                                        echo "Results are not found";
                                                     }
                                                 }
                                             ?>

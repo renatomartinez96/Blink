@@ -33,7 +33,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Cambiar tema del editor";
+            $titulodelapagina = "Changing editor theme";
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
@@ -91,26 +91,26 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                         <div class="col-md-12 full">
                             <form action="../assets/includes/change_theme.php" method="post">
-                            <h1 class="juntion-bold text-center">Escoje tu tema</h1>
+                            <h1 class="juntion-bold text-center">Choose a theme</h1>
                             <input type="hidden" value="" name="themeselect" id="themeselect" >
                             <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                             <input type="hidden" value="student" name="folderloc" id="folderloc" >
                             <div class="col-md-2 full" id="idtheme1">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(1)" style="cursor: pointer;">Tema 1<br><small>Pastel on dark</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(1)" style="cursor: pointer;">Theme 1<br><small>Pastel on dark</small></h3></div>
                             <div class="col-md-2 full" id="idtheme2">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(2)" style="cursor: pointer;">Tema 2<br><small>Chaos</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(2)" style="cursor: pointer;">Theme 2<br><small>Chaos</small></h3></div>
                             <div class="col-md-2 full" id="idtheme3">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(3)" style="cursor: pointer;">Tema 3<br><small>Solarized on dark</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(3)" style="cursor: pointer;">Theme 3<br><small>Solarized on dark</small></h3></div>
                             <div class="col-md-2 full" id="idtheme4">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(4)" style="cursor: pointer;">Tema 4<br><small>Kuroir</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(4)" style="cursor: pointer;">Theme 4<br><small>Kuroir</small></h3></div>
                             <div class="col-md-2 full" id="idtheme5">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(5)" style="cursor: pointer;">Tema 5<br><small>Textmate</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(5)" style="cursor: pointer;">Theme 5<br><small>Textmate</small></h3></div>
                             <div class="col-md-2 full" id="idtheme6">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(6)" style="cursor: pointer;">Tema 6<br><small>X Code</small></h3></div>
+                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(6)" style="cursor: pointer;">Theme 6<br><small>X Code</small></h3></div>
                             <br>
                             <div class="col-md-12 text-center">
                                 <br>
-                            <input type="submit" class="btn btn-success btn-lg" name="b1" id="b1" value="Cambiar tema" disabled>
+                            <input type="submit" class="btn btn-success btn-lg" name="b1" id="b1" value="Change theme" disabled>
                             </div>
                             </form>
                         </div>

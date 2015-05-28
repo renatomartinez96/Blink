@@ -43,7 +43,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Administración de Box Link";
+            $titulodelapagina = "Box Link Administration";
 			include 'main_css.php';
 		?>
         <!--Custom css-->

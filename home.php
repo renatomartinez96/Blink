@@ -49,27 +49,27 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <form class='text-center' action='home.php' method='post'>
                                 <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
-                                    <li class='active'><a>Activacion de cuenta</a></li>
+                                    <li class='active'><a>Account activation</a></li>
                                     <li><a>Avatar</a></li>
                                     <li><a>Listo!</a></li>
                                 </ul>
-                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>".$correo."</strong>! Por favor verifica tu correo.</h4>
+                                <h4 class='junction'>Welcome to Box Link, to continue with the registration process, you need to activate your account. We have sent an activation code to the following email address <strong> ". $correo ." </ Strong> Please check your email.</h4>
                                 <center>
                                     <fieldset style='width:50%;'>
-                                        <legend>Codigo de activacion</legend>
+                                        <legend>Activation code</legend>
                                         <div class='form-group'>
-                                            <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
+                                            <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
                                             </div>
                                         </div>
                                         <br>
-                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
+                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Send' onclick='return tokenverify(this.form,this.form.token);'>
                                     </fieldset>
                                 </center>
                             </form>
                             <br>
-                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Log out'></a>
                         </div>
                     ";
                 }
@@ -80,34 +80,34 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <form class='text-center' action='home.php' method='post'>
                                 <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
-                                    <li class='active'><a>Activacion de cuenta</a></li>
+                                    <li class='active'><a>Account activation</a></li>
                                     <li><a>Avatar</a></li>
                                     <li><a>Listo!</a></li>
                                 </ul>
-                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>".$correo."</strong>! Por favor verifica tu correo.</h4>
+                                <h4 class='junction'>Welcome to Box Link, to continue with the registration process, you need to activate your account. We have sent an activation code to the following email address <strong> ". $correo ." </ Strong> Please check your email.</h4>
                                 <center>
                                     <fieldset style='width:50%;'>
-                                        <legend>Codigo de activacion</legend>
+                                        <legend>Activation code</legend>
                                         <div class='form-group'>
-                                            <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
+                                            <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
                                             </div>
                                         </div>
                                         <br>
-                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
+                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Send' onclick='return tokenverify(this.form,this.form.token);'>
                                         <br>
                                         <br>
                                         <div class='alert alert-dismissible alert-danger'>
 
                                               <button type='button' class='close' data-dismiss='alert'>×</button>
-                                              <strong>El codigo de activacion es invalido</strong>
+                                              <strong>The activation code is invalid</strong>
                                         </div>
                                     </fieldset>
                                 </center>
                             </form>
                             <br>
-                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Log out'></a>
                         </div>
                     ";
                 }
@@ -119,18 +119,18 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li><a>Examen</a></li>
-                                    <li class='active'><a>Activacion de cuenta</a></li>
+                                    <li class='active'><a>Account activation</a></li>
                                     <li><a>Avatar</a></li>
                                     <li><a>Listo!</a></li>
                                 </ul>
-                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>".$correo."</strong>! Por favor verifica tu correo.</h4>
+                                <h4 class='junction'>Welcome to Box Link, to continue with the registration process, you need to activate your account. We have sent an activation code to the following email address <strong> ". $correo ." </ Strong> Please check your email.</h4>
                                 <center>
                                     <fieldset style='width:50%;'>
-                                        <legend>Codigo de activacion</legend>
+                                        <legend>Activation code</legend>
                                         <div class='form-group'>
-                                            <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
+                                            <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
                                             </div>
                                         </div>
                                         <br>
@@ -139,7 +139,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </center>
                             </form>
                             <br>
-                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Log out'></a>
                         </div>
                     ";
                 }
@@ -151,34 +151,34 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <h1 class='junction-bold'>Box Link</h1>
                                 <ul class='pagination'>
                                     <li><a>Examen</a></li>
-                                    <li class='active'><a>Activacion de cuenta</a></li>
+                                    <li class='active'><a>Account activation</a></li>
                                     <li><a>Avatar</a></li>
                                     <li><a>Listo!</a></li>
                                 </ul>
-                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es necesario la activacion de tu cuenta. Hemos enviado un codigo de activacion a la siguiente direccion de correo electronico <strong>".$correo."</strong>! Por favor verifica tu correo.</h4>
+                                <h4 class='junction'>Welcome to Box Link, to continue with the registration process, you need to activate your account. We have sent an activation code to the following email address <strong> ". $correo ." </ Strong> Please check your email.</h4>
                                 <center>
                                     <fieldset style='width:50%;'>
-                                        <legend>Codigo de activacion</legend>
+                                        <legend>Activation code</legend>
                                         <div class='form-group'>
-                                            <label class='col-lg-3 control-label' for='token'>Codigo de activacion</label>
+                                            <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Codigo de activacion' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
                                             </div>
                                         </div>
                                         <br>
-                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Enviar' onclick='return tokenverify(this.form,this.form.token);'>
+                                        <input type='submit' id='submtoken' class='btn btn-success form-control' value='Send' onclick='return tokenverify(this.form,this.form.token);'>
                                         <br>
                                         <br>
                                         <div class='alert alert-dismissible alert-danger'>
 
                                               <button type='button' class='close' data-dismiss='alert'>×</button>
-                                              <strong>El codigo de activacion es invalido</strong>
+                                              <strong>The activation code is invalid</strong>
                                         </div>
                                     </fieldset>
                                 </center>
                             </form>
                             <br>
-                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                            <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Log out'></a>
                         </div>
                     ";
                 }
@@ -271,8 +271,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <li class='active'><a>Avatar</a></li>
                                     <li><a>Listo!</a></li>
                                 </ul>
-                                <h3 class='junction-light'>Elige un avatar</h3>
-                                <h4 class='junction'>Bienvenid@ a Blink, para continuar con el proceso de registro, es neceario la eleccion de un avatar el cual se utilizara como imagen de perfil de tu cuenta.</h4>
+                                <h3 class='junction-light'>Choose an avatar</h3>
+                                <h4 class='junction'>Welcome to Box Link, to continue with the registration process, it is then necessary choosing an avatar which is used as profile picture of yourself.</h4>
                                 <br><br>
                             </center>";
                         for($i = 1; $i <= 21; $i++){

@@ -2,7 +2,7 @@
 <html lang="en">
 
     <body>
-        <h4>Nombre de la lección:<?php echo $nombree ?></h4>
+        <h4>Name of the lesson:<?php echo $nombree ?></h4>
         <?php 
             include "app/graphic.php";
         ?>

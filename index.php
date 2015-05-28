@@ -106,8 +106,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             <div class="row">
                 <div class='alert alert-dismissible well col-xs-12' id="cookies" style="">
                     <button type='button' class='close' data-dismiss='alert'>x</button>
-                    <h5 class="junction-bold">Uso de cookies</h5>
-                    <h6 class="">En <b>Box Link</b> utilizamos cookies propias para personalizar su experiencia de navegacion por el sitio web. Si continúa navegando consideramos que acepta su uso. Puede encontrar más información al respecto en nuestra <a href="">Política de Privacidad</a>.</h6>
+                    <h5 class="junction-bold">Cookie use</h5>
+                    <h6 class="">Box Link uses cookies. By continuing to use this website you are giving consent to cookies being used. For information on cookies visit our <a href=""> Privacy and Cookie Policy</a>.</h6>
                 </div>
                 <div class="col-xs-12 full">
                     <nav class="navbar navbar-inverse navbar-fixed-top transparent">
@@ -133,9 +133,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class="form-group">
                                             <input type="password" name="password" placeholder="<?=$langprint['contra']?>" id="password" class="form-control inputnav" autocomplete="off" required>
                                         </div>
-                                        <input type="button" value="<?=$langprint['entrarlog']?>" class="btn btn-success  btnnav" onclick="formhash(this.form, this.form.password);" />
+                                        <input type="button" value="Log in" class="btn btn-success  btnnav" onclick="formhash(this.form, this.form.password);" />
                                         <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-primary btnnav' title="Olvide mi contraseña"><i class="fa fa-key"></i><i class="fa fa-exclamation"></i></a>
-                                        <a href='registrarse.php' class='btn btn-info  btnnav'>No tengo cuenta</a>
+                                        <a href='registrarse.php' class='btn btn-info  btnnav'>Sign up</a>
                         
                                     </form>
                                 </ul>
@@ -237,7 +237,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                             <div class="modal-body">
                                 <form class='text-center'>
-                                    <p>Para reestablecer la contraseña es necesario que ingreses tu correo registrado en la plataforma, te haremos llegar un correo con la informacion necesaria para la transaccion</p>
+                                    <p>To reset the password is required to enter your email registered on the platform, we will send you an email with the necessary information for the transaction.</p>
                                     <div class='form-group'>
                                         <label class='col-lg-3 control-label' for='mail'>Email</label>
                                         <div class='col-lg-9'>
@@ -246,11 +246,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <br>
                                     <br>
-                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='Enviar'>
+                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='Send'>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <h6 class="junction-light"><strong>Box Link 2015</strong> Todos los derechos reservados</h6>
+                                <h6 class="junction-light"><strong>Box Link 2015</strong> All rights reserved.</h6>
                             </div>
                         </div>
                     </div>
@@ -296,7 +296,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     if($("#mail").val() == ''){
                         bootbox.alert({
                             title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                            message: "<center><h5 class='junction-light'>Debes de introducir tu direccion de correo</h5></center>",
+                            message: "<center><h5 class='junction-light'>You must type an email address</h5></center>",
                         });
                     }else{
                         if(validateEmail($("#mail").val())) { 
@@ -315,7 +315,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         }else{
                             bootbox.alert({
                                 title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                                message: "<center><h5 class='junction-light'>Debes de ingresar un correo valido</h5></center>",
+                                message: "<center><h5 class='junction-light'>You must type an valid email address</h5></center>",
                             });
                         }
                     }

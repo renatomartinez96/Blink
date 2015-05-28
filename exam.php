@@ -72,16 +72,16 @@ include_once 'assets/includes/db_conexion.php';
                     <div class='container'>
                         <div class='jumbotron text-center' style='margin-bottom:0px !important;'>
                             <img src='assets/img/brand3.png' style='width:50%;'>
-                            <h2 class='junction-bold'>Registro de docentes</h2>
+                            <h2 class='junction-bold'>Teacher registration</h2>
                         </div>
                         <div class='well'>
-                            <h3 class='text-center junction-regular'>Indicaciones Generales</h3>
-                            <p>Para continuar con el proceso de registro, es necesario medir tus capacidades en los lenguajes HTML y CSS, para eso es necesario que completes el siguiente examen. </p>
+                            <h3 class='text-center junction-regular'>General indications</h3>
+                            <p>To continue the registration process, you need to measure your skills in HTML and CSS languages, this requires that you complete the next review.</p>
                             <ul>
-                              <li>Tienes una oportunidad mensual para desarrollar el examen.</li>
-                              <li>El examen consta de 30 preguntas de seleccion multiple.</li>
-                              <li>La nota minima para pasar el examen es de 8/10.</li>
-                              <li>Tienes 30 minutos para desarrollar el mismo.</li>
+                              <li>You have a monthly opportunity to develop the test.</li>
+                              <li>The exam consists of 30 multiple choice questions.</li>
+                              <li>The minimum grade to pass the exam is 8/10.</li>
+                              <li>You have 30 minutes to develop the same.</li>
                             </ul>  
                         </div>
                         <div class='well text-center ' id="">
@@ -136,13 +136,13 @@ include_once 'assets/includes/db_conexion.php';
                     <div class='container'>
                         <div class='jumbotron text-center' style='margin-bottom:0px !important;'>
                             <img src='assets/img/brand3.png' style='width:50%;'>
-                            <h2 class='junction-bold'>Registro de docentes</h2>
+                            <h2 class='junction-bold'>Teachers Registration</h2>
                         </div>
                         <div class='well'>
                             <h1 class='text-center junction-regular' style="color:red;font-size:600%;"><?=$nota?></h1>
-                            <p>Esta fue su nota obtenida en su ultimo examen realizado el "<?=$fecha?>", Lo sentimos mucho pero no alcanzo la nota minima estipulada de 8.0, podra repetir el examen hasta "<?=$nfech?>"</p> 
+                            <p>This was your grade that you obtain on "<?=$fecha?>", we are so sorry but you did not reach the minimum score stipulated 8.0, you may repeat the test on "<?=$nfech?>"</p> 
                             <center>
-                                <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Salir'></a>
+                                <a href='cerrar_sesion.php'><input type='button' class='btn btn-danger' value='Sign out'></a>
                             </center>
                         </div>
                     </div>
