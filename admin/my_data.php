@@ -86,14 +86,39 @@ if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"])
     <?php
     }
 }
-                    ?>
+if(isset($_POST["newlang"]))
+{
+    $newlang = $_POST["newlang"];
+    
+    $query2 = "UPDATE usuarios_tb SET lang='$newlang' WHERE idusuario=$elidespecial";
+    if ($query2 = mysqli_query($mysqli, $query2)) 
+    {
+        ?>
+        <div class="alert alert-success">
+        <strong>OK: </strong>El idioma de Box Link se cambió <a href="index.php" class="alert-link">inicio</a>.
+        <strong>OK: </strong>The language of Box Link has been changed <a href="index.php" class="alert-link">home</a>.
+        </div>
+    <?php
+    }
+    else
+    {
+        ?>
+        <div class="alert alert-danger">
+        <strong>ERROR: </strong><a href="index.php" class="alert-link">inicio</a>.
+        <strong>ERROR: </strong><a href="index.php" class="alert-link">home</a>.
+        </div>
+    <?php
+    }
+}
+?>
+                        
     <!-- FORMULARIOS DE PERSONALIZACIÓN -->
     <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab">Información pública</a></li>
             <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab">Seguridad</a></li>
-            <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab">Preferencias</a></li>
+            <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab">Idioma / Language</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
@@ -155,11 +180,35 @@ if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"])
             <!-- / SEGURIDAD -->
             <!-- PREFERENCIAS -->
             <div role="tabpanel" class="tab-pane fade" id="pref">
-                <h3 class="junction-regular text-center">Preferencias de imagen</h3>
+                <h3 class="junction-regular text-center">Preferencias de idioma</h3>
+                <div class="col-md-6 well">
                 <?php
                 $langx = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-                echo $langx;
+                $languc = "";
+                if($lang=="es")
+                {
+                    $languc = "Español / Spanish";
+                }
+                elseif($lang=="en")
+                {
+                    $languc = "Inglés / English";
+                }
                 ?>
+                <h4 class="junction-regular text-center">Idioma / Language</h4>
+                    <br>
+                <p class="junction-light text-center">Idioma actual / Current language: <ins><?=$languc?></ins></p>
+                </div>
+                <div class="col-md-6">
+                <form action="my_data.php" method="post">
+                    <input type="hidden" name="idto" value="<?=$elidespecial?>">
+                    <label>Escoge otro idioma / Choose other language:</label>
+                    <select class="form-control" name="newlang">
+                        <option value="en">Inglés - English</option>
+                        <option value="es">Español - Spanish</option>
+                    </select><br>
+                    <input type="submit" class="btn btn-success btn-block" name="b3" value="Guardar cambios / Save changes">
+                </form>
+                </div>
             </div>
             <!-- / PREFERENCIAS -->
         </div>
