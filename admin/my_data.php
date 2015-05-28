@@ -14,6 +14,7 @@ $elidespecial = $_SESSION['user_id'];
         $stmt->fetch();
         
     }
+    include "../assets/includes/lang.php";
 ?>
 <!--
 
@@ -60,6 +61,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<div id="page-content-wrapper">
 				<div class="container-fluid">
 					<div class="row">
+                        <h2 class="junction-bold text-center"><?=$langprint["my_data-main-title"]?></h2>
 					<!--Content-->
                     <?php
 if(isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["desc"]))
@@ -116,8 +118,8 @@ if(isset($_POST["newlang"]))
     <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab">Información pública</a></li>
-            <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab">Seguridad</a></li>
+            <li role="presentation" class="active"><a href="#publicdata" aria-controls="publicdata" role="tab" data-toggle="tab"><?=$langprint["tab-public-data"]?></a></li>
+            <li role="presentation"><a href="#security" aria-controls="security" role="tab" data-toggle="tab"><?=$langprint["tab-security"]?></a></li>
             <li role="presentation"><a href="#pref" aria-controls="pref" role="tab" data-toggle="tab">Idioma / Language</a></li>
         </ul>
         <!-- Tab panes -->
@@ -125,24 +127,24 @@ if(isset($_POST["newlang"]))
             <!-- PERSONALIZACIÓN DE DATOS PUBLICOS -->
             <div role="tabpanel" class="tab-pane active" id="publicdata">
                 <form action="my_data.php" method="post">
-                    <h3 class="junction-regular text-center">Información pública</h3>
+                    <h3 class="junction-regular text-center"><?=$langprint["tab-public-data"]?></h3>
                     <div class="col-md-6" >
-                        <label>Nombres</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" maxlength="50" required>        
-                        <label>Apellidos</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" maxlength="50" required>
-                        <label>Descripción</label><textarea name="desc" class="form-control" maxlength="300" required><?=$descripcion?></textarea>
+                        <label><?=$langprint["content-p-d-name-field"]?></label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$nombres?>" maxlength="50" required>        
+                        <label><?=$langprint["content-p-d-lastname-field"]?></label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$apellidos?>" maxlength="50" required>
+                        <label><?=$langprint["content-p-d-description-field"]?></label><textarea name="desc" class="form-control" maxlength="300"><?=$descripcion?></textarea>
                         <br>
                     </div>
                     <div class="col-md-6" >
                         <div class="well">
-                            <h4>Recuerda:</h4>
+                            <h4><?=$langprint["brief-p-d-title"]?>:</h4>
                             <ul>
-                                <li>Para tus nombres y apellidos solo tienes 50 caracteres disponibles.</li>
-                                <li>Y para tu descripción solo tienes 300 caracteres, así que debes ser lo más consiso posible.</li>
+                                <li><?=$langprint["brief-p-d-li-1"]?></li>
+                                <li><?=$langprint["brief-p-d-li-2"]?></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-12" >
-                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mis nuevos datos">
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="<?=$langprint["btn-save-my-data"]?>">
                     </div>
                 </form>
             </div>

@@ -15,14 +15,7 @@
         
     }
     include "auto.php";
-    if($lang == "es")
-    {
-        include "../assets/lang/ivan-".$lang.".php";
-    }
-    elseif($lang == "en")
-    {
-        include "../assets/lang/ivan-".$lang.".php";
-    }
+    include "../assets/includes/lang.php"
 ?>
 
 <!--
