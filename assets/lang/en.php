@@ -34,15 +34,24 @@ $langprint = array(
         "modal-banner-change-brief" => "For editing your personal data, you must click <a href='my_data.php'>here</a>, and if you want change your code editor theme, go <a href='cod_theme.php'>here</a>.",
         "modal-banner-change-tip" => "The Box Link Staff will put other banner soon...",
     //  /# modal de cambio de banner
-    //----------------------------------------------  
+    //----------------------------------------------
+    // Nombres de los campos
+        "name-field" => "Name",
+        "lastname-field" => "Lastname",
+        "description-field" => "Description",
+        "password-field" => "Password",
+        "password-new-field" => "New password",
+        "password-repeat-field" => "Confirm password",
+        "password-repeat-ins-field" => "You must write your current password to save the changes",
+        "password-current-field" => "Current password",
+    // /# Nombres de los campos
+    //----------------------------------------------
     // Formulario de cambio de datos "my_data.php"
         "my_data-main-title" => "Box Link configuration",
+        "my_data-main-brief" => "In this form you can edit the main configuration of Box Link, if you want to change the code editor theme, you need to go <a href='cod_theme.php'>here</a>.",
         "tab-public-data" => "Public data",
         "tab-security" => "Security",
         "tab-language" => "Language",
-        "content-p-d-name-field" => "Name",
-        "content-p-d-lastname-field" => "Lastname",
-        "content-p-d-description-field" => "Description",
         "brief-p-d-title" => "Remember",
         "brief-p-d-li-1" => "You only have a length of 50 characters for your name and your lastname",
         "brief-p-d-li-2" => "For your description you have a length of 300 characters, please be terse as possible",

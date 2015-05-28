@@ -35,14 +35,23 @@ $langprint = array(
         "modal-banner-change-tip" => "El staff de Box Link subira más banner pronto...",
     //  /# modal de cambio de banner
     //----------------------------------------------
+    // Nombres e instrucciones de los campos (inputs)
+        "name-field" => "Nombre",
+        "lastname-field" => "Apellido",
+        "description-field" => "Descripción",
+        "password-field" => "Contraseña",
+        "password-new-field" => "Nueva contraseña",
+        "password-repeat-field" => "Confirme su contraseña",
+        "password-repeat-ins-field" => "Debes escribir tu contraseña actual para poder guardar los cambios",
+        "password-current-field" => "Contraseña actual",
+    // /# Nombres de los campos
+    //----------------------------------------------
     // Formulario de cambio de datos "my_data.php"
         "my_data-main-title" => "Configuraciones de Box Link",
+        "my_data-main-brief" => "En esta sección puedes editar las principales configuraciones de Box Link, sí deseas cambiar el tema de tu editor de código, debes ir <a href='cod_theme.php'>aquí</a>.",
         "tab-public-data" => "Información pública",
         "tab-security" => "Seguridad",
         "tab-language" => "Idioma",
-        "content-p-d-name-field" => "Nombre",
-        "content-p-d-lastname-field" => "Apellido",
-        "content-p-d-description-field" => "Descripción",
         "brief-p-d-title" => "Recuerda",
         "brief-p-d-li-1" => "Para tus nombres y apellidos solo tienes 50 caracteres disponibles",
         "brief-p-d-li-2" => "Y para tu descripción solo tienes 300 caracteres, así que debes ser lo más conciso posible",
