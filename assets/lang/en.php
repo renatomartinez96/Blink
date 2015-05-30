@@ -29,12 +29,8 @@ $langprint = array(
         "msg-alert-saved-error1" => "<strong>Error: </strong>There is a server problem",
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
-    //   modal de cambio de banner
-        "modal-banner-change-title" => "Change my banner",
-        "modal-banner-change-preview" => "Preview",
-        "modal-banner-change-brief" => "For editing your personal data, you must click <a href='my_data.php'>here</a>, and if you want change your code editor theme, go <a href='cod_theme.php'>here</a>.",
-        "modal-banner-change-tip" => "The Box Link Staff will put other banner soon...",
-    //  /# modal de cambio de banner
+    // Palabras repetidas
+    // /# Palabras repetidas
     //----------------------------------------------
     // Nombres de los campos
         "name-field" => "Name",
@@ -46,6 +42,13 @@ $langprint = array(
         "password-repeat-ins-field" => "You must write your current password to save the changes",
         "password-current-field" => "Current password",
     // /# Nombres de los campos
+    //----------------------------------------------
+    //   modal de cambio de banner
+        "modal-banner-change-title" => "Change my banner",
+        "modal-banner-change-preview" => "Preview",
+        "modal-banner-change-brief" => "For editing your personal data, you must click <a href='my_data.php'>here</a>, and if you want change your code editor theme, go <a href='cod_theme.php'>here</a>.",
+        "modal-banner-change-tip" => "The Box Link Staff will put other banner soon...",
+    //  /# modal de cambio de banner
     //----------------------------------------------
     // Formulario de cambio de datos "my_data.php"
         "my_data-main-title" => "Box Link configuration",
