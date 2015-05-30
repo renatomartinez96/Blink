@@ -21,6 +21,7 @@ $langprint = array(
         "btn-next" => "Next",
         "btn-save-changes" => "Save changes",
         "btn-save-my-data" => "Save my data",
+        "btn-save-new-pass" => "Save my new password",
     // /# Diferentes textos para botones 
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
@@ -55,6 +56,12 @@ $langprint = array(
         "brief-p-d-title" => "Remember",
         "brief-p-d-li-1" => "You only have a length of 50 characters for your name and your lastname",
         "brief-p-d-li-2" => "For your description you have a length of 300 characters, please be terse as possible",
+        "brief-pass" => "Your password for Box Link should be really secure, and needs to comply this requirements",
+        "brief-pass-li-1" => "A minimun length of six characters",
+        "brief-pass-li-2" => "At least <ins>one</ins> uppercase character (A...Z)",
+        "brief-pass-li-3" => "At least <ins>one</ins> lowercase character (a...z)",
+        "brief-pass-li-4" => "A number included (0...9)",
+        "brief-pass-li-5" => "You must write your old password to make the changes",
     // /# Formulario de cambio de datos "my_data.php"
     //----------------------------------------------
     //  Navbar
@@ -85,7 +92,7 @@ $langprint = array(
     "search-input" => "Looking for users, teachers, courses... ?",
     "admin-friendly-intro" => "Welcome Administrator",
     "admin-maintenance-users" => "Users",
-    "admin-maintenance-users-new-notification" => "New users:",
+    "admin-maintenance-users-new-notification" => "New users",
     "admin-maintenance-users-no-notification" => "No new users",
     "admin-maintenance-users-go-list" => "Go to the users list",
     "admin-maintenance-users-list" => "List of registered users in Box Link",

@@ -21,6 +21,7 @@ $langprint = array(
         "btn-next" => "Continuar",
         "btn-save-changes" => "Guardar cambios",
         "btn-save-my-data" => "Guardar mi informaci&oacute;n",
+        "btn-save-new-pass" => "Guardar mi nueva contraseña",
     // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
@@ -55,6 +56,12 @@ $langprint = array(
         "brief-p-d-title" => "Recuerda",
         "brief-p-d-li-1" => "Para tus nombres y apellidos solo tienes 50 caracteres disponibles",
         "brief-p-d-li-2" => "Y para tu descripción solo tienes 300 caracteres, así que debes ser lo más conciso posible",
+        "brief-pass" => "Tu contraseña de Box Link debe ser segura, por eso tiene que cumplir con los siguientes requerimientos",
+        "brief-pass-li-1" => "Debe ser de por lo menos 6 carácteres",
+        "brief-pass-li-2" => "Por lo menos <ins>una</ins> mayúscula (A...Z)",
+        "brief-pass-li-3" => "Por lo menos <ins>una</ins> minúscula (a...z)",
+        "brief-pass-li-4" => "Tiene que tener un número (0...9)",
+        "brief-pass-li-5" => "Además es necesario que escribas tu contraseña antigua para realizar los cambios",
     // /# Formulario de cambio de datos "my_data.php"
     //----------------------------------------------
     //  Navbar
@@ -85,7 +92,7 @@ $langprint = array(
     "search-input" => "Búscar usuarios, profesores, cursos...",
     "admin-friendly-intro" => "¡Bienvenido seas administrador",
     "admin-maintenance-users" => "Usuarios",
-    "admin-maintenance-users-new-notification" => "Usuarios nuevos:",
+    "admin-maintenance-users-new-notification" => "Usuarios nuevos",
     "admin-maintenance-users-no-notification" => "No hay usuarios nuevos",
     "admin-maintenance-users-go-list" => "Ir al listado de usuarios",
     "admin-maintenance-users-list" => "Listado de usuarios registrados en Box Link",

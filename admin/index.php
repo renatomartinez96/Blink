@@ -186,7 +186,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <div class="panel-body">
                         <div class="col-md-4 text-center">
-                            <div class="alert alert-info">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
                                 <h2 class="panel-title"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
                                   <?php
                                 $stmt = $mysqli->prepare("SELECT log FROM usuarios_tb WHERE log < 1");
@@ -197,24 +198,46 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 $row_cnt = $stmt->num_rows;
                                 if($row_cnt > 0)
                                 {
-                                        echo "<span class='label label-success'>". $langprint["admin-maintenance-users-new-notification"]." ".$row_cnt. "</span>";
+                                        echo "<span class='label label-primary' data-toggle='tooltip' data-placement='top' title='". $langprint["admin-maintenance-users-new-notification"]."' data-original-title='Tooltip on top' style='cursor: help;'>+".$row_cnt. "</span>";
                                 }
-                                else
-                                {
-                                    echo "<span class='label label-default'>". $langprint["admin-maintenance-users-no-notification"]. "</span>";
-                                }
+//                                else
+//                                {
+//                                    echo "<span class='label label-default'>". $langprint["admin-maintenance-users-no-notification"]. "</span>";
+//                                }
                                 ?>
-                                </h2><br>
-                                  <a href="usuarios.php" class="btn btn-success"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-users-go-list"]?></a><br>
+                                </h2>
+                                </div>
+                                <div class="panel-body">
+                                    <a href="usuarios.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-users-go-list"]?></a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
-                            <div class="alert alert-info">
-                                <h2 class="panel-title"><i class="fa fa-book"></i> <?=$langprint["admin-maintenance-courses"]?></h2><br>
-                                  <a href="cursos.php" class="btn btn-success"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-courses-go-list"]?></a><br>
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                <h2 class="panel-title"><i class="fa fa-book fa-lg"></i> <?=$langprint["admin-maintenance-courses"]?></h2>
+                                </div>
+                                <div class="panel-body">
+                                    <a href="cursos.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-courses-go-list"]?></a>
+                                </div>
                             </div>
                         </div>
-                                    </div></div></div></div>
+                        <div class="col-md-4 text-center">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title"><i class="fa fa-camera-retro fa-lg"></i>   Banners</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <a href="#" class="btn btn-success"><i class="fa fa-upload"></i>
+ Upload new banner</a><a href="#" class="btn btn-info"><i class="fa fa-file-image-o"></i>
+ See all banners</a>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div><!---->
                 </div>
             </div>

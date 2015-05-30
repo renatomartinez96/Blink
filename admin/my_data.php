@@ -159,19 +159,19 @@ if(isset($_POST["newlang"]))
                         <br>
                         <small>*<?=$langprint["password-repeat-ins-field"]?></small>
                         <br>
-                        <input type="submit" class="btn btn-success btn-block" name="b1" value="Guardar mi nueva contraseña">
+                        <input type="submit" class="btn btn-success btn-block" name="b1" value="<?=$langprint["btn-save-new-pass"]?>">
                     </div>
                     <div class="col-md-6" >
                         <div class="well">
-                            <h4><?=$langprint["brief-p-d-title"]?>:</h4>
-                            <p>Recuerda que tu contraseña de tu cuenta de Box Link debe ser segura, así que debe cumplir con estos requisitos:</p>
+                            <h4 lass="junction-regular text-center"><?=$langprint["brief-p-d-title"]?>:</h4>
+                            <p class="junction-regular text-justify"><?=$langprint["brief-pass"]?></p>
                             <ul>
-                                <li>Debe de ser de por lo menos 6 caracteres</li>
-                                <li>Al menos un caracter en mayusculas (A..Z)</li>
-                                <li>Al menos un caracter en minusculas (a..z)</li>
-                                <li>Al menos un caracter numerico (0..9)</li>
+                                <li><?=$langprint["brief-pass-li-1"]?></li>
+                                <li><?=$langprint["brief-pass-li-2"]?></li>
+                                <li><?=$langprint["brief-pass-li-3"]?></li>
+                                <li><?=$langprint["brief-pass-li-4"]?></li>
                             </ul>
-                            <p>Además es necesario que escribas tu contraseña actual para realizar los cambios.</p>
+                            <p class="junction-regular text-justify"><?=$langprint["brief-pass-li-5"]?></p>
                         </div>
                     </div>
                 </form>
