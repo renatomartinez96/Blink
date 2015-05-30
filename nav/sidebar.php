@@ -48,6 +48,9 @@
                 <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Pagina propia</b></a>
             </li>
             <li>
+                <a class="iconos" href="index2.php"><i class="fa fa-folder-o fa-2x"></i><b class="textos toggled" href="#"> Archivos</b></a>
+            </li>
+            <li>
                 <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Tutores</b></a>
             </li>
         <?php

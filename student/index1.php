@@ -84,19 +84,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <h3 class="panel-title"><strong class="junction-light">Result </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Update"></h3>
                                 </div>
                                 <div class="panel-body full" style="background:#fff">
-                                    <iframe src="../users/<?=$user?>/index.html" class="full col-sm-12 resultc" id="resultc"></iframe>
+                                    <iframe src="../users/<?=$user?>/index.html" frameborder='0' class="full col-sm-12 resultc" id="resultc"></iframe>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-success full">
-                            <div class="panel-heading ">
-                                <h3 class="panel-title"><strong class="junction-light">Result </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Update"></h3>
-                            </div>
-                            <div class="panel-body full">
-                                <div id="manager"></div>
-                            </div>
-                        </div>
-                        
 					<!--/#Content-->
 					</div>
 				</div>
