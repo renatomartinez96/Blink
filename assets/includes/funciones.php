@@ -22,8 +22,8 @@ function sec_session_start() {
 }
 
 function login($email, $password, $mysqli) {
-    if ($stmt = $mysqli->prepare("SELECT idusuario, usuario, contra, salt, tipo FROM usuarios_tb WHERE correo = ?")) {
-        $stmt->bind_param('s', $email);
+    if ($stmt = $mysqli->prepare("SELECT idusuario, usuario, contra, salt, tipo FROM usuarios_tb WHERE correo = ? OR usuario = ?")) {
+        $stmt->bind_param('ss', $email,$email);
         $stmt->execute(); 
         $stmt->store_result();
         $stmt->bind_result($user_id, $username, $db_password, $salt, $tipo);
