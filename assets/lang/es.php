@@ -67,10 +67,27 @@ $langprint = array(
         "brief-pass-li-5" => "Además es necesario que escribas tu contraseña antigua para realizar los cambios",
     // /# Formulario de cambio de datos "my_data.php"
     //----------------------------------------------
+    // Formulario de cambio de tema "cod_theme.php"
+        "cod-theme-title" => "Cambiar el tema de mi editor de código",
+        "html" => "Lenguaje de etiquetas de HiperTexto",
+        "css" => "Hojas de Estilo en Cascada",
+        "choose-the-pill" => "Escoje tu tema",
+        "theme" => "tema",
+        "change-theme" => "Guardar tema nuevo",
+        
+    // /# Formulario de cambio de tema "cod_theme.php"
+    //----------------------------------------------
     //  Navbar
     //      boton cerrar sesion
-            "navbar-1" => "Cerrar Sesion",
-
+            "navbar1" => "Cerrar sesión",
+            "navbar2" => "Inicio",
+            "sidebar1" => "Herramientas",
+            "navconfig" => "Configuraciones",
+            "navcourses" => "Cursos",
+            "mysite" => "Mi sitio web",
+            "docs" => "Mis archivos",
+            "tutor" => "Tutor",
+            "tutors" => "Tutores",
     // /# Navbar
 // /# GLOBALES
 //----------------------------------------------

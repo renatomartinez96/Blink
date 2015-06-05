@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a style="margin-right: 25px; margin-top: 6px;" href="../assets/includes/logout.php" role="button">logout</a>
+                    <a style="margin-right: 25px; margin-top: 6px;" href="../assets/includes/logout.php" role="button"><?=$langprint["navbar1"]?></a>
                 </li>
             </ul>
         </div>

@@ -14,6 +14,7 @@
         $stmt->fetch();
         
     }
+    include "../assets/includes/lang.php";
 ?>
 <!--
 
@@ -33,7 +34,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Changing editor theme";
+            $titulodelapagina = $langprint["cod-theme-title"];
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
@@ -70,7 +71,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-7 full">
                                 <div class="panel panel-success full">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title"><strong class="junction-light">HTML</strong>(HyperText Markup Language)</h3>
+                                        <h3 class="panel-title"><strong class="junction-light">HTML</strong>(<?=$langprint["html"]?>)</h3>
                                     </div>
                                     <div class="panel-body full">
                                         <pre id="editor"><?php echo htmlentities(file_get_contents("../users/dospuntosuve/index.html")); ?></pre>
@@ -81,7 +82,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="col-sm-5 full">
                                 <div class="panel panel-success full">
                                     <div class="panel-heading ">
-                                        <h3 class="panel-title"><strong class="junction-light">CSS</strong>(Cascading Style Sheets)</h3>
+                                        <h3 class="panel-title"><strong class="junction-light">CSS</strong>(<?=$langprint["css"]?>)</h3>
                                     </div>
                                     <div class="panel-body full">
                                         <pre id="editor2"><?php echo htmlentities(file_get_contents("../users/dospuntosuve/css/index.css")); ?></pre>
@@ -91,26 +92,25 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                         <div class="col-md-12 full">
                             <form action="../assets/includes/change_theme.php" method="post">
-                            <h1 class="juntion-bold text-center">Choose a theme</h1>
+                            <h1 class="juntion-bold text-center"><?=$langprint["choose-the-pill"]?></h1>
                             <input type="hidden" value="" name="themeselect" id="themeselect" >
                             <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
                             <input type="hidden" value="student" name="folderloc" id="folderloc" >
-                            <div class="col-md-2 full" id="idtheme1">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(1)" style="cursor: pointer;">Theme 1<br><small>Pastel on dark</small></h3></div>
-                            <div class="col-md-2 full" id="idtheme2">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(2)" style="cursor: pointer;">Theme 2<br><small>Chaos</small></h3></div>
-                            <div class="col-md-2 full" id="idtheme3">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(3)" style="cursor: pointer;">Theme 3<br><small>Solarized on dark</small></h3></div>
-                            <div class="col-md-2 full" id="idtheme4">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(4)" style="cursor: pointer;">Theme 4<br><small>Kuroir</small></h3></div>
-                            <div class="col-md-2 full" id="idtheme5">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(5)" style="cursor: pointer;">Theme 5<br><small>Textmate</small></h3></div>
-                            <div class="col-md-2 full" id="idtheme6">
-                                <h3 class="juntion-regular text-center text-success" onclick="showTheme(6)" style="cursor: pointer;">Theme 6<br><small>X Code</small></h3></div>
+                            <?php
+                            $array = array(1 => "Pastel on Dark", 2 => "Chaos", 3 => "Solarized on Dark", 4 => "Kuroir", 5 => "TextMate", 6 => "X Code");
+                            foreach($array as $numberto => $generalissimo)
+                            { ?>
+                                <div class="col-md-2 full" id="idtheme<?=$numberto?>">
+                                <h3 class="juntion-regular text-center text-success text-capitalize" onclick="showTheme(<?=$numberto?>)" style="cursor: pointer;"><?=$langprint["theme"]?> <?=$numberto?><br><small><?=$generalissimo?></small></h3>
+                                </div>
+                              <?php  
+                            }
+                            ?>
+
                             <br>
                             <div class="col-md-12 text-center">
                                 <br>
-                            <input type="submit" class="btn btn-success btn-lg" name="b1" id="b1" value="Change theme" disabled>
+                            <input type="submit" class="btn btn-success btn-lg" name="b1" id="b1" value="<?=$langprint["change-theme"]?>" disabled>
                             </div>
                             </form>
                         </div>

@@ -20,13 +20,13 @@
 //        ADMIN
         ?>
             <li>
-                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Inicio</b></a>
+                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navbar2"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Herramientas</b></a>
+                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["sidebar1"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Configuracion</b></a>
+                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navconfig"]?></b></a>
             </li>
         <?php
         break;
@@ -34,7 +34,7 @@
 //        TEACHER
         ?>
             <li>
-                <a class="iconos" href="index.php"><i class="fa fa-puzzle-piece fa-2x"></i><b class="textos toggled" href="#"> Cursos</b></a>
+                <a class="iconos" href="index.php"><i class="fa fa-puzzle-piece fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navcourses"]?></b></a>
             </li>
         <?php
         break;
@@ -42,16 +42,16 @@
 //        STUDENT
         ?>
             <li>
-                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> Inicio</b></a>
+                <a class="iconos" href="index.php"><i class="fa fa-home fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navbar2"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> Pagina propia</b></a>
+                <a class="iconos" href="index1.php"><i class="fa fa-file-code-o fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["mysite"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="index2.php"><i class="fa fa-folder-o fa-2x"></i><b class="textos toggled" href="#"> Archivos</b></a>
+                <a class="iconos" href="index2.php"><i class="fa fa-folder-o fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["docs"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> Tutores</b></a>
+                <a class="iconos" href="teachers.php"><i class="fa fa-users fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["tutors"]?></b></a>
             </li>
         <?php
         break;

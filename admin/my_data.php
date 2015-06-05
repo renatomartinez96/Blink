@@ -98,7 +98,7 @@ if(isset($_POST["newlang"]))
     {
         ?>
         <div class="alert alert-success">
-        <strong>OK: </strong>El idioma de Box Link se cambió <a href="index.php" class="alert-link">inicio</a>.
+        <strong>OK: </strong>El idioma de Box Link se cambió <a href="index.php" class="alert-link">inicio</a>.<br>
         <strong>OK: </strong>The language of Box Link has been changed <a href="index.php" class="alert-link">home</a>.
         </div>
     <?php
@@ -107,7 +107,7 @@ if(isset($_POST["newlang"]))
     {
         ?>
         <div class="alert alert-danger">
-        <strong>ERROR: </strong><a href="index.php" class="alert-link">inicio</a>.
+        <strong>ERROR: </strong><a href="index.php" class="alert-link">inicio</a>.<br>
         <strong>ERROR: </strong><a href="index.php" class="alert-link">home</a>.
         </div>
     <?php
