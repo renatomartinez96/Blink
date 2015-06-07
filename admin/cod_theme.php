@@ -12,7 +12,6 @@
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
-        
     }
     include "../assets/includes/lang.php";
 ?>
@@ -27,7 +26,6 @@ licenses restricting copying, distribution, and decompilation.
 Gerardo López | Iván Nolasco | Renato Andres
 
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -38,15 +36,12 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
-
 		<!--Custom CSS-->
 		<link href="../assets/css/sidebar.css" rel="stylesheet">
 		<!--/#Custom CSS-->
         <!--COD THEME-->
         <link href="../assets/css/editor.css" rel="stylesheet">
         <!--/COD THEME-->
-        
-
 	</head>
 	<body>
 		<!--Topbar -->
