@@ -39,7 +39,7 @@
 </head>
     <body>
         <div class="container-fluid">
-            <div class="col-sm-2 full bg-info">
+            <div class="col-sm-2 full bg-primary">
                 <div class="col-xs-12 full text-center">
                     <h4>Parrafo</h4>
                 </div>
@@ -48,21 +48,50 @@
                 </div>
                 <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
                     <div class="col-xs-4 text-center">
-                        <a href="#" class="btn btn-info" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
-                                                                                                                        giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
+                        <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
                             <i class="fa fa-info"></i>
                         </a>
                     </div>
                     <div class="col-xs-4 text-center">
-                        <a href="#" class="btn btn-info" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
+                        <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
                                                                                                                         giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
                             <i class="fa fa-html5"></i>
                         </a>
                     </div>
                     <div class="col-xs-4 text-center">
-                        <a href="#" class="btn btn-info" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
+                        <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
                                                                                                                         giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
                             <i class="fa fa-css3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 full bg-info">
+                <div class="col-xs-12 full text-center">
+                    <h4>Width</h4>
+                </div>
+                <div class="col-xs-12 full">
+                    <input type="text" onkeypress="return onlynums(event)" class="form-control" placeholder="Escribe aquí...">
+                </div>
+                <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
+                    <div class="col-xs-4 text-center">
+                        <a href="#" class="btn btn-info" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
+                            <i class="fa fa-info"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 full bg-success">
+                <div class="col-xs-12 full text-center">
+                    <h4>Width</h4>
+                </div>
+                <div class="col-xs-12 full">
+                    <input type="text" onkeypress="return onlynums(event)" class="form-control" placeholder="Escribe aquí...">
+                </div>
+                <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
+                    <div class="col-xs-4 text-center">
+                        <a href="#" class="btn btn-success" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="lel Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
+                            <i class="fa fa-info"></i>
                         </a>
                     </div>
                 </div>
@@ -74,6 +103,23 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 
 });
+function onlynums(e){
+    var   key=e.keyCode || e.which;
+    var  teclado = String.fromCharCode(key).toLowerCase();
+    var   letras ="0123456789";
+    var   especiales="8-37-38-46-164";
+
+    var  teclado_especial = false;
+
+    for(var i in especiales){
+          if(key==especiales[i]){
+                teclado_especial=true;break;
+          }
+    }
+    if(letras.indexOf(teclado)==-1 && !teclado_especial){
+          return false;
+    }
+}
  </script>
 	</body>
 </html>
