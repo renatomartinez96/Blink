@@ -5,8 +5,10 @@
                 include "app/funciones.php";
             ?>
               $( ".playground" ).droppable({
-                    drop: function( event, ui ) {                       
+                    drop: function( event, ui ) { 
+                        
                         identificar();
+                        
                 }
     });
             
