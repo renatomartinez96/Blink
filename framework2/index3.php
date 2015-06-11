@@ -41,21 +41,21 @@
         <div class="container-fluid">
             <div class="col-sm-2 full bg-primary">
                 <div class="col-xs-12 full text-center">
-                    <h4>Parrafo</h4>
+                    <h4>PARAGRAPH</h4>
                 </div>
                 <div class="col-xs-12 full">
-                    <textarea class="form-control input-sm" style="resize: vertical;" rows="3" placeholder="Texto..."></textarea>
+                    <textarea class="form-control input-sm" style="resize: vertical;" rows="3"></textarea>
                 </div>
                 <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
                     <div class="col-xs-4 text-center">
-                        <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
-                            <i class="fa fa-info"></i>
+                        <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="left">
+                            <i class="fa fa-html5"></i>
                         </a>
                     </div>
                     <div class="col-xs-4 text-center">
                         <a href="#" class="btn btn-primary" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway
-                                                                                                                        giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
-                            <i class="fa fa-html5"></i>
+                                                                                                                        giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="bottom">
+                            <i class="fa fa-info"></i>
                         </a>
                     </div>
                     <div class="col-xs-4 text-center">
@@ -68,17 +68,10 @@
             </div>
             <div class="col-sm-2 full bg-info">
                 <div class="col-xs-12 full text-center">
-                    <h4>Width</h4>
+                    <h4>BGCOLOR</h4>
                 </div>
                 <div class="col-xs-12 full">
-                    <input type="text" onkeypress="return onlynums(event)" class="form-control" placeholder="Escribe aquí...">
-                </div>
-                <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
-                    <div class="col-xs-4 text-center">
-                        <a href="#" class="btn btn-info" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
-                            <i class="fa fa-info"></i>
-                        </a>
-                    </div>
+                    <input type="text" onkeypress="return onlynums(event)" class="form-control">
                 </div>
             </div>
             <div class="col-sm-2 full bg-success">

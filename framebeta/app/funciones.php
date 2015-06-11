@@ -1,4 +1,4 @@
-function remover() {
+ function remover() {
     $( ".htmlMain" ).draggable({revert: true});
     $("#"+IdObjeto).fadeOut(1);
 }
@@ -15,6 +15,7 @@ function focus(id) {
         $("#"+id).addClass("inoff");
 }
 function eventos() {
+    $('[data-toggle="popover"]').popover({template: '<div class="popover" role="tooltip" style="width: 15vw;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><div class="data-content"></div></div></div>',trigger:"manual"});  
     $( ".U" ).on('mouseenter',function() {
         theBox['U'] = $(this).attr('id');
      })
@@ -54,6 +55,20 @@ function createHTML(tag,blq) {
     theBox['Idb'] = "B"+ idF;
     theBox['Ida'] = "A"+ idF;
 }
+function createCSS(tag,blq) {
+    $("#A"+theBox['A'].substr(1,theBox['A'].length)).css(tag,"");
+    theBox['bloqueC'] = blq.substr(0, blq.indexOf("id=''")+4) +"B"+ idF + blq.substr(blq.indexOf("id=''")+4);
+    
+    theBox['Idb'] = "B"+ idF;
+    theBox['Ida'] = "A"+ idF;
+}
+function appendExtr(id,tipo) {
+       if(tipo == "CSS") {
+           $("#"+id).find("#CSS").attr("data-content",$("#"+id).find("#CSS").attr("data-content") + theBox['bloqueC']); 
+           $("#"+id).find("#CSS").popover('show');
+//           $("#"+id).find("#CSS").children().css("display","none")
+       }
+}
 function identificar() {
     eventosOff();
     theBox['tipo'] = WebObjecsArray[IdObjeto].substr(0,WebObjecsArray[IdObjeto].indexOf("-$%#%&-"));
@@ -67,16 +82,21 @@ function identificar() {
         break;
         case "1":
             createHTML(etiqueta,bloque);
-            append("#"+theBox['U'],"#"+theBox['U']);
+            append("#"+theBox['U'],"#A"+theBox['U'].substr(1,theBox['U'].length));
         break;
         case "2":
             createHTML(etiqueta,bloque);
-            append("#"+theBox['U'],"#"+theBox['U']);
+            append("#"+theBox['U'],"#A"+theBox['U'].substr(1,theBox['U'].length));
+        break;
+        case "3":
+            createCSS(etiqueta,bloque); 
+            appendExtr(theBox['D'],"CSS");
         break;
     }
     idF++;
     eventos();
 }
+ 
 $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
              IdObjeto = $(this).attr('id');
       }, });

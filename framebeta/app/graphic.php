@@ -37,9 +37,7 @@
                           </div>
                       </div>
                       <div class="HTMltags">
-                        <div id="7" class="col-xs-5 htmlMain orange "><p>HREF</p></div>
-                        <div id="8" class="col-xs-5 htmlMain orange "><p>SRC</p></div>
-                        <div id="9" class="col-xs-5 htmlMain orange "><p>NAME</p></div>
+                        
                       </div>
                       <label class='noexiste'>No results were found</label>
                   </div>
@@ -54,14 +52,8 @@
                           </div>
                       </div>
                      <div class="HTMltags">
-                        <div id="10" class="col-xs-5 htmlMain royal "><p>BGCOLOR</p></div>
-                        <div id="11" class="col-xs-5 htmlMain royal "><p>MARGINLEFT</p></div>
-                        <div id="12" class="col-xs-5 htmlMain royal "><p>WIDTH</p></div>
-                        <div id="13" class="col-xs-5 htmlMain royal "><p>HEIGHT</p></div>
-                         <div id="15" class="col-xs-5 htmlMain royal "><p>MARGINRIGHT</p></div>
-                         <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
-                         <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
-                         <div id="23" class="col-xs-5 htmlMain royal "><p>BORDER</p></div>
+                        <div id="3" class="col-xs-5 htmlMain royal "><p>BGCOLOR</p></div>
+                        
                      </div>
                      <label class='noexiste'>No results were found</label>
                  </div>
