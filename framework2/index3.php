@@ -35,10 +35,10 @@
     <script src="js/jquery-2.1.1.js" type="text/javascript"></script>
 <!--    <script src="js/jquery-ui.min.js" type="text/javascript"></script>-->
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <!--  COLOR PICKER  -->
+    <!-- COLOR PICKER -->
     <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <link href="../assets/css/docs-bootstrap-colorpicker.css" rel="stylesheet">
-    
+    <!-- / COLOR PICKER -->
 </head>
     <body>
         <div class="container-fluid">
@@ -139,7 +139,7 @@ function onlynums(e){
     }
 }
  </script>
-        <!--   COLOR PICKER     -->
+        <!-- COLOR PICKER -->
         <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
         <script src="../assets/js/docs-bootstrap-colorpicker.js"></script>
         <script>
@@ -149,5 +149,6 @@ function onlynums(e){
                 });
             });
         </script>
+        <!-- / COLOR PICKER -->
 	</body>
 </html>
