@@ -37,6 +37,7 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <!--  COLOR PICKER  -->
     <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="../assets/css/docs-bootstrap-colorpicker.css" rel="stylesheet">
     
 </head>
     <body>
@@ -140,6 +141,7 @@ function onlynums(e){
  </script>
         <!--   COLOR PICKER     -->
         <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+        <script src="../assets/js/docs-bootstrap-colorpicker.js"></script>
         <script>
             $(function(){
                 $('.demo2').colorpicker({
