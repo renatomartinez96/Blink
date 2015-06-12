@@ -81,6 +81,39 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-2 full bg-info">
+                <div class="col-xs-12 full text-center">
+                    <h4>MEASURES</h4>
+                </div>
+                <div class="col-xs-12 full form-inline">
+<!--                    <input type="text" onkeypress="return onlynums(event)" class="form-control">-->
+                    <div class="input-group">
+                        <input type="text" class="form-control" onkeypress="return onlynums(event)" />
+                        <div class="input-group-addon">
+                            <div class="dropdown">
+                                <a id="dLabel" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <li><a onclick="selectType(1)">px</a></li>
+                                    <li><a onclick="selectType(2)">%</a></li>
+                                    <li><a onclick="selectType(3)">vw</a></li>
+                                    <li><a onclick="selectType(4)">vh</a></li>
+                                </ul>
+                            </div>
+                        </div>
+<!--
+                        <select class="form-control input-sm col-md-4">
+                          <option>px</option>
+                          <option>%</option>
+                          <option>vw</option>
+                          <option>vh</option>
+                        </select>
+-->
+                    </div>
+                    
+                </div>
+            </div>
             <div class="col-sm-2 full bg-success">
                 <div class="col-xs-12 full text-center">
                     <h4>Width</h4>
@@ -114,6 +147,7 @@
                     </div>
                 </div>
             </div>
+            <p id="pecora"></p>
         </div>
      <script> 
 $(document).ready(function(){
@@ -121,6 +155,9 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 
 });
+function selectType(usrselect){
+    document.getElementById('pecora').innerHTML = usrselect;
+}
 function onlynums(e){
     var   key=e.keyCode || e.which;
     var  teclado = String.fromCharCode(key).toLowerCase();
