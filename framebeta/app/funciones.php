@@ -2,17 +2,28 @@
     $( ".htmlMain" ).draggable({revert: true});
     $("#"+IdObjeto).fadeOut(1);
 }
+function changeText(id,text) {
+    $("#A"+id.substr(1,id.length)).text(text);
+}
 function append(play,html) {
     $(play).append(theBox['bloqueC']);
     $(html).append(theBox['etiquetaC']);
     $("#"+theBox['Idb']).addClass("animated");
     $("#"+theBox['Idb']).addClass("bounceIn");
 }
+function changeATR(id,text,atr) {
+    $("#A"+id.substr(1,id.length)).css(atr,text);
+}
 function focus(id) {
     $(".playground .A").each(function(){
              $(this).removeClass("inoff");
          });
         $("#"+id).addClass("inoff");
+}
+function closePop() {
+     $(".playground .popover").each(function(){
+             $(this).popover('hide');
+         });
 }
 function eventos() {
     $('[data-toggle="popover"]').popover({template: '<div class="popover" role="tooltip" style="width: 15vw;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><div class="data-content"></div></div></div>',trigger:"manual"});  
@@ -37,7 +48,15 @@ function eventos() {
         focus(theBox['A']);
     });
     $(".T").on('input', function() {
-        console.log("frf");   
+        changeText($(this).parent().parent().attr('id'),$(this).val());  
+    });
+    $(".C").on('input', function() { 
+    var C = $(this).parent().parent().attr('id').substr($(this).parent().parent().attr('id').indexOf("0"),$(this).parent().parent().attr('id').length);
+ changeATR($(this).parent().parent().parent().parent().parent().parent().parent().attr('id'),$(this).val(),WebObjecsArray[C].substr(WebObjecsArray[C].substr(0,WebObjecsArray[C].indexOf("-$%#%&-")).length + 7,WebObjecsArray[C].indexOf("-$%#%&-",WebObjecsArray[C].substr(0,WebObjecsArray[C].indexOf("-$%#%&-")).length + 7) - 8));  
+    });
+    $(".P").on('click', function() {
+        //closePop();
+        $(this).popover('toggle');
     });
 }
 function eventosOff() {
@@ -48,6 +67,9 @@ function eventosOff() {
      $('.A').off("mouseenter");
      $('.A').off("mouseleave");
      $(".T").off("input");
+     $(".C").off("input");
+     $(".P").off("click");
+
 }
 function createHTML(tag,blq) {
     theBox['etiquetaC'] = "<"+tag+" id='A"+idF+"'>"+"</"+tag+">";
@@ -56,8 +78,8 @@ function createHTML(tag,blq) {
     theBox['Ida'] = "A"+ idF;
 }
 function createCSS(tag,blq) {
-    $("#A"+theBox['A'].substr(1,theBox['A'].length)).css(tag,"");
-    theBox['bloqueC'] = blq.substr(0, blq.indexOf("id=''")+4) +"B"+ idF + blq.substr(blq.indexOf("id=''")+4);
+    $("#A"+theBox['D'].substr(1,theBox['D'].length)).css(tag,"inherit");
+    theBox['bloqueC'] = blq.substr(0, blq.indexOf("id=''")+4) +"B"+ idF + "O" + IdObjeto + blq.substr(blq.indexOf("id=''")+4);
     
     theBox['Idb'] = "B"+ idF;
     theBox['Ida'] = "A"+ idF;
