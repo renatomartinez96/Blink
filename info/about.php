@@ -134,6 +134,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-12 full text-center typed" id="div3">
+                    <div class="jumbotron transparent">
+                        <h3>Box Link es una plataforma en la cual cualquier persona intereada en el dise</h3>                    
+                    </div>
+                </div>
             <!--/#Content-->
             </div>
         </div>
@@ -146,7 +151,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         <script>
         $(function(){
             $('#story').typed({
-                strings: ["&lt;html&gt; ^750\n<br> --&lt;head&gt; ^750\n<br> ----&lt;title&gt;Lorem ipsum&lt;/title&gt; ^750\n<br> ----&lt;link href='css/main.css' rel='stylesheet'&gt; ^750\n<br> --&lt;/head&gt; ^750\n<br> --&lt;body&gt; ^750\n<br> ----&lt;div&gt; ^750\n<br> ------&lt;img src='img/brand.png'&gt; ^750\n<br> ------&lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt; ^750\n<br> ------&lt;h3&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis efficitur.&lt;/h3&gt; ^750\n<br> ------&lt;ul&gt; ^750\n<br> --------&lt;li&gt;Lorem&lt;/li&gt; ^750\n<br> --------&lt;li&gt;Ipsum&lt;/li&gt; ^750\n<br> ------&lt;/ul&gt; ^750\n<br> ----&lt;/div&gt; ^750\n<br> --&lt;/body&gt; ^750\n<br> &lt;/html&gt; ^750\n<br>"],
+                strings: ["&lt;html&gt; ^750\n<br> --&lt;head&gt; ^750\n<br> ----&lt;title&gt;Lorem ipsum&lt;/title&gt; ^750\n<br> ----&lt;link href='css/main.css' rel='stylesheet'&gt; ^750\n<br> --&lt;/head&gt; ^750\n<br> --&lt;body&gt; ^750\n<br> ----&lt;div&gt; ^750\n<br> ------&lt;img src='img/brand.png'&gt; ^750\n<br> ------&lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt; ^750\n<br> ------&lt;h3&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis efficitur.&lt;/h3&gt; ^750\n<br> ------&lt;ul&gt; ^750\n<br> --------&lt;li&gt;Lorem&lt;/li&gt; ^750\n<br> --------&lt;li&gt;Ipsum&lt;/li&gt; ^750\n<br> ------&lt;/ul&gt; ^750\n<br> ----&lt;/div&gt; ^750\n<br> --&lt;/body&gt; ^750\n<br> &lt;/html&gt;"],
                 typeSpeed: 20,
                 backDelay: 500,
                 loop: false,
