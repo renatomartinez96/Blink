@@ -2,15 +2,89 @@
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery.easing.min.js"></script>
-<script src="assets/js/scrolling-nav.js"></script>
-<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script src="assets/js/scrolling-wnav.js"></script>
+<script>
+    var jump=function(e)
+    {
+       //prevent the "normal" behaviour which would be a "hard" jump
+       e.preventDefault();
+       //Get the target
+       var target = $(this).attr("href");
+       
+       //perform animated scrolling
+       $('html,body').animate(
+       {
+               //get top-position of target-element and set it as scroll target
+               scrollTop: $(target).offset().top
+       //scrolldelay: 2 seconds
+       },2000,function()
+       {
+               //attach the hash (#jumptarget) to the pageurl
+               location.hash = target;
+       });
+
+    }
+
+    $(document).ready(function()
+    {
+           $('a[href*=#]').bind("click", jump);
+           return false;
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $( "body" ).scroll(function() {
+          if ($(".navbar").offset().top >= $("#homevideo").offset().top &&  $(".navbar").offset().top < $("#about").offset().top ) 
+          {
+            $("#nav1").addClass("active");
+            $("#nav2").removeClass("active");
+            $("#nav3").removeClass("active");
+            $("#nav4").removeClass("active");
+          }
+          if($(".navbar").offset().top >= $("#about").offset().top && $(".navbar").offset().top < $("#devs").offset().top )
+          {
+            $("#nav2").addClass("active");
+            $("#nav1").removeClass("active");
+            $("#nav3").removeClass("active");
+            $("#nav4").removeClass("active");
+          }
+          if($(".navbar").offset().top >= $("#devs").offset().top && $(".navbar").offset().top < $("#contact").offset().top)
+          {
+            $("#nav3").addClass("active");
+            $("#nav1").removeClass("active");
+            $("#nav2").removeClass("active");
+            $("#nav4").removeClass("active");
+          }
+          if($(".navbar").offset().top >= $("#contact").offset().top)
+          {
+            $("#nav4").addClass("active");
+            $("#nav1").removeClass("active");
+            $("#nav2").removeClass("active");
+            $("#nav3").removeClass("active");
+          }
+        });
+    });
+        
+</script>
+<script>
+    $(document).ready(function(){
+        $(".nav-open").click(function(e) {
+			e.preventDefault();
+            $("#navbar-box-link").toggleClass("toggled");
+            $("#login_form").toggleClass("hidden");
+            $("body").toggleClass("body_no_scroll");
+            $("#nav-open1").toggleClass("hidden");
+            $("#nav-open2").toggleClass("hidden");
+        });
+    });
+</script>
 <script>
 	$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-			$("#avatar").toggleClass("toggled");
-			$(".sidebar-nav").toggleClass("toggled");
-			$(".textos").toggleClass("toggled");
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $("#avatar").toggleClass("toggled");
+        $(".sidebar-nav").toggleClass("toggled");
+        $(".textos").toggleClass("toggled");
 	});
 </script>
 <script>

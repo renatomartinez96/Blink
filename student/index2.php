@@ -75,9 +75,6 @@ Gerardo López | Iván Nolasco | Renato Andres
         <!-- elFinder JS (REQUIRED) -->
 		<script type="text/javascript" src="assets/elfinder/js/elfinder.min.js"></script>
 
-		<!-- elFinder translation (OPTIONAL) -->
-		<script type="text/javascript" src="assets/elfinder/js/i18n/elfinder.ru.js"></script>
-
 		<!-- elFinder initialization (REQUIRED) -->
 		<script type="text/javascript" charset="utf-8">
 			$().ready(function() {

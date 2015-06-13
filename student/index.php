@@ -239,6 +239,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                                         <div class='col-xs-9 text-right'>
                                                                                             <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
                                                                                         </div>
+                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class='panel-body full lecciones'>

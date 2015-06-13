@@ -37,5 +37,6 @@
         max-width: 100%;
         max-height: 100%;
         margin-top:0px;
+        margin-bottom: -5px !important;
     }
 </style>

@@ -96,3 +96,9 @@ scrollbar-thumb {
     border-radius: 0px !important;
     background: #BF5A16 !important;
 }
+.justify{
+    text-align: justify;
+}
+.transparent{
+    background:transparent !important;
+}
