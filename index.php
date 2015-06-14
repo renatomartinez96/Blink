@@ -683,5 +683,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 
             google.maps.event.addDomListener(window, 'load', showGoogleMaps);
         </script>
+        
     </body>
 </html>
