@@ -147,6 +147,24 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-2 full bg-warning">
+                <div class="col-xs-12 full text-center">
+                    <h4>File</h4>
+                </div>
+                <div class="col-xs-12 full">
+                    <button class="btn form-control btn-warning btn-file btn-sm inputrounded" style="position: relative; overflow: hidden; border:0px;">
+                        Seleccionar Archivo<input type="file" name="file" id="photo-file" accept='image/*|video/mp4' style="position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;background: white;cursor: inherit;display: block;
+">
+                    </button>
+                </div>
+                <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
+                    <div class="col-xs-4 text-center">
+                        <a href="#" class="btn btn-warning" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="lel Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
+                            <i class="fa fa-info"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <p id="pecora"></p>
         </div>
      <script> 
