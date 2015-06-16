@@ -37,7 +37,7 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <!-- COLOR PICKER -->
     <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-    <link href="../assets/css/docs-bootstrap-colorpicker.css" rel="stylesheet">
+<!--    <link href="../assets/css/docs-bootstrap-colorpicker.css" rel="stylesheet">-->
     <!-- / COLOR PICKER -->
 </head>
     <body>
@@ -129,6 +129,7 @@
                     </div>
                 </div>
             </div>
+<!--
             <div class="col-sm-2 full bg-success">
                 <div class="col-xs-12 full text-center">
                     <h4>Width</h4>
@@ -147,6 +148,7 @@
                     </div>
                 </div>
             </div>
+-->
             <div class="col-sm-2 full bg-warning">
                 <div class="col-xs-12 full text-center">
                     <h4>File</h4>
@@ -196,7 +198,7 @@ function onlynums(e){
  </script>
         <!-- COLOR PICKER -->
         <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
-        <script src="../assets/js/docs-bootstrap-colorpicker.js"></script>
+<!--        <script src="../assets/js/docs-bootstrap-colorpicker.js"></script>-->
         <script>
             $(function(){
                 $('.demo2').colorpicker({
