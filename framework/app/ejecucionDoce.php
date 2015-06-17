@@ -34,10 +34,6 @@
               $( ".playground" ).droppable({
                     drop: function( event, ui ) {
                         identifie();
-                        getParameter();
-                        getParameterDos();
-                        getParameterTres();
-                        inputText();
                         addDescr();
                         momentoTo++;
                         IdObjetoCreadoUnico--;

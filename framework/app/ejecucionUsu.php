@@ -8,10 +8,6 @@
                     drop: function( event, ui ) {
                         
                         identifie();
-                        getParameter();
-                        getParameterDos();
-                        getParameterTres();
-                        inputText();
                         IdObjetoCreadoUnico--;
                         
                 }

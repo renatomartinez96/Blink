@@ -45,9 +45,11 @@
     </script>
     <script src="js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    
+    <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
 </head>
     <body>
+        
 		<?php 
 			include '../nav/topbar.php';
 		?>

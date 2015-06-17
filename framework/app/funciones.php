@@ -1,95 +1,98 @@
+function focus(id) {
+    $(".playground .A").each(function(){
+             $(this).removeClass("inoff");
+         });
+        $("#"+id).addClass("inoff");
+}
+function eventos() {
+    
+    $('.inColor').colorpicker({
+                format: 'hex',
+    }).on('hidePicker.colorpicker', function(event){
+        
+        console.log("l");
+    });
+    $( ".U" ).on('mouseenter',function() {
+        IddeInserssion = $(this).attr('id');
+     })
+    .on('mouseleave',function() {
+        IddeInserssion = null;
+    });
+    $( ".D" ).on('mouseenter',function() {
+        IddeInserssionAtriSty = $(this).attr('id');
+        IddeInserssiondos = IddeInserssionAtriSty;
+         var tipoindex = IddeInserssionAtriSty.indexOf("T");
+        var idIndex = IddeInserssionAtriSty.indexOf("O");
+         var idObjeto = IddeInserssionAtriSty.substr(idIndex + 1);
+         var tipoedito = IddeInserssionAtriSty.substr(tipoindex + 1,IddeInserssionAtriSty.length - idIndex - idObjeto.length);
+        IdObjetosupperior = idObjeto;
+        idAtributoactual = tipoedito;
+        
+     })
+    .on('mouseleave',function() {
+        IddeInserssiondos = null;
+        idObjeto = null;
+        tipoedito = null;
+    });
+    $( ".A" ).on('mouseenter',function() {
+        var IddeInserssionAtriStytemp = "";
+         IddeInserssionAtriStytemp = $(this).attr('id');
+         var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
+        var idIndex = IddeInserssionAtriStytemp.indexOf("O");
+         var idObjeto = IddeInserssionAtriStytemp.substr(idIndex + 1);
+         var tipoedito = IddeInserssionAtriStytemp.substr(tipoindex + 1,IddeInserssionAtriStytemp.length - idIndex - idObjeto.length);
+        idAtributoactual = tipoedito;
+        IdObjetosupperior = idObjeto;
+        focus(IddeInserssionAtriStytemp);
+     }) 
+    .on('mouseleave',function() {
+        var IddeInserssionAtriStytemp = "";
+        focus(IddeInserssionAtriStytemp);
+        idObjeto = null;
+        tipoedito = null;
+    });
+    $(".T").on('input click ',function () {
+        var valor = $(this).val();
+        var IdObjetoTexto = $(this).parent().parent().attr('id');
+        var IdObjetoTextoATR = $(this).parent().parent().parent().attr('id');
+        var IddeInserssionAtriStytemp = "";
+         IddeInserssionAtriStytemp = $(this).parent().parent().attr('id');
+        console.log(IddeInserssionAtriStytemp);
+         var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
+        var idIndex = IddeInserssionAtriStytemp.indexOf("O");
+         var idObjeto = IddeInserssionAtriStytemp.substr(idIndex + 1);
+         var tipoedito = IddeInserssionAtriStytemp.substr(tipoindex + 1,IddeInserssionAtriStytemp.length - idIndex - idObjeto.length);
+        idAtributoactual = tipoedito;
+        IdObjetosupperior = idObjeto;
+        if (idAtributoactual == "3") {
+            var addou = WebObjecsArray[IdObjetosupperior];
+            var numerouno = addou.indexOf("$");
+            var nombre = addou.substr(0,numerouno);
+            $("#A"+IdObjetoTextoATR).attr(nombre, valor);
+        }else if (idAtributoactual == "4") {
+            var addou = WebObjecsArray[IdObjetosupperior];
+            var numerouno = addou.indexOf("$");
+            var nombre = addou.substr(0,numerouno);
+            $("#A"+IdObjetoTextoATR).css(nombre, valor);
+        }else {
+            $("#A"+IdObjetoTexto).text(valor);
+}
+    });
+    $(".P").on('click', function() {
+        $(this).popover('toggle');
+    });
+}
+function eventosOff() {
+     $('.U').off("mouseenter");
+     $('.U').off("mouseleave");
+    $('.D').off("mouseenter");
+     $('.D').off("mouseleave");
+     $('.A').off("mouseenter");
+     $('.A').off("mouseleave");
+     $(".T").off("input");
+     $(".P").off("click");
 
-     function inputText() {
-                     $('.textinp').off( "click");
-                     $('.textinp').on('input', function() {
-                     var valor = $(this).val();
-                         console.log(valor);
-                     var IdObjetoTexto = $(this).parent().parent().attr('id');
-                     var IdObjetoTextoATR = $(this).parent().parent().parent().attr('id');
-                    if (idAtributoactual == "3") {
-                        var addou = WebObjecsArray[IdObjetosupperior];
-                        var numerouno = addou.indexOf("$");
-                        var nombre = addou.substr(0,numerouno);
-                        $("#A"+IdObjetoTextoATR).attr(nombre, valor);
-                    }else if (idAtributoactual == "4") {
-                        var addou = WebObjecsArray[IdObjetosupperior];
-                        var numerouno = addou.indexOf("$");
-                        var nombre = addou.substr(0,numerouno);
-                        $("#A"+IdObjetoTextoATR).css(nombre, valor);
-                    }else {
-                        $("#A"+IdObjetoTexto).text(valor);
-                    }
-                });   
-                }
-            function getParameterTres() {
-                    $('.htmlPartsAtriSty').off( "mouseenter");
-                    $('.htmlPartsAtriSty').off( "mouseleave");
-                    $( ".htmlPartsAtriSty" ).on('mouseenter',function() {
-                         var IddeInserssionAtriStytemp = "";
-                         IddeInserssionAtriStytemp = $(this).attr('id');
-                         var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
-                        var idIndex = IddeInserssionAtriStytemp.indexOf("O");
-                         var idObjeto = IddeInserssionAtriStytemp.substr(idIndex + 1);
-                         var tipoedito = IddeInserssionAtriStytemp.substr(tipoindex + 1,IddeInserssionAtriStytemp.length - idIndex - idObjeto.length);
-                        idAtributoactual = tipoedito;
-                        IdObjetosupperior = idObjeto;
-                         $(this).addClass("arriba");
-                    
-                     })
-                    .on('mouseleave',function() {
-                        var IddeInserssionAtriStytemp = "";
-                         IddeInserssionAtriStytemp = $(this).attr('id');
-                         var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
-                        var idIndex = IddeInserssionAtriStytemp.indexOf("O");
-                         var idObjeto = IddeInserssionAtriStytemp.substr(idIndex + 1);
-                         var tipoedito = IddeInserssionAtriStytemp.substr(tipoindex + 1,IddeInserssionAtriStytemp.length - idIndex - idObjeto.length);
-                        idAtributoactual = tipoedito;
-                        IdObjetosupperior = idObjeto;
-                        $(this).removeClass("arriba");
-                    });
-                } 
-                function getParameterDos() {
-                  //$('.htmlParts').off( "mouseenter");
-                    //$('.htmlParts').off( "mouseleave");
-                    $( ".htmlParts" ).on('mouseenter',function() {
-                        
-                         IddeInserssionAtriSty = $(this).attr('id');
-                        IddeInserssiondos = IddeInserssionAtriSty;
-                         var tipoindex = IddeInserssionAtriSty.indexOf("T");
-                        var idIndex = IddeInserssionAtriSty.indexOf("O");
-                         var idObjeto = IddeInserssionAtriSty.substr(idIndex + 1);
-                         var tipoedito = IddeInserssionAtriSty.substr(tipoindex + 1,IddeInserssionAtriSty.length - idIndex - idObjeto.length);
-                        IdObjetosupperior = idObjeto;
-                        idAtributoactual = tipoedito;
-                         $(this).addClass("arriba2");
-                    
-                     })
-                    .on('mouseleave',function() {
-                        IddeInserssionAtriSty = $(this).attr('id');
-                        IddeInserssiondos = IddeInserssionAtriSty;
-                         var tipoindex = IddeInserssionAtriSty.indexOf("T");
-                        var idIndex = IddeInserssionAtriSty.indexOf("O");
-                         var idObjeto = IddeInserssionAtriSty.substr(idIndex + 1);
-                         var tipoedito = IddeInserssionAtriSty.substr(tipoindex + 1,IddeInserssionAtriSty.length - idIndex - idObjeto.length);
-                        IdObjetosupperior = idObjeto;
-                        idAtributoactual = tipoedito;
-                        $(this).removeClass("arriba2");
-                    });
-                }
-                function getParameter() {
-                    $('.uno').off( "mouseenter");
-                    $('.uno').off( "mouseleave");
-                    $( ".uno" ).on('mouseenter',function() {
-                         IddeInserssion = $(this).attr('id');
-                         $(this).addClass("arriba");
-                    
-                     })
-                    .on('mouseleave',function() {
-                        IddeInserssion = $(this).attr('id');
-                        $(this).removeClass("arriba");
-                        
-                    });
-                }
+}
         //estras
 $(".showPreview").click(function() {
      var w = window.open();
@@ -154,7 +157,6 @@ $(".createHTML").click(function() {
                 $("#"+IddeInserssionAtriSty).remove();
                  $("#A"+IddeInserssionAtriSty).remove();
                 momentoTo = momentoTo - 2;
-                console.log(momentoTo);
                
             }
         //extras
@@ -247,6 +249,7 @@ $(".createHTML").click(function() {
                     EtiquetaCreada = etiqueta;
                 }
                 function identifie() {
+                    eventosOff();
                     var addou = WebObjecsArray[IdObjeto];
                     var numerouno = addou.indexOf("$");
                     var nombre = addou.substr(0,numerouno);
@@ -279,5 +282,5 @@ $(".createHTML").click(function() {
                                deletete();
                              break;
                     }
-                    
+                    eventos();
                 }
