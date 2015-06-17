@@ -20,11 +20,6 @@ function focus(id) {
          });
         $("#"+id).addClass("inoff");
 }
-function closePop() {
-     $(".playground .popover").each(function(){
-             $(this).popover('hide');
-         });
-}
 function eventos() {
     $('[data-toggle="popover"]').popover({template: '<div class="popover" role="tooltip" style="width: 15vw;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><div class="data-content"></div></div></div>',trigger:"manual"});  
     $( ".U" ).on('mouseenter',function() {
@@ -55,7 +50,6 @@ function eventos() {
  changeATR($(this).parent().parent().parent().parent().parent().parent().parent().attr('id'),$(this).val(),WebObjecsArray[C].substr(WebObjecsArray[C].substr(0,WebObjecsArray[C].indexOf("-$%#%&-")).length + 7,WebObjecsArray[C].indexOf("-$%#%&-",WebObjecsArray[C].substr(0,WebObjecsArray[C].indexOf("-$%#%&-")).length + 7) - 8));  
     });
     $(".P").on('click', function() {
-        //closePop();
         $(this).popover('toggle');
     });
 }
