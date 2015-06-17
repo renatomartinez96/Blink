@@ -64,6 +64,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 max-width:100vw;
                 height:100vh;
             }
+            #div3{
+                background-color: #de6926;
+            }
             #codetext{
                 padding-top:105px;
                 z-index:9;
@@ -117,7 +120,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 height:100%;
             }
             @media only screen and (min-width: 1366px) {
-                #layer1{
+                .layer1{
                     width:105%;
                     margin-left:-2.5%;
                     margin-top:200px;
@@ -141,7 +144,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             
             }
             @media only screen and (min-width: 1920px) {
-                #layer1{
+                .layer1{
                     width:105%;
                     margin-left:-2.5%;
                     position:center;
@@ -186,6 +189,53 @@ Gerardo López | Iván Nolasco | Renato Andres
                 z-index:1031;
             }
         </style>
+        <style>
+            .laptop-wrapper {width: 100%;}
+            .laptop-screen-frame {
+/*                border: 1px solid #000;*/
+                padding: 1.250em;
+                margin: 0.625em 0.625em 0em 0.625em;
+                border-radius: 1.250em 1.250em 0em 0em;
+                border-bottom:none;
+                background: rgb(149,149,149); 
+            }
+            .laptop-screen-content {
+                background: #fff;
+                height: auto;
+            }
+            .laptop-body {
+                height:1.250em; 
+                background: rgb(235, 235, 235);
+/*                border: 1px solid #666;*/
+            }
+            .laptop-button {
+                height:0.400em;
+                width: 15%;
+                margin:auto;
+                border-radius: 0em 0em 10.00em 10.000em;
+                background: rgb(183, 183, 183);
+                margin-bottom: 0.625em;
+/*                border: 1px solid #666;*/
+                border-top: none;
+            }
+            .laptop-base {
+                height:0.375em;
+                border-radius: 0em 0em 10.00em 10.000em;
+            background: rgb(177, 177, 177);
+            margin-bottom: 0.625em;
+/*            border: 1px solid #666;*/
+            border-top: none;
+            }
+            img {
+                max-width: 100%;
+                height:auto;
+            }
+            @media \0screen {
+               img { 
+                width: auto;
+              }
+            }
+        </style>
         <script>
             window.addEventListener("load", function(){
                 var load_screen = document.getElementById("load_screen");
@@ -222,9 +272,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                       data-friction-y="0.1"
                       data-invert-x="true"
                       data-invert-y="true">
-                      <li class="layer" data-depth="0.04"><img id="layer01" src="img/layer01.png"></li>
-                      <li class="layer" data-depth="0.06"><img id="layer1" src="img/layer02.png"></li>
-                      <li class="layer" data-depth="0.08"><img id="layer1" src="img/layer0.png"></li>
+                      <li class="layer" data-depth="0.04"><img class="layer1" src="img/layer01.png"></li>
+                      <li class="layer" data-depth="0.06"><img class="layer1" src="img/layer02.png"></li>
+                      <li class="layer" data-depth="0.08"><img class="layer1" src="img/layer0.png"></li>
                       <li class="layer" data-depth="0.30"><img id="layer3" src="img/layer2.png" style="width:80%;"></li>
                       <li class="layer" data-depth="0.10"><img id="layer2" src="img/layer3.png" style="width:80%;"></li>
                       <li class="layer" data-depth="0.50"><img id="layer4" src="img/layer1.png" style=""></li>
@@ -250,11 +300,59 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                     </div>
                 </div>
+<!--
                 <div class="col-xs-12 full text-center typed" id="div3">
                     <div class="jumbotron transparent">
                         <h3 class="justify">
                             <strong>Box Link</strong> es una plataforma de aprendizaje didáctico en la cual las personas interesadas en aprender diseño de Front-end pueden adquirir los conocimientos básicos necesarios para iniciarse en el diseño de páginas web. El método que <strong>Box Link</strong> implementa para la enseñanza de dichos términos es mediante el uso de bloques, la principal ventaja es que promovemos el verdadero aprendizaje de los diferentes lenguajes para diseño web(HTML5 y CSS3), esto gracias a que el estudiante no tiene la posibilidad de sencillamente solo copiar el código como en otras plataformas, sino que la única manera de poder realizar la lección es poniendo los bloques de manera que cumpla los requisitos para poder pasar la lección.
                         </h3>                    
+                    </div>
+                </div>
+-->
+                <div class="col-xs-12 full text-center typed" id="div3">
+                    <div class="container">
+                        <div class="jumbotron transparent text-center">
+                            <h1 class="junction-regular">¿Como funciona <strong class="junction-bold">Box Link</strong>?</h1>
+                        </div>
+                        <div class="col-xs-12 full">
+                            <div class="col-xs-5">
+                                <div class="laptop-wrapper">
+                                    <div class="laptop-screen-frame">
+                                        <div class="laptop-screen-content">
+                                            <img src="img/screenshot2.png" />
+                                        </div>
+                                    </div>
+                                    <div class="laptop-body">
+                                        <div class="laptop-button">
+
+                                        </div>
+                                    </div>
+                                    <div class="laptop-base">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2 text-center" style="height:100%;">
+                                <img src="img/arrow.png" style="width:90%;">
+                            </div>
+                            <div class="col-xs-5">
+                                <div class="laptop-wrapper">
+                                    <div class="laptop-screen-frame">
+                                        <div class="laptop-screen-content">
+                                            <img src="img/screenshot1.png" />
+                                        </div>
+                                    </div>
+                                    <div class="laptop-body">
+                                        <div class="laptop-button">
+                                        </div>
+                                    </div>
+                                    <div class="laptop-base">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jumbotron transparent text-center">
+                            En <strong>Box Link</strong> hemos desarrollado una plataforma interactiva para el aprendizaje de HTML5 y CSS3
+                        </div>
                     </div>
                 </div>
             <!--/#Content-->
