@@ -152,7 +152,6 @@
                     </div>
                 </div>
             </div>
-<!--            <p id="pecora"></p>-->
         </div>
      <script> 
 $(document).ready(function(){
@@ -160,29 +159,55 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 
 });
-function selectType(usrselect){
-    var nah = usrselect;
-//    document.getElementById('dLabel').innerHTML = usrselect;
-    var inputn1 = document.getElementById("inputn1");
-    inputn1.value = inputn1.value + nah;
-}
-function onlynums(e){
-    var   key=e.keyCode || e.which;
-    var  teclado = String.fromCharCode(key).toLowerCase();
-    var   letras ="0123456789";
-    var   especiales="8-37-38-46-164";
-
-    var  teclado_especial = false;
-
-    for(var i in especiales){
-          if(key==especiales[i]){
-                teclado_especial=true;break;
-          }
+// FUNCIÓNES DE LAS MEDIDAS DE CSS
+    function selectType(usrselect){
+        var t1 = "px"; 
+        var t2 = "%"; 
+        var t3 = "vw";
+        var t4 = "vh";
+        var typetoprint = "";
+        switch(usrselect) 
+        {
+            case 1:
+                typetoprint = t1;
+            break;
+            case 2:
+                typetoprint = t2;
+            break;
+            case 3:
+                typetoprint = t3;
+            break;
+            case 4:
+                typetoprint = t4;
+            break;
+            default:
+                typetoprint = t1;
+        }
+        var inputn1 = document.getElementById("inputn1");
+        inputn1.value = inputn1.value + typetoprint;
     }
-    if(letras.indexOf(teclado)==-1 && !teclado_especial){
-          return false;
+    function addText(){
+        var inputn1 = document.getElementById("inputn1");
+        inputn1.value = inputn1.value + typetoprint;
     }
-}
+// / FUNCIÓNES DE LAS MEDIDAS DE CSS
+    function onlynums(e){
+        var   key=e.keyCode || e.which;
+        var  teclado = String.fromCharCode(key).toLowerCase();
+        var   letras ="0123456789";
+        var   especiales="8-37-38-46-164";
+
+        var  teclado_especial = false;
+
+        for(var i in especiales){
+              if(key==especiales[i]){
+                    teclado_especial=true;break;
+              }
+        }
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+              return false;
+        }
+    }
  </script>
         <!-- COLOR PICKER -->
         <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
