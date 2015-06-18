@@ -25,6 +25,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->fetch();
         
     }
+    include "../assets/includes/lang.php";
 ?>
  <!DOCTYPE html>
 <html lang="en">
