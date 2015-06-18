@@ -10,13 +10,13 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Add description</h4>
+                        <h4 class="modal-title" id="myModalLabel">Agregar la descripción</h4>
                       </div>
                       <div class="modal-body">
                         <textarea class="valueDescription"></textarea>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary saveDescription">Save</button>
+                        <button type="button" class="btn btn-primary saveDescription">Guardar</button>
                       </div>
                     </div>
                   </div>

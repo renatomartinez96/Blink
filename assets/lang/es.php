@@ -124,7 +124,10 @@ $langprint = array(
 
 //----------------------------------------------
 
-
+//    framework
+    "framework-Theoretical-introduction" => "Theoretical introduction",
+// /# framework
+//----------------------------------------------
 //    docente
 
 // /# docente

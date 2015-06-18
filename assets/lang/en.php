@@ -130,7 +130,11 @@ $langprint = array(
 // /# docente
 //----------------------------------------------
     
-
+//    framework
+    "framework-Theoretical-introduction" => "Theoretical introduction",
+// /# framework
+//----------------------------------------------
+    
 //    prueba
         "lel" => "The to&ntilde;ito :D",
         "nosession" => "You are not logged in",
