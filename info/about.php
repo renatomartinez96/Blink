@@ -347,7 +347,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
                         <div class="jumbotron transparent text-center">
-                            En <strong>Box Link</strong> hemos desarrollado una plataforma interactiva para el aprendizaje de HTML5 y CSS3
+                            <p><small>En <strong>Box Link</strong> hemos desarrollado una plataforma interactiva para el aprendizaje de HTML5 y CSS3 </small></p><br>
+                            <p class="lead junction-light text-justify">Box Link nació como una idea para facilitar el aprendizaje de diseño Web, evitando desde un principio la edición con código, ya que iniciar de esta manera, trae muchos obstaculos.</p>
+                            <p class="lead junction-light text-justify">Con nuestro nuevo sistema de bloques, sentar las bases del diseño Web es mucho más fácil, interactivo y divertido. Hemos doblado la mayoría de etiquetas y atributos de HTML5 y propiedades de CSS3 a bloques que pueden ser manipulados por ti en nuestro framework.</p>
                         </div>
                     </div>
                 </div>
