@@ -1,3 +1,6 @@
+//VALIDACIONES
+
+//VALIDACIONES
 function focus(id) {
     $(".playground .A").each(function(){
              $(this).removeClass("inoff");
@@ -89,7 +92,7 @@ function eventosOff() {
      $('.D').off("mouseleave");
      $('.A').off("mouseenter");
      $('.A').off("mouseleave");
-     $(".T").off("input");
+     $(".T").off("input click");
      $(".P").off("click");
 
 }
