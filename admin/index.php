@@ -15,7 +15,7 @@
         
     }
     include "auto.php";
-    include "../assets/includes/lang.php"
+    include "../assets/includes/lang.php";
 ?>
 
 <!--
