@@ -52,10 +52,7 @@
                 </div>
                 <div class="col-xs-12 full">
                     <form action="#" enctype="multipart/form-data" method="post">
-                        <button class="btn form-control btn-warning btn-file btn-sm inputrounded" style="position: relative; overflow: hidden; border:0px;">
-                            Seleccionar Archivo<input type="file" name="file" accept='image/*|video/*' style="position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;background: white;cursor: inherit;display: block;
-    " multiple>
-                        </button>
+                        <input type="file" class="form-control btn btn-warning" name="file" accept='image/*|video/*' multiple>
                         <input class="btn btn-warning form-control" type="submit" name="submit" value="Subir archivo">
                     </form>
                 </div>

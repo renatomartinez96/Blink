@@ -64,9 +64,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 max-width:100vw;
                 height:100vh;
             }
-            #div3{
-                background-color: #de6926;
-            }
             #codetext{
                 padding-top:105px;
                 z-index:9;
@@ -120,7 +117,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 height:100%;
             }
             @media only screen and (min-width: 1366px) {
-                .layer1{
+                #layer1{
                     width:105%;
                     margin-left:-2.5%;
                     margin-top:200px;
@@ -144,7 +141,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             
             }
             @media only screen and (min-width: 1920px) {
-                .layer1{
+                #layer1{
                     width:105%;
                     margin-left:-2.5%;
                     position:center;
@@ -226,14 +223,13 @@ Gerardo López | Iván Nolasco | Renato Andres
 /*            border: 1px solid #666;*/
             border-top: none;
             }
-            img {
-                max-width: 100%;
-                height:auto;
-            }
             @media \0screen {
                img { 
                 width: auto;
               }
+            }
+            .laptop-screen-content > img{
+                width:100%;
             }
         </style>
         <script>
@@ -272,9 +268,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                       data-friction-y="0.1"
                       data-invert-x="true"
                       data-invert-y="true">
-                      <li class="layer" data-depth="0.04"><img class="layer1" src="img/layer01.png"></li>
-                      <li class="layer" data-depth="0.06"><img class="layer1" src="img/layer02.png"></li>
-                      <li class="layer" data-depth="0.08"><img class="layer1" src="img/layer0.png"></li>
+                      <li class="layer" data-depth="0.04"><img id="layer01" src="img/layer01.png"></li>
+                      <li class="layer" data-depth="0.06"><img id="layer1" src="img/layer02.png"></li>
+                      <li class="layer" data-depth="0.08"><img id="layer1" src="img/layer0.png"></li>
                       <li class="layer" data-depth="0.30"><img id="layer3" src="img/layer2.png" style="width:80%;"></li>
                       <li class="layer" data-depth="0.10"><img id="layer2" src="img/layer3.png" style="width:80%;"></li>
                       <li class="layer" data-depth="0.50"><img id="layer4" src="img/layer1.png" style=""></li>
