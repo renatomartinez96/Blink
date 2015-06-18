@@ -16,7 +16,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = " ";
+            $titulodelapagina = "¿Qué es Box Link?";
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
@@ -73,10 +73,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                 
 /*                position: relative;*/
                 display:initial;
-                color:rgba(255, 255, 255, 0.58);
+                color:rgba(255, 255, 255, 0.31); /* el color original es 255, 255, 255, 0.58 */
             }
             #title{
                 display:initial;
+                color: #DF6B26;
             }
             .typed-cursor{
                 font-size:26px;
@@ -252,12 +253,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <nav class="navbar navbar-inverse navbar-fixed-top transparent">
                         <div class="container">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="#"><img src="../assets/img/brand1.png" id="logonav" class="img-responsive" width="200"></a>
+                                <a class="navbar-brand" href="../index.php"><img src="../assets/img/brand1.png" id="logonav" class="img-responsive" width="200"></a>
                             </div>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">¿Box Link?</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Box Link</a></li>
+                                <li><a href="#">¿Diseño Web?</a></li>
+                                <li><a href="#">Funcionamiento</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -373,7 +374,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         <script src="../assets/js/typed.min.js"></script>
         <script>
         $(function(){$("#story").typed({strings:["&lt;html&gt; ^500\n<br> --&lt;head&gt; ^500\n<br> ----&lt;title&gt;Lorem ipsum&lt;/title&gt; ^500\n<br> ----&lt;link href='css/main.css' rel='stylesheet'&gt; ^500\n<br> --&lt;/head&gt; ^500\n<br> --&lt;body&gt; ^500\n<br> ----&lt;div&gt; ^500\n<br> ------&lt;img src='img/brand.png'&gt; ^500\n<br> ------&lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt; ^500\n<br> ------&lt;h3&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis efficitur.&lt;/h3&gt; ^500\n<br> ------&lt;ul&gt; ^500\n<br> --------&lt;li&gt;Lorem&lt;/li&gt; ^500\n<br> --------&lt;li&gt;Ipsum&lt;/li&gt; ^500\n<br> ------&lt;/ul&gt; ^500\n<br> ----&lt;/div&gt; ^500\n<br> --&lt;/body&gt; ^500\n<br> &lt;/html&gt; ^500\n"],typeSpeed:15,backDelay:500,loop:!1,loopCount:!1})});
-         $(function(){$("#title").typed({strings:["^2000 ¿Se te hace dificil comprender el codigo de HTML5 y CSS3?"],typeSpeed:60,backDelay:500,loop:!1,loopCount:!1})});
+         $(function(){$("#title").typed({strings:["^2000 ¿Se te hace difícil comprender el código de HTML5 y CSS3?"],typeSpeed:60,backDelay:500,loop:!1,loopCount:!1})});
         </script>
         <script src="../assets/js/parallax/deploy/parallax.min.js"></script>
         <script>
