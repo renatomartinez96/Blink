@@ -64,8 +64,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                 background:#55ACEE;
                 color:#fff;
             }
-        .btnwithout{
-                border:none;
+            .btnwithout{
+                border: none;
                 background-color: Transparent;
             }
         </style>
@@ -82,7 +82,9 @@ Gerardo López | Iván Nolasco | Renato Andres
 			<!--/#Sidebar -->
 			
 			<!--Page Content -->
+            <div id="page-content-wrapper">
             <div class="panel col-xs-12 full">
+                
                             <div class="panel-heading full" style="border-bottom: 0px;">
                                 <button type="button" data-toggle="modal" data-target="#myModal" class="btnwithout" style="position:absolute; bottom:5px; left:5px;"><i class="fa fa-cog fa-2x" ></i></button>
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
@@ -162,42 +164,48 @@ Gerardo López | Iván Nolasco | Renato Andres
                           </div>
                         </div>
                         <!-- /Modal de personalización -->
-            <div class="col-xs-12 full">
-                            <div class="col-md-12 full">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                            <h1 class="panel-title junction-regular text-center">Welcome teacher <?=$user?>!</h1>
+                    
+            <div class="col-md-12 full">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h1 class="panel-title junction-regular text-center">Welcome teacher <?=$user?>!</h1>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Tutor forms -->
+                        <div class="col-xs-12 results">
+
+                        </div>
+                        <!-- / Tutor forms -->
+                        <!-- Charging -->
+                        <div class="col-xs-6 col-xs-offset-3 loading">
+                            <i class="fa fa-cog fa-spin fa-5x"></i>
+                        </div>
+                        <!-- / Charging -->
+                        <div class="modal fade" id="modalDesc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Add course</h4>
                                     </div>
-                                    <div class="panel-body">
-                
-			     <div class="col-xs-12 results">
-            
+                                    <div class="modal-body">
+                                        <h4>Name:</h4>
+                                        <input class="form-control nameCur" type="text" placeholder="Name">
+                                        <h4>Description:</h4>
+                                        <textarea class="form-control descripCur" placeholder="Description"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary createCou">New course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-xs-offset-3 loading">
-                        <i class="fa fa-cog fa-spin fa-5x"></i>
-                    </div>
-            
-                <div class="modal fade" id="modalDesc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Add course</h4>
-                      </div>
-                      <div class="modal-body">
-                          <h4>Nombre:</h4>
-                         <input class="form-control nameCur" type="text" placeholder="Name">
-                          <h4>Descripción:</h4>
-                          <textarea class="form-control descripCur" placeholder="Description"></textarea>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary createCou">New course</button>
-                        <button type="button" class="btn btn-primary createCou">New course</button>
-                      </div>
-                    </div>
-                  </div>
-                                        </div></div></div></div></div>
+            </div>
            
 			<!--/#Page Content -->
+            </div>
 		</div>
 		<!--Main js-->
 		<?php 
@@ -236,7 +244,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             include 'script.php';
 		?>
          loadCursos();
-});
+}); //algo importante :v
 
         </script>	
 	</body>

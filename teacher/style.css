@@ -23,10 +23,12 @@ body {
 .loadLessons{
     margin: 1%;
 }
+/*
 .botoncrear {
     margin: 1%;
     text-align: left;
 }
+*/
 .backhome {
     cursor: pointer;
 }
