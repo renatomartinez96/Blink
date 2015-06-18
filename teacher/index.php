@@ -152,7 +152,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                   <br>
                                   <br>
                                   <br>
-                                  <p class="junction-light text-center">To edit your personal information<a href="my_data.php">Click here</a></p>
+                                  <p class="junction-light text-center">To edit your personal information <a href="my_data.php">click here</a></p>
                                     
                               </div>
                               <div class="modal-footer">
