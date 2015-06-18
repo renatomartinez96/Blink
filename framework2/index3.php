@@ -184,7 +184,12 @@ $(document).ready(function(){
                 typetoprint = t1;
         }
         var inputn1 = document.getElementById("inputn1");
-        inputn1.value = inputn1.value + typetoprint;
+        var valor55 = inputn1.value;
+        valor55 = valor55.replace("px","");
+        valor55 = valor55.replace("%","");
+        valor55 = valor55.replace("vw","");
+        valor55 = valor55.replace("vh","");
+        inputn1.value = valor55 + typetoprint;
     }
     function addText(){
         var inputn1 = document.getElementById("inputn1");
