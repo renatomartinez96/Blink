@@ -16,6 +16,18 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
 
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    {
+        $stmt->bind_param('s', $user);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($idusuario,$avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->fetch();
+        
+    }
+    include "../assets/includes/lang.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +93,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-sm-12 full">
                             <div class="panel panel-success full">
                                 <div class="panel-heading ">
-                                    <h3 class="panel-title"><strong class="junction-light">Result </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Update"></h3>
+                                    <h3 class="panel-title"><strong class="junction-light">Vista </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Actualizar"></h3>
                                 </div>
                                 <div class="panel-body full" style="background:#fff">
                                     <iframe src="../users/<?=$user?>/index.html" frameborder='0' class="full col-sm-12 resultc" id="resultc"></iframe>
