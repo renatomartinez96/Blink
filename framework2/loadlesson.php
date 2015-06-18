@@ -1,6 +1,7 @@
 <?php
     include '../assets/includes/db_conexion.php';
     include '../assets/includes/funciones.php';
+    
     sec_session_start();
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
@@ -14,6 +15,8 @@
         $stmt->bind_result($avatar);
         $stmt->fetch();
     }
+    
+    include '../assets/includes/lang.php';
     $stmt = $mysqli->prepare("SELECT teoria,nombre FROM leccion WHERE idleccion = ?");
     $stmt->bind_param('s', $_GET['l']);
     $stmt->execute();
@@ -21,7 +24,7 @@
     $stmt->bind_result($teoria,$nombre);
     $stmt->fetch();
     if($stmt->num_rows == 1){
-    
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
