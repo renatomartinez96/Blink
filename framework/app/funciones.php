@@ -78,7 +78,7 @@ function eventos() {
         tipoedito = null;
     });
     $( ".A" ).on('mouseenter',function() {
-        var IddeInserssionAtriStytemp = "";
+        
          IddeInserssionAtriStytemp = $(this).attr('id');
          var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
         var idIndex = IddeInserssionAtriStytemp.indexOf("O");
@@ -200,8 +200,8 @@ $(".createHTML").click(function() {
                 search(valor);
             });
             function deletete() {
-                $("#"+IddeInserssionAtriSty).remove();
-                 $("#A"+IddeInserssionAtriSty).remove();
+                $("#"+IddeInserssionAtriStytemp).remove();
+                 $("#A"+IddeInserssionAtriStytemp).remove();
                 momentoTo = momentoTo - 2;
                
             }

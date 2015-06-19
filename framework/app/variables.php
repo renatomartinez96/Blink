@@ -5,6 +5,7 @@
         var IddeInserssion = "";
         var IddeInserssiondos = "";
         var IddeInserssionAtriSty = "";
+        var IddeInserssionAtriStytemp = "";
         var IdObjetoCreadoUnico = -1;
         var tipodeObjeto = "";
         var idAtributoactual = "";
