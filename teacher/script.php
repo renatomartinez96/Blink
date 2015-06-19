@@ -3,6 +3,10 @@ $(document).ready(function() {
      var usuarioid = "<?php echo $userid; ?>";
      var tipo = "<?php echo $tipo; ?>";
     
+    // no hace submit D:
+    
+    // / no hace submit D:
+    
     function loadCursos() {
     $(".results").html("");
    
@@ -40,8 +44,22 @@ $(document).ready(function() {
                   }
             });
             
-         }); 
+         });
     function event() {
+        $(".dropcur").click(function() {
+            var codigo = $(this).attr("id");
+            $.ajax({
+                  method: "POST",
+                  url: "dropCur.php",
+                  data: {codigo: codigo},
+                  beforeSend: function() {
+                      alert("¿Esta segurito beibi?");
+                  },
+                  success: function(data) {
+
+                  }
+            });
+        });
          $(".botoncrear").click(function() {
             $('#modalDesc').modal('toggle');
          });
@@ -54,4 +72,3 @@ $(document).ready(function() {
         
  
     }
-   

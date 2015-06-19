@@ -245,7 +245,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 		?>
          loadCursos();
 }); //algo importante :v
-
         </script>	
 	</body>
 </html>

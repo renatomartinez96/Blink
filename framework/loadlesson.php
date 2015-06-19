@@ -104,6 +104,7 @@
                  
               </div>
               <div class="modal-footer backCute">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <a href="../student/index.php"><button type="button" class="btn btn-default" >Aceptar</button></a>
               </div>
             </div>

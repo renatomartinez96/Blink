@@ -32,11 +32,12 @@
                                 </div>
                                 <div class='panel-footer text-center'>
                                     <form action='../framework/lesson.php' method='post'>
-                                        <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-primary loadLessons'>View Lessons</button>
-
-                                        <a class='btn btn-danger'><i class='fa fa-trash-o'></i></a>
-                                        <a class='btn btn-success'><i class='fa fa fa-pencil'></i></a>
+                                        <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
+                                         <a id='".$idcurso."' class='btn btn-sm btn-danger dropcur'><i class='fa fa-trash-o'></i></a>
+                                        <a class='btn btn-sm btn-success'><i class='fa fa fa-pencil'></i></a>
                                     </form>
+                                       
+                                 
                                 </div>
                             </div>
                         </div>";
