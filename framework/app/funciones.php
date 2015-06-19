@@ -259,6 +259,8 @@ $(".createHTML").click(function() {
                     historial.push("B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto);
                     BloqueCreado = Bloque;
                     $("#"+IddeInserssiondos).append(BloqueCreado);
+                    $("#"+historial[historial.length-1]).addClass("animated");
+                    $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
 
                 function createCSS(nombre) {
@@ -269,21 +271,28 @@ $(".createHTML").click(function() {
                     historial.push("B"+ IdObjetoCreadoUnico +"T"+ tipodeObjeto +"O"+IdObjeto);
                     BloqueCreado = Bloque;
                     $("#"+IddeInserssiondos).append(BloqueCreado);
+                    $("#"+historial[historial.length-1]).addClass("animated");
+                    $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
                 
                 function procesDos() {
                     $("#"+IddeInserssion).append(BloqueCreado);
                     $("#A"+IddeInserssion).append(EtiquetaCreada);
+                    $("#"+historial[historial.length-1]).addClass("animated");
+                    $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
                 function procesTres() {
                     $("#"+IddeInserssion).append(BloqueCreado);;
                     $("#A"+IddeInserssion).append(EtiquetaCreada);
+                    $("#"+historial[historial.length-1]).addClass("animated");
+                    $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
                 function procesUno() {
                     
                     $(".playground").append(BloqueCreado);
-                    
                     $(".yourSite").append(EtiquetaCreada);
+                    $("#"+historial[historial.length-1]).addClass("animated");
+                    $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
                 function createObjects(nombre) {
                     var etiqueta = "<"+nombre+" id='"+"AB"+IdObjetoCreadoUnico+ "T" +tipodeObjeto+"O"+IdObjeto+"'>"+"</"+nombre+">";

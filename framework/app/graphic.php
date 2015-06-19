@@ -74,17 +74,17 @@
                           </div>
                       </div>
                       <div class="HTMltags">
-                        <div id="0" class="col-xs-5 htmlMain yellow "><p>BODY</p></div>
-                        <div id="1" class="col-xs-5 htmlMain green "><p>TITLE</p></div>
-                        <div id="2" class="col-xs-5 htmlMain green "><p>PARAGRAPH</p></div>
-                        <div id="3" class="col-xs-5 htmlMain green "><p>BOLD</p></div>
-                        <div id="4" class="col-xs-5 htmlMain green "><p>DIV</p></div>
-                        <div id="5" class="col-xs-5 htmlMain green "><p>LINK</p></div>
-                        <div id="6" class="col-xs-5 htmlMain green "><p>IMAGE</p></div>
-                        <div id="19" class="col-xs-5 htmlMain green "><p>TABLE</p></div>
-                        <div id="20" class="col-xs-5 htmlMain green "><p>T ROW</p></div>
-                        <div id="21" class="col-xs-5 htmlMain green "><p>T HEAD</p></div>
-                        <div id="22" class="col-xs-5 htmlMain green "><p>T CELL</p></div>
+                        <div id="0" class="col-xs-5 htmlMain yellow "><h5>BODY</h5></div>
+                        <div id="1" class="col-xs-5 htmlMain bg-primary "><h5>TITLE</h5></div>
+                        <div id="2" class="col-xs-5 htmlMain bg-primary "><h5>PARAGRAPH</h5></div>
+                        <div id="3" class="col-xs-5 htmlMain bg-primary "><h5>BOLD</h5></div>
+                        <div id="4" class="col-xs-5 htmlMain bg-primary "><h5>DIV</h5></div>
+                        <div id="5" class="col-xs-5 htmlMain bg-primary "><h5>LINK</h5></div>
+                        <div id="6" class="col-xs-5 htmlMain bg-primary "><h5>IMAGE</h5></div>
+                        <div id="19" class="col-xs-5 htmlMain bg-primary "><h5>TABLE</h5></div>
+                        <div id="20" class="col-xs-5 htmlMain bg-primary "><h5>T ROW</h5></div>
+                        <div id="21" class="col-xs-5 htmlMain bg-primary "><h5>T HEAD</h5></div>
+                        <div id="22" class="col-xs-5 htmlMain bg-primary "><h5>T CELL</h5></div>
                        </div>
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>
@@ -98,9 +98,9 @@
                           </div>
                       </div>
                       <div class="HTMltags">
-                        <div id="7" class="col-xs-5 htmlMain orange "><p>HREF</p></div>
-                        <div id="8" class="col-xs-5 htmlMain orange "><p>SRC</p></div>
-                        <div id="9" class="col-xs-5 htmlMain orange "><p>NAME</p></div>
+                        <div id="7" class="col-xs-5 htmlMain orange "><h5>HREF</h5></div>
+                        <div id="8" class="col-xs-5 htmlMain orange "><h5>SRC</h5></div>
+                        <div id="9" class="col-xs-5 htmlMain orange "><h5>NAME</h5></div>
                       </div>
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>
@@ -115,14 +115,14 @@
                           </div>
                       </div>
                      <div class="HTMltags">
-                        <div id="10" class="col-xs-5 htmlMain royal "><p>BGCOLOR</p></div>
-                        <div id="11" class="col-xs-5 htmlMain royal "><p>MARGINLEFT</p></div>
-                        <div id="12" class="col-xs-5 htmlMain royal "><p>WIDTH</p></div>
-                        <div id="13" class="col-xs-5 htmlMain royal "><p>HEIGHT</p></div>
-                         <div id="15" class="col-xs-5 htmlMain royal "><p>MARGINRIGHT</p></div>
-                         <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
-                         <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
-                         <div id="23" class="col-xs-5 htmlMain royal "><p>BORDER</p></div>
+                        <div id="10" class="col-xs-5 htmlMain royal "><h5>BGCOLOR</h5></div>
+                        <div id="11" class="col-xs-5 htmlMain royal "><h5>MARGINLEFT</h5></div>
+                        <div id="12" class="col-xs-5 htmlMain royal "><h5>WIDTH</h5></div>
+                        <div id="13" class="col-xs-5 htmlMain royal "><h5>HEIGHT</h5></div>
+                         <div id="15" class="col-xs-5 htmlMain royal "><h5>MARGINRIGHT</h5></div>
+                         <div id="16" class="col-xs-5 htmlMain royal "><h5>COLOR</h5></div>
+                         <div id="17" class="col-xs-5 htmlMain royal "><h5>FONT-SIZE</h5></div>
+                         <div id="23" class="col-xs-5 htmlMain royal "><h5>BORDER</h5></div>
                      </div>
                      <label class='noexiste'>No se encontraron resultados</label>
                  </div>

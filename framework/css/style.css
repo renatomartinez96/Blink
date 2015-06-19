@@ -35,11 +35,7 @@
     overflow: hidden;
     z-index: 10;
 }
-.htmlMain > p{
-    font-family: "BebasNeueBold";
-    font-size: 1.3em;
-    color: #6C7A89;
-}
+
 
 .noexiste {
     display: none;
@@ -292,7 +288,7 @@
 @-webkit-keyframes bounceIn { 
     0% { 
         opacity: 0; 
-        -webkit-transform: scale(.3); 
+        -webkit-transform: scale(.6); 
     } 
 
     50% { 
@@ -312,7 +308,7 @@
 @keyframes bounceIn { 
     0% { 
         opacity: 0; 
-        transform: scale(.3); 
+        transform: scale(.6); 
     } 
 
     50% { 
