@@ -45,13 +45,16 @@ function eventos() {
                 break;
         }
     });     
-//VALIDACIONES
+
     $('.inColor').colorpicker({
                 format: 'hex',
-    }).on('hidePicker.colorpicker', function(event){
-        
-        console.log("l");
     });
+//     $(".W .A").each(function(){
+//        if ($(".W").width() - 5 <= $(this).width()) {
+//             $(".W").width($(".W").width()+20);  
+//        }
+//     });
+//VALIDACIONES
     $( ".U" ).on('mouseenter',function() {
         IddeInserssion = $(this).attr('id');
      })
@@ -131,6 +134,9 @@ function eventosOff() {
      $('.A').off("mouseleave");
      $(".T").off("input click");
      $(".P").off("click");
+    $(".ON").off("keydown");
+    $(".M").off("click");
+    
 
 }
         //estras
