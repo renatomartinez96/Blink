@@ -106,6 +106,7 @@
                     
                 </div>
             </div>
+            <div class='col-sm-2 full bg-info'><div class='col-xs-12 full text-center'><h4>HEIGTH</h4> </div><div class='col-xs-12 full form-inline'><div class='input-group'><input type='text' class='form-control T ON' /><div class='input-group-addon'><div class='dropdown'><a id='dLabel' data-target='#' class='btn btn-default btn-xs dropdown-toggle' href='#' data-toggle='dropdown' aria-haspopup='true' role='button' aria-expanded='false'><span class='caret'></span></a><ul class='dropdown-menu' role='menu' aria-labelledby='dLabel'><li id='01' class='M'><a>px</a></li><li id='02' class='M'><a>%</a></li><li id='03' class='M'><a>vw</a></li><li id='04' class='M'><a>vh</a></li></ul></div></div></div></div></div>
             <div class="col-sm-2 full bg-success">
                 <div class="col-xs-12 full text-center">
                     <h4>Width</h4>
@@ -191,6 +192,44 @@ $(document).ready(function(){
         valor55 = valor55.replace("vh","");
         inputn1.value = valor55 + typetoprint;
     }
+    $(".ON").on("keydown",function(e) {
+        var   key=e.keyCode || e.which;
+        var  teclado = String.fromCharCode(key).toLowerCase();
+        var   letras ="0123456789";
+        var   especiales="8-37-38-46-164";
+
+        var  teclado_especial = false;
+
+        for(var i in especiales){
+              if(key==especiales[i]){
+                    teclado_especial=true;break;
+              }
+        }
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+              return false;
+        }
+    });
+    $(".M").on("click",function() {
+        var input = $(this).parent().parent().parent().parent().find(".T").val();
+        input = input.replace("px","");
+        input = input.replace("%","");
+        input = input.replace("vw","");
+        input = input.replace("vh","");
+        switch($(this).attr("id")) {
+            case "01":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"px");   
+                break;
+            case "02":
+                $(this).parent().parent().parent().parent().find(".T").val(input+"%");     
+                break;
+            case "03":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vw");    
+                break;
+            case "04":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vh");    
+                break;
+        }
+    });     
     function addText(){
         var inputn1 = document.getElementById("inputn1");
         inputn1.value = inputn1.value + typetoprint;

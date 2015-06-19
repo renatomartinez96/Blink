@@ -1,6 +1,4 @@
-//VALIDACIONES
 
-//VALIDACIONES
 function focus(id) {
     $(".playground .A").each(function(){
              $(this).removeClass("inoff");
@@ -8,7 +6,46 @@ function focus(id) {
         $("#"+id).addClass("inoff");
 }
 function eventos() {
-    
+    //VALIDACIONES
+    $(".ON").on("keydown",function(e) {
+        var   key=e.keyCode || e.which;
+        var  teclado = String.fromCharCode(key).toLowerCase();
+        var   letras ="0123456789";
+        var   especiales="8-37-38-46-164";
+
+        var  teclado_especial = false;
+
+        for(var i in especiales){
+              if(key==especiales[i]){
+                    teclado_especial=true;break;
+              }
+        }
+        if(letras.indexOf(teclado)==-1 && !teclado_especial){
+              return false;
+        }
+    });
+    $(".M").on("click",function() {
+        var input = $(this).parent().parent().parent().parent().find(".T").val();
+        input = input.replace("px","");
+        input = input.replace("%","");
+        input = input.replace("vw","");
+        input = input.replace("vh","");
+        switch($(this).attr("id")) {
+            case "01":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"px");   
+                break;
+            case "02":
+                $(this).parent().parent().parent().parent().find(".T").val(input+"%");     
+                break;
+            case "03":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vw");    
+                break;
+            case "04":
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vh");    
+                break;
+        }
+    });     
+//VALIDACIONES
     $('.inColor').colorpicker({
                 format: 'hex',
     }).on('hidePicker.colorpicker', function(event){
