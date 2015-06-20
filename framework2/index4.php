@@ -46,7 +46,28 @@
 </head>
     <body>
         <div class="container-fluid">
+<<<<<<< HEAD
+            <div class="col-sm-2 full bg-warning">
+                <div class="col-xs-12 full text-center">
+                    <h4>File</h4>
+                </div>
+                <div class="col-xs-12 full">
+                    <form action="#" enctype="multipart/form-data" method="post">
+                        <input type="file" class="form-control btn btn-warning" name="file" accept='image/*|video/*' multiple>
+                        <input class="btn btn-warning form-control" type="button" name="submit_upload_files" value="Subir archivo">
+                    </form>
+                </div>
+                <div class="col-xs-12 full" style="padding-top:5px;padding-bottom:5px;">
+                    <div class="col-xs-4 text-center">
+                        <a href="#" class="btn btn-warning" data-toggle="popover" tabindex="0" data-trigger="focus" title="giveitaway giveitaway" data-content="lel Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices." data-placement="right">
+                            <i class="fa fa-info"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+=======
             <div class='col-sm-2 full bg-warning'><div class='col-xs-12 full text-center'><h4>File</h4></div><div class='col-xs-12 full'><form action='#' enctype='multipart/form-data' method='post'><input type='file' class='form-control btn btn-warning' name='file' accept='image/*|video/*' multiple><input class='btn btn-warning form-control' type='submit' name='submit' value='Subir archivo'></form></div><div class='col-xs-12 full' style='padding-top:5px;padding-bottom:5px;'><div class='col-xs-4 text-center'><a href='#' class='btn btn-warning' data-toggle='popover' tabindex='0' data-trigger='focus' title='giveitaway giveitaway' data-content='lel Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi et auctor ultrices.' data-placement='right'><i class='fa fa-info'></i></a></div></div></div>
+>>>>>>> origin/master
         </div>
         
 	</body>

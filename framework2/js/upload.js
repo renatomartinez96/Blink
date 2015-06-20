@@ -2,7 +2,7 @@ $(function()
 {
 	var files;
 	$('input[type=file]').on('change', prepareUpload);
-	$('form').on('submit', uploadFiles);
+	$("input[name = 'submit_upload_files']").on('click', uploadFiles);
 	function prepareUpload(event)
 	{
 		files = event.target.files;

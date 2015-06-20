@@ -10,10 +10,27 @@ if(isset($_GET['files']))
 {	
 	$error = false;
 	$files = array();
-
-	$uploaddir = '../../users/'.$user.'/img/';
 	foreach($_FILES as $file)
 	{
+        
+        $imageFileType = pathinfo(basename($file['name']),PATHINFO_EXTENSION);
+        switch($imageFileType)
+        {
+            case "png":
+            case "jpg":
+            case "gif":
+            case "jpeg":
+                $uploaddir = '../../users/'.$user.'/img/';
+            break;
+            case "mp4":
+            case "webm":
+            case "ogg":
+                $uploaddir = '../../users/'.$user.'/video/';
+            break;
+            default:
+                $uploaddir = '../../users/'.$user.'/non_supported/';
+            break;
+        }
 		if(move_uploaded_file($file['tmp_name'], $uploaddir .basename($file['name'])))
 		{
 			$files[] = $uploaddir.$file['name'];
