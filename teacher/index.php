@@ -246,5 +246,6 @@ Gerardo López | Iván Nolasco | Renato Andres
          loadCursos();
 }); //algo importante :v
         </script>	
+        <script src="../assets/js/bootbox.min.js"></script>
 	</body>
 </html>

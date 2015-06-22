@@ -11,6 +11,8 @@
         $stmt->bind_result($idcurso,$nombre,$descripcion);
         $string = "<div class=' tituloxxx'>
                         <h2 class='junction-bold '>Created courses</h2>
+                        <p>Los cursos activos aparecen aquí, para ver los cursos que bloqueaste ve <a href='bannedCur.php'>aquí</a>.</p>
+                        <div id='asdfgh'></div>
                     </div>";
         $string .= "<div class='col-xs-10'>
                         <ul class='breadcrumb'>
@@ -33,7 +35,7 @@
                                 <div class='panel-footer text-center'>
                                     <form action='../framework/lesson.php' method='post'>
                                         <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
-                                         <a id='".$idcurso."' class='btn btn-sm btn-danger dropcur'><i class='fa fa-trash-o'></i></a>
+                                         <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
                                         <a class='btn btn-sm btn-success'><i class='fa fa fa-pencil'></i></a>
                                     </form>
                                        

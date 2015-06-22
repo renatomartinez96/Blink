@@ -45,20 +45,46 @@ $(document).ready(function() {
             });
             
          });
-    function event() {
-        $(".dropcur").click(function() {
-            var codigo = $(this).attr("id");
-            $.ajax({
+    function dropCur(codigo, curnombre)
+    {
+        $.ajax({
                   method: "POST",
                   url: "dropCur.php",
-                  data: {codigo: codigo},
+                  data: {codigo: codigo, curnombre: curnombre},
                   beforeSend: function() {
-                      alert("¿Esta segurito beibi?");
                   },
                   success: function(data) {
-
+                      document.getElementById('asdfgh').innerHTML = data;
                   }
+        });
+    }    
+    function event() {
+        $(".dropcur").click(function() {
+            var envio = $(this).attr("id");
+            var envionombre = $(this).attr("curnombre");
+            
+            bootbox.dialog({
+                title: "<h4 class='text-warning'>¿Estas seguro de eliminar el curso <strong>&quot;"+envionombre+"&quot;</strong>?</h4>",
+                message: "Tus estudiantes no podran completar las lecciones que este curso contiene, a menos que la actives de nuevo.",
+                buttons: {
+                    main: {
+                        label: "Cancelar",
+                        className: "btn-default",
+                        callback: function() {
+                            // Se cancela :v
+                        }
+                    },
+                    danger: {
+                        label: "Bloquear el curso",
+                        className: "btn-primary",
+                        callback: function() {
+                            dropCur(envio, envionombre);
+                        }
+                    }
+                }
             });
+
+            
         });
          $(".botoncrear").click(function() {
             $('#modalDesc').modal('toggle');
