@@ -3,6 +3,32 @@
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
+    $dir = "../users/" . $user . "/img/";
+    $dir1 = "../users/" . $user . "/video/";
+    function opendire($dir){
+        $directorio = opendir($dir); //ruta actual
+        while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
+        {
+            if (!is_dir($archivo))
+            {
+                switch(substr($archivo,-4)) 
+                {
+                    case ".mp4":
+                    case ".jpg":
+                    case ".png":
+                    case ".gif":
+                    case "webm":
+                    case ".ogg":
+                    case ".JPG":
+                    case "JPEG":
+                    case "jpeg":
+                        echo "<option/>" . $archivo . "</option>";
+                    break;
+                }
+            }
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +74,7 @@
         <div class="container-fluid">
             <div class="col-sm-2 full bg-warning">
                 <div class="col-xs-12 full text-center">
-                    <h4>File</h4>
+                    <h4>Subir archivo</h4>
                 </div>
                 <div class="col-xs-12 full">
                     <form action="#" enctype="multipart/form-data" method="post">
@@ -64,8 +90,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-2 full bg-warning">
+                <div class="col-xs-12 full text-center">
+                    <h4>Src</h4>
+                </div>
+                <div class="col-xs-12 full">
+                    <select class="form-control">
+                        <?php
+                            opendire($dir);
+                            opendire($dir1);
+                        ?>
+                    </select>
+                </div>
+            </div>
 
         </div>
-        
+
 	</body>
 </html>
