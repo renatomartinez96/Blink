@@ -7,17 +7,18 @@ licenses restricting copying, distribution, and decompilation.
 Gerardo López | Iván Nolasco | Renato Andres
 -->
 <?php
-if(isset($_POST["codigo"]) && isset($_POST["curnombre"]))
+if(isset($_POST["editid"]) && isset($_POST["editnombre"]) && isset($_POST["editdesc"]))
 {
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     
-    $cursotodrop = $_POST["codigo"];
-    $cursonombre = $_POST["curnombre"];
+    $cursoid = $_POST["editid"];
+    $cursonombre = $_POST["editnombre"];
+    $cursodesc = $_POST["editdesc"];
     
-    $stmt = $mysqli->prepare("UPDATE curso SET `curEstado`= 0 WHERE idcurso = ?");
-    $stmt->bind_param("s", $cursotodrop);
+    $stmt = $mysqli->prepare("UPDATE curso SET `nombre` = ?, `descripcion` = ? WHERE idcurso = ?");
+    $stmt->bind_param("sss", $cursonombre, $cursodesc, $cursoid);
 
     $stmt->execute();
     
@@ -26,7 +27,7 @@ if(isset($_POST["codigo"]) && isset($_POST["curnombre"]))
     
     echo "<div class='alert alert-dismissible alert-success'>
             <button type='button' class='close' data-dismiss='alert'>×</button>
-            <strong>OK: </strong> <p>El curso &quot;".$cursonombre."&quot; fue <strong>bloqueado</strong>, para reactivarlo ve <a href='activeCur.php' class='alert-link'>aquí</a>.</p>
+            <strong>OK: </strong> <p>El curso &quot;".$cursonombre."&quot; fue <strong>editado</strong> exitosamente.</p>
         </div>";
 }
 else

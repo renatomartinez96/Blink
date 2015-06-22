@@ -57,8 +57,70 @@ $(document).ready(function() {
                       document.getElementById('asdfgh').innerHTML = data;
                   }
         });
+    } 
+    function editCur(editid, editnombre, editdesc)
+    {
+        $.ajax({
+                  method: "POST",
+                  url: "editCur.php",
+                  data: {editid: editid, editnombre: editnombre, editdesc: editdesc},
+                  beforeSend: function() {
+                  },
+                  success: function(data) {
+                      document.getElementById('asdfgh').innerHTML = data;
+                  }
+        });
     }    
     function event() {
+        
+        $(".editcur").click(function() {
+            var curid = $(this).attr("valid");
+            var ocurnombre = $(this).attr("valname");
+            var ocurdesc = $(this).attr("valdesc");
+
+            bootbox.dialog({
+                title: "Editar el curso "+ocurnombre+".",
+                message: "<div class='row'>" +
+                            "<div class='col-md-12'> " +
+                            "<form class='form-horizontal'> " +
+                                "<div class='form-group'> " +
+                                    "<label class='col-md-4 control-label' for='name'>Nombre</label> " +
+                                    "<div class='col-md-6'> " +
+                                        "<input id='newname' name='newname' type='text' value='" + ocurnombre + "' class='form-control input-md'> " +
+                                    "</div>" +
+                                "</div> " +
+                                "<div class='form-group'> " +
+                                    "<label class='col-md-4 control-label' for='name'>Descripción</label> " +
+                                    "<div class='col-md-6'> " +
+                                        "<textarea class='form-control' style='resize: vertical;' name='newdesc' id='newdesc' rows='3'>" + ocurdesc + "</textarea> " +
+                                    "</div>" +
+                                "</div> " +
+                            "</form>" +
+                            "</div>" +
+                        "</div>",
+                buttons: {
+                    main: {
+                        label: "Cancelar",
+                        className: "btn-default",
+                        callback: function() {
+                            // Se cancela :v
+                        }
+                    },
+                    success: {
+                        label: "Guardar cambios",
+                        className: "btn-success",
+                        callback: function() {
+                            var curnombre = $("#newname").val();
+                            var curdesc = $("#newdesc").val();
+                            editCur(curid, curnombre, curdesc);
+                        }
+                    }
+                }
+            });
+
+        });
+        
+        // BLOQUEAR UN CURSO abajo
         $(".dropcur").click(function() {
             var envio = $(this).attr("id");
             var envionombre = $(this).attr("curnombre");
