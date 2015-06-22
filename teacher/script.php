@@ -64,7 +64,7 @@ $(document).ready(function() {
             var envionombre = $(this).attr("curnombre");
             
             bootbox.dialog({
-                title: "<h4 class='text-warning'>¿Estas seguro de eliminar el curso <strong>&quot;"+envionombre+"&quot;</strong>?</h4>",
+                title: "<h4 class='text-warning'>¿Estas seguro de bloquear el curso <strong>&quot;"+envionombre+"&quot;</strong>?</h4>",
                 message: "Tus estudiantes no podran completar las lecciones que este curso contiene, a menos que la actives de nuevo.",
                 buttons: {
                     main: {
