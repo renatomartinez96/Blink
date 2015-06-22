@@ -215,13 +215,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                   echo "
                                                                                     </div>
                                                                                 </div>
-                                                                                <a href='#'>
-                                                                                    <div class='panel-footer'>
-                                                                                        <span class='pull-left'>Ver detalles</span>
-                                                                                        <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                        <div class='clearfix'></div>
-                                                                                    </div>
-                                                                                </a>
                                                                             </div>
                                                                         </div>
                                                                 ";
@@ -248,13 +241,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                                         <strong>there is no lessons available</strong>
                                                                                     </div>
                                                                                 </div>
-                                                                                <a href='#'>
-                                                                                    <div class='panel-footer'>
-                                                                                        <span class='pull-left'>Ver detalles</span>
-                                                                                        <span class='pull-right'><i class='fa fa-arrow-circle-right'></i></span>
-                                                                                        <div class='clearfix'></div>
-                                                                                    </div>
-                                                                                </a>
                                                                             </div>
                                                                         </div>
                                                                     ";

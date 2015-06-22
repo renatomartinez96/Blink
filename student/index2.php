@@ -15,7 +15,19 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/funciones.php';
     sec_session_start();
     $user = $_SESSION['username'];
-
+    $elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
+    include "auto.php";
+    include "../assets/includes/lang.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,26 +35,11 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php 
             $titulodelapagina = "¡Bienvenido $user!";
-			include 'main_css.php';
+			require 'main_css.php';
 		?>
 		<!--/#Core CSS-->
-
-		<!--Custom CSS-->
-		<link href="../assets/css/sidebar.css" rel="stylesheet">
-        <link href="../assets/css/perfil.css" rel="stylesheet">
-		<!--/#Custom CSS-->
-        <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css">
-
-		<!-- elFinder CSS (REQUIRED) -->
-		<link rel="stylesheet" type="text/css" media="screen" href="assets/elfinder/css/elfinder.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="assets/elfinder/css/theme.css">
 	</head>
 	<body>
-        <style>
-        body {
-            background: #fff;
-        }
-        </style>
         <!--Topbar -->
 		<?php 
 			include '../nav/topbar.php';
@@ -60,7 +57,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
-                        <div class="col-sm-12" id="explorer"></div>
+                        
 					<!--/#Content-->
 					</div>
 				</div>
@@ -72,17 +69,5 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_js.php';
 		?>
 		<!--/#Main js-->
-        <!-- elFinder JS (REQUIRED) -->
-		<script type="text/javascript" src="assets/elfinder/js/elfinder.min.js"></script>
-
-		<!-- elFinder initialization (REQUIRED) -->
-		<script type="text/javascript" charset="utf-8">
-			$().ready(function() {
-				var elf = $('#explorer').elfinder({
-					url : 'assets/elfinder/php/connector.php'  // connector URL (REQUIRED)
-					// lang: 'ru',             // language (OPTIONAL)
-				}).elfinder('instance');
-			});
-		</script>
 	</body>
 </html>
