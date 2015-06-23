@@ -16,6 +16,8 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
         
     }
  include_once '../assets/includes/lang.php';
+ include "php/loadOptions.php";
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +59,7 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ddslick.min.js"></script>
 </head>
     <body>
         
@@ -82,8 +85,8 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                 </div>
             <?php 
                     include 'app/graphic.php';
-            ?>    
-            </div>
+            ?>  
+            
              
 
 		</div>

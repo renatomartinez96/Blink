@@ -22,7 +22,7 @@
                     case ".JPG":
                     case "JPEG":
                     case "jpeg":
-                        echo "<option/>" . $archivo . "</option>";
+                        echo "<option value='".$dir.$archivo."' data-imagesrc='".$dir.$archivo."' data-description='$archivo'></option>";
                     break;
                 }
             }
@@ -50,7 +50,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <title>HTML generator</title>
 
     <!-- Bootstrap Core CSS -->
@@ -90,21 +90,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-2 full bg-warning">
-                <div class="col-xs-12 full text-center">
-                    <h4>Src</h4>
-                </div>
-                <div class="col-xs-12 full">
-                    <select class="form-control">
-                        <?php
-                            opendire($dir);
-                            opendire($dir1);
-                        ?>
-                    </select>
-                </div>
-            </div>
 
         </div>
-
+        
+        <script>
+            var valx;
+            $(".S").ddslick({
+                width:"100%",
+                onSelected: function(selectedData){
+                     valx = selectedData.selectedData.value;
+                }   
+            });
+            
+        </script>
+        <style>
+            .dd-select{
+                height: 12vh;
+                overflow: hidden;
+            }
+        </style>
 	</body>
 </html>
