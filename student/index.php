@@ -69,7 +69,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             /*GRAY*/
             .not-success {
                 -webkit-filter: grayscale(100%); 
-                filter: grayscale(100%)
+                filter: grayscale(100%);
             }
         </style>
 		<!--/#Custom CSS-->
