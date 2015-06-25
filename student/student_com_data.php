@@ -12,42 +12,31 @@ if($result = $stmt1->num_rows)
     {
         while($row1 = $stmt1->fetch_assoc())
         {
-            $stmt2 = $mysqli->query("SELECT idleccion, nombre AS lecnombre FROM `leccion` WHERE idcurso = '".$row1['idcur']."'");
+            $stmt2 = $mysqli->query("SELECT `leccion`.idleccion AS lecid, `leccion`.nombre AS lecnombre, `leccusua`.resultado FROM `leccion` INNER JOIN `leccusua` ON `leccion`.idleccion = `leccusua`.idLeccion WHERE `leccion`.idcurso = '".$row1['idcur']."' AND `leccusua`.idUsuario = '".$idusr."'");
             $result1 = $stmt2->num_rows;
             
             if ($result1 > 0) 
             {
-                //$infotoprint .= "curid: ".$row1['idcur']." - curnom: ".$row1['curnombre']." - curimg: ".$row1['curimg']." <br>";
                 $infotoprint .= "<div class='col-md-4 full'>";
                 while($row2 = $stmt2->fetch_assoc())
-                {                    
-                    $stmt3 = $mysqli->query("SELECT resultado FROM `leccusua` WHERE idLeccion = '".$row2['idleccion']."' AND idUsuario = '".$user."'");
-                    $result2 = $stmt3->num_rows;
-                    if ($result2 > 0) 
-                    {
-                        while($row3  = $stmt3->fetch_assoc())
-                        {
-                            //$infotoprint .= "---> ".$row2['idleccion']." - lecname: ".$row2['lecnombre'].".... nota: ".$row3['resultado']."<br>";
-                            $infotoprint .= "";
-                            $sumnot = $sumnot + $row3['resultado'];
-                        }
-                    }
+                {
+                    $sumnot = $sumnot + $row2['resultado'];
                     $numlec = $numlec + 1;
                 }
-                
                 $notafinal = $sumnot / $numlec;
-                if($notafinal >= 7)
+                $laotra = $notafinal * 10;
+                if($notafinal >= 8)
                 {
                     $infotoprint .= "<img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive'>
-                                    <p>".$row1['curnombre']."<i class='fa fa-check text-success'></i>
+                                    <p class='text-center'>".$row1['curnombre']."<i class='fa fa-check text-success'></i>
 </p>";
                 }
                 else
                 {
                     $infotoprint .= "<img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive not-success'>
-                                    <p>".$row1['curnombre']."</p>                              
-                                    <div class='progress progress progress-striped'>
-                                    <div class='progress-bar progress-bar-success' style='width: 40%'></div>
+                                    <p class='text-center'>".$row1['curnombre']."</p>                              
+                                    <div class='progress progress progress-striped active mrwhite'>
+                                    <div class='progress-bar progress-bar-success' style='width: ".$laotra."%'></div>
                                     </div>";
                 }
                 $infotoprint .= "</div>";

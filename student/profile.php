@@ -58,6 +58,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 -webkit-filter: grayscale(100%); 
                 filter: grayscale(100%)
             }
+            .mrwhite{
+                background: #ede5e5;
+            }
             </style>
 		<!--/#Custom CSS-->
 
@@ -107,7 +110,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 <div class="col-md-9">
                                                     <p class="junction-light"><?=$nacim?></p>
                                                     <p class="junction-light"><?=$tipo?></p>
-                                                    <p class="junction-light text-center"><small>"<?=$usrdesc?>"</small></p>
+                                                    <p class="junction-light text-center"><small><?=$usrdesc?></small></p>
                                                 </div>
                                             </div>
                                         <div class="collapse" id="boxlinktrophies">

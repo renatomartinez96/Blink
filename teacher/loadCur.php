@@ -4,7 +4,7 @@
     $user = $_POST['usuario'];
     $userid = $_POST['usuarioid'];
     $i = 0;
-        $stmt = $mysqli->prepare("SELECT idcurso,nombre,descripcion, imagen FROM curso WHERE idprofesor = ? AND curEstado = '1'");
+        $stmt = $mysqli->prepare("SELECT idcurso, nombre, descripcion, imagen FROM curso WHERE idprofesor = ? AND curEstado = '1'");
         $stmt->bind_param('i', $userid);
         $stmt->execute();
         $stmt->store_result();
