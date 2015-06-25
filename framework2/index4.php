@@ -72,7 +72,7 @@
 </head>
     <body>
         <div class="container-fluid">
-            <div class="col-sm-2 full bg-warning">
+            <div class="col-sm-12 full bg-warning">
                 <div class="col-xs-12 full text-center">
                     <h4>Subir archivo</h4>
                 </div>

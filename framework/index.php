@@ -90,6 +90,32 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
              
 
 		</div>
+            <div class="modal fade" id="OpenFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Open Poroject</h4>
+                  </div>
+                  <div class="modal-body">
+                           <div class="col-sm-12 full bg-warning">
+                        <div class="col-xs-12 full text-center">
+                            <h4>Abrir archivo</h4>
+                        </div>
+                        <div class="col-xs-12 full">
+                            <form action="#" enctype="multipart/form-data" method="post">
+                                <input type="file" class="form-control btn btn-warning" name="file" accept='image/*|video/*' multiple>
+                                <input class="btn btn-warning form-control" type="button" name="submit_upload_files" value="Open File">
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+              </div>
+            </div>
+        <script src="js/upload.js" type="text/javascript"></script>
 	   <script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
            $('.restard').remove();
