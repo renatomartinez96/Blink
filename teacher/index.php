@@ -74,6 +74,19 @@ Gerardo López | Iván Nolasco | Renato Andres
                 overflow-x:hidden;
                 margin-bottom:0px;
             }
+            .selected-thing{
+                border: 2px solid #ffffff;
+            }
+            .showme{ 
+                display: none;
+            }
+            .showhim:hover .showme{
+                display : block;
+            }
+            .showhim:hover .imgo{
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%);
+            }
         </style>
         <!--Topbar -->
 		<?php 
@@ -176,7 +189,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <div class="panel-heading">
                         <h1 class="panel-title junction-regular text-center">Welcome teacher <?=$user?>!</h1>
                     </div>
-                    <div class="panel-body">
+                    
                         <!-- Tutor forms -->
                         <div class="col-xs-12 results">
 
@@ -206,7 +219,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
            

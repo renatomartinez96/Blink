@@ -145,9 +145,42 @@ $(document).ready(function() {
                     }
                 }
             });
-
-            
         });
+        
+        $(".changetro").click(function() {
+            var curimgid = $(this).attr("curimgid");
+            var currentimg = $(this).attr("currentimg");
+            var curimgnombre = $(this).attr("curimgnombre");
+            
+            var content = "";
+            
+            for (x=0; x<=3; x++)
+            {
+                content = content + "<div class='col-md-3 full'><img src='../assets/img/pro/"+x+".png' class='img-responsive'></div>"
+            }
+            content = content + "<br><p>LEL</p>";
+            bootbox.dialog({
+                title: "<h4>Cambiar trofeo al curso <strong>&quot;"+curimgnombre+"&quot;</strong></h4>",
+                message: content,
+                buttons: {
+                    main: {
+                        label: "Cancelar",
+                        className: "btn-default",
+                        callback: function() {
+                            // Se cancela :v
+                        }
+                    },
+                    danger: {
+                        label: "Bloquear el curso",
+                        className: "btn-primary",
+                        callback: function() {
+                            dropCur(envio, envionombre);
+                        }
+                    }
+                }
+            });
+        });        
+        
          $(".botoncrear").click(function() {
             $('#modalDesc').modal('toggle');
          });
