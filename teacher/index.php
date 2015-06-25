@@ -68,6 +68,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border: none;
                 background-color: Transparent;
             }
+            .curdesc{
+                min-height:175px;
+                overflow:scroll;
+                overflow-x:hidden;
+                margin-bottom:0px;
+            }
         </style>
         <!--Topbar -->
 		<?php 

@@ -54,7 +54,7 @@ $(document).ready(function() {
                   beforeSend: function() {
                   },
                   success: function(data) {
-                      document.getElementById('asdfgh').innerHTML = data;
+                      document.getElementById('signal').innerHTML = data;
                   }
         });
     } 
@@ -67,7 +67,7 @@ $(document).ready(function() {
                   beforeSend: function() {
                   },
                   success: function(data) {
-                      document.getElementById('asdfgh').innerHTML = data;
+                      document.getElementById('signal').innerHTML = data;
                   }
         });
     }    
