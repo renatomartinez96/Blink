@@ -220,6 +220,34 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
                     
+                    <div class="modal fade" id="lel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                    <?php 
+                    $x= 0;
+                    $content = "";
+                    for ($x=0; $x<=3; $x++)
+                    {
+                        $content .= "<div class='col-md-3 full newimg' id='rt".$x."'><img src='../assets/img/pro/".$x.".png' class='img-responsive' ></div>";
+                    }    
+                    echo $content;
+                    ?>
+                        <input type="hidden" id="pearl" value="">
+                        <p>lelelelelel</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
                 </div>
             </div>
            
