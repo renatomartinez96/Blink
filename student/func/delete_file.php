@@ -2,7 +2,7 @@
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -27,17 +27,17 @@ Gerardo López | Iván Nolasco | Renato Andres
                 $filepath = $dir . $file;
                 if(unlink($filepath))
                 {
-                    echo "archivo eliminado correctamente";
+                    header('Location: ../index2.php');
                 }
             }
             elseif (file_exists($dir1 . $file))
             {
                 $filepath = $dir1 . $file;
                 $filepath1 = $dir1 . "/thumbs/" . substr($file,0,6) . ".gif";
-                
+
                 if(unlink($filepath) and unlink($filepath1))
                 {
-                    echo "archivo eliminado correctamente";
+                    header('Location: ../index2.php');
                 }
             }
             else

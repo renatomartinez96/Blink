@@ -30,21 +30,21 @@ Gerardo López | Iván Nolasco | Renato Andres
     $dir1 = "../users/" . $user . "/video/";
     function printimg($dir){
         $directorio = opendir($dir); //ruta actual
+        $files = 0;
         while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
         {
+
             if (!is_dir($archivo))
             {
                 switch(substr($archivo,-4))
                 {
-                    case ".mp4":
                     case ".jpg":
                     case ".png":
                     case ".gif":
-                    case "webm":
-                    case ".ogg":
                     case ".JPG":
                     case "JPEG":
                     case "jpeg":
+                    $files++;
                     echo "<div class='col-md-4 full '>";
                         echo "<div class='thumbnail transparent'>";
                             echo "<div class='imagenes view'>";
@@ -64,9 +64,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                 }
             }
         }
+        if($files == 0)
+        {
+            echo "No se han encontrado archivos";
+        }
     }
     function printvid($dir){
         $directorio = opendir($dir); //ruta actual
+        $files = 0;
         while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
         {
             if (!is_dir($archivo))
@@ -74,14 +79,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 switch(substr($archivo,-4))
                 {
                     case ".mp4":
-                    case ".jpg":
-                    case ".png":
-                    case ".gif":
                     case "webm":
                     case ".ogg":
-                    case ".JPG":
-                    case "JPEG":
-                    case "jpeg":
+                    $files++;
                         echo "<div class='col-md-4 full '>";
                             echo "<div class='thumbnail transparent'>";
                                 echo "<div class='imagenes view'>";
@@ -100,6 +100,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                     break;
                 }
             }
+        }
+        if($files == 0)
+        {
+            echo "No se han encontrado archivos";
         }
     }
     include "auto.php";
