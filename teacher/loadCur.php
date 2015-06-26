@@ -44,7 +44,7 @@
                                         <p class='junction-light text-center'>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
-                                        <form action='../framework2/lesson.php' method='post'>
+                                        <form action='../framework/lesson.php' method='post'>
                                             <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
                                             <a class='btn btn-sm btn-success editcur' valid='".$idcurso."' valname='".$nombre."' valdesc='".$descripcion."'><i class='fa fa fa-pencil' data-toggle='tooltip' data-placement='top' title='Editar curso'></i></a>
