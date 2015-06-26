@@ -36,19 +36,19 @@ function eventos() {
         input = input.replace("vh","");
         switch($(this).attr("id")) {
             case "01":
-                 $(this).parent().parent().parent().parent().find(".T").val(input+"px");   
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"px");
                 break;
             case "02":
-                $(this).parent().parent().parent().parent().find(".T").val(input+"%");     
+                $(this).parent().parent().parent().parent().find(".T").val(input+"%");
                 break;
             case "03":
-                 $(this).parent().parent().parent().parent().find(".T").val(input+"vw");    
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vw");
                 break;
             case "04":
-                 $(this).parent().parent().parent().parent().find(".T").val(input+"vh");    
+                 $(this).parent().parent().parent().parent().find(".T").val(input+"vh");
                 break;
         }
-    });     
+    });
 
     $('.inColor').colorpicker({
                 format: 'hex',
@@ -63,7 +63,7 @@ function eventos() {
     });
 //     $(".W .A").each(function(){
 //        if ($(".W").width() - 5 <= $(this).width()) {
-//             $(".W").width($(".W").width()+20);  
+//             $(".W").width($(".W").width()+20);
 //        }
 //     });
 //VALIDACIONES
@@ -82,7 +82,7 @@ function eventos() {
          var tipoedito = IddeInserssionAtriSty.substr(tipoindex + 1,IddeInserssionAtriSty.length - idIndex - idObjeto.length);
         IdObjetosupperior = idObjeto;
         idAtributoactual = tipoedito;
-        
+
      })
     .on('mouseleave',function() {
         IddeInserssiondos = null;
@@ -90,7 +90,7 @@ function eventos() {
         tipoedito = null;
     });
     $( ".A" ).on('mouseenter',function() {
-        
+
          IddeInserssionAtriStytemp = $(this).attr('id');
          var tipoindex = IddeInserssionAtriStytemp.indexOf("T");
         var idIndex = IddeInserssionAtriStytemp.indexOf("O");
@@ -99,7 +99,7 @@ function eventos() {
         idAtributoactual = tipoedito;
         IdObjetosupperior = idObjeto;
         focus(IddeInserssionAtriStytemp);
-     }) 
+     })
     .on('mouseleave',function() {
         var IddeInserssionAtriStytemp = "";
         focus(IddeInserssionAtriStytemp);
@@ -148,8 +148,8 @@ function eventosOff() {
      $(".P").off("click");
     $(".ON").off("keydown");
     $(".M").off("click");
-    
-    
+
+
 
 }
         //estras
@@ -160,7 +160,7 @@ $(".showPreview").click(function() {
 });
 $(".restard").click(function() {
     $(".playground").html("");
-    $(".yourSite").html(""); 
+    $(".yourSite").html("");
     momentoTo = 0;
     sincro();
 });
@@ -184,20 +184,20 @@ $(".createHTML").click(function() {
 
         function search(valor) {
                 var count=0,notfound=0;
-                 
+
                  $(".HTMltags div").each(function(){
                      count++;
                     if ($(this).text().search(new RegExp(valor, "i")) < 0) {
                         $(this).fadeOut();
-                         notfound++;   
+                         notfound++;
                 } else {
                         $(this).show();
-                        
+
                 }
-                
+
                 });
              if(count == notfound){
-                   $(".noexiste").delay( 800 ).show(); 
+                   $(".noexiste").delay( 800 ).show();
                 }else {
                     $(".noexiste").fadeOut(10);
                 }
@@ -205,7 +205,7 @@ $(".createHTML").click(function() {
 
             $('.searchHTML').on('input', function() {
                 var valor = $(this).val();
-                search(valor); 
+                search(valor);
             });
             $(".clean").click(function() {
                 $('.searchHTML').val("");
@@ -216,7 +216,7 @@ $(".createHTML").click(function() {
                 $("#"+IddeInserssionAtriStytemp).remove();
                  $("#A"+IddeInserssionAtriStytemp).remove();
                 momentoTo = momentoTo - 2;
-               
+
             }
         //extras
         //funciones costantes
@@ -225,20 +225,20 @@ $(".createHTML").click(function() {
             })
             function search(valor) {
                 var count=0,notfound=0;
-                 
+
                  $(".HTMltags div").each(function(){
                      count++;
                     if ($(this).text().search(new RegExp(valor, "i")) < 0) {
                         $(this).fadeOut();
-                         notfound++;   
+                         notfound++;
                 } else {
                         $(this).show();
-                        
+
                 }
-                
+
                 });
              if(count == notfound){
-                   $(".noexiste").delay( 800 ).show(); 
+                   $(".noexiste").delay( 800 ).show();
                 }else {
                     $(".noexiste").fadeOut(10);
                 }
@@ -246,7 +246,7 @@ $(".createHTML").click(function() {
 
             $('.searchHTML').on('input', function() {
                 var valor = $(this).val();
-                search(valor); 
+                search(valor);
             });
             $(".clean").click(function() {
                 $('.searchHTML').val("");
@@ -256,14 +256,14 @@ $(".createHTML").click(function() {
         $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
              IdObjeto = $(this).attr('id');
       }, });
-        
-        
-                 
-                
+
+
+
+
                 function remover() {
                         $( ".htmlMain" ).draggable({revert: true});
                         $("#"+IdObjeto).remove();
-                } 
+                }
                 function createAtribute(nombre) {
                     $("#A"+IddeInserssiondos).attr(nombre,"");
                     var bloqueString = WebBlocksArray[IdObjeto];
@@ -287,7 +287,7 @@ $(".createHTML").click(function() {
                     $("#"+historial[historial.length-1]).addClass("animated");
                     $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
-                
+
                 function procesDos() {
                     $("#"+IddeInserssion).append(BloqueCreado);
                     $("#A"+IddeInserssion).append(EtiquetaCreada);
@@ -301,7 +301,7 @@ $(".createHTML").click(function() {
                     $("#"+historial[historial.length-1]).addClass("bounceIn");
                 }
                 function procesUno() {
-                    
+
                     $(".playground").append(BloqueCreado);
                     $(".yourSite").append(EtiquetaCreada);
                     $("#"+historial[historial.length-1]).addClass("animated");

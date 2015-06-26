@@ -1,27 +1,29 @@
 <?php
     include '../assets/includes/db_conexion.php';
     include '../assets/includes/funciones.php';
+
     sec_session_start();
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
+    include "php/loadOptions.php";
     if(isset($_GET['l'])){
      $avatar = '';
     if ($stmt = $mysqli->prepare("SELECT avatar FROM usuarios_tb WHERE usuario = ?")) {
         $stmt->bind_param('s', $user);
-        $stmt->execute(); 
+        $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($avatar);
         $stmt->fetch();
     }
-    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?"))
     {
         $stmt->bind_param('s', $elidespecial);
-        $stmt->execute(); 
+        $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
-        
+
     }
     include_once '../assets/includes/lang.php';
     $stmt = $mysqli->prepare("SELECT teoria,nombre FROM leccion WHERE idleccion = ?");
@@ -31,7 +33,7 @@
     $stmt->bind_result($teoria,$nombre);
     $stmt->fetch();
     if($stmt->num_rows == 1){
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,25 +48,25 @@
         <link href="../teacher/style.css" rel="stylesheet">
 		<link href="../assets/css/sidebar.css" rel="stylesheet">
         <script async src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-        
+
         <?php include "app/headcss.php"?>
 	</head>
 	<body>
-		<?php 
+		<?php
 			include '../nav/topbar.php';
 		?>
 		<div id="wrapper" class="toggled">
-        <?php 
+        <?php
             include '../nav/sidebar.php';
         ?>
 			<!--Page Content -->
             <div class="col-xs-12 results">
             <div class="msgCl"></div>
-            <?php 
+            <?php
                     include 'indexStud.php';
-            ?>    
+            ?>
             </div>
-             
+
 
 		</div>
        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -91,18 +93,18 @@
                 <h4 class="modal-title" id="myModalLabel"><?=$nombre?></h4>
               </div>
               <div class="col-xs-12 contentWin" style="padding-right:0px;">
-                  
+
                       <div class="col-xs-5 centertest">
                         <img class='showResult' src='../assets/img/avatares/<?=$avatar?>.png'>
-                        
+
                       </div>
-                  
-                    
-                  
+
+
+
                       <div class="col-xs-7" style="padding-right:0px;">
                         <img class="winner animatedDos" src="../assets/img/win.png">
                       </div>
-                 
+
               </div>
               <div class="modal-footer backCute">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -116,17 +118,17 @@
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
             var lessonG = "<?php echo $_GET['l'] ?>";
             var idUserPHP = "<?php echo $userid ?>";
-            
+
             $('#myModal').modal('show');
-        
-             
-        </script>  
-        
-    <?php 
+
+
+        </script>
+
+    <?php
     }else {
         echo "no existe";
     }
-    }?>  
+    }?>
 	</body>
-    
+
 </html>
