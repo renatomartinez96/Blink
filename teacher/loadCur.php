@@ -1,4 +1,4 @@
-<?php 
+<?php
     include '../assets/includes/db_conexion.php';
     $tipo = $_POST['tipo'];
     $user = $_POST['usuario'];
@@ -10,7 +10,7 @@
         $stmt->store_result();
         $stmt->bind_result($idcurso,$nombre,$descripcion, $imagen);
         $result = $stmt->num_rows;
-        
+
         $string = "<div class=' tituloxxx'>
                             <h2 class='junction-bold '>Created courses</h2>
                             <div id='signal'></div>
@@ -21,10 +21,10 @@
                             <a class='btn btn-success pull-left botoncrear'><i class='fa fa-plus'></i> Crear curso</a><a href='bannedCur.php' class='btn btn-primary' data-toggle='tooltip' data-placement='top' title='Cursos bloqueados'><i class='fa fa-briefcase'></i></a>
                             </div>
                         </ul>";
-    
+
         if($result > 0)
         {
-            while ($stmt->fetch()) 
+            while ($stmt->fetch())
             {
                 $string .= "<div class='col-lg-4 col-md-6 '>
                                 <div class='panel panel-info'>
@@ -44,7 +44,8 @@
                                         <p class='junction-light text-center'>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
-                                        <form action='../framework/lesson.php' method='post'>
+                                        <form action='../framework2/lesson.php' method='post'>
+                                            <input type='hidden' value='".$nombre."' name='curname'>
                                             <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
                                             <a class='btn btn-sm btn-success editcur' valid='".$idcurso."' valname='".$nombre."' valdesc='".$descripcion."'><i class='fa fa fa-pencil' data-toggle='tooltip' data-placement='top' title='Editar curso'></i></a>
@@ -61,6 +62,6 @@
                         <strong>Error:</strong><p>No tienes ningún curso activo, debes crear uno para empezar</p>
                         </div>";
         }
-        
+
         echo $string;
 ?>

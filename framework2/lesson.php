@@ -13,7 +13,6 @@
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
-
     }
  include_once '../assets/includes/lang.php';
 ?>
