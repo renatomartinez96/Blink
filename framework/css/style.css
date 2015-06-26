@@ -352,3 +352,7 @@
 .input-group > .input-group-addon {
     background-color:#2b3e50;
 }
+.dd-select{
+                height: 12vh;
+                overflow: hidden;
+            }

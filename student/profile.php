@@ -16,67 +16,22 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) {
+    $stmt = $mysqli->prepare("SELECT idusuario, nombres, apellidos, nacimiento, descripcion, avatar, tipo, lang  FROM usuarios_tb WHERE usuario = ?");
         $stmt->bind_param('s', $user);
         $stmt->execute(); 
         $stmt->store_result();
-        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->bind_result($idusr, $nombres, $apellidos, $nacim, $usrdesc, $avatar, $tipo, $lang);
         $stmt->fetch();
-        if ($lang == 'esp') 
-        {   
-            include '../assets/lang/esp.php';
-            switch($tipo)
-            {
-                case 1:
-                    $tip = 'Administrador';
-                break;
-                case 2:
-                    $tip = 'Profesor';
-                break;
-                case 3:
-                    $tip = 'Estudiante';
-                break;
-            }
-        }
-        elseif($lang == 'ing')
-        {
-            include '../assets/lang/ing.php';
-            switch($tipo)
-            {
-                case 1:
-                    $tip = 'Administrator';
-                break;
-                case 2:
-                    $tip = 'Teacher';
-                break;
-                case 3:
-                    $tip = 'Student';
-                break;
-            }
-        }
-        else{
-            include '../assets/lang/esp.php';
-            switch($tipo)
-            {
-                case 1:
-                    $tip = 'Administrador';
-                break;
-                case 2:
-                    $tip = 'Profesor';
-                break;
-                case 3:
-                    $tip = 'Estudiante';
-                break;
-            }
-        }
-    }
+        $stmt->close();
+
+        include "../assets/includes/lang.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<!--Core CSS-->
 		<?php 
-            $titulodelapagina = "¡Bienvenido $user!";
+            $titulodelapagina = "". $nombres. " ".$apellidos."";
 			include 'main_css.php';
 		?>
 		<!--/#Core CSS-->
@@ -98,6 +53,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                     border-radius: 0px;
                     background: black;
                 }
+                /*GRAY*/
+            .not-success {
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%)
+            }
+            .mrwhite{
+                background: #ede5e5;
+            }
             </style>
 		<!--/#Custom CSS-->
 
@@ -125,45 +88,48 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="col-xs-12 full">
                                     <img class="col-xs-12 full" src="../assets/img/avatares/<?=$avatar?>.png">
                                 </div>
-                                <div class="col-xs-12 btns full">
-                                    <center>
-                                        <div class="panel panel-primary full">
-                                            <div class="panel-heading">
-                                                <h2 class="panel-title junction-bold"><?=$user?></h2>
-                                            </div>
-                                            <div class="panel-body full">
-                                                <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
-                                                <button class="btn form-control btn-success">Información</button>
-                                            </div>
-                                        </div>
-                                    </center>
+                                <div class="col-xs-12 full">
+                                    <a class="btn btn-info btn-block junction-bold">Acerca de mi</a>
+                                    <a class="btn btn-primary btn-block junction-bold" role="button" data-toggle="collapse" href="#boxlinktrophies" aria-expanded="false" aria-controls="boxlinktrophies">Trofeos Box Link</a>
+                                    <a class="btn btn-success btn-block junction-bold" role="button" data-toggle="collapse" href="#othertrophies" aria-expanded="false" aria-controls="othertrophies">Trofeos con tutor</a>
                                 </div>
                             </div>
                             <div class="col-sm-9 full jumbotron">
                                 <div class="panel panel-primary full">
                                     <div class="panel-heading">
-                                        <h3 class="junction-bold"><?=$lang['profile-1']?></h3>
+                                        <h3 class="junction-bold"><?php echo $nombres." ".$apellidos." - user: ".$user."";?></h3>
                                     </div>
                                     <!--Informacion del usuario-->
                                     <div class="panel-body tablist">
-                                        <label><h4 class="junction-regular"><?=$lang['profile-2']?></h4></label>
-                                            <label class="pull-right"><h4><?=$nombres." ".$apellidos?></h4></label><br>
-                                        
-                                        <label><h4 class="junction-regular"><?=$lang['profile-3']?></h4></label>
-                                            <label class="pull-right"><h4><?=$user?></h4></label><br>
-                                        
-                                        <label><h4 class="junction-regular"><?=$lang['profile-4']?></h4></label>
-                                            <label class="pull-right"><h4><?=$correo?></h4></label><br>
-                                        
-                                        <label><h4 class="junction-regular"><?=$lang['profile-5']?></h4></label>
-                                            <label class="pull-right"><h4><?=$nacimiento?></h4></label><br>
-                                        
-                                        <label><h4 class="junction-regular"><?=$lang['profile-6']?></h4></label><br>
-                                            <label class="pull-right"><h4><?=$descripcion?></h4></label><br>
-                                        
-                                        <label><h4 class="junction-regular"><?=$lang['profile-7']?></h4></label>
-                                            <label class="pull-right"><h4><?=$tip?></h4></label><br>
+                                            <div class="well">
+                                                <div class="col-md-3">
+                                                    <p class="junction-regular">Nacimiento:</p>
+                                                    <p class="junction-regular">Nivel:</p>
+                                                    <p class="junction-regular">Estado:</p>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p class="junction-light"><?=$nacim?></p>
+                                                    <p class="junction-light"><?=$tipo?></p>
+                                                    <p class="junction-light text-center"><small><?=$usrdesc?></small></p>
+                                                </div>
+                                            </div>
+                                        <div class="collapse" id="boxlinktrophies">
+                                            <div class="well">
+<!--
+                                                <hr>
+                                                <h4 class="junction-light text-center">Trofeos oficiales</h4>
+                                                <p class="junction-light">Estos los ganas al completar los cursos de Box Link (que se actualizan seguido)</p>
+-->
+                                            </div>
+                                        </div>
+                                        <div class="collapse" id="othertrophies">
+                                            <div class="well">
+                                                <p class="text-center">Trofeos de tutores</p>
+                                                <?php
+                                                    include "student_com_data.php";
+                                                ?>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--/#Informacion del usuario-->
                                 </div>

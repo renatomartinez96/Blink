@@ -66,6 +66,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border:none;
                 background-color: Transparent;
             }
+            /*GRAY*/
+            .not-success {
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%);
+            }
         </style>
 		<!--/#Custom CSS-->
 
@@ -174,7 +179,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div style="margin-top:15px;">
                                         <!--Cursos-->
                                             <?php
-                                                $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr
+                                                $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr, curso.imagen AS curimg
                                                                         FROM `curso` 
                                                                         INNER JOIN `cursoestudiante` 
                                                                         ON cursoestudiante.idcurso = curso.idcurso  
@@ -196,14 +201,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                             <div class='panel panel-info'>
                                                                                 <div class='panel-heading'>
                                                                                     <div class='row'>
-                                                                                        <div class='col-xs-3'>
-                                                                                            <i class='fa fa-trophy fa-5x'></i>
+                                                                                        <div class='col-md-2 full'>
+                                                                                            <img src='../assets/img/pro/".$row['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
                                                                                         </div>
-                                                                                        <div class='col-xs-9 text-right'>
-                                                                                            <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
+                                                                                        <div class='col-md-10'>
+                                                                                            <h4 class='junction-regular text-center'>".$row['nombre']."</h4>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
+                                                                                <!--<marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>-->
                                                                                 <div class='panel-body full'>
                                                                                     <div class='list-group lecciones'>";
                                                                     while($row1 = $stmt1->fetch_assoc())
@@ -226,18 +232,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                             <div class='panel panel-info'>
                                                                                 <div class='panel-heading'>
                                                                                     <div class='row'>
-                                                                                        <div class='col-xs-3'>
-                                                                                            <i class='fa fa-trophy fa-5x'></i>
+                                                                                        <div class='col-md-2 full'>
+                                                                                            <img src='../assets/img/pro/".$row['curimg'].".png' class='img-responsive pull-right  not-success' width='40'>
                                                                                         </div>
-                                                                                        <div class='col-xs-9 text-right'>
-                                                                                            <marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>
+                                                                                        <div class='col-md-10'>
+                                                                                            <h4 class='junction-regular text-center'>".$row['nombre']."</h4>
                                                                                         </div>
-                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class='panel-body full lecciones'>
-                                                                                    <div class='alert alert-dismissible alert-danger' style='margin-bottom:0px;'>
-                                                                                        <button type='button' class='close' data-dismiss='alert'>x</button>
+                                                                                    <div class='alert alert-danger' style='margin-bottom:0px;'>
                                                                                         <strong>there is no lessons available</strong>
                                                                                     </div>
                                                                                 </div>

@@ -46,6 +46,7 @@
         <link href="../teacher/style.css" rel="stylesheet">
 		<link href="../assets/css/sidebar.css" rel="stylesheet">
         <script async src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        
         <?php include "app/headcss.php"?>
 	</head>
 	<body>

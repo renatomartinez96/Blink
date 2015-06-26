@@ -54,7 +54,7 @@ $(document).ready(function() {
                   beforeSend: function() {
                   },
                   success: function(data) {
-                      document.getElementById('asdfgh').innerHTML = data;
+                      document.getElementById('signal').innerHTML = data;
                   }
         });
     } 
@@ -67,10 +67,23 @@ $(document).ready(function() {
                   beforeSend: function() {
                   },
                   success: function(data) {
-                      document.getElementById('asdfgh').innerHTML = data;
+                      document.getElementById('signal').innerHTML = data;
                   }
         });
-    }    
+    }
+    function changeImg(curid, setimg)
+    {
+        $.ajax({
+                  method: "POST",
+                  url: "changeCurImg.php",
+                  data: {curid: curid, setimg: setimg},
+                  beforeSend: function() {
+                  },
+                  success: function(data) {
+                      document.getElementById('signal').innerHTML = data;
+                  }
+        });
+    }
     function event() {
         
         $(".editcur").click(function() {
@@ -145,9 +158,40 @@ $(document).ready(function() {
                     }
                 }
             });
-
-            
         });
+        
+        $(".changetro").click(function() {            
+//            for (x=0; x<=3; x++)
+//            {
+//                content = content + "<div class='col-md-3 full' id='"+x+"'><img src='../assets/img/pro/"+x+".png' class='img-responsive newimg' ></div>";
+//            }
+            $('#lel').modal('toggle');
+            var curimgid = $(this).attr("curimgid");
+            var currentimg = $(this).attr("currentimg");
+            var curimgnombre = $(this).attr("curimgnombre");
+            var nimg = "";
+            
+            var content = "";
+        });
+        
+        $(".newimg").click(function() {  
+            var flow = $(this).attr("id");
+            var jam = document.getElementById('pearl');
+            jam.value = flow;
+//            $(this).addClass("selected-thing");
+            for (i = 0; i < 4; i++) 
+            {
+                if(i == flow)
+                {
+                    $(flow).addClass("selected-thing");
+                }
+                else
+                {
+                        $("#rt"+i+"").removeClass("selected-thing");
+                }
+            }
+        });
+        
          $(".botoncrear").click(function() {
             $('#modalDesc').modal('toggle');
          });

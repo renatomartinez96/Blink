@@ -68,6 +68,25 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border: none;
                 background-color: Transparent;
             }
+            .curdesc{
+                min-height:175px;
+                overflow:scroll;
+                overflow-x:hidden;
+                margin-bottom:0px;
+            }
+            .selected-thing{
+                border: 2px solid #ffffff;
+            }
+            .showme{ 
+                display: none;
+            }
+            .showhim:hover .showme{
+                display : block;
+            }
+            .showhim:hover .imgo{
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%);
+            }
         </style>
         <!--Topbar -->
 		<?php 
@@ -170,7 +189,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <div class="panel-heading">
                         <h1 class="panel-title junction-regular text-center">Welcome teacher <?=$user?>!</h1>
                     </div>
-                    <div class="panel-body">
+                    
                         <!-- Tutor forms -->
                         <div class="col-xs-12 results">
 
@@ -200,7 +219,35 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
+                    
+                    <div class="modal fade" id="lel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                     </div>
+                    <div class="modal-body">
+                    <?php 
+                    $x= 0;
+                    $content = "";
+                    for ($x=0; $x<=3; $x++)
+                    {
+                        $content .= "<div class='col-md-3 full newimg' id='rt".$x."'><img src='../assets/img/pro/".$x.".png' class='img-responsive' ></div>";
+                    }    
+                    echo $content;
+                    ?>
+                        <input type="hidden" id="pearl" value="">
+                        <p>lelelelelel</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
                 </div>
             </div>
            
