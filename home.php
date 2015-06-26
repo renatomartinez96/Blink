@@ -1,14 +1,13 @@
 <?php
 include_once 'assets/includes/db_conexion.php';
 include_once 'assets/includes/funciones.php';
- 
 sec_session_start();
 ?>
 <!--
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -33,12 +32,12 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--/#Core CSS-->
 	</head>
 	<body>
-		<?php 
-            if (login_check($mysqli) == true) { 
-                $user = $_SESSION['username']; 
+		<?php
+            if (login_check($mysqli) == true) {
+                $user = $_SESSION['username'];
                 $stmt = $mysqli->prepare("SELECT idusuario, log, correo, token, estado, tipo FROM usuarios_tb WHERE usuario = ?");
                 $stmt->bind_param('s', $user);
-                $stmt->execute();  
+                $stmt->execute();
                 $stmt->store_result();
                 $stmt->bind_result($id,$log,$correo,$token,$estado,$tipo);
                 $stmt->fetch();
@@ -60,7 +59,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class='form-group'>
                                             <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>
                                             </div>
                                         </div>
                                         <br>
@@ -91,7 +90,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class='form-group'>
                                             <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>
                                             </div>
                                         </div>
                                         <br>
@@ -130,7 +129,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class='form-group'>
                                             <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>
                                             </div>
                                         </div>
                                         <br>
@@ -162,7 +161,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <div class='form-group'>
                                             <label class='col-lg-3 control-label' for='token'>Activation code</label>
                                             <div class='col-lg-9'>
-                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>            
+                                                <input type='text' name='token' maxlength='32' id='token' placeholder='Activation code' class='form-control input-sm'/>
                                             </div>
                                         </div>
                                         <br>
@@ -183,14 +182,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                     ";
                 }
 
-                if ($log == 0) 
+                if ($log == 0)
                 {
-                    if ($estado == 0) 
+                    if ($estado == 0)
                     {
                         if ($tipo == 3) {
-                            if (isset($_POST['token'])) 
+                            if (isset($_POST['token']))
                             {
-                                if ($_POST['token'] == $token) 
+                                if ($_POST['token'] == $token)
                                 {
                                     $stmt = $mysqli->prepare("UPDATE usuarios_tb SET estado = ?, token = ? WHERE usuario = ?");
                                     $estad = 1;
@@ -220,15 +219,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                         {
                             $stmt1 = $mysqli->prepare("SELECT nota FROM examenes WHERE usuario = ? ORDER BY fecha DESC LIMIT 1");
                             $stmt1->bind_param('s', $user);
-                            $stmt1->execute(); 
+                            $stmt1->execute();
                             $stmt1->store_result();
                             $stmt1->bind_result($nota);
                             $stmt1->fetch();
-                            if ($nota >= 8) 
+                            if ($nota >= 8)
                             {
-                                if (isset($_POST['token'])) 
+                                if (isset($_POST['token']))
                                 {
-                                    if ($_POST['token'] == $token) 
+                                    if ($_POST['token'] == $token)
                                     {
                                         $stmt2 = $mysqli->prepare("UPDATE usuarios_tb SET estado = ?, token = ? WHERE usuario = ?");
                                         $estad = 1;
@@ -293,7 +292,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             $stmt3 = $mysqli->prepare("UPDATE usuarios_tb SET avatar = ?, log = ? WHERE usuario = ?");
                             $log = '1';
                             $stmt3->bind_param('sss', $avatar, $log, $_SESSION['username']);
-                            $stmt3->execute();  
+                            $stmt3->execute();
                             echo "<script>window.location.href='home.php'</script>";
                             $nombre = "users/".$_SESSION['username'];
                             if(!mkdir($nombre, 0777, true)) {
@@ -303,8 +302,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 mkdir($nombre."/img", 0777, true);
                                 mkdir($nombre."/video", 0777, true);
                                 mkdir($nombre."/non_supported", 0777, true);
-                                fopen($nombre."/css/index.css", "a+");
-                                fopen($nombre."/index.html", "a+");
+                                copy("assets/index.php",$nombre."/video/index.php");
+                                copy("assets/index.php",$nombre."/non_supported/index.php");
+                                copy("assets/index.php",$nombre."/img/index.php");
+								copy("assets/logo/boxlink.png",$nombre."/img/" . substr(md5($nombre),0,6) .".png");
+                                fopen($nombre."/css/index.css", "x");
+                                fopen($nombre."/index.html", "x");
                             }
                         }
                     }
@@ -325,7 +328,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <script>
                                 window.location.href = 'teacher/index.php';
                             </script>
-                            ";   
+                            ";
                         break;
                         case 3:
                             echo "
@@ -335,11 +338,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                             ";
                         break;
                     }
-                    
+
                 }
             }
             ?>
-    
+
     <script src="assets/js/jquery.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
