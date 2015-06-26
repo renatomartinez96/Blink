@@ -43,6 +43,7 @@
                           <textarea class='form-control TeoCur' name='teoria' placeholder='Theoretical introduction'></textarea>
                       </div>
                       <div class='modal-footer'>
+                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
                         <button type='submit' name='createLes' value='".$idCurso."' class='btn btn-primary createLes'>Create lesson</button>
                       </div>
                         </form>

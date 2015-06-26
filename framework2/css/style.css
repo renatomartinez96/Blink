@@ -35,11 +35,7 @@
     overflow: hidden;
     z-index: 10;
 }
-.htmlMain > p{
-    font-family: "BebasNeueBold";
-    font-size: 1.3em;
-    color: #6C7A89;
-}
+
 
 .noexiste {
     display: none;
@@ -280,3 +276,83 @@
     }
     
 }
+/*framebeta*/
+.fullo {
+    padding: 0;
+    margin-bottom: 5%;
+}
+.withcien {
+    width: 100%;
+    margin: 2%;
+}
+@-webkit-keyframes bounceIn { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: scale(.6); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        -webkit-transform: scale(1.05); 
+    } 
+
+    70% { 
+        -webkit-transform: scale(.9); 
+    } 
+
+    100% { 
+         -webkit-transform: scale(1); 
+    } 
+} 
+
+@keyframes bounceIn { 
+    0% { 
+        opacity: 0; 
+        transform: scale(.6); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05); 
+    } 
+
+    70% { 
+        transform: scale(.9); 
+    } 
+
+    100% { 
+        transform: scale(1); 
+    } 
+} 
+
+.bounceIn { 
+    -webkit-animation-name: bounceIn; 
+    animation-name: bounceIn; 
+}
+.outoff {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px transparent, 0 0 1px rgba(0, 0, 0, 0);
+  /* Hack to improve aliasing on mobile/tablet devices */
+}
+.inoff {
+  box-shadow: inset 0 0 0 0.25vh #2098d1, 0 0 1px rgba(0, 0, 0, 0);
+  /* Hack to improve aliasing on mobile/tablet devices */
+}
+.input-group > .input-group-addon {
+    background-color:#2b3e50;
+}
+.dd-select{
+                height: 12vh;
+                overflow: hidden;
+            }

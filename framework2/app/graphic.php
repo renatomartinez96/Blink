@@ -66,7 +66,7 @@
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
                     <div class="form-group">
-                          <p class="titulo">HTML objects</p>
+                          <p class="titulo">Objetos HTML</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -74,19 +74,19 @@
                           </div>
                       </div>
                       <div class="HTMltags">
-                        <div id="0" class="col-xs-5 htmlMain yellow "><p>BODY</p></div>
-                        <div id="1" class="col-xs-5 htmlMain green "><p>TITLE</p></div>
-                        <div id="2" class="col-xs-5 htmlMain green "><p>PARAGRAPH</p></div>
-                        <div id="3" class="col-xs-5 htmlMain green "><p>BOLD</p></div>
-                        <div id="4" class="col-xs-5 htmlMain green "><p>DIV</p></div>
-                        <div id="5" class="col-xs-5 htmlMain green "><p>LINK</p></div>
-                        <div id="6" class="col-xs-5 htmlMain green "><p>IMAGE</p></div>
-                        <div id="19" class="col-xs-5 htmlMain green "><p>TABLE</p></div>
-                        <div id="20" class="col-xs-5 htmlMain green "><p>T ROW</p></div>
-                        <div id="21" class="col-xs-5 htmlMain green "><p>T HEAD</p></div>
-                        <div id="22" class="col-xs-5 htmlMain green "><p>T CELL</p></div>
+                        <div id="0" class="col-xs-5 htmlMain yellow "><h5>BODY</h5></div>
+                        <div id="1" class="col-xs-5 htmlMain bg-primary "><h5>TITLE</h5></div>
+                        <div id="2" class="col-xs-5 htmlMain bg-primary "><h5>PARAGRAPH</h5></div>
+                        <div id="3" class="col-xs-5 htmlMain bg-primary "><h5>BOLD</h5></div>
+                        <div id="4" class="col-xs-5 htmlMain bg-primary "><h5>DIV</h5></div>
+                        <div id="5" class="col-xs-5 htmlMain bg-primary "><h5>LINK</h5></div>
+                        <div id="6" class="col-xs-5 htmlMain bg-primary "><h5>IMAGE</h5></div>
+                        <div id="19" class="col-xs-5 htmlMain bg-primary "><h5>TABLE</h5></div>
+                        <div id="20" class="col-xs-5 htmlMain bg-primary "><h5>T ROW</h5></div>
+                        <div id="21" class="col-xs-5 htmlMain bg-primary "><h5>T HEAD</h5></div>
+                        <div id="22" class="col-xs-5 htmlMain bg-primary "><h5>T CELL</h5></div>
                        </div>
-                      <label class='noexiste'>No results were found</label>
+                      <label class='noexiste'>No se encontraron resultados</label>
                   </div>
                   <div class="tab-pane fade" id="atr">
                       <div class="form-group">
@@ -98,11 +98,11 @@
                           </div>
                       </div>
                       <div class="HTMltags">
-                        <div id="7" class="col-xs-5 htmlMain orange "><p>HREF</p></div>
-                        <div id="8" class="col-xs-5 htmlMain orange "><p>SRC</p></div>
-                        <div id="9" class="col-xs-5 htmlMain orange "><p>NAME</p></div>
+                        <div id="7" class="col-xs-5 htmlMain orange "><h5>HREF</h5></div>
+                        <div id="8" class="col-xs-5 htmlMain orange "><h5>SRC</h5></div>
+                        <div id="9" class="col-xs-5 htmlMain orange "><h5>NAME</h5></div>
                       </div>
-                      <label class='noexiste'>No results were found</label>
+                      <label class='noexiste'>No se encontraron resultados</label>
                   </div>
                  <div class="tab-pane fade" id="css">
                      
@@ -115,16 +115,16 @@
                           </div>
                       </div>
                      <div class="HTMltags">
-                        <div id="10" class="col-xs-5 htmlMain royal "><p>BGCOLOR</p></div>
-                        <div id="11" class="col-xs-5 htmlMain royal "><p>MARGINLEFT</p></div>
-                        <div id="12" class="col-xs-5 htmlMain royal "><p>WIDTH</p></div>
-                        <div id="13" class="col-xs-5 htmlMain royal "><p>HEIGHT</p></div>
-                         <div id="15" class="col-xs-5 htmlMain royal "><p>MARGINRIGHT</p></div>
-                         <div id="16" class="col-xs-5 htmlMain royal "><p>COLOR</p></div>
-                         <div id="17" class="col-xs-5 htmlMain royal "><p>FONT-SIZE</p></div>
-                         <div id="23" class="col-xs-5 htmlMain royal "><p>BORDER</p></div>
+                        <div id="10" class="col-xs-5 htmlMain royal "><h5>BGCOLOR</h5></div>
+                        <div id="11" class="col-xs-5 htmlMain royal "><h5>MARGINLEFT</h5></div>
+                        <div id="12" class="col-xs-5 htmlMain royal "><h5>WIDTH</h5></div>
+                        <div id="13" class="col-xs-5 htmlMain royal "><h5>HEIGHT</h5></div>
+                         <div id="15" class="col-xs-5 htmlMain royal "><h5>MARGINRIGHT</h5></div>
+                         <div id="16" class="col-xs-5 htmlMain royal "><h5>COLOR</h5></div>
+                         <div id="17" class="col-xs-5 htmlMain royal "><h5>FONT-SIZE</h5></div>
+                         <div id="23" class="col-xs-5 htmlMain royal "><h5>BORDER</h5></div>
                      </div>
-                     <label class='noexiste'>No results were found</label>
+                     <label class='noexiste'>No se encontraron resultados</label>
                  </div>
                 </div>
             </div>
@@ -134,14 +134,15 @@
         <div class="panel panel-default arena">
           <div class="panel-heading">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
-              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
+              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">ÁREA DE TRABAJO </a></li>
+              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">VISTA PREVIA</a></li>
                 <div class="divide">
                   <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Vista en nueva pestaña"><i class="fa fa-share"></i></button>
                   <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
                   <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Descargar HTML"><i class="fa fa-bolt"></i></button>
                   <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover"><i class="fa fa-arrows"></i></button>
                   <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
+                    
                 </div>
             </ul>
             

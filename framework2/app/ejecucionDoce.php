@@ -4,7 +4,7 @@
                 include "app/funciones.php";
             ?>
                 //exclusivo docente
-                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Next</button>");
+                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Siguiente</button>");
                 function addDescr() {
                     $('#modalDesc').modal('toggle');
                     $( ".saveDescription" ).off('click');
@@ -34,10 +34,6 @@
               $( ".playground" ).droppable({
                     drop: function( event, ui ) {
                         identifie();
-                        getParameter();
-                        getParameterDos();
-                        getParameterTres();
-                        inputText();
                         addDescr();
                         momentoTo++;
                         IdObjetoCreadoUnico--;

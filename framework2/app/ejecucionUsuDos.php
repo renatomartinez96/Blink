@@ -1,12 +1,14 @@
 
     $(document).ready(function() {
+            console.log("a");
             <?php
                 include "app/variables.php";
                 include "app/funciones.php";
-            ?>  
+            ?>
+            console.log("e");
                 var currentDate = "";
                 function startTime() {
-                    
+
                     $.ajax({
                               method: "POST",
                               url: "ajax/registerTime.php",
@@ -18,7 +20,7 @@
                               success: function(data) {
                                 $(".loading").css('display','none');
                                 currentDate = data.horaServ;
-                                
+
                               }
                           });
                 }
@@ -32,13 +34,13 @@
                                 $(".loading").css('display','block');
                               },
                               success: function(data) {
-                                $(".loading").css('display','none'); 
+                                $(".loading").css('display','none');
                                 //$(".msgCl ").html(data);
                                   $('#myModal2').on('show.bs.modal', function (e) {
                                         $('.winner').addClass("fadeInDownDos");
                                     });
                                   if (data.response == 0) {
-                                    $(".centertest").append("<h1 class='muybien2'>"+data.tiempo+"</h1><h1 class='muybien3'>¡Very Good!</h1>");
+                                    $(".centertest").append("<h1 class='muybien2'>"+data.tiempo+"</h1><h1 class='muybien3'>¡Excelente!</h1>");
                                   }else if (data.response == 1) {
                                      $(".contentWin").html(data.string);
                                   }
@@ -61,7 +63,7 @@
                               },
                               success: function(data) {
                                 $(".loading").css('display','none');
-                                  
+
                                 $(".msgCl ").html(data.stringhome);
                                 switch (data.correcto) {
                                     case 1:
@@ -71,7 +73,7 @@
                                         finishTime();
                                         break;
                                 }
-                                
+
                               }
                           });
             }
@@ -79,18 +81,13 @@
             sincro();
               $( ".playground" ).droppable({
                     drop: function( event, ui ) {
-                        
+
                         identifie();
-                        getParameter();
-                        getParameterDos();
-                        getParameterTres();
-                        inputText();
                         IdObjetoCreadoUnico--;
                         momentoTo++;
-                        
+
                         sincro();
                 }
-    });  
-            
-});
+    });
 
+});

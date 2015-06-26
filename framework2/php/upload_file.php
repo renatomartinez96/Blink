@@ -5,49 +5,59 @@
     $user = $_SESSION['username'];
     $new_image_name = substr(md5(date("Y-m-d H:i:s").$user), 0, 6);
     $data = array();
-
+    $uploaddir = '../temp/';
+     $renameThis = $new_image_name.".tblk";
+    $openThis = "";
 if(isset($_GET['files']))
 {	
 	$error = false;
+    $datoss = "";
 	$files = array();
 	foreach($_FILES as $file)
 	{
         
         $imageFileType = pathinfo(basename($file['name']),PATHINFO_EXTENSION);
-        switch($imageFileType)
+        if($imageFileType = "tblk")
         {
-            case "png":
-            case "jpg":
-            case "gif":
-            case "jpeg":
-                $uploaddir = '../../users/'.$user.'/img/';
-            break;
-            case "mp4":
-            case "webm":
-            case "ogg":
-                $uploaddir = '../../users/'.$user.'/video/';
-            break;
-            default:
-                $uploaddir = '../../users/'.$user.'/non_supported/';
-            break;
-        }
-		if(move_uploaded_file($file['tmp_name'], $uploaddir .basename($file['name'])))
+           
+            if(move_uploaded_file($file['tmp_name'], $uploaddir .basename($file['name'])))
 		{
 			$files[] = $uploaddir.$file['name'];
             $archivo =  $uploaddir.$file['name'];
             $file_type = substr($file['name'],-4);
-            rename($archivo,$uploaddir.$new_image_name.$file_type);
+            rename($archivo,$uploaddir.$renameThis);
+             $name = $uploaddir.$renameThis;
+            $fp = fopen($name, 'r');
+            $datoss = fread($fp,filesize($name));
+            fclose($fp);
+            chmod($name, 0777);
+            $explode = explode("S%R#n&SE!r?", $datoss);
+            foreach ($explode as $key => $value) {
+                if($key == 0) {
+                    $bloquess = $value;
+                }elseif($key == 1) {
+                    $resultado = $value;
+                }
+            }
+                
+            $data = array('bloques' => $bloquess,'resultado' =>$resultado);
+            unlink($name);
 		}
 		else
 		{
 		    $error = true;
 		}
+        }else {
+             $error = true;
+        }
+		
 	}
-	$data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
+	
 }
 else
 {
-	$data = array('success' => 'Form was submitted', 'formData' => $_POST);
+   
+    
 }
 
 echo json_encode($data);
