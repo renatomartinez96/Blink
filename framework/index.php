@@ -1,23 +1,23 @@
 <?php
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
-   
+
     sec_session_start();
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
-if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?"))
     {
         $stmt->bind_param('s', $elidespecial);
-        $stmt->execute(); 
+        $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
-        
+
     }
  include_once '../assets/includes/lang.php';
  include "php/loadOptions.php";
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,28 +51,29 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
      <!-- Custom JS -->
     <script src="js/jquery-2.1.1.js" type="text/javascript"></script>
     <script>
-        <?php 
+        <?php
             include "app/ejecucionUsu.php";
         ?>
     </script>
     <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
     <script type="text/javascript" src="js/jquery.ddslick.min.js"></script>
 </head>
     <body>
-        
-		<?php 
+
+		<?php
 			include '../nav/topbar.php';
 		?>
 		<div id="wrapper" class="toggled">
-        <?php 
+        <?php
             include '../nav/sidebar.php';
         ?>
 			<!--Page Content -->
             <div class="col-xs-12 results">
-            <div class='panel-group animated fadeInDown' id='accordion' role='tablist' aria-multiselectable='true' style='margin-bottom:0px;'> 
+            <div class='panel-group animated fadeInDown' id='accordion' role='tablist' aria-multiselectable='true' style='margin-bottom:0px;'>
                           <div class='panel panel-default'>
                                 <div class='panel-heading' role='tab' id='headingTwo'>
                                   <h4 class='panel-title'>
@@ -83,11 +84,11 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                               </div>
                 </div>
                 </div>
-            <?php 
+            <?php
                     include 'app/graphic.php';
-            ?>  
-            
-             
+            ?>
+
+
 
 		</div>
             <div class="modal fade" id="OpenFile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -116,12 +117,13 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
               </div>
             </div>
         <script src="js/upload.js" type="text/javascript"></script>
+
 	   <script>
             $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
            $('.restard').remove();
-           
-        </script>  
-     
+
+        </script>
+
 	</body>
 
 </html>

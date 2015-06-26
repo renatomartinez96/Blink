@@ -6,7 +6,7 @@ function focus(id) {
         $("#"+id).addClass("inoff");
 }
 //VALIDACIONES
-	
+
 //VALIDACIONES
 function eventos() {
     //VALIDACIONES
@@ -253,7 +253,7 @@ $(".createHTML").click(function() {
                 var valor = "";
                 search(valor);
             });
-        $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: false,drag: function() {
+        $( ".htmlMain" ).draggable({revert: true,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".HTMLgenerator", scroll: true,drag: function() {
              IdObjeto = $(this).attr('id');
       }, });
 

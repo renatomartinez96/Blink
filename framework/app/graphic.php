@@ -1,8 +1,8 @@
 <!--
 <div class="col-xs-12 HTMLgenerator">
-            
+
             <div class="col-xs-10 arena">
-                
+
                 <p class="titulo">Workspace</p>
                 <div class="col-xs-12 tools">
                     <i id="14" class="fa fa-trash-o fa-2x htmlMain trshIt"></i>
@@ -11,9 +11,9 @@
             </div>
             <div class="col-xs-2 objects">
                 <div class="row">
-                
+
                 <p class="titulo">HTML objects</p>
-                    
+
                         <div id="0" class="col-xs-3 htmlMain yellow withauto"><p>BODY</p></div>
                         <div id="1" class="col-xs-3 htmlMain green withauto"><p>TITLE</p></div>
                         <div id="2" class="col-xs-3 htmlMain green withauto"><p>PARAGRAPH</p></div>
@@ -37,7 +37,7 @@
                     </div>
                 <div class="row">
                 <p class="titulo"></p>
-                        
+
                     </div>
                 <div class="row">
                     <div class="loading">
@@ -52,16 +52,16 @@
             </div>
         </div>-->
 <div class="col-xs-12 HTMLgenerator">
-    <div class="col-xs-3 col-lg-2 padcero">
+    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-2 padcero">
         <div class="panel panel-default objects">
           <div class="panel-heading">
              <ul class="nav nav-pills">
               <li class="active clean"><a href="#html" data-toggle="tab" aria-expanded="true">HTML</a></li>
               <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATRIBUTOS</a></li>
               <li class="clean"><a href="#css" data-toggle="tab" aria-expanded="true">CSS</a></li>
-            </ul>  
+            </ul>
           </div>
-               
+
             <div class="panel-body">
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
@@ -70,7 +70,7 @@
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
-                            
+
                           </div>
                       </div>
                       <div class="HTMltags">
@@ -94,7 +94,7 @@
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
-                            
+
                           </div>
                       </div>
                       <div class="HTMltags">
@@ -105,13 +105,13 @@
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>
                  <div class="tab-pane fade" id="css">
-                     
+
                      <div class="form-group">
                           <p class="titulo">CSS</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
-                            
+
                           </div>
                       </div>
                      <div class="HTMltags">
@@ -130,22 +130,22 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-9 col-lg-10 padcero">
+    <div class="col-xs-12 col-sm-7 col-md-8 col-lg-10 padcero">
         <div class="panel panel-default arena">
           <div class="panel-heading">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">ÁREA DE TRABAJO </a></li>
-              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">VISTA PREVIA</a></li>
+              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
+              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
                 <div class="divide">
                   <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Vista en nueva pestaña"><i class="fa fa-share"></i></button>
                   <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
                   <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Descargar HTML"><i class="fa fa-bolt"></i></button>
                   <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover"><i class="fa fa-arrows"></i></button>
                   <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
-                    
+
                 </div>
             </ul>
-            
+
           </div>
           <div class="panel-body">
             <div id="myTabContent" class="tab-content">
