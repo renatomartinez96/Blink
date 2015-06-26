@@ -32,8 +32,10 @@ Gerardo López | Iván Nolasco | Renato Andres
             }
             elseif (file_exists($dir1 . $file))
             {
-                $filepath = $dir . $file;
-                if(unlink($filepath))
+                $filepath = $dir1 . $file;
+                $filepath1 = $dir1 . "/thumbs/" . substr($file,0,6) . ".gif";
+                
+                if(unlink($filepath) and unlink($filepath1))
                 {
                     echo "archivo eliminado correctamente";
                 }

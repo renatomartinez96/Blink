@@ -2,7 +2,7 @@
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -47,13 +47,13 @@ Gerardo López | Iván Nolasco | Renato Andres
 			include 'main_css.php';
 		?>
         <!--/#Core CSS-->
-        
+
 		<!--Custom CSS-->
 		<link href="assets/css/sidebar.css" rel="stylesheet">
         <link type="text/css"  rel="stylesheet" href="assets/css/scrolling-nav.css">
         <meta name="theme-color" content="#E06B26">
         <!--/#Custom CSS-->
-        <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+        <script type="text/JavaScript" src="assets/js/sha512.js"></script>
         <script type="text/JavaScript" src="assets/js/forms.js"></script>
         <style type="text/css">
             html, body{
@@ -105,7 +105,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 -o-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
                 position: fixed;
-                
+
 /*                background:#2b3e50 url('assets/img/banner.png') 300%;S*/
             }
             #navbar-box-link.toggled{
@@ -123,7 +123,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 -o-transition: all 0.4s ease-out;
                 transition: all 0.4 ease-out;
                 position: fixed;
-            } 
+            }
             #login_form.hidden{
                 -webkit-transition: all 0.2s ease-out;
                 -moz-transition: all 0.2s ease-out;
@@ -222,7 +222,7 @@ Gerardo López | Iván Nolasco | Renato Andres
               text-align: right;
               right: 40px;
               font-size: 2.3rem;
-              
+
             }
             .controls-slide li {
               opacity: 0.8;
@@ -328,20 +328,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                 height:100vh;
                 width:100vw;
             }
-            #googlemaps { 
-              height: 100%; 
-              width: 100%; 
-              position:absolute; 
-              top: 0; 
-              left: 0; 
+            #googlemaps {
+              height: 100%;
+              width: 100%;
+              position:absolute;
+              top: 0;
+              left: 0;
               z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
             }
 
-            #contactform { 
-              position: relative; 
+            #contactform {
+              position: relative;
               z-index: 1; /* The z-index should be higher than Google Maps */
               width: 100%;
-              height: 100% !important; 
+              height: 100% !important;
               padding: 10px;
               background: rgba(0,0,0,0.50);
               height: auto;
@@ -350,8 +350,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             #contactfrm{
                 padding-top:11%;
             }
-        </style>    
-	</head>         
+        </style>
+	</head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <ul class="controls-slide" style="color: rgb(255, 255, 255);">
             <li id="nav1" class="active">
@@ -436,10 +436,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="typed"></div>
                             </h1>
                             <a href="info/about.php"><h3 id="viewmoreabout">Leer +</h3></a>
-                        
+
 <!--
                             <h2 class="junction-bold aboutitle">Box Link</h2>
-                            <hr class="linea"> 
+                            <hr class="linea">
                             <br>
                             <h4 class="junction-light aboutbody" style="text-align:justify;">
                                 Box Link es una plataforma de aprendizaje didáctico en la cual las personas interesadas en aprender diseño de Front-end podrán adquirir los conocimientos básicos necesarios para iniciarse en el diseño de páginas web.<br>El método que Box Link implementa para la enseñanza de dichos términos es mediante el uso de bloques, la principal ventaja es que promovemos el verdadero aprendizaje de los diferentes lenguajes para diseño web, esto gracias a que el estudiante no tiene la posibilidad de sencillamente solo copiar el código como en otras plataformas, sino que la única manera de poder realizar la lección es poniendo los bloques de manera que cumpla los requisitos para poder pasar la lección.
@@ -452,7 +452,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <div class="container jumbotron transparent">
                         <div class="full transparent text-center">
                             <h2 class="junction-bold aboutitle">Desarrolladores</h2>
-                            <hr class="linea"> 
+                            <hr class="linea">
                         </div>
                         <div class="col-lg-4 col-sm-6 text-center">
                             <center>
@@ -489,7 +489,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <div id="googlemaps"></div>
                     <div id="contactform">
                         <div class="container">
-                            <div class="col-md-6 " id="contactfrm"> 
+                            <div class="col-md-6 " id="contactfrm">
                                 <div class="col-xs-12 full">
                                     <h1 class="junction-bold">Contáctenos</h1>
                                     <p style="padding-bottom:10px !important;" class="justify col-lg-10 full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus non turpis quis suscipit. Proin sit amet arcu sed massa volutpat gravida. Phasellus semper nisl ligula, sed condimentum ligula mollis sit amet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -528,7 +528,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div class='form-group'>
                                         <label class='col-lg-3 control-label' for='mail'>Email</label>
                                         <div class='col-lg-9'>
-                                            <input type='text' name='mail' maxlength='32' id='mail' placeholder='Correo Electronico' autocomplete="off" class='form-control input-sm'/> 
+                                            <input type='text' name='mail' maxlength='32' id='mail' placeholder='Correo Electronico' autocomplete="off" class='form-control input-sm'/>
                                         </div>
                                     </div>
                                     <br>
@@ -551,12 +551,12 @@ Gerardo López | Iván Nolasco | Renato Andres
         </footer>
 -->
             <?php
-                if (isset($_GET['t'])) 
+                if (isset($_GET['t']))
                 {
                     $tkn = $_GET['t'];
                     $stmt = $mysqli->prepare("SELECT token, usuario FROM usuarios_tb WHERE token =  ?");
                     $stmt->bind_param('s', $tkn);
-                    $stmt->execute(); 
+                    $stmt->execute();
                     $stmt->store_result();
                     $stmt->bind_result($tokn, $usr);
                     $stmt->fetch();
@@ -588,7 +588,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             message: "<center><h5 class='junction-light'>You must type an email address</h5></center>",
                         });
                     }else{
-                        if(validateEmail($("#mail").val())) { 
+                        if(validateEmail($("#mail").val())) {
                             var send = {"email" : $("#mail").val()};
                             $.ajax({
                                 type: "POST",
@@ -611,9 +611,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 });
             });
         </script>
-        
-        <?php 
-            require "main_js.php"; 
+
+        <?php
+            require "main_js.php";
         ?>
         <script src="assets/js/typed.min.js"></script>
         <script>
@@ -662,8 +662,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     center: latLng,
                     disableDefaultUI: true
-                    
-                    
+
+
                 };
                 var styledMap = new google.maps.StyledMapType(styles,
                 {name: "Styled Map"});
@@ -683,6 +683,6 @@ Gerardo López | Iván Nolasco | Renato Andres
 
             google.maps.event.addDomListener(window, 'load', showGoogleMaps);
         </script>
-        
+
     </body>
 </html>
