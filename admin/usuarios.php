@@ -5,22 +5,18 @@ include_once '../assets/includes/funciones.php';
 sec_session_start();
 include 'auto.php';
 $user = $_SESSION['username'];
-?>
-<?php
-//$stmt = $mysqli->prepare("SELECT idusuario, nombres, apellidos, nacimiento, genero, usuario, estado, correo, tipo, lang FROM usuarios_tb");
-//$stmt->execute();  
-//$stmt->store_result();
-//$stmt->bind_result($id, $nombre, $apellido, $nac, $gen, $user, $est, $correo, $tipo, $lang);
-//$stmt->fetch();
-//$row_cnt = $stmt->num_rows;
-/*if($row_cnt > 0)
-{
-    while($results->fetch_assoc())
+$elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
     {
-        echo $results["idusuario"]."<br>";
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
         
     }
-}*/
+    include "../assets/includes/lang.php";
 ?>
 <!--
 
@@ -79,51 +75,51 @@ $titulo = "";
         switch($usutipo2){
         case 1;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 1";
-        $titulo = "List of Administrators of Box Link";
+        $titulo = "List of Administradores of Box Link";
         break;
         case 2;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 2";
-        $titulo = "List of Teachers of Box Link";
+        $titulo = "List of Tutores of Box Link";
         break;
         case 3;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 3";
-        $titulo = "List of Students of Box Link";
+        $titulo = "List of Estudiantes of Box Link";
         break;
         }
     }
     else
     {
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb";
-        $titulo = "List of all users of Box Link";
+        $titulo = "Listado de todos los usuarios de Box Link";
     }
 //}
 ?>
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Back</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Regresar</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <div class="btn-group" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Sort the list by... <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Ordenar por... <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=1">Administrators</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=2">Teachers</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=3">Students</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=1">Administradores</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=2">Tutores</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=3">Estudiantes</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">All users</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">Todos los usuarios</a></li>
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Print reports: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Imprimir reportes: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administrators</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Teachers</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Students</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administradores</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Tutores</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Estudiantes</a></li>
                             <li role="presentation" class="divider"></li>
                             <li role="presentation" class="dropdown-header">Per status</li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1">Active</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=0">Inactive</a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">All users</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">Todos los usuarios</a></li>
                         </ul>
                         </div>
                         </div>
@@ -132,13 +128,13 @@ $titulo = "";
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
-                                <th>Username</th>
-                                <th>Names</th>
-                                <th>Lastname</th>
-                                <th>Email</th>
-                                <th>Birthday</th>
-                                <th>Type</th>
-                                <th>Status</th>
+                                <th>Usuario</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Correo electrónico</th>
+                                <th>Nacimiento</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -152,13 +148,13 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["tipo"])
         {
             case 1;
-            $text1 = "Administrator";
+            $text1 = "Administrador";
             break;
             case 2;
-            $text1 = "Teacher";
+            $text1 = "Tutor";
             break;
             case 3;
-            $text1 = "Student";
+            $text1 = "Estudiante";
             break;
         }
         $text2 = "";
@@ -167,14 +163,14 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["estado"])
         {
             case 0;
-            $text2 = "<i class='fa fa-user-times'></i> Inactive";
+            $text2 = "<i class='fa fa-user-times'></i> Inactivo";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reportes</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Editar</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activar</a>";
             break;
             case 1;
-            $text2 = "<i class='fa fa-check'></i> Active";
+            $text2 = "<i class='fa fa-check'></i> Activo";
             $tbclass = "";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Deactivate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reportes</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Editar</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Desactivar</a>";
             break;
         }
         echo "<tr ".$tbclass."><td><strong>".$row["idusuario"]."</strong></td>";

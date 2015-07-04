@@ -5,8 +5,18 @@ include_once '../assets/includes/funciones.php';
 sec_session_start();
 include 'auto.php';
 $user = $_SESSION['username'];
-?>
-<?php
+$elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
+    include "../assets/includes/lang.php";
 ?>
 <!--
 

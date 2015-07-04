@@ -33,7 +33,12 @@ if($result = $stmt1->num_rows)
                 }
                 else
                 {
-                    $infotoprint .= "<img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive not-success'>
+                    $infotoprint .= "<div class='col-xs-12 full imagenes'>
+                                        <img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive not-success' style='display:block;max-width:100%;'>
+                                        <div class='mask'>
+                                            <h1 class='junction-regular'>".$laotra."%</h1>
+                                        </div>
+                                    </div>
                                     <p class='text-center'>".$row1['curnombre']."</p>                              
                                     <div class='progress progress progress-striped active mrwhite'>
                                     <div class='progress-bar progress-bar-success' style='width: ".$laotra."%'></div>

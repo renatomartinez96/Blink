@@ -36,6 +36,20 @@
         <?php include "app/headcss.php"?>
 	</head>
 	<body>
+        <style>
+/*
+            .animation{
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+            }
+            .animation:hover{
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+            }
+*/
+        </style>
 		<?php
 			include '../nav/topbar.php';
 		?>

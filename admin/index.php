@@ -179,16 +179,15 @@ Gerardo López | Iván Nolasco | Renato Andres
                         </div>
                         <!-- /Modal de personalización -->
                         <div class="col-xs-12 full">
-                            <div class="col-md-12 full">
-                                <div class="panel panel-success">
+                                <div class="panel panel-success" style="background-color: transparent;">
                                     <div class="panel-heading">
                                             <h1 class="panel-title junction-regular text-center"><?=$langprint["admin-friendly-intro"]?> <?=$user?>!</h1>
                                     </div>
                                     <div class="panel-body">
-                        <div class="col-md-4 text-center">
-                            <div class="panel panel-success">
+                        <div class="col-md-4 text-center" style="height: 180px;">
+                            <div class="panel panel-info">
                                 <div class="panel-heading">
-                                <h2 class="panel-title"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
+                                <h2 class="panel-title junction-bold"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
                                   <?php
                                 $stmt = $mysqli->prepare("SELECT log FROM usuarios_tb WHERE log < 1");
                                 $stmt->execute();  
@@ -208,35 +207,43 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </h2>
                                 </div>
                                 <div class="panel-body">
+                                <p class="junction-light">Control de todos los usuarios registrados en Box Link</p>
+                                </div>
+                                <div class="panel-footer">
                                     <a href="usuarios.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-users-go-list"]?></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <div class="panel panel-success">
+                        <div class="col-md-4 text-center" style="height: 180px;">
+                            <div class="panel panel-info">
                                 <div class="panel-heading">
-                                <h2 class="panel-title"><i class="fa fa-book fa-lg"></i> <?=$langprint["admin-maintenance-courses"]?></h2>
+                                <h2 class="panel-title junction-bold"><i class="fa fa-book fa-lg"></i> <?=$langprint["admin-maintenance-courses"]?> <span class='label label-primary' data-toggle='tooltip' data-placement='top' title='Cursos denunciados' data-original-title='Tooltip on top' style='cursor: help;'>+1</span></h2>
                                 </div>
                                 <div class="panel-body">
+                                <p class="junction-light">Se presentan los diferentes cursos que han sido creados por los tutores</p>
+                                </div>
+                                <div class="panel-footer">
                                     <a href="cursos.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-courses-go-list"]?></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <div class="panel panel-success">
+                        <div class="col-md-4 text-center" style="height: 180px;">
+                            <div class="panel panel-info">
                                 <div class="panel-heading">
-                                    <h2 class="panel-title"><i class="fa fa-camera-retro fa-lg"></i>   Banners</h2>
+                                    <h2 class="panel-title junction-bold"><i class="fa fa-camera-retro fa-lg"></i>   Imagenes</h2>
                                 </div>
                                 <div class="panel-body">
-                                    <a href="#" class="btn btn-success"><i class="fa fa-upload"></i>
- Upload new banner</a><a href="#" class="btn btn-info"><i class="fa fa-file-image-o"></i>
- See all banners</a>
+                                <p class="junction-light">Manejo de imagenes del sitio como avatares, banners, trofeos y medallas</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="upload.php" class="btn btn-success"><i class="fa fa-upload"></i>
+ Subir imagen</a><a href="#" class="btn btn-info"><i class="fa fa-file-image-o"></i>
+ Imagenes subidas</a>
                                 </div>
                             </div>
                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div><!---->
                 </div>

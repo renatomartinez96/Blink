@@ -5,6 +5,19 @@ include_once '../assets/includes/funciones.php';
 sec_session_start();
 include 'auto.php';
 $user = $_SESSION['username'];
+
+    $elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
+    include "../assets/includes/lang.php";
 ?>
 <?php
 ?>
@@ -55,7 +68,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 if(isset($_GET["id"]))
 {
     $c=$_GET["id"];
-    $query = "SELECT idcurso, estado, nombre FROM curso WHERE idcurso = $c";
+    $query = "SELECT idcurso, curEstado, nombre FROM curso WHERE idcurso = $c";
     if ($query = mysqli_query($mysqli, $query)) 
     {
         $num = mysqli_num_rows($query);
@@ -63,11 +76,11 @@ if(isset($_GET["id"]))
         {
             $row = mysqli_fetch_assoc($query);
             $id = $row["idcurso"];
-            $est = $row["estado"];
+            $est = $row["curEstado"];
             $nombre = $row["nombre"];
             if($est == 0)
             {
-                $query2 = "UPDATE curso SET estado = 1 WHERE idcurso='$id'";
+                $query2 = "UPDATE curso SET curEstado = 1 WHERE idcurso='$id'";
                 if ($query2 = mysqli_query($mysqli, $query2)) 
                 {
                     die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> ¡Perfecto!</strong> El estado del curso: &quot;".$nombre."&quot; se cambio a:  <strong>Activo</strong>. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");
@@ -79,7 +92,7 @@ if(isset($_GET["id"]))
             }
             elseif($est == 1)
             {
-                $query3 = "UPDATE curso SET estado = 0 WHERE idcurso='$id'";
+                $query3 = "UPDATE curso SET curEstado = 0 WHERE idcurso='$id'";
                 if ($query3 = mysqli_query($mysqli, $query3)) 
                 {
                     die ("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> ¡OK!</strong> El estado del curso: &quot;".$nombre."&quot; se cambio a:  <strong>Inactive</strong>. <br><a href='cursos.php' class='alert-link'>Regresar a la lista de cursos</a>.</div>");

@@ -54,13 +54,56 @@ Gerardo López | Iván Nolasco | Renato Andres
                     background: black;
                 }
                 /*GRAY*/
-            .not-success {
-                -webkit-filter: grayscale(100%); 
-                filter: grayscale(100%)
-            }
-            .mrwhite{
-                background: #ede5e5;
-            }
+                .not-success {
+                    -webkit-filter: grayscale(100%); 
+                    filter: grayscale(100%)
+                }
+                .mrwhite{
+                    background: #ede5e5;
+                }
+
+                .mask{
+                    cursor: pointer;
+                    width:100%;
+                    height:100%;
+                    position:absolute;
+                    text-align:center;
+                    opacity:0;
+                    -webkit-transition: all 0.3s ease-out;
+                    -moz-transition: all 0.3s ease-out;
+                    -o-transition: all 0.3s ease-out;
+                    transition: all 0.3s ease-out;
+                }
+                .mask:hover{
+                    opacity:1;
+                    cursor: pointer;
+                    -webkit-transition: all 0.3s ease-out;
+                    -moz-transition: all 0.3s ease-out;
+                    -o-transition: all 0.3s ease-out;
+                    transition: all 0.3s ease-out;
+                    background:rgba(43, 62, 80, 0.6);
+                }
+                .imagenes{
+                    padding:0;
+                    margin:0;
+                    -moz-box-sizing:border-box;
+                    box-sizing:border-box;
+                    overflow:hidden;
+                    height:150px;
+                    text-align: -webkit-center;
+                    position:relative;
+                }
+                .imagenes > img{
+                    position:absolute;
+                    top:0;
+                    bottom:0;
+                    left:0;
+                    right:0;
+                    margin:auto;
+                    display:block;
+                    max-width:100%;
+                    max-height:100%;
+                }
             </style>
 		<!--/#Custom CSS-->
 

@@ -30,7 +30,7 @@
                                 <div class='panel panel-info'>
                                     <div class='panel-heading'>
                                         <div class='row'>
-                                            <div class='col-md-2 full showhim'>
+                                            <div class='col-md-2 full showhim animation'>
                                                 <img src='../assets/img/pro/".$imagen.".png' class='img-responsive pull-right imgo' width='40'>
                                                 <a class='btnwithout pull-right showme changetro' style='position:absolute; top:5px; right: 9px; cursor: pointer;' curimgid='".$idcurso."' currentimg='".$imagen."' curimgnombre='".$nombre."'><i class='fa fa-cog fa-2x btnover'></i></a>
                                             </div>
@@ -44,7 +44,7 @@
                                         <p class='junction-light text-center'>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
-                                        <form action='../framework2/lesson.php' method='post'>
+                                        <form action='../framework/lesson.php' method='post'>
                                             <input type='hidden' value='".$nombre."' name='curname'>
                                             <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
