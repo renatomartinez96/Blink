@@ -22,6 +22,10 @@ $langprint = array(
         "btn-save-changes" => "Guardar cambios",
         "btn-save-my-data" => "Guardar mi informaci&oacute;n",
         "btn-save-new-pass" => "Guardar mi nueva contraseña",
+        "btn-report" => "reporte",
+        "btn-edit" => "Editar",
+        "btn-activate" => "Activar",
+        "btn-deactivate" => "Desactivar",
     // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
@@ -30,6 +34,14 @@ $langprint = array(
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
+        "sort-list" => "Ordenar por...",
+        "print-reports" => "Imprimir reportes",
+        "admins" => "administradores",
+        "tutors" => "tutores",
+        "students" => "estudiantes",
+        "em-all" => "todos los usuarios",
+        "status-ok" => "activo",
+        "status-nope" => "inactivo",
     // /# Palabras repetidas
     //----------------------------------------------
     // Nombres e instrucciones de los campos (inputs)
@@ -120,6 +132,13 @@ $langprint = array(
     "admin-maintenance-courses-go-list" => "Ir al listado de cursos",
     "admin-maintenance-courses-list" => "Listado de cursos",
 //      /# index
+//      mantenimiento de usuarios
+    "all-users-list" => "Listado de todos los usuarios de Box Link",
+    "tutors-list" => "Listado de tutores de Box Link",
+    "students-list" => "Listado de estudiantes de Box Link",
+    "admins-list" => "Listado de administradores de Box Link",
+    
+//      /# mantenimiento de usuarios
 // /# administrador
 
 //----------------------------------------------
