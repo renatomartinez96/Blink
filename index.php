@@ -426,7 +426,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </div>
                 <div class="col-xs-12 full" id="homevideo">
                     <!-- <video autoplay loop muted class="bgvideo" id="bgvideo">
-                        <source class="videocool" src="assets/video/1080.webm" type="video/webm">
+                        <source class="videocool" src="assets/video/1080.webm" type="video/webm"/>
                     </video> -->
                 </div>
                 <div class="col-xs-12 full" id="about">
@@ -436,6 +436,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="typed"></div>
                             </h1>
                             <a href="info/about.php"><h3 id="viewmoreabout">Leer +</h3></a>
+
 <!--
                             <h2 class="junction-bold aboutitle">Box Link</h2>
                             <hr class="linea">
