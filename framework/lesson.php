@@ -49,6 +49,9 @@
                 -o-transition: all 0.3s ease-out;
             }
 */
+            .changes-done{
+                border: border: 1px #ffffff !important;
+            }
         </style>
 		<?php
 			include '../nav/topbar.php';
@@ -90,11 +93,19 @@
   </div>
 </div>
 	<script>
-            $("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
-            var cursososo = "<?php echo $idleccion?>";
-            var cursososo22 = "<?php echo $idCurso?>";
-        </script>
+        $("#menu-toggle").click(function(g){
+            g.preventDefault(),
+            $("#wrapper").toggleClass("toggled"),
+            $("#avatar").toggleClass("toggled"),
+            $(".sidebar-nav").toggleClass("toggled"),
+            $(".textos").toggleClass("toggled")
+        });
+        var cursososo = "<?php echo $idleccion?>";
+        var cursososo22 = "<?php echo $idCurso?>";
+        <?php include "mantenimiento.php"?>
+    </script>
            <?php include "app/headjs.php"?>
+        <script src="../assets/js/bootbox.min.js" type="text/javascript"></script>
 	</body>
 
 </html>

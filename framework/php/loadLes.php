@@ -17,9 +17,10 @@ if(isset($_POST['loadLessons']))
                 </ul>
                 </div>
               <div class='col-xs-2'><a id='".$idCurso."' class='btn btn-success botoncrearLe'>New Lesson</a></div></div>";
-  if ($result > 0) {
+  if ($result > 0) 
+  {
     $classtype = "";
-    $string .= "<div class='col-xs-12 cursos'>";
+    $string .= "<div class='col-xs-12 cursos'><div id='signal'></div>";
     while ($stmt->fetch())
     {
 
@@ -36,19 +37,21 @@ if(isset($_POST['loadLessons']))
                         <h3 class='panel-title'>".$nombre."</h3>
                       </div>
                       <div class='panel-body'>
-                        <p>".$descripcion."</p>
+                        <p><strong>Descripción: </strong>".$descripcion."</p>
                       </div>
                       <div class='panel-footer text-center'>
-                        <a id='".$idleccion."' class='btn btn-primary btn-sm'>Mas info</a>
-                        <a class='btn btn-danger btn-sm'><i class='fa fa-trash-o'></i></a>
-                        <a class='btn btn-success btn-sm'><i class='fa fa fa-pencil'></i></a>
+                        <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>Mas info</a>
+                        <a class='btn btn-danger btn-sm dropless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-status='".$lecEstado."'><i class='fa fa-times'></i></a>
+                        <a class='btn btn-success btn-sm editless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa fa-pencil'></i></a>
                       </div>
                     </div>";
     }
     $string .= "</div>";
   }
-  else {
+  else 
+  {
     $string .= "<div class='col-xs-12 cursos'>
+                    <div id='signal'></div>
                   <div class='alert alert-warning'>
                     <p>Este curso no tiene lecciones activas, crea una nueva lección.</p>
                   </div>
