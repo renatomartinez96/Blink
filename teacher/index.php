@@ -10,6 +10,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
     sec_session_start();
+    include "auto.php"; // AUTORIZACIÓN DE PROFESORES!!!!
     $user = $_SESSION['username'];
     $userid = $_SESSION['user_id'];
     $tipo = $_SESSION['tipo'];
