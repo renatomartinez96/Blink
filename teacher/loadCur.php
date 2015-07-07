@@ -39,9 +39,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class='panel-body full curdesc'>
+                                    <div class='panel-body curdesc'>
                                     <br>
-                                        <p class='junction-light text-center'>".$descripcion."</p>
+                                        <p class='text-center'><strong>Descripción: </strong>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
                                         <form action='../framework/lesson.php' method='post'>
