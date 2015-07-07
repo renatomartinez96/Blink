@@ -20,7 +20,7 @@
     .video_container {
         top:0%;
         left:0%;
-        height:100%;
+        height:10%;
         width:100%;
         overflow: hidden;
     }

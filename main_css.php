@@ -34,9 +34,9 @@
         height:100vh;
     }
     .bgvideo {
+        position: absolute;
         -webkit-filter: grayscale(0.5);
         max-width: 100%;
-        max-height: 100%;
         margin-top:0px;
         margin-bottom: -5px !important;
     }
