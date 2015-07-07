@@ -51,6 +51,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Custom CSS-->
 		<link href="assets/css/sidebar.css" rel="stylesheet">
         <link type="text/css"  rel="stylesheet" href="assets/css/scrolling-nav.css">
+        <link href="assets\css\fullPage.css" rel="stylesheet">
         <meta name="theme-color" content="#E06B26">
         <!--/#Custom CSS-->
         <script type="text/JavaScript" src="assets/js/sha512.js"></script>
@@ -63,39 +64,8 @@ Gerardo López | Iván Nolasco | Renato Andres
             .navbar-inverse {
                 background-color: #E06B26;
             }
-            #quote{
-                margin-bottom:0px !important;
-                background:rgb(78, 93, 108) !important;
-            }
-            .hero-feature {
-                margin-bottom: 30px;
-            }
             .transparent{
                 background:transparent !important;
-            }
-            #about{
-                background: #E06B26 url('assets/img/banner1.png');
-                height:100vh;
-                width:100vw;
-            }
-            .aboutitle{
-                margin-top:50px;
-            }
-            .aboutbody{
-                margin-bottom:50px;
-            }
-            .linea{
-                margin-top:1%;
-                margin-bottom:1%;
-                border-top:0.20em solid #fff !important;
-                margin-left: 40%;
-                margin-right: 40%;
-            }
-            #cookies{
-                position:fixed;
-                bottom:0 !important;
-                z-index:99999 !important;
-                margin-bottom:0px;
             }
             #navbar-box-link{
                 background-color:rgba(0, 0, 0, 0.63);
@@ -140,239 +110,338 @@ Gerardo López | Iván Nolasco | Renato Andres
             .inputnav{
                 border:0px;
             }
-            .typed{
-                display: initial;
+            .navbar{
+                z-index: 15;
             }
-            .typed-cursor{
-                opacity: 1;
-                -webkit-animation: blink 0.7s infinite;
-                -moz-animation: blink 0.7s infinite;
-                animation: blink 0.7s infinite;
+            body,div{
+                padding: 0;
+                margin: 0;
             }
-            @keyframes blink{
-                0% { opacity:1; }
-                50% { opacity:0; }
-                100% { opacity:1; }
+            .intro p{
+            	width: 50%;
+            	margin: 0 auto;
+            	font-size: 1.5em;
             }
-            @-webkit-keyframes blink{
-                0% { opacity:1; }
-                50% { opacity:0; }
-                100% { opacity:1; }
-            }
-            @-moz-keyframes blink{
-                0% { opacity:1; }
-                50% { opacity:0; }
-                100% { opacity:1; }
-            }
-            @media screen and (min-width: 1024px) {
-                #typedtext{
-                    margin-top:30%;
-                }
-            }@media screen and (min-width: 1280px) {
-                #typedtext{
-                    margin-top:25%;
-                }
-            }
-            @media screen and (min-width: 1440px) {
-                #typedtext{
-                    margin-top:30%;
-                }
-            }
-            @media screen and (min-width: 1920px) {
-                #typedtext{
-                    margin-top:40%;
-                }
-            }
-            #typedtext{
-                color:#fff;
-                 -moz-transition: all 0.3s ease-in-out;
-              -o-transition: all 0.3s ease-in-out;
-              -webkit-transition: all 0.3s ease-in-out;
-              transition: all 0.3s ease-in-out;
-            }
-            #typedtext:hover{
-                color:#E06B26;
-                 -moz-transition: all 0.3s ease-in-out;
-              -o-transition: all 0.3s ease-in-out;
-              -webkit-transition: all 0.3s ease-in-out;
-              transition: all 0.3s ease-in-out;
-            }
-            #viewmoreabout{
-                color:#fff;
-                 -moz-transition: all 0.3s ease-in-out;
-              -o-transition: all 0.3s ease-in-out;
-              -webkit-transition: all 0.3s ease-in-out;
-              transition: all 0.3s ease-in-out;
-            }
-            #viewmoreabout:hover{
-                color:#E06B26;
-                 -moz-transition: all 0.3s ease-in-out;
-              -o-transition: all 0.3s ease-in-out;
-              -webkit-transition: all 0.3s ease-in-out;
-              transition: all 0.3s ease-in-out;
-            }
-            .controls-slide {
-              -moz-transform: translate(0, -50%);
-              -ms-transform: translate(0, -50%);
-              -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
-              position: absolute;
-              z-index: 9;
-              top: 50%;
-              text-align: right;
-              right: 40px;
-              font-size: 2.3rem;
+            .myVideo{
+        		right: 0;
+        		bottom: 0;
+        		top:0;
+        		right:0;
+        		width: 100%;
+        		height: 100%;
+        		background-size: 100% 100%;
+         		background-color: black; /* in case the video doesn't fit the whole page*/
+          		background-image: /* our video */;
+          		background-position: center center;
+          		background-size: contain;
+           		object-fit: cover; /*cover video background */
+           		z-index:3;
+        	}
+            .section{
+        		text-align:center;
+        		overflow: hidden;
+        	}
 
-            }
-            .controls-slide li {
-              opacity: 0.8;
-              cursor: pointer;
+        	/*solves problem with overflowing video in Mac with Chrome */
+        	#section0{
+        		overflow: none;
+        	}
+            span
+            {
               display: block;
-            }
-            .controls-slide li strong {
-              -moz-transition: all 0.3s ease-in-out;
-              -o-transition: all 0.3s ease-in-out;
-              -webkit-transition: all 0.3s ease-in-out;
-              transition: all 0.3s ease-in-out;
-                color:#fff !important;
-            }
-            .controls-slide li span {
-              -moz-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
-              -o-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
-              -webkit-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
-              transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
-                color:#fff !important;
-            }
-            .controls-slide li strong {
-              position: absolute;
-              right: -5px !important;
-              opacity: 0;
-            }
-            .controls-slide li.active {
-              opacity: 1;
-            }
-            .controls-slide li.active span {
-              opacity: 0;
-              right: -5px;
-            }
-            .controls-slide li.active strong {
-              opacity: 1;
-              display: inline;
-              right: 0;
-              font-weight: 500;
-            }
-            @media only screen and (min-width: 48em) {
-              html:not(.hastouch) .controls-slide li:hover {
-                opacity: 1;
-              }
-              html:not(.hastouch) .controls-slide li:hover span {
-                opacity: 0;
-                right: -5px;
-              }
-              html:not(.hastouch) .controls-slide li:hover strong {
-                opacity: 1;
-                display: inline;
-                right: 0;
-                font-weight: 500;
-              }
-            }
-            @media only screen and (max-width: 48em) {
-              .controls-slide {
-                right: 15px;
-              }
-              .controls-slide span, .controls-slide strong {
-                -moz-transition: none;
-                -o-transition: none;
-                -webkit-transition: none;
-                transition: none;
-              }
-              .controls-slide strong {
-                display: none !important;
-              }
-              .controls-slide span {
-                opacity: 0.6;
-                text-indent: 100%;
-                font-size: 0;
-                white-space: nowrap;
-                position: relative;
-                display: inline-block;
-                height: 6px;
-                width: 6px;
-              }
-              .controls-slide span:after {
-                content: "\2022";
-                display: inline-block;
-                color: inherit;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 6px;
-                height: 6px;
-                margin-top: -13px;
-                margin-left: -7px;
-                font-size: 24px;
-              }
-              .controls-slide .active span {
-                opacity: 1 !important;
-                right: 0px !important;
-              }
-            }
-            #devs{
-                padding-top:15% !important;
-                background: url('assets/img/devs1.png') fixed top;
-                background-size:100%;
-                height:100vh;
-                width:100vw;
-            }
-            #contact{
-                height:100vh;
-                width:100vw;
-            }
-            #googlemaps {
-              height: 100%;
-              width: 100%;
-              position:absolute;
-              top: 0;
-              left: 0;
-              z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+              width: 7px;
+              height: 7px;
+              -ms-transform: rotate(45deg); /* IE 9 */
+              -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+              transform: rotate(45deg);
+
+              border-right: 2px solid white;
+              border-bottom: 2px solid white;
+              margin: 0 0 6px 13px;
             }
 
-            #contactform {
+            .uno
+            {
+              margin-top: 7px;
+            }
+
+            .uno, .dos, .tres
+            {
+                margin-left: 47%;
+                -webkit-animation: mouse-scroll 1s infinite;
+                -moz-animation: mouse-scroll 1s infinite;
+            }
+
+            .uno
+            {
+              -webkit-animation-delay: .1s;
+              -moz-animation-delay: .1s;
+              -webkit-animation-direction: alternate;
+            }
+
+            .dos
+            {
+              -webkit-animation-delay: .2s;
+              -moz-animation-delay: .2s;
+              -webkit-animation-direction: alternate;
+            }
+
+            .tres
+            {
+              -webkit-animation-delay: .3s;
+              -moz-animation-delay: .3s;
+              -webkit-animation-direction: alternate;
+            }
+
+            .mouse
+            {
+                margin-top: 6%;
+                margin-left: 40%;
+                height: 50px;
+                width: 30px;
+                border-radius: 20px;
+                transform: none;
+                border: 2px solid white;
+                top: 170px;
+            }
+
+            .wheel
+            {
+              height: 10px;
+              width: 5px;
+              border-radius: 3px;
+              display: block;
+              margin: 5px auto;
+              background: white;
               position: relative;
-              z-index: 1; /* The z-index should be higher than Google Maps */
-              width: 100%;
-              height: 100% !important;
-              padding: 10px;
-              background: rgba(0,0,0,0.50);
-              height: auto;
-              color: white;
             }
-            #contactfrm{
-                padding-top:11%;
+            .mouse-animation{
+                width: 8%
             }
+            .wheel
+            {
+              -webkit-animation: mouse-wheel 1.2s ease infinite;
+              -moz-animation: mouse-wheel 1.2s ease infinite;
+            }
+
+            @-webkit-keyframes mouse-wheel
+            {
+               0% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+              }
+
+              100% {
+                opacity: 0;
+                -webkit-transform: translateY(6px);
+                -ms-transform: translateY(6px);
+                transform: translateY(6px);
+              }
+            }
+
+            @-moz-keyframes mouse-wheel
+            {
+              0% { top: 1px; }
+              50% { top: 2px; }
+              100% { top: 3px;}
+            }
+
+            @-webkit-keyframes mouse-scroll {
+
+              0%   { opacity: 0;}
+              50%  { opacity: .5;}
+              100% { opacity: 1;}
+            }
+            @-moz-keyframes mouse-scroll {
+
+              0%   { opacity: 0; }
+              50%  { opacity: .5; }
+              100% { opacity: 1; }
+            }
+            @-o-keyframes mouse-scroll {
+
+              0%   { opacity: 0; }
+              50%  { opacity: .5; }
+              100% { opacity: 1; }
+            }
+            @keyframes mouse-scroll {
+
+              0%   { opacity: 0; }
+              50%  { opacity: .5; }
+              100% { opacity: 1; }
+            }
+            .mouse-animation{
+                position: absolute;
+                margin-left: 46%;
+                bottom: 4%;
+            }
+            #scene{
+                width:100%;
+                height:100%;
+                background: #0aa5ff; /* Old browsers */
+                background: -moz-linear-gradient(top,  rgb(10, 165, 255) 0%, #49bcff 51%, #ffffff 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0aa5ff), color-stop(51%,#49bcff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  #0aa5ff 0%,#49bcff 51%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  #0aa5ff 0%,#49bcff 51%,#ffffff 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  #0aa5ff 0%,#49bcff 51%,#ffffff 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  #0aa5ff 0%,#49bcff 51%,#ffffff 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0aa5ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+            }
+            @media only screen and (min-width: 1366px) {
+                #layer1{
+                    width:105%;
+                    margin-left:-2.5%;
+                    margin-top:200px;
+                }
+                #layer01{
+                    width:105%;
+                    margin-left:-2.5%;
+                    margin-top:200px;
+                }
+                #layer02{
+                    width:105%;
+                    margin-left:-2.5%;
+                    margin-top:200px;
+                }
+                #layer4{
+                    width:90%;
+                    position:center;
+                    margin-left:165%;
+                    margin-top:20%;
+                }
+
+            }
+            @media only screen and (min-width: 1920px) {
+                #layer1{
+                    width:105%;
+                    margin-left:-2.5%;
+                    position:center;
+                    margin-top:300px;
+                }
+                #layer01{
+                    width:105%;
+                    margin-left:-2.5%;
+                    position:center;
+                    margin-top:300px;
+                }
+                #layer02{
+                    width:105%;
+                    margin-left:-2.5%;
+                    position:center;
+                    margin-top:300px;
+                }
+                #layer4{
+                    width:100%;
+                    margin-left:240%;
+                    margin-top:90%;
+                }
+            }
+            div#load_screen{
+                background: #000;
+                opacity: 1;
+                position: fixed;
+                z-index:10;
+                top: 0px;
+                width: 100%;
+                height: 1600px;
+            }
+            div#load_screen > div#loading{
+                color:#FFF;
+                width:120px;
+                height:24px;
+                margin: 300px auto;
+            }
+            #load_screen{
+                z-index:1031;
+            }
+            .laptop-wrapper {width: 100%;}
+            .laptop-screen-frame {
+/*                border: 1px solid #000;*/
+                padding: 1.250em;
+                margin: 0.625em 0.625em 0em 0.625em;
+                border-radius: 1.250em 1.250em 0em 0em;
+                border-bottom:none;
+                background: rgb(149,149,149);
+            }
+            .laptop-screen-content {
+                background: #fff;
+                height: auto;
+            }
+            .laptop-body {
+                height:1.250em;
+                background: rgb(235, 235, 235);
+/*                border: 1px solid #666;*/
+            }
+            .laptop-button {
+                height:0.400em;
+                width: 15%;
+                margin:auto;
+                border-radius: 0em 0em 10.00em 10.000em;
+                background: rgb(183, 183, 183);
+                margin-bottom: 0.625em;
+/*                border: 1px solid #666;*/
+                border-top: none;
+            }
+            .laptop-base {
+                height:0.375em;
+                border-radius: 0em 0em 10.00em 10.000em;
+                background: rgb(177, 177, 177);
+                margin-bottom: 0.625em;
+/*            border: 1px solid #666;*/
+            border-top: none;
+            }
+            @media \0screen {
+               img {
+                width: auto;
+              }
+            }
+            .laptop-screen-content > img{
+                width:100%;
+            }
+            .laptops{
+                top:50%;
+            }
+            .controlArrow.prev {
+        		left: 50px;
+        	}
+        	.controlArrow.next{
+        		right: 50px;
+        	}
+            #slide1{
+        		background-image: url('assets/img/office.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 90%;
+        	}
+            #slide2{
+        		background-image: url('assets/img/freelance.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 90%;
+        	}
+            #section4{
+        		background-image: url('assets/img/world.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 90%;
+        	}
+
+
+
         </style>
 	</head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-        <ul class="controls-slide" style="color: rgb(255, 255, 255);">
-            <li id="nav1" class="active">
-                <a href="#homevideo"><strong>Inicio</strong><span><i class="fa fa-circle-o" style="font-size:15px;"></i></span></a>
-                <a></a>
-            </li>
-            <li id="nav2">
-                <a href="#about"><strong>¿BoxLink?</strong><span><i class="fa fa-circle-o" style="font-size:15px;"></i></span></a>
-                <a></a>
-            </li>
-            <li id="nav3">
-                <a href="#devs"><strong>Desarrolladores</strong><span><i class="fa fa-circle-o" style="font-size:15px;"></i></span></a>
-                <a></a>
-            </li>
-            <li id="nav4">
-                <a href="#contact"><strong>Contáctenos</strong><span><i class="fa fa-circle-o" style="font-size:15px;"></i></span></a>
-                <a></a>
-            </li>
-        </ul>
+        <div class="container-fluid" id="load_screen">
+            <div id="loading">
+                loading document
+            </div>
+        </div>
         <div class="col-xs-12" id="navbar-box-link">
-            <div class="jumbotron transparent text-center">
+            <div class=" transparent text-center">
+                <br>
+                <br>
                 <br>
                 <br>
                 <form id="login_form" action="assets/includes/login_proceso.php" class="hidden col-xs-12" method="post" name="login_form" >
@@ -395,126 +464,107 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </form>
             </div>
         </div>
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="assets/img/brand2.png" id="logonav" class="img-responsive" width="200"></a>                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <button type="button" class="nav-open" id="nav-open1" style="background:transparent;border:0px;margin-top:45%;">
+                                <i class="fa fa-bars fa-3x"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="nav-open hidden" id="nav-open2" style="background:transparent;border:0px;margin-top:45%;">
+                                <i class="fa fa-remove fa-3x"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div id="fullpage">
+            <div class="section text-center" id="section0">
+                <div class="mouse-animation">
+                        <img src="assets\img\arrows.png" style="width:50%;">
+                        <div class="mouse"><div class="wheel"></div></div>
+                        <div><span class="uno"></span> <span class="dos"></span> <span class="tres"></span> </div>
+                </div>
+                <video autoplay loop muted class="myVideo" id="myVideo">
+        			<source src="assets/video/1080.webm" type="video/webm"/>
+        		</video>
+            </div>
+            <div class="section text-center" id="section1">
+                <ul id="scene" class="full text-center"
+                  data-friction-x="0.1"
+                  data-friction-y="0.1"
+                  data-invert-x="true"
+                  data-invert-y="true">
+                    <li class="layer" data-depth="0.04"><img id="layer01" src="assets\img\layers\layer01.png"></li>
+                    <li class="layer" data-depth="0.06"><img id="layer1" src="assets\img\layers\layer02.png"></li>
+                    <li class="layer" data-depth="0.08"><img id="layer1" src="assets\img\layers\layer0.png"></li>
+                    <li class="layer" data-depth="0.30"><img id="layer3" src="assets\img\layers\layer2.png" style="width:80%;"></li>
+                    <li class="layer" data-depth="0.10"><img id="layer2" src="assets\img\layers\layer3.png" style="width:80%;"></li>
+                    <li class="layer" data-depth="0.50"><img id="layer4" src="assets\img\layers\layer1.png" style=""></li>
+<!--                      <li class="layer" data-depth="0.20"><h3>Box Link</h3></li>-->
+<!--
+                  <li class="layer" data-depth="0.40"><img src="layer3.png"></li>
+                  <li class="layer" data-depth="0.60"><img src="layer4.png"></li>
+                  <li class="layer" data-depth="0.80"><img src="layer5.png"></li>
+                  <li class="layer" data-depth="1.00"><img src="layer6.png"></li>
+-->
+                </ul>
+            </div>
+            <div class="section text-center " id="section2">
+                <video controls loop class="myVideo emebdly-embed" id="myVideo2">
+        			<source src="assets/video/video.mp4" type="video/mp4"/>
+        		</video>
+            </div>
+            <div class="section" id="section3">
+                <div class="slide" id="slide1">
+                    <div class="intro">
+        				<h1 class="junction-bold">¿Estas iniciando una empresa?</h1>
+        				<h3 class="junction-regular">
+        					En <b>Box Link</b> te brindamos las bases para que comiences a hacer el sitio web de tu empresa
+        				</h3>
+                    </div>
+        		</div>
+        	    <div class="slide" id="slide2">
+                    <div class="intro">
+        				<h1 class="junction-bold">¿O simplemente te apasiona la informática?</h1>
+        				<h3 class="junction-regular">
+        					En <b>Box Link</b> podrás aprender a crear tus propios sitios web desde cero
+        				</h3>
+                    </div>
+        		</div>
+            </div>
+            <div class="section" id="section4">
+                <div class="intro">
+                    <h1 class="junction-bold">¿Qué esperas para registrarte y comenzar a aprender junto a miles de personas en el mundo?</h1>
+                    <h3 class="junction-regular">
+                        Para registrarte, haz clic <a href='registrarse.php' >aqui</a>
+                    </h3>
+                </div>
+            </div>
+            <div class="section" id="section5">
+                <div class="intro text-center">
+                    <h1 class="junction-bold">Mantente en contacto</h1>
+                        <br>
+                        <input type="text" class="input-lg" id="inputName" placeholder="Nombre" style="width:30%;"><br><br>
+                        <input type="text" class="input-lg" id="inputEmail" placeholder="Correo Electrónico" style="width:30%;"><br><br>
+                        <textarea class=" input-lg"rows="3" id="inputMensaje" placeholder="Mensaje" style="width:30%;"></textarea><br><br>
+                        <input type="submit" class="btn btn-success btn-lg" value="Enviar">
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid">
             <div class="row">
-<!--
-                <div class='alert alert-dismissible well col-xs-12' id="cookies" style="z-index:5 !important;">
-                    <button type='button' class='close' data-dismiss='alert'>x</button>
-                    <h5 class="junction-bold">Cookie use</h5>
-                    <h6 class="">Box Link uses cookies. By continuing to use this website you are giving consent to cookies being used. For information on cookies visit our <a href=""> Privacy and Cookie Policy</a>.</h6>
-                </div>
--->
-                <div class="col-xs-12 full">
-                    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" href="#"><img src="assets/img/brand2.png" id="logonav" class="img-responsive" width="200"></a>
-                            </div>
-                                <ul class="nav navbar-nav navbarbtns hidden">
-                                    <li class="active"><a href="#">Home</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <button type="button" class="nav-open" id="nav-open1" style="background:transparent;border:0px;margin-top:45%;">
-                                        <i class="fa fa-bars fa-3x"></i>
-                                    </button>
-                                    <button type="button" class="nav-open hidden" id="nav-open2" style="background:transparent;border:0px;margin-top:45%;">
-                                        <i class="fa fa-remove fa-3x"></i>
-                                    </button>
-                                </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-xs-12 full" id="homevideo">
-                    <!-- <video autoplay loop muted class="bgvideo" id="bgvideo">
-                        <source class="videocool" src="assets/video/1080.webm" type="video/webm"/>
-                    </video> -->
-                </div>
-                <div class="col-xs-12 full" id="about">
-                    <div class="container">
-                        <div class="jumbotron transparent text-center">
-                            <h1 class="junction-bold" id="typedtext">
-                                <div class="typed"></div>
-                            </h1>
-                            <a href="info/about.php"><h3 id="viewmoreabout">Leer +</h3></a>
-
-<!--
-                            <h2 class="junction-bold aboutitle">Box Link</h2>
-                            <hr class="linea">
-                            <br>
-                            <h4 class="junction-light aboutbody" style="text-align:justify;">
-                                Box Link es una plataforma de aprendizaje didáctico en la cual las personas interesadas en aprender diseño de Front-end podrán adquirir los conocimientos básicos necesarios para iniciarse en el diseño de páginas web.<br>El método que Box Link implementa para la enseñanza de dichos términos es mediante el uso de bloques, la principal ventaja es que promovemos el verdadero aprendizaje de los diferentes lenguajes para diseño web, esto gracias a que el estudiante no tiene la posibilidad de sencillamente solo copiar el código como en otras plataformas, sino que la única manera de poder realizar la lección es poniendo los bloques de manera que cumpla los requisitos para poder pasar la lección.
-                            </h4>
--->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 full" id="devs">
-                    <div class="container jumbotron transparent">
-                        <div class="full transparent text-center">
-                            <h2 class="junction-bold aboutitle">Desarrolladores</h2>
-                            <hr class="linea">
-                        </div>
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <center>
-<!--                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">-->
-                                <h3>Renato Andrés
-                                    <small>Reyes Martínez</small>
-                                </h3>
-                                <p class="justify"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam vehicula pharetra.</small></p>
-                            </center>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <center>
-<!--                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">-->
-                                <h3>Gerardo Antonio
-                                    <small>López Barrientos</small>
-                                </h3>
-                                <p class="justify"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam vehicula pharetra.</small></p>
-                            </center>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <center>
-<!--                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">-->
-                                <h3>Iván Graciano
-                                    <small>Nolasco Hernández</small>
-                                </h3>
-                                <p class="justify"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam vehicula pharetra.</small></p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 full" id="contact">
-                    <div id="googlemaps"></div>
-                    <div id="contactform">
-                        <div class="container">
-                            <div class="col-md-6 " id="contactfrm">
-                                <div class="col-xs-12 full">
-                                    <h1 class="junction-bold">Contáctenos</h1>
-                                    <p style="padding-bottom:10px !important;" class="justify col-lg-10 full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus non turpis quis suscipit. Proin sit amet arcu sed massa volutpat gravida. Phasellus semper nisl ligula, sed condimentum ligula mollis sit amet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                  <label for="inputName" class="col-lg-3 full control-label">Nombre</label>
-                                  <div class="col-lg-10 full">
-                                    <input type="text" class="form-control input-sm" id="inputName" placeholder="Nombre">
-                                  </div>
-                                  <label for="inputEmail" class="col-lg-3 full control-label">Correo Electrónico</label>
-                                  <div class="col-lg-10 full">
-                                    <input type="text" class="form-control input-sm" id="inputEmail" placeholder="Correo Electrónico">
-                                  </div>
-                                  <label for="inputMensaje" class="col-lg-3 full control-label">Mensaje</label>
-                                  <div class="col-lg-10 full">
-                                    <textarea class="form-control input-sm" rows="3" id="inputMensaje"></textarea>
-                                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                  </div>
-                                </div>
-                                <div class="col-sx-12">
-                                    <input type="submit" class="btn btn-success" value="Enviar">
-                                </div>
-                            </div>
-                            <div class="col-md-6"></div>
-                        </div>
-                    </div>
-                </div>
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -544,12 +594,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </div>
             </div>
         </div>
-<!--
-        <footer>
-        <span id="siteseal" class="pull-left" style="z-index:999;bottom:0;_position:absolute;left:0;"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=SUBhPmpnzbDkT8URqL3IsxeaGrk67FvuYO6ZhYsMbTiW9pNqIevjjxJ77e7C"></script></span>
-        <div id="sitelock_shield_logo" class="fixed_btm pull-right" style="z-index:999;bottom:0;_position:absolute;right:0;"><a href="https://www.sitelock.com/verify.php?site=the-box.link" onclick="window.open('https://www.sitelock.com/verify.php?site=the-box.link','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img alt="PCI Compliance and Malware Removal" title="SiteLock" src="//shield.sitelock.com/shield/the-box.link"></a></div>
-        </footer>
--->
             <?php
                 if (isset($_GET['t']))
                 {
@@ -612,77 +656,60 @@ Gerardo López | Iván Nolasco | Renato Andres
             });
         </script>
 
-        <?php
-            require "main_js.php";
-        ?>
-        <script src="assets/js/typed.min.js"></script>
+        <script src="assets/js/jquery.js" type="text/javascript"></script>
+        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script>
-          $(function(){
-                  $(".typed").typed({
-                    strings: ["¿Box Link?", "¿Estas interesado en el diseño web?", "¿Quieres dar a conocer al mundo tus aportes a travez de la web?"],
-                    typeSpeed: 150,
-                    backDelay: 1500,
-                    loop:true,
-                      loopCount: false,
-                  });
-          });
+            window.addEventListener("load", function(){
+                var load_screen = document.getElementById("load_screen");
+                document.body.removeChild(load_screen);
+            });
         </script>
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript">
-
-            // The latitude and longitude of your business / place
-            var position = [13.6789737, -89.287258];
-
-            function showGoogleMaps() {
-                var styles = [
-                {
-                  stylers: [
-                    { hue: "#E06B26" }
-                  ]
-                },{
-                  featureType: "road",
-                  elementType: "geometry",
-                  stylers: [
-                    { visibility: "simplified" }
-                  ]
-                },{
-                  featureType: "road",
-                  elementType: "labels",
-                  stylers: [
-                    { visibility: "off" }
-                  ]
-                }
-              ];
-                var latLng = new google.maps.LatLng(position[0], position[1]);
-
-                var mapOptions = {
-                    zoom: 16, // initialize zoom level - the max value is 21
-                    streetViewControl: false, // hide the yellow Street View pegman
-                    scaleControl: false, // allow users to zoom the Google Map
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: latLng,
-                    disableDefaultUI: true
-
-
-                };
-                var styledMap = new google.maps.StyledMapType(styles,
-                {name: "Styled Map"});
-                map = new google.maps.Map(document.getElementById('googlemaps'),
-                    mapOptions);
-
-                // Show the default red marker at the location
-                marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                    draggable: false,
-                    animation: google.maps.Animation.DROP
+        <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function(){
+                $(".nav-open").click(function(e) {
+        			e.preventDefault();
+                    $("#navbar-box-link").toggleClass("toggled");
+                    $("#login_form").toggleClass("hidden");
+                    $("body").toggleClass("body_no_scroll");
+                    $("#nav-open1").toggleClass("hidden");
+                    $("#nav-open2").toggleClass("hidden");
                 });
-                map.mapTypes.set('map_style', styledMap);
-                map.setMapTypeId('map_style');
-            }
-
-            google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+            });
         </script>
+        <script src="assets\js\jquery.fullPage.min.js"></script>
+        <script src="assets\js\jquery.slimscroll.min.js"></script>
+        <script src="assets\js\jquery.easings.min.js"></script>
+        <script type="text/javascript">
+    		$(document).ready(function() {
+    			$('#fullpage').fullpage({
+    				sectionsColor: ['', '', '#5A5B61','#658485','#904F2A','#0C2C2E'],
+    				anchors: ['one', 'two', 'three','four','five','six'],
+                    css3: true,
+                    easing: 'easeInOutCubic',
 
+                    afterRender: function(){
+    					//playing the video
+    					$('#myVideo').get(0).play();
+
+    				},
+                    afterLoad: function(anchorLink, index){
+                        if(index == '3'){
+                            $('#myVideo2').get(0).play();
+                        }
+                        else{
+                            $('#myVideo2').get(0).load();
+                        }
+                    }
+    			});
+
+            });
+    	</script>
+</script>
+        <script src="assets/js/parallax/deploy/parallax.min.js"></script>
+        <script>
+            var scene = document.getElementById('scene');
+            var parallax = new Parallax(scene);
+        </script>
     </body>
 </html>
