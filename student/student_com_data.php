@@ -1,11 +1,14 @@
 <?php
 
-$stmt1 = $mysqli->query("SELECT curso.idcurso AS idcur, curso.nombre AS curnombre, curso.imagen AS curimg FROM `curso` 
-INNER JOIN `cursoestudiante` ON cursoestudiante.idcurso = curso.idcurso WHERE cursoestudiante.idestudiante = '".$idusr."'");
-$infotoprint = "";
+// variables de nota
 $numlec = 0;
 $sumnot = 0;
 $notafinal = 0;
+
+$stmt1 = $mysqli->query("SELECT curso.idcurso AS idcur, curso.nombre AS curnombre, curso.imagen AS curimg FROM `curso` 
+INNER JOIN `cursoestudiante` ON cursoestudiante.idcurso = curso.idcurso WHERE cursoestudiante.idestudiante = '".$idusr."'");
+$infotoprint = "";
+
 if($result = $stmt1->num_rows)
 {
     if ($result > 0) 
@@ -68,16 +71,4 @@ else
                     </div>";
 }
 echo $infotoprint;
-//echo "numlec ".$numlec."<br>";
-//$notafinal = $sumnot / $numlec;
-//$asaber = "";
-//if($notafinal >= 7)
-//{
-//   $asaber = "aprobado";
-//}
-//else
-//{
-//    $asaber = "reprobado";
-//}
-//echo "nota: ". $notafinal;
 ?>

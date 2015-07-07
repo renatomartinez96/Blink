@@ -176,9 +176,90 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div class="panel-heading">
                                             <h3 class="panel-title">Courses</h3>
                                     </div>
-                                    <?php 
-                                        include 'callCur.php';
-                                    ?>
+                                    <div style="margin-top:15px;">
+                                        <!--Cursos-->
+                                            <?php
+                                                $stmt = $mysqli->query("SELECT curso.idcurso as id, curso.nombre as nombre, curso.descripcion as descr, curso.imagen AS curimg
+                                                                        FROM `curso` 
+                                                                        INNER JOIN `cursoestudiante` 
+                                                                        ON cursoestudiante.idcurso = curso.idcurso  
+                                                                        WHERE cursoestudiante.idestudiante = '".$idusuario."'");
+                                                if($result = $stmt->num_rows)
+                                                {
+                                                    if ($result > 0) 
+                                                    {
+                                                        while($row = $stmt->fetch_assoc())
+                                                        {
+                                                            $stmt1 = $mysqli->query("SELECT idleccion, nombre 
+                                                                                     FROM `leccion` 
+                                                                                     WHERE idcurso = '".$row['id']."'");
+                                                            $result1 = $stmt1->num_rows;
+                                                            if ($result1 > 0) 
+                                                            {
+                                                                echo"
+                                                                        <div class='col-lg-4 col-md-6 '>
+                                                                            <div class='panel panel-info'>
+                                                                                <div class='panel-heading'>
+                                                                                    <div class='row'>
+                                                                                        <div class='col-md-2 full'>
+                                                                                            <img src='../assets/img/pro/".$row['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
+                                                                                        </div>
+                                                                                        <div class='col-md-10'>
+                                                                                            <h4 class='junction-regular text-center'>".$row['nombre']."</h4>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!--<marquee width='100%' height='100%' scrolldelay='150' class='text-left'><h2>".$row['nombre']."</h2></marquee>-->
+                                                                                <div class='panel-body full'>
+                                                                                    <div class='list-group lecciones'>";
+                                                                    while($row1 = $stmt1->fetch_assoc())
+                                                                    {  
+                                                                      echo "
+                                                                                        <a class='list-group-item' href='../framework/loadlesson.php?l=".$row1['idleccion']."'>".$row1['nombre']."</a>
+                                                                            ";
+                                                                    }
+                                                                  echo "
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                ";
+                                                            }
+                                                            else
+                                                            {
+                                                                echo"
+                                                                        <div class='col-lg-4 col-md-6 '>
+                                                                            <div class='panel panel-info'>
+                                                                                <div class='panel-heading'>
+                                                                                    <div class='row'>
+                                                                                        <div class='col-md-2 full'>
+                                                                                            <img src='../assets/img/pro/".$row['curimg'].".png' class='img-responsive pull-right  not-success' width='40'>
+                                                                                        </div>
+                                                                                        <div class='col-md-10'>
+                                                                                            <h4 class='junction-regular text-center'>".$row['nombre']."</h4>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class='panel-body full lecciones'>
+                                                                                    <div class='alert alert-danger' style='margin-bottom:0px;'>
+                                                                                        <strong>there is no lessons available</strong>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    ";
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "Results are not found";
+                                                    }
+                                                }
+                                            ?>
+                                        <!--/#Cursos-->
+                                        
+                                    </div>
                                 </div>
                             </div>
                             </div>
