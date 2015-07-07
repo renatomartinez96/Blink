@@ -15,25 +15,26 @@ if($result = $stmt1->num_rows)
     {
         while($row1 = $stmt1->fetch_assoc())
         {
+            $infotoprint .= "<div class='col-lg-4 col-md-6 '>
+                                <div class='panel panel-info'>
+                                    <div class='panel-heading'>
+                                        <div class='row'>
+                                            <div class='col-md-2 full'>
+                                                <img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
+                                            </div>
+                                            <div class='col-md-10'>
+                                                <h4 class='junction-regular text-center'>".$row1['curnombre']."</h4>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class='panel-body full'>
+                                    <div class='list-group lecciones'>";
+            
             $stmt2 = $mysqli->query("SELECT `leccion`.idleccion AS lecid, `leccion`.nombre AS lecnombre, `leccusua`.resultado FROM `leccion` INNER JOIN `leccusua` ON `leccion`.idleccion = `leccusua`.idLeccion WHERE `leccion`.idcurso = '".$row1['idcur']."' AND `leccusua`.idUsuario = '".$idusuario."'");
             $result1 = $stmt2->num_rows;
             
             if ($result1 > 0) 
             {
-                $infotoprint .= "<div class='col-lg-4 col-md-6 '>
-                                    <div class='panel panel-info'>
-                                        <div class='panel-heading'>
-                                            <div class='row'>
-                                                <div class='col-md-2 full'>
-                                                    <img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
-                                                </div>
-                                                <div class='col-md-10'>
-                                                    <h4 class='junction-regular text-center'>".$row1['curnombre']."</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class='panel-body full'>
-                                            <div class='list-group lecciones'>";
                 while($row2 = $stmt2->fetch_assoc())
                 {
                     //$sumnot = $sumnot + $row2['resultado'];
@@ -68,30 +69,44 @@ if($result = $stmt1->num_rows)
 //                                    <div class='progress-bar progress-bar-success' style='width: ".$laotra."%'></div>
 //                                    </div>";
 //                }
-                $infotoprint .= "</div>
-                                </div>
-                            </div>
-                        </div>";
             }
             else
             {
-                $infotoprint = "<div class='alert alert-danger'>
-                                    <p>Este usuario no ha completado ninguna lección todavía</p>
-                                </div>";
+                $stmt3 = $mysqli->query("SELECT `leccion`.idleccion AS lecid, `leccion`.nombre AS lecnombre FROM `leccion` WHERE `leccion`.idcurso = '".$row1['idcur']."'");
+                $result2 = $stmt3->num_rows;
+                if($result2 > 0)
+                {
+                    while($row3 = $stmt3->fetch_assoc())
+                    {
+                        $infotoprint .= "<a class='list-group-item' href='../framework/loadlesson.php?l=".$row3['lecid']."'><i class='fa fa-exclamation-triangle text-warning'></i> ".$row3['lecnombre']."</a>";
+                    }
+                    
+                }
+                else
+                {
+                    $infotoprint .= "<div class='alert alert-danger'>
+                    <p>Este curso todavía no tiene lecciones</p>
+                    </div>";                    
+                }
+                
             }
+            $infotoprint .= "</div>
+                                </div>
+                            </div>
+                        </div>";
         }
     }
     else
     {
         $infotoprint = "<div class='alert alert-danger'>
-                            <p>Este usuario todavía no se ha inscrito a ningún curso</p>
+                            <p>¡No estas inscrito en ningún curso! <a href='teachers.php' class='alert-link'>Mira el listado de profesores y suscribete a uno ñ</p>
                         </div>";
     }
 }
 else
 {
     $infotoprint = "<div class='alert alert-danger'>
-                        <p>No se encontraron cursos</p>
+                        <p>¡No estas inscrito en ningún curso! <a href='teachers.php' class='alert-link'>Mira el listado de profesores y suscribete a uno</a></p>
                     </div>";
 }
 echo $infotoprint;
