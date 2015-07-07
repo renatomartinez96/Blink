@@ -111,14 +111,14 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["cursostatus"])
         {
             case 0;
-            $text2 = "<i class='fa fa-user-times'></i> Bloqueado";
+            $text2 = "<i class='fa fa-times'></i> Bloqueado";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
+            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activar</a>";
             break;
             case 1;
             $text2 = "<i class='fa fa-check'></i> Active";
             $tbclass = "";
-            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-times'></i> Block</a>";
+            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-times'></i> Bloquear</a>";
             break;
         }
         echo "<tr ".$tbclass."><td><strong>".$row["idcurso"]."</strong></td>";

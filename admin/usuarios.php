@@ -128,10 +128,10 @@ $titulo = "";
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
-                                <th>Usuario</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Correo electrónico</th>
+                                <th><?=$langprint["username"]?></th>
+                                <th><?=$langprint["name-field"]?></th>
+                                <th><?=$langprint["lastname-field"]?></th>
+                                <th><?=$langprint["emailname"]?></th>
                                 <th>Nacimiento</th>
                                 <th>Tipo</th>
                                 <th>Estado</th>

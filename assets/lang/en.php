@@ -36,6 +36,7 @@ $langprint = array(
     // Palabras repetidas
         "sort-list" => "Sort list by...",
         "print-reports" => "Print reports",
+        "username" => "Username",
         "admins" => "administrators",
         "tutors" => "tutors",
         "students" => "students",

@@ -44,19 +44,19 @@ if(isset($_GET["c"]))
             $pdf->SetFont("Arial", "b", 10);
             $pdf->MultiCell(6, 5, utf8_decode("ID"), 0, 1,'L', 0);
             $pdf->SetXY($x + 6, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Username"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Usuario"), 0, 1,'L',0);
             $pdf->SetXY($x + 36, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Name"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nombre"), 0, 1,'L',0);
             $pdf->SetXY($x + 66, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Lastname"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Apellido"), 0, 1,'L',0);
             $pdf->SetXY($x + 96, $y);
-            $pdf->MultiCell(35, 5, utf8_decode("Email"), 0, 1,'L',0);
+            $pdf->MultiCell(35, 5, utf8_decode("Correo electrónico"), 0, 1,'L',0);
             $pdf->SetXY($x + 131, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Birthday"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nacimiento"), 0, 1,'L',0);
             $pdf->SetXY($x + 161, $y);
-            $pdf->MultiCell(25, 5, utf8_decode("Type"), 0, 1,'L',0);
+            $pdf->MultiCell(25, 5, utf8_decode("Tipo"), 0, 1,'L',0);
             $pdf->SetXY($x + 186, $y);
-            $pdf->MultiCell(20, 5, utf8_decode("Status"), 0, 1,'L',0);
+            $pdf->MultiCell(20, 5, utf8_decode("Estado"), 0, 1,'L',0);
             $pdf->SetXY($x + 211, $y);
             $pdf->Ln();
 
@@ -154,7 +154,7 @@ if(isset($_GET["t"]))
         $checkdata = mysqli_num_rows($result);
         if($checkdata > 0)
         {
-            $pdf->Image('../assets/img/reportes/reporte-usuario-eng.png',0, 0,225,80);
+            $pdf->Image('../assets/img/reportes/reporte-usuario-eng.png',0, 0,200,80);
             $pdf->SetFont("Arial", "b", 11);
             $pdf->Cell(0, 19, utf8_decode(""), 0, 1, 'C');
             $pdf->Ln();
@@ -164,20 +164,20 @@ if(isset($_GET["t"]))
             $pdf->SetFont("Arial", "b", 10);
             $pdf->MultiCell(6, 5, utf8_decode("ID"), 0, 1,'L', 0);
             $pdf->SetXY($x + 6, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Username"), 0, 1,'L',0);
-            $pdf->SetXY($x + 36, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Name"), 0, 1,'L',0);
-            $pdf->SetXY($x + 66, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Lastname"), 0, 1,'L',0);
-            $pdf->SetXY($x + 96, $y);
-            $pdf->MultiCell(35, 5, utf8_decode("Email"), 0, 1,'L',0);
-            $pdf->SetXY($x + 131, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Birthday"), 0, 1,'L',0);
+            $pdf->MultiCell(20, 5, utf8_decode("Usuario"), 0, 1,'L',0);
+            $pdf->SetXY($x + 26, $y);
+            $pdf->MultiCell(30, 5, utf8_decode("Nombre"), 0, 1,'L',0);
+            $pdf->SetXY($x + 56, $y);
+            $pdf->MultiCell(30, 5, utf8_decode("Apellido"), 0, 1,'L',0);
+            $pdf->SetXY($x + 86, $y);
+            $pdf->MultiCell(50, 5, utf8_decode("Correo Electrónico"), 0, 1,'L',0);
+            $pdf->SetXY($x + 136, $y);
+            $pdf->MultiCell(25, 5, utf8_decode("Nacimiento"), 0, 1,'L',0);
             $pdf->SetXY($x + 161, $y);
-            $pdf->MultiCell(25, 5, utf8_decode("Type"), 0, 1,'L',0);
-            $pdf->SetXY($x + 186, $y);
-            $pdf->MultiCell(20, 5, utf8_decode("Status"), 0, 1,'L',0);
-            $pdf->SetXY($x + 211, $y);
+            $pdf->MultiCell(20, 5, utf8_decode("Tipo"), 0, 1,'L',0);
+            $pdf->SetXY($x + 181, $y);
+            $pdf->MultiCell(20, 5, utf8_decode("Estado"), 0, 1,'L',0);
+            $pdf->SetXY($x + 201, $y); // HEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
             $pdf->Ln();
 
             while($row = mysqli_fetch_row($result)){
@@ -193,13 +193,13 @@ if(isset($_GET["t"]))
                 switch ($tipo)
                 {
                     case 1;
-                    $texto1 = "Administrator";
+                    $texto1 = "Administrador";
                     break;
                     case 2;
-                    $texto1 = "Teacher";
+                    $texto1 = "Tutor";
                     break;
                     case 3;
-                    $texto1 = "Student";
+                    $texto1 = "Estudiante";
                     break;
                 }
                 $estado = $row['7'];
@@ -207,10 +207,10 @@ if(isset($_GET["t"]))
                 switch ($estado)
                 {
                     case 0;
-                    $texto2 = "Inactive";
+                    $texto2 = "Inactivo";
                     break;
                     case 1;
-                    $texto2 = "Active";
+                    $texto2 = "Activo";
                     break;
                 }
 
@@ -222,20 +222,20 @@ if(isset($_GET["t"]))
                 $pdf->SetFont("Arial", "", 9);
                 $pdf->MultiCell(6, 5, utf8_decode($codigo), 1, 0,'L', 0);
                 $pdf->SetXY($x + 6, $y);
-                $pdf->MultiCell(30, 5, utf8_decode($usuario), 1, 1,'L',0);
-                $pdf->SetXY($x + 36, $y);
+                $pdf->MultiCell(20, 5, utf8_decode($usuario), 1, 1,'L',0);
+                $pdf->SetXY($x + 26, $y);
                 $pdf->MultiCell(30, 5, utf8_decode($nombre), 1, 1,'L',0);
-                $pdf->SetXY($x + 66, $y);
+                $pdf->SetXY($x + 56, $y);
                 $pdf->MultiCell(30, 5, utf8_decode($apellido), 1, 1,'L',0);
-                $pdf->SetXY($x + 96, $y);
-                $pdf->MultiCell(35, 5, utf8_decode($correo), 1, 1,'L',0);
-                $pdf->SetXY($x + 131, $y);
-                $pdf->MultiCell(30, 5, utf8_decode($fechanac), 1, 1,'L',0);
+                $pdf->SetXY($x + 86, $y);
+                $pdf->MultiCell(50, 5, utf8_decode($correo), 1, 1,'L',0);
+                $pdf->SetXY($x + 136, $y);
+                $pdf->MultiCell(25, 5, utf8_decode($fechanac), 1, 1,'L',0);
                 $pdf->SetXY($x + 161, $y);
-                $pdf->MultiCell(25, 5, utf8_decode($texto1), 1, 1,'L',0);
-                $pdf->SetXY($x + 186, $y);
+                $pdf->MultiCell(20, 5, utf8_decode($texto1), 1, 1,'L',0);
+                $pdf->SetXY($x + 181, $y);
                 $pdf->MultiCell(20, 5, utf8_decode($texto2), 1, 1,'L',0);
-                $pdf->SetXY($x + 211, $y);
+                $pdf->SetXY($x + 201, $y);
                 $pdf->Ln();
             }
             $pdf->Output();
@@ -279,19 +279,19 @@ if(isset($_GET["s"]))
             $pdf->SetFont("Arial", "b", 10);
             $pdf->MultiCell(6, 5, utf8_decode("ID"), 0, 1,'L', 0);
             $pdf->SetXY($x + 6, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Username"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Usuario"), 0, 1,'L',0);
             $pdf->SetXY($x + 36, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Name"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nombre"), 0, 1,'L',0);
             $pdf->SetXY($x + 66, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Lastname"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Apellido"), 0, 1,'L',0);
             $pdf->SetXY($x + 96, $y);
-            $pdf->MultiCell(35, 5, utf8_decode("Email"), 0, 1,'L',0);
+            $pdf->MultiCell(35, 5, utf8_decode("Correo electrónico"), 0, 1,'L',0);
             $pdf->SetXY($x + 131, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Birthday"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nacimiento"), 0, 1,'L',0);
             $pdf->SetXY($x + 161, $y);
-            $pdf->MultiCell(25, 5, utf8_decode("Type"), 0, 1,'L',0);
+            $pdf->MultiCell(25, 5, utf8_decode("Tipo"), 0, 1,'L',0);
             $pdf->SetXY($x + 186, $y);
-            $pdf->MultiCell(20, 5, utf8_decode("Status"), 0, 1,'L',0);
+            $pdf->MultiCell(20, 5, utf8_decode("Estado"), 0, 1,'L',0);
             $pdf->SetXY($x + 211, $y);
             $pdf->Ln();
 
@@ -393,19 +393,19 @@ if($_GET["c"]==4)
             $pdf->SetFont("Arial", "b", 10);
             $pdf->MultiCell(6, 5, utf8_decode("ID"), 0, 1,'L', 0);
             $pdf->SetXY($x + 6, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Username"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Usuario"), 0, 1,'L',0);
             $pdf->SetXY($x + 36, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Name"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nombre"), 0, 1,'L',0);
             $pdf->SetXY($x + 66, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Lastname"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Apellido"), 0, 1,'L',0);
             $pdf->SetXY($x + 96, $y);
-            $pdf->MultiCell(35, 5, utf8_decode("Email"), 0, 1,'L',0);
+            $pdf->MultiCell(35, 5, utf8_decode("Correo electrónico"), 0, 1,'L',0);
             $pdf->SetXY($x + 131, $y);
-            $pdf->MultiCell(30, 5, utf8_decode("Birthday"), 0, 1,'L',0);
+            $pdf->MultiCell(30, 5, utf8_decode("Nacimiento"), 0, 1,'L',0);
             $pdf->SetXY($x + 161, $y);
-            $pdf->MultiCell(25, 5, utf8_decode("Type"), 0, 1,'L',0);
+            $pdf->MultiCell(25, 5, utf8_decode("Tipo"), 0, 1,'L',0);
             $pdf->SetXY($x + 186, $y);
-            $pdf->MultiCell(20, 5, utf8_decode("Status"), 0, 1,'L',0);
+            $pdf->MultiCell(20, 5, utf8_decode("Estado"), 0, 1,'L',0);
             $pdf->SetXY($x + 211, $y);
             $pdf->Ln();
 

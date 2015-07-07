@@ -227,6 +227,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
+<!--
                         <div class="col-md-4 text-center" style="height: 180px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading">
@@ -242,6 +243,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
+-->
                                     </div>
                                 </div>
                         </div>

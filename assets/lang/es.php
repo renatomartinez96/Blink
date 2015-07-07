@@ -36,6 +36,7 @@ $langprint = array(
     // Palabras repetidas
         "sort-list" => "Ordenar por...",
         "print-reports" => "Imprimir reportes",
+        "username" => "Usuario",
         "admins" => "administradores",
         "tutors" => "tutores",
         "students" => "estudiantes",
@@ -109,7 +110,7 @@ $langprint = array(
 //      Pantalla de perfil
     "profile-1" => "Informacion",
     "profile-2" => "Nombre",
-    "profile-3" => "Correo Electronico",
+    "profile-3" => "Correo Electrónico",
     "profile-4" => "Fecha de nacimiento",
     "profile-5" => "Descripcion",
     "profile-6" => "Tipo de usuario",
