@@ -212,6 +212,5 @@ Gerardo López | Iván Nolasco | Renato Andres
             include 'main_js.php';
         ?>
         <!--/#Main js-->
-        <!--Editor js-->
     </body>
 </html>

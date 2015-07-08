@@ -15,7 +15,7 @@
             .fullpg{
                 width:100vw;
                 height:100vh;
-                background:#DE6926;
+                background:#C63;
             }
             .center{
                 margin-left:25%;
