@@ -19,7 +19,7 @@
             }
             .center{
                 margin-left:25%;
-                top:35%;
+                top:15%;
                 width:50%;
                 position:absolute;
                 text-align:center;
@@ -32,7 +32,7 @@
     <body>
         <div class="fullpg">
             <div class="center">
-                <img src="../../assets/img/brand4.png" class="brand">
+                <img src="../../assets/img/loading.gif" class="brand">
                 <h2 class="junction-regular">Sus archivos estan siendo procesados</h2>
             </div>
         </div>
