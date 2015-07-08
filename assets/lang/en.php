@@ -26,6 +26,7 @@ $langprint = array(
         "btn-edit" => "Edit",
         "btn-activate" => "Activate",
         "btn-deactivate" => "Deactivate",
+        "btn-suscribir" => "Subscribe",
     // /# Diferentes textos para botones 
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
@@ -108,6 +109,7 @@ $langprint = array(
 
     
 //  estudiante
+    "the-page-of" => "Website of",
 //      Pantalla de perfil
         "profile-1" => "Information",
         "profile-2" => "Name",
@@ -116,6 +118,13 @@ $langprint = array(
         "profile-5" => "Description",
         "profile-6" => "Type of user",
 //   /# Pantalla de perfil
+//      Perfil de un tutor
+        "tutor-no-course" => "does not have active courses",
+        "tutor-type" => "tutor",
+//   /# Perfil de un tutor
+//   Suscripción a un curso
+        "sus-sure" => "¿Estas seguro de suscribirte a este curso?",
+//   /# Suscripción a un curso
 // /# estudiante
 //----------------------------------------------
 
