@@ -135,7 +135,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                  <div class='col-md-7'> 
                                                                      <p class='junction-regular'>".$nombrest." ".$apellidost."</p> 
                                                                      <p class='junction-light'>".$user1."</p> 
-                                                                     <a  href='./perfil.php?t=".$user1."'><button class='btn btn-primary btn-xs'>Perfil <span class='glyphicon glyphicon-chevron-right'></span></button></a> <button type='button' class='btn btn-danger btn-xs' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
+                                                                     <a  href='./tutor-info.php?t=".$user1."'><button class='btn btn-primary btn-xs'>Perfil <span class='glyphicon glyphicon-chevron-right'></span></button></a> <button type='button' class='btn btn-danger btn-xs' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
                                                                  </div>  
                                                                  </div>
                                                         ";
@@ -175,7 +175,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                         <p class='text-center'>".$row2['usuario']."</p>
                                                                         <p class='text-center'>Nota: <strong>".$row2['nota']."</strong></p>
                                                                         <button type='button' class='btn btn-danger form-control btn-block' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
-                                                                        <a href='./perfil.php?t=".$row2['usuario']."' class='btn btn-info form-control btn-block'>Perfil</a>
+                                                                        <a href='./tutor-info.php?t=".$row2['usuario']."' class='btn btn-info form-control btn-block'>Perfil</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -192,7 +192,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                         <p class='text-center'>".$row2['usuario']."</p>
                                                                         <p class='text-center'>".$row2['nota']."</p>
                                                                         <button type='button' class='btn btn-success btn-block form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas suscribirte?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-user-plus'></i></button>
-                                                                        <a href='./perfil.php?t=".$row2['usuario']."' class='btn btn-info form-control btn-block'>Perfil</a>
+                                                                        <a href='./tutor-info.php?t=".$row2['usuario']."' class='btn btn-info form-control btn-block'>Perfil</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
