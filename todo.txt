@@ -2,8 +2,6 @@
 - reportes de los cursos
 - recargar páginas de mantenimiento del profesor después de guardar
 + validación de usuarios en modulo tutor
-+ chequecitos en lecciones aprobadas en modulo estudiante
 - maquetación de la presentación de los profesores
-- 1920 x 700
 - validación de campos...
 

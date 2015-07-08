@@ -104,15 +104,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
                         <!--Subscripciones-->
-                        <div class="col-xs-12">
-                            <div class="row">
-                                <div class="col-md-4 col-xs-12 full">
-                                    <div class="panel panel-success">
-                                        <div class="panel-heading">
+                        <section id="subs" name="subs">
+                            <div class="col-xs-12 full">
+                                <div class="panel panel-success full">
+                                    <div class="panel-heading">
                                         <h3 class="panel-title">Subscripciones</h3>
-                                        </div>
-                                        <div class="panel-body" onload="loadteachers()" id="subsc">
-                                        <?php
+                                    </div>
+                                    <div class="panel-body" onload="loadteachers()" id="subsc">
+                                         <?php
                                             $stmt = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."'");
                                             if ($stmt->num_rows > 0)
                                             {
@@ -126,18 +125,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         $stmt1->bind_result($user1,$avatart,$nombrest,$apellidost,$descripciont,$correot);
                                                         $stmt1->fetch();
                                                         echo "
-                                                                <div class='col-xs-12' style='margin-bottom: 10px;'>
+                                                            <div class='col-sm-6'> 
                                                                  <div class='col-md-5'> 
                                                                      <a href='#'> 
                                                                         <img class='img-responsive img-thumbnail' src='../assets/img/avatares/".$avatart.".png' alt=''> 
                                                                      </a> 
                                                                  </div> 
                                                                  <div class='col-md-7'> 
-                                                                     <p class='junction-regular'>".$nombrest." ".$apellidost."</p> 
-                                                                     <p class='junction-light'>".$user1."</p> 
-                                                                     <a  href='./perfil.php?t=".$user1."'><button class='btn btn-primary btn-xs'>Perfil <span class='glyphicon glyphicon-chevron-right'></span></button></a> <button type='button' class='btn btn-danger btn-xs' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
-                                                                 </div>  
-                                                                 </div>
+                                                                     <h3 class='junction-bold'>".$nombrest."</h3> 
+                                                                     <h4 class='junction-bold'>".$user1."</h4> 
+                                                                     <p>".$correot."</p> 
+                                                                     <p class='text-justify'>".$descripciont."</p> 
+                                                                     <a  href='./perfil.php?t=".$user1."'><button class='btn btn-primary'>Perfil <span class='glyphicon glyphicon-chevron-right'></span></button></a> 
+                                                                     <button type='button' class='btn btn-danger' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row['idDocente'].",".$idusuario.")}})\">Eliminar suscripcion</button>
+                                                                 </div> 
+                                                             </div> 
                                                         ";
                                                     }
                                                 }
@@ -147,15 +149,21 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 echo "<h1>No estas subscrito a ningun profesor</h1>";
                                             }
                                         ?>
-                                        </div>
+ 
+
                                     </div>
                                 </div>
-                                <div class="col-md-8 col-xs-12 full">
-                                    <div class="panel panel-info">
-                                        <div class="panel-heading">
+                            </div>
+                        </section>
+                        <!--/#Subscripciones-->
+                        <!--Profesores-->
+                        <section id="teach" name="teach">
+                             <div class="col-xs-12 full">
+                                <div class="panel panel-success full">
+                                    <div class="panel-heading">
                                         <h3 class="panel-title">Profesores</h3>
-                                        </div>
-                                        <div class="panel-body">
+                                    </div>
+                                    <div class="panel-body">
                                         <?php
                                             if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb WHERE tipo = 2  AND estado = 1"))
                                             {
@@ -166,14 +174,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     {
                                                         echo "
                                                             <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
-                                                                <div class='thumbnail col-xs-12' style='background:#4e5d6c;'>
+                                                                <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
                                                                     <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-thumbnail'>
                                                                     <div class='caption full'>
-                                                                        <h3 class='text-center'>".$row2['nombres']."</h3>
-                                                                        <p class='text-center'>".$row2['usuario']."</p>
-                                                                        <button type='button' class='btn btn-danger form-control btn-block' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
-                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control btn-block'>Perfil</button></a>
+                                                                        <button type='button' class='btn btn-danger form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\">Eliminar suscripcion</button>
+                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
                                                                     </div>
+                                                                </div>
+                                                                <div class='col-xs-8'>
+                                                                    <h3>".$row2['nombres']."</h3>
+                                                                    <h5 class='text-justify'>".$row2['descripcion']."</h5>
                                                                 </div>
                                                             </div>
                                                             ";
@@ -182,14 +192,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     {
                                                         echo "
                                                             <div class='col-sm-6 col-md-4' style='background:#4e5d6c;'>
-                                                                <div class='thumbnail col-xs-12' style='background:#4e5d6c;'>
+                                                                <div class='thumbnail col-xs-4' style='background:#4e5d6c;'>
                                                                     <img src='../assets/img/avatares/".$row2['avatar'].".png' class='img-thumbnail'>
                                                                     <div class='caption full'>
-                                                                        <h3 class='text-center'>".$row2['nombres']."</h3>
-                                                                        <p class='text-center'>".$row2['usuario']."</p>
-                                                                        <button type='button' class='btn btn-success btn-block form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas suscribirte?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-user-plus'></i></button>
-                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control btn-block'>Perfil</button></a>
+                                                                        <button type='button' class='btn btn-success form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas suscribirte?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\">Suscribirse</button>
+                                                                        <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control'>Perfil</button></a>
                                                                     </div>
+                                                                </div>
+                                                                <div class='col-xs-8'>
+                                                                    <h3>".$row2['nombres']."</h3>
+                                                                    <h5 class='text-justify'>".$row2['descripcion']."</h5>
                                                                 </div>
                                                             </div>
                                                             ";
@@ -197,12 +209,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                 }
                                             }
                                         ?>
-                                        </div>
                                     </div>
-                                </div>
+                                 </div>
                             </div>
-                        </div>
-                        <!--/#Subscripciones-->
+                        </section>
+                        
+                        <!--/#Profesores-->
 					<!--/#Content-->
 					</div>
 				</div>
