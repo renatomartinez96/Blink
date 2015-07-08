@@ -117,7 +117,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                             {
                                                 while($row = $stmt->fetch_assoc())
                                                 {
-                                                    if($stmt1 = $mysqli->prepare("SELECT usuario, avatar, nombres, apellidos, descripcion, correo  FROM usuarios_tb WHERE idusuario = ?")) 
+                                                    if($stmt1 = $mysqli->prepare("SELECT usuario, avatar, nombres, apellidos, descripcion, correo  FROM usuarios_tb WHERE idusuario = ? AND estado = 1")) 
                                                     {
                                                         $stmt1->bind_param('s', $row['idDocente']);
                                                         $stmt1->execute(); 
@@ -165,7 +165,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     </div>
                                     <div class="panel-body">
                                         <?php
-                                            if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb WHERE tipo = 2 "))
+                                            if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb WHERE tipo = 2  AND estado = 1"))
                                             {
                                                 while($row2 = $stmt2->fetch_assoc()){
                                                     $stmt3 = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."' AND idDocente = '".$row2['idusuario']."'");
