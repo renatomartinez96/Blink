@@ -51,7 +51,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Custom CSS-->
 		<link href="assets/css/sidebar.css" rel="stylesheet">
         <link type="text/css"  rel="stylesheet" href="assets/css/scrolling-nav.css">
-        <link href="assets\css\fullPage.css" rel="stylesheet">
+        <link href="assets/css/fullPage.css" rel="stylesheet">
         <meta name="theme-color" content="#E06B26">
         <!--/#Custom CSS-->
         <script type="text/JavaScript" src="assets/js/sha512.js"></script>
@@ -119,7 +119,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         <div id="fullpage">
             <div class="section text-center" id="section0">
                 <div class="mouse-animation">
-                        <img src="assets\img\arrows.png" style="width:50%;">
+                        <img src="assets/img/arrows.png" style="width:50%;">
                         <div class="mouse"><div class="wheel"></div></div>
                         <div><span class="uno"></span> <span class="dos"></span> <span class="tres"></span> </div>
                 </div>
@@ -133,12 +133,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                   data-friction-y="0.1"
                   data-invert-x="true"
                   data-invert-y="true">
-                    <li class="layer" data-depth="0.04"><img id="layer01" src="assets\img\layers\layer01.png"></li>
-                    <li class="layer" data-depth="0.06"><img id="layer1" src="assets\img\layers\layer02.png"></li>
-                    <li class="layer" data-depth="0.08"><img id="layer1" src="assets\img\layers\layer0.png"></li>
-                    <li class="layer" data-depth="0.30"><img id="layer3" src="assets\img\layers\layer2.png" style="width:80%;"></li>
-                    <li class="layer" data-depth="0.10"><img id="layer2" src="assets\img\layers\layer3.png" style="width:80%;"></li>
-                    <li class="layer" data-depth="0.50"><img id="layer4" src="assets\img\layers\layer1.png" style=""></li>
+                    <li class="layer" data-depth="0.04"><img id="layer01" src="assets/img/layers/layer01.png"></li>
+                    <li class="layer" data-depth="0.06"><img id="layer1" src="assets/img/layers/layer02.png"></li>
+                    <li class="layer" data-depth="0.08"><img id="layer1" src="assets/img/layers/layer0.png"></li>
+                    <li class="layer" data-depth="0.30"><img id="layer3" src="assets/img/layers/layer2.png" style="width:80%;"></li>
+                    <li class="layer" data-depth="0.10"><img id="layer2" src="assets/img/layers/layer3.png" style="width:80%;"></li>
+                    <li class="layer" data-depth="0.50"><img id="layer4" src="assets/img/layers/layer1.png" style=""></li>
 <!--                      <li class="layer" data-depth="0.20"><h3>Box Link</h3></li>-->
 <!--
                   <li class="layer" data-depth="0.40"><img src="layer3.png"></li>
@@ -305,9 +305,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 });
             });
         </script>
-        <script src="assets\js\jquery.fullPage.min.js"></script>
-        <script src="assets\js\jquery.slimscroll.min.js"></script>
-        <script src="assets\js\jquery.easings.min.js"></script>
+        <script src="assets/js/jquery.fullPage.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+        <script src="assets/js/jquery.easings.min.js"></script>
         <script type="text/javascript">
     		$(document).ready(function() {
     			$('#fullpage').fullpage({

@@ -2,7 +2,7 @@
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -16,14 +16,14 @@ Gerardo López | Iván Nolasco | Renato Andres
     sec_session_start();
     $user = $_SESSION['username'];
     $avatar = '';
-    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?"))
     {
         $stmt->bind_param('s', $user);
-        $stmt->execute(); 
+        $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($idusuario,$avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
         $stmt->fetch();
-        
+
     }
     include "../assets/includes/lang.php";
 ?>
@@ -31,7 +31,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 <html lang="en">
 <head>
     <!--Core CSS-->
-    <?php 
+    <?php
         $titulodelapagina = "¡Bienvenido $user!";
         require 'main_css.php';
     ?>
@@ -41,19 +41,19 @@ Gerardo López | Iván Nolasco | Renato Andres
     <link href="../assets/css/sidebar.css" rel="stylesheet">
     <link href="../assets/css/perfil.css" rel="stylesheet">
     <link href="../assets/css/editor.css" rel="stylesheet">
-    
+
     <!--/#Custom CSS-->
 
 </head>
-<body style="background:#D8D8D8  !important;">
+<body>
     <!--Topbar -->
-    <?php 
+    <?php
         include '../nav/topbar.php';
     ?>
     <!--/#Topbar -->
     <div id="wrapper" class="toggled">
         <!--Sidebar -->
-        <?php 
+        <?php
             include '../nav/sidebar.php';
         ?>
         <!--/#Sidebar -->
@@ -62,20 +62,20 @@ Gerardo López | Iván Nolasco | Renato Andres
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                <!--Content-->                   
+                <!--Content-->
 <?php
-    if (isset($_GET['u'])) 
+    if (isset($_GET['u']))
     {
         $u = $_GET['u'];
         $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
         $stmt1->bind_param('s', $u);
-        $stmt1->execute(); 
+        $stmt1->execute();
         $stmt1->store_result();
         $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$banner1, $iduser1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
-            if ($tipo1 == '3') 
+            if ($tipo1 == '3')
             {
 ?>
                     <style>
@@ -110,7 +110,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                         <div class="form-group full">
                                                             <div class="input-group">
                                                                 <span class="input-group-addon"><i class="fa fa-user fa-2x"></i></span>
-                                                                <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                                                <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString">
                                                             </div>
                                                         </div>
                                                         <div class="list-group" style="position:absolute;" id="SearchResult"></div>
@@ -123,7 +123,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <h4 class="junction-light container"><?=$descripcion1?></h4>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                          <div class="col-xs-12 full">
                             <div class="panel panel-success">
                                 <div class="panel-heading">
@@ -134,37 +134,37 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-xs-12 full">
                              <div class="container" style="margin-bottom:15px;">
                                  <div class="col-xs-12 well full">
-                                    <div class="col-md-5 full"> 
-                                         <a href="#"> 
-                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt=""> 
-                                         </a> 
-                                     </div> 
-                                     <div class="col-md-7"> 
-                                         <h3>Project One</h3> 
-                                         <h4>Subheading</h4> 
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p> 
-                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                    <div class="col-md-5 full">
+                                         <a href="#">
+                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt="">
+                                         </a>
+                                     </div>
+                                     <div class="col-md-7">
+                                         <h3>Project One</h3>
+                                         <h4>Subheading</h4>
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                                      </div>
                                 </div>
                              </div>
                             <div class="container" style="margin-bottom:15px;">
                                  <div class="col-xs-12 well full">
-                                    <div class="col-md-5 full"> 
-                                         <a href="#"> 
-                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt=""> 
-                                         </a> 
-                                     </div> 
-                                     <div class="col-md-7"> 
-                                         <h3>Project One</h3> 
-                                         <h4>Subheading</h4> 
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p> 
-                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                    <div class="col-md-5 full">
+                                         <a href="#">
+                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt="">
+                                         </a>
+                                     </div>
+                                     <div class="col-md-7">
+                                         <h3>Project One</h3>
+                                         <h4>Subheading</h4>
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                                      </div>
                                 </div>
-                             </div> 
+                             </div>
                         </div>
-                            
-<?php       
+
+<?php
                 }
                 else
                 {
@@ -176,10 +176,10 @@ Gerardo López | Iván Nolasco | Renato Andres
         ?>
                         <div class="col-xs-12" style="margin-top:50px;">
                             <div class="container">
-                                <div class="jumbotron text-center">
+                                <div class="jumbotron text-center transparent">
                                     <img src="../assets/img/404.png" style="width:45%;"><br>
                                     <div class="form-group full text-center">
-                                            <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                            <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString">
                                     </div>
                                     <div class="list-group" id="SearchResult"></div>
                                 </div>
@@ -193,13 +193,13 @@ Gerardo López | Iván Nolasco | Renato Andres
         $t = $_GET['t'];
         $stmt1 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.usuario, usuarios_tb.tipo, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?");
         $stmt1->bind_param('s', $t);
-        $stmt1->execute(); 
+        $stmt1->execute();
         $stmt1->store_result();
         $stmt1->bind_result($avatar1,$nombres1,$apellidos1,$nacimiento1,$descripcion1,$correo1,$usuario1,$tipo1,$usrid1,$banner1, $iduser1);
         $stmt1->fetch();
         if($stmt1->num_rows == 1)
         {
-            if ($tipo1 == '2') 
+            if ($tipo1 == '2')
             {
 ?>
                     <style>
@@ -230,7 +230,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <a class="btn btn-success input-lg" target="_blank" href="../users/<?=$usuario1?>/index.html"><Strong><?=$usuario1?></Strong>'s page</a>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                          <div class="col-xs-12 full">
                             <div class="panel panel-success">
                                 <div class="panel-heading">
@@ -241,23 +241,23 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <?php
                 // LA WEAAAA
                             $stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$usrid1."' ");
-                            if ($stmt2->num_rows > 0) 
+                            if ($stmt2->num_rows > 0)
                             {
                                 while($row = $stmt2->fetch_assoc()){
                                     echo "
                                         <div class='col-xs-12 full'>
                                             <div class='container' style='margin-bottom:15px;'>
                                                 <div class='col-xs-12 well full'>
-                                                    <div class='col-md-5 full'> 
-                                                         <a href='#'> 
-                                                            <img class='img-responsive bg-primary' src='../assets/img/trofeos/1.jpg' alt=''> 
-                                                         </a> 
-                                                     </div> 
-                                                     <div class='col-md-7'> 
-                                                         <h3>".$row['nombre']."</h3> 
-                                                         <h4>".$nombres1."</h4> 
-                                                         <p>".$row['descripcion']."</p> 
-                                                         <a href='#'><button class='btn btn-success' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribecurso(".$row['idcurso'].",".$idusuario.")}})\">Suscribe<span class='glyphicon glyphicon-chevron-right'></span></button></a> 
+                                                    <div class='col-md-5 full'>
+                                                         <a href='#'>
+                                                            <img class='img-responsive bg-primary' src='../assets/img/trofeos/1.jpg' alt=''>
+                                                         </a>
+                                                     </div>
+                                                     <div class='col-md-7'>
+                                                         <h3>".$row['nombre']."</h3>
+                                                         <h4>".$nombres1."</h4>
+                                                         <p>".$row['descripcion']."</p>
+                                                         <a href='#'><button class='btn btn-success' onclick=\"return bootbox.confirm('Are you sure?', function(result) {if(result==true){suscribecurso(".$row['idcurso'].",".$idusuario.")}})\">Suscribe<span class='glyphicon glyphicon-chevron-right'></span></button></a>
                                                      </div>
                                                 </div>
                                              </div>
@@ -270,9 +270,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 echo "This teacher dont have any courses";
                             }
                         ?>
-                        
-                            
-<?php       
+
+
+<?php
                 }
                 else
                 {
@@ -287,7 +287,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="jumbotron text-center">
                                     <img src="../assets/img/404.png" style="width:45%;"><br>
                                     <div class="form-group full text-center">
-                                            <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString"> 
+                                            <input type="text" class="form-control input-lg" placeholder="Search" autocomplete="off" id="SearchString">
                                     </div>
                                     <div class="list-group" id="SearchResult"></div>
                                 </div>
@@ -308,7 +308,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             <!--/#Page Content -->
         </div>
         <!--Main js-->
-        <?php 
+        <?php
             include 'main_js.php';
         ?>
         <!--/#Main js-->
