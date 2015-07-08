@@ -157,9 +157,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         </div>
                                         <div class="panel-body">
                                         <?php
-                                            if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb WHERE tipo = 2  AND estado = 1"))
+                                            if ($stmt2 = $mysqli->query("SELECT * FROM usuarios_tb INNER JOIN examenes ON usuarios_tb.usuario = examenes.usuario WHERE usuarios_tb.tipo = 2  AND usuarios_tb.estado = 1"))
                                             {
                                                 while($row2 = $stmt2->fetch_assoc()){
+                                                    if($row2['nota'] >= 8)
+                                                    {
                                                     $stmt3 = $mysqli->query("SELECT * FROM `docente-estudiante` WHERE idEstudiante = '".$idusuario."' AND idDocente = '".$row2['idusuario']."'");
                                                     $num = $stmt3->num_rows;
                                                     if ($num > 0)
@@ -171,6 +173,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                     <div class='caption full'>
                                                                         <h3 class='text-center'>".$row2['nombres']."</h3>
                                                                         <p class='text-center'>".$row2['usuario']."</p>
+                                                                        <p class='text-center'>Nota: <strong>".$row2['nota']."</strong></p>
                                                                         <button type='button' class='btn btn-danger form-control btn-block' onclick=\"return bootbox.confirm('Estas seguro que deseas eliminar tu suscripcion?', function(result) {if(result==true){unsuscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-times'></i></button>
                                                                         <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control btn-block'>Perfil</button></a>
                                                                     </div>
@@ -187,12 +190,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                                     <div class='caption full'>
                                                                         <h3 class='text-center'>".$row2['nombres']."</h3>
                                                                         <p class='text-center'>".$row2['usuario']."</p>
+                                                                        <p class='text-center'>".$row2['nota']."</p>
                                                                         <button type='button' class='btn btn-success btn-block form-control' onclick=\"return bootbox.confirm('Estas seguro que deseas suscribirte?', function(result) {if(result==true){suscribe(".$row2['idusuario'].",".$idusuario.")}})\"><i class='fa fa-user-plus'></i></button>
                                                                         <a href='./perfil.php?t=".$row2['usuario']."'><button type='button' class='btn btn-info form-control btn-block'>Perfil</button></a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             ";
+                                                    }
                                                     }
                                                 }
                                             }
