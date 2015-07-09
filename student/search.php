@@ -1,11 +1,11 @@
 <?php
 include_once '../assets/includes/db_conexion.php';
-    if (isset($_POST['search'])) 
+    if (isset($_POST['search']))
     {
-        if (!empty($_POST['search'])) 
+        if (!empty($_POST['search']))
         {
             $SearchString = $_POST['search'];
-            $stmt = $mysqli->query("SELECT nombres, correo, usuario FROM usuarios_tb WHERE tipo = '3' AND nombres LIKE '%".$SearchString."%' OR usuario LIKE '%".$SearchString."%' OR apellidos LIKE '%".$SearchString."%' OR correo LIKE '%".$SearchString."%' LIMIT 8");
+            $stmt = $mysqli->query("SELECT nombres, correo, usuario FROM usuarios_tb WHERE tipo = '3' AND nombres LIKE '%".$SearchString."%' OR usuario LIKE '%".$SearchString."%' OR apellidos LIKE '%".$SearchString."%' OR correo LIKE '%".$SearchString."%' LIMIT 6");
             $string = "";
             if ($stmt->num_rows > 0)
             {
@@ -14,7 +14,7 @@ include_once '../assets/includes/db_conexion.php';
                         <a href='profile.php?user=".$row['usuario']."' class='list-group-item'>
                             <h5 class='list-group-item-heading'>
                                 ".$row['nombres']." <span class='label label-primary'>".$row['usuario']."</span>
-                            </h5> 
+                            </h5>
                             <h6 class='list-group-item-text'>
                                 ".$row['correo']."
                             </h6>
@@ -22,12 +22,12 @@ include_once '../assets/includes/db_conexion.php';
                 }
             }
             else
-            {  
+            {
                 $string .= "
                         <a href='#' class='list-group-item'>
                             <h5 class='list-group-item-heading'>
                                 Error
-                            </h5> 
+                            </h5>
                             <h6 class='list-group-item-text'>
                                 no hay resultados para mostrar
                             </h6>

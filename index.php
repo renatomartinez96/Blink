@@ -54,7 +54,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         <script type="text/JavaScript" src="assets/js/sha512.js"></script>
         <script type="text/JavaScript" src="assets/js/forms.js"></script>
         <style type="text/css">
-            body,html{background:#E06B26!important;overflow-x:hidden}.navbar-inverse{background-color:#E06B26}.transparent{background:0 0!important}#navbar-box-link{background-color:rgba(0,0,0,.63);height:0;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;position:fixed}#navbar-box-link.toggled{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;position:fixed;z-index:10}#login_form{-webkit-transition:all .4s ease-out;-moz-transition:all .4s ease-out;-o-transition:all .4s ease-out;transition:all .4 ease-out;position:fixed}#login_form.hidden{-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2 ease-out;position:fixed}.bottom{bottom:0!important}.body_no_scroll{overflow-x:hidden}.inputnav{border:0}.navbar{z-index:15}body,div{padding:0;margin:0}.intro p{width:50%;margin:0 auto;font-size:1.5em}.myVideo{bottom:0;top:0;right:0;width:100%;height:100%;background-color:#000;background-position:center center;background-size:contain;object-fit:cover;z-index:3}.section{text-align:center;overflow:hidden}#section0{overflow:none}span{display:block;width:7px;height:7px;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg);border-right:2px solid #fff;border-bottom:2px solid #fff;margin:0 0 6px 13px}.uno{margin-top:7px}.dos,.tres,.uno{margin-left:47%;-webkit-animation:mouse-scroll 1s infinite;-moz-animation:mouse-scroll 1s infinite}.uno{-webkit-animation-delay:.1s;-moz-animation-delay:.1s;-webkit-animation-direction:alternate}.dos{-webkit-animation-delay:.2s;-moz-animation-delay:.2s;-webkit-animation-direction:alternate}.tres{-webkit-animation-delay:.3s;-moz-animation-delay:.3s;-webkit-animation-direction:alternate}.mouse{margin-top:6%;margin-left:40%;height:50px;width:30px;border-radius:20px;transform:none;border:2px solid #fff;top:170px}.wheel{height:10px;width:5px;border-radius:3px;display:block;margin:5px auto;background:#fff;position:relative}.mouse-animation{width:8%}.wheel{-webkit-animation:mouse-wheel 1.2s ease infinite;-moz-animation:mouse-wheel 1.2s ease infinite}@-webkit-keyframes mouse-wheel{0%{opacity:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}100%{opacity:0;-webkit-transform:translateY(6px);-ms-transform:translateY(6px);transform:translateY(6px)}}@-moz-keyframes mouse-wheel{0%{top:1px}50%{top:2px}100%{top:3px}}@-webkit-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@-moz-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@-o-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}.mouse-animation{position:absolute;margin-left:46%;bottom:4%}#scene{width:100%;height:100%;background:#0aa5ff;background:-moz-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#0aa5ff),color-stop(51%,#49bcff),color-stop(100%,#fff));background:-webkit-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-o-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-ms-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:linear-gradient(to bottom,#0aa5ff 0,#49bcff 51%,#fff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0aa5ff', endColorstr='#ffffff', GradientType=0)}@media only screen and (min-width:1366px){#layer01,#layer02,#layer1{width:105%;margin-left:-2.5%;margin-top:200px}#layer4{width:90%;position:center;margin-left:165%;margin-top:20%}}@media only screen and (min-width:1920px){#layer01,#layer02,#layer1{width:105%;margin-left:-2.5%;position:center;margin-top:300px}#layer4{width:100%;margin-left:240%;margin-top:90%}}div#load_screen{background:#000;opacity:1;position:fixed;z-index:10;top:0;width:100%;height:1600px}div#load_screen>div#loading{color:#FFF;width:120px;height:24px;margin:300px auto}#load_screen{z-index:1031}.laptop-wrapper{width:100%}.laptop-screen-frame{padding:1.25em;margin:.625em .625em 0;border-radius:1.25em 1.25em 0 0;border-bottom:none;background:#959595}.laptop-screen-content{background:#fff;height:auto}.laptop-body{height:1.25em;background:#ebebeb}.laptop-button{height:.4em;width:15%;margin:auto auto .625em;border-radius:0 0 10em 10em;background:#b7b7b7;border-top:none}.laptop-base{height:.375em;border-radius:0 0 10em 10em;background:#b1b1b1;margin-bottom:.625em;border-top:none}@media \0screen{img{width:auto}}.laptop-screen-content>img{width:100%}.laptops{top:50%}.controlArrow.prev{left:50px}.controlArrow.next{right:50px}#slide1{background-image:url(assets/img/office.png);background-repeat:no-repeat;background-position:center;background-size:90%}#slide2{background-image:url(assets/img/freelance.png);background-repeat:no-repeat;background-position:center;background-size:90%}#section4{background-image:url(assets/img/world.png);background-repeat:no-repeat;background-position:center;background-size:90%}
+            body,html{background:#E06B26!important;overflow-x:hidden}.navbar-inverse{background-color:#E06B26}.transparent{background:0 0!important}#navbar-box-link{background-color:rgba(0,0,0,.63);height:0;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;position:fixed}#navbar-box-link.toggled{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;position:fixed;z-index:10}#login_form{-webkit-transition:all .4s ease-out;-moz-transition:all .4s ease-out;-o-transition:all .4s ease-out;transition:all .4 ease-out;position:fixed}#login_form.hidden{-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2 ease-out;position:fixed}.bottom{bottom:0!important}.body_no_scroll{overflow-x:hidden}.inputnav{border:0}.navbar{z-index:15}body,div{padding:0;margin:0}.intro p{width:50%;margin:0 auto;font-size:1.5em}.myVideo{bottom:0;top:0;right:0;width:100%;height:100%;background-color:#000;background-position:center center;background-size:contain;object-fit:cover;z-index:3}.section{text-align:center;overflow:hidden}#section0{overflow:none}span{display:block;width:7px;height:7px;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg);border-right:2px solid #fff;border-bottom:2px solid #fff;margin:0 0 6px 13px}.uno{margin-top:7px}.dos,.tres,.uno{margin-left:47%;-webkit-animation:mouse-scroll 1s infinite;-moz-animation:mouse-scroll 1s infinite}.uno{-webkit-animation-delay:.1s;-moz-animation-delay:.1s;-webkit-animation-direction:alternate}.dos{-webkit-animation-delay:.2s;-moz-animation-delay:.2s;-webkit-animation-direction:alternate}.tres{-webkit-animation-delay:.3s;-moz-animation-delay:.3s;-webkit-animation-direction:alternate}.mouse{margin-top:6%;margin-left:36%;height:50px;width:30px;border-radius:20px;transform:none;border:2px solid #fff;top:170px}.wheel{height:10px;width:5px;border-radius:3px;display:block;margin:5px auto;background:#fff;position:relative}.mouse-animation{width:8%}.wheel{-webkit-animation:mouse-wheel 1.2s ease infinite;-moz-animation:mouse-wheel 1.2s ease infinite}@-webkit-keyframes mouse-wheel{0%{opacity:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}100%{opacity:0;-webkit-transform:translateY(6px);-ms-transform:translateY(6px);transform:translateY(6px)}}@-moz-keyframes mouse-wheel{0%{top:1px}50%{top:2px}100%{top:3px}}@-webkit-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@-moz-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@-o-keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}@keyframes mouse-scroll{0%{opacity:0}50%{opacity:.5}100%{opacity:1}}.mouse-animation{position:absolute;margin-left:46%;bottom:4%}#scene{width:100%;height:100%;background:#0aa5ff;background:-moz-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#0aa5ff),color-stop(51%,#49bcff),color-stop(100%,#fff));background:-webkit-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-o-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:-ms-linear-gradient(top,#0aa5ff 0,#49bcff 51%,#fff 100%);background:linear-gradient(to bottom,#0aa5ff 0,#49bcff 51%,#fff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0aa5ff', endColorstr='#ffffff', GradientType=0)}@media only screen and (min-width:1366px){#layer01,#layer02,#layer1{width:105%;margin-left:-2.5%;margin-top:200px}#layer4{width:90%;position:center;margin-left:165%;margin-top:20%}}@media only screen and (min-width:1920px){#layer01,#layer02,#layer1{width:105%;margin-left:-2.5%;position:center;margin-top:300px}#layer4{width:100%;margin-left:240%;margin-top:90%}}div#load_screen{background:#000;opacity:1;position:fixed;z-index:10;top:0;width:100%;height:1600px}div#load_screen>div#loading{color:#FFF;width:120px;height:24px;margin:300px auto}#load_screen{z-index:1031}.laptop-wrapper{width:100%}.laptop-screen-frame{padding:1.25em;margin:.625em .625em 0;border-radius:1.25em 1.25em 0 0;border-bottom:none;background:#959595}.laptop-screen-content{background:#fff;height:auto}.laptop-body{height:1.25em;background:#ebebeb}.laptop-button{height:.4em;width:15%;margin:auto auto .625em;border-radius:0 0 10em 10em;background:#b7b7b7;border-top:none}.laptop-base{height:.375em;border-radius:0 0 10em 10em;background:#b1b1b1;margin-bottom:.625em;border-top:none}@media \0screen{img{width:auto}}.laptop-screen-content>img{width:100%}.laptops{top:50%}.controlArrow.prev{left:50px}.controlArrow.next{right:50px}#slide1{background-image:url(assets/img/office.png);background-repeat:no-repeat;background-position:center;background-size:90%}#slide2{background-image:url(assets/img/freelance.png);background-repeat:no-repeat;background-position:center;background-size:90%}#section4{background-image:url(assets/img/world.png);background-repeat:no-repeat;background-position:center;background-size:90%}
         </style>
 	</head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -190,7 +190,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                                 <center><h2 id="myModalLabel" class='modal-title junction-bold'>Box Link</h2></center>
                             </div>
                             <div class="modal-body">
@@ -324,6 +324,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     				anchors: ['one', 'two', 'three','four','five','six'],
                     css3: true,
                     easing: 'easeInOutCubic',
+                    continuousVertical: true,
 
                     afterRender: function(){
     					$('#myVideo').get(0).play();
@@ -341,7 +342,42 @@ Gerardo López | Iván Nolasco | Renato Andres
 
             });
     	</script>
-</script>
+        <script>
+                $(document).ready(function(){
+                    function validateEmail($email) {
+                        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                        return emailReg.test( $email );
+                    }
+                    $("#submtoken").click(function(){
+                        if($("#mail").val() == ''){
+                            bootbox.alert({
+                                title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                                message: "<center><h5 class='junction-light'>You must provide your email paddress</h5></center>",
+                            });
+                        }else{
+                            if(validateEmail($("#mail").val())) {
+                                var send = {"email" : $("#mail").val()};
+                                $.ajax({
+                                    type: "POST",
+                                    url: "mailpass.php",
+                                    data: send,
+                                    success: function(response) {
+                                        bootbox.alert({
+                                            title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                                            message: "<center><h5 class='junction-light'>"+response+"</h5></center>",
+                                        });
+                                    }
+                                });
+                            }else{
+                                bootbox.alert({
+                                    title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
+                                    message: "<center><h5 class='junction-light'>You must provide a real Email address</h5></center>",
+                                });
+                            }
+                        }
+                    });
+                });
+        </script>
         <script src="assets/js/parallax/deploy/parallax.min.js"></script>
         <script>
             var scene = document.getElementById('scene');

@@ -10,7 +10,7 @@
        e.preventDefault();
        //Get the target
        var target = $(this).attr("href");
-       
+
        //perform animated scrolling
        $('html,body').animate(
        {
@@ -34,7 +34,7 @@
 <script>
     $(document).ready(function() {
         $( "body" ).scroll(function() {
-          if ($(".navbar").offset().top >= $("#homevideo").offset().top &&  $(".navbar").offset().top < $("#about").offset().top ) 
+          if ($(".navbar").offset().top >= $("#homevideo").offset().top &&  $(".navbar").offset().top < $("#about").offset().top )
           {
             $("#nav1").addClass("active");
             $("#nav2").removeClass("active");
@@ -64,7 +64,7 @@
           }
         });
     });
-        
+
 </script>
 <script>
     $(document).ready(function(){
@@ -100,7 +100,7 @@
                         message: "<center><h5 class='junction-light'>You must provide your email paddress</h5></center>",
                     });
                 }else{
-                    if(validateEmail($("#mail").val())) { 
+                    if(validateEmail($("#mail").val())) {
                         var send = {"email" : $("#mail").val()};
                         $.ajax({
                             type: "POST",
@@ -122,7 +122,7 @@
                 }
             });
         });
-    </script>
+</script>
 <script>
 //Valida que en un campo solo se puedan ingresar letras
 //Sintaxis html= onkeypress="txtletras()"
@@ -133,9 +133,9 @@ function txtletras() {
 //Valida que en un campo solo se puedan ingresar letras
 //Sintaxis html= onkeypress="txtnumeros()"
 function txtnumeros() {
-    if ((event.keyCode < 48) || (event.keyCode > 57)){ 
+    if ((event.keyCode < 48) || (event.keyCode > 57)){
         event.returnValue = false;
-        
+
     }
 }
 var patron = new Array(4,2,2)
@@ -146,7 +146,7 @@ function mascara(d,sep,pat,nums){
         val = val.split(sep)
         val2 = ''
         for(r=0;r<val.length;r++){
-            val2 += val[r]	
+            val2 += val[r]
         }
         if(nums){
             for(z=0;z<val2.length;z++){

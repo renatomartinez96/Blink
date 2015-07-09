@@ -2,7 +2,7 @@
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -10,7 +10,7 @@ Gerardo López | Iván Graciano | Renato Andres
 
 -->
 
-<?php 
+<?php
 //Archivo de traduccion en idioma ingles
 $langprint = array(
 //----------------------------------------------
@@ -27,7 +27,7 @@ $langprint = array(
         "btn-activate" => "Activate",
         "btn-deactivate" => "Deactivate",
         "btn-suscribir" => "Subscribe",
-    // /# Diferentes textos para botones 
+    // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
         "msg-alert-saved-ok" => "<strong>Perfect! </strong>The data was saved correctly",
@@ -91,7 +91,7 @@ $langprint = array(
         "choose-the-pill" => "Choose your theme",
         "theme" => "theme",
         "change-theme" => "Save my theme",
-        
+
     // /# Formulario de cambio de tema "cod_theme.php"
     //----------------------------------------------
     //  Navbar
@@ -105,12 +105,12 @@ $langprint = array(
             "docs" => "My Docs",
             "tutor" => "Tutor",
             "tutors" => "Tutors",
-    
+
     // /# Navbar
 // /# GLOBALES
 //----------------------------------------------
 
-    
+
 //  index
         "slider-title-1" => "Are you starting a company?",
         "slider-subtitle-1" => "In Box Link we provide you the basis for starting making your business website",
@@ -136,10 +136,24 @@ $langprint = array(
         "modal-2" => "You must type an email address",
         "modal-3" => "You must type an valid email address",
         "error-log" => "There was an error when logging",
-    
+
 //  /# index
-    
-       
+
+//     chngpass
+        "chngpass-title" => "Reset Password",
+        "chngpass-subtitle" => "To accomplish the restoration of the password you need to fill out the form below.",
+        "chngpass-user" => "User",
+        "chngpass-pass" => "Password",
+        "chngpass-ad1" => "At least 6 characters long
+                                Passwords must contain",
+        "chngpass-ad2" => "At least one uppercase character (A..Z)",
+        "chngpass-ad3" => "At least one lowercase character (A..Z)",
+        "chngpass-ad4" => "At least one numeric character (0..9)",
+        "chngpass-rpass" => "Confirm Password",
+        "chngpass-send" => "Send",
+        "chngpass-out" => "Leave",
+//  /# chngpass
+
 //  estudiante
     "the-page-of" => "Website of",
 //      Pantalla de perfil
@@ -178,7 +192,7 @@ $langprint = array(
         "teachers-page-panel-subs" => "Subscriptions",
         "teachers-page-panel-teachs" => "Teachers",
         "teachers-page-non-subs" => "You are not subscribed to any teacher",
-        
+
 //   /# tutores
 // /# estudiante
 //----------------------------------------------
@@ -212,12 +226,12 @@ $langprint = array(
 
 // /# docente
 //----------------------------------------------
-    
+
 //    framework
     "framework-Theoretical-introduction" => "Theoretical introduction",
 // /# framework
 //----------------------------------------------
-    
+
 //    prueba
         "lel" => "The to&ntilde;ito :D",
         "nosession" => "You are not logged in",

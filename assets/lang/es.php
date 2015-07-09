@@ -2,7 +2,7 @@
 
 Copyright (c) 2015 Blink
 All Rights Reserved
- 
+
 This product is protected by copyright and distributed under
 licenses restricting copying, distribution, and decompilation.
 
@@ -10,7 +10,7 @@ Gerardo López | Iván Graciano | Renato Andres
 
 -->
 
-<?php 
+<?php
 //Archivo de traduccion en idioma español
 $langprint = array(
 //----------------------------------------------
@@ -91,7 +91,7 @@ $langprint = array(
         "choose-the-pill" => "Escoje tu tema",
         "theme" => "tema",
         "change-theme" => "Guardar tema nuevo",
-        
+
     // /# Formulario de cambio de tema "cod_theme.php"
     //----------------------------------------------
     //  Navbar
@@ -109,7 +109,7 @@ $langprint = array(
 // /# GLOBALES
 //----------------------------------------------
 
-    
+
 //  index
         "slider-title-1" => "¿Estas iniciando una empresa?",
         "slider-subtitle-1" => "En Box Link te brindamos las bases para que comiences a hacer el sitio web de tu empresa?",
@@ -135,10 +135,24 @@ $langprint = array(
         "modal-2" => "Debe escribir una dirección de correo electrónico",
         "modal-3" => "Debe escribir una dirección de correo electrónico válida",
         "error-log" => "Ocurrio un error al iniciar sesión",
-    
+
 //  /# index
-    
-     
+
+//     chngpass
+        "chngpass-title" => "Reestablecer contraseña",
+        "chngpass-subtitle" => "Para llevar acabo la restauracion de la contraseña es necesario llenar el siguiente formulario.",
+        "chngpass-user" => "Usuario",
+        "chngpass-pass" => "Contraseña",
+        "chngpass-ad1" => "Por lo menos 6 caracteres de longitud
+                            Las contraseñas deben contenes",
+        "chngpass-ad2" => "Al menos un caracter en mayusculas (A..Z)",
+        "chngpass-ad3" => "Al menos un caracter en minusculas (a..z)",
+        "chngpass-ad4" => "Al menos un caracter numerico (0..9)",
+        "chngpass-rpass" => "Confirmar contraseña",
+        "chngpass-send" => "Enviar",
+        "chngpass-out" => "Salir",
+//  /# chngpass
+
 //  estudiante
     "the-page-of" => "Sitio de",
 //      Pantalla de perfil
@@ -152,7 +166,7 @@ $langprint = array(
 //      Perfil de un tutor
         "tutor-no-course" => "no tiene cursos activos",
         "tutor-type" => "tutor",
-    
+
 //   /# Perfil de un tutor
 //   Suscripción a un curso
         "sus-sure" => "¿Estas seguro de suscribirte a este curso?",
@@ -178,7 +192,7 @@ $langprint = array(
         "teachers-page-panel-subs" => "Subscripciones",
         "teachers-page-panel-teachs" => "Tutores",
         "teachers-page-non-subs" => "No estas subscrito a ningun profesor",
-        
+
 //   /# tutores
 // /# estudiante
 //----------------------------------------------
@@ -203,7 +217,7 @@ $langprint = array(
     "tutors-list" => "Listado de tutores de Box Link",
     "students-list" => "Listado de estudiantes de Box Link",
     "admins-list" => "Listado de administradores de Box Link",
-    
+
 //      /# mantenimiento de usuarios
 // /# administrador
 
@@ -217,7 +231,7 @@ $langprint = array(
 
 // /# docente
 //----------------------------------------------
-    
+
 
 //    prueba
         "lel" => "El to&ntilde;ito :v",
