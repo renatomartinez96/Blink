@@ -41,91 +41,13 @@ Gerardo López | Iván Nolasco | Renato Andres
 
     include "auto.php";
     include "../assets/includes/lang.php";
-
-    // DISEÑO DEL PERFIL
-    $super = "";
-    $cambe = "";
-if(isset($_GET["user"]))
-{                                
-    $buscar = $_GET["user"];
-
-    if ($stmt10 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?"))
-    {
-        $stmt10->bind_param('s', $buscar);
-        $stmt10->execute();
-        $stmt10->store_result();
-        $stmt10->bind_result($avatar10,$nombres10,$apellidos10,$nacimiento10,$descripcion10,$correo10,$tipo10,$lang10,$idusuario10,$bannero10,$iduserconf10);
-        $stmt10->fetch();
-    }
-    $eltipo = "";
-    switch ($tipo10)
-    {
-        case 1;
-            $eltipo = $langprint["admin"];
-        break;
-        case 2;
-            $eltipo = $langprint["tutor"];
-        break;
-        case 3;
-            $eltipo = $langprint["student"];
-        break;
-    }
-    $cambe = $nombres10." ".$apellidos10;
-    $super .= "<div class='jumbotron  text-center' id='usrpanel' style='margin-bottom:0px;'>
-<img class='img-circle' src='../assets/img/avatares/".$avatar10.".png' style='width:10%;background: rgba(255, 255, 255, 0.4);'>
-<h3 >".$nombres10." ".$apellidos10."</h3>
-<h3>".$buscar."</h3>
-</div>
-<div class='col-sx-12 full'>
-<div class='col-sm-4 full'>
-    <div class='panel panel-primary'>
-        <div class='panel-heading text-center junction-regular'>
-            <h4>Información</h4>
-        </div>
-        <div class='panel-body text-center'>
-            <p class='junction-regular'>Nacimiento: </p>
-            <p>".$nacimiento10."</p>
-            <p class='junction-regular'>Tipo de usuario: </p>
-            <p>".$eltipo."</p>
-            <p class='junction-regular'>Descripción:</p>
-            <p class='text-justify'>".$descripcion10."</p>
-        </div>
-    </div>
-</div>
-<!-- cambiable -->
-<div class='col-sm-8 full'>
-";
-    // contenido del col-8
-    $col8 = "";
-    switch ($tipo10)
-    {
-        case 1;
-            $col8 = "soy admin";
-        break;
-        case 2;
-            $col8 = "soy profe";
-        break;
-        case 3;
-            $col8 = "soy imbe";
-        break;
-    }
-    // / contenido del col-8
-$super .= "".$col8."</div><!-- / cambiable -->
-</div>"; // Diseño del perfil
-}
-else
-{
-$super .= "lel";
-}
-
-    // / DISEÑO DEL PERFIL
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!--Core CSS-->
         <?php
-            $titulodelapagina = $cambe;
+            $titulodelapagina = "". $nombres. " ".$apellidos."";
             include 'main_css.php';
         ?>
         <!--/#Core CSS-->
@@ -225,7 +147,63 @@ $super .= "lel";
                 <div class="container">
                     <div class="row">
                     <!--Content-->
-                        <?=$super?>
+                        <div class="jumbotron  text-center" id="usrpanel" style="margin-bottom:0px;">
+                            <img class="img-circle" src="../assets/img/avatares/<?=$avatar?>.png" style="width:10%;background: rgba(255, 255, 255, 0.4);">
+                            <h3 ><?=$nombres." ".$apellidos;?></h3>
+                            <h3><?=$user?></h3>
+                        </div>
+                        <div class="col-sx-12 full">
+                            <div class="col-sm-4 full">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading text-center junction-regular">
+                                        <h4>Información</h4>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p class="junction-regular">Nacimiento: </p>
+                                        <p><?=$nacimiento?></p>
+                                        <p class="junction-regular">Nivel: </p>
+                                        <p><?=$tipo?></p>
+                                        <p class="junction-regular">Descripción:</p>
+                                        <p class="text-justify"><?=$descripcion?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 full">
+                                <?php
+                                
+                                ?>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading text-center junction-regular">
+                                        <h4>Trofeos</h4>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <div class="col-xs-6 full">
+                                            <a class="btn btn-info btn-block junction-bold" role="button" data-toggle="collapse" href="#boxlinktrophies" aria-expanded="false" aria-controls="boxlinktrophies">Trofeos Box Link</a>
+                                        </div>
+                                        <div class="col-xs-6 full">
+                                            <a class="btn btn-success btn-block junction-bold" role="button" data-toggle="collapse" href="#othertrophies" aria-expanded="false" aria-controls="othertrophies">Trofeos con tutor</a>
+                                        </div>
+                                        <div class="collapse" id="boxlinktrophies">
+                                            <div class="well">
+<!--
+                                                <hr>
+                                                <h4 class="junction-light text-center">Trofeos oficiales</h4>
+                                                <p class="junction-light">Estos los ganas al completar los cursos de Box Link (que se actualizan seguido)</p>
+-->
+                                            </div>
+                                        </div>
+                                        <div class="collapse" id="othertrophies">
+                                            <div class="well">
+                                                <p class="text-center">Trofeos de tutores</p>
+                                                <?php
+                                                    include "student_com_data.php";
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <!--/#Content-->
                     </div>
                 </div>
