@@ -11,7 +11,7 @@ include_once '../assets/includes/db_conexion.php';
             {
                 while ($row = $stmt->fetch_array()) {
                     $string .= "
-                        <a href='perfil.php?u=".$row['usuario']."' class='list-group-item'>
+                        <a href='profile.php?u=".$row['usuario']."' class='list-group-item'>
                             <h5 class='list-group-item-heading'>
                                 ".$row['nombres']." <span class='label label-primary'>".$row['usuario']."</span>
                             </h5> 

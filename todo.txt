@@ -2,6 +2,6 @@
 - reportes de los cursos
 - recargar páginas de mantenimiento del profesor después de guardar
 + validación de usuarios en modulo tutor
-- maquetación de la presentación de los profesores
-- validación de campos...
++ validación de campos...
+- traducir traducir traducir traducir traducir traducir traducir 
 

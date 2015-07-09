@@ -6,7 +6,7 @@ $sumnot = 0;
 $notafinal = 0;
 
 $stmt1 = $mysqli->query("SELECT curso.idcurso AS idcur, curso.nombre AS curnombre, curso.imagen AS curimg FROM `curso` 
-INNER JOIN `cursoestudiante` ON cursoestudiante.idcurso = curso.idcurso WHERE cursoestudiante.idestudiante = '".$idusr."'");
+INNER JOIN `cursoestudiante` ON cursoestudiante.idcurso = curso.idcurso WHERE cursoestudiante.idestudiante = '".$idusuario10."'");
 $infotoprint = "";
 
 if($result = $stmt1->num_rows)
@@ -70,5 +70,4 @@ else
                         <p>No se encontraron cursos</p>
                     </div>";
 }
-echo $infotoprint;
 ?>

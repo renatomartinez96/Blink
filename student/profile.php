@@ -100,17 +100,51 @@ if(isset($_GET["user"]))
     switch ($tipo10)
     {
         case 1;
-            $col8 = "soy admin";
+            $col8 = "<div class='panel panel-primary'>
+                        <div class='panel-heading text-center junction-regular'>
+                            <h4>Admin</h4>
+                        </div>
+                        <br>
+                        <h1 class='text-center junction-regular'>This user is the best</h1>
+                        <br>";
         break;
         case 2;
-            $col8 = "soy profe";
+        $col8 = "<div class='panel panel-primary'>
+                        <div class='panel-heading text-center junction-regular'>
+                            <h4>Cursos creados</h4>
+                        </div>";
+            include "pro-tutor.php";
         break;
         case 3;
-            $col8 = "soy imbe";
+            $col8 = "<div class='panel panel-primary'>
+                        <div class='panel-heading text-center junction-regular'>
+                            <h4>Trofeos</h4>
+                        </div>
+                        <div class='panel-body text-center'>
+                            <div class='col-xs-6 full'>
+                                <a class='btn btn-info btn-block junction-bold' role='button' data-toggle='collapse' href='#boxlinktrophies' aria-expanded='false' aria-controls='boxlinktrophies'>Trofeos Box Link</a>
+                            </div>
+                            <div class='col-xs-6 full'>
+                                <a class='btn btn-success btn-block junction-bold' role='button' data-toggle='collapse' href='#othertrophies' aria-expanded='false' aria-controls='othertrophies'>Trofeos con tutor</a>
+                            </div>
+                                <div class='collapse' id='boxlinktrophies'>
+                                    <div class='well'>
+                                    <br>
+                                        <h1 class='text-center junction-regular'>Proximamente</h1>
+                                    </div>
+                                </div>
+                                <div class='collapse' id='othertrophies'>
+                                    <div class='well'>
+                                    <br>
+                                        <h1 class='text-center junction-regular'>Trofeos de tutores</h1>
+                        ";
+            include "pro-student.php";
+            $col8 .= $infotoprint;
+            $col8 .= "</div></div></div>";
         break;
     }
     // / contenido del col-8
-$super .= "".$col8."</div><!-- / cambiable -->
+$super .= "".$col8."</div></div><!-- / cambiable -->
 </div>"; // Diseño del perfil
 }
 else
