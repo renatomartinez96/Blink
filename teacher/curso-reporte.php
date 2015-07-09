@@ -22,6 +22,26 @@ if ($stmt = $mysqli->prepare("SELECT nombre, curso.descripcion, imagen, nombres,
     $stmt->fetch();
 
 }
+$titleto = array();
+$descto = array();
+$teoto = array();
+$lel = $_GET['id'];
+
+$query = "SELECT leccion.nombre, leccion.descripcion, leccion.teoria FROM leccion WHERE idcurso = $lel";
+
+if ($resultado = $mysqli->query($query)) 
+{
+    $count = mysqli_num_rows($resultado);
+    //$x = 0;
+    while ($fila = $resultado->fetch_row()) 
+    {
+        array_push($titleto, $fila[0]);  
+        array_push($descto, $fila[1]);
+        array_push($teoto, $fila[2]);
+    }
+}
+
+
 
 class PDF extends FPDF
 {
@@ -41,7 +61,7 @@ function Header()
     $this->SetDrawColor(177,99,49);
     $this->SetFillColor(177,99,49);
     $this->SetTextColor(255,255,255);
-    $this->SetLineWidth(1);
+    $this->SetLineWidth(3);
     $this->Cell($w,9,$title,1,1,'C',true);
     $this->Ln(10);
     // Guardar ordenada
@@ -54,7 +74,7 @@ function Footer()
     $this->SetY(-15);
     $this->SetFont('Arial','I',8);
     $this->SetTextColor(128);
-    $this->Cell(0,10,'Página '.$this->PageNo(),0,0,'C');
+    $this->Cell(0,10,$this->PageNo(),0,0,'C');
 }
 
 //function SetCol($col)
@@ -95,23 +115,50 @@ function ChapterTitle($num, $label, $aut)
     $this->Cell(0,6,"$label",0,1,'L',false);
     $this->Ln(4);
     $this->SetFont('Arial','B',12);
-    $this->Cell(0,6,"$aut",0,1,'L',false);
+    $this->Cell(0,6,"Tutor: ".$aut,0,1,'L',false);
     $this->Ln(4);
     // Guardar ordenada
     $this->y0 = $this->GetY();
 }
 
-function ChapterBody($file,$imgto)
+function ChapterBody($file,$imgto, $count, $tp, $dt, $tot)
 {
+    
     // Abrir fichero de texto
     $txt = $file;
     $imgtop = $imgto;
     // Fuente
     $this->SetFont('Arial','',11);
-    $this->Image("../assets/img/pro/".$imgtop.".png",120,30,70);
+    $this->Image("../assets/img/pro/".$imgtop.".png",120,30,60);
     // Imprimir texto en una columna de 6 cm de ancho
-    $this->MultiCell(100,5,$txt);
+    $this->MultiCell(100,5,$txt);    
     $this->Ln();
+    $this->SetFont('Arial','B',12);
+    $this->Cell(0,6,"Lecciones:",0,1,'L',false);
+    $this->Ln();
+    $x=0;
+    for($x; $x < $count; $x++)
+    {
+        $this->SetFont('Arial','B',11);
+        $this->Cell(0,6,'Titulo',0,1,'L',false);
+        $this->Ln();
+        $this->SetFont('Arial','',11);
+        $this->Cell(0,6,$tp[$x],0,1,'L',false);
+        $this->Ln();
+        $this->SetFont('Arial','B',11);
+        $this->Cell(0,6,'Descripcion',0,1,'L',false);
+        $this->Ln();
+        $this->SetFont('Arial','',11);
+        $this->Cell(0,6,$dt[$x],0,1,'L',false);
+        $this->Ln();
+        $this->SetFont('Arial','B',11);
+        $this->Cell(0,6,'Teoria',0,1,'L',false);
+        $this->Ln();
+        $this->SetFont('Arial','',11);
+        $this->Cell(0,6,$tot[$x],0,1,'L',false);
+        $this->Ln();
+    }
+    
     // Cita en itálica
     $this->SetFont('','I');
     $this->Cell(0,5,'');
@@ -119,12 +166,13 @@ function ChapterBody($file,$imgto)
     //$this->SetCol(0);
 }
 
-function PrintChapter($num, $title, $file, $imgto, $aut)
+function PrintChapter($num, $title, $file, $imgto, $aut, $count, $tp, $dt, $tot)
 {
     // Añadir capítulo
     $this->AddPage();
     $this->ChapterTitle($num,$title, $aut);
-    $this->ChapterBody($file, $imgto);
+    $this->ChapterBody($file, $imgto, $count, $tp, $dt, $tot);
+    //$this->lec($curid);
 }
 }
 
@@ -133,7 +181,7 @@ $title = "Reporte del curso: ".$titulo."";
 $pdf->SetTitle($title);
 $autor = $autornam." ".$autorape." - ".$autorusr;
 $pdf->SetAuthor($autor);
-$pdf->PrintChapter(1,$titulo,$descripcion,$img, $autor);
+$pdf->PrintChapter(1,$titulo,$descripcion,$img, $autor, $count, $titleto, $descto, $teoto);
 //$pdf->PrintChapter(2,$titulo,$descripcion,$img);
 $pdf->Output();
 ?>
