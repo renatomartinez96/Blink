@@ -301,7 +301,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 mkdir($nombre."/css", 0777, true);
                                 mkdir($nombre."/img", 0777, true);
                                 mkdir($nombre."/video", 0777, true);
+								mkdir($nombre."/video/thumbs/", 0777, true);
                                 mkdir($nombre."/non_supported", 0777, true);
+								copy("assets/index.php",$nombre."/video/thumbs/index.php");
                                 copy("assets/index.php",$nombre."/video/index.php");
                                 copy("assets/index.php",$nombre."/non_supported/index.php");
                                 copy("assets/index.php",$nombre."/img/index.php");
