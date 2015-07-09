@@ -85,6 +85,25 @@
                         <div id="20" class="col-xs-5 htmlMain bg-primary "><h5>T ROW</h5></div>
                         <div id="21" class="col-xs-5 htmlMain bg-primary "><h5>T HEAD</h5></div>
                         <div id="22" class="col-xs-5 htmlMain bg-primary "><h5>T CELL</h5></div>
+                        <div id="25" class="col-xs-5 htmlMain bg-primary "><h5>VIDEO</h5></div>
+                        <div id="26" class="col-xs-5 htmlMain bg-primary "><h5>SOURCE</h5></div>
+                        <div id="29" class="col-xs-5 htmlMain bg-primary "><h5>ABBR</h5></div>
+                        <div id="30" class="col-xs-5 htmlMain bg-primary "><h5>ADRESS</h5></div>
+                        <div id="31" class="col-xs-5 htmlMain bg-primary "><h5>ARTICLE</h5></div>
+                        <div id="32" class="col-xs-5 htmlMain bg-primary "><h5>ASIDE</h5></div>
+                        <div id="33" class="col-xs-5 htmlMain bg-primary "><h5>BDI</h5></div>
+                        <div id="34" class="col-xs-5 htmlMain bg-primary "><h5>BDO</h5></div>
+                        <div id="35" class="col-xs-5 htmlMain bg-primary "><h5>BLOCKQUOTE</h5></div>
+                        <div id="36" class="col-xs-5 htmlMain bg-primary "><h5>BR</h5></div>
+                        <div id="37" class="col-xs-5 htmlMain bg-primary "><h5>BUTTON</h5></div>
+                        <div id="38" class="col-xs-5 htmlMain bg-primary "><h5>INPUT</h5></div>
+                        <div id="39" class="col-xs-5 htmlMain bg-primary "><h5>OPTION</h5></div>
+                        <div id="40" class="col-xs-5 htmlMain bg-primary "><h5>D LIST</h5></div>
+                        <div id="41" class="col-xs-5 htmlMain bg-primary "><h5>D ITEM</h5></div>
+                        <div id="42" class="col-xs-5 htmlMain bg-primary "><h5>FORM</h5></div>
+                        <div id="45" class="col-xs-5 htmlMain bg-primary "><h5>LI</h5></div>
+                        <div id="43" class="col-xs-5 htmlMain bg-primary "><h5>LABEL</h5></div>
+                        <div id="44" class="col-xs-5 htmlMain bg-primary "><h5>UL</h5></div>
                        </div>
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>
@@ -99,8 +118,21 @@
                       </div>
                       <div class="HTMltags">
                         <div id="7" class="col-xs-5 htmlMain orange "><h5>HREF</h5></div>
-                        <div id="8" class="col-xs-5 htmlMain orange "><h5>SRC</h5></div>
+                        <div id="8" class="col-xs-5 htmlMain orange "><h5>SRC IMAGE</h5></div>
                         <div id="9" class="col-xs-5 htmlMain orange "><h5>NAME</h5></div>
+                        <div id="24" class="col-xs-5 htmlMain orange "><h5>SRC VIDEO</h5></div>
+                        <div id="27" class="col-xs-5 htmlMain orange "><h5>TYPE</h5></div>
+                        <div id="28" class="col-xs-5 htmlMain orange "><h5>CONTROLS</h5></div>
+                        <div id="46" class="col-xs-5 htmlMain orange "><h5>WIDTH</h5></div>
+                        <div id="47" class="col-xs-5 htmlMain orange "><h5>HEIGHT</h5></div>
+                        <div id="48" class="col-xs-5 htmlMain orange "><h5>ALT</h5></div>
+                        <div id="49" class="col-xs-5 htmlMain orange "><h5>TARGET</h5></div>
+                        <div id="50" class="col-xs-5 htmlMain orange "><h5>TYPE</h5></div>
+                        <div id="51" class="col-xs-5 htmlMain orange "><h5>CLASS</h5></div>
+                        <div id="52" class="col-xs-5 htmlMain orange "><h5>SPAN</h5></div>
+                        <div id="53" class="col-xs-5 htmlMain orange "><h5>DATA</h5></div>
+                        <div id="54" class="col-xs-5 htmlMain orange "><h5>VALUE</h5></div>
+                        <div id="55" class="col-xs-5 htmlMain orange "><h5>MAX</h5></div>
                       </div>
                       <label class='noexiste'>No se encontraron resultados</label>
                   </div>

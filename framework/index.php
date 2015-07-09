@@ -116,6 +116,7 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                 </div>
               </div>
             </div>
+            
         <script src="js/upload.js" type="text/javascript"></script>
 
 	   <script>

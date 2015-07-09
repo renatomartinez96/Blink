@@ -356,7 +356,9 @@
                 height: 12vh;
                 overflow: hidden;
             }
-
+.input-group {
+  width: 100%;
+}
 /*Media query*/
 @media (min-width: 200px) and (max-width: 767px) {
       .panel {
