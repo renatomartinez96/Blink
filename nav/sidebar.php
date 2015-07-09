@@ -12,7 +12,7 @@
     }
     ?>
     <li class="sidebar-brand">
-        <a href='profile.php'><img class='toggled' src='../assets/img/avatares/<?=$avatar?>.png' id='avatar'></a>
+        <a href='profile.php?user=<?=$user?>'><img class='toggled' src='../assets/img/avatares/<?=$avatar?>.png' id='avatar'></a>
     </li>
     <?php
     switch($tipo){

@@ -30,7 +30,7 @@ if ($stmt2->num_rows > 0)
 else
 {
     $col8 .= "<div class='alert alert-warning'>
-        <p><strong>".$usuario1."</strong> ".$langprint['tutor-no-course']."</p>
+        <p><strong>".$buscar."</strong> ".$langprint['tutor-no-course']."</p>
         </div>";
 }
 ?>

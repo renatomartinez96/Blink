@@ -25,18 +25,6 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->store_result();
         $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
         $stmt->fetch();
-        switch($tipo)
-        {
-            case "1":
-
-            break;
-            case "2":
-
-            break;
-            case "3":
-
-            break;
-        }
     }
 
     include "auto.php";
@@ -46,7 +34,7 @@ Gerardo López | Iván Nolasco | Renato Andres
     $super = "";
     $cambe = "";
 if(isset($_GET["user"]))
-{                                
+{         
     $buscar = $_GET["user"];
 
     if ($stmt10 = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.usuario = ?"))
@@ -149,7 +137,7 @@ $super .= "".$col8."</div></div><!-- / cambiable -->
 }
 else
 {
-$super .= "lel";
+    header("Location: index.php");
 }
 
     // / DISEÑO DEL PERFIL
