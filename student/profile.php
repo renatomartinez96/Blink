@@ -237,6 +237,5 @@ $super .= "lel";
             include 'main_js.php';
         ?>
         <!--/#Main js-->
-        <!--Editor js-->
     </body>
 </html>

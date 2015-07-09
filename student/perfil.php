@@ -9,6 +9,7 @@ licenses restricting copying, distribution, and decompilation.
 Gerardo López | Iván Nolasco | Renato Andres
 
 -->
+
 <?php
 
     include_once '../assets/includes/db_conexion.php';
@@ -130,38 +131,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <h3 class="panel-title">Courses</h3>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 full">
-                             <div class="container" style="margin-bottom:15px;">
-                                 <div class="col-xs-12 well full">
-                                    <div class="col-md-5 full">
-                                         <a href="#">
-                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt="">
-                                         </a>
-                                     </div>
-                                     <div class="col-md-7">
-                                         <h3>Project One</h3>
-                                         <h4>Subheading</h4>
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-                                     </div>
-                                </div>
-                             </div>
-                            <div class="container" style="margin-bottom:15px;">
-                                 <div class="col-xs-12 well full">
-                                    <div class="col-md-5 full">
-                                         <a href="#">
-                                            <img class="img-responsive bg-primary" src="../assets/img/trofeos/1.jpg" alt="">
-                                         </a>
-                                     </div>
-                                     <div class="col-md-7">
-                                         <h3>Project One</h3>
-                                         <h4>Subheading</h4>
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                                         <a class="btn btn-info" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-                                     </div>
-                                </div>
-                             </div>
                         </div>
 
 <?php

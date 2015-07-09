@@ -139,13 +139,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                     <li class="layer" data-depth="0.30"><img id="layer3" src="assets/img/layers/layer2.png" style="width:80%;"></li>
                     <li class="layer" data-depth="0.10"><img id="layer2" src="assets/img/layers/layer3.png" style="width:80%;"></li>
                     <li class="layer" data-depth="0.50"><img id="layer4" src="assets/img/layers/layer1.png" style=""></li>
-<!--                      <li class="layer" data-depth="0.20"><h3>Box Link</h3></li>-->
-<!--
-                  <li class="layer" data-depth="0.40"><img src="layer3.png"></li>
-                  <li class="layer" data-depth="0.60"><img src="layer4.png"></li>
-                  <li class="layer" data-depth="0.80"><img src="layer5.png"></li>
-                  <li class="layer" data-depth="1.00"><img src="layer6.png"></li>
--->
                 </ul>
             </div>
             <div class="section text-center " id="section2">
@@ -183,10 +176,13 @@ Gerardo López | Iván Nolasco | Renato Andres
                 <div class="intro text-center">
                     <h1 class="junction-bold">Mantente en contacto</h1>
                         <br>
-                        <input type="text" class="input-lg" id="inputName" placeholder="Nombre" style="width:30%;"><br><br>
-                        <input type="text" class="input-lg" id="inputEmail" placeholder="Correo Electrónico" style="width:30%;"><br><br>
-                        <textarea class=" input-lg"rows="3" id="inputMensaje" placeholder="Mensaje" style="width:30%;"></textarea><br><br>
-                        <input type="submit" class="btn btn-success btn-lg" value="Enviar">
+                        <form action="mail.php" method="post">
+                            <input type="text" name="nombre" class="input-lg" id="inputName" placeholder="Nombre" style="width:30%;"><br><br>
+                            <input type="text" name="correo" class="input-lg" id="inputEmail" placeholder="Correo Electrónico" style="width:30%;"><br><br>
+                            <input type="text" name="asunto" class="input-lg" id="asunto" placeholder="Asunto" style="width:30%;"><br><br>
+                            <textarea name="mensaje" class=" input-lg"rows="3" id="inputMensaje" placeholder="Mensaje" style="width:30%;"></textarea><br><br>
+                            <input type="submit" class="btn btn-success btn-lg" value="Enviar">
+                        </form>
                 </div>
             </div>
         </div>
@@ -293,13 +289,29 @@ Gerardo López | Iván Nolasco | Renato Andres
             });
         </script>
         <script src="assets/js/bootbox.min.js" type="text/javascript"></script>
+        <?php
+            if(isset($_SESSION['error']))
+            {
+                echo "
+                    <script>
+                        $(document).ready(function(){
+                            bootbox.alert({
+                                title: '<center><h2>Box link</h2></center>',
+                                message: '<center><h5>Ocurrio un error al iniciar sesión - There was an error when logging</h5></center>',
+                            });
+                        });
+                    </script>
+                ";
+                session_destroy();
+            }
+        ?>
         <script>
             $(document).ready(function(){
                 $(".nav-open").click(function(e) {
         			e.preventDefault();
                     $("#navbar-box-link").toggleClass("toggled");
                     $("#login_form").toggleClass("hidden");
-                    $("body").toggleClass("body_no_scroll");
+//                    $("body").toggleClass("body_no_scroll");
                     $("#nav-open1").toggleClass("hidden");
                     $("#nav-open2").toggleClass("hidden");
                 });
@@ -317,7 +329,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                     easing: 'easeInOutCubic',
 
                     afterRender: function(){
-    					//playing the video
     					$('#myVideo').get(0).play();
 
     				},
