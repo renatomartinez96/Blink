@@ -137,25 +137,35 @@ function ChapterBody($file,$imgto, $count, $tp, $dt, $tot)
     $this->Cell(0,6,"Lecciones:",0,1,'L',false);
     $this->Ln();
     $x=0;
-    for($x; $x < $count; $x++)
+    if($count > 0)
     {
-        $this->SetFont('Arial','B',11);
-        $this->Cell(0,6,'Titulo',0,1,'L',false);
-        $this->Ln();
+        for($x; $x < $count; $x++)
+        {
+            $this->SetFont('Arial','B',11);
+            $this->Cell(0,6,'Titulo',0,1,'L',false);
+            $this->Ln();
+            $this->SetFont('Arial','',11);
+            $this->Cell(0,6,$tp[$x],0,1,'L',false);
+            $this->Ln();
+            $this->SetFont('Arial','B',11);
+            $this->Cell(0,6,'Descripcion',0,1,'L',false);
+            $this->Ln();
+            $this->SetFont('Arial','',11);
+            $this->Cell(0,6,$dt[$x],0,1,'L',false);
+            $this->Ln();
+            $this->SetFont('Arial','B',11);
+            $this->Cell(0,6,'Teoria',0,1,'L',false);
+            $this->Ln();
+            $this->SetFont('Arial','',11);
+            $this->Cell(0,6,$tot[$x],0,1,'L',false);
+            $this->Ln();
+        }
+    }
+    else
+    {
         $this->SetFont('Arial','',11);
-        $this->Cell(0,6,$tp[$x],0,1,'L',false);
-        $this->Ln();
-        $this->SetFont('Arial','B',11);
-        $this->Cell(0,6,'Descripcion',0,1,'L',false);
-        $this->Ln();
-        $this->SetFont('Arial','',11);
-        $this->Cell(0,6,$dt[$x],0,1,'L',false);
-        $this->Ln();
-        $this->SetFont('Arial','B',11);
-        $this->Cell(0,6,'Teoria',0,1,'L',false);
-        $this->Ln();
-        $this->SetFont('Arial','',11);
-        $this->Cell(0,6,$tot[$x],0,1,'L',false);
+        $this->SetTextColor(217,83,79);
+        $this->Cell(0,6,"Este curso no tiene lecciones",0,1,'L',false);
         $this->Ln();
     }
     
