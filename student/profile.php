@@ -258,6 +258,7 @@ else
         <?php
             include 'main_js.php';
         ?>
+        <script src="./assets/ajax/index.js"></script>
         <!--/#Main js-->
     </body>
 </html>
