@@ -1,7 +1,9 @@
 <?php
 $dir = "../users/" . $user . "/img/";
     $dirD = "../users/" . $user . "/video/";
-    function opendire($dir){
+    $NoRealtivoDos = "http://localhost/blink/users/" . $user . "/img/";
+    $NoRealtivo = "http://localhost/blink/users/" . $user . "/video/";
+    function opendire($dir,$NoRealtivoDos){
         $directorio = opendir($dir); //ruta actual
         while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
         {
@@ -18,13 +20,13 @@ $dir = "../users/" . $user . "/img/";
                     case ".JPG":
                     case "JPEG":
                     case "jpeg":
-                        echo "<option value='".$dir.$archivo."' data-imagesrc='".$dir.$archivo."' data-description='$archivo'></option>";
+                        echo "<option value='".$NoRealtivoDos.$archivo."' data-imagesrc='".$dir.$archivo."' data-description='$archivo'></option>";
                     break;
                 }
             }
         }
     }
-    function opendireD($dir){
+    function opendireD($dir,$NoRealtivo){
         $directorio = opendir($dir); //ruta actual
         while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
         {
@@ -42,7 +44,7 @@ $dir = "../users/" . $user . "/img/";
                     case ".JPG":
                     case "JPEG":
                     case "jpeg":
-                        echo "<option value='".$dir.$archivo."' data-imagesrc='".$dir."/thumbs/".$thumname."' data-description='$archivo'></option>";
+                        echo "<option value='".$NoRealtivo.$archivo."' data-imagesrc='".$dir."/thumbs/".$thumname."' data-description='$archivo'></option>";
                     break;
                 }
             }

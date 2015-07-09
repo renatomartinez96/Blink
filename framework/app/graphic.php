@@ -57,7 +57,7 @@
           <div class="panel-heading">
              <ul class="nav nav-pills">
               <li class="active clean"><a href="#html" data-toggle="tab" aria-expanded="true">HTML</a></li>
-              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATRIBUTOS</a></li>
+              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATRIBUTES</a></li>
               <li class="clean"><a href="#css" data-toggle="tab" aria-expanded="true">CSS</a></li>
             </ul>
           </div>
@@ -66,7 +66,7 @@
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
                     <div class="form-group">
-                          <p class="titulo">Objetos HTML</p>
+                          <p class="titulo">HTML Objects</p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -96,16 +96,16 @@
                         <div id="35" class="col-xs-5 htmlMain bg-primary "><h5>BLOCKQUOTE</h5></div>
                         <div id="36" class="col-xs-5 htmlMain bg-primary "><h5>BR</h5></div>
                         <div id="37" class="col-xs-5 htmlMain bg-primary "><h5>BUTTON</h5></div>
-                        <div id="38" class="col-xs-5 htmlMain bg-primary "><h5>INPUT</h5></div>
+                        <!--<div id="38" class="col-xs-5 htmlMain bg-primary "><h5>INPUT</h5></div>
                         <div id="39" class="col-xs-5 htmlMain bg-primary "><h5>OPTION</h5></div>
                         <div id="40" class="col-xs-5 htmlMain bg-primary "><h5>D LIST</h5></div>
                         <div id="41" class="col-xs-5 htmlMain bg-primary "><h5>D ITEM</h5></div>
                         <div id="42" class="col-xs-5 htmlMain bg-primary "><h5>FORM</h5></div>
                         <div id="45" class="col-xs-5 htmlMain bg-primary "><h5>LI</h5></div>
                         <div id="43" class="col-xs-5 htmlMain bg-primary "><h5>LABEL</h5></div>
-                        <div id="44" class="col-xs-5 htmlMain bg-primary "><h5>UL</h5></div>
+                        <div id="44" class="col-xs-5 htmlMain bg-primary "><h5>UL</h5></div>-->
                        </div>
-                      <label class='noexiste'>No se encontraron resultados</label>
+                      <label class='noexiste'>NO RESULTS FOUND</label>
                   </div>
                   <div class="tab-pane fade" id="atr">
                       <div class="form-group">
@@ -134,7 +134,7 @@
                         <div id="54" class="col-xs-5 htmlMain orange "><h5>VALUE</h5></div>
                         <div id="55" class="col-xs-5 htmlMain orange "><h5>MAX</h5></div>
                       </div>
-                      <label class='noexiste'>No se encontraron resultados</label>
+                      <label class='noexiste'>NO RESULTS FOUND</label>
                   </div>
                  <div class="tab-pane fade" id="css">
 
@@ -156,7 +156,7 @@
                          <div id="17" class="col-xs-5 htmlMain royal "><h5>FONT-SIZE</h5></div>
                          <div id="23" class="col-xs-5 htmlMain royal "><h5>BORDER</h5></div>
                      </div>
-                     <label class='noexiste'>No se encontraron resultados</label>
+                     <label class='noexiste'>NO RESULTS FOUNDE</label>
                  </div>
                 </div>
             </div>
@@ -169,10 +169,10 @@
               <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
               <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
                 <div class="divide">
-                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Vista en nueva pestaña"><i class="fa fa-share"></i></button>
-                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Reiniciar lección"><i class="fa fa-repeat"></i></button>
-                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Descargar HTML"><i class="fa fa-bolt"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Mover"><i class="fa fa-arrows"></i></button>
+                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Open in new tab"><i class="fa fa-share"></i></button>
+                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Restart"><i class="fa fa-repeat"></i></button>
+                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Download HTML"><i class="fa fa-bolt"></i></button>
+                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Move"><i class="fa fa-arrows"></i></button>
                   <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
 
                 </div>

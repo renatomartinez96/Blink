@@ -78,7 +78,7 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                                 <div class='panel-heading' role='tab' id='headingTwo'>
                                   <h4 class='panel-title'>
                                     <div class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
-                                      <h4 class='pista'>Modo libre</h4>
+                                      <h4 class='pista'>Free mode</h4>
                                     </div>
                                   </h4>
                               </div>
@@ -101,7 +101,7 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                   <div class="modal-body">
                            <div class="col-sm-12 full bg-warning">
                         <div class="col-xs-12 full text-center">
-                            <h4>Abrir archivo</h4>
+                            <h4>Open file</h4>
                         </div>
                         <div class="col-xs-12 full">
                             <form action="#" enctype="multipart/form-data" method="post">
