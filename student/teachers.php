@@ -24,6 +24,8 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->bind_result($idusuario, $avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
         $stmt->fetch();
     }
+    include "auto.php";
+    include "../assets/includes/lang.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,25 +61,9 @@ Gerardo López | Iván Nolasco | Renato Andres
 	</head>
 	<body>
         <!--Topbar -->
-        <div class="col-sm-12">
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="navbar-header">
-                    <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle" style="float:left;margin-top:2px;margin-bottom:2px; margin-right:5px;border-radius:0px;margin-left:5px;"><i class="fa fa-bars fa-2x"></i></a>
-                    <a class="navbar-brand"><img src="../assets/img/brand1.png"></a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left" style="margin-top:7px;">
-                        <li><a href="#subs">Mis profesores</a></li>
-                        <li><a href="#teach">Profesores</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <a style="margin-right: 25px; margin-top: 6px;" href="../assets/includes/logout.php" role="button">logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <?php
+			include '../nav/topbar.php';
+		?>
 		<!--/#Topbar -->
 		<div id="wrapper" class="toggled">
 			<!--Sidebar -->
@@ -94,10 +80,10 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="panel col-xs-12 full">
                             <div class="panel-heading full" style="border-bottom: 0px;">
                                 <div class="jumbotron text-center" id="usrpanel" style="margin-bottom: 0px;">
-                                    <h2 class="junction-bold">Tutores</h2>
-                                    <h4 class="junction-light">En esta seccion puedes buscar y suscribirte a diferentes tutores para comenzar a aprender.</h4>
+                                    <h2 class="junction-bold"><?=$langprint['teachers-page-title']?></h2>
+                                    <h4 class="junction-light"><?=$langprint['teachers-page-description']?></h4>
                                     <center><div class="form-group full text-center" style="width:50%;">
-                                        <input type="text" class="form-control" placeholder="Buscar" autocomplete="off" id="SearchStringT"> 
+                                        <input type="text" class="form-control" placeholder="<?=$langprint['teachers-page-search']?>" autocomplete="off" id="SearchStringT"> 
                                         <div class="list-group" id="SearchResult"></div>
                                     </div></center>
                                 </div>
@@ -109,7 +95,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="col-md-4 col-xs-12 full">
                                     <div class="panel panel-success">
                                         <div class="panel-heading">
-                                        <h3 class="panel-title">Subscripciones</h3>
+                                        <h3 class="panel-title"><?=$langprint['teachers-page-panel-subs']?></h3>
                                         </div>
                                         <div class="panel-body" onload="loadteachers()" id="subsc">
                                         <?php
@@ -144,7 +130,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                             }
                                             else
                                             {
-                                                echo "<h1>No estas subscrito a ningun profesor</h1>";
+                                                echo "<h1>" . $langprint['teachers-page-non-subs'] . "</h1>";
                                             }
                                         ?>
                                         </div>
@@ -153,7 +139,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="col-md-8 col-xs-12 full">
                                     <div class="panel panel-info">
                                         <div class="panel-heading">
-                                        <h3 class="panel-title">Profesores</h3>
+                                        <h3 class="panel-title"><?=$langprint['teachers-page-panel-teachs']?></h3>
                                         </div>
                                         <div class="panel-body">
                                         <?php

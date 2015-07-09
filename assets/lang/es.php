@@ -110,6 +110,35 @@ $langprint = array(
 //----------------------------------------------
 
     
+//  index
+        "slider-title-1" => "¿Estas iniciando una empresa?",
+        "slider-subtitle-1" => "En Box Link te brindamos las bases para que comiences a hacer el sitio web de tu empresa?",
+        "slider-title-2" => "¿O simplemente te apasiona la informática?",
+        "slider-subtitle-2" => "En Box Link podrás aprender a crear tus propios sitios web desde cero",
+        "section-5-title" => "¿Qué esperas para registrarte y comenzar a aprender junto a miles de personas en el mundo?",
+        "section-5-subtitle" => "Para registrarte, haz clic <a href='registrarse.php'>aqui</a>",
+        "contact-title" => "Mantente en contacto",
+        "contact-name" => "Nombre",
+        "contact-mail" => "Correo Electrónico",
+        "contact-issue" => "Asunto",
+        "contact-message" => "Mensaje",
+        "contact-btn" => "Enviar",
+        "welcomeblink" => "¡Bienvenido a BLink!",
+        "log-message" => "Inicio de sesión",
+        "emailnames" => "Usuario o Correo electr&oacute;nico",
+        "emailexample" => "ejemplo@mail.com",
+        "contra" => "Contrase&ntilde;a",
+        "entrarlog" => "¡Entrar!",
+        "sincuenta" => "¿Todavía no tienes una cuenta? ¡Crea una aquí!",
+        "olvcontra" => "Olvide mi contraseña",
+        "modal-1" => "Para restablecer se requiere la contraseña que escriba su dirección de correo electrónico registrada en la plataforma, le enviaremos un correo electrónico con la información necesaria para la transacción.",
+        "modal-2" => "Debe escribir una dirección de correo electrónico",
+        "modal-3" => "Debe escribir una dirección de correo electrónico válida",
+        "error-log" => "Ocurrio un error al iniciar sesión",
+    
+//  /# index
+    
+     
 //  estudiante
     "the-page-of" => "Sitio de",
 //      Pantalla de perfil
@@ -128,6 +157,29 @@ $langprint = array(
 //   Suscripción a un curso
         "sus-sure" => "¿Estas seguro de suscribirte a este curso?",
 //   /# Suscripción a un curso
+//      Explorador de archivos
+        "ex-des" => "Si deseas subir imagenes y videos para utilizarlos en su propia pagina web o para completar sus lecciones lo puede hacer desde aqui",
+        "ex-btn-file" => "Seleccionar archivo",
+        "ex-btn-upl" => "Subir",
+        "ex-panel-photo" => "Fotos",
+        "ex-panel-video" => "Videos",
+//   /# Explorador de archivos
+//      Editor de codigo
+        "ed-panel-header" => "Vista previa",
+        "ed-panel-header-btn" => "Actualizar",
+//   /# Editor de codigo
+//      subiendo archivos
+        "upload-files-title" => "Sus archivos están siendo procesados",
+//   /# subiendo archivos
+//      tutores
+        "teachers-page-title" => "Tutores",
+        "teachers-page-description" => "En esta sección puedes buscar y suscribirte a diferentes tutores para comenzar a aprender.",
+        "teachers-page-search" => "Buscar",
+        "teachers-page-panel-subs" => "Subscripciones",
+        "teachers-page-panel-teachs" => "Tutores",
+        "teachers-page-non-subs" => "No estas subscrito a ningun profesor",
+        
+//   /# tutores
 // /# estudiante
 //----------------------------------------------
 

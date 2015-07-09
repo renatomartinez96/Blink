@@ -111,6 +111,35 @@ $langprint = array(
 //----------------------------------------------
 
     
+//  index
+        "slider-title-1" => "Are you starting a company?",
+        "slider-subtitle-1" => "In Box Link we provide you the basis for starting making your business website",
+        "slider-title-2" => "Or do you simply passionate about computing?",
+        "slider-subtitle-2" => "In Link Box you will learn how to create your own websites",
+        "section-5-title" => "What are you waiting to sign up and start learning along with thousands of people in the world?",
+        "section-5-subtitle" => "To sign up, click <a href='registrarse.php'>here</a>",
+        "contact-title" => "Keep in touch",
+        "contact-name" => "Name",
+        "contact-mail" => "Email",
+        "contact-issue" => "Issue",
+        "contact-message" => "Message",
+        "contact-btn" => "Send",
+        "welcomeblink" => "¡Welcome to Box Link!",
+        "log-message" => "Login",
+        "emailname" => "Username or Email",
+        "emailexample" => "example@mail.com",
+        "contra" => "Password",
+        "entrarlog" => "¡Login!",
+        "sincuenta" => "Do not you have an account yet? Create one here!",
+        "olvcontra" => "I forgot my password",
+        "modal-1" => "To reset the password is required to enter your email registered on the platform, we will send you an email with the necessary information for the transaction.",
+        "modal-2" => "You must type an email address",
+        "modal-3" => "You must type an valid email address",
+        "error-log" => "There was an error when logging",
+    
+//  /# index
+    
+       
 //  estudiante
     "the-page-of" => "Website of",
 //      Pantalla de perfil
@@ -128,6 +157,29 @@ $langprint = array(
 //   Suscripción a un curso
         "sus-sure" => "¿Estas seguro de suscribirte a este curso?",
 //   /# Suscripción a un curso
+    //      Explorador de archivos
+        "ex-des" => "If you wish to upload images and videos to use them in your own website or for completing your lessons you can do it here",
+        "ex-btn-file" => "Choose file",
+        "ex-btn-upl" => "Upload",
+        "ex-panel-photo" => "Photos",
+        "ex-panel-video" => "Videos",
+//   /# Explorador de archivos
+//      Editor de codigo
+        "ed-panel-header" => "Preview",
+        "ed-panel-header-btn" => "Update",
+//   /# Editor de codigo
+//      subiendo archivos
+        "upload-files-title" => "Your files are being processed",
+//   /# subiendo archivos
+    //      tutores
+        "teachers-page-title" => "Teachers",
+        "teachers-page-description" => "In this section you can search and subscribe to different tutors to start learning.",
+        "teachers-page-search" => "Search",
+        "teachers-page-panel-subs" => "Subscriptions",
+        "teachers-page-panel-teachs" => "Teachers",
+        "teachers-page-non-subs" => "You are not subscribed to any teacher",
+        
+//   /# tutores
 // /# estudiante
 //----------------------------------------------
 

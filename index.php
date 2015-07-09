@@ -12,21 +12,18 @@ Gerardo López | Iván Nolasco | Renato Andres
 <?php
     include_once 'assets/includes/db_conexion.php';
     include_once 'assets/includes/funciones.php';
-
-    if(isset($_GET["lang"]))
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    if($lang == "es")
     {
-        if($_GET["lang"]=="en")
-        {
-            include "assets/lang/ivan-en.php";
-        }
-        else
-        {
-            include "assets/lang/ivan-es.php";
-        }
+        include "assets/lang/".$lang.".php";
+    }
+    elseif($lang == "en")
+    {
+        include "assets/lang/".$lang.".php";
     }
     else
     {
-        include "assets/lang/ivan-es.php";
+        include "assets/lang/es.php";
     }
     sec_session_start();
 
@@ -74,20 +71,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                 <br>
                 <form id="login_form" action="assets/includes/login_proceso.php" class="hidden col-xs-12" method="post" name="login_form" >
                     <div class="col-xs-12">
-                        <h1 class="junction-bold">Inicio de sesión</h1>
-                        <h3 class="junction-regular">Usuario o correo electrónico</h3>
+                        <h1 class="junction-bold"><?=$langprint['log-message']?></h1>
+                        <h3 class="junction-regular"><?=$langprint['emailnames']?></h3>
                             <input type="text" name="email" id="email" placeholder="<?=$langprint['emailexample']?>" class=" input-lg inputnav" autocomplete="off" required>
-                        <h3 class="junction-regular">Contraseña</h3>
+                        <h3 class="junction-regular"><?=$langprint['contra']?></h3>
                             <input type="password" name="password" placeholder="<?=$langprint['contra']?>" id="password" class="input-lg inputnav" autocomplete="off" required>
                     </div>
                     <div class="col-xs-12">
                         <br>
-                        <input type="button" value="Log in" class="row btn btn-success btn-lg" onclick="formhash(this.form, this.form.password);" />
+                        <input type="button" value="<?=$langprint['entrarlog']?>" class="row btn btn-success btn-lg" onclick="formhash(this.form, this.form.password);" />
                     </div>
                     <div class="col-xs-12">
                         <br>
-                        <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-default btnnav' title="Olvide mi contraseña">Olvide mi contraseña</a>
-                        <a href='registrarse.php' class='btn btn-default  btnnav'>Registro</a>
+                        <a id="token" data-toggle="modal" data-target="#myModal" class='btn btn-default btnnav' title="Olvide mi contraseña"><?=$langprint['olvcontra']?></a>
+                        <a href='registrarse.php' class='btn btn-default  btnnav'><?=$langprint['sincuenta']?></a>
                     </div>
                 </form>
             </div>
@@ -149,39 +146,39 @@ Gerardo López | Iván Nolasco | Renato Andres
             <div class="section" id="section3">
                 <div class="slide" id="slide1">
                     <div class="intro">
-        				<h1 class="junction-bold">¿Estas iniciando una empresa?</h1>
+        				<h1 class="junction-bold"><?=$langprint['slider-title-1']?></h1>
         				<h3 class="junction-regular">
-        					En <b>Box Link</b> te brindamos las bases para que comiences a hacer el sitio web de tu empresa
+        					<?=$langprint['slider-subtitle-1']?>
         				</h3>
                     </div>
         		</div>
         	    <div class="slide" id="slide2">
                     <div class="intro">
-        				<h1 class="junction-bold">¿O simplemente te apasiona la informática?</h1>
+        				<h1 class="junction-bold"><?=$langprint['slider-title-2']?></h1>
         				<h3 class="junction-regular">
-        					En <b>Box Link</b> podrás aprender a crear tus propios sitios web desde cero
+        					<?=$langprint['slider-subtitle-2']?>
         				</h3>
                     </div>
         		</div>
             </div>
             <div class="section" id="section4">
                 <div class="intro">
-                    <h1 class="junction-bold">¿Qué esperas para registrarte y comenzar a aprender junto a miles de personas en el mundo?</h1>
+                    <h1 class="junction-bold"><?=$langprint['section-5-title']?></h1>
                     <h3 class="junction-regular">
-                        Para registrarte, haz clic <a href='registrarse.php' >aqui</a>
+                        <?=$langprint['section-5-subtitle']?>
                     </h3>
                 </div>
             </div>
             <div class="section" id="section5">
                 <div class="intro text-center">
-                    <h1 class="junction-bold">Mantente en contacto</h1>
+                    <h1 class="junction-bold"><?=$langprint['contact-title']?></h1>
                         <br>
                         <form action="mail.php" method="post">
-                            <input type="text" name="nombre" class="input-lg" id="inputName" placeholder="Nombre" style="width:30%;"><br><br>
-                            <input type="text" name="correo" class="input-lg" id="inputEmail" placeholder="Correo Electrónico" style="width:30%;"><br><br>
-                            <input type="text" name="asunto" class="input-lg" id="asunto" placeholder="Asunto" style="width:30%;"><br><br>
-                            <textarea name="mensaje" class=" input-lg"rows="3" id="inputMensaje" placeholder="Mensaje" style="width:30%;"></textarea><br><br>
-                            <input type="submit" class="btn btn-success btn-lg" value="Enviar">
+                            <input type="text" name="nombre" class="input-lg" id="inputName" placeholder="<?=$langprint['contact-name']?>" style="width:30%;"><br><br>
+                            <input type="text" name="correo" class="input-lg" id="inputEmail" placeholder="<?=$langprint['contact-mail']?>" style="width:30%;"><br><br>
+                            <input type="text" name="asunto" class="input-lg" id="asunto" placeholder="<?=$langprint['contact-issue']?>" style="width:30%;"><br><br>
+                            <textarea name="mensaje" class=" input-lg"rows="3" id="inputMensaje" placeholder="<?=$langprint['contact-message']?>" style="width:30%;"></textarea><br><br>
+                            <input type="submit" class="btn btn-success btn-lg" value="<?=$langprint['contact-btn']?>">
                         </form>
                 </div>
             </div>
@@ -198,16 +195,16 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                             <div class="modal-body">
                                 <form class='text-center'>
-                                    <p>To reset the password is required to enter your email registered on the platform, we will send you an email with the necessary information for the transaction.</p>
+                                    <p><?=$langprint['modal-1']?></p>
                                     <div class='form-group'>
-                                        <label class='col-lg-3 control-label' for='mail'>Email</label>
+                                        <label class='col-lg-3 control-label' for='mail'><?=$langprint['contact-mail']?></label>
                                         <div class='col-lg-9'>
-                                            <input type='text' name='mail' maxlength='32' id='mail' placeholder='Correo Electronico' autocomplete="off" class='form-control input-sm'/>
+                                            <input type='text' name='mail' maxlength='32' id='mail' placeholder='<?=$langprint['emailexample']?>' autocomplete="off" class='form-control input-sm'/>
                                         </div>
                                     </div>
                                     <br>
                                     <br>
-                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='Send'>
+                                    <input type='button' id='submtoken' class='btn btn-success form-control' value='<?=$langprint['contact-btn']?>'>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -253,7 +250,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                     if($("#mail").val() == ''){
                         bootbox.alert({
                             title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                            message: "<center><h5 class='junction-light'>You must type an email address</h5></center>",
+                            message: "<center><h5 class='junction-light'><?=$langprint['modal-2']?></h5></center>",
                         });
                     }else{
                         if(validateEmail($("#mail").val())) {
@@ -272,7 +269,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         }else{
                             bootbox.alert({
                                 title: "<center><h2 class='junction-bold'>Box Link</h2></center>",
-                                message: "<center><h5 class='junction-light'>You must type an valid email address</h5></center>",
+                                message: "<center><h5 class='junction-light'><?=$langprint['modal-3']?>/h5></center>",
                             });
                         }
                     }
@@ -297,7 +294,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         $(document).ready(function(){
                             bootbox.alert({
                                 title: '<center><h2>Box link</h2></center>',
-                                message: '<center><h5>Ocurrio un error al iniciar sesión - There was an error when logging</h5></center>',
+                                message: '<center><h5>".$langprint['modal-3']."</h5></center>',
                             });
                         });
                     </script>

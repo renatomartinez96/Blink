@@ -26,6 +26,8 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->fetch();
 
     }
+    include "auto.php";
+    include "../assets/includes/lang.php";
     $dir = "../users/" . $user . "/img/";
     $dir1 = "../users/" . $user . "/video/";
     function printimg($dir){
@@ -106,8 +108,6 @@ Gerardo López | Iván Nolasco | Renato Andres
             echo "No se han encontrado archivos";
         }
     }
-    include "auto.php";
-    include "../assets/includes/lang.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -207,18 +207,18 @@ Gerardo López | Iván Nolasco | Renato Andres
 				<div class="container-fluid">
 					<div class="row">
                         <div class="col-xs-12 well">
-                            <p>Si deseas subir imagenes y videos para utilizarlos en su propia pagina web o para completar sus lecciones lo puede hacer desde aqui</p>
+                            <p><?=$langprint['ex-des']?></p>
                             <form action="func/upload_file.php?files" style="display: -webkit-box;"  enctype="multipart/form-data" method="post">
                                 <span class="btn btn-info btn-file">
-                                    Seleccionar archivo <input type="file" name="file" accept='image/*|video/*' required multiple>
+                                    <?=$langprint['ex-btn-file']?> <input type="file" name="file" accept='image/*|video/*' required multiple>
                                 </span>
-                                <input type="submit" value="subir" class="btn btn-success">
+                                <input type="submit" value="<?=$langprint['ex-btn-upl']?>" class="btn btn-success">
                             </form>
                         </div>
                         <div class="col-sm-6 ">
                             <div class="panel panel-info">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-camera"></i> Fotos</h3>
+                                    <h3 class="panel-title"><i class="fa fa-camera"></i> <?=$langprint['ex-panel-photo']?></h3>
                                 </div>
                                 <div class="panel-body">
                                     <?php
@@ -230,7 +230,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-sm-6">
                             <div class="panel panel-primary" >
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-video-camera"></i> Videos</h3>
+                                    <h3 class="panel-title"><i class="fa fa-video-camera"></i> <?=$langprint['ex-panel-video']?></h3>
                                 </div>
                                 <div class="panel-body">
                                     <?php

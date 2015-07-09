@@ -1,3 +1,46 @@
+<!--
+
+Copyright (c) 2015 Blink
+All Rights Reserved
+ 
+This product is protected by copyright and distributed under
+licenses restricting copying, distribution, and decompilation.
+
+Gerardo López | Iván Nolasco | Renato Andres
+
+-->
+<?php
+
+    include_once '../../assets/includes/db_conexion.php';
+    include_once '../../assets/includes/funciones.php';
+    sec_session_start();
+    $user = $_SESSION['username'];
+
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT idusuario, avatar, nombres, apellidos, nacimiento, descripcion, correo, tipo, lang  FROM usuarios_tb WHERE usuario = ?")) 
+    {
+        $stmt->bind_param('s', $user);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($idusuario,$avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang);
+        $stmt->fetch();
+        
+    }
+    include "../auto.php";
+    if($lang == "es")
+    {
+        include "../../assets/lang/".$lang.".php";
+    }
+    elseif($lang == "en")
+    {
+        include "../../assets/lang/".$lang.".php";
+    }
+    else
+    {
+        include "../../assets/lang/es.php";
+    }
+
+?>
 <html>
     <head>
         <title>The Box Link</title>
@@ -19,7 +62,7 @@
             }
             .center{
                 margin-left:25%;
-                top:15%;
+                top:5%;
                 width:50%;
                 position:absolute;
                 text-align:center;
@@ -33,7 +76,7 @@
         <div class="fullpg">
             <div class="center">
                 <img src="../../assets/img/loading.gif" class="brand">
-                <h2 class="junction-regular">Sus archivos estan siendo procesados</h2>
+                <h2 class="junction-regular"><?=$langprint['upload-files-title']?></h2>
             </div>
         </div>
     </body>

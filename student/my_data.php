@@ -14,6 +14,8 @@ $elidespecial = $_SESSION['user_id'];
         $stmt->fetch();
         
     }
+    include "auto.php";
+    include "../assets/includes/lang.php";
 ?>
 <!--
 

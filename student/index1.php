@@ -26,6 +26,7 @@ Gerardo López | Iván Nolasco | Renato Andres
         $stmt->fetch();
         
     }
+    include "auto.php";
     include "../assets/includes/lang.php";
 
 ?>
@@ -72,7 +73,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-sm-7 full">
                             <div class="panel panel-success full">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong class="junction-light">HTML</strong>(HyperText Markup Language)</h3>
+                                    <h3 class="panel-title"><strong class="junction-light">HTML</strong></h3>
                                 </div>
                                 <div class="panel-body full">
                                     <pre id="editor"><?php echo htmlentities(file_get_contents("../users/".$user."/index.html")); ?></pre>
@@ -83,7 +84,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-sm-5 full">
                             <div class="panel panel-success full">
                                 <div class="panel-heading ">
-                                    <h3 class="panel-title"><strong class="junction-light">CSS</strong>(Cascading Style Sheets)</h3>
+                                    <h3 class="panel-title"><strong class="junction-light">CSS</strong></h3>
                                 </div>
                                 <div class="panel-body full">
                                     <pre id="editor2"><?php echo htmlentities(file_get_contents("../users/".$user."/css/index.css")); ?></pre>
@@ -93,7 +94,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-sm-12 full">
                             <div class="panel panel-success full">
                                 <div class="panel-heading ">
-                                    <h3 class="panel-title"><strong class="junction-light">Vista </strong><input type="button" id="act" class="btn btn-default btn-sm" value="Actualizar"></h3>
+                                    <h3 class="panel-title"><strong class="junction-light"><?=$langprint['ed-panel-header']?> </strong><input type="button" id="act" class="btn btn-default btn-sm" value="<?=$langprint['ed-panel-header-btn']?>"></h3>
                                 </div>
                                 <div class="panel-body full" style="background:#fff">
                                     <iframe src="../users/<?=$user?>/index.html" frameborder='0' class="full col-sm-12 resultc" id="resultc"></iframe>
