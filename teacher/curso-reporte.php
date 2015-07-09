@@ -134,7 +134,7 @@ function ChapterBody($file,$imgto, $count, $tp, $dt, $tot)
     $this->MultiCell(100,5,$txt);    
     $this->Ln();
     $this->SetFont('Arial','B',12);
-    $this->Cell(0,6,"Lecciones:",0,1,'L',false);
+    $this->Cell(0,6,"Lessons:",0,1,'L',false);
     $this->Ln();
     $x=0;
     if($count > 0)
@@ -142,19 +142,19 @@ function ChapterBody($file,$imgto, $count, $tp, $dt, $tot)
         for($x; $x < $count; $x++)
         {
             $this->SetFont('Arial','B',11);
-            $this->Cell(0,6,'Titulo',0,1,'L',false);
+            $this->Cell(0,6,'Title',0,1,'L',false);
             $this->Ln();
             $this->SetFont('Arial','',11);
             $this->Cell(0,6,$tp[$x],0,1,'L',false);
             $this->Ln();
             $this->SetFont('Arial','B',11);
-            $this->Cell(0,6,'Descripcion',0,1,'L',false);
+            $this->Cell(0,6,'Description',0,1,'L',false);
             $this->Ln();
             $this->SetFont('Arial','',11);
             $this->Cell(0,6,$dt[$x],0,1,'L',false);
             $this->Ln();
             $this->SetFont('Arial','B',11);
-            $this->Cell(0,6,'Teoria',0,1,'L',false);
+            $this->Cell(0,6,'Theoric introduction',0,1,'L',false);
             $this->Ln();
             $this->SetFont('Arial','',11);
             $this->Cell(0,6,$tot[$x],0,1,'L',false);
@@ -165,7 +165,7 @@ function ChapterBody($file,$imgto, $count, $tp, $dt, $tot)
     {
         $this->SetFont('Arial','',11);
         $this->SetTextColor(217,83,79);
-        $this->Cell(0,6,"Este curso no tiene lecciones",0,1,'L',false);
+        $this->Cell(0,6,"This course does not have lesson",0,1,'L',false);
         $this->Ln();
     }
     
@@ -187,7 +187,7 @@ function PrintChapter($num, $title, $file, $imgto, $aut, $count, $tp, $dt, $tot)
 }
 
 $pdf = new PDF();
-$title = "Reporte del curso: ".$titulo."";
+$title = "Document of the course: ".$titulo."";
 $pdf->SetTitle($title);
 $autor = $autornam." ".$autorape." - ".$autorusr;
 $pdf->SetAuthor($autor);
