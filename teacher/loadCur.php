@@ -49,7 +49,7 @@
                                             <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
                                             <a class='btn btn-sm btn-success editcur' valid='".$idcurso."' valname='".$nombre."' valdesc='".$descripcion."'><i class='fa fa fa-pencil' data-toggle='tooltip' data-placement='top' title='Editar curso'></i></a>
-                                            <a class='btn btn-sm btn-info' valid='".$idcurso."' valname='".$nombre."' valdesc='".$descripcion."'><i class='fa fa fa-print fa-lg' data-toggle='tooltip' data-placement='top' title='Imprimir reportes'></i></a>
+                                            <a class='btn btn-sm btn-info' valid='".$idcurso."' href='curso-reporte.php?id=".$idcurso."'><i class='fa fa fa-print fa-lg' data-toggle='tooltip' data-placement='top' title='Imprimir reportes'></i></a>
                                         </form>
                                     </div>
                                 </div>
