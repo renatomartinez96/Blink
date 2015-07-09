@@ -81,10 +81,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Ya casi!</h4>
+        <h4 class="modal-title" id="myModalLabel">Almost!</h4>
       </div>
       <div class="modal-body">
-        Por favor completa la lección para activarla.
+        Please complete the lesson to active itk|.
       </div>
       <div class="modal-footer">
         <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary">Continue</button></a>

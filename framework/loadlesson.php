@@ -74,13 +74,13 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Inducción teórica</h4>
+                <h4 class="modal-title" id="myModalLabel">Theatrical introduction</h4>
               </div>
               <div class="modal-body">
                 <p><?=$teoria?></p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Continuar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
               </div>
               <div class="modal-footer backCute">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a href="../student/index.php"><button type="button" class="btn btn-default" >Aceptar</button></a>
+                <a href="../student/index.php"><button type="button" class="btn btn-default" >Continue</button></a>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@
 
     <?php
     }else {
-        echo "no existe";
+        echo "The lesson doesn't exist";
     }
     }?>
 	</body>
