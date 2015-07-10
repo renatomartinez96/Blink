@@ -23,28 +23,48 @@ if(isset($_POST['loadLessons']))
     $string .= "<div class='col-xs-12 cursos'><div id='signal'></div>";
     while ($stmt->fetch())
     {
+        $stmt2 = $mysqli->prepare("SELECT resultado FROM leccusua WHERE idLeccion = ?");
+        $stmt2->bind_param('i', $idleccion);
+        $stmt2->execute();
+        $stmt2->store_result();
+        $stmt2->bind_result($grade);
+        $result2 = $stmt2->num_rows;
+        $ap = 0;
+        $re = 0;
 
-      if($lecEstado == 0)
-      {
-        $classtype = "panel-danger";
-      }
-      elseif ($lecEstado == 1) {
-        $classtype = "panel-info";
-      }
-      $string .=  "
-                    <div class='col-lg-4 col-md-6 full panel ".$classtype."'>
-                      <div class='panel-heading'>
-                        <h3 class='panel-title'>".$nombre."</h3>
-                      </div>
-                      <div class='panel-body'>
-                        <p><strong>Descripción: </strong>".$descripcion."</p>
-                      </div>
-                      <div class='panel-footer text-center'>
-                        <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>Mas info</a>
-                        <a class='btn btn-danger btn-sm dropless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-status='".$lecEstado."'><i class='fa fa-times'></i></a>
-                        <a class='btn btn-success btn-sm editless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa fa-pencil'></i></a>
-                      </div>
-                    </div>";
+        while ($stmt2->fetch())
+        {
+            if($grade >= 8)
+            {
+                $ap = $ap+1;
+            }
+            elseif($grade < 8)
+            {
+                $re = $re+1;
+            }
+        }
+          if($lecEstado == 0)
+          {
+            $classtype = "panel-danger";
+          }
+          elseif ($lecEstado == 1) {
+            $classtype = "panel-info";
+          }
+          $string .=  "
+                        <div class='col-lg-4 col-md-6 full panel ".$classtype."'>
+                          <div class='panel-heading'>
+                            <h3 class='junction-regular panel-title'>".$nombre."  <span class='label label-success pull-right'>".$ap."</span> <span class='label label-danger pull-right'>".$re."</span></h3> 
+                          </div>
+                          <div class='panel-body'>
+                            <p><strong>Descripción: </strong>".$descripcion."</p>
+                          </div>
+                          <div class='panel-footer text-center'>
+                            <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>Mas info</a>
+                            <a class='btn btn-danger btn-sm dropless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-status='".$lecEstado."'><i class='fa fa-times'></i></a>
+                            <a class='btn btn-success btn-sm editless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa fa-pencil'></i></a>
+                          </div>
+                        </div>";
+        
     }
     $string .= "</div>";
   }

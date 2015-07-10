@@ -7,7 +7,7 @@ reni=examenes
 
 ivan=denunciar cursos
 ivan=mas populares
-ivan=usuarios que han desarrollado las lecciones
-ivan=usuarios suscritos
+ivan=usuarios que han desarrollado las lecciones*
+ivan=usuarios suscritos*
 
 INDIKEICHONS

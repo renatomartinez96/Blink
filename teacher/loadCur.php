@@ -26,6 +26,15 @@
         {
             while ($stmt->fetch())
             {
+                $stmt2 = $mysqli->prepare("SELECT COUNT(*) FROM cursoestudiante WHERE idcurso = ?");
+                $stmt2->bind_param('i', $idcurso);
+                $stmt2->execute();
+                $stmt2->store_result();
+                $stmt2->bind_result($totaldesus);
+                $result2 = $stmt2->num_rows;
+                
+                while ($stmt2->fetch())
+                {
                 $string .= "<div class='col-lg-4 col-md-6 '>
                                 <div class='panel panel-info'>
                                     <div class='panel-heading'>
@@ -35,7 +44,7 @@
                                                 <a class='btnwithout pull-right showme changetro' style='position:absolute; top:5px; right: 9px; cursor: pointer;' curimgid='".$idcurso."' currentimg='".$imagen."' curimgnombre='".$nombre."'><i class='fa fa-cog fa-2x btnover'></i></a>
                                             </div>
                                             <div class='col-md-10'>
-                                                <h4 class='junction-regular text-center'>".$nombre."</h4>
+                                                <h4 class='junction-regular text-center'>".$nombre." <span class='label label-primary'>".$totaldesus."</span></h4>
                                             </div>
                                         </div>
                                     </div>
@@ -54,12 +63,13 @@
                                     </div>
                                 </div>
                             </div>";
+                }
             }
         }
         else
         {
-            $string .= "<div class='alert alert-danger'>
-                        <strong>Error:</strong><p>No tienes ningún curso activo, debes crear uno para empezar</p>
+            $string .= "<div class='alert alert-warning'>
+                        <p>No tienes ningún curso activo, debes crear uno para empezar</p>
                         </div>";
         }
 
