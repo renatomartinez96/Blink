@@ -22,8 +22,11 @@ if($result = $stmt1->num_rows)
                                             <div class='col-md-2 full'>
                                                 <img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
                                             </div>
-                                            <div class='col-md-10'>
+                                            <div class='col-md-9'>
                                                 <h4 class='junction-regular text-center'>".$row1['curnombre']."</h4>
+                                            </div>
+                                            <div class='col-md-1 text-center full'>
+                                                <i class='fa fa-info-circle fa-3x'></i>
                                             </div>
                                         </div>
                                 </div>
