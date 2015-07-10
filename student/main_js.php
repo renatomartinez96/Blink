@@ -8,6 +8,24 @@
 </script>
 <script>
     $(document).ready(function(){
+        $(".displayinfo").click(function() {
+            var cursdesc = $(this).attr("cursdesc");
+            var cursname = $(this).attr("cursname");
+            var aut = $(this).attr("aut");
+            bootbox.dialog({
+                title: cursname,
+                message: "<p><strong>Autor: </strong>"+aut+"</p><p><strong>Descripcion: </strong>"+cursdesc+"</p><br><small><a href='#'>Denunciar este curso</a></small>",
+                buttons: {
+                    success: {
+                    label: "OK",
+                    className: "btn-success",
+                    callback: function() {
+                        
+                        }
+                    }
+                }
+            });
+        });
         $( "#SearchString" ).on('input',function() {
             var searchString = $("#SearchString").val();
             var SearchResult = document.getElementById('SearchResult');

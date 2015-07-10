@@ -71,6 +71,11 @@ Gerardo López | Iván Nolasco | Renato Andres
                 -webkit-filter: grayscale(100%); 
                 filter: grayscale(100%);
             }
+            .btn-data{
+                margin-top: 10px;
+                border:none;
+                background-color: Transparent;
+            }
         </style>
 		<!--/#Custom CSS-->
 
@@ -193,7 +198,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<?php 
 			include 'main_js.php';
 		?>
-        <script>
+        <script>            
         function showPrev(insertimg)
         {   
             document.getElementById("bannerchangeb").style.background = "url(../assets/img/userbanner/"+insertimg+".png)";
