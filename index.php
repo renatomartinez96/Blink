@@ -13,17 +13,17 @@ Gerardo López | Iván Nolasco | Renato Andres
     include_once 'assets/includes/db_conexion.php';
     include_once 'assets/includes/funciones.php';
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    if($lang == "es")
+    if($lang == "en")
     {
         include "assets/lang/".$lang.".php";
     }
-    elseif($lang == "en")
+    elseif($lang == "es")
     {
-        include "assets/lang/".$lang.".php";
+        include "assets/lang/en.php";
     }
     else
     {
-        include "assets/lang/es.php";
+        include "assets/lang/en.php";
     }
     sec_session_start();
 
@@ -122,6 +122,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </div>
                 <video autoplay loop muted class="myVideo" id="myVideo">
         			<source src="assets/video/1080.webm" type="video/webm"/>
+                    <source src="assets/video/1080.mp4" type="video/mp4"/>
         		</video>
             </div>
             <div class="section text-center" id="section1">
