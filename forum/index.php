@@ -25,7 +25,7 @@
     <style>
         .business-header {
             height: 400px;
-            background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+            background: url('../assets/img/forum.png') center center no-repeat scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -87,11 +87,6 @@
 
     <header class="business-header">
         <div class="container" style="height: 100%;">
-            <div class="row" style="height: 100%;">
-                <div class="col-lg-12 text-center" id="tagline" style="height: 100%;">
-                    <h1 class="tagline">Business Name or Tagline</h1>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -103,46 +98,71 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <div class="well">
-                    <h4>Categorias</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="">
-                                <li>HTML
-                                    <ol><a href=''>Inicio</a></ol>
-                                    <ul><a href=''>Elementos</a></ul>
-                                    <ul><a href=''>Etiquetas básicas</a></ul>
-                                    <ul><a href=''>Formato - texto</a></ul>
-                                    <ul><a href=''>Caracteres especiales</a></ul>
-                                    <ul><a href=''>Enlaces</a></ul>
-                                    <ul><a href=''>Frames</a></ul>
-                                    <ul><a href=''>Tablas</a></ul>
-                                    <ul><a href=''>Listas</a></ul>
-                                    <ul><a href=''>Formularios</a></ul>
-                                    <ul><a href=''>Multimedia</a></ul>
-                                    <ul><a href=''>Atributos</a></ul>
-                                </li>
-                            </ul>
+                    <?php
+                    if(isset($_GET['s']))
+                    {
+                        if(file_exists('files/'. $_GET['s'] .'.txt'))
+                        {
+                            $myFile = 'files/'. $_GET['s'] .'.txt';
+                            $fh = fopen($myFile, 'r');
+                            $theData = fread($fh, filesize($myFile));
+                            fclose($fh);
+                            echo $theData;
+                        }
+                        else
+                        {
+                            echo "<div class='text-center'>
+                                    <img src='../assets/img/404.png' style='width:40%;'>
+                                    <p>eror 404</p>
+                                </div>";
+                        }
+                    }
+                    else
+                    {
+                    ?>
+                        <h4 >Categorias</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="">
+                                    <li>HTML
+                                        <ol><a href=''>Inicio</a></ol>
+                                        <ul><a href=''>Elementos</a></ul>
+                                        <ul><a href=''>Etiquetas básicas</a></ul>
+                                        <ul><a href=''>Formato - texto</a></ul>
+                                        <ul><a href=''>Caracteres especiales</a></ul>
+                                        <ul><a href=''>Enlaces</a></ul>
+                                        <ul><a href=''>Frames</a></ul>
+                                        <ul><a href=''>Tablas</a></ul>
+                                        <ul><a href=''>Listas</a></ul>
+                                        <ul><a href=''>Formularios</a></ul>
+                                        <ul><a href=''>Multimedia</a></ul>
+                                        <ul><a href=''>Atributos</a></ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <ul class="">
+                                    <li>CSS
+                                        <ul><a href=''>Sintaxis</a></ul>
+                                        <ul><a href=''>¿Cómo y Dónde?</a></ul>
+                                        <ul><a href=''>Fondo</a></ul>
+                                        <ul><a href=''>Texto</a></ul>
+                                        <ul><a href=''>Fuente</a></ul>
+                                        <ul><a href=''>Contorno</a></ul>
+                                        <ul><a href=''>Listas</a></ul>
+                                        <ul><a href=''>Tablas</a></ul>
+                                        <ul><a href=''>Padding</a></ul>
+                                        <ul><a href=''>Bordes</a></ul>
+                                        <ul><a href=''>Margen</a></ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- /.col-lg-6 -->
-                        <div class="col-lg-6">
-                            <ul class="">
-                                <li>CSS
-                                    <ul><a href=''>Sintaxis</a></ul>
-                                    <ul><a href=''>¿Cómo y Dónde?</a></ul>
-                                    <ul><a href=''>Fondo</a></ul>
-                                    <ul><a href=''>Texto</a></ul>
-                                    <ul><a href=''>Fuente</a></ul>
-                                    <ul><a href=''>Contorno</a></ul>
-                                    <ul><a href=''>Listas</a></ul>
-                                    <ul><a href=''>Tablas</a></ul>
-                                    <ul><a href=''>Padding</a></ul>
-                                    <ul><a href=''>Bordes</a></ul>
-                                    <ul><a href=''>Margen</a></ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.col-lg-6 -->
-                    </div>
+                            <!-- /.col-lg-6 -->
+                        <?php
+                        }
+                        ?>
                     <!-- /.row -->
                 </div>
 

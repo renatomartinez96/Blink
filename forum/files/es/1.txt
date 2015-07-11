@@ -1,0 +1,5 @@
+<h1>Side Widget Well</h1>
+<code>
+    &lt;html&gt;
+    &lt;/html&gt;
+</code>
