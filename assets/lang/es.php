@@ -106,6 +106,16 @@ $langprint = array(
             "tutor" => "Tutor",
             "tutors" => "Tutores",
     // /# Navbar
+    // Formulario de denuncia de cursos
+        "dentitle" => "¿Por qué denunciar el curso: ",
+        "dentype" => "Tipo de queja: ",
+        "dendesc" => "Explica ¿Qué ocurrio con el curso?",
+        "denop1" => "La teoría incorrecta",
+        "denop2" => "Este curso contiene un bug",
+        "denop3" => "El autor usa información engañosa",
+        "denop4" => "Hay contenido inapropiado u ofensivo",
+        "denconfirm" => "Confirmar mi denuncia",
+    // /# Formulario de denuncia de cursos
 // /# GLOBALES
 //----------------------------------------------
 

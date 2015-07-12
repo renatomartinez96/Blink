@@ -2,7 +2,7 @@ ger=certificaciones
 ger=pagado
 ger=blog
 
-reni=grabado de video de tutor
+reni=grabado de video de tutor****
 reni=examenes
 
 ivan=denunciar cursos

@@ -2,3 +2,8 @@ admin recibe denuncia
 revisa el curso
 el admin notifica al teacher
 si el teacher no resuelve
+-Teoria incorrecta
+-Contenido inapropiado
+-El curso contiene un bug
+-Usa información engañosa
+drop the game
