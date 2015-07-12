@@ -1,0 +1,4 @@
+admin recibe denuncia
+revisa el curso
+el admin notifica al teacher
+si el teacher no resuelve

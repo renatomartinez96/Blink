@@ -15,7 +15,7 @@ if($result = $stmt1->num_rows)
     {
         while($row1 = $stmt1->fetch_assoc())
         {
-            $infotoprint .= "<div class='col-lg-4 col-md-6 '>
+            $infotoprint .= "<div class='col-lg-4 col-md-6'>
                                 <div class='panel panel-info'>
                                     <div class='panel-heading'>
                                         <div class='row'>
@@ -28,11 +28,11 @@ if($result = $stmt1->num_rows)
                                                 <h4 class='junction-regular text-center'>".$row1['curnombre']."</h4>
                                             </div>
                                             <div class='col-xs-2 pull-left '>
-                                                <button class='btn-data displayinfo' cursdesc='".$row1['cursdesc']."' cursname='".$row1['curnombre']."' aut='".$row1['aut']."' autav='".$row1['autav']."' cursimg='".$row1['curimg']."'><i class='fa fa-info-circle fa-lg'></i></button>
+                                                <button class='btn-data displayinfo' curid='".$row1['idcur']."' cursdesc='".$row1['cursdesc']."' cursname='".$row1['curnombre']."' aut='".$row1['aut']."' autav='".$row1['autav']."' cursimg='".$row1['curimg']."'><i class='fa fa-info-circle fa-lg'></i></button>
                                             </div>
                                         </div>
                                 </div>
-                                <div class='panel-body full'>
+                                <div class='panel-body full course'>
                                     <div class='list-group lecciones'>";
             
             $stmt2 = $mysqli->query("SELECT `leccion`.idleccion AS lecid, `leccion`.nombre AS lecnombre, `leccusua`.resultado FROM `leccion` INNER JOIN `leccusua` ON `leccion`.idleccion = `leccusua`.idLeccion WHERE `leccion`.idcurso = '".$row1['idcur']."' AND `leccusua`.idUsuario = '".$idusuario."'");

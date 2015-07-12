@@ -8,10 +8,12 @@
 </script>
 <script>
     $(document).ready(function(){
+        
         $(".displayinfo").click(function() {
             var cursdesc = $(this).attr("cursdesc");
             var cursname = $(this).attr("cursname");
             var cursimg = $(this).attr("cursimg");
+            var curid = $(this).attr("curid");
             var aut = $(this).attr("aut");
             var autav = $(this).attr("autav");
             bootbox.dialog({
@@ -27,24 +29,31 @@
                                     "<div class='col-xs-8 pull-left'>"+
                                         "<i class='fa fa-users fa-lg'></i> 25 Inscritos"+
                                     "</div>"+
-                                    "<div class='col-xs-4'>"+
-                                        "<br><small class=''><a href='teachers.php' class='pull-right curden'>Denunciar este curso</a></small>"+
-                                    "</div>"+
+                                    "<form id='"+curid+"' name="+curid+" method='POST' action='complaint.php'>"+
+                                        "<input type='hidden' name='curso' value='"+curid+"'>"+
+                                    "</form>"+
                                 "</div>"+
                             "</div>"+
                         "</div>",
                 buttons: {
+                    danger: {
+                        label: "Denunciar",
+                        className: "btn-danger pull-left",
+                        callback: function() {
+                            document.getElementById(curid).submit();
+                        }   
+                    },
                     info: {
-                    label: "Más info",
-                    className: "btn-info",
-                    callback: function() {
+                        label: "Más info",
+                        className: "btn-info",
+                        callback: function() {
                             
                         }
                     },
                     success: {
-                    label: "OK",
-                    className: "btn-success",
-                    callback: function() {
+                        label: "OK",
+                        className: "btn-success",
+                        callback: function() {
                         
                         }
                     }
