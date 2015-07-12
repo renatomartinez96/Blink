@@ -33,6 +33,10 @@
         <script src="js/jquery-2.1.1.js" type="text/javascript"></script>
         <link href="../assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
         <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+
+
+
+
         <?php include "app/headcss.php"?>
 	</head>
 	<body>
@@ -62,6 +66,7 @@
         ?>
 			<!--Page Content -->
             <div class="col-xs-12 results">
+              
             <?php
                 $seguardo = false;
 				include 'php/loadLes.php';
@@ -92,6 +97,7 @@
     </div>
   </div>
 </div>
+
 	<script>
         $("#menu-toggle").click(function(g){
             g.preventDefault(),
@@ -102,6 +108,7 @@
         });
         var cursososo = "<?php echo $idleccion?>";
         var cursososo22 = "<?php echo $idCurso?>";
+        var idUserPHP = "<?php echo $userid ?>";
         <?php include "mantenimiento.php"?>
     </script>
            <?php include "app/headjs.php"?>
