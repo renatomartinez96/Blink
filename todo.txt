@@ -1,7 +1,4 @@
 - hacer que imprima las preguntas{{"_file":"C:/wamp/www/Blink/assets/includes/loadQuestion.php"}}
-- reportes de los cursos
-- recargar páginas de mantenimiento del profesor después de guardar
 + validación de usuarios en modulo tutor
 + validación de campos...
-- traducir traducir traducir traducir traducir traducir traducir 
 

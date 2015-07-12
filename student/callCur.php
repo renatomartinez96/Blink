@@ -5,7 +5,7 @@ $numlec = 0;
 $sumnot = 0;
 $notafinal = 0;
 
-$stmt1 = $mysqli->query("SELECT curso.idcurso AS idcur, curso.nombre AS curnombre, curso.imagen AS curimg, curso.descripcion AS cursdesc, usuarios_tb.usuario AS aut FROM `curso` 
+$stmt1 = $mysqli->query("SELECT curso.idcurso AS idcur, curso.nombre AS curnombre, curso.imagen AS curimg, curso.descripcion AS cursdesc, usuarios_tb.usuario AS aut, usuarios_tb.avatar AS autav FROM `curso` 
 INNER JOIN `cursoestudiante` ON cursoestudiante.idcurso = curso.idcurso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE cursoestudiante.idestudiante = '".$idusuario."'");
 $infotoprint = "";
 
@@ -26,7 +26,7 @@ if($result = $stmt1->num_rows)
                                                 <h4 class='junction-regular text-center'>".$row1['curnombre']."</h4>
                                             </div>
                                             <div class='col-xs-2 pull-left '>
-                                                <button class='btn-data displayinfo' cursdesc='".$row1['cursdesc']."' cursname='".$row1['curnombre']."' aut='".$row1['aut']."'><i class='fa fa-info-circle fa-lg'></i></button>
+                                                <button class='btn-data displayinfo' cursdesc='".$row1['cursdesc']."' cursname='".$row1['curnombre']."' aut='".$row1['aut']."' autav='".$row1['autav']."' cursimg='".$row1['curimg']."'><i class='fa fa-info-circle fa-lg'></i></button>
                                             </div>
                                         </div>
                                 </div>

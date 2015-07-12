@@ -11,10 +11,28 @@
         $(".displayinfo").click(function() {
             var cursdesc = $(this).attr("cursdesc");
             var cursname = $(this).attr("cursname");
+            var cursimg = $(this).attr("cursimg");
             var aut = $(this).attr("aut");
+            var autav = $(this).attr("autav");
             bootbox.dialog({
-                title: cursname,
-                message: "<p><strong>Autor: </strong>"+aut+"</p><p><strong>Descripcion: </strong>"+cursdesc+"</p><br><small><a href='#'>Denunciar este curso</a></small>",
+                title: "<h4 class='junction-regular'>Acerca de: "+cursname+"</h4>",
+                message: "<div class='row'>"+
+                            "<div class='col-md-2'>"+
+                                "<img src='../assets/img/avatares/"+autav+".png' class='img-responsive' >"+
+                                "<p class='text-center'><strong><a href='profile.php?user="+aut+"' class='alert-link'>"+aut+"</a></strong></p>"+
+                            "</div>"+
+                            "<div class='col-md-10'>"+
+                                "<p class='text-justify'><strong>Descripcion: </strong>"+cursdesc+"</p>"+
+                                "<div class='row'>"+
+                                    "<div class='col-xs-8 pull-left'>"+
+                                        "<i class='fa fa-users fa-lg'></i> 25 Inscritos"+
+                                    "</div>"+
+                                    "<div class='col-xs-4'>"+
+                                        "<br><small><a href='#' class='pull-right'>Denunciar este curso</a></small>"+
+                                    "</div>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>",
                 buttons: {
                     success: {
                     label: "OK",
