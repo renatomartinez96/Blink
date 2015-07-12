@@ -19,6 +19,8 @@ if($result = $stmt1->num_rows)
                                 <div class='panel panel-info'>
                                     <div class='panel-heading'>
                                         <div class='row'>
+                                        <div id='asdf'>
+                                        </div>
                                             <div class='col-xs-2 full'>
                                                 <img src='../assets/img/pro/".$row1['curimg'].".png' class='img-responsive pull-right not-success' width='40'>
                                             </div>

@@ -1,4 +1,7 @@
 - hacer que imprima las preguntas{{"_file":"C:/wamp/www/Blink/assets/includes/loadQuestion.php"}}
 + validación de usuarios en modulo tutor
 + validación de campos...
+- admin no puede cambiar tipo de usuario tan facilmente
+- no reesuscribir cursos en el profile del teacher
+- incluir otro navbar en el framework
 

@@ -28,12 +28,19 @@
                                         "<i class='fa fa-users fa-lg'></i> 25 Inscritos"+
                                     "</div>"+
                                     "<div class='col-xs-4'>"+
-                                        "<br><small><a href='#' class='pull-right'>Denunciar este curso</a></small>"+
+                                        "<br><small class=''><a href='teachers.php' class='pull-right curden'>Denunciar este curso</a></small>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
                         "</div>",
                 buttons: {
+                    info: {
+                    label: "Más info",
+                    className: "btn-info",
+                    callback: function() {
+                            
+                        }
+                    },
                     success: {
                     label: "OK",
                     className: "btn-success",
