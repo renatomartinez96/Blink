@@ -5,7 +5,7 @@
 .objects {
     min-height: 800px;
     text-align: center;
-   
+
 }
 
 .arena {
@@ -114,7 +114,7 @@
 .royal {
     background-color: #87D37C;
 }
-
+.regada
 .valueDescription {
     width: 100%;
 }
@@ -359,6 +359,9 @@
             }
 .input-group {
   width: 100%;
+}
+.regada {
+  background-color: #DA6262;
 }
 /*Media query*/
 @media (min-width: 200px) and (max-width: 767px) {

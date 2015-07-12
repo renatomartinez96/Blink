@@ -32,7 +32,7 @@
                 $stmt2->store_result();
                 $stmt2->bind_result($totaldesus);
                 $result2 = $stmt2->num_rows;
-                
+
                 while ($stmt2->fetch())
                 {
                 $string .= "<div class='col-lg-4 col-md-6 '>
@@ -53,7 +53,7 @@
                                         <p class='text-center'><strong>Descripción: </strong>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
-                                        <form action='../framework/lesson.php' method='post'>
+                                        <form action='../framework/lesson.php' method='get'>
                                             <input type='hidden' value='".$nombre."' name='curname'>
                                             <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
