@@ -9,6 +9,7 @@
 <script>
     $(document).ready(function(){
         
+        
         $(".displayinfo").click(function() {
             var cursdesc = $(this).attr("cursdesc");
             var cursname = $(this).attr("cursname");
