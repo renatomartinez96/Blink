@@ -5,7 +5,8 @@
             ?>
 
                 //exclusivo docente
-                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Siguiente</button>");
+                var seempezoagrabar = false;
+                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary stopVideo'>Siguiente</button>");
                 $(".createLes").fadeOut();
                 $(".bugname").fadeOut();
                 function addDescr() {
@@ -59,7 +60,9 @@
                 });
               });
               $( ".playground" ).droppable({
+                    accept: ".htmlMain",
                     drop: function( event, ui ) {
+                      startRecording();
                         identifie();
                         addDescr();
                         momentoTo++;
@@ -84,43 +87,50 @@
       $( "#recordStartButton" ).attr( "disabled", false );
     }
     function startRecording() {
-      $( "#recordStartButton" ).attr( "disabled", true );
-      $( "#recordStopButton" ).attr( "disabled", false );
-      $( "#recordPauseResumeButton" ).attr( "disabled", false );
-      $.scriptcam.startRecording();
+
+      if (seempezoagrabar == false) {
+        console.log("start");
+        seempezoagrabar = true;
+        $( "#recordStartButton" ).attr( "disabled", true );
+        $( "#recordStopButton" ).attr( "disabled", false );
+        $( "#recordPauseResumeButton" ).attr( "disabled", false );
+        $.scriptcam.startRecording();
+      }
+
     }
     function closeCamera() {
+      console.log("finish");
+
       $("#slider").slider( "option", "disabled", true );
       $("#recordPauseResumeButton" ).attr( "disabled", true );
       $("#recordStopButton" ).attr( "disabled", true );
       $.scriptcam.closeCamera();
       $('#message').html('Please wait for the file conversion to finish...');
+
     }
     function pauseResumeCamera() {
-      if ($( "#recordPauseResumeButton" ).html() == 'Pause Recording') {
-        $( "#recordPauseResumeButton" ).html( "Resume Recording" );
+      console.log($( "#recordPauseResumeButton" ).html());
+      if ($( "#recordPauseResumeButton" ).html() == '<i class="fa fa-pause"></i>') {
+        $( "#recordPauseResumeButton" ).html( '<i class="fa fa-play"></i>' );
         $.scriptcam.pauseRecording();
       }
       else {
-        $( "#recordPauseResumeButton" ).html( "Pause Recording" );
+        $( "#recordPauseResumeButton" ).html( '<i class="fa fa-pause"></i>' );
         $.scriptcam.resumeRecording();
       }
     }
     function fileReady(fileName) {
-      console.log(fileName);
       $('#recorder').hide();
-      $('#message').html('This file is now dowloadable for five minutes over <a href='+fileName+'">here</a>.');
       var fileNameNoExtension=fileName.replace(".mp4", "");
       $.ajax({
           url: 'php/upload_cam.php',
-          type: 'POST',
-          data: {files:fileName},
-          cache: false,
-          processData: false,
-          contentType: false,
+          method: 'POST',
+          data: {files:fileName,leccion:cursososo},
           success: function(data)
           {
-              console.log(data);
+              $("#myModalActi").modal("show");
+              console.log("Se COPIRO");
+              $(".recordingCam").remove();
           }
       });
     }
@@ -144,17 +154,16 @@
     }
 
     function timeLeft(value) {
-      $('#timeLeft').val(value);
+      $('#timeLeft').html(value);
     }
 
-
-    $("#recordStartButton").on("click",function(){
-          startRecording();
-    });
     $("#recordPauseResumeButton").on("click",function(){
           pauseResumeCamera();
     });
-    $("#recordStopButton").on("click",function(){
+    $(".stopVideo").on("click",function(){
+          $(".fullpg").fadeIn();
           closeCamera();
     });
+    $( ".recordingCam" ).draggable({revert: false,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".playground ", scroll: false,drag: function() {
+  }, });
 });

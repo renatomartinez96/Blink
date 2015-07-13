@@ -66,7 +66,7 @@
         ?>
 			<!--Page Content -->
             <div class="col-xs-12 results">
-              
+
             <?php
                 $seguardo = false;
 				include 'php/loadLes.php';
@@ -82,7 +82,7 @@
 
 
 		</div>
-     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal fade" id="myModalActi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

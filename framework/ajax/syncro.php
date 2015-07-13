@@ -3,7 +3,7 @@
     if(isset($_POST['description'],$_POST['leccion'],$_POST['resultado'],$_POST['bloques'],$_POST['curso'],$_POST['momento'],$_POST['idFinal'])) {
             $des = str_replace("<","&lt;",$_POST['description']);
             $des1 = str_replace(">","&gt;",$des);
-            $nombre = "../../courses/".$_POST['leccion'].".txt";
+            $nombre = "../../courses/".$_POST['leccion']."/".$_POST['leccion'].".txt";
             $dom = new DOMDocument();
             $dom->loadHTML($_POST['bloques']);
             $dom->removeChild($dom->doctype);

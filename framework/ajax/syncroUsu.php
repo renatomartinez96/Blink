@@ -1,7 +1,7 @@
-<?php 
+<?php
     if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'],$_POST['ultimoId'])) {
-       
-             $name = "../../courses/".$_POST['leccion'].".txt";
+
+             $name = "../../courses/".$_POST['leccion']."/".$_POST['leccion'].".txt";
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
             $historial = json_decode(stripslashes($_POST['ultimoId']));
@@ -20,7 +20,7 @@
             $percentDos = 100;
             $loRealizoBien = 0;
             $lastobject = end($historial);
-        
+
                 if($moment == 0) {
                     $momentDos = 0;
                 }else {
@@ -32,7 +32,7 @@
                     if ($moment != 0) {
                     if ($key == 4) {
                          if($value == $lastobject) {
-                              $loRealizoBien = 0; 
+                              $loRealizoBien = 0;
                          }else {
                               $loRealizoBien = 1;
                          }
@@ -40,15 +40,15 @@
                     }
                 }
             if ($moment <= $momentosTotales) {
-            
-                    
-                
+
+
+
                 $findvalues = $momentos[$moment];
                 $separados = explode("^^^", $findvalues);
                 foreach ($separados as $key => $value) {
                     if ($key == 1) {
-                    $string = $moment + 1 .")     ".$value;  
-                    $homepage .= "<div class='panel-group animated fadeInDown' id='accordion' role='tablist' aria-multiselectable='true' style='margin-bottom:0px;'> 
+                    $string = $moment + 1 .")     ".$value;
+                    $homepage .= "<div class='panel-group animated fadeInDown' id='accordion' role='tablist' aria-multiselectable='true' style='margin-bottom:0px;'>
                           <div class='panel panel-default'>
                                 <div class='panel-heading' role='tab' id='headingTwo'>
                                   <h4 class='panel-title'>
@@ -68,13 +68,13 @@
                                 </div>";
 
                   }
-                  
-                  
+
+
                 $homepage .= "</div>";
-                    
+
                 }
-                
-                
+
+
             if($loRealizoBien == 1){
                  $correcto = 1; // la cago
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
@@ -95,9 +95,9 @@
                               </div>";
                 }
             }
-        
-                
+
+
                 echo json_encode(array("stringhome"=>$homepage,"correcto"=>$correcto,"newresult"=>$lastobject));
         }
-    
+
 ?>

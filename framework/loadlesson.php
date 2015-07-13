@@ -67,7 +67,13 @@
             ?>
             </div>
 
+            <div class="recordingCam">
 
+              <video id="webcam" controls autoplay>
+                <source src=<?php echo "../courses/".$_GET['l']."/".$_GET['l'].".mp4" ?> type="video/mp4"></source>
+              </video>
+
+            </div>
 		</div>
        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">

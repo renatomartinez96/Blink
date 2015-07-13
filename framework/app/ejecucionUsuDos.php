@@ -80,6 +80,7 @@
             startTime();
             sincro();
               $( ".playground" ).droppable({
+                accept: ".htmlMain",
                     drop: function( event, ui ) {
 
                         identifie();
@@ -89,5 +90,7 @@
                         sincro();
                 }
     });
+    $( ".recordingCam" ).draggable({revert: false,cursor: "move", cursorAt: { top: -5, left: -5 }, containment: ".playground ", scroll: false,drag: function() {
+  }, });
 
 });

@@ -114,7 +114,6 @@
 .royal {
     background-color: #87D37C;
 }
-.regada
 .valueDescription {
     width: 100%;
 }
@@ -362,6 +361,33 @@
 }
 .regada {
   background-color: #DA6262;
+}
+.recordingCam {
+  position: fixed;
+  right: 0;
+}
+.recordingCam {
+  position: fixed;
+  right:2%;
+  top:15%;
+}
+.fullpg{
+    width:100vw;
+    height:100vh;
+    background:#C63;
+    z-index: 100;
+    position: absolute;
+    display: none;
+}
+.center{
+    margin-left:25%;
+    top:5%;
+    width:50%;
+    position:absolute;
+    text-align:center;
+}
+.brand{
+    width:80% !important:
 }
 /*Media query*/
 @media (min-width: 200px) and (max-width: 767px) {

@@ -6,12 +6,17 @@
         <?php
             include "app/graphic.php";
         ?>
-        <div class="recordingCam">
-          <div id="webcam"></div>
-          <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
-          <button id="recordStartButton" class="btn btn-small" disabled>Start Recording</button>
-          <button id="recordPauseResumeButton" class="btn btn-small" onclick="pauseResumeCamera()" disabled>Pause Recording</button>
-    			<button id="recordStopButton" class="btn btn-small" onclick="closeCamera()" disabled>Stop Recording</button>
+        <div class="fullpg">
+            <div class="center">
+                <img src="../../assets/img/loading.gif" class="brand">
+                <h2 class="junction-regular">Creating Lesson</h2>
+            </div>
+        </div>
+        <div class="bg-primary recordingCam">
+
+          <div id="webcam"></div><br/>
+          <button id="recordPauseResumeButton" class="btn btn-primary" disabled><i class='fa fa-pause'></i></button>
+          <label id="timeLeft" class="control-label"></label>
         </div>
             <div class="modal fade" id="modalDesc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
