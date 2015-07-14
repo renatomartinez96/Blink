@@ -10,8 +10,13 @@ if(isset($_POST["dentype"]) & isset($_POST["dendesc"]) & isset($_POST["dencur"])
     include_once '../assets/includes/funciones.php';
     
     $stmt = $mysqli->prepare("INSERT INTO curden (idCur, idUsrDen, denuncia, tipo) VALUES(?, ?, ?, ?)");
-    $stmt->bind_param('ssss', $dentype,$dendesc,$dencur, $denusr);
+    $stmt->bind_param('ssss', $dencur, $denusr, $dendesc, $dentype);
     $stmt->execute();
     
+    echo $langprint["den-saved"];
+}
+else
+{
+    echo $langprint["den-error"];
 }
 ?>

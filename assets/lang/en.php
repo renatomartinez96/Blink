@@ -32,6 +32,8 @@ $langprint = array(
     // Diferentes mensajes de la plataforma
         "msg-alert-saved-ok" => "<strong>Perfect! </strong>The data was saved correctly",
         "msg-alert-saved-error1" => "<strong>Error: </strong>There is a server problem",
+        "form-max-length" => "One field overloads the max length (Limit: ",
+        "form-not-null" => "Please, complete all the information",
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
@@ -116,6 +118,8 @@ $langprint = array(
         "denop3" => "The autor uses misleading information",
         "denop4" => "The course has inappropriate or offensive content",
         "denconfirm" => "Confirm complaint",
+        "den-saved" => "Your complaint was sended, please wait the process of review of the complaint",
+        "den-error" => "An error occured when submitting the complaint, please try later",
     // /# Formulario de denuncia de cursos
 // /# GLOBALES
 //----------------------------------------------

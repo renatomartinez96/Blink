@@ -76,6 +76,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border:none;
                 background-color: Transparent;
             }
+            .dont-horizontal{
+                resize: vertical;
+            }
         </style>
 		<!--/#Custom CSS-->
 

@@ -32,6 +32,8 @@ $langprint = array(
     // Diferentes mensajes de la plataforma
         "msg-alert-saved-ok" => "<strong>Muy bien! </strong>Los datos se guardaron correctamente",
         "msg-alert-saved-error1" => "<strong>Error: </strong>Aparecio un problema en el servidor",
+        "form-max-length" => "Un campo sobrepasa el número de caracteres permitidos (límite: ",
+        "form-not-null" => "Por favor, completa toda la información",
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
@@ -115,6 +117,8 @@ $langprint = array(
         "denop3" => "El autor usa información engañosa",
         "denop4" => "Hay contenido inapropiado u ofensivo",
         "denconfirm" => "Confirmar mi denuncia",
+        "den-saved" => "Tu denuncia fue enviada, debes esperar a que sea revisada para ver resultados",
+        "den-error" => "Ocurrio un error al enviar la denuncia, por favor intenta más tarde",
     // /# Formulario de denuncia de cursos
 // /# GLOBALES
 //----------------------------------------------

@@ -91,7 +91,9 @@ window.location.assign("index.php");
                         ?>
                         <h1 class='junction-bold text-warning text-center'><?=$langprint['dentitle']?> <?=$curtitle?>?</h1>
                         <div class="col-sm-8 col-sm-offset-2">
-                        <form>
+                        <form action="complaint-process.php" method="post">
+                            <input type="hidden" value="<?=$_SESSION['user_id']?>" name="denusr">
+                            <input type="hidden" value="<?=$selectedcourse?>" name="dencur">
                             <!-- Multiple Radios -->
                             <div class="form-group">
                               <label class="col-md-4 control-label" for="radios"><?=$langprint['dentype']?></label>
@@ -134,7 +136,7 @@ window.location.assign("index.php");
                             <!-- Button -->
                             <div class="form-group">
                               <div class="col-md-4 btn-block pull-right">
-                                <button id="envden" name="envden" class="btn btn-default"><?=$langprint["denconfirm"]?></button>
+                                <input type="submit" id="envden" name="envden" class="btn btn-default" value="<?=$langprint["denconfirm"]?>">
                               </div>
                             </div>
                         </form>
