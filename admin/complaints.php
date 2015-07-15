@@ -29,7 +29,50 @@ licenses restricting copying, distribution, and decompilation.
 Gerardo López | Iván Nolasco | Renato Andres
 
 -->
+<?php
+$date0 = date('Y-m-d');
+$date1 = date('Y-m-d', strtotime('-1 day'));
+$date2 = date('Y-m-d', strtotime('-2 day'));
+$date3 = date('Y-m-d', strtotime('-3 day'));
+$date4 = date('Y-m-d', strtotime('-4 day'));
+$date5 = date('Y-m-d', strtotime('-5 day'));
 
+$c0 = 0;
+$c1= 0;
+$c2= 0;
+$c3= 0;
+$c4= 0;
+$c5= 0;
+
+$stmt2 = $mysqli->query("SELECT fecha_den FROM curden WHERE fecha_den > '$date5'");
+if ($stmt2->num_rows > 0) 
+{   
+    while($row = $stmt2->fetch_assoc())
+    {
+        switch($row["fecha_den"])
+        {
+            case $date0;
+            $c0++;
+            break;
+            case $date1;
+            $c1++;
+            break;
+            case $date2;
+            $c2++;
+            break;
+            case $date3;
+            $c3++;
+            break;
+            case $date4;
+            $c4++;
+            break;
+            case $date5;
+            $c5++;
+            break;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -44,7 +87,34 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Custom CSS-->
 		<link href="../assets/css/sidebar.css" rel="stylesheet">
 		<!--/#Custom CSS-->
-
+        <style>
+        #canvas-holder1 {
+            width: 300px;
+            margin: 20px auto;
+        }
+        #canvas-holder2 {
+            width: 50%;
+            margin: 20px 25%;
+        }
+        #chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(0, 0, 0, .7);
+            color: white;
+            padding: 3px;
+            border-radius: 3px;
+            -webkit-transition: all .1s ease;
+            transition: all .1s ease;
+            pointer-events: none;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+        .chartjs-tooltip-key{
+            display:inline-block;
+            width:10px;
+            height:10px;
+        }
+        </style>
 	</head>
 	<body>
 		<!--Topbar -->
@@ -69,13 +139,20 @@ Gerardo López | Iván Nolasco | Renato Andres
                         <div class="col-xs-12">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                                <li role="presentation" ><a href="#complaint" aria-controls="complaint" role="tab" data-toggle="tab">Denuncias</a></li>
+                                <li role="presentation" class="active"><a href="#graphs" aria-controls="graphs" role="tab" data-toggle="tab">Gráficos</a></li>
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="home">
+                                
+                                <div role="tabpanel" class="tab-pane active" id="graphs">
+                                    <h3 class="text-center junction-bold text-warning">Denuncias recibidas los últimos cinco días</h3>
+                                    <div class="col-xs-8 col-sm-offset-2">
+                                        <canvas id="canvas" height="150" width="300"></canvas>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="complaint">
                                     <div class="row">
                                         <br>
                                 <?php 
@@ -128,9 +205,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 ?>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="profile">
-                                
-                                </div>
                             </div>
                         </div>
 					<!--/#Content-->
@@ -143,6 +217,35 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<?php 
 			include 'main_js.php';
 		?>
+        <script src="../assets/js/Chart.Core.js"></script>
+        <script src="../assets/js/Chart.Line.js"></script>
+        <script>
+            var lineChartData = {
+                labels : ["<?=$date5?>", "<?=$date4?>", "<?=$date3?>", "<?=$date2?>", "<?=$date1?>", "<?=$date0?>"],
+                datasets : [
+                    {
+                        label: "My First dataset",
+                        fillColor : "rgba(232, 69, 69,0.2)",
+                        strokeColor : "rgb(232, 69, 69)",
+                        pointColor : "rgba(232, 69, 69,1)",
+                        pointStrokeColor : "#fff",
+                        pointHighlightFill : "#fff",
+                        pointHighlightStroke : "rgba(232, 69, 69,1)",
+                        data : [<?=$c5?>, <?=$c4?>, <?=$c3?>, <?=$c2?>, <?=$c1?>, <?=$c0?>]
+                    }
+                ]
+
+            }
+
+
+            window.onload = function(){
+                var ctx = document.getElementById("canvas").getContext("2d");
+                window.myLine = new Chart(ctx).Line(lineChartData, {
+                    bezierCurve : false,
+                    responsive: true
+                });
+            }
+        </script>
 		<!--/#Main js-->
 	</body>
 </html>

@@ -1,6 +1,23 @@
 <?php
-include_once '../assets/includes/db_conexion.php';
-include_once '../assets/includes/funciones.php';
+    include_once '../assets/includes/db_conexion.php';
+    include_once '../assets/includes/funciones.php';
+    sec_session_start();
+    $user = $_SESSION['username'];
+    $elidespecial = $_SESSION['user_id'];
+    $avatar = '';
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
+    include "auto.php";
+    include "../assets/includes/lang.php";
+?>
+<?php
 $date0 = date('Y-m-d', strtotime('-1 day'));
 $date1 = date('Y-m-d', strtotime('-2 day'));
 $date2 = date('Y-m-d', strtotime('-3 day'));
@@ -15,10 +32,10 @@ $c3= 0;
 $c4= 0;
 $c5= 0;
 
-$stmt = $mysqli->query("SELECT fecha_den FROM curden WHERE idCur = 1 AND fecha_den > '$date5'");
-if ($stmt->num_rows > 0) 
+$stmt2 = $mysqli->query("SELECT fecha_den FROM curden WHERE fecha_den > '$date5'");
+if ($stmt2->num_rows > 0) 
 {   
-    while($row = $stmt->fetch_assoc())
+    while($row = $stmt2->fetch_assoc())
     {
         switch($row["fecha_den"])
         {
@@ -44,10 +61,27 @@ if ($stmt->num_rows > 0)
     }
 }
 ?>
+<!--
+
+Copyright (c) 2015 Blink
+All Rights Reserved
+ 
+This product is protected by copyright and distributed under
+licenses restricting copying, distribution, and decompilation.
+
+Gerardo López | Iván Nolasco | Renato Andres
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <title>lel</title>
+		<!--Core CSS-->
+		<?php
+            // Titulo de esta página:
+            $titulodelapagina = "Gráfico de denuncias";
+			include 'main_css.php';
+		?>
         <style>
         #canvas-holder1 {
             width: 300px;
@@ -76,22 +110,53 @@ if ($stmt->num_rows > 0)
             height:10px;
         }
         </style>
+	<!--/#Core CSS-->
+
+		<!--Custom CSS-->
+		<link href="../assets/css/sidebar.css" rel="stylesheet">
+		<!--/#Custom CSS-->
+
 	</head>
     <body>
-        
-    <div style="width:30%">
-        <div>
-            <canvas id="canvas" height="450" width="300"></canvas>
-        </div>
-    </div>
+		<!--Topbar -->
+		<?php 
+			include '../nav/topbar.php';
+		?>
+		<!--/#Topbar -->
+		<div id="wrapper" class="toggled">
+			<!--Sidebar -->
+			<?php 
+				include '../nav/sidebar.php';
+			?>
+			<!--/#Sidebar -->
+			
+			<!--Page Content -->
+			<div id="page-content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+					<!--Content-->    
+                    <div class="col-xs-12">
+                    <h1 class="text-center junction-bold text-warning">Denuncias recibidas los últimos cinco días</h1>
+                        <div class="col-xs-8 col-sm-offset-2">
+                            <canvas id="canvas" height="150" width="300"></canvas>
+                        </div>
+                    </div>
 
+                    <!--/#Content-->
+					</div>
+				</div>
+			</div>
+			<!--/#Page Content -->
+		</div>
+		<!--Main js-->
+		<?php 
+			include 'main_js.php';
+		?>
+        <!--/#Main js-->
         
     <script src="../assets/js/Chart.Core.js"></script>
     <script src="../assets/js/Chart.Line.js"></script>
-    <script src="../assets/js/jquery.js"></script>
-
     <script>
-        
         var lineChartData = {
 			labels : ["<?=$date5?>", "<?=$date4?>", "<?=$date3?>", "<?=$date2?>", "<?=$date1?>", "<?=$date0?>"],
 			datasets : [
@@ -113,10 +178,10 @@ if ($stmt->num_rows > 0)
         window.onload = function(){
             var ctx = document.getElementById("canvas").getContext("2d");
             window.myLine = new Chart(ctx).Line(lineChartData, {
+                bezierCurve : false,
                 responsive: true
             });
         }
     </script>
-        
-    </body>
+	</body>
 </html>
