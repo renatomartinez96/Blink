@@ -108,6 +108,13 @@ $titulo = "";
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">Gráficos: <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                            <li role="presentation" class="dropdown-header">Per type</li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="statistics.php">Genero</a></li>
+                        </ul>
+                        </div>
+                        <div class="btn-group" role="group">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Imprimir reportes: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation" class="dropdown-header">Per type</li>
