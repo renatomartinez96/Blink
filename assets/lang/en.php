@@ -34,6 +34,9 @@ $langprint = array(
         "msg-alert-saved-error1" => "<strong>Error: </strong>There is a server problem",
         "form-max-length" => "One field overloads the max length (Limit: ",
         "form-not-null" => "Please, complete all the information",
+        // Errores
+            "err-no-dens" => "There is no new complaints",
+        // /# Errores
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
@@ -183,7 +186,11 @@ $langprint = array(
         "tutor-type" => "tutor",
 //   /# Perfil de un tutor
 //   Suscripción a un curso
-        "sus-sure" => "¿Estas seguro de suscribirte a este curso?",
+        "sus-sure" => "Are you sure to subscribe on this course?",
+        "sus-not" => "You can not subscribe to courses",
+        "sus-done" => "Subscribed",
+        "btn-des-sus" => "Cancel your subscription",
+        "sus-des-sure" => "Are you sure to cancel your subscription on this course?",
 //   /# Suscripción a un curso
     //      Explorador de archivos
         "ex-des" => "If you wish to upload images and videos to use them in your own website or for completing your lessons you can do it here",
@@ -225,7 +232,11 @@ $langprint = array(
     "admin-maintenance-courses" => "Courses",
     "admin-maintenance-courses-go-list" => "Go to the courses list",
     "admin-maintenance-courses-list" => "List of teacher courses in Box Link",
+    "admin-maintenance-courses-den" => "Denounced courses",
 //      /# index
+//      denuncias
+    "aden-title" => "Denuncias recibidas",
+//      /# denuncias
 //      mantenimiento de usuarios
     "all-users-list" => "List of all users of Box Link",
     "tutors-list" => "List of tutors of Box Link",

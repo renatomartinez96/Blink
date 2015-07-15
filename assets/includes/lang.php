@@ -1,9 +1,5 @@
 <?php
-if($lang == "es")
-{
-    include "../assets/lang/".$lang.".php";
-}
-elseif($lang == "en")
+if(isset($lang))
 {
     include "../assets/lang/".$lang.".php";
 }
