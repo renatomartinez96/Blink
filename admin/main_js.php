@@ -3,13 +3,29 @@
 <script src="../assets/js/bootbox.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script>
-	$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-			$("#avatar").toggleClass("toggled");
-			$(".sidebar-nav").toggleClass("toggled");
-			$(".textos").toggleClass("toggled");
-	});
+    $( document ).ready(function() {
+        $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                $("#avatar").toggleClass("toggled");
+                $(".sidebar-nav").toggleClass("toggled");
+                $(".textos").toggleClass("toggled");
+        });
+        $(".dropden").click(function() {
+            var dencur = $(this).attr('curden');
+            $.ajax({
+                  method: "POST",
+                  url: "dropDen.php",
+                  data: {dencur: dencur},
+                  beforeSend: function() {
+                  },
+                  success: function(data) {
+                    bootbox.alert(data, function() {
+                    });
+                  }
+            });
+        });
+    });
 </script>
 <script>
 //Valida que en un campo solo se puedan ingresar letras

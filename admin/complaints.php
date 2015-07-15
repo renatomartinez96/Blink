@@ -79,8 +79,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     <div class="row">
                                         <br>
                                 <?php 
-                                $date = date('Y-m-d', strtotime('-5 day'));
-                                $date .= " 00:00:00";
+                                $date = date('Y-m-d', strtotime('-6 day'));
                                 $stmt3 = $mysqli->query("SELECT curden.id AS denid, curden.idCur As dencur, curden.denuncia AS dendesc, curden.tipo AS dentip, curden.fecha_den AS denfec, usuarios_tb.usuario AS autusu, curso.idprofesor, curso.nombre  FROM `curden` INNER JOIN curso ON curden.idCur = curso.idcurso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE curden.fecha_den > '$date'");
                                 if($stmt3->num_rows > 0)
                                 {
@@ -112,8 +111,8 @@ Gerardo López | Iván Nolasco | Renato Andres
                                                     </div>
                                                     <div class='panel-footer'>
                                                         <div class='btn-group'>
-                                                            <a href='#' class='btn btn-default'>1</a>
-                                                            <a href='#' class='btn btn-warning'>2</a>
+                                                            <a href='#' class='btn btn-warning'>Send message to tutor</a>
+                                                            <a href='#' class='btn btn-danger dropden' curden='".$row['denid']."'><i class='fa fa-trash'></i></a>
                                                         </div>
                                                     </div>
                                                 </div>

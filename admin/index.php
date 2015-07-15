@@ -201,8 +201,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="panel-heading">
                                 <h2 class="panel-title junction-bold"><i class="fa fa-book fa-lg"></i>
                                 <?php
-                                $date = date('Y-m-d', strtotime('-5 day'));
-                                $date .= " 00:00:00";
+                                $date = date('Y-m-d', strtotime('-6 day'));
                                 $stmt3 = $mysqli->query("SELECT * FROM curden WHERE fecha_den > '$date'");
                                 $lele = $stmt3->num_rows;
                                 echo $langprint["admin-maintenance-courses"]." <a href='complaints.php' style='text-decoration: none;'><span class='label label-danger' data-toggle='tooltip' data-placement='top' title='".$langprint["admin-maintenance-courses-den"]."' data-original-title='Tooltip on top' style='cursor: help;'>+".$lele."</span></a>";
