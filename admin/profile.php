@@ -221,7 +221,7 @@ else
                     max-height:100%;
                 }
                 #usrpanel{
-                    background: #191837 url(../assets/img/userbanner/<?=$bannero?>.png) center center !important;
+                    background: #191837 url(../assets/img/userbanner/<?=$bannero10?>.png) center center !important;
                     color:#fff;
                     background-size:100%;
                 }

@@ -26,7 +26,7 @@
                 <a class="iconos" href="index1.php"><i class="fa fa-magic fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["sidebar1"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="teachers.php"><i class="fa fa-cogs fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navconfig"]?></b></a>
+                <a class="iconos" href="my_data.php"><i class="fa fa-cogs fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navconfig"]?></b></a>
             </li>
         <?php
         break;
