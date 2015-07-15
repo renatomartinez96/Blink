@@ -81,20 +81,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 border:none;
                 background-color: Transparent;
             }
-            /* Radio Button
-            
-             input[type=radio] { display:none; } to hide the checkbox itself
-            input[type=radio] + label:before {
-            font-family: 'FontAwesome';
-            display: inline-block;
-            }
-
-            input[type=radio] + label:before { content: "\f096"; } unchecked icon
-            input[type=radio] + label:before { letter-spacing: 10px; } space between checkbox and label
-
-            input[type=radio]:checked + label:before { display: block; content: "\f0c8"; } checked icon
-            input[type=radio]:checked + label:before { display: block; letter-spacing: 5px; } allow space for check mark
-                */
             </style>
 			<!--Page Content -->
             <div id="page-content-wrapper">
@@ -184,7 +170,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                             <h1 class="panel-title junction-regular text-center"><?=$langprint["admin-friendly-intro"]?> <?=$user?>!</h1>
                                     </div>
                                     <div class="panel-body">
-                        <div class="col-md-4 text-center" style="height: 180px;">
+                        <div class="col-md-4 text-center" >
                             <div class="panel panel-info">
                                 <div class="panel-heading">
                                 <h2 class="panel-title junction-bold"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
@@ -199,10 +185,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 {
                                         echo "<span class='label label-primary' data-toggle='tooltip' data-placement='top' title='". $langprint["admin-maintenance-users-new-notification"]."' data-original-title='Tooltip on top' style='cursor: help;'>+".$row_cnt. "</span>";
                                 }
-//                                else
-//                                {
-//                                    echo "<span class='label label-default'>". $langprint["admin-maintenance-users-no-notification"]. "</span>";
-//                                }
                                 ?>
                                 </h2>
                                 </div>
@@ -214,10 +196,18 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 text-center" style="height: 180px;">
+                        <div class="col-md-4 text-center" >
                             <div class="panel panel-info">
                                 <div class="panel-heading">
-                                <h2 class="panel-title junction-bold"><i class="fa fa-book fa-lg"></i> <?=$langprint["admin-maintenance-courses"]?> <span class='label label-primary' data-toggle='tooltip' data-placement='top' title='Cursos denunciados' data-original-title='Tooltip on top' style='cursor: help;'>+1</span></h2>
+                                <h2 class="panel-title junction-bold"><i class="fa fa-book fa-lg"></i>
+                                <?php
+                                $date = date('Y-m-d', strtotime('-5 day'));
+                                $date .= " 00:00:00";
+                                $stmt3 = $mysqli->query("SELECT * FROM curden WHERE fecha_den > '$date'");
+                                $lele = $stmt3->num_rows;
+                                echo $langprint["admin-maintenance-courses"]." <a href='complaints.php' style='text-decoration: none;'><span class='label label-danger' data-toggle='tooltip' data-placement='top' title='".$langprint["admin-maintenance-courses-den"]."' data-original-title='Tooltip on top' style='cursor: help;'>+".$lele."</span></a>";
+                                ?>
+                                </h2>
                                 </div>
                                 <div class="panel-body">
                                 <p class="junction-light">Se presentan los diferentes cursos que han sido creados por los tutores</p>
@@ -228,7 +218,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             </div>
                         </div>
 <!--
-                        <div class="col-md-4 text-center" style="height: 180px;">
+                        <div class="col-md-4 text-center" >
                             <div class="panel panel-info">
                                 <div class="panel-heading">
                                     <h2 class="panel-title junction-bold"><i class="fa fa-camera-retro fa-lg"></i>   Imagenes</h2>
