@@ -57,7 +57,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                 
             }
             .lecciones{
-                min-height:175px;
+                max-height:175px;
                 overflow:scroll;
                 overflow-x:hidden;
                 margin-bottom:0px;

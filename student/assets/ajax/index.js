@@ -48,4 +48,20 @@ function suscribecurso(curso,usuario){
             }
         });
 }
+function unsuscribecurso(curso,usuario){
+    var accion = 'cursodes';
+    var send = {
+                "accion" : accion,
+                "curso" : curso,
+                "usuario" : usuario
+               };
+        $.ajax({
+            type: "POST",
+            url: "assets/ajax/cursos.php",
+            data: send,
+            success: function(response) {
+                window.location.href = './';
+            }
+        });
+}
     
