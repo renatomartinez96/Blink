@@ -8,6 +8,7 @@ if(isset($_POST["dentype"]) & isset($_POST["dendesc"]) & isset($_POST["dencur"])
     
     include_once '../assets/includes/db_conexion.php';
     include_once '../assets/includes/funciones.php';
+    include_once '../assets/includes/lang.php';
     
     $stmt = $mysqli->prepare("INSERT INTO curden (idCur, idUsrDen, denuncia, tipo) VALUES(?, ?, ?, ?)");
     $stmt->bind_param('ssss', $dencur, $denusr, $dendesc, $dentype);

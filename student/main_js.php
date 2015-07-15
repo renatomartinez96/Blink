@@ -3,6 +3,7 @@
 <script src="../assets/js/bootbox.min.js" type="text/javascript"></script>
 <script src="../assets/js/jquery-ui.js"></script>
 <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/ajax/index.js"></script>
 <script>
 	$("#menu-toggle").click(function(g){g.preventDefault(),$("#wrapper").toggleClass("toggled"),$("#avatar").toggleClass("toggled"),$(".sidebar-nav").toggleClass("toggled"),$(".textos").toggleClass("toggled")});
 </script>
@@ -58,9 +59,9 @@
                             "</div>"+
                         "</div>",
                 buttons: {
-                    danger: {
+                    default: {
                         label: "Denunciar",
-                        className: "btn-danger pull-left",
+                        className: "btn-default pull-left",
                         callback: function() {
                             bootbox.dialog({
                                 title: "<h4 class='junction-bold text-warning text-center'><?=$langprint['dentitle']?> "+cursname+"?</h4>",
@@ -71,13 +72,13 @@
                                                 "<div class='radio'>"+
                                                     "<label for='radios-0'>"+
                                                         "<input name='dentype' class='dentype' id='radios-0' value='1' type='radio'>"+
-                                                        "<?=$langprint['denop2']?>"+
+                                                        "<?=$langprint['denop1']?>"+
                                                     "</label>"+
                                                 "</div>"+
                                                 "<div class='radio'>"+
                                                     "<label for='radios-1'>"+
                                                         "<input name='dentype' class='dentype' id='radios-1' value='2' type='radio'>"+
-                                                        "<?=$langprint['denop1']?>"+
+                                                        "<?=$langprint['denop2']?>"+
                                                     "</label>"+
                                                 "</div>"+
                                                 "<div class='radio'>"+
@@ -127,6 +128,7 @@
                                                 }
                                                 else
                                                 {
+                                                    var dendesc = dendesc.replace(/</g, '&lt;').replace(/>/g, '&gt;');
                                                     sendDen(dentype, dendesc, dencur, denusr);
                                                 }
                                             }
@@ -139,6 +141,19 @@
                                 }
                             });
                         }   
+                    },
+                    danger: {
+                        label: "<?=$langprint["sus-done"]?>",
+                        className: "btn-danger pull-left",
+                        callback: function() {
+                            var curusr = <?=$_SESSION['user_id']?>;
+                            
+                            bootbox.confirm('<?=$langprint["sus-des-sure"]?>', function(result) {
+                                if(result==true){
+                                    unsuscribecurso(curid, curusr);
+                                }
+                            });
+                        }
                     },
                     info: {
                         label: "Más info",
