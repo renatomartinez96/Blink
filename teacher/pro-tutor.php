@@ -1,10 +1,11 @@
 <?php
 
 // Se seleccionan los cursos del tutor
-$stmt2 = $mysqli->query(" SELECT * FROM `curso` WHERE `idprofesor` = '".$idusuario10."' ");
-if ($stmt2->num_rows > 0)
+$stmt2 = $mysqli->query("SELECT curso.idcurso, curso.idprofesor, curso.nombre, curso.descripcion, curso.imagen, curso.curEstado FROM `curso` WHERE curso.`idprofesor` = '".$idusuario10."' AND curso.curEstado = '1'");
+if($stmt2->num_rows > 0)
 {
-    while($row = $stmt2->fetch_assoc()){
+    while($row = $stmt2->fetch_assoc())
+    {
         $col8 .= "
             <div class='col-md-6 col-xs-12 full'>
                 <div class='panel panel-default'>
@@ -19,12 +20,33 @@ if ($stmt2->num_rows > 0)
                         </div>
                     </div>
                     </div>
-                    <div class='panel-footer'>
-                        <a href='#'><button class='btn btn-success btn-block' onclick=\"return bootbox.confirm('".$langprint["sus-sure"]."', function(result) {if(result==true){suscribecurso(".$row['idcurso'].",".$idusuario.")}})\">".$langprint['btn-suscribir']." <span class='glyphicon glyphicon-chevron-right'></span></button></a>
-                    </div>
+                    <div class='panel-footer'>";
+                if($buscar == $user)
+                {
+                    $col8 .= "<p class='junction-regular text-warning text-center'>".$langprint['sus-not']."</p>";
+                }
+                else
+                {
+                    if($tipo == 1 or $tipo == 2)
+                    {
+                        $col8 .= "<p class='junction-regular text-warning text-center'>".$langprint['sus-not']."</p>";
+                    }
+                    else
+                    {
+                        $stmt3 = $mysqli->query("SELECT cursoestudiante.idcurso, cursoestudiante.idestudiante FROM cursoestudiante WHERE cursoestudiante.idcurso = '".$row['idcurso']."' AND cursoestudiante.idestudiante = '".$idusuario."'");
+                        if($stmt3->num_rows > 0)
+                        {
+                            $col8 .= "<button class='btn btn-danger btn-block' onclick=\"return bootbox.confirm('".$langprint["sus-des-sure"]."', function(result) {if(result==true){unsuscribecurso(".$row['idcurso'].",".$idusuario.")}})\">".$langprint['sus-done']." <fa class='fa fa-times'></fa></button>";
+                        }
+                        else
+                        {
+                            $col8 .= "<button class='btn btn-success btn-block' onclick=\"return bootbox.confirm('".$langprint["sus-sure"]."', function(result) {if(result==true){suscribecurso(".$row['idcurso'].",".$idusuario.")}})\">".$langprint['btn-suscribir']." <span class='glyphicon glyphicon-chevron-right'></span></button>";
+                        }
+                    }
+                }
+        $col8 .= "  </div>
                 </div>
-            </div>
-        ";
+            </div>";
     }
 }
 else
