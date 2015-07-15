@@ -4,13 +4,27 @@ include_once 'psl-config.php';
 
 $error_msg = "";
 
-if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_POST['last'], $_POST['datenac'], $_POST['confirmpwd'], $_POST['password'], $_POST['lang'], $_POST['tipo'])) {
+if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_POST['last'], $_POST['datenac'], $_POST['confirmpwd'], $_POST['password'], $_POST['lang'], $_POST['tipo'], $_POST['gender'])) {
     // Sanitize and validate the data passed in
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $last = filter_input(INPUT_POST, 'last', FILTER_SANITIZE_STRING);
     $date = filter_input(INPUT_POST, 'datenac', FILTER_SANITIZE_STRING);
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $gender = "";
+    if($_POST["gender"] == 3)
+    {
+        $gender =  "f";
+    }
+    elseif($_POST["gender"] == 2)
+    {
+        $gender =  "m";
+    }
+    else
+    {
+        $gender =  "m";
+    }
+    
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($_POST['confirmpwd'] == $_POST['password']) {
         $password = $_POST['password'];
@@ -89,9 +103,9 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
         $password = hash('sha512', $password . $random_salt);
 
         // Insert the new user into the database
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO usuarios_tb (nombres, apellidos, nacimiento, usuario, correo, contra, estado, token, tipo, salt, log, lang) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO usuarios_tb (nombres, apellidos, nacimiento, usuario, correo, contra, estado, token, tipo, salt, log, lang, genero) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
             $token = md5(substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15).$username);
-            $insert_stmt->bind_param('ssssssssssss',$name, $last, $date, $username, $email, $password, $estado, $token, $tipo, $random_salt, $log, $idioma);
+            $insert_stmt->bind_param('sssssssssssss',$name, $last, $date, $username, $email, $password, $estado, $token, $tipo, $random_salt, $log, $idioma, $gender);
 
             require_once('phpmailer/PHPMailerAutoload.php');
             require_once('phpmailer/class.phpmailer.php');

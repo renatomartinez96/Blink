@@ -10,8 +10,8 @@ function formhash(form, password) {
     form.submit();
 }
  
-function regformhash(form, name, last, uid, email, password, conf, date, lang, tipo) {
-    if (name.value == '' || last.value == '' || uid.value == '' || email.value == '' || password.value == '' || conf.value == '' || date.value == '', lang.value == '', tipo.value == '') 
+function regformhash(form, name, last, uid, email, password, conf, date, lang, tipo, gender) {
+    if (name.value == '' || last.value == '' || uid.value == '' || email.value == '' || password.value == '' || conf.value == '' || date.value == '', lang.value == '', tipo.value == '', gender.value == '') 
     {
         bootbox.alert({
             title: "<center><h2 class='junction-bold'>Box Link</h2></center>",

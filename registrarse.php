@@ -154,6 +154,15 @@ require 'assets/includes/funciones.php';
                                                 <span class="help-block">El profesor tendra que hacer una evaluación de conocimientos <ins>básicos</ins> de HTML y CSS para actuvar su cuenta.</span>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="gender">Genero</label>
+                                            <div class="col-lg-10">
+                                                <select name="gender" class="form-control input-sm">
+                                                    <option value="3">Femenino</option>
+                                                    <option value="2">Masculino</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <input type="button" value="Enviar" class="btn btn-success pull-center" id="subm" onclick="return regformhash(
@@ -165,8 +174,7 @@ require 'assets/includes/funciones.php';
                                                                                                                             this.form.password,
                                                                                                                             this.form.confirmpwd,
                                                                                                                             this.form.datenac,
-                                                                                                                                 this.form.lang,
-                                                                                                                                 this.form.tipo);" />
+                                                                                                                            this.form.lang, this.form.tipo, this.form.gender);" />
                                         <p><a href="index.php" class="">Inicio de sesion</a></p>
                                     </div>
                                 </form>
