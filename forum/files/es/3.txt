@@ -1,0 +1,38 @@
+<h1>&iquest;Qu&eacute; es CSS?</h1>
+
+<p>Puede que ya hayas o&iacute;do hablar de CSS sin saber realmente qu&eacute; es. En esta lecci&oacute;n aprender&aacute;s m&aacute;s cosas sobre CSS y qu&eacute; puede hacer por ti.</p>
+
+<p>CSS es el acr&oacute;nicmo de&nbsp;<strong>C</strong>ascading<strong>S</strong>tyle&nbsp;<strong>S</strong>heets (es decir, hojas de estilo en cascada).</p>
+
+<h2>&iquest;Qu&eacute; puedo hacer con CSS?</h2>
+
+<p>CSS es un lenguaje de estilo que define la presentaci&oacute;n de los documentos HTML. Por ejemplo, CSS abarca cuestiones relativas a fuentes, colores, m&aacute;rgenes, l&iacute;neas, altura, anchura, im&aacute;genes de fondo, posicionamiento avanzado y muchos otros temas. &iexcl;Espera unos segundos y ya ver&aacute;s!</p>
+
+<p>Es posible usar HTML, o incluso abusar del mismo, para a&ntilde;adir formato a los sitios web. Sin embargo, CSS ofrece m&aacute;s opciones y es m&aacute;s preciso y sofisticado. CSS est&aacute; soportado por todos los navegadores hoy d&iacute;a.</p>
+
+<p>Despu&eacute;s de unas cuantas lecciones de este tutorial ser&aacute;s capaz de crear tus propias hojas de estilo usando CSS para dar a tu sitio web un aspecto nuevo y genial.</p>
+
+<h2>&iquest;Qu&eacute; diferencia hay entre CSS y HTML?</h2>
+
+<p>HTML se usa para estructurar el contenido; CSS se usa para formatear el contenido previamente estructurado.</p>
+
+<p>Vale, suena un poco t&eacute;cnico y confuso... pero sigue leyendo; pronto todo tendr&aacute; sentido.</p>
+
+<p>All&aacute; en los buenos tiempos en que Madonna era una &quot;Virgen&quot; y un tipo llamado Tim Berners Lee invent&oacute; el World Wide Web, el lenguaje HTML s&oacute;lo se usaba para a&ntilde;adir estructura al texto. Los autores pod&iacute;an marcar sus textos diciendo &quot;esto en un t&iacute;tulo&quot; o &quot;esto es un p&aacute;rrafo&quot;, usando las etiquetas HTML&nbsp;<code>&lt;h1&gt;</code>&nbsp;y&nbsp;<code>&lt;p&gt;</code>, respectivamente.</p>
+
+<p>A medida que la Web fue ganando popularidad, los dise&ntilde;adores empezaron a buscar posibilidades para a&ntilde;adir formato a los documentos en l&iacute;nea. Para satisfacer esta reclamaci&oacute;n, los fabricantes de los navegadores (en ese momento, Netscape y Microsoft) inventaron nuevas etiquetas HTML, entre las que se encontraban, por ejemplo,&nbsp;<code>&lt;font&gt;</code>, que se diferenciaba de las etiquetas originales HTML en que defin&iacute;an el formato... y no la estructura.</p>
+
+<p>Esto tambi&eacute;n llev&oacute; a una situaci&oacute;n en la que las etiquetas estructurales originales, por ejemplo, &lt;table&gt;, se usaban cada vez m&aacute;s de manera incorrecta para dar formato a las p&aacute;ginas en vez de para a&ntilde;adir estructura al texto. Muchas nuevas etiquetas que a&ntilde;ad&iacute;an formato, por ejemplo, &lt;blink&gt;, s&oacute;lo las soportaban un tipo determinado de navegador. &quot;Necesitas el navegador X para visualizar esta p&aacute;gina&quot; se convirti&oacute; en una declaraci&oacute;n de descargo com&uacute;n en los sitios web.</p>
+
+<p>CSS se invent&oacute; para remediar esta situaci&oacute;n, proporcionando a los dise&ntilde;adores web con sofisticadas oportunidades de presentaci&oacute;n soportadas por todos los navegadores. Al mismo tiempo, la separaci&oacute;n de la presentaci&oacute;n de los documentos del contenido de los mismos, hace que el mantenimiento del sitio sea mucho m&aacute;s f&aacute;cil.</p>
+
+<h2>&iquest;Qu&eacute; beneficios me ofrece CSS?</h2>
+
+<p>CSS fue toda una revoluci&oacute;n en el mundo del dise&ntilde;o web. Entre los beneficios concretos de CSS encontramos:</p>
+
+<ul>
+	<li>control de la presentaci&oacute;n de muchos documentos desde una &uacute;nica hoja de estilo;</li>
+	<li>control m&aacute;s preciso de la presentaci&oacute;n;</li>
+	<li>aplicaci&oacute;n de diferentes presentaciones a diferentes tipos de medios (pantalla, impresi&oacute;n, etc.);</li>
+	<li>numerosas t&eacute;cnicas avanzadas y sofisticadas.</li>
+</ul>

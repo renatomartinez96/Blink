@@ -20,34 +20,33 @@
         {
             $stmt1->execute();
             $stmt1->store_result();
-            $stmt1->bind_result($tabla_forum[0],$tabla_forum[1],$tabla_forum[2],$tabla_forum[3],$tabla_forum[4],$tabla_forum[5],$tabla_forum[6]);
-            $stmt1->fetch();
-            $resultados = $stmt1->num_rows;
-            if ($resultados > 0)
+            $stmt1->bind_result($tabla_forum[0],$tabla_forum[1],$tabla_forum[2],$tabla_forum[3],$tabla_forum[4],$tabla_forum[5]);
+            while($stmt1->fetch())
             {
-                echo "<tr>";
-                    echo "<td>";
-                        echo $tabla_forum[0];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[1];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[2];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[3];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[4];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[5];
-                    echo "</td>";
-                    echo "<td>";
-                        echo $tabla_forum[6];
-                    echo "</td>";
-                echo "</tr>";
+                $resultados = $stmt1->num_rows;
+                if ($resultados > 0)
+                {
+                    echo "<tr>";
+                        echo "<td>";
+                            echo $tabla_forum[0];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $tabla_forum[1];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $tabla_forum[2];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $tabla_forum[3];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $tabla_forum[4];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $tabla_forum[5];
+                        echo "</td>";
+                    echo "</tr>";
+                }
             }
         }
 
@@ -149,7 +148,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <th>Fecha</th>
                                         <th>Name</th>
                                         <th>Nombre</th>
-                                        <th>Archivo</th>
                                         <th>Usuario</th>
                                         <th>Lenguaje</th>
 

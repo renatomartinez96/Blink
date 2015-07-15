@@ -1,0 +1,13 @@
+<h1>Introducci&oacute;n a&nbsp;CSS</h1>
+
+<p>Las hojas de estilo en cascada (CSS, acr&oacute;nimo de&nbsp;<strong>C</strong>ascading&nbsp;<strong>S</strong>tyle<strong>S</strong>heets) son una herramienta fant&aacute;stica para a&ntilde;adir presentaci&oacute;n a los sitios web. Pueden ahorrarte mucho tiempo y te permitir&aacute;n dise&ntilde;ar sitios web de un modo totalmente nuevo. CSS es imprescindible para todos aquellos que trabajen en el campo del dise&ntilde;o web.</p>
+
+<h2>&iquest;Qu&eacute; software necesito?</h2>
+
+<p>Evita, por favor, usar software tal como FrontPage, DreamWeaver o Word con este tutorial. Este tipo de software tan sofisticado no te ayudar&aacute; a aprender CSS; m&aacute;s bien, te limitar&aacute; y reducir&aacute; de modo significativo tu curva de aprendizaje.</p>
+
+<p>Todo lo que necesitas es un editor de texto sencillo y gratuito.</p>
+
+<p>Por ejemplo, Microsoft Windows incorpora un programa que se llama Bloc de notas. Se localiza normalmente en el men&uacute; de Inicio, secci&oacute;n Todos los programas dentro de la carpeta Accesorios. Si no es &eacute;ste, puedes usar un editor de texto parecido, por ejemplo, Pico para Linux o Simple Text para Macintosh.</p>
+
+<p>Este tipo de editores de texto sencillos son ideales para aprender HTML y CSS puesto que no afectan o cambian el c&oacute;digo que vas tecleando. De esto modo, los &eacute;xitos y errores s&oacute;lo se te podr&aacute;n atribuir a ti... y no al software.</p>

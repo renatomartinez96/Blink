@@ -184,6 +184,7 @@ include_once 'assets/includes/db_conexion.php';
                     });
                     setInterval(function(){
         //                  segundos
+                    var form = document.getElementById('examen');
                     tiempo.segundo++;
                     if(tiempo.segundo >= 60)
                     {
@@ -191,9 +192,8 @@ include_once 'assets/includes/db_conexion.php';
                         tiempo.minuto++;
                     }
                     if(tiempo.minuto >= 30)
-
                     {
-
+                        form.submit();
                     }
                     $( "#minute" ).text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
                     $( "#second" ).text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);

@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cuestionario`
 --
 
-CREATE TABLE IF NOT EXISTS `cuestionario` (
+CREATE TABLE `cuestionario` (
 `id` int(11) NOT NULL,
   `pregunta` text NOT NULL,
   `opcion1` text NOT NULL,
@@ -148,11 +148,11 @@ INSERT INTO `cuestionario` (`id`, `pregunta`, `opcion1`, `opcion2`, `opcion3`, `
 -- Estructura de tabla para la tabla `curden`
 --
 
-CREATE TABLE IF NOT EXISTS `curden` (
+CREATE TABLE `curden` (
 `id` int(11) NOT NULL,
   `idCur` int(11) NOT NULL,
   `idUsr` int(11) NOT NULL,
-  `fecha_den` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `fecha_den` datetime NOT NULL 
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
@@ -168,7 +168,7 @@ INSERT INTO `curden` (`id`, `idCur`, `idUsr`, `fecha_den`) VALUES
 -- Estructura de tabla para la tabla `curso`
 --
 
-CREATE TABLE IF NOT EXISTS `curso` (
+CREATE TABLE `curso` (
 `idcurso` int(11) NOT NULL,
   `idprofesor` int(11) NOT NULL,
   `nombre` varchar(50) CHARACTER SET utf8 NOT NULL,
@@ -190,7 +190,7 @@ INSERT INTO `curso` (`idcurso`, `idprofesor`, `nombre`, `descripcion`, `imagen`,
 -- Estructura de tabla para la tabla `cursoestudiante`
 --
 
-CREATE TABLE IF NOT EXISTS `cursoestudiante` (
+CREATE TABLE `cursoestudiante` (
 `id` int(11) NOT NULL,
   `idcurso` int(11) NOT NULL,
   `idestudiante` int(11) NOT NULL
@@ -209,7 +209,7 @@ INSERT INTO `cursoestudiante` (`id`, `idcurso`, `idestudiante`) VALUES
 -- Estructura de tabla para la tabla `docente-estudiante`
 --
 
-CREATE TABLE IF NOT EXISTS `docente-estudiante` (
+CREATE TABLE `docente-estudiante` (
 `idDetalle` int(11) NOT NULL,
   `idDocente` int(11) NOT NULL,
   `idEstudiante` int(11) NOT NULL
@@ -228,7 +228,7 @@ INSERT INTO `docente-estudiante` (`idDetalle`, `idDocente`, `idEstudiante`) VALU
 -- Estructura de tabla para la tabla `examenes`
 --
 
-CREATE TABLE IF NOT EXISTS `examenes` (
+CREATE TABLE `examenes` (
 `id` int(11) NOT NULL,
   `usuario` varchar(30) NOT NULL,
   `nota` int(11) NOT NULL,
@@ -251,7 +251,7 @@ INSERT INTO `examenes` (`id`, `usuario`, `nota`, `fecha`) VALUES
 -- Estructura de tabla para la tabla `intentos`
 --
 
-CREATE TABLE IF NOT EXISTS `intentos` (
+CREATE TABLE `intentos` (
   `idusuario` int(11) NOT NULL,
   `hora` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -311,7 +311,7 @@ INSERT INTO `intentos` (`idusuario`, `hora`) VALUES
 -- Estructura de tabla para la tabla `leccion`
 --
 
-CREATE TABLE IF NOT EXISTS `leccion` (
+CREATE TABLE `leccion` (
 `idleccion` int(11) NOT NULL,
   `idcurso` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
@@ -335,7 +335,7 @@ INSERT INTO `leccion` (`idleccion`, `idcurso`, `nombre`, `descripcion`, `teoria`
 -- Estructura de tabla para la tabla `leccusua`
 --
 
-CREATE TABLE IF NOT EXISTS `leccusua` (
+CREATE TABLE `leccusua` (
 `codigo` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `idLeccion` int(11) NOT NULL,
@@ -358,7 +358,7 @@ INSERT INTO `leccusua` (`codigo`, `idUsuario`, `idLeccion`, `resultado`, `inicio
 -- Estructura de tabla para la tabla `user_config`
 --
 
-CREATE TABLE IF NOT EXISTS `user_config` (
+CREATE TABLE `user_config` (
 `idconfig` int(11) NOT NULL,
   `iduser` int(11) NOT NULL,
   `theme` int(3) NOT NULL DEFAULT '1',
@@ -382,7 +382,7 @@ INSERT INTO `user_config` (`idconfig`, `iduser`, `theme`, `banner`) VALUES
 -- Estructura de tabla para la tabla `usuarios_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios_tb` (
+CREATE TABLE `usuarios_tb` (
 `idusuario` int(11) NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,

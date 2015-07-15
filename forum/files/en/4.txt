@@ -1,0 +1,30 @@
+<h1>What is HTML?</h1>
+
+<p><strong>HTML is the &quot;mother tongue&quot; of your browser.</strong></p>
+
+<p>To make a long story short, HTML was invented in 1990 by a scientist called Tim Berners-Lee. The purpose was to make it easier for scientists at different universities to access and share research documents. The project became a bigger success than Tim Berners-Lee had ever imagined. By inventing HTML, he laid the foundation for the web as we know it today.</p>
+
+<p>HTML is a language that makes it possible to present information (e.g. scientific research) on the Internet. What you see when you view a page on the Internet is your browser&#39;s interpretation of HTML.</p>
+
+<p>To see the HTML code of a page on the Internet, place your cursor on the text of the page (not on a graphic), right click and select &quot;View Source&quot; or &quot;View page source&quot; (depending on the browser you&#39;re using).</p>
+
+<p><img alt="View source" src="http://html.net/tutorials/html5/viewsource.png" /></p>
+
+<p>For the untrained eye, HTML code looks complicated but this tutorial will help you make sense of it all.</p>
+
+<h2>What can I use HTML for?</h2>
+
+<p>If you want to make websites, there is no way around HTML. Even if you&#39;re using a program to create websites, such as Dreamweaver, a basic knowledge of HTML can make life a lot simpler and your website a lot better. The good news is that HTML is easy to learn and use. In just two lessons from now you will have learned how to make your first website.</p>
+
+<p><strong>HTML is used to make websites. It is as simple as that!</strong></p>
+
+<h2>Okay, but what does H-T-M-L stand for?</h2>
+
+<p>HTML is an abbreviation of &quot;HyperText Mark-up Language&quot;, which is already more than you need to know at this stage. However, for the sake of good order, let us explain in greater detail.</p>
+
+<ul>
+	<li><strong>Hyper</strong>&nbsp;is the opposite of linear. In the good old days &mdash; when a mouse was something the cat chased &mdash; computer programs ran linearly: when the program had executed one action it went to the next line and after that, the next line and so on. But HTML is different &mdash; you can go wherever you want, whenever you want. For example, it is not necessary to visit MSN.com before you visit HTML.net.</li>
+	<li><strong>Text</strong>&nbsp;is self-explanatory.</li>
+	<li><strong>Mark-up</strong>&nbsp;is what you do with the text. You are marking up the text the same way you do in a text editing program with headings, bullets and bold text and so on.</li>
+	<li><strong>Language</strong>&nbsp;is what HTML is. It uses many English words.</li>
+</ul>

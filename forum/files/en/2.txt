@@ -1,0 +1,13 @@
+<h1>CSS Introduction</h1>
+
+<p>Cascading Style Sheets (CSS) is a fantastic tool to add layout to your websites. It can save you a lot of time and it enables you to design websites in a completely new way. CSS is a must for anyone working with web design.</p>
+
+<h2>Which software do I need?</h2>
+
+<p>Please avoid using software such as FrontPage, DreamWeaver or Word with this tutorial. Advanced software will not help you learn CSS. Instead, it will limit you and slow down your learning curve significantly.</p>
+
+<p>All you need is a free and simple text editor.</p>
+
+<p>For example, Microsoft Windows comes with a program called Notepad. It is usually located in Accessories in the start menu under Programs. Alternatively, you can use a similar text editor e.g. Pico for Linux or Simple Text for Macintosh.</p>
+
+<p>A simple text editor is ideal for learning HTML and CSS because it doesn&#39;t affect or change the codes you type. That way, your successes and errors can only be attributed to yourself - not the software.</p>

@@ -1,0 +1,53 @@
+<h1>Elementos y etiquetas</h1>
+
+<p>Los elementos proporcionan la estructura al documento HTML e indican al navegador c&oacute;mo quieres que se presente tu sitio web. Por lo general, los elementos est&aacute;n formados por una etiqueta de inicio, el contenido, y una etiqueta de cierre.</p>
+
+<h2>&quot;&iquest;Etiquetas?&quot;</h2>
+
+<p>Las etiquetas son marcas que se usan para se&ntilde;alar el inicio y el fin de un elemento.</p>
+
+<p>Todas las etiquetas comparten el mismo formato: empiezan con el signo menor que &quot;&lt;&quot; y terminan con el signo mayor que &quot;&gt;&quot;.</p>
+
+<p>Por lo general, hay dos tipos de etiquetas: la etiquetas de inicio, por ejemplo, &lt;html&gt;, y las etiquetas de cierre, por ejemplo, &lt;/html&gt;. La &uacute;nica diferencia entre la etiqueta de inicio y la de cierre es la barra oblicua &quot;/&quot;. El contenido queda etiquetado al colocarlo entre una etiqueta de inicio y una etiqueta de cierre.</p>
+
+<p>HTML trata esencialmente de elementos. Aprender HTML consiste en aprender a usar diferentes etiquetas.</p>
+
+<h2>&iquest;Y si vemos algunos ejemplos?</h2>
+
+<p>Vale. El elemento&nbsp;<code>em</code>&nbsp;se usa para dar enfasis al texto. Todo el texto entre la etiqueta de inicio&nbsp;<code>&lt;em&gt;</code>&nbsp;y la etiqueta de cierre&nbsp;<code>&lt;/em&gt;</code>&nbsp;aparecer&aacute; enfatizado en el navegador. (&quot;em&quot; es la abreviatura de &quot;emphasis&quot;).</p>
+
+<p><strong>Ejemplo 1:</strong></p>
+
+<pre>
+<code>&lt;em&gt;Texto con &eacute;nfasis.&lt;/b&gt;</code></pre>
+
+<p>que se ver&aacute; as&iacute; en el navegador:</p>
+
+<p><em>Texto con &eacute;nfasis.</em></p>
+
+<p>Los elementos&nbsp;<code>h1</code>,&nbsp;<code>h2</code>,&nbsp;<code>h3</code>,&nbsp;<code>h4</code>,&nbsp;<code>h5</code>&nbsp;and&nbsp;<code>h6</code>&nbsp;se utilizan para crear encabezados (&quot;h&quot; es la abreviatura de &quot;heading&quot;), donde&nbsp;<code>h1</code>&nbsp;representa el primer nivel y, normalmente, el texto m&aacute;s grande,&nbsp;<code>h2</code>&nbsp;es el segundo nivel y, normalmente, es un texto algo m&aacute;s peque&ntilde;o, y&nbsp;<code>h6</code>&nbsp;es el sexto y &uacute;ltimo nivel en la jerarqu&iacute;a de los encabezados y es, normalmente, el texto m&aacute;s peque&ntilde;o.</p>
+
+<p><strong>Ejemplo 2:</strong></p>
+
+<pre>
+<code>&lt;h1&gt;Este es un encabezado de primer nivel&lt;/h1&gt; 
+	&lt;h2&gt;Este es un encabezado de segundo nivel&lt;/h2&gt;
+	</code></pre>
+
+<p>que se ver&aacute; as&iacute; en el navegador:</p>
+
+<h1>Este es un encabezado de primer nivel</h1>
+
+<h2>Este es un encabezado de segundo nivel</h2>
+
+<h2>As&iacute; pues, &iquest;siempre son necesarias las etiqueta de inicio y de cierre?</h2>
+
+<p>Como se dice, siempre hay una excepci&oacute;n que confirma la regla, y en HTML la excepci&oacute;n son unos cuantos elementos que se abren y cierran con la misma etiqueta. Estos elementos que se denominan elementos vac&iacute;os no se asocian a un pasaje espec&iacute;fico del texto sino que son m&aacute;s bien etiquetas aisladas; por ejemplo, un salto de l&iacute;nea tiene este formato:&nbsp;<code>&lt;br /&gt;</code>.</p>
+
+<h2>&iquest;Las etiquetas hay que escribirlas en may&uacute;scula o en min&uacute;scula?</h2>
+
+<p>A la mayor&iacute;a de los navegadores les da igual si se escriben en may&uacute;scula, min&uacute;scula o una mezcla de las dos. &lt;HTML&gt;, &lt;html&gt; or &lt;HtMl&gt; normalmente tendr&aacute;n el mismo resultado. Sin embargo, el modo&nbsp;<strong>correcto</strong>&nbsp;es escribir las etiquetas en min&uacute;scula. As&iacute; que&nbsp;<strong>acost&uacute;mbrate a escribir las etiquetas en min&uacute;scula</strong>.</p>
+
+<h2>&iquest;Y d&oacute;nde coloco todas estas etiquetas?</h2>
+
+<p>Las etiquetas se escriben dentro de un documento HTML. Todo sitio web contiene uno o m&aacute;s documentos HTML. Cuando navegas por la web, no haces otra cosa que abrir diferentes documentos HTML.</p>

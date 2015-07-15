@@ -1,0 +1,38 @@
+<h1>What is CSS?</h1>
+
+<p>Maybe you already heard about CSS without really knowing what it is. In this lesson you will learn more about what CSS is and what it can do for you.</p>
+
+<p>CSS is an acronym for&nbsp;<strong>C</strong>ascading&nbsp;<strong>S</strong>tyle&nbsp;<strong>S</strong>heets.</p>
+
+<h2>What can I do with CSS?</h2>
+
+<p>CSS is a style language that defines layout of HTML documents. For example, CSS covers fonts, colours, margins, lines, height, width, background images, advanced positions and many other things. Just wait and see!</p>
+
+<p>HTML can be (mis-)used to add layout to websites. But CSS offers more options and is more accurate and sophisticated. CSS is supported by all browsers today.</p>
+
+<p>After only a few lessons of this tutorial you will be able to make your own style sheets using CSS to give your website a new great look.</p>
+
+<h2>What is the difference between CSS and HTML?</h2>
+
+<p>HTML is used to structure content. CSS is used for formatting structured content.</p>
+
+<p>Okay, it sounds a bit technical and confusing. But please continue reading. It will all make sense to you soon.</p>
+
+<p>Back in the good old days when Madonna was a virgin and a guy called Tim Berners Lee invented the World Wide Web, the language HTML was only used to add structure to text. An author could mark his text by stating &quot;this is a headline&quot; or &quot;this is a paragraph&quot; using HTML tags such as&nbsp;<code>&lt;h1&gt;</code>&nbsp;and&nbsp;<code>&lt;p&gt;</code>.</p>
+
+<p>As the Web gained popularity, designers started looking for possibilities to add layout to online documents. To meet this demand, the browser producers (at that time Netscape and Microsoft) invented new HTML tags such as for example&nbsp;<code>&lt;font&gt;</code>&nbsp;which differed from the original HTML tags by defining layout - and not structure.</p>
+
+<p>This also led to a situation where original structure tags such as &lt;table&gt; were increasingly being misused to layout pages instead of adding structure to text. Many new layout tags such as &lt;blink&gt; were only supported by one type of browser. &quot;You need browser X to view this page&quot; became a common disclaimer on web sites.</p>
+
+<p>CSS was invented to remedy this situation by providing web designers with sophisticated layout opportunities supported by all browsers. At the same time, separation of the presentation style of documents from the content of documents, makes site maintenance a lot easier.</p>
+
+<h2>Which benefits will CSS give me?</h2>
+
+<p>CSS was a revolution in the world of web design. The concrete benefits of CSS include:</p>
+
+<ul>
+	<li>control layout of many documents from one single style sheet;</li>
+	<li>more precise control of layout;</li>
+	<li>apply different layout to different media-types (screen, print, etc.);</li>
+	<li>numerous advanced and sophisticated techniques.</li>
+</ul>

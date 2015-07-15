@@ -19,11 +19,11 @@ Gerardo López | Iván Nolasco | Renato Andres
     }
     elseif($lang == "es")
     {
-        include "assets/lang/en.php";
+        include "assets/lang/".$lang.".php";
     }
     else
     {
-        include "assets/lang/en.php";
+        include "assets/lang/es.php";
     }
     sec_session_start();
 
@@ -91,10 +91,8 @@ Gerardo López | Iván Nolasco | Renato Andres
         </div>
         <nav class="navbar navbar-fixed-top" role="navigation">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img src="assets/img/brand2.png" id="logonav" class="img-responsive" width="200"></a>                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
+                    <a class="navbar-brand" href="#"><img src="assets/img/brand2.png" id="logonav" class="img-responsive" width="200"></a></div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -122,7 +120,6 @@ Gerardo López | Iván Nolasco | Renato Andres
                 </div>
                 <video autoplay loop muted class="myVideo" id="myVideo">
         			<source src="assets/video/1080.webm" type="video/webm"/>
-                    <source src="assets/video/1080.mp4" type="video/mp4"/>
         		</video>
             </div>
             <div class="section text-center" id="section1">

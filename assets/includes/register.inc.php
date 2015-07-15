@@ -29,7 +29,18 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
     if ($_POST['confirmpwd'] == $_POST['password']) {
         $password = $_POST['password'];
     }
-    $tipo =  $_POST['tipo'];
+    if($_POST['tipo'] == 1)
+    {
+        $tipo = 3;
+    }
+    elseif($_POST['tipo'] == 2)
+    {
+        $tipo = 2;
+    }
+    else
+    {
+        $tipo = 3;
+    }
     $idioma =  $_POST['lang'];
     $estado = '0';
     $log = '0';
@@ -134,7 +145,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'], $_POST['name'], $_PO
 
 
         }
-        echo "<script>alert('Registration successful!')</script>";
+        echo "<script></script>";
         header('Location: ./index.php');
 
     }

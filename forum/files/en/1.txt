@@ -1,5 +1,7 @@
-<h1>Side Widget Well</h1>
-<code>
-    &lt;html&gt;
-    &lt;/html&gt;
-</code>
+<h1>HTML Introduction</h1>
+
+<p>People often think it is extremely difficult to make a website. That is not the case!&nbsp;<strong>Everyone can learn how to make a website</strong>.</p>
+
+<p>Others believe - just as mistakenly - that expensive and advanced software is needed to make websites. It is true that there are lots of different programs that claim they can create a website for you. Some come closer than others. But if you want it done right, you must do it yourself. Fortunately,&nbsp;<strong>it is simple and free and you already have all the software you need</strong>.</p>
+
+<p><strong>Box Link </strong>is a didactic learning platform in which people interested in learning Front-end design&nbsp;can acquire the basic skills needed to get started in web design. The method implemented in&nbsp;<strong>Box Link</strong> for teaching these terms is by using blocks, the main advantage is that we promote the real learning of different languages for web design, this thanks to the student does not have the ability to simply just copy code like other platforms, because the only way to make the lesson will be placing blocks so that they meet the requirements to pass the lesson.</p>

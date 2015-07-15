@@ -1,0 +1,58 @@
+<h1>Elements and tags</h1>
+
+<p>Elements give structure to a HTML document and tells the browser how you want your website to be presented. Generally elements consists of a start tag, some content, and an end tag.</p>
+
+<h2>&quot;Tags&quot;?</h2>
+
+<p>Tags are labels you use to mark up the begining and end of an element.</p>
+
+<p>All tags have the same format: they begin with a less-than sign &quot;&lt;&quot; and end with a greater-than sign &quot;&gt;&quot;.</p>
+
+<p>Generally speaking, there are two kinds of tags - opening tags: &lt;html&gt; and closing tags: &lt;/html&gt;. The only difference between an opening tag and a closing tag is the forward slash &quot;/&quot;. You label content by putting it between an opening tag and a closing tag.</p>
+
+<p>HTML is all about elements. To learn HTML is to learn and use different tags.</p>
+
+<h2>Can you show me some examples?</h2>
+
+<p>Okay, the element&nbsp;<code>em</code>&nbsp;emphasis text. All text between the opening tag&nbsp;<code>&lt;em&gt;</code>&nbsp;and the closing tag&nbsp;<code>&lt;/em&gt;</code>&nbsp;is emphasised in the browser. (&quot;em&quot; is short for &quot;emphasis&quot;.)</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre>
+	<code>
+	&lt;em&gt;Emphasised text.&lt;/em&gt;
+	</code>
+	</pre>
+
+<p>Will look like this in the browser:</p>
+
+<p><em>Emphasised text.</em></p>
+
+<p>The elements&nbsp;<code>h1</code>,&nbsp;<code>h2</code>,&nbsp;<code>h3</code>,&nbsp;<code>h4</code>,&nbsp;<code>h5</code>&nbsp;and&nbsp;<code>h6</code>&nbsp;is used to make headings (h stands for &quot;heading&quot;), where&nbsp;<code>h1</code>&nbsp;is the first level and normally the largest text,&nbsp;<code>h2</code>&nbsp;is the second level and normally slightly smaller text, and&nbsp;<code>h6</code>&nbsp;is the sixth and last in the hierarchy of headings and normally the smallest text.</p>
+
+<p><strong>Example 2:</strong></p>
+
+<pre>
+	<code>
+	&lt;h1&gt;This is a heading&lt;/h1&gt;
+	&lt;h2&gt;This is a subheading&lt;/h2&gt;
+	</code>
+	</pre>
+
+<p>Will look like this in the browser:</p>
+
+<h1>This is a heading</h1>
+
+<h2>This is a subheading</h2>
+
+<h2>So, I always need an opening tag and a closing tag?</h2>
+
+<p>As they say, there&#39;s an exception to every rule and in HTML the exception is that there are a few elements which both open and close in the same tag. These so-called empty elements are not connected to a specific passage in the text but rather are isolated labels, for example, a line break which looks like this:&nbsp;<code>&lt;br /&gt;</code>.</p>
+
+<h2>Should tags be typed in uppercase or lowercase?</h2>
+
+<p>Most browsers might not care if you type your tags in upper, lower or mixed cases. &lt;HTML&gt;, &lt;html&gt; or &lt;HtMl&gt; will normally give the same result. However, the&nbsp;<strong>correct</strong>&nbsp;way is to type tags in lowercase. So get into the&nbsp;<strong>habit of writing your tags in lowercase</strong>.</p>
+
+<h2>Where do I put all these tags?</h2>
+
+<p>You type your tags in an HTML document. A website contains one or more HTML documents. When you surf the Web, you merely open different HTML documents.</p>

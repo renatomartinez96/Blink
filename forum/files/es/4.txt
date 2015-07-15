@@ -1,0 +1,30 @@
+<h1>&iquest;Qu&eacute; es HTML?</h1>
+
+<p><strong>HTML es la &quot;lengua materna&quot; de tu navegador.</strong></p>
+
+<p>Para abreviar una larga historia, podemos decir que un cient&iacute;fico llamado Tim Berners-Lee invent&oacute; HTML all&aacute; por 1990. El objetivo era facilitar a cient&iacute;ficos de diferentes universidades el acceso a los documentos de investigaci&oacute;n de cada uno de ellos. El proyecto obtuvo un &eacute;xito mucho mayor del que Tim Berners-Lee nunca hubiese llegado a imaginar. Al inventar HTML, este cient&iacute;fico sent&oacute; las bases de la web tal y como la conocemos hoy d&iacute;a.</p>
+
+<p>HTML es un lenguaje que hace posible presentar informaci&oacute;n (por ejemplo, investigaciones cient&iacute;ticas) en Internet. Lo que ves al visualizar una p&aacute;gina en Internet es la interpretaci&oacute;n que hace el navegador del c&oacute;digo HTML. Para ver el c&oacute;digo HTML de una p&aacute;gina s&oacute;lo tienes que pinchar en la opci&oacute;n &quot;Ver&quot; de la barra de men&uacute;s y elegir &quot;C&oacute;digo fuente&quot; (en Internet Explorer).</p>
+
+<p><img alt="Código fuente" src="http://es.html.net/tutorials/html/viewsource.es.png" /></p>
+
+<p>Para el ojo inexperto, el c&oacute;digo HTML parece complicado, pero este tutorial te ayudar&aacute; a que le encuentres todo su sentido.</p>
+
+<h2>&iquest;Para qu&eacute; puedo usar HTML?</h2>
+
+<p>Si quieres crear sitios web, no hay otra soluci&oacute;n que aprender HTML. Incluso si usas un programa como Dreamweaver, por ejemplo, para la creaci&oacute;n de sitios web, poseer unos conocimientos b&aacute;sicos de HTML hacen la vida mucho m&aacute;s f&aacute;cil y tus sitios web mucho mejores. La buena noticia es que HTML es f&aacute;cil de aprender y de usar. En las dos pr&oacute;ximas lecciones ya habr&aacute;s aprendido c&oacute;mo crear tu primer sitio web.</p>
+
+<p><strong>HTML se usa para crear sitios web. &iexcl;As&iacute; de sencillo!</strong></p>
+
+<h2>Vale, pero... &iquest;qu&eacute; representan las siglas H-T-M-L?</h2>
+
+<p>HTML es la abreviatura de &quot;HyperText Mark-up Language&quot;, es decir, &quot;Lenguaje de marcado hipertextual&quot;, y esto ya es m&aacute;s de lo que necesitas saber a estas alturas. En todo caso, para mantener un buen orden, vamos a explicar qu&eacute; significa con mayor detalle.</p>
+
+<ul>
+	<li><strong>Hiper</strong>&nbsp;es lo contrario de lineal. En los buenos viejos tiempos -cuando un rat&oacute;n era un animalillo que persegu&iacute;a un gato- los programas de ordenador se ejectutaban de forma lineal: cuando el programa hab&iacute;a ejecutado una acci&oacute;n segu&iacute;a hasta la siguiente l&iacute;nea, y despu&eacute;s de &eacute;sta a la siguiente, y a la siguiente, ... HTML, sin embargo, es diferente: se puede ir donde uno quiera cuando uno quiera. Por ejemplo, no es necesario visitar MSN.com antes de visitar HTML.net.</li>
+	<li><strong>Texto</strong>&nbsp;se explica por s&iacute; solo.</li>
+	<li><strong>Marcado</strong>&nbsp;es lo que haces con el texto. Se marca el texto del mismo modo que en un programa de edici&oacute;n de textos con encabezados, vi&ntilde;etas, negrita, etc.</li>
+	<li><strong>Lenguaje</strong>&nbsp;es lo que es HTML. Este lenguaje hace uso de muchos t&eacute;rminos en ingl&eacute;s.</li>
+</ul>
+
+<p>Por medio de este tutorial aprender&aacute;s lo que se ha dado en llamar XHTML (Extensible HyperText Mark-up Language, es decir, Lenguaje de marcado hipertextual extensible) que, en pocas palabras, es una forma de escribir HTML nueva y mejor estructurada.</p>

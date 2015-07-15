@@ -1,5 +1,7 @@
-<h1>Side Widget Well</h1>
-<code>
-    &lt;html&gt;
-    &lt;/html&gt;
-</code>
+<h1>Introducci&oacute;n a&nbsp;HTML</h1>
+
+<p>Con frecuencia la gente piense que es muy dif&iacute;cil crear un sitio web. Pues... &iexcl;no es el caso!&nbsp;<strong>Todos podemos aprender a crear un sitio web</strong>.</p>
+
+<p>Otros creen -y est&aacute;n igual de equivocados- que para crear sitios web es necesario un tipo de software caro y sofisticado. Es cierto que existen muchos programas diferentes que proclaman que pueden crear un sitio web por ti; unos se acercan m&aacute;s que otros. Sin embargo, si quieres que todo salga perfecto, tienes que hacerlo t&uacute; mismo. Por suerte,&nbsp;<strong>es sencillo y gratuito y ya dispones de todo el software necesario</strong>.</p>
+
+<p><strong>Box Link</strong> es una plataforma de aprendizaje did&aacute;ctico en la cual las personas interesadas en aprender dise&ntilde;o de Front-end pueden adquirir los conocimientos b&aacute;sicos necesarios para iniciarse en el dise&ntilde;o de p&aacute;ginas web. El m&eacute;todo que <strong>Box Link</strong>&nbsp;implementa&nbsp;para la ense&ntilde;anza de dichos t&eacute;rminos es mediante el uso de bloques, la principal ventaja es que promovemos el verdadero aprendizaje de los diferentes lenguajes para dise&ntilde;o web, esto gracias a que el estudiante no tendr&aacute; la posibilidad de sencillamente solo copiar el c&oacute;digo como en otras plataformas, sino que la &uacute;nica manera de poder realizar la lecci&oacute;n ser&aacute; colocndolos bloques de manera que cumplan los requisitos para poder pasar la lecci&oacute;n.</p>
