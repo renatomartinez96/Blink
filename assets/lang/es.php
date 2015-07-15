@@ -236,6 +236,9 @@ $langprint = array(
 //      /# index
 //      denuncias
     "aden-title" => "Denuncias recibidas",
+    "aden-drop-sure" => "¿Estas seguro de eliminar esta denuncia?",
+    "aden-drop-true" => "La denuncia se elimino con éxito",
+    "aden-drop-false" => "No se elimino la denuncia",
 //      /# denuncias
 //      mantenimiento de usuarios
     "all-users-list" => "Listado de todos los usuarios de Box Link",
