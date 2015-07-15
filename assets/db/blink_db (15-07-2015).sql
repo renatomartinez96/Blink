@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2015 a las 23:02:52
+-- Tiempo de generación: 16-07-2015 a las 00:00:58
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -154,19 +154,17 @@ CREATE TABLE IF NOT EXISTS `curden` (
   `idUsrDen` int(11) NOT NULL,
   `denuncia` varchar(250) NOT NULL,
   `tipo` char(2) NOT NULL DEFAULT '1',
-  `fecha_den` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `fecha_den` date NOT NULL,
+  `remitenteid` int(11) DEFAULT NULL,
+  `visto` char(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `curden`
 --
 
-INSERT INTO `curden` (`id`, `idCur`, `idUsrDen`, `denuncia`, `tipo`, `fecha_den`) VALUES
-(1, 1, 18, 'fghfh', '1', '2015-07-13'),
-(2, 1, 18, 'dfgdf', '1', '2015-07-14'),
-(3, 1, 18, 'dfggjhh', '1', '2015-07-13'),
-(4, 1, 18, 'gfedfg', '1', '2015-07-12'),
-(5, 1, 18, 'dfgdfgdgf', '1', '2015-07-12');
+INSERT INTO `curden` (`id`, `idCur`, `idUsrDen`, `denuncia`, `tipo`, `fecha_den`, `remitenteid`, `visto`) VALUES
+(7, 1, 2, 'No cargan las lecciones correctamente', '2', '2015-07-15', NULL, '0');
 
 -- --------------------------------------------------------
 
@@ -181,14 +179,14 @@ CREATE TABLE IF NOT EXISTS `curso` (
   `descripcion` varchar(500) CHARACTER SET utf8 NOT NULL,
   `imagen` varchar(3) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL DEFAULT '0',
   `curEstado` int(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `curso`
 --
 
 INSERT INTO `curso` (`idcurso`, `idprofesor`, `nombre`, `descripcion`, `imagen`, `curEstado`) VALUES
-(4, 14, 'Defensa', 'descripcion', '0', 1);
+(1, 3, 'test', 'the test of the courses', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `cursoestudiante` (
 --
 
 INSERT INTO `cursoestudiante` (`id`, `idcurso`, `idestudiante`) VALUES
-(1, 1, 18);
+(1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -219,15 +217,14 @@ CREATE TABLE IF NOT EXISTS `docente-estudiante` (
 `idDetalle` int(11) NOT NULL,
   `idDocente` int(11) NOT NULL,
   `idEstudiante` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `docente-estudiante`
 --
 
 INSERT INTO `docente-estudiante` (`idDetalle`, `idDocente`, `idEstudiante`) VALUES
-(15, 3, 18),
-(16, 14, 12);
+(1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -240,17 +237,14 @@ CREATE TABLE IF NOT EXISTS `examenes` (
   `usuario` varchar(30) NOT NULL,
   `nota` int(11) NOT NULL,
   `fecha` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `examenes`
 --
 
 INSERT INTO `examenes` (`id`, `usuario`, `nota`, `fecha`) VALUES
-(4, 'g_lopez97', 8, '2015-05-27 01:48:15'),
-(8, 'g_lopez97', 7, '2015-03-27 01:34:21'),
-(9, 'foo', 4, '2015-05-28 07:26:43'),
-(10, '3', 8, '2015-07-08 00:00:00');
+(11, 'teacher', 8, '2015-07-15 23:44:07');
 
 -- --------------------------------------------------------
 
@@ -336,7 +330,8 @@ INSERT INTO `intentos` (`idusuario`, `hora`) VALUES
 (14, '1431442824'),
 (16, '1431696932'),
 (16, '1431698476'),
-(18, '1436561767');
+(18, '1436561767'),
+(3, '1436994777');
 
 -- --------------------------------------------------------
 
@@ -353,7 +348,14 @@ CREATE TABLE IF NOT EXISTS `leccion` (
   `filename` int(11) DEFAULT NULL,
   `idUsuario` int(11) NOT NULL,
   `lecEstado` int(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `leccion`
+--
+
+INSERT INTO `leccion` (`idleccion`, `idcurso`, `nombre`, `descripcion`, `teoria`, `filename`, `idUsuario`, `lecEstado`) VALUES
+(1, 1, 'lesson test', 'the test of the lessons', 'theory', NULL, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -369,7 +371,7 @@ CREATE TABLE IF NOT EXISTS `leccusua` (
   `inicio` datetime NOT NULL,
   `fin` datetime NOT NULL,
   `tiempo` time NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -403,18 +405,16 @@ CREATE TABLE IF NOT EXISTS `user_config` (
   `iduser` int(11) NOT NULL,
   `theme` int(3) NOT NULL DEFAULT '1',
   `banner` int(3) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `user_config`
 --
 
 INSERT INTO `user_config` (`idconfig`, `iduser`, `theme`, `banner`) VALUES
-(4, 3, 1, 99),
-(5, 12, 1, 1),
-(6, 16, 2, 8),
-(7, 14, 1, 98),
-(8, 18, 1, 5);
+(1, 1, 1, 5),
+(2, 2, 1, 1),
+(3, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -439,21 +439,16 @@ CREATE TABLE IF NOT EXISTS `usuarios_tb` (
   `log` int(11) NOT NULL,
   `estado` char(1) NOT NULL,
   `token` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1 COMMENT='Usuarios registrados en Blink';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Usuarios registrados en Blink';
 
 --
 -- Volcado de datos para la tabla `usuarios_tb`
 --
 
 INSERT INTO `usuarios_tb` (`idusuario`, `nombres`, `apellidos`, `nacimiento`, `genero`, `usuario`, `contra`, `descripcion`, `correo`, `avatar`, `tipo`, `salt`, `lang`, `log`, `estado`, `token`) VALUES
-(1, 'Miguel Alejandro', 'Lopez Barrientos', '1997-10-07', NULL, 'mlopez', 'db9da5806dedebe0788eb6712f913d4ff0c814f61b9a36dcf3f46f91f64471e67e89d7b1e2c55c1a65e3205de833005782bef54e6a89a514e6e2542ee41206eb', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et massa ac nisi consectetur dignissim. Aenean at lectus suscipit, hendrerit dolor vestibulum, aliquet ligula. Vestibulum bibendum augue vitae ante ultricies dapibus. Sed sed nisl non dolor elementum suscipit vel at nibh. Praesent quis dui', 'miguel@mail.com', 36, '2', '23daad667aa164c3eee0313d94b3e0f831f97b0aec7fd4f6447ae4f98a83db8c777b4066788ce8e1d8913a01fd9e3ba4b7608cacdce0670441ba114ec3a75844', NULL, 1, '1', NULL),
-(3, 'Renato Andres', 'Reyes Martinez', '1996-12-20', NULL, 'renato96', '4d803a565542e01c1b9fa274661a4a054b21485002e048811aff8c1807e3574cb14ddfe6c008d9bac733f930b00b3ceedf73637ab0eb0303ce766a05131ff223', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et massa ac nisi consectetur dignissim. Aenean at lectus suscipit, hendrerit dolor vestibulum, aliquet ligula. Vestibulum bibendum augue vitae ante ultricies dapibus. Sed sed nisl non dolor elementum suscipit vel at nibh. Praesent quis dui', 'renatomartinez96@gmail.com', 35, '2', '1154ccfa82eb54d473b595451670ef7c7e869fe65a454788c5132d399bf1aef3bfb4789d5f472d2dedc8f8bfe15cc4d684659c68e005283d60b655e86e064816', NULL, 1, '1', NULL),
-(12, 'Gerardo Antonio', 'Lopez Barrientos', '1997-10-07', NULL, 'glopez97', 'd349bae9a728cf8d95fdc6354d147e58aec215e9019f45ebfd0cca8f0acac2edc5b697fbb9ffe7dbf6ff658887e525eda22948f068bcae8467397761af4e6ab7', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et massa ac nisi consectetur dignissim. Aenean at lectus suscipit, hendrerit dolor vestibulum, aliquet ligula. Vestibulum bibendum augue vitae ante ultricies dapibus. Sed sed nisl non dolor elementum suscipit vel at nibh. Praesent quis dui', 'gerardo.antonio97@gmail.com', 22, '3', '971da9e2d475d01068eeb2c6110acffa706051bc489395892a3e86264312252869719be7e7633a13defd0ab3f1478cb7e376a9f6e6d100bf986961dde14d03d4', NULL, 1, '1', NULL),
-(14, 'Gerardo Antonio', 'Lopez Barrientos', '1997-10-07', NULL, 'g_lopez97', 'c05a3fd7e3355aaaa16b1ba446c404923bd3ee26599565ee1ea4db2315b2830dff82f3dbe4bc06ce744ed9981ae649cb861ad8d3f8ca7e2a9183199b6ee216f4', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et massa ac nisi consectetur dignissim. Aenean at lectus suscipit, hendrerit dolor vestibulum, aliquet ligula. Vestibulum bibendum augue vitae ante ultricies dapibus. Sed sed nisl non dolor elementum suscipit vel at nibh. Praesent quis dui', 'gerardo.antonio20@hotmail.com', 36, '2', 'bafb28a96b0267f68aadcb240cfbd420a4702d1d1baf74f303add5eb52e451478555495f8328ed089a82f8a4b6e4207bff8a93a76a2e7c65a0de0053ac3663d8', NULL, 1, '1', NULL),
-(15, 'Miguel Antonio', 'LÃ³pez Barrientos', '1997-10-07', NULL, 'mlopez123', 'ca6fb92588a1ee1f302897a73c59ce81142a6fd6ca03958f2a8350b1ffbc30798c72973247a8b2033ace7e6c6972febda0ce0b9b1971b2cad673712651399d48', NULL, 'malc@mail.com', 33, '3', 'd7efc1330964575a322dd6ad89ff94174c6ccd74259c8a3c80b2f121c41b02ee183f9b18d0840c435d46d12fd8fbc83c4f7d6a7ef98bc32c0abe0b1a08628414', NULL, 1, '1', '85f9827f2a2c0bae76efaafe1afbb220'),
-(16, 'Ivan Graciano', 'Nolasco HernÃ¡ndez', '1997-04-02', NULL, 'dospuntosuve', '28d36bb31e0b1ed6a29e4164780786fdb10a8c987008050da3082afa0b3283e0fb28cbc97693fc56628da5ed174f750d572d3fe4e6dd43397fc79270dfb3b0ae', 'Lets cook!', 'ignh.lel@yandex.com', 35, '3', 'e1b8e4d233c3a9b86edbad0426094d4467f4b8c1491f94d73acf8e34113671615a76dcddfde6bfe5d27cfc504873b544256031379aea521bb24cdb020735c824', 'en', 1, '1', NULL),
-(17, 'Dave', 'Grohl', '1990-02-02', NULL, 'foo', '8f76dcd2ad46e1dfa1bb9d1ca909791c5ccc3c40273d91d837c4941c59c46f04a619facf746bc1b372e7ba3bb5cf70a09fdca19bee64e27478e2fa468eadc043', NULL, 'dave@dave.com', NULL, '2', 'e7bbd72b52f7029882ce1c3adbaf021b630cc0b022edde3a5bdff4c7c4a3ca56cba29383e69a10000b4664319a8e38e2f917f79787a38d9152611e290fa0cefa', 'en', 0, '0', '03fc0b897832d78ec70a9d4707e6c932'),
-(18, 'Serj', 'Tankian', '1990-02-02', NULL, 'serj', 'e0fa900ee3f081239226e5d7994a3464ebbe3f479222e5b64a468b0d0c3f7e6b25598b77f81354ad31cc03ae2c20f7d9d95053990471a3ecf7f7ee2a1fc83ac3', 'Wake up (wake up)\r\naslknsds dfskjbgkjfgb fdg \r\nrtrh sdjgbrej rbkerj erb (ashh sdjgbrej rbkerj erb...)\r\nsjbejw gerge eberb the table?\r\nlt tprbpnrtb birtnb trb', 'serj@soad.com', 33, '3', '6d4a22529539eb1d0025d847941c0418661e5f0670925555bae59d41e16440b00eecca1748e43252dfd183361eda110f911e2373d17d0e0c54c152adb2bea666', 'es', 1, '1', NULL);
+(1, 'Ivan Graciano', 'Nolasco Hernandez', '1997-04-02', 'm', 'ivan97', 'e06aca476bf47b001b16c98fe6aff5cb4d613f3bcd4f17007b487e961c47d9425cc9df41558f483ebb6cefc6538d920c1b94db2e88c8996191698d098cbca342', NULL, 'ignh.lel@yandex.com', 35, '1', 'fea5f08ba24bf9a936eb4229f0668989184fff60da11d85f6ffcfce55b26207830bfd4d1f3044512e8b6c4ac0af7d0a8fa52cc574ffa96db1d55ae0f3dc8571f', 'en', 1, '1', NULL),
+(2, 'student', 'student', '1997-04-02', 'f', 'student', 'ce68e463a480619bcd7e8e68de00c5097d4475404d510f3b2913ac59ad6ae9370a4aeda7fee18c970b43642f0c1f78d410257f1972a687f1243c5f629e93933f', 'yo soy un estudiante', 'studen@gmail.com', 42, '3', '0f1bda67d51277d26dddb15b3278f04b48cad9058f76c1a62d80a7e3182d572e66bcfa026b5342fcb2d1d3fdaad2f737892575d468312e03425c24521b6000d3', 'es', 1, '1', NULL),
+(3, 'teacher', 'teacher', '1997-04-02', 'm', 'teacher', '0dce739d52aac1aaec0a502394fd618beffc1558aa58afd67d15f946246712f0a7fd36f9dc09ef810d476fc4d1e0fd829091d13971e0bb0d8743a11181c05782', NULL, 'teacher@gmail.com', 36, '2', '6a743551a13c42ebedbb7b85ea4924d3c4ee0d4fe054fc1dd34734f4b165abe224fd37cfb6d5a9693ab6f5a685c453186ab755a9c310e3227ff50f322449dfed', 'en', 1, '1', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -544,12 +539,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
 -- AUTO_INCREMENT de la tabla `curden`
 --
 ALTER TABLE `curden`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
-MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `cursoestudiante`
 --
@@ -559,22 +554,22 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT de la tabla `docente-estudiante`
 --
 ALTER TABLE `docente-estudiante`
-MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `examenes`
 --
 ALTER TABLE `examenes`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `leccion`
 --
 ALTER TABLE `leccion`
-MODIFY `idleccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `idleccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `leccusua`
 --
 ALTER TABLE `leccusua`
-MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `test-cursos`
 --
@@ -584,12 +579,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 -- AUTO_INCREMENT de la tabla `user_config`
 --
 ALTER TABLE `user_config`
-MODIFY `idconfig` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `idconfig` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_tb`
 --
 ALTER TABLE `usuarios_tb`
-MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
