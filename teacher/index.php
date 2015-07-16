@@ -142,12 +142,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title junction-bold text-center" id="myModalLabel">Change banner</h4>
+                                <h4 class="modal-title junction-bold text-center" id="myModalLabel"><?= $langprint['F-23']?></h4>
                               </div>
                               <div class="modal-body">
                                                 <div class="col-md-12" id="bannerchangeb" >
                                                     <img class="img-responsive" src="../assets/img/userbanner/banner_preview.png">
-                                                    <p class="text-center"><strong>Preview</strong></p>
+                                                    <p class="text-center"><strong><?= $langprint['F-10']?></strong></p>
                                                 </div>
                                                 <div class="col-md-12 full">
                                                     <input type="hidden" value="<?=$idusuario?>" name="userid" id="userid" >
@@ -172,7 +172,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                   <br>
                                   <br>
                                   <br>
-                                  <p class="junction-light text-center">To edit your personal information <a href="my_data.php">click here</a></p>
+                                  <p class="junction-light text-center"><?= $langprint['F-24']?><a href="my_data.php"><?= $langprint['F-25']?></a></p>
                                     
                               </div>
                               <div class="modal-footer">
@@ -188,7 +188,7 @@ Gerardo López | Iván Nolasco | Renato Andres
             <div class="col-md-12 full">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h1 class="panel-title junction-regular text-center">Welcome teacher <?=$user?>!</h1>
+                        <h1 class="panel-title junction-regular text-center"><?= $langprint['F-26']?> <?=$user?>!</h1>
                     </div>
                     
                         <!-- Tutor forms -->
@@ -205,7 +205,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title" id="myModalLabel">Add course</h4>
+                                        <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-27']?></h4>
                                     </div>
                                     <div class="modal-body">
                                         <h4>Name:</h4>
