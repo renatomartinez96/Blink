@@ -50,7 +50,7 @@
                                 "<div class='form-group'>"+
                                     "<label class='control-label' for='adminmsg'><?=$langprint["aden-msg-con"]?>:</label>"+
                                     "<textarea class='form-control dont-horizontal msgcontent' rows='3' id='adminmsg' name='adminmsg'></textarea>"+
-                                    "<span class='help-block'><strong><?=$langprint['form-max-length-sig']?>: 200</strong></span>"+
+                                    "<span class='help-block'><strong><?=$langprint['form-max-length-sig']?>: 375</strong></span>"+
                                 "</div>"+
                             "</div>"+
                         "</div>",

@@ -55,9 +55,9 @@ else
     }
     else
     {
-        if ($stmtr = $mysqli->prepare("SELECT curden.id AS denid, curden.idCur As dencur, curden.tipo AS dentip, curden.fecha_den AS denfec, curden.admDesc AS msg, curden.visto, usuarios_tb.usuario AS autusu, curso.idprofesor, curso.nombre FROM `curden` INNER JOIN curso ON curden.idCur = curso.idcurso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE curden.destId = ?")) 
+        if ($stmtr = $mysqli->prepare("SELECT curden.id AS denid, curden.idCur As dencur, curden.tipo AS dentip, curden.fecha_den AS denfec, curden.admDesc AS msg, curden.visto, usuarios_tb.usuario AS autusu, curso.idprofesor, curso.nombre FROM `curden` INNER JOIN curso ON curden.idCur = curso.idcurso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE curden.id = ? AND curden.destId = ?")) 
         {
-            $stmtr->bind_param('s', $reading);
+            $stmtr->bind_param('ss', $reading, $elidespecial);
             $stmtr->execute(); 
             $stmtr->store_result();
             $stmtr->bind_result($denid, $dencur, $dentip, $denfec, $denmsg, $visto, $denadd, $denaddo, $dencurtitle);
@@ -123,12 +123,16 @@ else
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
-                        <div class="col-xs-10 col-sm-offset-2 well">
+                        <br>
+                        <div class="col-xs-10 col-sm-offset-1 well text-center">
                     <?php
-                        echo "<h2 class='junction-bold center-text text-warning'>".$text."</h2><hr><br>";
-                        echo "<p class='junction-light center-text'><small><strong>Curso con problemas: </strong><a href='infoCur.php?id=".$dencur."'>".$dencurtitle."</a> - ".$denfec."  ".$text2."</small></p>";
-                        echo "<p class='junction-regular center-justify'>".$denmsg."</p>";
-                        echo "lel";
+                        echo "<h2 class='junction-bold text-warning'>".$text."<br> <small>".$denfec." - ".$text2."</small></h2><hr><br>";
+                        echo "<h4 class='junction-light '><strong>Curso con problemas: </strong><a href='infoCur.php?id=".$dencur."'><strong>".$dencurtitle."</strong></a></h4><br>";
+                        echo "<p class='junction-regular text-justify col-xs-8 col-sm-offset-2'>".$denmsg."</p>";
+                        if($visto == 0)
+                        {
+                            $stmt = $mysqli->query("UPDATE curden SET visto = '1' WHERE id='$denid'");
+                        }
                     ?>
                         </div>
 					<!--/#Content-->

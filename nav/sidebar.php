@@ -32,12 +32,27 @@
         break;
         case 2:
 //        TEACHER
+        
+        if ($stmtmsg = $mysqli->prepare("SELECT curden.id FROM `curden` WHERE curden.destId = ? AND curden.visto = '0'")) {
+            $stmtmsg->bind_param('s', $userid);
+            $stmtmsg->execute(); 
+            $stmtmsg->store_result();
+            $stmtmsg->bind_result($newdenid);
+            $stmtmsg->fetch();
+            $newmsgstou = 0; 
+            if($stmtmsg->num_rows > 0)
+            {
+                $newmsgstou = $stmtmsg->num_rows;
+            }
+        }
+        
         ?>
+
             <li>
                 <a class="iconos" href="index.php"><i class="fa fa-puzzle-piece fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navcourses"]?></b></a>
             </li>
             <li>
-                <a class="iconos" href="inbox.php"><i class="fa fa-envelope fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["inbox"]?></b></a>
+                <a class="iconos" href="inbox.php"><?php echo ($newmsgstou>0) ? "<span class='label label-info' style='position: absolute; margin-top: 0px; margin-left: 20px; margin-right: 0px; margin-bottom: 10px; z-index:10;'>".$newmsgstou."</span>":"";?><i class="fa fa-envelope fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["inbox"]?></b></a>
             </li>
         <?php
         break;

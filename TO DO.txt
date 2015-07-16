@@ -1,4 +1,3 @@
-bandeja de entrada en tutor
 graficos de usuario por GET (por fecha de registro, por tipo, por cantidad de cursos)
 manejo de cursos bloqueados en tutor
 buscador de cursos y estudiantes en admin

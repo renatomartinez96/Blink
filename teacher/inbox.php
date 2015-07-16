@@ -123,6 +123,12 @@ Gerardo López | Iván Nolasco | Renato Andres
                                     }
                                     echo "</tbody></table>";
                                 }
+else
+{
+    echo "<div class='col-xs-8 col-sm-offset-2 well text-center'>
+            <i class='fa fa-times fa-lg text-danger'></i> No tienes mensajes
+        </div>";
+}
                         ?>
 					<!--/#Content-->
 					</div>
