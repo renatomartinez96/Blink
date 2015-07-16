@@ -78,7 +78,7 @@
                     <div class="panel panel-primary col-xs-6">
                       <div class="panel-heading col-xs-12">
                         <div class="col-xs-7">
-                          <h2 class="panel-title" style="margin-top:3%;">Real-time</h2>
+                          <h2 class="panel-title" style="margin-top:3%;">Unfinished</h2>
                         </div>
                         <div class="form-group col-xs-5" style="margin:0;">
                           <div class="input-group">

@@ -61,6 +61,14 @@
     .well > div {
       width:50%;
     }
+    .animated {
+    -webkit-animation-duration:0s;
+    animation-duration: 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
     // ::-webkit-scrollbar {
     //   width: 4px !important;
     // }
@@ -105,21 +113,24 @@
         </script>
   <script type="text/javascript">
   $(document).ready(function(){
-    setTimeout(function(){
-    $.ajax({
-              method: "POST",
-              url: "ajax/loadContext.php",
-              data: {le:lessonG,usu:idUserPHP},
-              dataType: 'json',
-              beforeSend: function() {
-
-              },
-              success: function(data) {
-                  $(".Bl").html(data.B);
-                  $(".Re").html(data.R);
-              }
-          });
-          }, 300);
+  	function reload(){
+    		$.ajax({
+	              method: "POST",
+	              url: "ajax/loadContext.php",
+	              data: {le:lessonG,usu:idUserPHP},
+	              dataType: 'json',
+	              beforeSend: function() {
+	
+	              },
+	              success: function(data) {
+	                  $(".Bl").html(data.B);
+	                  $(".Re").html(data.R);
+	              }
+	          });
+          }
+   	var timer = setInterval(function(){ reload()}, 2500);
+          reload();
+          
   });
 
   </script>

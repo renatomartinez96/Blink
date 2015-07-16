@@ -62,7 +62,11 @@
               $( ".playground" ).droppable({
                     accept: ".htmlMain",
                     drop: function( event, ui ) {
-                      startRecording();
+                        try {
+                            startRecording();   
+                        }catch(err) {
+                            console.error(err);   
+                        }
                         identifie();
                         addDescr();
                         momentoTo++;

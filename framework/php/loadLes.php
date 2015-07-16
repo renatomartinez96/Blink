@@ -62,6 +62,7 @@ if(isset($_GET['loadLessons']))
                             <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>Mas info</a>
                             <a class='btn btn-danger btn-sm dropless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-status='".$lecEstado."'><i class='fa fa-times'></i></a>
                             <a class='btn btn-success btn-sm editless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa fa-pencil'></i></a>
+                             <a href='loadstat.php?l=".$idleccion."' class='btn btn-warning btn-sm' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa-bar-chart'></i></a>
                           </div>
                         </div>";
 
