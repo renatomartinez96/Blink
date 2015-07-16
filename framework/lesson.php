@@ -86,13 +86,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Almost!</h4>
+        <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-20']?></h4>
       </div>
       <div class="modal-body">
-        Please complete the lesson to active itk|.
+          <?= $langprint['F-20']?>
+       
       </div>
       <div class="modal-footer">
-        <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary">Continue</button></a>
+        <a href="loadlesson.php?l=<?php echo $idleccion ?>"><button type="button" class="btn btn-primary"> <?= $langprint['btn-next']?></button></a>
       </div>
     </div>
   </div>

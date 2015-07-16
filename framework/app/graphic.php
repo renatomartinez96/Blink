@@ -56,8 +56,8 @@
         <div class="panel panel-default objects">
           <div class="panel-heading">
              <ul class="nav nav-pills">
-              <li class="active clean"><a href="#html" data-toggle="tab" aria-expanded="true">HTML</a></li>
-              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true">ATRIBUTES</a></li>
+              <li class="active clean"><a href="#html" data-toggle="tab" aria-expanded="true"><?= $langprint['F-5']?></a></li>
+              <li class="clean"><a href="#atr" data-toggle="tab" aria-expanded="true"><?= $langprint['F-6']?></a></li>
               <li class="clean"><a href="#css" data-toggle="tab" aria-expanded="true">CSS</a></li>
             </ul>
           </div>
@@ -66,7 +66,7 @@
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="html">
                     <div class="form-group">
-                          <p class="titulo">HTML Objects</p>
+                          <p class="titulo"><?= $langprint['F-7']?></p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -105,11 +105,11 @@
                         <div id="43" class="col-xs-5 htmlMain bg-primary "><h5>LABEL</h5></div>
                         <div id="44" class="col-xs-5 htmlMain bg-primary "><h5>UL</h5></div>-->
                        </div>
-                      <label class='noexiste'>NO RESULTS FOUND</label>
+                      <label class='noexiste'><?= $langprint['F-8']?></label>
                   </div>
                   <div class="tab-pane fade" id="atr">
                       <div class="form-group">
-                          <p class="titulo">ATRIBUTOS</p>
+                          <p class="titulo"><?= $langprint['F-6']?></p>
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
                             <input type="text" class="form-control searchHTML">
@@ -134,7 +134,7 @@
                         <div id="54" class="col-xs-5 htmlMain orange "><h5>VALUE</h5></div>
                         <div id="55" class="col-xs-5 htmlMain orange "><h5>MAX</h5></div>
                       </div>
-                      <label class='noexiste'>NO RESULTS FOUND</label>
+                      <label class='noexiste'><?= $langprint['F-8']?></label>
                   </div>
                  <div class="tab-pane fade" id="css">
 
@@ -156,7 +156,7 @@
                          <div id="17" class="col-xs-5 htmlMain royal "><h5>FONT-SIZE</h5></div>
                          <div id="23" class="col-xs-5 htmlMain royal "><h5>BORDER</h5></div>
                      </div>
-                     <label class='noexiste'>NO RESULTS FOUNDE</label>
+                     <label class='noexiste'><?= $langprint['F-8']?></label>
                  </div>
                 </div>
             </div>
@@ -166,14 +166,14 @@
         <div class="panel panel-default arena">
           <div class="panel-heading">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true">WORKSPACE</a></li>
-              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true">PREVIEW</a></li>
+              <li class="active"><a href="#work" data-toggle="tab" aria-expanded="true"><?= $langprint['F-9']?></a></li>
+              <li class=""><a href="#resu" data-toggle="tab" aria-expanded="true"><?= $langprint['F-10']?></a></li>
                 <div class="divide">
-                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="Open in new tab"><i class="fa fa-share"></i></button>
-                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="Restart"><i class="fa fa-repeat"></i></button>
-                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="Download HTML"><i class="fa fa-bolt"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Move"><i class="fa fa-arrows"></i></button>
-                  <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Borrar"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
+                  <button type="button" class="btn btn-default showPreview" data-toggle="tooltip" data-placement="bottom" title="<?= $langprint['F-11']?>"><i class="fa fa-share"></i></button>
+                  <button type="button" class="btn btn-default restard" data-toggle="tooltip" data-placement="bottom" title="<?= $langprint['F-12']?>"><i class="fa fa-repeat"></i></button>
+                  <button type="button" class="btn btn-default createHTML" data-toggle="tooltip" data-placement="bottom" title="<?= $langprint['F-13']?>"><i class="fa fa-bolt"></i></button>
+                  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="<?= $langprint['F-14']?>"><i class="fa fa-arrows"></i></button>
+                  <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="<?= $langprint['F-15']?>"><i id="18" class="fa fa-trash-o htmlMain"></i></a>
 
                 </div>
             </ul>

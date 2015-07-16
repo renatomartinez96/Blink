@@ -78,7 +78,7 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                                 <div class='panel-heading' role='tab' id='headingTwo'>
                                   <h4 class='panel-title'>
                                     <div class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
-                                      <h4 class='pista'>Free mode</h4>
+                                      <h4 class='pista'><?= $langprint['F-1']?></h4>
                                     </div>
                                   </h4>
                               </div>
@@ -96,12 +96,12 @@ if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, us
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Open Poroject</h4>
+                    <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-2']?></h4>
                   </div>
                   <div class="modal-body">
                            <div class="col-sm-12 full bg-warning">
                         <div class="col-xs-12 full text-center">
-                            <h4>Open file</h4>
+                            <h4><?= $langprint['F-3']?></h4>
                         </div>
                         <div class="col-xs-12 full">
                             <form action="#" enctype="multipart/form-data" method="post">

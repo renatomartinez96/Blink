@@ -266,7 +266,27 @@ $langprint = array(
 //----------------------------------------------
 
 //    framework
-    "framework-Theoretical-introduction" => "Theoretical introduction",
+    "F-1" => "Free Mode",
+    "F-2" => "Open project",
+    "F-3" => "Open file",
+    "F-4" => "¡Excellent!",
+    "F-5" => "HTML",
+    "F-6" => "ATRIBUTES",
+    "F-7" => "HTML Objects",
+    "F-8" => "NO RESULTS FOUNDE",
+    "F-9" => "WORKSPACE",
+    "F-10" => "PREVIEW",
+    "F-11" => "Open in new tab",
+    "F-12" => "Restart",
+    "F-13" => "Download HTML",
+    "F-14" => "Move",
+    "F-15" => "Delete",
+    "F-16" => "Name of the lesson",
+    "F-17" => "Creating lesson",
+    "F-18" => "Add the description",
+    "F-19" => "Save",
+     "F-20" => "Almost!",
+    "F-21" => " Please complete the lesson to active it.",
 // /# framework
 //----------------------------------------------
 //    docente

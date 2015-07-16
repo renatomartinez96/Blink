@@ -2,14 +2,14 @@
 <html lang="en">
 
     <body>
-        <h4>Name of the lesson:<?php echo $nombree ?></h4>
+        <h4><?= $langprint['F-16']?>:<?php echo $nombree ?></h4>
         <?php
             include "app/graphic.php";
         ?>
         <div class="fullpg">
             <div class="center">
                 <img src="../../assets/img/loading.gif" class="brand">
-                <h2 class="junction-regular">Creating Lesson</h2>
+                <h2 class="junction-regular"><?= $langprint['F-17']?></h2>
             </div>
         </div>
         <div class="bg-primary recordingCam">
@@ -22,13 +22,13 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Agregar la descripción</h4>
+                        <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-18']?></h4>
                       </div>
                       <div class="modal-body">
                         <textarea class="valueDescription"></textarea>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary saveDescription">Guardar</button>
+                        <button type="button" class="btn btn-primary saveDescription"><?= $langprint['F-19']?></button>
                       </div>
                     </div>
                   </div>

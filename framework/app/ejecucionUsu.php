@@ -45,7 +45,7 @@ $(function()
     }
 });
 //OPEND FILE
-              $(".divide").append("<button type='button' class='btn btn-default saveMeF' data-toggle='tooltip' data-placement='bottom' title='Save'><i class='fa fa-floppy-o'></i></button>");
+              $(".divide").append("<button type='button' class='btn btn-default saveMeF' data-toggle='tooltip' data-placement='bottom' title='<?= $langprint['btn-save']?>'><i class='fa fa-floppy-o'></i></button>");
               $(".divide").append("<button type='button' class='btn btn-default openMeF' data-toggle='modal' data-target='#OpenFile'><i class='fa fa-folder-open'></i></button>");
               $(".saveMeF").on("click",function(){
                     

@@ -80,7 +80,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Theatrical introduction</h4>
+                <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-22']?></h4>
               </div>
               <div class="modal-body">
                 <p><?=$teoria?></p>
@@ -113,8 +113,8 @@
 
               </div>
               <div class="modal-footer backCute">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a href="../student/index.php"><button type="button" class="btn btn-default" >Continue</button></a>
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><?= $langprint['btn-cancel']?></button>
+                <a href="../student/index.php"><button type="button" class="btn btn-default" ><?= $langprint['btn-next']?></button></a>
               </div>
             </div>
           </div>
