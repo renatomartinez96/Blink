@@ -10,6 +10,80 @@
                 $(".sidebar-nav").toggleClass("toggled");
                 $(".textos").toggleClass("toggled");
         });
+        
+        $(".sendmsg").click(function() {
+            var msgaddid = $(this).attr("msgaddid");
+            var msgadd = $(this).attr("msgadd");
+            var msgcur = $(this).attr("msgcur");
+            var msgcurname = $(this).attr("msgcurname");
+            var msgtitle = $(this).attr("msgtitle");
+            var msgfec = $(this).attr("msgfec");
+            var denid = $(this).attr("denid");
+            
+            switch (msgtitle) {
+                case "1":
+                    msgtitle = "<?=$langprint['denop1']?>";
+                break;
+                case "2":
+                    msgtitle = "<?=$langprint['denop2']?>";
+                break;
+                case "3":
+                    msgtitle = "<?=$langprint['denop3']?>";
+                break;
+                case "4":
+                    msgtitle = "<?=$langprint['denop4']?>";
+                break;
+            } 
+            
+            bootbox.dialog({
+                title: "<?=$langprint["aden-msg-write"]?> <strong>"+msgcurname+"</strong>",
+                message: "<div class='row'>"+
+                            "<div class='col-xs-6'>"+
+                                "<p><small><strong><?=$langprint['aden-msg-issue']?>: </strong>"+msgtitle+"</small></p>"+
+                                "<p><small><strong><?=$langprint['aden-msg-date']?>: </strong>"+msgfec+"</small></p>"+
+                            "</div>"+
+                            "<div class='col-xs-6'>"+
+                                "<p><small><strong><?=$langprint['aden-msg-aut']?>: </strong>"+msgadd+"</small></p>"+
+                                "<p><small><strong><?=$langprint['aden-msg-curname']?>: </strong>"+msgcurname+"</small></p>"+
+                            "</div>"+
+                            "<div class='col-xs-12'>"+
+                                "<div class='form-group'>"+
+                                    "<label class='control-label' for='adminmsg'><?=$langprint["aden-msg-con"]?>:</label>"+
+                                    "<textarea class='form-control dont-horizontal msgcontent' rows='3' id='adminmsg' name='adminmsg'></textarea>"+
+                                    "<span class='help-block'><strong><?=$langprint['form-max-length-sig']?>: 200</strong></span>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>",
+                buttons: {
+                    success: {
+                    label: "<?=$langprint['btn-cancel']?>",
+                    className: "btn-default",
+                    callback: function() {
+                        
+                        }
+                    },
+                    main: {
+                    label: "<?=$langprint['btn-send-msg']?>",
+                    className: "btn-primary",
+                    callback: function() {
+                        var msg = $("#adminmsg").val();
+                            $.ajax({
+                                method: "POST",
+                                url: "sendMsg.php",
+                                data: {msgaddid: msgaddid, msgcontent: msg, denid: denid},
+                                beforeSend: function() {
+                                },
+                                success: function(data) {
+                                        bootbox.alert(data, function() {
+                                        });
+                                    }
+                            });
+                        }
+                    }
+                }
+            });
+
+        });
         $(".dropden").click(function() {
             var dencur = $(this).attr('curden');
             bootbox.confirm("<?=$langprint['aden-drop-sure']?>", function(result) {

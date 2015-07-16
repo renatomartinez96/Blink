@@ -114,6 +114,9 @@ if ($stmt2->num_rows > 0)
             width:10px;
             height:10px;
         }
+        .dont-horizontal{
+            resize: vertical;
+        }
         </style>
 	</head>
 	<body>
@@ -188,7 +191,7 @@ if ($stmt2->num_rows > 0)
                                                     </div>
                                                     <div class='panel-footer'>
                                                         <div class='btn-group'>
-                                                            <a href='#' class='btn btn-warning'>Send message to tutor</a>
+                                                            <a href='#' class='btn btn-warning sendmsg' msgaddid='".$row["idprofesor"]."' msgadd='".$row["autusu"]."' msgcur='".$row["dencur"]."' msgcurname='".$row["nombre"]."' msgtitle='".$row["dentip"]."' msgfec='".$row["denfec"]."' denid='".$row['denid']."'>Send message to tutor</a>
                                                             <a href='#' class='btn btn-danger dropden' curden='".$row['denid']."'><i class='fa fa-trash'></i></a>
                                                         </div>
                                                     </div>

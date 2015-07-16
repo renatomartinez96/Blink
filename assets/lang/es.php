@@ -27,12 +27,14 @@ $langprint = array(
         "btn-activate" => "Activar",
         "btn-deactivate" => "Desactivar",
         "btn-suscribir" => "Suscribirme",
+        "btn-send-msg" => "Enviar mensaje",
     // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
         "msg-alert-saved-ok" => "<strong>Muy bien! </strong>Los datos se guardaron correctamente",
         "msg-alert-saved-error1" => "<strong>Error: </strong>Aparecio un problema en el servidor",
         "form-max-length" => "Un campo sobrepasa el número de caracteres permitidos (límite: ",
+        "form-max-length-sig" => "Límite de caracteres",
         "form-not-null" => "Por favor, completa toda la información",
         // Errores
             "err-no-dens" => "No se han recibido denuncias recientemente",
@@ -239,6 +241,14 @@ $langprint = array(
     "aden-drop-sure" => "¿Estas seguro de eliminar esta denuncia?",
     "aden-drop-true" => "La denuncia se elimino con éxito",
     "aden-drop-false" => "No se elimino la denuncia",
+    "aden-msg-write" => "Escribir un mensaje al autor de: ",
+    "aden-msg-aut" => "Destinatario",
+    "aden-msg-date" => "Fecha",
+    "aden-msg-issue" => "Asunto",
+    "aden-msg-curname" => "Nombre del curso",
+    "aden-msg-con" => "Mensaje",
+    "aden-msg-true" => "Mensaje enviado al tutor exitosamente",
+    "aden-msg-false" => "No se envío el mensaje",
 //      /# denuncias
 //      mantenimiento de usuarios
     "all-users-list" => "Listado de todos los usuarios de Box Link",
