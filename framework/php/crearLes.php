@@ -25,6 +25,7 @@
         while ($stmt->fetch()) {
             $nombre = "../courses";
             mkdir($nombre."/".$idleccion);
+            mkdir($nombre."/".$idleccion."/users");
             if(fopen($nombre."/".$idleccion."/".$idleccion.".txt", "a+")) {
                 $seguardo = true;
             }

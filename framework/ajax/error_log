@@ -1,0 +1,1 @@
+[14-Jul-2015 16:55:07 UTC] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/boxlink/public_html/framework/ajax/statsAll.php on line 10

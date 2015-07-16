@@ -5,6 +5,8 @@ if(isset($_POST['action']) && $_POST['action'] == 1) {
     echo json_encode(array("horaServ"=>$date));
 }
 if(isset($_POST['action'],$_POST['hora'],$_POST['leccion'],$_POST['usuario']) && $_POST['action'] == 2) {
+     $nameadvance = "../../courses/".$_POST['leccion']."/users/user-".$_POST['usuario'].".txt";
+    unlink($nameadvance);
     $i = 0;
     $ii = 0;
     $iii = 0;

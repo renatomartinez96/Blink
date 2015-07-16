@@ -56,7 +56,7 @@
                 $.ajax({
                               method: "POST",
                               url: "ajax/syncroUsu.php",
-                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul,ultimoId:ultimoId,estado:estadoLec},
+                              data: { momento:momentoTo,leccion:lessonG,bloques:blockes,resultado:resul,ultimoId:ultimoId,estado:estadoLec,filename:idUserPHP},
                               dataType: 'json',
                               beforeSend: function() {
                                 $(".loading").css('display','block');

@@ -389,6 +389,7 @@
 .brand{
     width:80% !important:
 }
+
 /*Media query*/
 @media (min-width: 200px) and (max-width: 767px) {
       .panel {

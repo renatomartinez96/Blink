@@ -2,6 +2,10 @@
     if(isset($_POST['momento'],$_POST['leccion'],$_POST['bloques'],$_POST['resultado'],$_POST['ultimoId'])) {
 
              $name = "../../courses/".$_POST['leccion']."/".$_POST['leccion'].".txt";
+             $nameadvance = "../../courses/".$_POST['leccion']."/users/".$_POST['filename'].".txt";
+             fopen($nameadvance, "a+");
+             $data = $_POST['bloques']."S%R#n&SE!r?".$_POST['resultado'];
+             file_put_contents($nameadvance, $data,LOCK_EX);
              $moment = $_POST['momento'];
              $bloques = $_POST['bloques'];
             $historial = json_decode(stripslashes($_POST['ultimoId']));
