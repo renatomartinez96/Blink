@@ -55,14 +55,40 @@ else
     }
     else
     {
-        if ($stmtr = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
-    {
-        $stmtr->bind_param('s', $elidespecial);
-        $stmtr->execute(); 
-        $stmtr->store_result();
-        $stmtr->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
-        $stmtr->fetch();
-    }
+        if ($stmtr = $mysqli->prepare("SELECT curden.id AS denid, curden.idCur As dencur, curden.tipo AS dentip, curden.fecha_den AS denfec, curden.admDesc AS msg, curden.visto, usuarios_tb.usuario AS autusu, curso.idprofesor, curso.nombre FROM `curden` INNER JOIN curso ON curden.idCur = curso.idcurso INNER JOIN usuarios_tb ON curso.idprofesor = usuarios_tb.idusuario WHERE curden.destId = ?")) 
+        {
+            $stmtr->bind_param('s', $reading);
+            $stmtr->execute(); 
+            $stmtr->store_result();
+            $stmtr->bind_result($denid, $dencur, $dentip, $denfec, $denmsg, $visto, $denadd, $denaddo, $dencurtitle);
+            $stmtr->fetch();
+        }
+        $text = "";
+        switch($dentip)
+        {
+            case 1;
+            $text = $langprint["denop1"];
+            break;
+            case 2;
+            $text = $langprint["denop2"];
+            break;
+            case 3;
+            $text = $langprint["denop3"];
+            break;
+            case 4;
+            $text = $langprint["denop4"];
+            break;
+        }
+        $text2 = "";
+        switch($visto)
+        {
+            case 0;
+            $text2 = "<i class='fa fa-eye-slash'></i>";
+            break;
+            case 1;
+            $text2 = "<i class='fa fa-eye'></i>";
+            break;
+        }
     }
 }
 ?>
@@ -97,7 +123,13 @@ else
 				<div class="container-fluid">
 					<div class="row">
 					<!--Content-->
-                        
+                        <div class="col-xs-10 col-sm-offset-2 well">
+                    <?php
+                        echo "<h2 class='junction-bold center-text text-warning'>".$text."</h2><hr><br>";
+                        echo "<p class='junction-light center-text'><small><strong>Curso con problemas: </strong><a href='infoCur.php?id=".$dencur."'>".$dencurtitle."</a> - ".$denfec."  ".$text2."</small></p>";
+                        echo "<p class='junction-regular center-justify'>".$denmsg."</p>";
+                    ?>
+                        </div>
 					<!--/#Content-->
 					</div>
 				</div>
