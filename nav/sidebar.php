@@ -36,6 +36,9 @@
             <li>
                 <a class="iconos" href="index.php"><i class="fa fa-puzzle-piece fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["navcourses"]?></b></a>
             </li>
+            <li>
+                <a class="iconos" href="inbox.php"><i class="fa fa-envelope fa-2x"></i><b class="textos toggled" href="#"> <?=$langprint["inbox"]?></b></a>
+            </li>
         <?php
         break;
         case 3:

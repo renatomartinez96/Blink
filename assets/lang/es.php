@@ -54,6 +54,9 @@ $langprint = array(
         "em-all" => "todos los usuarios",
         "status-ok" => "activo",
         "status-nope" => "inactivo",
+        "opcions" => "Opciones",
+        "read-true" => "Leído",
+        "read-false" => "No leído",
     // /# Palabras repetidas
     //----------------------------------------------
     // Nombres e instrucciones de los campos (inputs)
@@ -112,6 +115,7 @@ $langprint = array(
             "docs" => "Mis archivos",
             "tutor" => "Tutor",
             "tutors" => "Tutores",
+            "inbox" => "Bandeja de entrada",
     // /# Navbar
     // Formulario de denuncia de cursos
         "dentitle" => "¿Por qué denunciar el curso: ",

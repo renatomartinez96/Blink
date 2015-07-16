@@ -1,11 +1,11 @@
 ger=certificaciones
 ger=pagado
-ger=blog
+ger=blog***
 
-reni=grabado de video de tutor****
-reni=examenes
+reni=grabado de video de tutor***
+reni=examenes***
 
-ivan=denunciar cursos
+ivan=denunciar cursos*
 ivan=mas populares
 ivan=usuarios que han desarrollado las lecciones*
 ivan=usuarios suscritos*
