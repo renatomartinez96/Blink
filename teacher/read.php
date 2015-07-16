@@ -128,6 +128,7 @@ else
                         echo "<h2 class='junction-bold center-text text-warning'>".$text."</h2><hr><br>";
                         echo "<p class='junction-light center-text'><small><strong>Curso con problemas: </strong><a href='infoCur.php?id=".$dencur."'>".$dencurtitle."</a> - ".$denfec."  ".$text2."</small></p>";
                         echo "<p class='junction-regular center-justify'>".$denmsg."</p>";
+                        echo "lel";
                     ?>
                         </div>
 					<!--/#Content-->
