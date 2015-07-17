@@ -82,14 +82,14 @@
             if($loRealizoBien == 1){
                  $correcto = 1; // la cago
                 $homepage .= "<div class='well well-lg redini animated fadeInDown' style='margin-bottom:0px;'>
-                                <strong>Upppss!</strong>There´s a problem with your Website </a>.
+                                <strong>Upppss!</strong>Hay un error con su sito </a>.
                               </div>";
             }
             }else {
                 if($loRealizoBien == 0){
                 $correcto = 2; //termino
                 $homepage .= "<div class='well well-lg greenini animated fadeInDown' style='margin-bottom:0px;'>
-                                <strong>Well done!</strong> You have successfully completed the lesson </a>.
+                                <strong>Well done!</strong> ha terminado la leccion</a>.
                               </div>";
 
                 }else {

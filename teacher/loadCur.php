@@ -4,6 +4,16 @@
     $user = $_POST['usuario'];
     $userid = $_POST['usuarioid'];
     $i = 0;
+    if ($stmt = $mysqli->prepare("SELECT usuarios_tb.avatar, usuarios_tb.nombres, usuarios_tb.apellidos, usuarios_tb.nacimiento, usuarios_tb.descripcion, usuarios_tb.correo, usuarios_tb.tipo, usuarios_tb.lang, usuarios_tb.idusuario, user_config.banner, user_config.iduser FROM usuarios_tb INNER JOIN user_config ON usuarios_tb.idusuario = user_config.iduser WHERE usuarios_tb.idusuario = ?")) 
+    {
+        $stmt->bind_param('s', $elidespecial);
+        $stmt->execute(); 
+        $stmt->store_result();
+        $stmt->bind_result($avatar,$nombres,$apellidos,$nacimiento,$descripcion,$correo,$tipo,$lang,$idusuario,$bannero,$iduserconf);
+        $stmt->fetch();
+        
+    }
+    include "../assets/includes/lang.php";
         $stmt = $mysqli->prepare("SELECT idcurso, nombre, descripcion, imagen FROM curso WHERE idprofesor = ? AND curEstado = '1'");
         $stmt->bind_param('i', $userid);
         $stmt->execute();
@@ -12,11 +22,11 @@
         $result = $stmt->num_rows;
 
         $string = "<div class=' tituloxxx'>
-                            <h2 class='junction-bold '>Created courses</h2>
+                            <h2 class='junction-bold '>".$langprint['F-32']."</h2>
                             <div id='signal'></div>
                         </div>";
             $string .= "<ul class='breadcrumb'>
-                            <li class='active lead'>Tutor: ".$user."</li>
+                            <li class='active lead'>".$langprint['F-33'].": ".$user."</li>
                             <div class='col-md-3 pull-right'>
                             <a class='btn btn-success pull-left botoncrear'><i class='fa fa-plus'></i> Crear curso</a><a href='bannedCur.php' class='btn btn-primary' data-toggle='tooltip' data-placement='top' title='Cursos bloqueados'><i class='fa fa-briefcase'></i></a>
                             </div>
@@ -50,12 +60,12 @@
                                     </div>
                                     <div class='panel-body curdesc'>
                                     <br>
-                                        <p class='text-center'><strong>Descripción: </strong>".$descripcion."</p>
+                                        <p class='text-center'><strong>".$langprint['F-29']." </strong>".$descripcion."</p>
                                     </div>
                                     <div class='panel-footer text-center'>
                                         <form action='../framework/lesson.php' method='get'>
                                             <input type='hidden' value='".$nombre."' name='curname'>
-                                            <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>View Lessons</button>
+                                            <button type='submit'  name='loadLessons' value='".$idcurso."' class='btn btn-sm btn-primary loadLessons'>".$langprint['F-34']."</button>
                                              <a id='".$idcurso."' curnombre='".$nombre."' class='btn btn-sm btn-danger dropcur' data-toggle='tooltip' data-placement='top' title='¿Bloquear este curso?' data-original-title='Tooltip on top'><i class='fa fa-times'></i></a>
                                             <a class='btn btn-sm btn-success editcur' valid='".$idcurso."' valname='".$nombre."' valdesc='".$descripcion."'><i class='fa fa fa-pencil' data-toggle='tooltip' data-placement='top' title='Editar curso'></i></a>
                                             <a class='btn btn-sm btn-success' href='create-exam.php?id=".$idcurso."' valid='".$idcurso."'><i class='fa fa fa-key' data-toggle='tooltip' data-placement='top' title='Editar curso'></i></a>
@@ -70,8 +80,7 @@
         else
         {
             $string .= "<div class='alert alert-warning'>
-                        <p>No tienes ningún curso activo, debes crear uno para empezar</p>
-                        </div>";
+                        <p>".$langprint['F-31']."</p></div>";
         }
 
         echo $string;

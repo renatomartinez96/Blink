@@ -40,7 +40,7 @@
                                         $('.winner').addClass("fadeInDownDos");
                                     });
                                   if (data.response == 0) {
-                                    $(".centertest").append("<h1 class='muybien2'>"+data.tiempo+"</h1><h1 class='muybien3'>"+<?= $langprint['F-4']?>+"</h1>");
+                                    $(".centertest").append("<h1 class='muybien2'>"+data.tiempo+"</h1><h1 class='muybien3'><?= $langprint['F-4']?></h1>");
                                   }else if (data.response == 1) {
                                      $(".contentWin").html(data.string);
                                   }

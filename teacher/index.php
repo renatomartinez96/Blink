@@ -208,14 +208,14 @@ Gerardo López | Iván Nolasco | Renato Andres
                                         <h4 class="modal-title" id="myModalLabel"><?= $langprint['F-27']?></h4>
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Name:</h4>
+                                        <h4><?= $langprint['F-28']?></h4>
                                         <input class="form-control nameCur" type="text" placeholder="Name">
-                                        <h4>Description:</h4>
+                                        <h4><?= $langprint['F-29']?></h4>
                                         <textarea class="form-control descripCur" placeholder="Description"></textarea>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary createCou">New course</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"><?= $langprint['btn-cancel']?></button>
+                                        <button type="button" class="btn btn-primary createCou"><?= $langprint['F-30']?></button>
                                     </div>
                                 </div>
                             </div>

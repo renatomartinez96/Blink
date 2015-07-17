@@ -92,18 +92,18 @@ $(document).ready(function() {
             var ocurdesc = $(this).attr("valdesc");
 
             bootbox.dialog({
-                title: "Editar el curso "+ocurnombre+".",
+                title: "<?= $langprint['F-40']?>"+ocurnombre+".",
                 message: "<div class='row'>" +
                             "<div class='col-md-12'> " +
                             "<form class='form-horizontal'> " +
                                 "<div class='form-group'> " +
-                                    "<label class='col-md-4 control-label' for='name'>Nombre</label> " +
+                                    "<label class='col-md-4 control-label' for='name'><?= $langprint['F-28']?></label> " +
                                     "<div class='col-md-6'> " +
                                         "<input id='newname' name='newname' type='text' value='" + ocurnombre + "' class='form-control input-md'> " +
                                     "</div>" +
                                 "</div> " +
                                 "<div class='form-group'> " +
-                                    "<label class='col-md-4 control-label' for='name'>Descripción</label> " +
+                                    "<label class='col-md-4 control-label' for='name'><?= $langprint['F-29']?></label> " +
                                     "<div class='col-md-6'> " +
                                         "<textarea class='form-control' style='resize: vertical;' name='newdesc' id='newdesc' rows='3'>" + ocurdesc + "</textarea> " +
                                     "</div>" +
@@ -113,14 +113,14 @@ $(document).ready(function() {
                         "</div>",
                 buttons: {
                     main: {
-                        label: "Cancelar",
+                        label: "<?= $langprint['btn-cancel']?>",
                         className: "btn-default",
                         callback: function() {
                             // Se cancela :v
                         }
                     },
                     success: {
-                        label: "Guardar cambios",
+                        label: "<?= $langprint['F-19']?>",
                         className: "btn-success",
                         callback: function() {
                             var curnombre = $("#newname").val();
@@ -139,18 +139,18 @@ $(document).ready(function() {
             var envionombre = $(this).attr("curnombre");
             
             bootbox.dialog({
-                title: "<h4 class='text-warning'>¿Estas seguro de bloquear el curso <strong>&quot;"+envionombre+"&quot;</strong>?</h4>",
-                message: "Tus estudiantes no podran completar las lecciones que este curso contiene, a menos que la actives de nuevo.",
+                title: "<h4 class='text-warning'><?= $langprint['F-42']?> <strong>&quot;"+envionombre+"&quot;</strong>?</h4>",
+                message: "<?= $langprint['F-43']?>",
                 buttons: {
                     main: {
-                        label: "Cancelar",
+                        label: "<?= $langprint['btn-cancel']?>",
                         className: "btn-default",
                         callback: function() {
                             // Se cancela :v
                         }
                     },
                     danger: {
-                        label: "Bloquear el curso",
+                        label: "<?= $langprint['F-41']?>",
                         className: "btn-primary",
                         callback: function() {
                             dropCur(envio, envionombre);

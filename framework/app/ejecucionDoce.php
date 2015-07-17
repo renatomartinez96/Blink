@@ -6,7 +6,7 @@
 
                 //exclusivo docente
                 var seempezoagrabar = false;
-                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary stopVideo'>"+<?= $langprint['btn-next']?>+"</button>");
+                $(".divide").append("<button type='button' style='float:right;margin-right:1%;' class='btn btn-primary stopVideo'><?= $langprint['btn-next']?></button>");
                 $(".createLes").fadeOut();
                 $(".bugname").fadeOut();
                 function addDescr() {

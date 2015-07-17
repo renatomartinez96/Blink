@@ -9,14 +9,14 @@ if(isset($_GET['loadLessons']))
   $stmt->store_result();
   $stmt->bind_result($idleccion,$nombre,$descripcion,$teoria, $lecEstado);
   $result = $stmt->num_rows;
-  $string = "<div class='tituloxxx'><h1 class='junction-bold '>Created Lessons in &ldquo;".$curName."&rdquo;</h1></div>";
+  $string = "<div class='tituloxxx'><h1 class='junction-bold '>".$langprint['F-35']." &ldquo;".$curName."&rdquo;</h1></div>";
   $string .= "<div class='col-xs-10'>
                 <ul class='breadcrumb'>
                 <li class='backhome'><a href='../teacher/'>".$user."</a></li>
-                <li class='active'>lesson</li>
+                <li class='active'>".$langprint['F-37']."</li>
                 </ul>
                 </div>
-              <div class='col-xs-2'><a id='".$idCurso."' class='btn btn-success botoncrearLe'>New Lesson</a></div></div>";
+              <div class='col-xs-2'><a id='".$idCurso."' class='btn btn-success botoncrearLe'>".$langprint['F-36']."</a></div></div>";
   if ($result > 0)
   {
     $classtype = "";
@@ -56,10 +56,10 @@ if(isset($_GET['loadLessons']))
                             <h3 class='junction-regular panel-title '>".$nombre."  <span class='label label-success pull-right'>".$ap."</span> <span class='label label-danger pull-right'>".$re."</span></h3>
                           </div>
                           <div class='panel-body'>
-                            <p><strong>Descripción: </strong>".$descripcion."</p>
+                            <p><strong>".$langprint['F-29']." </strong>".$descripcion."</p>
                           </div>
                           <div class='panel-footer text-center'>
-                            <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>Mas info</a>
+                            <a id='".$idleccion."' class='btn btn-primary btn-sm moreabout' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'>".$langprint['F-38']."</a>
                             <a class='btn btn-danger btn-sm dropless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-status='".$lecEstado."'><i class='fa fa-times'></i></a>
                             <a class='btn btn-success btn-sm editless' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa fa-pencil'></i></a>
                              <a href='loadstat.php?l=".$idleccion."' class='btn btn-warning btn-sm' actual-id='".$idleccion."' actual-name='".$nombre."' actual-desc='".$descripcion."' actual-teo='".$teoria."'><i class='fa fa-bar-chart'></i></a>
@@ -84,21 +84,21 @@ if(isset($_GET['loadLessons']))
           <div class='modal-dialog'>
           <div class='modal-content'>
           <div class='modal-header'>
-          <h4 class='modal-title' id='myModalLabel'>New Lesson</h4>
+          <h4 class='modal-title' id='myModalLabel'>".$langprint['F-39']."</h4>
           </div>
           <div class='modal-body'>
           <form action='../framework/lesson.php' method='get'>
-          <h4>Name:</h4>
-          <input class='form-control nameCur5 verify' name='nombre'  type='text' placeholder='Name'>
+          <h4".$langprint['F-28']."</h4>
+          <input class='form-control nameCur5 verify' name='nombre'  type='text' placeholder='".$langprint['F-28']."'>
           <label class='bugname' style='color:#DA6262;'>You already created a lesson with that name</label>
-          <h4>Description:</h4>
-          <textarea class='form-control descripCur5' name='descrip' placeholder='Description'></textarea>
-          <h4>Theoretical introduction:</h4>
-          <textarea class='form-control TeoCur' name='teoria' placeholder='Theoretical introduction'></textarea>
+          <h4>".$langprint['F-29']."</h4>
+          <textarea class='form-control descripCur5' name='descrip' placeholder='".$langprint['F-29']."'></textarea>
+          <h4>".$langprint['F-22']."</h4>
+          <textarea class='form-control TeoCur' name='teoria' placeholder='".$langprint['F-22']."'></textarea>
           </div>
           <div class='modal-footer'>
-          <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
-          <button type='submit' name='createLes' value='".$idCurso."' class='btn btn-primary createLes'>Create lesson</button>
+          <button type='button' class='btn btn-default' data-dismiss='modal'>".$langprint['btn-cancel']."</button>
+          <button type='submit' name='createLes' value='".$idCurso."' class='btn btn-primary createLes'>".$langprint['F-36']."</button>
           </div>
           </form>
           </div>
