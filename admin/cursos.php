@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include_once '../assets/includes/db_conexion.php';
 include_once '../assets/includes/funciones.php';
  
@@ -83,7 +83,7 @@ $titulo = "";
 //}
 ?>
                         
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Regresar</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Back</a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <br>
                         <div class="well yeahmrwhite">
@@ -91,11 +91,11 @@ $titulo = "";
                         <table class="table table-hover table-responsive">
                         <thead>
                             <tr><th>ID</th>
-                                <th>Profesor</th>
-                                <th>Titulo</th>
+                                <th>Teachers user</th>
+                                <th>Title</th>
 <!--                                <th>Descripcion</th>-->
-                                <th>Estado</th>
-                                <th>Opciones</th>
+                                <th>Status</th>
+                                <th>Opcions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,12 +113,12 @@ if ($result = mysqli_query($mysqli, $query))
             case 0;
             $text2 = "<i class='fa fa-times'></i> Bloqueado";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activar</a>";
+            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
             break;
             case 1;
             $text2 = "<i class='fa fa-check'></i> Active";
             $tbclass = "";
-            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-times'></i> Bloquear</a>";
+            $text3 = "<a href='curso_reporte.php?c=1&id=".$row["idcurso"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='curso_estado.php?id=".$row["idcurso"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-times'></i> Ban</a>";
             break;
         }
         echo "<tr ".$tbclass."><td><strong>".$row["idcurso"]."</strong></td>";

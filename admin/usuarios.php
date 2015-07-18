@@ -115,12 +115,12 @@ $titulo = "";
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Imprimir reportes: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Print reports: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Tutores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administrators</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Tutors</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Students</a></li>
                             <li role="presentation" class="divider"></li>
                             <li role="presentation" class="dropdown-header">Per status</li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1">Active</a></li>
@@ -139,10 +139,10 @@ $titulo = "";
                                 <th><?=$langprint["name-field"]?></th>
                                 <th><?=$langprint["lastname-field"]?></th>
                                 <th><?=$langprint["emailname"]?></th>
-                                <th>Nacimiento</th>
-                                <th>Tipo</th>
-                                <th>Estado</th>
-                                <th>Opciones</th>
+                                <th>Birth date</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -155,13 +155,13 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["tipo"])
         {
             case 1;
-            $text1 = "Administrador";
+            $text1 = "Administrator";
             break;
             case 2;
             $text1 = "Tutor";
             break;
             case 3;
-            $text1 = "Estudiante";
+            $text1 = "Student";
             break;
         }
         $text2 = "";
@@ -170,14 +170,14 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["estado"])
         {
             case 0;
-            $text2 = "<i class='fa fa-user-times'></i> Inactivo";
+            $text2 = "<i class='fa fa-user-times'></i> Inactive";
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reportes</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Editar</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activar</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
             break;
             case 1;
-            $text2 = "<i class='fa fa-check'></i> Activo";
+            $text2 = "<i class='fa fa-check'></i> Active";
             $tbclass = "";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reportes</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Editar</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Desactivar</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Deactivate</a>";
             break;
         }
         echo "<tr ".$tbclass."><td><strong>".$row["idusuario"]."</strong></td>";
