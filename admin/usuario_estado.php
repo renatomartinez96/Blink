@@ -36,7 +36,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Changing user status";
+            $titulodelapagina = "Cambiar estado a un usuario";
 			include 'main_css.php';
 		?>
         <!--Custom css-->
@@ -81,11 +81,11 @@ if(isset($_GET["id"]))
                 $query2 = "UPDATE usuarios_tb SET estado = 1 WHERE idusuario='$id'";
                 if ($query2 = mysqli_query($mysqli, $query2)) 
                 {
-                    die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> Perfect!</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Active</strong>. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-success'><strong><i class='fa fa-check'></i> OK!</strong> El estado del usuario: &quot;".$nombre." ".$apellido."&quot; se cambió a:  <strong>Activo</strong>. <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> Error:</strong> No se cambió el estado del usuario <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>");
                 }
             }
             elseif($est == 1)
@@ -93,27 +93,27 @@ if(isset($_GET["id"]))
                 $query3 = "UPDATE usuarios_tb SET estado = 0 WHERE idusuario='$id'";
                 if ($query3 = mysqli_query($mysqli, $query3)) 
                 {
-                    die ("<div class='alert alert-warning'><strong><i class='fa fa-check'></i> OK!</strong> The status of the user: &quot;".$nombre." ".$apellido."&quot; has been changed to:  <strong>Inactive</strong>. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die ("<div class='alert alert-success'><strong><i class='fa fa-check'></i> OK!</strong> El estado del usuario: &quot;".$nombre." ".$apellido."&quot; se cambió a:  <strong>Inactivo</strong>. <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>");
                 }
                 else
                 {
-                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown ERROR has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>");
+                    die("<div class='alert alert-danger'><strong><i class='fa fa-times'></i> Error:</strong> No se cambió el estado del usuario <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>");
                 }
             }
         }
         else
         {
-            echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> An unknown error has been occurred, please try again later. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
+            echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> Error:</strong> No se guardo <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>";
         }
     }
     else
     {
-        echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> The received data do not match with any registered user ID. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
+        echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> Error:</strong> No existe un usuario con el ID recibido <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>";
     }
 }
 else
 {
-    echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> ERROR:</strong> There is not data to work. <br><a href='usuarios.php' class='alert-link'>Back to the list of users</a>.</div>";
+    echo "<div class='alert alert-danger'><strong><i class='fa fa-times'></i> Error:</strong> No se recibió ningún ID para trabajar. <br><a href='usuarios.php' class='alert-link'>Regresar a la lista de usuarios</a>.</div>";
 }
 ?>
                         </div>

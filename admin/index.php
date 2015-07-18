@@ -189,7 +189,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </h2>
                                 </div>
                                 <div class="panel-body">
-                                <p class="junction-light">Control de todos los usuarios registrados en Box Link</p>
+                                <p class="junction-light"><?=$langprint["mant-usr-des"]?></p>
                                 </div>
                                 <div class="panel-footer">
                                     <a href="usuarios.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-users-go-list"]?></a>
@@ -209,7 +209,7 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 </h2>
                                 </div>
                                 <div class="panel-body">
-                                <p class="junction-light">Se presentan los diferentes cursos que han sido creados por los tutores</p>
+                                <p class="junction-light"><?=$langprint["mant-cur-des"]?></p>
                                 </div>
                                 <div class="panel-footer">
                                     <a href="cursos.php" class="btn btn-info"><i class="fa fa-list-ul"></i> <?=$langprint["admin-maintenance-courses-go-list"]?></a>

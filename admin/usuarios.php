@@ -75,58 +75,58 @@ $titulo = "";
         switch($usutipo2){
         case 1;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 1";
-        $titulo = "List of Administradores of Box Link";
+        $titulo = $langprint["admins-list"];
         break;
         case 2;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 2";
-        $titulo = "List of Tutores of Box Link";
+        $titulo = $langprint["tutors-list"];
         break;
         case 3;
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb WHERE tipo = 3";
-        $titulo = "List of Estudiantes of Box Link";
+        $titulo = $langprint["students-list"];
         break;
         }
     }
     else
     {
         $query = "SELECT idusuario, nombres, apellidos, nacimiento, usuario, estado, correo, tipo FROM usuarios_tb";
-        $titulo = "Listado de todos los usuarios de Box Link";
+        $titulo = $langprint["all-users-list"];
     }
 //}
 ?>
-                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Regresar</a></div>
+                        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> <?=$langprint["btn-back"]?></a></div>
                         <h2 class="junction-regular text-center"><?=$titulo?></h2>
                         <div class="btn-group" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Ordenar por... <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><?=$langprint["sort-list"]?>... <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=1">Administradores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=2">Tutores</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=3">Estudiantes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=1"><?=$langprint["admins"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=2"><?=$langprint["tutors"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php?t=3"><?=$langprint["students"]?></a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuarios.php"><?=$langprint["em-all"]?></a></li>
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">Gráficos: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true"><?=$langprint["graphs"]?>: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-                            <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="statistics.php">Genero</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="statistics.php?t=1"><?=$langprint["profile-6"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="statistics.php?g=1"><?=$langprint["gender"]?></a></li>
                         </ul>
                         </div>
                         <div class="btn-group" role="group">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Print reports: <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><?=$langprint["print-reports"]?>: <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation" class="dropdown-header">Per type</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1">Administrators</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2">Tutors</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3">Students</a></li>
+                            <li role="presentation" class="dropdown-header"><?=$langprint["profile-6"]?></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=1"><?=$langprint["admins"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=2"><?=$langprint["tutors"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=2&t=3"><?=$langprint["students"]?></a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation" class="dropdown-header">Per status</li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1">Active</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=0">Inactive</a></li>
+                            <li role="presentation" class="dropdown-header"><?=$langprint["per-status"]?></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=1"><?=$langprint["status-ok"]?></a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=3&s=0"><?=$langprint["status-nope"]?></a></li>
                             <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4">Todos los usuarios</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="usuario_reporte.php?c=4"><?=$langprint["em-all"]?></a></li>
                         </ul>
                         </div>
                         </div>
@@ -139,10 +139,10 @@ $titulo = "";
                                 <th><?=$langprint["name-field"]?></th>
                                 <th><?=$langprint["lastname-field"]?></th>
                                 <th><?=$langprint["emailname"]?></th>
-                                <th>Birth date</th>
-                                <th>Type</th>
-                                <th>Status</th>
-                                <th>Options</th>
+                                <th><?=$langprint["profile-4"]?></th>
+                                <th><?=$langprint["profile-6"]?></th>
+                                <th><?=$langprint["cstatus"]?></th>
+                                <th><?=$langprint["opcions"]?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -155,13 +155,13 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["tipo"])
         {
             case 1;
-            $text1 = "Administrator";
+            $text1 = $langprint["admin"];
             break;
             case 2;
-            $text1 = "Tutor";
+            $text1 = $langprint["tutor"];
             break;
             case 3;
-            $text1 = "Student";
+            $text1 = $langprint["student"];
             break;
         }
         $text2 = "";
@@ -170,14 +170,14 @@ if ($result = mysqli_query($mysqli, $query))
         switch($row["estado"])
         {
             case 0;
-            $text2 = "<i class='fa fa-user-times'></i> Inactive";
+            $text2 = "<i class='fa fa-user-times'></i> ".$langprint["status-nope"];
             $tbclass = "class='text-danger'";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-success btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-check'></i> Activate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> ".$langprint["btn-report"]."</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs' disabled='disabled'><i class='fa fa-pencil'></i> ".$langprint["btn-edit"]."</a><a class='btn btn-success btn-xs' onclick=\"return bootbox.confirm('".$langprint["msg-stausu-ok"]."', function(result) {if(result==true){window.location.href='usuario_estado.php?id=".$row["idusuario"]."'}})\"><i class='fa fa-check'></i> ".$langprint["btn-activate"]."</a>";
             break;
             case 1;
-            $text2 = "<i class='fa fa-check'></i> Active";
+            $text2 = "<i class='fa fa-check'></i> ".$langprint["status-ok"];
             $tbclass = "";
-            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> Reports</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a><a href='usuario_estado.php?id=".$row["idusuario"]."' class='btn btn-danger btn-xs' onClick=\"alert('Are you sure to change the user status?')\"><i class='fa fa-user-times'></i> Deactivate</a>";
+            $text3 = "<a href='usuario_reporte.php?c=1&id=".$row["idusuario"]."' class='btn btn-primary btn-xs'><i class='fa fa-file-text'></i> ".$langprint["btn-report"]."</a><a href='usuario_editar.php?id=".$row["idusuario"]."' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> ".$langprint["btn-edit"]."</a><a class='btn btn-danger btn-xs' onclick=\"return bootbox.confirm('".$langprint["msg-stausu-ok"]."', function(result) {if(result==true){window.location.href='usuario_estado.php?id=".$row["idusuario"]."'}})\"><i class='fa fa-user-times'></i> ".$langprint["btn-deactivate"]."</a>";
             break;
         }
         echo "<tr ".$tbclass."><td><strong>".$row["idusuario"]."</strong></td>";

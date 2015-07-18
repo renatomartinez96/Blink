@@ -19,6 +19,7 @@ $langprint = array(
         "btn-cancel" => "Cancelar",
         "btn-save" => "Guardar",
         "btn-next" => "Continuar",
+        "btn-back" => "Regresar",
         "btn-save-changes" => "Guardar cambios",
         "btn-save-my-data" => "Guardar mi informaci&oacute;n",
         "btn-save-new-pass" => "Guardar mi nueva contraseña",
@@ -31,32 +32,40 @@ $langprint = array(
     // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
+        "msg-stausu-ok" => "¿Esta seguro de cambiar el estado a este usuario?",
         "msg-alert-saved-ok" => "<strong>Muy bien! </strong>Los datos se guardaron correctamente",
         "msg-alert-saved-error1" => "<strong>Error: </strong>Aparecio un problema en el servidor",
         "form-max-length" => "Un campo sobrepasa el número de caracteres permitidos (límite: ",
         "form-max-length-sig" => "Límite de caracteres",
         "form-not-null" => "Por favor, completa toda la información",
+        "back-usr-list" => "Regresar a la lista de usuarios",
         // Errores
+            "err-no-data" => "No se recibieron datos para trabajar",
+            "err-no-usr" => "No existe un usuario con el ID",
             "err-no-dens" => "No se han recibido denuncias recientemente",
         // /# Errores
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
-        "sort-list" => "Ordenar por...",
-        "print-reports" => "Imprimir reportes",
         "username" => "Usuario",
-        "admins" => "administradores",
+        "admins" => "Administradores",
         "admin" => "Administrador",
-        "tutors" => "tutores",
+        "tutors" => "Tutores",
         "tutor" => "Tutor",
-        "students" => "estudiantes",
+        "students" => "Estudiantes",
         "student" => "Estudiante",
-        "em-all" => "todos los usuarios",
+        "em-all" => "Todos los usuarios",
         "status-ok" => "activo",
         "status-nope" => "inactivo",
         "opcions" => "Opciones",
         "read-true" => "Leído",
         "read-false" => "No leído",
+        "sort-list" => "Ordenar lista por",
+        "graphs" => "Gráficos",
+        "print-reports" => "Imprimir reportes",
+        "per-status" => "Por estado",
+        "cstatus" => "Estado",
+        "ccstatus" => "Change status",
     // /# Palabras repetidas
     //----------------------------------------------
     // Nombres e instrucciones de los campos (inputs)
@@ -68,6 +77,7 @@ $langprint = array(
         "password-repeat-field" => "Confirme su contraseña",
         "password-repeat-ins-field" => "Debes escribir tu contraseña actual para poder guardar los cambios",
         "password-current-field" => "Contraseña actual",
+        "gender" => "Genenro",
     // /# Nombres de los campos
     //----------------------------------------------
     //   modal de cambio de banner
@@ -259,8 +269,11 @@ $langprint = array(
     "tutors-list" => "Listado de tutores de Box Link",
     "students-list" => "Listado de estudiantes de Box Link",
     "admins-list" => "Listado de administradores de Box Link",
-
 //      /# mantenimiento de usuarios
+//      Mantenimientos SoS
+    "mant-usr-des" => "Control de todos los usuarios registrados en Box Link",
+    "mant-cur-des" => "Se presentan los diferentes cursos que han sido creados por los tutores",
+//      Mantenimientos
 // /# administrador
 
 //----------------------------------------------

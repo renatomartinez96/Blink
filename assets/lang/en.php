@@ -19,6 +19,7 @@ $langprint = array(
         "btn-cancel" => "Cancel",
         "btn-save" => "Save",
         "btn-next" => "Next",
+        "btn-back" => "Back",
         "btn-save-changes" => "Save changes",
         "btn-save-my-data" => "Save my data",
         "btn-save-new-pass" => "Save my new password",
@@ -31,32 +32,40 @@ $langprint = array(
     // /# Diferentes textos para botones
     //----------------------------------------------
     // Diferentes mensajes de la plataforma
+        "msg-stausu-ok" => "Are you sure to change the status of this user",
         "msg-alert-saved-ok" => "<strong>Perfect! </strong>The data was saved correctly",
         "msg-alert-saved-error1" => "<strong>Error: </strong>There is a server problem",
         "form-max-length" => "One field overloads the max length (Limit: ",
         "form-max-length-sig" => "Character limit",
         "form-not-null" => "Please, complete all the information",
+        "back-usr-list" => "Back to the users list",
         // Errores
+            "err-no-data" => "There is no data to work",
+            "err-no-usr" => "Does not exist an user that match with the ID received",
             "err-no-dens" => "There is no new complaints",
         // /# Errores
     // /# Diferentes mensajes de la plataforma
     //----------------------------------------------
     // Palabras repetidas
-        "sort-list" => "Sort list by...",
-        "print-reports" => "Print reports",
         "username" => "Username",
-        "admins" => "administrators",
+        "admins" => "Administrators",
         "admin" => "Administrator",
-        "tutors" => "tutors",
+        "tutors" => "Tutors",
         "tutor" => "Tutor",
-        "students" => "students",
+        "students" => "Students",
         "student" => "Student",
         "em-all" => "All users",
-        "status-ok" => "active",
-        "status-nope" => "inactive",
+        "status-ok" => "Active",
+        "status-nope" => "Inactive",
         "opcions" => "Opcion",
         "read-true" => "Read",
         "read-false" => "Unread",
+        "sort-list" => "Sort list by",
+        "graphs" => "Graphs",
+        "print-reports" => "Print reports",
+        "per-status" => "Per status",
+        "cstatus" => "Status",
+        "ccstatus" => "Change status",
     // /# Palabras repetidas
     //----------------------------------------------
     // Nombres de los campos
@@ -68,6 +77,7 @@ $langprint = array(
         "password-repeat-field" => "Confirm password",
         "password-repeat-ins-field" => "You must write your current password to save the changes",
         "password-current-field" => "Current password",
+    	"gender" => "Gender",
     // /# Nombres de los campos
     //----------------------------------------------
     //   modal de cambio de banner
@@ -259,6 +269,10 @@ $langprint = array(
     "students-list" => "Listado de estudiantes de Box Link",
     "admins-list" => "Listado de administradores de Box Link",
 //      /# mantenimiento de usuarios
+//      Mantenimientos SoS
+    "mant-usr-des" => "Control of all users registered in Box Link",
+    "mant-cur-des" => "All courses created by the tutors",
+//      Mantenimientos
 // /# administrador
 //----------------------------------------------
 

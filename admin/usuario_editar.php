@@ -36,7 +36,7 @@ Gerardo López | Iván Nolasco | Renato Andres
 		<!--Core CSS-->
 		<?php
             // Titulo de esta página:
-            $titulodelapagina = "Editing user data";
+            $titulodelapagina = "Editar los datos de un usuario";
 			include 'main_css.php';
 		?>
         <!--Custom css-->
@@ -77,7 +77,7 @@ if(isset($_POST["nombre"]))
     {
         ?>
         <div class="alert alert-success">
-        <strong>Perfect!</strong> Data saved. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
+        <strong>OK!</strong> Los nuevos datos se guardaron con éxito <a href="usuarios.php" class="alert-link"><?=$langprint["back-usr-list"]?></a>.
         </div>
     <?php
     }
@@ -85,7 +85,7 @@ if(isset($_POST["nombre"]))
     {
         ?>
         <div class="alert alert-danger">
-        <strong>ERROR!</strong> ERROR ERROR ERROR ERROR :v <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
+        <strong>Error: </strong> Los datos no fueron guardados <a href="usuarios.php" class="alert-link"><?=$langprint["back-usr-list"]?></a>.
         </div>
     <?php
     }
@@ -103,26 +103,26 @@ else
         {
         $row = mysqli_fetch_assoc($query);
         ?>
-        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Volver</a></div>
-        <h2 class="junction-regular text-center"> Changing the data of: <?=$row["nombres"]?> <?=$row["apellidos"]?></h2>
+        <div style="float:left; font-size: 80%; position: relative; top:20px; left:15px;"><a href="javascript:history.back();" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> <?=$langprint["btn-back"]?></a></div>
+        <h2 class="junction-regular text-center"> Editando los datos de: <?=$row["nombres"]?> <?=$row["apellidos"]?></h2>
         <form action="usuario_editar.php" method="post" name="form" id="form">
         <div class="col-md-6">
             <label>ID</label><input type="text" name = "id" id = "id" class="form-control" value="<?=$row['idusuario']?>" readonly>
-            <label>Name</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$row['nombres']?>" >
-            <label>Lastname</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$row['apellidos']?>"  >
-            <label>Birthday (YYYY-MM-DD)</label><input type="fecha" name = "nacimiento" id = "nacimiento" class="form-control" onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" value="<?=$row['nacimiento']?>"  >
+            <label>Nombre</label><input type="text" name = "nombre" id = "nombre" class="form-control" value="<?=$row['nombres']?>" >
+            <label>Apellido</label><input type="text" name = "apellido" id = "apellido" class="form-control" value="<?=$row['apellidos']?>"  >
+            <label>Fecha de nacimiento (AAAA-MM-DD)</label><input type="fecha" name = "nacimiento" id = "nacimiento" class="form-control" onkeypress="txtnumeros()" placeholder="Birth day(yyyy-mm-dd)" onkeyup="mascara(this,'-',patron,true)" value="<?=$row['nacimiento']?>"  >
         </div>
         <div class="col-md-6">
-            <label>Username</label><input type="text" name = "usuario" id = "usuario" class="form-control" value="<?=$row['usuario']?>"  >
-            <label>Email</label><input type="text" name = "correo" id = "correo" class="form-control" value="<?=$row['correo']?>"  >
+            <label>Nombre de usuario</label><input type="text" name = "usuario" id = "usuario" class="form-control" value="<?=$row['usuario']?>"  >
+            <label>Correo electrónico</label><input type="text" name = "correo" id = "correo" class="form-control" value="<?=$row['correo']?>"  >
             <?php
             $tipos = array(
-                1 => "Administrator",
-                2 => "Teacher",
-                3 => "Student",
+                1 => $langprint['admin'],
+                2 => $langprint['tutor'],
+                3 => $langprint['student'],
             );
             ?>
-            <label>Type of user</label>
+            <label>Tipo de usuario</label>
             <select name="tipo" id = "tipo" class="form-control" >
                 <?php
                 foreach ($tipos as $valor=>$toprint) 
@@ -138,11 +138,11 @@ else
                 }
                 ?>
             </select>
-            <label>Estatus</label><br><a href="usuario_estado.php?id=<?=$row["idusuario"]?>" target="_blank" class="btn btn-block btn-default"><i class="fa fa-external-link-square"></i> Change status</a>
+            <label><?=$langprint["cstatus"]?></label><br><a href="usuario_estado.php?id=<?=$row["idusuario"]?>" target="_blank" class="btn btn-block btn-default"><i class="fa fa-external-link-square"></i> Cambiar estado</a>
             </div>
             <div class="col-md-12">
             <br>
-            <input type="button" name="enviar" value="Save changes" class="btn btn-success btn-block" id="enviar" onclick="return validacion(
+            <input type="button" name="enviar" value="Guardar cambios" class="btn btn-success btn-block" id="enviar" onclick="return validacion(
 this.form, 
 this.form.id, 
 this.form.nombre, 
@@ -159,7 +159,7 @@ this.form.tipo);" />
         {
             ?>
             <div class="alert alert-danger">
-            <strong>ERROR:</strong> Does not exist an user that match with the ID received. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
+            <strong>Error:</strong> <?=$langprint["err-no-usr"]?>. <a href="usuarios.php" class="alert-link"><?=$langprint["back-usr-list"]?></a>.
             </div>
             <?php
         }
@@ -168,17 +168,15 @@ this.form.tipo);" />
     {
     ?>
         <div class="alert alert-danger">
-        <strong>ERROR:</strong> Does not exist an user that match with the ID received. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
+        <strong>Error:</strong> <?=$langprint["err-no-usr"]?>. <a href="usuarios.php" class="alert-link"><?=$langprint["back-usr-list"]?></a>.
         </div>
     <?php
-        echo "<p class='text-danger'>ERROR: Does not exist an user that match with the ID received ".$id.".</p>";
-    }
-}
+    }}
 else
 {
     ?>
         <div class="alert alert-danger">
-        <strong>ERROR:</strong> There is not data to work. <a href="usuarios.php" class="alert-link">Back to the list of users</a>.
+        <strong>Error:</strong> <?=$langprint["err-no-data"]?> <a href="usuarios.php" class="alert-link"><?=$langprint["back-usr-list"]?></a>.
         </div>
     <?php
 }
@@ -197,7 +195,7 @@ else
             {
             bootbox.alert({
             title: "<h2 class='junction-bold text-center'>Box Link</h2>",
-            message: "<h5 class='junction-regular text-center'>ERROR: Please fill all the fielsets!</h5>",
+            message: "<h5 class='junction-regular text-center'>Error: <?=$langprint["form-not-null"]?></h5>",
         });
             return false;
             }
