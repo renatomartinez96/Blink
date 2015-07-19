@@ -122,8 +122,8 @@ else
                 3 => $langprint['student'],
             );
             ?>
-            <label>Tipo de usuario</label>
-            <select name="tipo" id = "tipo" class="form-control" >
+            <label>Tipo de usuario - NOTA: Sí cambia este dato, la cuenta del usuario se reiniciara</label>
+            <select name="tipo" id = "tipo" class="form-control nochange">
                 <?php
                 foreach ($tipos as $valor=>$toprint) 
                 {
@@ -193,11 +193,11 @@ else
         {
             if(nombre.value == '' || apellido.value == '' || nacimiento.value == '' || usuario.value == '' || correo.value == '' || tipo.value == '')
             {
-            bootbox.alert({
-            title: "<h2 class='junction-bold text-center'>Box Link</h2>",
-            message: "<h5 class='junction-regular text-center'>Error: <?=$langprint["form-not-null"]?></h5>",
-        });
-            return false;
+                bootbox.alert({
+                    title: "<h2 class='junction-bold text-center'>Box Link</h2>",
+                    message: "<h5 class='junction-regular text-center'>Error: <?=$langprint["form-not-null"]?></h5>"
+                });
+                return false;
             }
             form.submit();
             return true;
