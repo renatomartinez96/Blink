@@ -175,7 +175,9 @@ Gerardo López | Iván Nolasco | Renato Andres
                                 <div class="panel-heading">
                                 <h2 class="panel-title junction-bold"><i class="fa fa-users"></i> <?=$langprint["admin-maintenance-users"]?>
                                   <?php
-                                $stmt = $mysqli->prepare("SELECT log FROM usuarios_tb WHERE log < 1");
+                                $lastday = date('Y-m-d', strtotime("-5 day"));
+                                $stmt = $mysqli->prepare("SELECT log FROM usuarios_tb WHERE log = 0 AND registro > ?");
+                                $stmt->bind_param("s", $lastday);
                                 $stmt->execute();  
                                 $stmt->store_result();
                                 $stmt->bind_result($log);
